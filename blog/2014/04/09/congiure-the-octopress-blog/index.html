@@ -468,6 +468,54 @@ default_asides: [asides/recent_posts.html, asides/category_list.html, asides/com
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
+<h3>6.加入disqus评论</h3>
+
+<ul>
+<li>把下面这段代码加入到系统原有的disqus_thread.html中，文件在_include/post里面</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> &lt;div id="disqus_thread"&gt;&lt;/div&gt;
+</span><span class='line'>    &lt;script type="text/javascript"&gt;
+</span><span class='line'>        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+</span><span class='line'>        var disqus_shortname = 'pbking1'; // required: replace example with your forum shortname
+</span><span class='line'>
+</span><span class='line'>        /* * * DON'T EDIT BELOW THIS LINE * * */
+</span><span class='line'>        (function() {
+</span><span class='line'>            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+</span><span class='line'>            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+</span><span class='line'>            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+</span><span class='line'>        })();
+</span><span class='line'>    &lt;/script&gt;
+</span><span class='line'>    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+</span><span class='line'>    &lt;a href="http://disqus.com" class="dsq-brlink"&gt;comments powered by &lt;span class="logo-disqus"&gt;Disqus&lt;/span&gt;&lt;/a&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>然后再在_config.yml里面加入</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>disqus_short_name: pbking1
+</span><span class='line'>disqus_show_comment_count: true</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
 
