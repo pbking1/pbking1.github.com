@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | KING]]></title>
   <link href="http://pbking1.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://pbking1.github.io/"/>
-  <updated>2014-04-13T14:19:12+08:00</updated>
+  <updated>2014-04-13T14:20:24+08:00</updated>
   <id>http://pbking1.github.io/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -187,20 +187,13 @@ excerpt_link: "read more"
 <ul>
 <li><p>The solution is to force a push on the master branch.</p></li>
 <li><p>Edit the Rakefile and look for this line:</p></li>
-</ul>
-
-
-<p><code>system "git push origin #{deploy_branch}"</code>
-&ndash; Alter the line by adding a plus (+) before the #{deploy_branch} tag:</p>
-
-<p><code>system "git push origin +#{deploy_branch}"</code>
-&ndash; Run the command</p>
-
-<p><code>rake deploy</code>
-&ndash; It should succeed.</p>
-
-<ul>
-<li><em>Undo</em> the edit you made to the Rakefile!</li>
+<li><p><code>system "git push origin #{deploy_branch}"</code></p></li>
+<li><p>Alter the line by adding a plus (+) before the #{deploy_branch} tag:</p></li>
+<li><p><code>system "git push origin +#{deploy_branch}"</code></p></li>
+<li><p>Run the command</p></li>
+<li><p><code>rake deploy</code></p></li>
+<li><p>It should succeed.</p></li>
+<li><p><em>Undo</em> the edit you made to the Rakefile!</p></li>
 </ul>
 
 ]]></content>

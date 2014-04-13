@@ -329,20 +329,13 @@ default_asides: [asides/recent_posts.html, asides/category_list.html, asides/com
 <ul>
 <li><p>The solution is to force a push on the master branch.</p></li>
 <li><p>Edit the Rakefile and look for this line:</p></li>
-</ul>
-
-
-<p><code>system "git push origin #{deploy_branch}"</code>
-&ndash; Alter the line by adding a plus (+) before the #{deploy_branch} tag:</p>
-
-<p><code>system "git push origin +#{deploy_branch}"</code>
-&ndash; Run the command</p>
-
-<p><code>rake deploy</code>
-&ndash; It should succeed.</p>
-
-<ul>
-<li><em>Undo</em> the edit you made to the Rakefile!</li>
+<li><p><code>system "git push origin #{deploy_branch}"</code></p></li>
+<li><p>Alter the line by adding a plus (+) before the #{deploy_branch} tag:</p></li>
+<li><p><code>system "git push origin +#{deploy_branch}"</code></p></li>
+<li><p>Run the command</p></li>
+<li><p><code>rake deploy</code></p></li>
+<li><p>It should succeed.</p></li>
+<li><p><em>Undo</em> the edit you made to the Rakefile!</p></li>
 </ul>
 
 </div>
