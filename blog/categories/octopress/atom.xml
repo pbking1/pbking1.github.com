@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | KING]]></title>
   <link href="http://pbking1.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://pbking1.github.io/"/>
-  <updated>2014-04-13T14:20:52+08:00</updated>
+  <updated>2014-04-13T14:22:57+08:00</updated>
   <id>http://pbking1.github.io/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -157,10 +157,10 @@ rake new_page["about me"]
 ```</p>
 
 <ul class="main-navigation">
-  <li><a href="{{ root_url }}/">Blog</a></li>
-  <li><a href="{{ root_url }}/blog/archives">Archives</a></li>
-  <li><a href="{{ root_url }}/project">Project</a></li>
-  <li><a href="{{ root_url }}/about">About Me</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/project">Project</a></li>
+  <li><a href="/about">About Me</a></li>
 </ul>
 
 
