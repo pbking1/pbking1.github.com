@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Robot | KING]]></title>
-  <link href="http://pbking1.github.com/blog/categories/robot/atom.xml" rel="self"/>
-  <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-13T23:06:17+08:00</updated>
-  <id>http://pbking1.github.com/</id>
+  <link href="http://pbking1.github.io/blog/categories/robot/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.io/"/>
+  <updated>2014-04-13T23:49:34+08:00</updated>
+  <id>http://pbking1.github.io/</id>
   <author>
     <name><![CDATA[pb]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Basic Idea in Robotics]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/basic-idea-in-robotics/"/>
     <updated>2014-04-09T18:55:54+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/basic-idea-in-robotics</id>
     <content type="html"><![CDATA[<h3>ABSTRACT:</h3>
 
 <ul>
@@ -197,9 +197,9 @@
   
   <entry>
     <title type="html"><![CDATA[2013 IEEE International Conference on Robotics and Biomimetics]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/"/>
     <updated>2014-04-09T13:08:03+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics</id>
     <content type="html"><![CDATA[<pre><code>Dec 12-14 2013 shenzhen, China
 </code></pre>
 

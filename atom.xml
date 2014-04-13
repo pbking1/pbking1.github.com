@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[KING]]></title>
-  <link href="http://pbking1.github.com/atom.xml" rel="self"/>
-  <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-13T23:06:17+08:00</updated>
-  <id>http://pbking1.github.com/</id>
+  <link href="http://pbking1.github.io/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.io/"/>
+  <updated>2014-04-13T23:49:34+08:00</updated>
+  <id>http://pbking1.github.io/</id>
   <author>
     <name><![CDATA[pb]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[My Bash Profile Configuration]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration/"/>
     <updated>2014-04-13T10:14:26+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration</id>
+    <id>http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration</id>
     <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -174,9 +174,9 @@
   
   <entry>
     <title type="html"><![CDATA[Basic Idea in Robotics]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/basic-idea-in-robotics/"/>
     <updated>2014-04-09T18:55:54+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/basic-idea-in-robotics</id>
     <content type="html"><![CDATA[<h3>ABSTRACT:</h3>
 
 <ul>
@@ -356,9 +356,9 @@
   
   <entry>
     <title type="html"><![CDATA[My Vim Configuration]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/my-vim-configuration/"/>
     <updated>2014-04-09T18:35:16+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/my-vim-configuration</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/my-vim-configuration</id>
     <content type="html"><![CDATA[<ul>
 <li>This is the vim configuration of my mac.</li>
 <li>edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;</li>
@@ -502,141 +502,139 @@
 <span class='line-number'>131</span>
 <span class='line-number'>132</span>
 <span class='line-number'>133</span>
-<span class='line-number'>134</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>
 </span><span class='line'>" Configuration file for vim
-</span><span class='line'>  2 set modelines=0     " CVE-2007-2438
-</span><span class='line'>  3 set number
-</span><span class='line'>  4 " Normally we use vim-extensions. If you want true vi-compatibility
-</span><span class='line'>  5 " remove change the following statements
-</span><span class='line'>  6 set nocompatible    " Use Vim defaults instead of 100% vi compatibility
-</span><span class='line'>  7 set backspace=2     " more powerful backspacing
-</span><span class='line'>  8 
-</span><span class='line'>  9 " Don't write backup file if vim is being called by "crontab -e"
-</span><span class='line'> 10 au BufWrite /private/tmp/crontab.* set nowritebackup
-</span><span class='line'> 11 " Don't write backup file if vim is being called by "chpass"
-</span><span class='line'> 12 au BufWrite /private/etc/pw.* set nowritebackup
-</span><span class='line'> 13 set autoread
-</span><span class='line'> 14 nmap &lt;leader&gt;w :w!&lt;cr&gt;
-</span><span class='line'> 15 "map &lt;leader&gt;e :e! ~/.vim_runtime/vimrc&lt;cr&gt;
-</span><span class='line'> 16 " autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
-</span><span class='line'> 17 set so=7
-</span><span class='line'> 18 set ruler
-</span><span class='line'> 19 set cmdheight=2
-</span><span class='line'> 20 set hid
-</span><span class='line'> 21 set magic
-</span><span class='line'> 22 set noerrorbells
-</span><span class='line'> 23 syntax enable
-</span><span class='line'> 24 
-</span><span class='line'> 25 "ctag和taglist
-</span><span class='line'> 26 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-</span><span class='line'> 27 let Tlist_Show_One_File=1
-</span><span class='line'> 28 let Tlist_Exit_OnlyWindow=1
-</span><span class='line'> 29 let Tlist_WinWidth=30
-</span><span class='line'> 30 let Tlist_Process_File_Always=1
-</span><span class='line'> 31 let Tlist_Use_SingleClick=1
-</span><span class='line'> 32 let Tlist_Auto_Open=1
-</span><span class='line'> 33 map&lt;F8&gt; :Tlist&lt;CR&gt;
-</span><span class='line'> 34 set tags=tags;
-</span><span class='line'> 35 set autochdir
+</span><span class='line'>set modelines=0     " CVE-2007-2438
+</span><span class='line'>set number
+</span><span class='line'>" Normally we use vim-extensions. If you want true vi-compatibility
+</span><span class='line'>" remove change the following statements
+</span><span class='line'>set nocompatible    " Use Vim defaults instead of 100% vi compatibility
+</span><span class='line'>set backspace=2     " more powerful backspacing 
+</span><span class='line'>" Don't write backup file if vim is being called by "crontab -e"
+</span><span class='line'>au BufWrite /private/tmp/crontab.* set nowritebackup
+</span><span class='line'>" Don't write backup file if vim is being called by "chpass"
+</span><span class='line'>au BufWrite /private/etc/pw.* set nowritebackup
+</span><span class='line'>set autoread
+</span><span class='line'>nmap &lt;leader&gt;w :w!&lt;cr&gt;
+</span><span class='line'>"map &lt;leader&gt;e :e! ~/.vim_runtime/vimrc&lt;cr&gt;
+</span><span class='line'>" autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+</span><span class='line'>set so=7
+</span><span class='line'>set ruler
+</span><span class='line'>set cmdheight=2
+</span><span class='line'>set hid
+</span><span class='line'>set magic
+</span><span class='line'>set noerrorbells
+</span><span class='line'>syntax enable
+</span><span class='line'>
+</span><span class='line'>"ctag和taglist
+</span><span class='line'>let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+</span><span class='line'>let Tlist_Show_One_File=1
+</span><span class='line'>let Tlist_Exit_OnlyWindow=1
+</span><span class='line'>let Tlist_WinWidth=30
+</span><span class='line'>let Tlist_Process_File_Always=1
+</span><span class='line'>let Tlist_Use_SingleClick=1
+</span><span class='line'>let Tlist_Auto_Open=1
+</span><span class='line'>map&lt;F8&gt; :Tlist&lt;CR&gt;
+</span><span class='line'>set tags=tags;
+</span><span class='line'>set autochdir
 </span><span class='line'> "nmap ct :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .&lt;CR&gt;
-</span><span class='line'> 37 
-</span><span class='line'> 38 "配色
-</span><span class='line'> 39 colorscheme desert
-</span><span class='line'> 40 
-</span><span class='line'> 41 "python自动补全
-</span><span class='line'> 42 let g:pydiction_location='/usr/share/vim/vim73/ftplugin/complete-dict'
-</span><span class='line'> 43 let g:pydiction_menu_height=15
-</span><span class='line'> 44 "winmanager
-</span><span class='line'> 45 let g:winManagerwindowLayout='FileExplorer|TagList'
-</span><span class='line'> 46 nmap wm :WMToggle&lt;CR&gt;
-</span><span class='line'> 47 
-</span><span class='line'> 48 "nerdtree
-</span><span class='line'> 49 let NERDChristmasTree=1
-</span><span class='line'> 50 let NERDTreeAutoCenter=1
-</span><span class='line'> 51 let NERDTreeMouseMode=2
-</span><span class='line'> 52 let NERDTreeShowBookmarks=1
-</span><span class='line'> 53 let NREDTreeShowFiles=1
-</span><span class='line'> 54 let NERDTreeShowHidden=1
-</span><span class='line'> 55 let NERDTreeShowLineNumbers=1
-</span><span class='line'> 56 let NERDTreeWinPos='left'
-</span><span class='line'> 57 let NERDTreeWinSize=31
-</span><span class='line'> 58 nnoremap f :NERDTreeToggle
-</span><span class='line'> 59 
-</span><span class='line'> 60 
-</span><span class='line'> 61 set smartcase
-</span><span class='line'> 62 set hlsearch
-</span><span class='line'> 63 set tabstop=4
-</span><span class='line'> 64 set noexpandtab
-</span><span class='line'> 65 set shiftwidth=4
-</span><span class='line'> 66 set smarttab
-</span><span class='line'> 67 set confirm
-</span><span class='line'> 68 set autoindent
-</span><span class='line'> 69 set cindent
-</span><span class='line'> 70 set softtabstop=4
-</span><span class='line'> 71 set history=700
-</span><span class='line'> set nobackup
-</span><span class='line'> 73 set noswapfile
-</span><span class='line'> 74 set ignorecase
-</span><span class='line'> 75 set incsearch
-</span><span class='line'> 76 set gdefault
-</span><span class='line'> 77 set langmenu=zh_CN.UTF-8
-</span><span class='line'> 78 set helplang=cn
-</span><span class='line'> 79 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\     -\ %H:%M\")}
-</span><span class='line'> 80 set laststatus=2
-</span><span class='line'> 81 
-</span><span class='line'> 82 filetype on
-</span><span class='line'> 83 filetype plugin on
-</span><span class='line'> 84 filetype plugin indent on
-</span><span class='line'> 85 filetype indent on
-</span><span class='line'> 86 set viminfo+=!
-</span><span class='line'> 87 set iskeyword+=_,$,@,%,#,-
-</span><span class='line'> 88 set linespace=0
-</span><span class='line'> 89 set backspace=2
-</span><span class='line'> 90 
-</span><span class='line'> 91 set mouse=a
-</span><span class='line'> 92 set selection=exclusive
-</span><span class='line'> 93 set selectmode=mouse,key
-</span><span class='line'> 94 set report=0
-</span><span class='line'> 95 set shortmess=atl
-</span><span class='line'> 96 set showmatch
-</span><span class='line'> 97 "set fillchars=vert:\,stl:\,stlnc:\
-</span><span class='line'> 98 set matchtime=5
+</span><span class='line'>
+</span><span class='line'>"配色
+</span><span class='line'>colorscheme desert
+</span><span class='line'> 
+</span><span class='line'>"python自动补全
+</span><span class='line'>let g:pydiction_location='/usr/share/vim/vim73/ftplugin/complete-dict'
+</span><span class='line'>let g:pydiction_menu_height=15
+</span><span class='line'>"winmanager
+</span><span class='line'>let g:winManagerwindowLayout='FileExplorer|TagList'
+</span><span class='line'>nmap wm :WMToggle&lt;CR&gt;
+</span><span class='line'>
+</span><span class='line'>"nerdtree
+</span><span class='line'>let NERDChristmasTree=1
+</span><span class='line'>let NERDTreeAutoCenter=1
+</span><span class='line'>let NERDTreeMouseMode=2
+</span><span class='line'>let NERDTreeShowBookmarks=1
+</span><span class='line'>let NREDTreeShowFiles=1
+</span><span class='line'>let NERDTreeShowHidden=1
+</span><span class='line'>let NERDTreeShowLineNumbers=1
+</span><span class='line'>let NERDTreeWinPos='left'
+</span><span class='line'>let NERDTreeWinSize=31
+</span><span class='line'>"nnoremap f :NERDTreeToggle
+</span><span class='line'>nnoremap ff :NERDTree&lt;CR&gt;     
+</span><span class='line'>
+</span><span class='line'>set smartcase
+</span><span class='line'>set hlsearch
+</span><span class='line'>set tabstop=4
+</span><span class='line'>set noexpandtab
+</span><span class='line'>set shiftwidth=4
+</span><span class='line'>set smarttab
+</span><span class='line'>set confirm
+</span><span class='line'>set autoindent
+</span><span class='line'>set cindent
+</span><span class='line'>set softtabstop=4
+</span><span class='line'>set history=700
+</span><span class='line'>set nobackup
+</span><span class='line'>set noswapfile
+</span><span class='line'>set ignorecase
+</span><span class='line'>set incsearch
+</span><span class='line'>set gdefault
+</span><span class='line'>set langmenu=zh_CN.UTF-8
+</span><span class='line'>set helplang=cn
+</span><span class='line'>set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\     -\ %H:%M\")}
+</span><span class='line'>set laststatus=2
+</span><span class='line'>
+</span><span class='line'>filetype on
+</span><span class='line'>filetype plugin on
+</span><span class='line'>filetype plugin indent on
+</span><span class='line'>filetype indent on
+</span><span class='line'>set viminfo+=!
+</span><span class='line'>set iskeyword+=_,$,@,%,#,-
+</span><span class='line'>set linespace=0
+</span><span class='line'>set backspace=2
+</span><span class='line'>
+</span><span class='line'>set mouse=a
+</span><span class='line'>set selection=exclusive
+</span><span class='line'>set selectmode=mouse,key
+</span><span class='line'>set report=0
+</span><span class='line'>set shortmess=atl
+</span><span class='line'>set showmatch
+</span><span class='line'>"set fillchars=vert:\,stl:\,stlnc:\
+</span><span class='line'>set matchtime=5
 </span><span class='line'> " 能够漂亮地显示.NFO文件
-</span><span class='line'>101 set encoding=utf-8
-</span><span class='line'>102 function! SetFileEncodings(encodings)
-</span><span class='line'>103     let b:myfileencodingsbak=&fileencodings
-</span><span class='line'>104     let &fileencodings=a:encodings
-</span><span class='line'>105 endfunction
-</span><span class='line'>106 function! RestoreFileEncodings()
-</span><span class='line'>107     let &fileencodings=b:myfileencodingsbak
-</span><span class='line'>108     unlet b:myfileencodingsbak
-</span><span class='line'>109 endfunction
-</span><span class='line'>110 
-</span><span class='line'>111 au BufReadPre *.nfo call SetFileEncodings('cp437')|set ambiwidth=single
-</span><span class='line'>112 au BufReadPost *.nfo call RestoreFileEncodings()
-</span><span class='line'>113 
-</span><span class='line'>114 " 高亮显示普通txt文件（需要txt.vim脚本）
-</span><span class='line'>115 au BufRead,BufNewFile *  setfiletype txt
-</span><span class='line'>116 
-</span><span class='line'>117 " C的编译和运行
-</span><span class='line'>118 map &lt;F5&gt; :call CompileRunGcc()&lt;CR&gt;
-</span><span class='line'>119 func! CompileRunGcc()
-</span><span class='line'>120 exec "w"
-</span><span class='line'>121 exec "!gcc % -o %&lt;"
-</span><span class='line'>122 exec "! ./%&lt;"
-</span><span class='line'>123 endfunc
-</span><span class='line'>124 
-</span><span class='line'>125 " C++的编译和运行
-</span><span class='line'>126 map &lt;F6&gt; :call CompileRunGpp()&lt;CR&gt;
-</span><span class='line'>127 func! CompileRunGpp()
-</span><span class='line'>128 exec "w"
-</span><span class='line'>129 exec "!g++ % -o %&lt;"
-</span><span class='line'>130 exec "! ./%&lt;"
-</span><span class='line'>131 endfunc
-</span><span class='line'>132 
-</span><span class='line'>133 "Markdown to HTML  
-</span><span class='line'>134 nmap &lt;leader&gt;md :%!/usr/local/bin/Markdown.pl --html4tags &lt;cr&gt;
+</span><span class='line'>set encoding=utf-8
+</span><span class='line'>function! SetFileEncodings(encodings)
+</span><span class='line'>    let b:myfileencodingsbak=&fileencodings
+</span><span class='line'>    let &fileencodings=a:encodings
+</span><span class='line'>endfunction
+</span><span class='line'>function! RestoreFileEncodings()
+</span><span class='line'>    let &fileencodings=b:myfileencodingsbak
+</span><span class='line'>    unlet b:myfileencodingsbak
+</span><span class='line'>endfunction
+</span><span class='line'>
+</span><span class='line'>au BufReadPre *.nfo call SetFileEncodings('cp437')|set ambiwidth=single
+</span><span class='line'>au BufReadPost *.nfo call RestoreFileEncodings()
+</span><span class='line'>
+</span><span class='line'>" 高亮显示普通txt文件（需要txt.vim脚本）
+</span><span class='line'>au BufRead,BufNewFile *  setfiletype txt
+</span><span class='line'>
+</span><span class='line'>" C的编译和运行
+</span><span class='line'>map &lt;F5&gt; :call CompileRunGcc()&lt;CR&gt;
+</span><span class='line'>func! CompileRunGcc()
+</span><span class='line'>exec "w"
+</span><span class='line'>exec "!gcc % -o %&lt;"
+</span><span class='line'>exec "! ./%&lt;"
+</span><span class='line'>endfunc
+</span><span class='line'>
+</span><span class='line'>" C++的编译和运行
+</span><span class='line'>map &lt;F6&gt; :call CompileRunGpp()&lt;CR&gt;
+</span><span class='line'>func! CompileRunGpp()
+</span><span class='line'>exec "w"
+</span><span class='line'>exec "!g++ % -o %&lt;"
+</span><span class='line'>exec "! ./%&lt;"
+</span><span class='line'>endfunc
+</span><span class='line'>
+</span><span class='line'>"Markdown to HTML  
+</span><span class='line'>nmap &lt;leader&gt;md :%!/usr/local/bin/Markdown.pl --html4tags &lt;cr&gt;
 </span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
@@ -644,9 +642,9 @@
   
   <entry>
     <title type="html"><![CDATA[Congiure My Octopress Blog]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/congiure-the-octopress-blog/"/>
     <updated>2014-04-09T17:03:02+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/congiure-the-octopress-blog</id>
     <content type="html"><![CDATA[<h3>1.In the _config.yml file</h3>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -848,10 +846,10 @@
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;ul class="main-navigation"&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/project"&gt;Project&lt;/a&gt;&lt;/li&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/about"&gt;About Me&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/project"&gt;Project&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/about"&gt;About Me&lt;/a&gt;&lt;/li&gt;
 </span><span class='line'>&lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
 
 
@@ -925,21 +923,7 @@
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>  &lt;!-- JiaThis Button BEGIN --&gt;
-</span><span class='line'>  &lt;div class="jiathis_style"&gt;
-</span><span class='line'>    &lt;span class="jiathis_txt"&gt;分享到：&lt;/span&gt;
-</span><span class='line'>    &lt;a class="jiathis_button_tsina"&gt;新浪微博&lt;/a&gt;
-</span><span class='line'>    &lt;a class="jiathis_button_googleplus"&gt;Google+&lt;/a&gt;
-</span><span class='line'>    &lt;a class="jiathis_button_renren"&gt;人人网&lt;/a&gt;
-</span><span class='line'>    &lt;a class="jiathis_button_qzone"&gt;QQ空间&lt;/a&gt;
-</span><span class='line'>    &lt;a class="jiathis_button_tqq"&gt;腾讯微博&lt;/a&gt;
-</span><span class='line'>    &lt;a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"&gt;更多&lt;/a&gt;
-</span><span class='line'>    &lt;a class="jiathis_counter_style"&gt;&lt;/a&gt;
-</span><span class='line'>  &lt;/div&gt;
-</span><span class='line'>  &lt;script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"&gt;&lt;/script&gt;
-</span><span class='line'>  &lt;!-- JiaThis Button END --&gt;
-</span><span class='line'></span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -1072,9 +1056,9 @@
   
   <entry>
     <title type="html"><![CDATA[2013 IEEE International Conference on Robotics and Biomimetics]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/"/>
     <updated>2014-04-09T13:08:03+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics</id>
     <content type="html"><![CDATA[<pre><code>Dec 12-14 2013 shenzhen, China
 </code></pre>
 
@@ -1087,9 +1071,9 @@ zhudingqiao
 
 <h4>here are the picture</h4>
 
-<p><img src="http://pbking1.github.com/images/ieee1.jpg">
-<img src="http://pbking1.github.com/images/ieee2.jpg">
-<img src="http://pbking1.github.com/images/ieee3.jpg"></p>
+<p><img src="http://pbking1.github.io/images/ieee1.jpg">
+<img src="http://pbking1.github.io/images/ieee2.jpg">
+<img src="http://pbking1.github.io/images/ieee3.jpg"></p>
 
 <!--more-->
 
@@ -1364,9 +1348,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[Final Exam of the Sysu SE Android Class]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/final-exam-of-the-android-class/"/>
     <updated>2014-04-09T12:52:03+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/final-exam-of-the-android-class</id>
     <content type="html"><![CDATA[<h4>在Android平台上实现一个本地应用——大学城特惠网</h4>
 
 <h5>Some key codes</h5>
@@ -2040,9 +2024,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[Introduction to the Project of Network Attack and Defense]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/intro-to-the-penertration-testing-project/"/>
     <updated>2014-04-09T12:20:42+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/intro-to-the-penertration-testing-project</id>
     <content type="html"><![CDATA[<pre><code>Produced by pengbin and wangyang
 </code></pre>
 
@@ -2166,9 +2150,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[CPSO-Sk 的实现(1)]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/cpso-sk-de-shi-xian-1/"/>
     <updated>2014-04-09T00:36:53+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/cpso-sk-de-shi-xian-1</id>
     <content type="html"><![CDATA[<ul>
 <li>其实和标准的PSO是一样的</li>
 <li><p>只是初始种群是不一样的</p>
@@ -2484,9 +2468,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[Intro to Genentic Algorithm]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/intro-to-genentic-algorithm/"/>
     <updated>2014-04-09T00:33:05+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/intro-to-genentic-algorithm</id>
     <content type="html"><![CDATA[<ul>
 <li>genentic algorithm</li>
 <li>是一种由进化的灵感的来的算法，基于生物进化的机制</li>
@@ -2621,9 +2605,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[粒子群优化算法介绍]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/07/something-about-pso-algorithm/"/>
     <updated>2014-04-07T23:27:24+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm</id>
+    <id>http://pbking1.github.io/blog/2014/04/07/something-about-pso-algorithm</id>
     <content type="html"><![CDATA[<ul>
 <li>缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。</li>
 <li>从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。</li>
