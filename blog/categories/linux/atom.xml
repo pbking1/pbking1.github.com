@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Linux | KING]]></title>
-  <link href="http://pbking1.github.com/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-13T16:08:29+08:00</updated>
-  <id>http://pbking1.github.com/</id>
+  <link href="http://pbking1.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.io/"/>
+  <updated>2014-04-13T21:54:57+08:00</updated>
+  <id>http://pbking1.github.io/</id>
   <author>
     <name><![CDATA[pb]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[My Vim Configuration]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/my-vim-configuration/"/>
     <updated>2014-04-09T18:35:16+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/my-vim-configuration</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/my-vim-configuration</id>
     <content type="html"><![CDATA[<ul>
 <li>This is the vim configuration of my mac.</li>
 <li>edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;</li>

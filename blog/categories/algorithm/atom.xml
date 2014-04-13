@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Algorithm | KING]]></title>
-  <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
-  <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-13T16:08:29+08:00</updated>
-  <id>http://pbking1.github.com/</id>
+  <link href="http://pbking1.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.io/"/>
+  <updated>2014-04-13T21:54:57+08:00</updated>
+  <id>http://pbking1.github.io/</id>
   <author>
     <name><![CDATA[pb]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[CPSO-Sk 的实现(1)]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/cpso-sk-de-shi-xian-1/"/>
     <updated>2014-04-09T00:36:53+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/cpso-sk-de-shi-xian-1</id>
     <content type="html"><![CDATA[<ul>
 <li>其实和标准的PSO是一样的</li>
 <li><p>只是初始种群是不一样的</p>
@@ -242,9 +242,9 @@ return 0;
   
   <entry>
     <title type="html"><![CDATA[Intro to Genentic Algorithm]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/intro-to-genentic-algorithm/"/>
     <updated>2014-04-09T00:33:05+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/intro-to-genentic-algorithm</id>
     <content type="html"><![CDATA[<ul>
 <li>genentic algorithm</li>
 <li>是一种由进化的灵感的来的算法，基于生物进化的机制</li>
@@ -376,9 +376,9 @@ evaluate population;
   
   <entry>
     <title type="html"><![CDATA[粒子群优化算法介绍]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/07/something-about-pso-algorithm/"/>
     <updated>2014-04-07T23:27:24+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm</id>
+    <id>http://pbking1.github.io/blog/2014/04/07/something-about-pso-algorithm</id>
     <content type="html"><![CDATA[<ul>
 <li>缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。</li>
 <li>从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。</li>
