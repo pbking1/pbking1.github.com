@@ -443,14 +443,6 @@ Some of them need to install some plugins and &hellip;">
 </article>
 
 
-{ % if site.duoshuo_short_name and site.duoshuo_comments == true and page.comments == true % }
-    <section>
-        <div id="comments" aria-live="polite">{ % include post/duoshuo.html % }</div></div>
-    </section>
-{ % endif % }
-
-
-
 </div>
 
 <aside class="sidebar">
@@ -481,8 +473,18 @@ Some of them need to install some plugins and &hellip;">
     
   </ul>
 </section>
-
-<section>
+<section> 
+  <h1>Categories</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (3)</a></li>
+<li class='category'><a href='/blog/categories/android/'>Android (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (1)</a></li>
+<li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>Octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/robot/'>Robot (2)</a></li>
+ 
+  </ul> 
+</section><section>
 <h1>Recent Comments</h1>
 <ul class="ds-recent-comments" data-num-items="10">
 </ul>
@@ -499,18 +501,36 @@ ds.charset = 'UTF-8';
 </script>
 <!--多说js加载结束，一个页面只需要加载一次 -->
 </section>
-<section> 
-  <h1>Categories</h1> 
-  <ul id="categories"> 
-    <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (3)</a></li>
-<li class='category'><a href='/blog/categories/android/'>Android (1)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>Linux (1)</a></li>
-<li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
-<li class='category'><a href='/blog/categories/octopress/'>Octopress (1)</a></li>
-<li class='category'><a href='/blog/categories/robot/'>Robot (2)</a></li>
- 
-  </ul> 
-</section><section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/pbking1">@pbking1</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'pbking1',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
   <h1>visitor map</h1>
   <!--获得代码添加到这-->
   <script type="text/javascript" src="http://jj.revolvermaps.com/2/1.js?i=9p2gbjn49gr&amp;s=220&amp;m=7&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
