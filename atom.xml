@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.io/atom.xml" rel="self"/>
   <link href="http://pbking1.github.io/"/>
-  <updated>2014-04-13T15:19:46+08:00</updated>
+  <updated>2014-04-13T15:21:55+08:00</updated>
   <id>http://pbking1.github.io/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -925,21 +925,7 @@
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>  &lt;!-- JiaThis Button BEGIN --&gt;
-</span><span class='line'>  &lt;div class="jiathis_style"&gt;
-</span><span class='line'>    &lt;span class="jiathis_txt"&gt;分享到：&lt;/span&gt;
-</span><span class='line'>    &lt;a class="jiathis_button_tsina"&gt;新浪微博&lt;/a&gt;
-</span><span class='line'>    &lt;a class="jiathis_button_googleplus"&gt;Google+&lt;/a&gt;
-</span><span class='line'>    &lt;a class="jiathis_button_renren"&gt;人人网&lt;/a&gt;
-</span><span class='line'>    &lt;a class="jiathis_button_qzone"&gt;QQ空间&lt;/a&gt;
-</span><span class='line'>    &lt;a class="jiathis_button_tqq"&gt;腾讯微博&lt;/a&gt;
-</span><span class='line'>    &lt;a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"&gt;更多&lt;/a&gt;
-</span><span class='line'>    &lt;a class="jiathis_counter_style"&gt;&lt;/a&gt;
-</span><span class='line'>  &lt;/div&gt;
-</span><span class='line'>  &lt;script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"&gt;&lt;/script&gt;
-</span><span class='line'>  &lt;!-- JiaThis Button END --&gt;
-</span><span class='line'></span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
