@@ -437,8 +437,17 @@ Some of them need to install some plugins and &hellip;">
       
     </p>
   </footer>
-  
+
+
+
 </article>
+
+
+{ % if site.duoshuo_short_name and site.duoshuo_comments == true and page.comments == true % }
+    <section>
+        <div id="comments" aria-live="polite">{ % include post/duoshuo.html % }</div>
+    </section>
+{ % endif % }
 
 
 

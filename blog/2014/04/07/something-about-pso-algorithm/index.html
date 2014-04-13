@@ -1609,8 +1609,17 @@ Kenndy的等通过修改位置更新公式，首先提出了PSO算法的离散�
       
     </p>
   </footer>
-  
+
+
+
 </article>
+
+
+{ % if site.duoshuo_short_name and site.duoshuo_comments == true and page.comments == true % }
+    <section>
+        <div id="comments" aria-live="polite">{ % include post/duoshuo.html % }</div>
+    </section>
+{ % endif % }
 
 
 
