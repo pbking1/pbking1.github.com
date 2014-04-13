@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Octopress | KING]]></title>
-  <link href="http://pbking1.github.com/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-13T22:03:51+08:00</updated>
-  <id>http://pbking1.github.com/</id>
+  <link href="http://pbking1.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.io/"/>
+  <updated>2014-04-13T22:09:34+08:00</updated>
+  <id>http://pbking1.github.io/</id>
   <author>
     <name><![CDATA[pb]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Congiure My Octopress Blog]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog/"/>
+    <link href="http://pbking1.github.io/blog/2014/04/09/congiure-the-octopress-blog/"/>
     <updated>2014-04-09T17:03:02+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog</id>
+    <id>http://pbking1.github.io/blog/2014/04/09/congiure-the-octopress-blog</id>
     <content type="html"><![CDATA[<h3>1.In the _config.yml file</h3>
 
 <p>```
@@ -212,23 +212,6 @@ excerpt_link: "read more"
 
 
 <p>```
-
-  <!-- JiaThis Button BEGIN -->
-  <div class="jiathis_style"></p>
-
-<pre><code>&lt;span class="jiathis_txt"&gt;分享到：&lt;/span&gt;
-&lt;a class="jiathis_button_tsina"&gt;新浪微博&lt;/a&gt;
-&lt;a class="jiathis_button_googleplus"&gt;Google+&lt;/a&gt;
-&lt;a class="jiathis_button_renren"&gt;人人网&lt;/a&gt;
-&lt;a class="jiathis_button_qzone"&gt;QQ空间&lt;/a&gt;
-&lt;a class="jiathis_button_tqq"&gt;腾讯微博&lt;/a&gt;
-&lt;a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"&gt;更多&lt;/a&gt;
-&lt;a class="jiathis_counter_style"&gt;&lt;/a&gt;
-</code></pre>
-
-<p>  </div>
-  <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"></script>
-  <!-- JiaThis Button END -->
 
 ```</p>
 

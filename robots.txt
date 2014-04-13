@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://pbking1.github.com/sitemap.xml 
+Sitemap: http://pbking1.github.io/sitemap.xml 
