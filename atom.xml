@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[KING]]></title>
-  <link href="http://pbking1.github.io/atom.xml" rel="self"/>
-  <link href="http://pbking1.github.io/"/>
-  <updated>2014-04-13T22:00:01+08:00</updated>
-  <id>http://pbking1.github.io/</id>
+  <link href="http://pbking1.github.com/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-04-13T22:01:07+08:00</updated>
+  <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[My Bash Profile Configuration]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/"/>
     <updated>2014-04-13T10:14:26+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration</id>
+    <id>http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration</id>
     <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -174,9 +174,9 @@
   
   <entry>
     <title type="html"><![CDATA[Basic Idea in Robotics]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/basic-idea-in-robotics/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics/"/>
     <updated>2014-04-09T18:55:54+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/basic-idea-in-robotics</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics</id>
     <content type="html"><![CDATA[<h3>ABSTRACT:</h3>
 
 <ul>
@@ -356,9 +356,9 @@
   
   <entry>
     <title type="html"><![CDATA[My Vim Configuration]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/my-vim-configuration/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/"/>
     <updated>2014-04-09T18:35:16+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/my-vim-configuration</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/my-vim-configuration</id>
     <content type="html"><![CDATA[<ul>
 <li>This is the vim configuration of my mac.</li>
 <li>edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;</li>
@@ -644,9 +644,9 @@
   
   <entry>
     <title type="html"><![CDATA[Congiure My Octopress Blog]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/congiure-the-octopress-blog/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog/"/>
     <updated>2014-04-09T17:03:02+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/congiure-the-octopress-blog</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog</id>
     <content type="html"><![CDATA[<h3>1.In the _config.yml file</h3>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -848,10 +848,10 @@
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;ul class="main-navigation"&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/project"&gt;Project&lt;/a&gt;&lt;/li&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/about"&gt;About Me&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/project"&gt;Project&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/about"&gt;About Me&lt;/a&gt;&lt;/li&gt;
 </span><span class='line'>&lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
 
 
@@ -925,7 +925,21 @@
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'></span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>  &lt;!-- JiaThis Button BEGIN --&gt;
+</span><span class='line'>  &lt;div class="jiathis_style"&gt;
+</span><span class='line'>    &lt;span class="jiathis_txt"&gt;分享到：&lt;/span&gt;
+</span><span class='line'>    &lt;a class="jiathis_button_tsina"&gt;新浪微博&lt;/a&gt;
+</span><span class='line'>    &lt;a class="jiathis_button_googleplus"&gt;Google+&lt;/a&gt;
+</span><span class='line'>    &lt;a class="jiathis_button_renren"&gt;人人网&lt;/a&gt;
+</span><span class='line'>    &lt;a class="jiathis_button_qzone"&gt;QQ空间&lt;/a&gt;
+</span><span class='line'>    &lt;a class="jiathis_button_tqq"&gt;腾讯微博&lt;/a&gt;
+</span><span class='line'>    &lt;a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"&gt;更多&lt;/a&gt;
+</span><span class='line'>    &lt;a class="jiathis_counter_style"&gt;&lt;/a&gt;
+</span><span class='line'>  &lt;/div&gt;
+</span><span class='line'>  &lt;script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"&gt;&lt;/script&gt;
+</span><span class='line'>  &lt;!-- JiaThis Button END --&gt;
+</span><span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -1058,9 +1072,9 @@
   
   <entry>
     <title type="html"><![CDATA[2013 IEEE International Conference on Robotics and Biomimetics]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/"/>
     <updated>2014-04-09T13:08:03+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics</id>
     <content type="html"><![CDATA[<pre><code>Dec 12-14 2013 shenzhen, China
 </code></pre>
 
@@ -1073,9 +1087,9 @@ zhudingqiao
 
 <h4>here are the picture</h4>
 
-<p><img src="http://pbking1.github.io/images/ieee1.jpg">
-<img src="http://pbking1.github.io/images/ieee2.jpg">
-<img src="http://pbking1.github.io/images/ieee3.jpg"></p>
+<p><img src="http://pbking1.github.com/images/ieee1.jpg">
+<img src="http://pbking1.github.com/images/ieee2.jpg">
+<img src="http://pbking1.github.com/images/ieee3.jpg"></p>
 
 <!--more-->
 
@@ -1350,9 +1364,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[Final Exam of the Sysu SE Android Class]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/final-exam-of-the-android-class/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class/"/>
     <updated>2014-04-09T12:52:03+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/final-exam-of-the-android-class</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class</id>
     <content type="html"><![CDATA[<h4>在Android平台上实现一个本地应用——大学城特惠网</h4>
 
 <h5>Some key codes</h5>
@@ -2026,9 +2040,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[Introduction to the Project of Network Attack and Defense]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/intro-to-the-penertration-testing-project/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project/"/>
     <updated>2014-04-09T12:20:42+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/intro-to-the-penertration-testing-project</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project</id>
     <content type="html"><![CDATA[<pre><code>Produced by pengbin and wangyang
 </code></pre>
 
@@ -2152,9 +2166,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[CPSO-Sk 的实现(1)]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/cpso-sk-de-shi-xian-1/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1/"/>
     <updated>2014-04-09T00:36:53+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/cpso-sk-de-shi-xian-1</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1</id>
     <content type="html"><![CDATA[<ul>
 <li>其实和标准的PSO是一样的</li>
 <li><p>只是初始种群是不一样的</p>
@@ -2470,9 +2484,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[Intro to Genentic Algorithm]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/intro-to-genentic-algorithm/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm/"/>
     <updated>2014-04-09T00:33:05+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/intro-to-genentic-algorithm</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm</id>
     <content type="html"><![CDATA[<ul>
 <li>genentic algorithm</li>
 <li>是一种由进化的灵感的来的算法，基于生物进化的机制</li>
@@ -2607,9 +2621,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[粒子群优化算法介绍]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/07/something-about-pso-algorithm/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm/"/>
     <updated>2014-04-07T23:27:24+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/07/something-about-pso-algorithm</id>
+    <id>http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm</id>
     <content type="html"><![CDATA[<ul>
 <li>缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。</li>
 <li>从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。</li>
