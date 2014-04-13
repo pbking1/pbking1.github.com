@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: OSX | KING]]></title>
+  <link href="http://pbking1.github.io/blog/categories/osx/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.io/"/>
+  <updated>2014-04-13T13:45:32+08:00</updated>
+  <id>http://pbking1.github.io/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My Bash Profile Configuration]]></title>
+    <link href="http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration/"/>
+    <updated>2014-04-13T10:14:26+08:00</updated>
+    <id>http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration</id>
+    <content type="html"><![CDATA[<p>```</p>
+
+<h1>terminal</h1>
+
+<p>export PS1=&ldquo;\u@\h:\w $&rdquo;
+export CLICOLOR=1
+export GREP_OPTIONS=&ldquo;&mdash;color=auto&rdquo;</p>
+
+<h1>byobu check ignore</h1>
+
+<p>set FORCE_UNSAFE_CONFIGURE=1</p>
+
+<h1>ant path</h1>
+
+<h1>ANT_ROOT=/Users/pb/Downloads/adt-bundle-mac-x86_64-20130917/sdk/tools/ant</h1>
+
+<h1>gcc 4.8</h1>
+
+<p>export PATH=$HOME/Library/gcc-4.8.0/bin:$PATH</p>
+
+<p>export BOOST_ROOT=/usr/local/Cellar/lib
+export BOOST_INCLUDEDIR=/usr/local/Cellar/include</p>
+
+<h1>#</h1>
+
+<h1>Your previous /Users/pb/.bash_profile file was backed up as /Users/pb/.bash_profile.macports-saved_2013-10-12_at_14:01:02</h1>
+
+<h1>#</h1>
+
+<h1>MacPorts Installer addition on 2013-10-12_at_14:01:02: adding an appropriate PATH variable for use with MacPorts.</h1>
+
+<p>export PATH=/opt/local/bin:/opt/local/sbin:$PATH</p>
+
+<h1>Finished adapting your PATH environment variable for use with MacPorts.</h1>
+
+<p>export CPATH=/opt/local/include
+export LIBRARY_PATH=/opt/local/lib
+export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/opt/local/lib
+export PATH=/opt/local/bin:$PATH</p>
+
+<h1>To ensure that MacPorts pkg-config can find stuff that rosdep installs in /usr</h1>
+
+<p>export PKG_CONFIG_PATH=/usr/lib/pkgconfig</p>
+
+<h1>color</h1>
+
+<p>export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad</p>
+
+<h1>wxpython</h1>
+
+<p>export VERSIONER_PYTHON_PREFER_32_BIT</p>
+
+<h1>sudo error</h1>
+
+<p>unset LD_LIBRARY_PATH
+unset DYLD_LIBRARY_PATH</p>
+
+<h1>tornade</h1>
+
+<p>export PYTHONPATH=$PYTHONPATH:~/Document/python/software/tornado-3.1.1</p>
+
+<h1>android sdk</h1>
+
+<p>export PATH=$PATH:~/Downloads/adt-bundle-mac-x86_64-20130917/sdk/platform-tools</p>
+
+<h1>android ndk</h1>
+
+<p>export ANDROID_NDK_ROOT=~/Documents/android/NDK/android-ndk-r9d
+export NDK_ROOT=~/Documents/android/NDK/android-ndk-r9d
+export ANDROID_SDK_ROOT=~/Downloads/adt-bundle-mac-x86_64-20130917/sdk</p>
+
+<h1>cocos2dx</h1>
+
+<h1>export COCOS2DX_ROOT=~/Documents/CocosBuilder-2.1-examples/cocos2d-x-2.2.2</h1>
+
+<h1>mysql path</h1>
+
+<p>export PATH=$PATH:/usr/local/mysql/bin</p>
+
+<h1>Tomcat</h1>
+
+<h1>export PATH=$PATH:/usr/local/apache-tomcat-7.0.52/bin</h1>
+
+<h1>colt linear algebra lib</h1>
+
+<p>export CLASSPATH=/opt/share/colt/lib/colt.jar:/opt/share/colt/lib/concurrent.jar:$CLASSPATH</p>
+
+<h1>mlpack machinelearning library</h1>
+
+<p>export ANT_ROOT=/usr/local/ant</p>
+
+<p>[[ -s &ldquo;$HOME/.rvm/scripts/rvm&rdquo; ]] &amp;&amp; source &ldquo;$HOME/.rvm/scripts/rvm&rdquo; # Load RVM into a shell session <em>as a function</em></p>
+
+<p>export COCOS_CONSOLE_ROOT=/Users/pb/Documents/CocosBuilder-2.1-examples/cocos2d-x-3.0rc0/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

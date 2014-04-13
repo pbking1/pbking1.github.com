@@ -1,0 +1,1739 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>粒子群优化算法介绍 - KING</title>
+  <meta name="author" content="pb">
+
+  
+  <meta name="description" content="缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。
+从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。
+没有遗传算法的”交叉”和”变异“操作，他通过追随当前搜索到的最优值来寻找全局最优。
+这种算法实现容易并且精度高，收敛快。 &hellip;">
+  <meta name="keywords" content="pso, c++, algorithm">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pbking1.github.io/blog/2014/04/07/something-about-pso-algorithm">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">KING</a></h1>
+  
+    <h2>Do more, say less</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://www.google.com.hk/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pbking1.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/project">Project</a></li>
+  <li><a href="/about">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">粒子群优化算法介绍</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-07T23:27:24+08:00" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><ul>
+<li>缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。</li>
+<li>从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。</li>
+<li>没有遗传算法的”交叉”和”变异“操作，他通过追随当前搜索到的最优值来寻找全局最优。</li>
+<li>这种算法实现容易并且精度高，收敛快。</li>
+<li>是一种并行算法</li>
+<li>是一种很有潜力的神经网络算法</li>
+<li>是一种演化计算的方法，来源于对一个简化社会模型的模拟</li>
+<li>在大范围的问题集中是很有效的</li>
+<li>是一种基于群智能的随机搜索算法</li>
+<li>自从PSO算法被提出以来，由于它直观的背景，简单而容易实现的特点，以及对于不同类型函数广泛的适应性，逐渐得到研究者的注意。十余年来，PSO算法的理论与应用研究都取得了很大的进展，对于算法的原理已经有了初步的了解，算法的应用也已经在不同学科中得以实现。</li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>PSO算法是一种随机的、并行的优化算法。它的优点是：不要求被优化函数具有可微、可导、连续等性质，收敛速度较快，算法简单，容易编程实现。然而，PSO算法的缺点在于：
+
+<ul>
+<li>（1）对于有多个局部极值点的函数，容易陷入到局部极值点中，得不到正确的结果。造成这种现象的原因有两种，其一是由于待优化函数的性质；其二是由于微粒群算法中微粒的多样性迅速消失，造成早熟收敛。这两个因素通常密不可分地纠缠在一起。</li>
+<li>（2）由于缺乏精密搜索方法的配合，PSO算法往往不能得到精确的结果。造成这种问题的原因是PSO算法并没有很充分地利用计算过程中获得的信息，在每一步迭代中，仅仅利用了群体最优和个体最优的信息。</li>
+<li>（3）PSO算法虽然提供了全局搜索的可能，但是并不能保证收敛到全局最优点上。</li>
+<li>（4）PSO算法是一种启发式的仿生优化算法，当前还没有严格的理论基础，仅仅是通过对某种群体搜索现象的简化模拟而设计的，但并没有从原理上说明这种算法为什么有效，以及它适用的范围。因此，PSO算法一般适用于一类高维的、存在多个局部极值点而并不需要得到很高精度解的优化问题。</li>
+</ul>
+</li>
+<li>当前针对PSO算法开展的研究工作种类繁多，经归纳整理分为如下八个大类：
+
+<ul>
+<li>（1）对PSO算法进行理论分析，试图理解其工作机理；</li>
+<li>（2）改变PSO算法的结构，试图获得性能更好的算法；</li>
+<li>（3）研究各种参数配置对PSO算法的影响；</li>
+<li>（4）研究各种拓扑结构对PSO算法的影响；</li>
+<li>（5）研究离散版本的PSO算法；</li>
+<li>（6）研究PSO算法的并行算法；</li>
+<li>（7）利用PSO算法对多种情况下的优化问题进行求解；</li>
+<li>（8）将PSO算法应用到各个不同的工程领域。以下从这八大类别着手，对PSO算法的研究现状作一梳理。由于文献太多，无法面面俱到，仅捡有代表性的加以综述。</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>历史</h4>
+
+<ul>
+<li><strong>在1995年由Eberhart博士和kennedy博士提出，源于对鸟群捕食的行为研究。该算法最初是受到飞鸟集群活动的规律性启发，进而利用群体智能建立的一个简化模型。</strong></li>
+<li>Kennedy和Eberhart提出粒子群算法的主要设计思想与两个方面的研究密切相关：
+一是进化算法，粒子群算法和进化算法一样采用种群的方式进行搜索，这使得它可以同时搜索待优化目标函数解空间中的较多区域。
+二是人工生命，即研究具有生命特征的人工系统，它采用的主要工具是计算机，主要方法是利用计算机编程模拟。
+Millonas在用人工生命理论来研究群居动物的行为时，对于如何采用计算机构建具有合作行为的群集人工生命系统，提出了五条基本原则：
+
+<ul>
+<li>（1）邻近原则（ProximityPrinciple）：群体应该能够执行简单的空间和时间运算。</li>
+<li>（2）质量原则（Quality Principle）：群体应该能感受到周围环境中质量因素的变化，并对其产生响应。</li>
+<li>（3）反应多样性原则（Principle ofDiverse Response）：群体不应将自己获取资源的途径限制在狭窄的范围之内。</li>
+<li>（4）稳定性原则（Principle ofStability）：群体不应随着环境的每一次变化而改变自己的行为模式。</li>
+<li>（5）适应性原则（Principle ofAdaptability）：当改变行为模式带来的回报是值得的时候，群体应该改变其行为模式。</li>
+</ul>
+</li>
+<li>其中4、5两条原则是同一个问题的两面。微粒群系统满足以上五条原则。</li>
+<li>近十余年来，针对粒子群算法展开的研究很多，前国内外已有多人从多个方面对微粒群算法进行过综述；并出现了多本关于粒子群算法的专著和以粒子群算法为主要研究内容的博士论文。</li>
+<li>粒子群算法源于复杂适应系统（Complex Adaptive System,CAS）。CAS理论于1994年正式提出，CAS中的成员称为主体。比如研究鸟群系统，每个鸟在这个系统中就称为主体。主体有适应性，它能够与环境及其他的主体进行交流，并且根据交流的过程“学习”或“积累经验”改变自身结构与行为。整个系统的演变或进化包括：新层次的产生（小鸟的出生）；分化和多样性的出现（鸟群中的鸟分成许多小的群）；新的主题的出现（鸟寻找食物过程中，不断发现新的食物）。
+
+<ul>
+<li>所以CAS系统中的主体具有4个基本特点（这些特点是粒子群算法发展变化的依据）：
+
+<ul>
+<li>首先，主体是主动的、活动的。</li>
+<li>主体与环境及其他主体是相互影响、相互作用的，这种影响是系统发展变化的主要动力。</li>
+<li>环境的影响是宏观的，主体之间的影响是微观的，宏观与微观要有机结合。</li>
+<li>最后，整个系统可能还要受一些随机因素的影响。</li>
+</ul>
+</li>
+<li>粒子群算法就是对一个CAS系统－－－鸟群社会系统的研究得出的。</li>
+</ul>
+</li>
+<li>粒子群算法在动物集群行为观察基础上，利用群体中的个体对信息的共享使整个群体的运动在问题求解空间中产生从无序到有序的演化过程，从而获得最优解。</li>
+<li>PSO也是起源对简单社会系统的模拟。最初的设想是模拟鸟群觅食的过程。但事后来发现是一种很好的优化工具。</li>
+<li>在加入紧邻的速度匹配U币那个企鹅考虑多为搜索和根据距离的加速，形成了PSO的最初版本。之后引入了惯性权重w来更好的控制开发和探索，形成标准版本</li>
+</ul>
+
+
+<h4>优化问题</h4>
+
+<pre><code>寻找全局最优点
+要求有较高的收敛速度
+</code></pre>
+
+<ul>
+<li><strong>优化问题是指在满足一定条件下，寻找一种方案，策略或者一组参数值，是的某个或者多个度量指标达到最优。</strong>优化问题广泛的应用于国防，农业，交通，金融，材料，化工，通信等诸多领域。优化问题所研究的内容是在讨论众多的方案之中那个方案最优以及如何找出最优的方法。优化问题是一种数学为基础，用于求解各种优化问题的应用技术。各国学者都非常重视优化方法的理论和技术研究。各种优化方法在上述领域的广泛应用已经产生了巨大的经济效益和社会效益。实践证明，通过优化方法，能够提高系统效率，降低能耗，合理的利用资源，并且随着处理对象规模的增加，能够提高系统效率。随着处理对象规模的增加，这种效果也会更加明显。</li>
+<li>在工程学，管理科学，计算机科学等学科和众多应用领域中，不算短出现许多复杂的组合优化问题，面对对这些大型的复杂优化问题，由于传统的优化方法像牛顿法，共轭梯度法，单纯形法等需要遍历整个搜索空间，无法在多项式时间内完成搜索，容易产生搜索的组合爆炸。</li>
+<li>群智能算法是一种人工智能算法，他的思想是来源于自然界中的生物群体在迁移，觅食等活动中表现出的社会行为的观察和研究。生物学家经过研究观察发现，群居圣母群体可以看做一个分布式的系统，虽然系统中的单个个体都非常简单，但实际整个系统却呈现出一种高度结构化德群体组织，个体间通过协同合作，能够完成一些远超出单个个体能力的复杂工作。目前，主要的群只能优化算法有蚁群算法，粒子群算法等。群智能算法采用分布式计算的策略，具有鲁棒性强，算法简单的特点，广发用于数据挖掘，组合优化，机器人路径规划，网络路由，函数优化，无线传感器的性能优化等领域。并且取得了很好地优化效果。、</li>
+<li>粒子群算法源于群只能和人类认知的学习过程，具有容易实现，收敛速度快，并且仅仅有少量参数需要调整等特点。因此成为进化计算和群只能优化领域的研究热点。PSO算法在理论基础和应用推广上仍然存在一些问题。</li>
+<li>首先对于一个算法，如果不从理论上开始分析，那么就无法深入的了解他的行为。</li>
+<li>仅仅从测试数据对PSO算法进行研究是不够的</li>
+<li>因此需要建立PSO算法的收敛模型以及分析它的收敛性。</li>
+<li>其次，PSO算法的实施过程和它采用的参数是有很大关系的，如何选取这些参数是一个很大的问题。</li>
+<li>如果对PSO算法参数选取的规律有一个定性的认识，那木就有助于选取不同问题区域的参数</li>
+<li><p>如果把算法应用在高纬度复杂问题的优化的时候，往往会遇到早熟收敛的问题，早熟收敛是种群在找到全局最优点之前就停止不前了。这些点可能是局部最优值。</p></li>
+<li><p><strong>利用拓扑结构优化</strong></p>
+
+<ul>
+<li>通过设计不同类型的拓扑来提高PSO算法的性能，也是一个活跃的研究方向。
+既然是研究拓扑结构，一定会涉及到邻域的概念。邻域可以是静态的，也可以是动态确定的。邻域的确定有两种方式，一种为根据微粒的标志（或索引）来确定，与距离无关；</li>
+<li>而另一种为根据微粒之间的拓扑距离来确定。显然，按照拓扑距离动态确定邻域的计算量会比较大。
+
+<ul>
+<li>大多数研究针对静态拓扑来展开。Kennedy分析了各种各样的静态邻域结构以及它们对算法性能的影响，认为星形、环形和Von Neumann拓扑适用性最好，并宣称小邻域的PSO算法在复杂问题上性能较好，但是大邻域的PSO算法在简单问题上性能会更好。</li>
+<li>Kennedy还基于K均值聚类算法提出混合空间邻域和环形拓扑方法的另一个局部PSO算法版本，称为社会趋同法，不用每个微粒的经验而是用它所属空间聚类的共同经验来更新自己。</li>
+<li>Engelbrecht研究了基本的PSO算法定位并维持多个最优点的能力，发现全局邻域PSO（gBest PSO）算法对此根本无能为力，而局部邻域PSO（nBest PSO）算法则是效率很低。</li>
+</ul>
+</li>
+<li>Peram发展了一种基于适应值距离比的PSO算法（FDR-PSO），使用近邻的交互。在更新速度的每一维分量时，FDR-PSO算法选择一个其他微粒的nBest，该微粒应具有更高的适应值，并且与待更新的微粒距离更近。
+
+<ul>
+<li>该算法在每一维速度更新中选取不同邻域微粒，比在所有速度维只选取一个邻域微粒更有效。Peer用不同的邻域拓扑来研究保证收敛PSO（GCPSO）算法的性能。</li>
+<li>Parsopoulos将全局版本和局部版本组合在一起，构建了一个统一微粒群算法（Unified ParticleSwarm Optimizer, UPSO）。与此有异曲同工之效的是Xu提出的扩展PSO算法，同时使用个体最优、全局最优以及邻域中的局部最优来更新速度。</li>
+<li>Mendes介绍了一种完全通知（Fully informed）的PSO算法，使用微粒的所有邻居信息来更新速度，每个微粒对其邻居的影响基于它的适应值大小和邻域大小进行加权。在此基础上，方峻发展出一种基于加权有向拓扑的的改进算法，体现微粒之间影响的不平衡性。</li>
+</ul>
+</li>
+<li>也有少部分研究工作是关于动态拓扑的。Suganthan使用了一个动态调整的邻域，微粒的邻域逐渐增大，直到包含所有的微粒为止。
+
+<ul>
+<li>Hu研究了一种动态邻域，在每一代的性能空间中m个最近的微粒被选作新的邻居。Mohais研究了两种随机动态邻域拓扑。</li>
+<li>Binkley提出一种带影响范围的PSO算法，最优微粒对其余各微粒的影响能力取决于它们之间的距离。</li>
+<li>分层PSO算法使用基于种群中每个微粒的性能得到的动态树分层概念来定义邻域结构。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>上述邻域拓扑均用于确定群体经验gBest，而Jian使用邻域拓扑来确定个体经验pBest。</p></li>
+<li><p><strong>利用离散算法优化</strong></p></li>
+<li>很多优化问题涉及到离散或二值的变量，典型的例子包括调度问题或路由问题。
+
+<ul>
+<li>而PSO算法的更新公式和过程是面向连续空间并为其设计的，因此需要做一些修改使之适应离散空间的情况。</li>
+<li>编码的修改可能很简单，难点在于定义速度的意义和确定轨迹的变化。</li>
+<li><strong>Kennedy定义了第一个离散二进制版本的PSO算法。</strong>
+
+<ul>
+<li>微粒使用二进制字符串进行编码。通过使用sigmoid函数，速度被限制在[0, 1]区间之内，并被解释为“概率的变化”。</li>
+</ul>
+</li>
+<li><strong>Yang对该方法在量子空间进行了扩展。</strong>
+
+<ul>
+<li>Mohan提出了几种二进制方法（直接方法、量子方法、正则方法、偏差向量方法以及混合方法），但是从有限的实验中没有得出什么结论。</li>
+<li>Clerc对一些专用于某些约束优化问题如TSP问题的PSO算法变种进行了试验，结果显示该方法比较有前途。</li>
+<li>Pang使用模糊矩阵来表示微粒的位置和速度，对PSO算法的算符进行了重定义，并将其应用到TSP问题的求解。</li>
+<li>Pampara将PSO算法与信号处理中的角调制技术结合起来，将高维二进制问题降维为一个在连续空间中定义的四维问题，并通过求解该四维问题来获得原问题的解。</li>
+<li>Afshinmanesh重新定义了离散PSO算法中的加法与乘法，并使用人工免疫系统中的阴性选择来实现速度限制Vmax。</li>
+</ul>
+</li>
+<li><strong>Hu提出了一种改进PSO算法来处理排列问题。</strong>
+
+<ul>
+<li>微粒被定义为一组特定值的排列，速度基于两个微粒的相似度重新定义，微粒根据由它们的速度所定义的随机率来变换到一个新的排列。</li>
+<li>引入了一个变异因子来防止当前的pBest陷入局部最小。在n皇后问题上的初步研究显示改进的PSO算法在解决约束满意问题方面很有前途。</li>
+</ul>
+</li>
+<li><strong>Migliore对原始的二进制PSO算法进行了一些改进，提出了可变行为二进制微粒群算法（VB-BPSO）和可变动态特性二进制微粒群算法（VD-BPSO）。</strong>
+
+<ul>
+<li>VB-BPSO算法按照连续PSO算法的速度更新公式的思想设计了一个新的速度更新公式，用来确定微粒位置向量每一位为1的概率。</li>
+<li>而VD-BPSO算法则是根据一定规则在两组不同参数确定的VB-BPSO算法之间切换。</li>
+<li>Migliore应用该算法设计出一种简单鲁棒的自适应无源天线。</li>
+</ul>
+</li>
+<li><strong>Parsopoulos以标准函数为例测试微粒群优化算法解决整数规划问题的能力</strong>。</li>
+<li><strong>Salman将任务分配问题抽象为整数规划模型并提出基于微粒群优化算法的解决方法。</strong>
+
+<ul>
+<li>两者对迭代产生的连续解均进行舍尾取整后评价其质量。但是PSO算法生成的连续解与整数规划问题的目标函数评价值之间存在多对一的映射，以整型变量表示的目标函数不能准确反映算法中连续解的质量，而由此导致的冗余解空间与相应的冗余搜索降低了算法的收敛效率。</li>
+</ul>
+</li>
+<li><strong>高尚采用交叉策略和变异策略，将PSO算法用来解决集合划分问题。</strong>
+
+<ul>
+<li>赵传信重新定义了微粒群位置和速度的加法与乘法操作，并将PSO算法应用到0/1背包问题求解中。</li>
+<li>EL-Gallad在PSO算法中引入探索和勘探两个算子，用于求解排序问题。Firpi提出了BPSO算法的一种保证收敛的版本（但是并未证明其保证收敛性），并将其应用到特征选择问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>上述离散PSO算法都是间接的优化策略，根据概率而非算法本身确定二进制变量，未能充分利用PSO算法的性能。在处理整数变量时，PSO算法有时候很容易陷入局部最小。原始PSO算法的思想是从个体和同伴的经验进行学习，离散PSO算法也应该借鉴该思想。高海兵基于传统算法的速度—位移更新操作，在分析微粒群优化机理的基础上提出了广义微粒群优化模型（GPSO），使其适用于解决离散及组合优化问题。GPSO 模型本质仍然符合微粒群优化机理，但是其微粒更新策略既可根据优化问题的特点设计，也可实现与已有方法的融合。基于类似的想法，Goldbarg将局部搜索和路径重连过程定义为速度算子，来求解TSP问题。</p></li>
+<li><p><strong>利用并行算法进行优化</strong></p>
+
+<ul>
+<li>与大多数随机优化算法相似，当适应值评价函数的计算量比较大时，PSO算法的计算量会很大。</li>
+<li>为了解决该问题，研究者提出了并行PSO算法。与并行遗传算法类似，并行PSO算法也可以有三种并行群体模型：主从并行模型、岛屿群体模型和邻接模型。</li>
+<li>Schutte采用同步实现方式，在计算完一代中所有点的适应值之后才进入下一代。这种并行方法虽然实现简单，但常常会导致并行效率很差。
+
+<ul>
+<li>故而有人提出异步方式的并行算法，可以在对数值精度影响不大的条件下提高PSO算法的并行性能。这两种方式采用的都是主从并行模型，其中异步方式在求解上耦合性更高，更容易产生通信瓶颈。</li>
+</ul>
+</li>
+<li>Baskar提出一种两个子种群并行演化的并发PSO算法，其中一个子种群采用原始的PSO算法，另一个子种群采用基于适应值距离比的PSO算法（FDR-PSO）；</li>
+<li>两个子种群之间频繁地进行信息交换。而El-Abd研究了在子种群中采用局部邻域版本的协作PSO算法，并研究了多种信息交换的方式及其对算法性能的影响。</li>
+<li>黄芳提出一种基于岛屿群体模型的并行PSO算法，并引入一种集中式迁移策略，提高了求解效率，同时改善了早收敛现象。</li>
+<li>Li提出延迟交换信息的并行算法属于邻接模型，该算法可以提高速度，但可能使得解的质量变差。</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>缺点</h4>
+
+<ul>
+<li>但是这个算法的理论基础还是不够完善的。</li>
+<li><p><strong>存在早熟收敛，容易陷入局部极值的问题，并且在用于工程实际问题的时候存在很多值得改进和提高之处。</strong></p>
+
+<ul>
+<li>（1）而且从数学上证明PSO算法的正确性和可靠性还比较困难，相关的研究工作也比较少，特别是对于全局收敛性德研究。与之相关的还有收敛性，参数选取等。</li>
+<li>（2）已有的研究表明，PSO算法在进化初期收敛速度较快。但在进化后期，因于缺乏有效的机制是算法逃离局部极值，所以算法的收敛速度变慢。在进化后期，如何保持种群的多样性是算法能够找到全局最优是当前研究的一个热点。</li>
+<li>（3）虽然PSO算法的按个个体简单，但是这并不意味着整个系统设计的简单。低层次的个体之间的交互会影响系统的高层次的行为。高层次的复杂行为，也就是系统所要执行的功能，和低层次个体间的简单行为差别很大，而如何实现两者的映射是一个比较困难的问题。</li>
+<li>（4）在求解高维复杂问题的时候，PSO算法容易早收敛，也就是种群在聚集到局部极值或者局部极值邻域内的一个点的时候停滞不动。研究算法早熟收敛行为，可以为进一步提高算法的优化性能奠定理论基础。
+-（5）对于实际的优化问题， 在设计算法的时候，需要平衡算法的搜索速率和寻优效果，这在很大程度上需要研究者根据经验调整算法的参数。进一步研究算法，在理论上给出参数控制的准则是一个亟待解决的问题。</li>
+</ul>
+</li>
+<li><p>也就是说，在遇到高纬度复杂问题优化时，往往会遇上早熟收敛的问题，也就是说，种群还没有达到全局最优点的时候已经聚集到一点停止不动了。</p></li>
+<li>早熟收敛不能够保证算法收敛到局部极小点。因此可能是局部极小点邻域的一个点。</li>
+<li>此外，PSO在接近或者进入嘴有点区域的是哦户收敛速度也比较缓慢。实际上对PSO的研究发现，PSO早期收敛速度较快，但是到了寻优的后期， 其结果改进则不堪理想。这主要归因于算法收敛到局部极小，缺乏有效的机制使算法保持多样性或者逃离局部极小点</li>
+</ul>
+
+
+<h4>和遗传算法的对比</h4>
+
+<ul>
+<li>e.g 人工神经网络是简化的大脑模型
+
+<ul>
+<li>而遗传算法是模拟基因进化的过程</li>
+</ul>
+</li>
+<li>在遗传算法中染色体互相共享信息，所以整个种群的移动是比较均匀的向最优区域移动的。在PSO中，只有gBest或者pBest给出信息给其他的粒子，是单向的信息流动。
+
+<ul>
+<li>整个搜索更新过程是跟随当前最优解的过程。和遗传算法比较，在大多数情况下，所有粒子可能更快的收敛于最优解。</li>
+</ul>
+</li>
+<li>e.g 粒子群优化算法是由模仿社会行为产生的
+
+<ul>
+<li>有一定数量的粒子穿过问题空间</li>
+</ul>
+</li>
+<li>而遗传算法可以用很多种方式实现
+
+<ul>
+<li>并且每一次跑的效果都不一样</li>
+<li>交叉可能效果不是很明显</li>
+<li>变异可能效果会更明显一些</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>算法介绍</h4>
+
+<ul>
+<li>设想这样一个场景，PSO<strong>模拟鸟群的捕食行为。</strong>
+
+<ul>
+<li>一群鸟在随机搜索食物。在这个区域里面只有一块食物。所有的鸟都不知道食物在哪里。但是他们知道当前位置离食物有多远。那么找到食物的最优策略就是搜索当前离食物最近的鸟的周围区域。</li>
+<li>在PSO中，每个优化问题的解都是搜索空间中的一只鸟。称之为“粒子”</li>
+<li>所有粒子都由一个由<strong>被优化的函数决定的适应值</strong>（fitness value）。</li>
+<li>每个粒子还有一个<strong>速度</strong>决定他们飞的方向和距离。然后粒子就追随当前的最优粒子在解空间中搜索。</li>
+</ul>
+</li>
+<li><p>因此， PSO<strong>初始化为一群随机粒子（随机解）</strong>。然后通过迭代来找到最优解。在每一次迭代中，粒子通过跟踪两个极值来更新自己。</p>
+
+<ul>
+<li>一个极值是<strong>粒子本身的最优解（个体极值pBest）</strong></li>
+<li>另外一个是整个种群目前找到的<strong>最优解（全局极值pBest）</strong></li>
+<li>也有，不用整个种群而只是用其中一部分作为粒子的邻居，那么在所有邻居中的极值就是局部极值。</li>
+</ul>
+</li>
+<li><p>用建立模型来解释就是</p>
+
+<ul>
+<li>一个最简单的模型是这样的：每一个鸟的个体用直角坐标系上的点表示，随机地给它们赋一个初速度和初位置，程序运行的每一步都按照“最近邻速度匹配”规则，很快就会使得所有点的速度变得一样。</li>
+<li>因为这个模拟太简单而且远离真实情况，于是在速度项中增加了一个随机变量，即在迭代的每一步，除了满足“最近邻速度匹配”之外，每一步速度还要添加一个随机变化的量，这样使得整个模拟看起来更为真实。</li>
+<li>Heppner设计了一个“谷地模型”来模拟鸟群的觅食行为。假设在平面上存在一个“谷地”，即食物所在地，鸟群开始时随机地分散在平面上，为了寻觅食物所在地，它们按照如下规则运动：</li>
+<li>首先假设谷地的位置坐标为，单个鸟的位置和速度坐标分别为和，用当前位置到谷地的距离来衡量当前位置和速度的“好坏程度”，离谷地的距离越近，则越“好”，</li>
+<li>反之越“坏”。假设每一个鸟具有记忆能力，能够记住曾经达到的最好位置，记作pBest，并记a为系统规定的速度调节常数，rand为一个[0,1]间的随机数，设定速度项按照下述规则变化：</li>
+<li>然后假设群体之间可以以某种方式通讯，每个个体能够知道并记住到当前为止整个群体的最好位置，记为gBest，记b为系统规定的速度调节常数，Rand为一个[0,1]间的随机数，则速度项在经过以上调整后，还必须按照下述规则变化：</li>
+<li>在计算机上模拟的结果显示：当a/b较大时，所有的个体很快地聚集到“谷地”上；反之，粒子缓慢地摇摆着聚集到“谷地”的四周。通过这个简单的模拟，发现群体能很快地找到一个简单函数（2-1）的最优点。受该模型启发，Kennedy和Eberhart设计出了一种演化优化算法，并通过不断的试验和试错</li>
+<li>其中符号的意义同上。研究者认为每个个体被抽象为没有质量和体积，而仅仅具有速度和位置的微粒，故将此方法称为“粒子群”优化算法。</li>
+<li>据此，可对粒子群算法小结如下：粒子群算法是一种基于种群的搜索过程，其中每个个体称作微粒，定义为在D维搜索空间中待优化问题的潜在解，保存有其历史最优位置和所有粒子的最优位置的记忆，以及速度。</li>
+<li>在每一演化代，微粒的信息被组合起来调整速度关于每一维上的分量，继而被用来计算新的微粒位置。微粒在多维搜索空间中不断改变它们的状态，直到到达平衡或最优状态，或者超过了计算限制为止。</li>
+<li>问题空间的不同维度之间唯一的联系是通过目标函数引入的。很多经验证据已经显示该算法是一个非常有效的优化工具。</li>
+<li>以下给出微粒群算法的比较完整的形式化表述。在连续空间坐标系中，微粒群算法的数学描述如下：设微粒群体规模为N，其中每个微粒在D维空间中的坐标位置向量表示为，速度向量表示为，微粒个体最优位置（即该微粒经历过的最优位置）记为，群体最优位置（即该微粒群中任意个体经历过的最优位置）记为。</li>
+</ul>
+</li>
+<li><p><strong>理论分析</strong></p>
+
+<ul>
+<li>当前对微粒群算法开展的理论研究主要集中在微粒群算法的原理方面，即微粒之间是如何相互作用的，为什么微粒群算法对于很多优化问题是有效的，而对于有些问题则效果不是很明显。</li>
+<li>具体来说，这个问题的研究又分为三个方面，其一是单个微粒的运动轨迹；其二是收敛性问题；其三是整个微粒系统随时间的演化和分布。</li>
+<li>对简化微粒行为的第一个分析由Kennedy给出，通过仿真给出了一系列设计选择的情况下不同的微粒轨迹。对简化微粒群算法的第一个理论分析由Ozcan给出，作者在文中指出，在一个简化的一维PSO系统中，微粒沿着一条由正弦波定义的路径前进，随机确定其幅度和频率。
+
+<ul>
+<li>但是，他们的分析仅限于没有惯性权重的简单PSO模型，并且假定Pid和Pgd保持不变。事实上，Pid和Pgd会频繁变化，于是微粒轨迹由很多不同幅度和频率的正弦波合成，整个轨迹看起来仍然是无序的。这使得他们的结论的有效性大打折扣。</li>
+</ul>
+</li>
+<li>对算法稳定性质的第一个形式化分析由Clerc给出，但是该分析需要将随机系数视作常数，从而将标准随机PSO算法简化为一个确定型动态系统。
+
+<ul>
+<li>这样得到的系统是一个二阶线性动态系统，其稳定性依赖于系统的极点或状态矩阵的特征根。van den Bergh对基于确定型版本的PSO算法进行了类似的分析，并确定了在参数空间中保证稳定性的区域。</li>
+<li>在文献[5]和[42]中也提出了关于收敛性和参数选择的内容，但是作者承认他们并没有考虑算法的随机特性，因此其结果有局限性。</li>
+<li>类似的还有对连续时间版本的PSO算法所作的分析。
+
+<ul>
+<li>Blackwell针对球形对称局部邻域的函数，对PSO算法中多样性缺失的速度进行了理论分析和实验验证。</li>
+<li>Kennedy系统地研究了速度对PSO算法的影响，有助于理解速度对算法性能的贡献。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Kadirkamanathan等采用李雅普诺夫稳定性分析和被动系统（Passive System）的概念，对微粒动力学的稳定性进行了分析。
+
+<ul>
+<li>该分析中没有假定所有参数均为非随机的限制，得出了稳定的充分条件，并给出示例。</li>
+<li>仿真结果验证了理论的预期，微粒动力学的稳定需要在惯性权重减小时，增大随机参数的最大值。</li>
+<li>该分析是基于随机微粒动力学的，将微粒动力学表达为一个非线性反馈控制系统。该系统有一个确定型线性部分和一个非线性部分，以及/或在反馈路径上的时变增益。</li>
+<li>该文虽然考虑了随机分量的影响，但是其稳定性分析是针对最优位置所进行的（群体最优和个体最优相同），其结论不能直接应用到非最优的微粒。</li>
+</ul>
+</li>
+<li>Clerc研究了处于停滞阶段的微粒群算法的迭代过程，对迭代过程中的各随机系数进行了详细的研究，给出了各随机系数的概率密度函数。</li>
+<li>Jiang将微粒群算法中每一演化步骤时的微粒位置量视作一个随机向量，考查了微粒群算法中惯性权重ω和学习因子c1、c2等参数对算法收敛性的影响，并采用随机过程理论分析了标准微粒群算法的随机收敛性。</li>
+<li>原始PSO算法即使能够收敛，也只能收敛到群体所搜索到的最好解，而不能保证该收敛解是最优解，甚至不能保证它是局部最优解。</li>
+<li>van den Bergh提出一种保证收敛的PSO算法，其策略是对全局最优微粒采用一个新的更新方程，使其在全局最好位置附近产生一个随机搜索，而其他微粒仍用原方程更新。该算法能够保证微粒群算法收敛到局部最优解，其代价为收敛速度加快，在多模问题中性能不如标准PSO算法。</li>
+</ul>
+</li>
+<li><p><strong>算法结构</strong></p>
+
+<ul>
+<li>对微粒群算法结构的改进方案有很多种，对其可分类为：
+
+<ul>
+<li>采用多个子种群；改进微粒学习对象的选取策略；修改微粒更新迭代公式；修改速度更新策略；修改速度限制方法、位置限制方法和动态确定搜索空间；与其他搜索技术相结合；以及针对多模问题所作的改进。</li>
+</ul>
+</li>
+<li><strong>第一类方案是采用多个子种群。</strong>
+
+<ul>
+<li>柯晶考虑优化问题对收敛速度和寻优精度的双重要求并借鉴多群体进化算法的思想，将寻优微粒分成两组，一组微粒采用压缩因子的局部模式PSO算法，另一组微粒采用惯性权重的全局模式PSO算法，两组微粒之间采用环形拓扑结构。</li>
+<li>对于高维优化问题，PSO算法需要的微粒个数很多，导致计算复杂度常常很高，并且很难得到好的解。</li>
+<li>因此，出现了一种协作微粒群算法（Cooperative ParticleSwarm Optimizer, CPSO-H），将输入向量拆分成多个子向量，并对每个子向量使用一个微粒群来进行优化。</li>
+<li>虽然CPSO-H算法使用一维群体来分别搜索每一维，但是这些搜索结果被一个全局群体集成起来之后，在多模问题上的性能与原始PSO算法相比有很大的改进。</li>
+<li>Chow使用多个互相交互的子群，并引入相邻群参考速度。冯奇峰提出将搜索区域分区，使用多个子群并通过微粒间的距离来保持多样性。</li>
+<li>陈国初将微粒分成飞行方向不同的两个分群，其中一分群朝最优微粒飞行，另一分群微粒朝相反方向飞行；</li>
+<li>飞行时，每一微粒不仅受到微粒本身飞行经验和本分群最优微粒的影响，还受到全群最优微粒的影响。Niu在PSO算法中引入主—从子群模式，提出一种多种群协作PSO算法。</li>
+<li>Seo提出一种多组PSO算法（Multigrouped PSO），使用N组微粒来同时搜索多模问题的N个峰。</li>
+<li>Selleri使用多个独立的子群，在微粒速度的更新方程中添加了一些新项，分别使得微粒向子群历史最优位置运动，或者远离其他子群的重心。</li>
+<li>王俊年借鉴递阶编码的思想，构造出一种多种群协同进化PSO算法。高鹰借鉴生态学中环境和种群竞争的关系，提出一种基于种群密度的多种群PSO算法。</li>
+</ul>
+</li>
+<li><strong>第二类方案是改进微粒学习对象的选取策略。</strong>
+
+<ul>
+<li>Al-kazemi提出多阶段PSO算法，将微粒按不同阶段的临时搜索目标分组，这些临时目标允许微粒向着或背着它自己或全局最好位置移动。</li>
+<li>Ting对每个微粒的pBest进行操作，每一维从其他随机确定的维度学习，之后如果新的pBest更好则替换原pBest；</li>
+<li>该文还比较了多种不同学习方式对应的PSO算法的性能。Liang提出一种新颖的学习策略CLPSO，利用所有其他微粒的历史最优信息来更新微粒的速度；</li>
+<li>每个微粒可以向不同的微粒学习，并且微粒的每一维可以向不同的微粒学习。该策略能够保持群体的多样性，防止早熟收敛，可以提高PSO算法在多模问题上的性能；</li>
+<li>通过实验将该算法与其它几种PSO算法的变种进行比较，实验结果表明该算法在解决多模复杂问题时效果很好。Zhao在PSO算法中使用适应值最好的n个值来代替速度更新公式中的gBest。</li>
+<li>Abdelbar提出一种模糊度量，从而使得每个邻域中有多个适应值最好的微粒可以影响其它微粒。</li>
+<li>Wang也采用多个适应值最好的微粒信息来更新微粒速度，并提出一种模糊规则来自适应地确定参数。</li>
+<li>崔志华提出一种动态调整的改进PSO算法，在运行过程中动态调整极限位置，使得每个微粒的极限位置在其所经历的最好位置与整体最好位置所形成的动态圆中分布。</li>
+<li>与原始PSO算法相反，有一类方法是远离最差位置而非飞向最优位置。Yang提出在算法中记录最差位置而非最优位置，所有微粒都远离这些最差位置。</li>
+<li>与此类似，Leontitsis在微粒群算法中引入排斥子的概念，在使用个体最优位置和群体最优位置信息的同时，在算法中记录当前的个体最差位置和群体最差位置，并利用它们将微粒排斥到最优位置，从而让微粒群更快地到达最优位置。</li>
+<li>孟建良提出一种改进的PSO算法，在进化的初期，微粒以较大的概率向种群中其他微粒的个体最优学习；</li>
+<li>在进化后期，微粒以较大的概率向当前全局最优个体学习。Yang在PSO算法中引入轮盘选择技术来确定gBest，使得所有个体在进化早期都有机会引领搜索方向，从而避免早熟。</li>
+</ul>
+</li>
+<li><strong>第三类方案是修改微粒更新公式。</strong>
+
+<ul>
+<li>Hendtlass在速度更新方程中给每个微粒添加了记忆能力。</li>
+<li>He在速度更新方程中引入被动聚集机制。</li>
+<li>曾建潮通过对PSO算法的速度进化迭代方程进行修正，提出一种保证全局收敛的随机PSO算法。</li>
+<li>Zeng在PSO算法中引入加速度项，使得PSO算法从一个二阶随机系统变为一个三阶随机系统，并使用PID控制器来控制算法的演化。</li>
+<li>为了改进PSO算法的全局搜索能力，Ho提出一种新的微粒速度和位置更新公式，并引入寿命（Age）变量。</li>
+</ul>
+</li>
+<li><strong>第四类方案是修改速度更新策略。</strong>
+
+<ul>
+<li>Liu认为过于频繁的速度更新会弱化微粒的局部开采能力并减慢收敛，因此提出一种松弛速度更新（RVU）策略，仅当微粒使用原速度不能进一步提高适应值时才更新速度，并通过试验证明该策略可以大大减小计算量并加速收敛。</li>
+<li>罗建宏对同步模式和异步模式的PSO算法进行了对比研究，试验结果表明异步模式收敛速度显著提高，同时寻优效果更好。Yang在微粒的更新规则中引入感情心理模型。</li>
+<li>Liu采用一个最小速度阈值来控制微粒的速度，并使用一个模糊逻辑控制器来自适应地调节该最小速度阈值。</li>
+<li>张利彪提出了对PSO算法增加更新概率，对一定比例的微粒并不按照原更新公式更新，而是再次随机初始化。</li>
+<li>Dioan利用遗传算法（GA）来演化PSO算法的结构，即微粒群中各微粒更新的顺序和频率。</li>
+</ul>
+</li>
+<li><strong>第五类方案是修改速度限制方法、位置限制方法和动态确定搜索空间。</strong>
+
+<ul>
+<li>Stacey提出一种重新随机化速度的速度限制和一种重新随机化位置的位置限制。</li>
+<li>Liu在[76]的基础上，在PSO算法中引入动量因子，来将微粒位置限制在可行范围内。</li>
+<li>陈炳瑞提出一种根据微粒群的最佳适应值动态压缩微粒群的搜索空间与微粒群飞行速度范围的改进PSO算法。</li>
+</ul>
+</li>
+<li><strong>第六类方案是通过将PSO算法与一些其他的搜索技术进行结合来提高PSO算法的性能</strong>
+
+<ul>
+<li>主要目的有二，其一是提高种群多样性，避免早熟；其二是提高算法局部搜索能力。</li>
+<li>这些混合算法包括将各种遗传算子如选择、交叉、变异引入PSO算法，来增加种群的多样性并提高逃离局部最小的能力。</li>
+<li>Krink通过解决微粒间的冲突和聚集来增强种群多样性，提出一种空间扩展PSO算法（Spatial ExtensionPSO，SEPSO）；</li>
+<li>但是SEPSO算法的参数比较难以调节，为此Monson提出一种自适应调节参数的方法。</li>
+<li>用以提高种群多样性的其他方法或模型还包括“吸引—排斥”、捕食—被捕食模型、耗散模型、自组织模型、生命周期模型（LifeCycle model）、贝叶斯优化模型、避免冲突机制、拥挤回避（Crowd Avoidance）、层次化公平竞争（HFC）、外部记忆、梯度下降技术、线性搜索、单纯形法算子、爬山法、劳动分工、主成分分析技术、卡尔曼滤波、遗传算法、随机搜索算法、模拟退火、禁忌搜索、蚁群算法（ACO）、人工免疫算法、混沌算法、微分演化、遗传规划等。</li>
+<li>还有人将PSO算法在量子空间进行了扩展。Zhao将多主体系统（MAS）与PSO算法集成起来，提出MAPSO算法。Medasani借鉴概率C均值和概率论中的思想对PSO算法进行扩展，提出一种概率PSO算法，让算法分勘探和开发两个阶段运行。</li>
+</ul>
+</li>
+<li><strong>第七类方案专门针对多模问题，希望能够找到多个较优解</strong>
+
+<ul>
+<li>为了能使PSO算法一次获得待优化问题的多个较优解，Parsopoulos使用了偏转（Deflection）、拉伸（Stretching）和排斥（Repulsion）等技术，通过防止微粒运动到之前已经发现的最小区域，来找到尽可能多的最小点。</li>
+<li>但是这种方法会在检测到的局部最优点两端产生一些新的局部最优点，可能会导致优化算法陷入这些局部最小点。</li>
+<li>为此，Jin提出一种新的函数变换形式，可以避免该缺点。基于类似思想，熊勇提出一种旋转曲面变换方法。</li>
+<li>保持种群多样性最简单的方法，是在多样性过小的时候，重置某些微粒或整个微粒群。</li>
+<li>Lvbjerg在PSO算法中采用自组织临界性作为一种度量，来描述微粒群中微粒相互之间的接近程度，来确定是否需要重新初始化微粒的位置。</li>
+<li>Clerc提出了一种“Re-Hope”方法，当搜索空间变得相当小但是仍未找到解时（No-Hope），重置微粒群。Fu提出一种带C-Pg变异的PSO算法，微粒按照一定概率飞向扰动点而非Pg。</li>
+<li>赫然提出了一种自适应逃逸微粒群算法，限制微粒在搜索空间内的飞行速度并给出速度的自适应策略。</li>
+</ul>
+</li>
+<li><strong>另一种变种是小生境PSO算法，同时使用多个子种群来定位和跟踪多个最优解。</strong>
+
+<ul>
+<li>Brits还研究了一种通过调整适应值计算方式的方法来同时找到多个最优解。Li在PSO算法中引入适应值共享技术来求解多模问题。</li>
+<li>Zhang在PSO算法中采用顺序生境（SequentialNiching）技术。在小生境PSO算法的基础上，还可以使用向量点积运算来确定各个小生境中的候选解及其边界，并使该过程并行化，以获得更好的结果。</li>
+<li>但是，各种小生境PSO算法存在一个共同的问题，即需要确定一个小生境半径，且算法性能对该参数很敏感。</li>
+<li>为解决该问题，Bird提出一种自适应确定niching参数的方法。</li>
+<li>Hendtlass在PSO算法中引入短程力的概念，并基于此提出一种WoSP算法，可以同时确定多个最优点。</li>
+<li>刘宇提出一种多模态PSO算法，用聚类算法对微粒进行聚类，动态地将种群划分成几个类，并且使用微粒所属类的最优微粒而非整个种群的最好微粒来更新微粒的速度，从而可以同时得到多个近似最优解。</li>
+<li>Li在PSO算法中引入物种的概念，但是由于其使用的物种间距是固定的，该方法只适用于均匀分布的多模问题；</li>
+<li>为此，Yuan对该算法进行扩展，采用多尺度搜索方法对物种间距加以自适应的调整。</li>
+<li>此外，也有研究者将PSO算法的思想引入其他算法中，如将PSO算法中微粒的运动规则嵌入到进化规划中，用PSO算法中的运动规则来替代演化算法中交叉算子的功能。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>算法过程</strong></p>
+
+<ul>
+<li>首先
+
+<ul>
+<li>假设粒子群的数量是N，并且确定粒子群不会很小或者很大。</li>
+<li>因此在可能有很多最优解以及优化</li>
+</ul>
+</li>
+<li>然后
+
+<ul>
+<li>通过x(B)和x(A)区间内随机生成数字x1,x2,x3,x4&hellip;xn来初始化人口x。</li>
+<li>在搜索区域中所有粒子的值应该是一致的</li>
+</ul>
+</li>
+<li>再者
+
+<ul>
+<li>粒子j和第i次迭代的粒子速度被设为\[ \left(x_j(i) \right) \]  和 \[ \left(v_j(i) \right) \]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>标准的粒子群算法(局部版本)</h4>
+
+<ul>
+<li><p>在全局版的标准粒子群算法中，每个粒子的速度的更新是根据两个因素来变化的，这两个因素是：</p>
+
+<ul>
+<li><ol>
+<li>粒子自己历史最优值pi。</li>
+</ol>
+</li>
+<li><ol>
+<li>　粒子群体的全局最优值pg。</li>
+<li>如果改变粒子速度更新公式，让每个粒子的速度的更新根据以下两个因素更新，
+
+<ul>
+<li><ol type="a">
+<li>粒子自己历史最优值pi。</li>
+</ol>
+</li>
+<li><ol type="a">
+<li>粒子邻域内粒子的最优值pnk。其余保持跟全局版的标准粒子群算法一样，这个算法就变为局部版的粒子群算法。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>一般一个粒子i的邻域随着迭代次数的增加而逐渐增加，开始第一次迭代，它的邻域为0，随着迭代次数邻域线性变大，最后邻域扩展到整个粒子群，这时就变成全局版本的粒子群算法了。</p></li>
+<li>经过实践证明：全局版本的粒子群算法收敛速度快，但是容易陷入局部最优。局部版本的粒子群算法收敛速度慢，但是很难陷入局部最优。现在的粒子群算法大都在收敛速度与摆脱局部最优这两个方面下功夫。其实这两个方面是矛盾的。看如何更好的折中了。</li>
+<li><p>根据取邻域的方式的不同，局部版本的粒子群算法有很多不同的实现方法。</p>
+
+<ul>
+<li><p>第一种方法：按照粒子的编号取粒子的邻域，取法有四种：1，环形取法 2，随机环形取法 3，轮形取法 4，随机轮形取法。</p>
+
+<ul>
+<li>1 环形2 随机环形</li>
+<li>3 轮形 4随机轮形</li>
+</ul>
+</li>
+<li><p>因为后面有以环形取法实现的算法，对环形取法在这里做一点点说明：</p>
+
+<ul>
+<li>以粒子1为例，当邻域是0的时候，邻域是它本身，当邻域是1时，邻域为2，8；当邻域是2时，邻域是2，3，7，8；&hellip;&hellip;，以此类推，一直到邻域为4，这个时候，邻域扩展到整个例子群体。据文献介绍（国外的文献），采用轮形拓扑结构，PSO的效果很好。</li>
+</ul>
+</li>
+<li>第二种方法：按照粒子的欧式距离取粒子的邻域
+
+<ul>
+<li>在第一种方法中，按照粒子的编号来得到粒子的邻域，但是这些粒子其实可能在实际位置上并不相邻，于是Suganthan提出基于空间距离的划分方案，在迭代中计算每一个粒子与群中其他粒子的距离。记录任何2个粒子间的的最大距离为dm。对每一粒子按照||xa-xb||/dm计算一个比值。其中||xa-xb||是当前粒子a到b的距离。而选择阈值frac根据迭代次数而变化。当另一粒子b满足||xa-xb||/dm&lt;frac时，认为b成为当前粒子的邻域。</li>
+<li>这种办法经过实验，取得较好的应用效果，但是由于要计算所有粒子之间的距离，计算量大，且需要很大的存储空间，所以，该方法一般不经常使用。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>程序实现</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> #include "pso.h"
+</span><span class='line'> #include "stdio.h"
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>int main(int argc, const char *argv[])
+</span><span class='line'>{
+</span><span class='line'>  cur_n=0;
+</span><span class='line'>  RandInitofSwarm();             //初始化粒子群
+</span><span class='line'>  while(cur_n++ != ITE_N)
+</span><span class='line'>  {
+</span><span class='line'>      UpdatePandGbest();    //更新个体历史最优解P和全局最优解GBest
+</span><span class='line'>      UpdateofVandX();        //速度和位置更新，即飞翔
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  getchar();
+</span><span class='line'>  return 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> #ifndef _PSO_H_
+</span><span class='line'> #define _PSO_H_
+</span><span class='line'>
+</span><span class='line'>/*各种适应度函数选择，要用哪个，就设置为1,但只能有一个为1*/
+</span><span class='line'> #define TEST 0  
+</span><span class='line'> #define GOLDSTEIN_PRICE  0
+</span><span class='line'> #define SCHAFFER 1
+</span><span class='line'> #define HANSEN   0
+</span><span class='line'> #define NEEDLE   0
+</span><span class='line'>
+</span><span class='line'> #define Dim 2        //粒子维度
+</span><span class='line'> #define PNum 20      //种群规模
+</span><span class='line'> #define ITE_N  50    //最大迭代次数
+</span><span class='line'>int cur_n;            //当前迭代次数
+</span><span class='line'>
+</span><span class='line'>/*惯性权重函数*/
+</span><span class='line'> #define W_START 1.4
+</span><span class='line'> #define W_END    0.4
+</span><span class='line'> #define W_FUN    (W_START-(W_START-W_END)*pow((double)cur_n/ITE_N,2))
+</span><span class='line'>/*个体和种群结构体*/
+</span><span class='line'>struct PARTICLE
+</span><span class='line'>{
+</span><span class='line'>  double X[Dim];
+</span><span class='line'>  double P[Dim];
+</span><span class='line'>  double V[Dim];
+</span><span class='line'>  double Fitness;
+</span><span class='line'>} particle;
+</span><span class='line'>
+</span><span class='line'>struct SWARM
+</span><span class='line'>{
+</span><span class='line'>  struct PARTICLE Particle[PNum];
+</span><span class='line'>  int GBestIndex;
+</span><span class='line'>  double GBest[Dim];
+</span><span class='line'>  double C1;
+</span><span class='line'>  double C2;
+</span><span class='line'>  double Xup[Dim];
+</span><span class='line'>  double Xdown[Dim];
+</span><span class='line'>  double Vmax[Dim];
+</span><span class='line'>} swarm;
+</span><span class='line'>/*是的，只要三个就好了，更好理解点感觉*/
+</span><span class='line'>void RandInitofSwarm(void);
+</span><span class='line'>void UpdateofVandX(void);
+</span><span class='line'>void UpdatePandGbest(void);
+</span><span class='line'>
+</span><span class='line'> #endif</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> #include "stdio.h" 
+</span><span class='line'> #include "stdlib.h"
+</span><span class='line'> #include "time.h"
+</span><span class='line'> #include "math.h"
+</span><span class='line'> #include "pso.h"
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>//初始化种群
+</span><span class='line'>void RandInitofSwarm(void)
+</span><span class='line'>{
+</span><span class='line'>  int i, j;
+</span><span class='line'>        //学习因子C1,C2
+</span><span class='line'>  swarm.C1 = 2.0;
+</span><span class='line'>  swarm.C2 = 2.0;
+</span><span class='line'>  for(j = 0; j &lt; Dim; j++)
+</span><span class='line'>  {
+</span><span class='line'>      swarm.Xdown[j] = -10;    //搜索空间范围
+</span><span class='line'>      swarm.Xup[j] = 10;
+</span><span class='line'>      swarm.Vmax[j] = 0.1;       //粒子飞翔速度最大值
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  srand((unsigned)time(NULL));
+</span><span class='line'>  for(i = 0; i &lt; PNum; i++)
+</span><span class='line'>  {
+</span><span class='line'>      for(j = 0; j &lt; Dim; j++)
+</span><span class='line'>      {
+</span><span class='line'>          swarm.Particle[i].X[j] = rand() / (double)RAND_MAX * (swarm.Xup[j] - swarm.Xdown[j]) + swarm.Xdown[j];  //-Xdown~Xup
+</span><span class='line'>          swarm.Particle[i].V[j] = rand() / (double)RAND_MAX * swarm.Vmax[j] * 2 - swarm.Vmax[j];                 //-Vmax~Vmax
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>}
+</span><span class='line'>/*计算适应度函数的适应度，待进一步完善*/
+</span><span class='line'>static double ComputAFitness(double X[])
+</span><span class='line'>{
+</span><span class='line'>  /*
+</span><span class='line'>      OK
+</span><span class='line'>      min-f(0,0)=3
+</span><span class='line'>  */
+</span><span class='line'> #if TEST
+</span><span class='line'>  return X[0]*X[0]+X[1]*X[1]+3;
+</span><span class='line'> #endif
+</span><span class='line'>
+</span><span class='line'>  /*
+</span><span class='line'>      
+</span><span class='line'>      min-f(0,-1)=3.x,y-(-2,2)
+</span><span class='line'>  */
+</span><span class='line'> #if GOLDSTEIN_PRICE
+</span><span class='line'>  return (1+pow(X[0]+X[1]+1,2)*(19-14*X[0]+3*pow(X[0],2)-14*X[1]+6*X[0]*X[1]+ 3*pow(X[1],2))*(30+pow((2*X[0]-3*X[1]),2)*\
+</span><span class='line'>      (18-32*X[0]+12*pow(X[0],2)+48*X[1]-36*X[0]*X[1] + 27*pow(X[1],2))));
+</span><span class='line'>  #endif
+</span><span class='line'>
+</span><span class='line'>  /*
+</span><span class='line'>      
+</span><span class='line'>      min-f(0,0)=-1.x,y-(-4,4)
+</span><span class='line'>  */
+</span><span class='line'> #if SCHAFFER
+</span><span class='line'>  //函数:Schaffer's F6
+</span><span class='line'>
+</span><span class='line'>  return -1*(0.5-(sin(sqrt(X[0]*X[0]+X[1]*X[1]))*\
+</span><span class='line'>      sin(sqrt(X[0]*X[0]+X[1]*X[1]))-0.5)/pow(( 1+0.001*(X[0]*X[0]+X[1]*X[1])),2));
+</span><span class='line'>
+</span><span class='line'> #endif
+</span><span class='line'>
+</span><span class='line'>  /*
+</span><span class='line'>      此函数局部极值点有760个。
+</span><span class='line'>      min-f(x,y)=-176.541793.x,y-(-10,10)
+</span><span class='line'>      (-7.589893,-7.708314),(-7.589893,-1.425128)
+</span><span class='line'>      (-7.5898893,4.858057),(-1.306708,-7.708314)
+</span><span class='line'>      (-1.306707,-1.425128),(-1.306708,4.858057)
+</span><span class='line'>      (4.976478,-7.708314),(4.976478,-1.425128)
+</span><span class='line'>      (4.976478,4.858057)
+</span><span class='line'>  */
+</span><span class='line'> #if HANSEN
+</span><span class='line'>  int i;
+</span><span class='line'>  double temp1=0,temp2=0;
+</span><span class='line'>  double hansenf=0;
+</span><span class='line'>  for (i=1;i &lt;= 5;i++)
+</span><span class='line'>  {
+</span><span class='line'>      temp1+=i*cos((i-1)*X[0]+i);
+</span><span class='line'>      temp2+=i*cos((i-1)*X[1]+i);
+</span><span class='line'>  }
+</span><span class='line'>  hansenf=-1*temp1*temp2;
+</span><span class='line'>
+</span><span class='line'>  return hansenf;
+</span><span class='line'> #endif
+</span><span class='line'>
+</span><span class='line'>  /*
+</span><span class='line'>      
+</span><span class='line'>      min-f(0,0)=-3600,x,y-(-5.12,5.12)
+</span><span class='line'>      该问题的全局最优解被最差解包围,
+</span><span class='line'>      局部极值点：(-5.12,5.12),(-5.12,-5.12)
+</span><span class='line'>                  (5.12,-5.12),(5.12,5.12)
+</span><span class='line'>                  f=-2748.78
+</span><span class='line'>  */
+</span><span class='line'> #if NEEDLE
+</span><span class='line'>  return -1*pow((3/(0.05+pow(X[0]-1,2)+pow(X[1]-1,2))),2);
+</span><span class='line'> #endif
+</span><span class='line'>
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>//update  V and X
+</span><span class='line'>void UpdateofVandX(void)
+</span><span class='line'>{
+</span><span class='line'>  int i, j;
+</span><span class='line'>  srand((unsigned)time(NULL));
+</span><span class='line'>  for(i = 0; i &lt; PNum; i++)
+</span><span class='line'>  {
+</span><span class='line'>      for(j = 0; j &lt; Dim; j++)
+</span><span class='line'>          swarm.Particle[i].V[j] = W_FUN * swarm.Particle[i].V[j] +
+</span><span class='line'>          rand() / (double)RAND_MAX * swarm.C1 * (swarm.Particle[i].P[j] - swarm.Particle[i].X[j]) +
+</span><span class='line'>          rand() / (double)RAND_MAX * swarm.C2 * (swarm.GBest[j] - swarm.Particle[i].X[j]);
+</span><span class='line'>      for(j = 0; j &lt; Dim; j++)
+</span><span class='line'>      {
+</span><span class='line'>          if(swarm.Particle[i].V[j] &gt; swarm.Vmax[j])
+</span><span class='line'>              swarm.Particle[i].V[j] = swarm.Vmax[j];
+</span><span class='line'>          if(swarm.Particle[i].V[j] &lt; -swarm.Vmax[j])
+</span><span class='line'>              swarm.Particle[i].V[j] = -swarm.Vmax[j];
+</span><span class='line'>      }
+</span><span class='line'>
+</span><span class='line'>      for(j = 0; j &lt; Dim; j++)
+</span><span class='line'>      {
+</span><span class='line'>          swarm.Particle[i].X[j] += swarm.Particle[i].V[j];
+</span><span class='line'>          if(swarm.Particle[i].X[j] &gt; swarm.Xup[j])
+</span><span class='line'>              swarm.Particle[i].X[j] = swarm.Xup[j];
+</span><span class='line'>          if(swarm.Particle[i].X[j] &lt; swarm.Xdown[j])
+</span><span class='line'>              swarm.Particle[i].X[j] = swarm.Xdown[j];
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>/*更新个体极值P和全局极值GBest*/
+</span><span class='line'>void UpdatePandGbest(void)
+</span><span class='line'>{
+</span><span class='line'>  int i, j;
+</span><span class='line'>  //update of P if the X is bigger than current P
+</span><span class='line'>  for (i = 0; i &lt; PNum; i++)
+</span><span class='line'>  {
+</span><span class='line'>      if (swarm.Particle[i].Fitness &lt; ComputAFitness(swarm.Particle[i].P))
+</span><span class='line'>      {
+</span><span class='line'>          for(j = 0; j &lt; Dim; j++)
+</span><span class='line'>          {
+</span><span class='line'>              swarm.Particle[i].P[j] = swarm.Particle[i].X[j];
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>  //update of GBest
+</span><span class='line'>  for(i = 0; i &lt; PNum; i++)
+</span><span class='line'>      if(ComputAFitness(swarm.Particle[i].P) &lt; ComputAFitness(swarm.Particle[swarm.GBestIndex].P))
+</span><span class='line'>          swarm.GBestIndex = i;
+</span><span class='line'>  for(j = 0; j &lt; Dim; j++)
+</span><span class='line'>  {
+</span><span class='line'>      swarm.GBest[j] = swarm.Particle[swarm.GBestIndex].P[j];
+</span><span class='line'>  }
+</span><span class='line'>  printf("The %dth iteraction.\n",cur_n);
+</span><span class='line'>  printf("GBestIndex:%d \n",swarm.GBestIndex );
+</span><span class='line'>  printf("GBest:" );
+</span><span class='line'>  for(j=0;j&lt;Dim;j++)
+</span><span class='line'>  {
+</span><span class='line'>      printf("%.4f ,",swarm.GBest[j]);
+</span><span class='line'>  }
+</span><span class='line'>  printf("\n" );
+</span><span class='line'>  printf("Fitness of GBest: %f \n\n",ComputAFitness(swarm.Particle[swarm.GBestIndex].P));
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>粒子群算法分类（发展）</h4>
+
+<ul>
+<li><strong>粒子群算法主要分为4个大的分支：</strong>
+
+<ul>
+<li><p>（1）标准粒子群算法的变形</p>
+
+<ul>
+<li>在这个分支中，主要是对标准粒子群算法的惯性因子、收敛因子（约束因子）、“认知”部分的c1，“社会”部分的c2进行变化与调节，希望获得好的效果。</li>
+<li>惯性因子的原始版本是保持不变的，后来有人提出随着算法迭代的进行，惯性因子需要逐渐减小的思想。算法开始阶段，大的惯性因子可以是算法不容易陷入局部最优，到算法的后期，小的惯性因子可以使收敛速度加快，使收敛更加平稳，不至于出现振荡现象。经过本人测试，动态的减小惯性因子w，的确可以使算法更加稳定，效果比较好。但是递减惯性因子采用什么样的方法呢？人们首先想到的是线型递减，这种策略的确很好，但是是不是最优的呢？于是有人对递减的策略作了研究，研究结果指出：线型函数的递减优于凸函数的递减策略，但是凹函数的递减策略又优于线型的递减，经过本人测试，实验结果基本符合这个结论，但是效果不是很明显。</li>
+<li>对于收敛因子，经过证明如果收敛因子取0.729,可以确保算法的收敛，但是不能保证算法收敛到全局最优，经过本人测试，取收敛因子为0.729效果较好。对于社会与认知的系数c2,c1也有人提出：
+
+<ul>
+<li>c1先大后小，而c2先小后大的思想，因为在算法运行初期，每个鸟要有大的自己的认知部分而又比较小的社会部分，这个与我们自己一群人找东西的情形比较接近，因为在我们找东西的初期，我们基本依靠自己的知识取寻找，</li>
+<li>而后来，我们积累的经验越来越丰富，于是大家开始逐渐达成共识（社会知识），这样我们就开始依靠社会知识来寻找东西了。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>（2）粒子群算法的混合</p>
+
+<ul>
+<li><p> 这个分支主要是将粒子群算法与各种算法相混合，有人将它与模拟退火算法相混合，有些人将它与单纯形方法相混合。但是最多的是将它与遗传算法的混合。根据遗传算法的三种不同算子可以生成3中不同的混合算法。</p></li>
+<li><p>粒子群算法与选择算子的结合，这里相混合的思想是：在原来的粒子群算法中，我们选择粒子群群体的最优值作为pg，但是相结合的版本是根据所有粒子的适应度的大小给每个粒子赋予一个被选中的概率，然后依据概率对这些粒子进行选择，被选中的粒子作为pg，其它的情况都不变。这样的算法可以在算法运行过程中保持粒子群的多样性，但是致命的缺点是收敛速度缓慢。</p></li>
+<li>粒子群算法与变异算子的结合，结合的思想：测试所有粒子与当前最优的距离，当距离小于一定的数值的时候，可以拿出所有粒子的一个百分比（如10％）的粒子进行随机初始化，让这些粒子重新寻找最优值。</li>
+</ul>
+</li>
+<li>（3）二进制粒子群算法
+
+<ul>
+<li>最初的PSO是从解决连续优化问题发展起来的.Eberhart等又提出了PSO的离散二进制版.用来解决工程实际中的组合优化问题。他们在提出的模型中将粒子的每一维及粒子本身的历史最优、全局最优限制为1或0，而速度不作这种限制。</li>
+<li>用速度更新位置时，设定一个阈值，当速度高于该阈值时，粒子的位置取1，否则取0。二进制PSO与遗传算法在形式上很相似，但实验结果显示，在大多数测试函数中，二进制PSO比遗传算法速度快，尤其在问题的维数增加时</li>
+</ul>
+</li>
+<li>（4）协同粒子群算法
+
+<ul>
+<li>协同PSO，该方法将粒子的D维分到D个粒子群中，每个粒子群优化一维向量，评价适应度时将这些分量合并为一个完整的向量。</li>
+<li>例如第i个粒子群，除第i个分量外，其他D-1个分量都设为最优值，不断用第i个粒子群中的粒子替换第i个分量，直到得到第i维的最优值，其他维相同。</li>
+<li>为将有联系的分量划分在一个群，可将D维向量分配到m个粒子群优化，则前D mod m个粒子群的维数是D/m的向上取整。后m－(D mod m)个粒子群的维数是D/m的向下取整。协同PSO在某些问题上有更快的收敛速度，但该算法容易被欺骗。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基本的粒子群算法的分支就着4个，大部分的粒子群算法都围绕着这4个分支在变化，其中粒子群算法的变形居多，从根本上来说，几乎没有什么新的思想的提出。</li>
+</ul>
+
+
+<h4>idea</h4>
+
+<ul>
+<li><p><strong>粒子公式</strong></p>
+
+<ul>
+<li>在找到这两个最优值是粒子根据如下公式来更新自己的速度和新的位置</li>
+<li>v[]=w* v[] + c1 * rand() * (pbest[] &ndash; present[]) + c2 * rand() * (gbest[] &ndash; present[]) &mdash;&mdash;&mdash;(a)</li>
+<li>present[] = present[] + v[] &mdash;&mdash;&mdash;&ndash;(b)</li>
+<li>v[]是粒子的速度， w是惯性权重， present[]是当前粒子的位置.pbest[]和gbest[]是个体极值和全局极值.rand()是介于（0，1）之间的随机数，c1和c2是学习因子.通常都为2</li>
+</ul>
+</li>
+<li><p><strong>参数设置</strong></p>
+
+<ul>
+<li><strong>种群规模</strong>
+
+<ul>
+<li>当种群比较小的时候，陷入局部最优的可能性比较大，种群规模过大，会大幅增加算法的计算时间。当种群规模增长值一定值的时候，得到的优化结果不会再有显著的变化。</li>
+</ul>
+</li>
+<li><strong>惯性权重</strong>
+
+<ul>
+<li>当Vmax很小的时候(&lt;=2)，使用接近1的惯性权重，当vmax不是很小的时候(>=3),使用0.8比较好.</li>
+<li>惯性权重比较小的时候片偏重于发挥粒子群算法的局部搜索能力。</li>
+<li>惯性权重比较大的时候，将会偏重于发挥粒子群算法的全局搜索能力。</li>
+</ul>
+</li>
+<li><strong>加速度系数</strong>
+
+<ul>
+<li>加速度系数c1和c2分别表示个体极值和全局极值推进的加速权值。。加速系数越小，能使粒子在远离目标区域内震荡；加速系数越大，能使粒子快速向目标区域移动或者远离目标区域。如果c1=c2=0，则粒子将以当前的·飞行速度飞到边界。这个时候，粒子仅能搜索到有限的目标区域，所以难以找到最优解。当c1=0的时候为社会模型，粒子缺乏认知能力。依靠粒子的相互作用，收敛速度比较标准PSO算法快，但是对于复杂问题，比标准PSO算法更加容易陷入局部最优。当c2=0的时候为认知模型，没有社会的共享信息，个体之间没有信息交互，所以找到最优解的概率较小。</li>
+<li>早期的研究通常c1=c2=2.Clerc推导出c1=c2=2.05.Clerc人为c1和c2应该不等，提出取c1=2.8, c2=1.3，但仅仅局限于部分优化问题，不能推广至所有问题。</li>
+</ul>
+</li>
+<li><strong>粒子数目</strong>
+
+<ul>
+<li>一般取20-40</li>
+<li>对于比较难的问题或者特定类别的问题，粒子数目可以取到100或200</li>
+</ul>
+</li>
+<li><strong>VMAX</strong>
+
+<ul>
+<li>PSO中的一个很重要的概念</li>
+<li>决定了粒子再一次迭代中移动的最大距离。
+
+<ul>
+<li>他的值越大则搜索能力越强，但是粒子可能会飞过最优解</li>
+<li>如果值越小，则开发能力越强，但是容易陷入局部最优。</li>
+</ul>
+</li>
+<li>一般是用于对种群的初始化进行设定，也就是把VMAX设定为每一个维度的变量的变化范围，而不是再对最大速度进行细致的选择和调节。</li>
+<li>一般来说只有他需要被调整</li>
+<li>控制每个粒子在各个方向的速度</li>
+<li>确定被搜索区域的健壮性
+
+<ul>
+<li>如果太高了，则可能超过最优解</li>
+<li>如果太低了，可能会被堵塞在局部最小值中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> <strong>停止准则</strong>
+
+<ul>
+<li> 最大迭代次数TMAX和计算精度通常认为是停止准则，也就是算法的终止条件，根据具体的优化问题，停止准则的设定需要同时兼顾算法的求解时间和优化质量还有搜索效率等问题。</li>
+</ul>
+</li>
+<li> <strong>邻域拓扑结构的设定</strong>
+
+<ul>
+<li> 全局版本的PSO算法把整个群体作为粒子的邻域，具有收敛快的的优点，但是有的时候算法会陷入局部最优。局部版本的PSO算法将位置相近的个体作为粒子的邻域。收敛速度较慢，不容易陷入局部最优值。实际应用中，可以先采用全局PSO算法寻找最优解的方向，也就是得到大致的结果，然后采用局部PSO算法在最优点附近进行精细的搜索。</li>
+</ul>
+</li>
+<li> <strong>粒子空间的初始化</strong>
+
+<ul>
+<li> 恰当的初始化空间，能够大幅度的缩短收敛时间。正交法，费对称等方法被应用与粒子群初始化。</li>
+</ul>
+</li>
+<li> <strong>边界返回策略</strong>
+
+<ul>
+<li> 当某一维度或者若干维度的位置或者速度超过设定值的时候，采用边界返回策略可以把粒子的位置限制在可行搜索空间内，这样能够避免种群的膨胀和发散，也可以避免粒子大规模的盲目搜索，从而提高了搜索效率。具体方法有很多种，比如通过设置最大位置限制XMAX和最大速度限制VMAX。Robinson提出了三种边界返回策略，也就是边界变异的墙；吸收墙，反射墙还有不可视墙。吸收墙是指对于那些撞击边界的粒子，把他的速度设置为0，也就是粒子的能量被边界墙吸收，粒子停留在边界上，在下一次迭代的时候粒子会从新返回到搜索空间。反射墙是指当粒子的某一维度的位置撞击边界的时候，把这个维度的位置反向，也就是粒子被反射回来搜索空间。不可视墙是指粒子超出边界的不再计算它的适应值，也就是放弃该粒子。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>伪代码</strong></p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>For each particle
+</span><span class='line'>    初始化变量
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>Do 
+</span><span class='line'>    For each particle
+</span><span class='line'>        计算fitness value
+</span><span class='line'>        if the fitness value is better than the best fitness value(pBest) in history
+</span><span class='line'>        see current value as the new pBest//判断当前值和个体极值的差距，如果更好，则替换
+</span><span class='line'>    end
+</span><span class='line'>    
+</span><span class='line'>    choose the particle with the best fitness value of all the particles as the gBest
+</span><span class='line'>    For each particle
+</span><span class='line'>        Calculate particle speed according 等式（a）
+</span><span class='line'>        Update particle position according 等式（b）
+</span><span class='line'>    end
+</span><span class='line'>
+</span><span class='line'>While 没有到达迭代次数的极限或者超过最小错误标准</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<ul>
+<li>c++代码</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> #include&lt;cstdio&gt;
+</span><span class='line'> #include&lt;cstdlib&gt;
+</span><span class='line'> #include&lt;cmath&gt;
+</span><span class='line'> #include&lt;ctime&gt;
+</span><span class='line'> #include&lt;iostream&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'>
+</span><span class='line'>const int NUM = 40; //particle number
+</span><span class='line'>const int DIM = 30;  //dimentional
+</span><span class='line'>const double c1 = 1.8;
+</span><span class='line'>const double c2 = 1.8;
+</span><span class='line'>double xmin = -100.0; //the lower limit of the postion
+</span><span class='line'>double xmax = 100.0; // the higher limit of the postion
+</span><span class='line'>double gbestx[DIM]; //the postion that is the global best
+</span><span class='line'>double gbestf; //the global best suitable value
+</span><span class='line'>
+</span><span class='line'>struct paritcle{
+</span><span class='line'>  double x[DIM];  //the current position
+</span><span class='line'>  double bestx[DIM];  //history best position
+</span><span class='line'>  double f; //current comfort
+</span><span class='line'>  double bestf;   //history best comfort
+</span><span class='line'>}swarm[NUM]; //define swarm
+</span><span class='line'>
+</span><span class='line'> #define randf ((rand()%10000+rand()%10000*10000)/100000000.0) //generate causual float number
+</span><span class='line'>double f1(double x[]){  //test function
+</span><span class='line'>  float z = 0;
+</span><span class='line'>  for(int i = 0 ; i &lt; DIM; i++)
+</span><span class='line'>      z += (x[i] * x[i]);
+</span><span class='line'>  return z;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>int main(){
+</span><span class='line'>  //initialize the global best
+</span><span class='line'>  for(int i = 0; i &lt; DIM; i++)
+</span><span class='line'>      gbestx[i] = randf * (xmax - xmin) + xmin;
+</span><span class='line'>  gbestf = 1000000000000000.0;
+</span><span class='line'>  for(int i = 0; i &lt; NUM; i++){
+</span><span class='line'>      paritcle* p1 = &swarm[i];
+</span><span class='line'>      for(int j = 0; j &lt; DIM; j++)
+</span><span class='line'>          p1 -&gt; x[j] = randf * (xmax - xmin) + xmin;
+</span><span class='line'>      p1 -&gt; f = f1(p1 -&gt; x);
+</span><span class='line'>      p1 -&gt; bestf = 1000000000000000.0;
+</span><span class='line'>  }
+</span><span class='line'>  for(int t = 0; t &lt; 5000; t++){  //iterate 5000 times
+</span><span class='line'>      for(int i = 0; i &lt; NUM; i++){
+</span><span class='line'>          paritcle* p1 = &swarm[i];
+</span><span class='line'>          for(int j = 0; j &lt; DIM; j++)
+</span><span class='line'>              p1 -&gt; x[j] += (c1 * randf * (p1 -&gt; bestx[j] - p1 -&gt; x[j]) + c2 * randf * (gbestx[j] - p1 -&gt; x[j]));
+</span><span class='line'>          p1 -&gt; f = f1(p1 -&gt; x);
+</span><span class='line'>          if(p1 -&gt; f &lt; p1 -&gt; bestf){  //change the best of the history
+</span><span class='line'>              for(int j = 0; j &lt; DIM; j++)
+</span><span class='line'>                  p1 -&gt; bestx[j] = p1 -&gt; x[j];
+</span><span class='line'>              p1 -&gt; bestf = p1 -&gt; f;
+</span><span class='line'>          }
+</span><span class='line'>          if(p1 -&gt; f &lt; gbestf){  //change the local best
+</span><span class='line'>              for(int j = 0; j &lt; DIM; j++)
+</span><span class='line'>                  gbestx[j] = p1 -&gt; x[j];
+</span><span class='line'>              for(int j = 0; j &lt; DIM; j++)  //put the current global best in to a random place
+</span><span class='line'>                  p1 -&gt; x[j] = randf * (xmax - xmin) + xmin;
+</span><span class='line'>              gbestf = p1 -&gt; f;
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>  cout&lt;&lt;gbestf&lt;&lt;endl;
+</span><span class='line'>  return 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h4>应用</h4>
+
+<ul>
+<li>应用主要是<strong>在工程和计算及科学还有行为管理研究科学里面</strong>
+
+<ul>
+<li>在电力系统领域方面，Abido等将PSO算法应用于电力和稳压器参数的优化。</li>
+<li>Yoshida等将PSO算法优化无功功率和求解电压控制问题。</li>
+<li>在神经网络训练方面Kenndy，Zhang等将PSO算法应用于人工神经网络训练。</li>
+<li>在通讯领域方面，Zhang等利用PSO算法求解光通讯系统的PMD补偿问题。</li>
+<li>Liu等采用PSO算法训练隐马尔科夫模型用来处理蛋白质序列对比问题。</li>
+<li>Xiao等采用PSO算法来解决基因聚类问题。</li>
+<li>阵列天线综合方面，林川采用PSO算法优化不等距直线阵列天线。</li>
+<li>Li提出一种基于混合PSO和GA的算法，并将改算法优化球面共型阵列天线中阵列单元的电流幅值。</li>
+<li>Goudos将改进的PSO算法应用于不等距阵列天线优化。</li>
+<li>Ismail将量子PSO算法应用于阵列天线的数字调相的优化。</li>
+<li>金荣洪将改进的PSO算法应用于直线阵列天线方向图综合中。</li>
+<li><strong>并且PSO算法还广泛应用于其他各种优化问题</strong>，如PID控制器的参数优化，系统可靠性的设计，模糊控制器的设计，超大规模集成电路布图布线设计，卫星舱布局，TSP问题，多目标优化问题，图像处理，聚类问题，化工系统处理，机器人领域。</li>
+</ul>
+</li>
+<li>针对各种优化问题的复杂性和多样性，PSO算法在求解约束优化问题，离散优化问题和多目标优化问题等方面都得到了相应的发展。
+
+<ul>
+<li>（1）<strong>约束优化问题</strong>
+
+<ul>
+<li>对于约束优化问题，其关键是如何处理约束，也就是解的可行性。采用PSO算法进行约束优化可以分成两种方法：一种是罚函数法。Parsopulos等采用非固定多段映射罚函数作为适应函数。另一种设计特定的约束修正因子或进化操作。Ray等采用多层信息共享策略来处理约束。Hu等通过可行解保留策略来处理约束。He等采用了具有可行性规则的约束策略。</li>
+</ul>
+</li>
+<li>（2）<strong>离散优化问题</strong>
+
+<ul>
+<li>在求解连续优化问题的时候，对于一般的决策变量，传统的PSO算法通常采用实数编码。为了能运用到离散优化领域，如典型的0-1背包问题，调度问题和TSP问题等，课采用两种方法：一种是改造PSO算法，让他适应特殊的问题。另一种是对所需求解的问题进行变形，让他适合于传统的PSO算法。
+Kenndy的等通过修改位置更新公式，首先提出了PSO算法的离散二进制版本，用于求解组合优化问题。Kenndy等就二进制版本的PSO算法和GA算法进行比较，为了求解数列问题，HU等提出了改进的离散PSO算法。Clerc采用了新的粒子更新公式，提出了一种离散PSO算法。Pampara等采用角调制技术来实现PSO算法的离散编码。
+目前，对离散版本的PSO算法的研究还是比较有限的，如何处理离散变量的加法和乘法是一个需要研究的问题。</li>
+</ul>
+</li>
+<li>（3）<strong>多目标优化问题</strong>
+
+<ul>
+<li>为了能够更好的求解多目标优化问题，必须解决PSO算法中群体最优位置和个体最优位置的选择问题。Parsopoulos等采用固定权重法，向量评价法和适应性权重法，处理多目标优化问题。Ray，Colleo等Pareto机制与PSO算法相结合用来求解多目标优化问题。Pulido等使用多种群的策略来搜索Pareto最优解。Li等提出基于笔译理论的MAximin策略来求解多目标优化问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>并且PSO算法还在很多别的地方有应用</strong></li>
+<li>函数优化
+
+<ul>
+<li>De Jong&rsquo;s test set</li>
+<li>Schaffer&rsquo;s f6 function</li>
+</ul>
+</li>
+<li>神经网络训练
+
+<ul>
+<li>XOR</li>
+<li>Fisher&rsquo;s iris data</li>
+<li>EEG data</li>
+<li>2500-pattern test set</li>
+</ul>
+</li>
+<li>基准测试(benchmark test)
+
+<ul>
+<li>Compare guest and blest</li>
+<li>Vary neighbourhood in lbest</li>
+</ul>
+</li>
+<li><p><strong>建筑工程项目综合优化</strong></p>
+
+<ul>
+<li>针对建筑工程项目中工期一成本-质量综合均匀优化问题，简历了工期，成本和质量的多目标优化模型，并将分层多子群PSO算法应用于该多目标优化问题。仿真结果表明该算法在种群规模较小的情况下，快速求解工程项目综合优化问题。
+
+<ul>
+<li>工程项目是一个被国际化标准组织定义为一个独特的过程。具有开始和结束时间，由一系列互相协调和受控的活动组成。工程项目的实施是为了完成规定的目标，如果满足时间，成本和资源等约束条件。</li>
+<li>工程项目管理师在项目实施的过程中，为了能够更好地完成每一个阶段的各项工作，需要展开一系列有关项目的计划，组织，决策，协调，沟通还有控制等管理活动。项目管理的过程通常包括启动，计划，执行，控制和结束。</li>
+<li>工程项目的管理实施需要在一些互相冲突的需求中寻求平衡，这些冲突包括：项目的范围，成本，进度和质量等要求，以及明确表示出来的期望和没有明确表达的需求。</li>
+<li>工期，成本和质量是工程项目的三大控制目标。工期是指工程从开工到完工所用的全部时间。成本是工程建设的全部花费。工程质量是工程满足业主的需要，符合国家相关法律，法规，技术规范标准，设计文件和合同等规定。工程质量的形成过程是一个动态的过程，是工程建设中各个工作环节的综合反映。</li>
+<li>工期成本和质量是互相关联的矛盾对立统一体。缩短工期一方面会使工程提早结束，给业主带来超前的收益，从而提高投资效益；另一方面可能会提高人工工时，增加建筑材料和机械设备等资源的使用量，从而增加工程成本。如果不按照合理的工期进度进行施工，片面的最求高速度，可能由于赶工期，不顾施工的必要程序，而降低工程质量。只有根据工程的客观龄期，工程要求的建设周期和施工程序时间，确定合理的工期，才能使工程成本和质量实现可控。</li>
+<li>采取科学的管理方法能够降低成本，从而减少业主的建筑费用，但是如果在招标的时候盲目压价，二不重视工程效益和施工能力，选择不具备响应资质的施工单位承担项目，会拖延工期，降低工程质量。质量好的工程可以给社会带来巨大的社会效益，可以延长工程使用的年限，又可以提高投资效益。严格控制工程质量，嫩巩固减少人工费，材料费和机械使用费等损失，也可以降低由于返工而造成的损失，以及经常性德维护费等。所以在处理工期和质量，成本的关系的时候，应该在保证工程质量的前提之下，合理安排工期，用最少的人力和机械消耗完成任务。</li>
+<li>工程管理的理想目标状态是同时满足最短工期和最低造价还有最高质量。工程项目的三大目标是一个相互影响，相互之制约的统一体。其中任何一个目标发生变化都会引起另外一个目标的变化。三大目标的优化问题本质上属于多目标优化问题。
+工程项目的进度计划可以通过网络图的形式来表现。网络计划分为单代号和双代号网络图。其中单代号法是用节点表示工作，连接各个节点之间的箭头和直线表示了工作之间按的逻辑关系。网络图展示了项目的工期计划，从是指上表示了项目活动的流程图。管理者通过网络图能够获取清晰的关键线路概念，正确的及时的调整计划和实施进度。</li>
+<li><strong>对工程项目的综合优化问题，研究热点主要是有两方面</strong>
+
+<ul>
+<li>（1）目标模型的简历。
+
+<ul>
+<li>工期成本和质量三者之间的综合优化，历来就很少有研究。由于工期成本还有质量是评价建筑工程项目的主要指标，和很多文献都只是分析了其中的亮点，并没有全面的分析。</li>
+</ul>
+</li>
+<li>（2）求解方法的选择
+
+<ul>
+<li>很多专家都采用一群算法，遗传算法，粒子群优化算法来求解工程项目的优化问题。这些智能优化算法求解工程项目单目标优化问题的事后取得了良好的效果，但是对于工程的多目标综合优化去难以避免的早熟收敛。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工程项目多目标优化模型
+
+<ul>
+<li>1.定义和假设
+
+<ul>
+<li>通常，如果工期缩短，工程质量水平会下降，但是许多现场的工程管理这会认为即使缩短工作的持续时间，工程那个的质量水平也不一定会下降。因此，要对工程的质量进行从新的定义和假设。</li>
+<li>合理的工期设置在建设过程中，合理的有效地利用人力和财力还有物理的组员，是项目的投资方和每个参加建设的单位都获得满意的经济效益工期。合理的建设工期在建项目的资源勘探，厂址选择，设备选择型号还有供应，工程质量，协作配合，生产标准等客观因素的制约。</li>
+<li>工程的总成本是工程的直接成本和间接成本之和。</li>
+<li>工程总质量有各个单项工作的质量经过加权平均获得的。</li>
+<li><strong>并且通过工程项目工期模型，工程项目成本模型，工程项目质量模型，还有工程项目多目标优化模型来解决这个问题</strong>
+
+<ul>
+<li>采用HSPSO算法来解决</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>PSO算法在阵列天线方向图综合中的应用</strong></p>
+
+<ul>
+<li>在直线阵列天线综合方面，为了抑制旁瓣电平，控制零陷位置和深度，将改进的PSO算法（多子群PSO算法， 混沌PSO算法）应用于均匀和非均匀间距直线阵列天线方向图综合中。仿真结果表明，本文所提出的算法能够有效的避免在阵列天线方向图优化中陷入局部极值和早熟收敛的问题。此外，采用混沌PSO算法优化圆柱体共型阵的激励振幅值与相位。方阵结果表明该算法能成功的应用于不同特点的阵列天线综合优化。</li>
+<li>在稀不阵列天线综合方面，为了抑制旁瓣电平，设计了一种改进的二进制PSO算法。该算法对非线性的惯性权重进行混沌变异，以加强进化后期的局部搜索能力。将该算法应用于稀直线阵列和稀布平面阵列天线综合种，可以的到比一些已有的文献所报道的结果更小的旁瓣电平峰值，验证了该算法的有效性。</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">pb</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-07T23:27:24+08:00" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/algorithm/'>Algorithm</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/04/09/intro-to-genentic-algorithm/" title="Next Post: Intro to genentic algorithm">Intro to genentic algorithm &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+  <section>
+    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pbking1"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end --></div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/13/my-bash-profile-configuration/">My Bash Profile Configuration</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/09/basic-idea-in-robotics/">Basic Idea in Robotics</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/09/my-vim-configuration/">My Vim Configuration</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/09/congiure-the-octopress-blog/">Congiure My Octopress Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">2013 IEEE International Conference on Robotics and Biomimetics</a>
+      </li>
+    
+  </ul>
+</section>
+<section> 
+  <h1>Categories</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (3)</a></li>
+<li class='category'><a href='/blog/categories/android/'>Android (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (1)</a></li>
+<li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>Octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/robot/'>Robot (2)</a></li>
+ 
+  </ul> 
+</section><section>
+<h1>Recent Comments</h1>
+<ul class="ds-recent-comments" data-num-items="10">
+</ul>
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pbking1.duoshuo.com"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';
+ds.async = true;ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/pbking1">@pbking1</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'pbking1',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>visitor map</h1>
+  <!--获得代码添加到这-->
+  <script type="text/javascript" src="http://jj.revolvermaps.com/2/1.js?i=9p2gbjn49gr&amp;s=220&amp;m=7&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
+</section>
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - pb -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

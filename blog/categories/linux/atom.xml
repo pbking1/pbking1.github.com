@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | KING]]></title>
+  <link href="http://pbking1.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.io/"/>
+  <updated>2014-04-13T13:45:32+08:00</updated>
+  <id>http://pbking1.github.io/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My Vim Configuration]]></title>
+    <link href="http://pbking1.github.io/blog/2014/04/09/my-vim-configuration/"/>
+    <updated>2014-04-09T18:35:16+08:00</updated>
+    <id>http://pbking1.github.io/blog/2014/04/09/my-vim-configuration</id>
+    <content type="html"><![CDATA[<ul>
+<li>This is the vim configuration of my mac.</li>
+<li>edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;</li>
+<li>Some of them need to install some plugins and the command line will make sense</li>
+</ul>
+
+
+<!--more-->
+
+
+<p>```</p>
+
+<p>&ldquo; Configuration file for vim
+  2 set modelines=0     &rdquo; CVE-2007-2438
+  3 set number
+  4 &ldquo; Normally we use vim-extensions. If you want true vi-compatibility
+  5 &rdquo; remove change the following statements
+  6 set nocompatible    &ldquo; Use Vim defaults instead of 100% vi compatibility
+  7 set backspace=2     &rdquo; more powerful backspacing
+  8
+  9 &ldquo; Don&rsquo;t write backup file if vim is being called by "crontab -e&rdquo;
+ 10 au BufWrite /private/tmp/crontab.<em> set nowritebackup
+ 11 &ldquo; Don&rsquo;t write backup file if vim is being called by "chpass&rdquo;
+ 12 au BufWrite /private/etc/pw.</em> set nowritebackup
+ 13 set autoread
+ 14 nmap <leader>w :w!<cr>
+ 15 &ldquo;map <leader>e :e! ~/.vim_runtime/vimrc<cr>
+ 16 &rdquo; autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+ 17 set so=7
+ 18 set ruler
+ 19 set cmdheight=2
+ 20 set hid
+ 21 set magic
+ 22 set noerrorbells
+ 23 syntax enable
+ 24
+ 25 &ldquo;ctag和taglist
+ 26 let Tlist_Ctags_Cmd=&lsquo;/usr/local/bin/ctags&rsquo;
+ 27 let Tlist_Show_One_File=1
+ 28 let Tlist_Exit_OnlyWindow=1
+ 29 let Tlist_WinWidth=30
+ 30 let Tlist_Process_File_Always=1
+ 31 let Tlist_Use_SingleClick=1
+ 32 let Tlist_Auto_Open=1
+ 33 map<F8> :Tlist<CR>
+ 34 set tags=tags;
+ 35 set autochdir
+ "nmap ct :!ctags -R &mdash;c++-kinds=+p &mdash;fields=+iaS &mdash;extra=+q .<CR>
+ 37
+ 38 "配色
+ 39 colorscheme desert
+ 40
+ 41 "python自动补全
+ 42 let g:pydiction_location=&lsquo;/usr/share/vim/vim73/ftplugin/complete-dict&rsquo;
+ 43 let g:pydiction_menu_height=15
+ 44 "winmanager
+ 45 let g:winManagerwindowLayout=&lsquo;FileExplorer|TagList&rsquo;
+ 46 nmap wm :WMToggle<CR>
+ 47
+ 48 "nerdtree
+ 49 let NERDChristmasTree=1
+ 50 let NERDTreeAutoCenter=1
+ 51 let NERDTreeMouseMode=2
+ 52 let NERDTreeShowBookmarks=1
+ 53 let NREDTreeShowFiles=1
+ 54 let NERDTreeShowHidden=1
+ 55 let NERDTreeShowLineNumbers=1
+ 56 let NERDTreeWinPos=&lsquo;left&rsquo;
+ 57 let NERDTreeWinSize=31
+ 58 nnoremap f :NERDTreeToggle
+ 59
+ 60
+ 61 set smartcase
+ 62 set hlsearch
+ 63 set tabstop=4
+ 64 set noexpandtab
+ 65 set shiftwidth=4
+ 66 set smarttab
+ 67 set confirm
+ 68 set autoindent
+ 69 set cindent
+ 70 set softtabstop=4
+ 71 set history=700
+ set nobackup
+ 73 set noswapfile
+ 74 set ignorecase
+ 75 set incsearch
+ 76 set gdefault
+ 77 set langmenu=zh_CN.UTF-8
+ 78 set helplang=cn
+ 79 set statusline=%F%m%r%h%w\ [FORMAT=%{&amp;ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\&rdquo;%d/%m/%y\     &ndash;\ %H:%M\&ldquo;)}
+ 80 set laststatus=2
+ 81
+ 82 filetype on
+ 83 filetype plugin on
+ 84 filetype plugin indent on
+ 85 filetype indent on
+ 86 set viminfo+=!
+ 87 set iskeyword+=_,$,@,%,#,&ndash;
+ 88 set linespace=0
+ 89 set backspace=2
+ 90
+ 91 set mouse=a
+ 92 set selection=exclusive
+ 93 set selectmode=mouse,key
+ 94 set report=0
+ 95 set shortmess=atl
+ 96 set showmatch
+ 97 "set fillchars=vert:\,stl:\,stlnc:\
+ 98 set matchtime=5
+ &rdquo; 能够漂亮地显示.NFO文件
+101 set encoding=utf-8
+102 function! SetFileEncodings(encodings)
+103     let b:myfileencodingsbak=&amp;fileencodings
+104     let &amp;fileencodings=a:encodings
+105 endfunction
+106 function! RestoreFileEncodings()
+107     let &amp;fileencodings=b:myfileencodingsbak
+108     unlet b:myfileencodingsbak
+109 endfunction
+110
+111 au BufReadPre <em>.nfo call SetFileEncodings(&lsquo;cp437&rsquo;)|set ambiwidth=single
+112 au BufReadPost </em>.nfo call RestoreFileEncodings()
+113
+114 &ldquo; 高亮显示普通txt文件（需要txt.vim脚本）
+115 au BufRead,BufNewFile *  setfiletype txt
+116
+117 &rdquo; C的编译和运行
+118 map <F5> :call CompileRunGcc()<CR>
+119 func! CompileRunGcc()
+120 exec &ldquo;w&rdquo;
+121 exec &ldquo;!gcc % -o %&lt;&rdquo;
+122 exec &ldquo;! ./%&lt;&rdquo;
+123 endfunc
+124
+125 &ldquo; C++的编译和运行
+126 map <F6> :call CompileRunGpp()<CR>
+127 func! CompileRunGpp()
+128 exec "w&rdquo;
+129 exec &ldquo;!g++ % -o %&lt;&rdquo;
+130 exec &ldquo;! ./%&lt;&rdquo;
+131 endfunc
+132
+133 &ldquo;Markdown to HTML<br/>
+134 nmap <leader>md :%!/usr/local/bin/Markdown.pl &mdash;html4tags <cr></p>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

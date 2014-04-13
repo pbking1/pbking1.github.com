@@ -1,0 +1,953 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Final Exam of the Sysu SE Android Class - KING</title>
+  <meta name="author" content="pb">
+
+  
+  <meta name="description" content="在Android平台上实现一个本地应用——大学城特惠网 Some key codes 应用功能描述: 具有登录界面,可以输入账号和密码,并且有两个按钮“登录”和“退出”。如果点击“退出”按钮可以直接退出程序(如图一所示); 登录账号和密码可任意输入,当账号和密码非空且一样时视作合法。 &hellip;">
+  <meta name="keywords" content="android, java, exam, sysu">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pbking1.github.io/blog/2014/04/09/final-exam-of-the-android-class">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">KING</a></h1>
+  
+    <h2>Do more, say less</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://www.google.com.hk/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pbking1.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/project">Project</a></li>
+  <li><a href="/about">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Final Exam of the Sysu SE Android Class</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-09T12:52:03+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h4>在Android平台上实现一个本地应用——大学城特惠网</h4>
+
+<h5>Some key codes</h5>
+
+<ul>
+<li>应用功能描述:
+
+<ul>
+<li><ol>
+<li>具有登录界面,可以输入账号和密码,并且有两个按钮“登录”和“退出”。如果点击“退出”按钮可以直接退出程序(如图一所示);</li>
+</ol>
+</li>
+<li><ol>
+<li>登录账号和密码可任意输入,当账号和密码非空且一样时视作合法。如果输入信息不合法时,显示“账号或密码错误!”(如图二,图三所示);</li>
+</ol>
+</li>
+<li><ol>
+<li>成功登录后显示主界面(如图四所示):主界面顶部显示登录界面输入的账号,下面是一个列表,显示特惠信息表中所有条目(每个条目显示学校与打折信息);</li>
+</ol>
+</li>
+<li><ol>
+<li>点击每个列表项可进入查看相应的特惠信息的明细(参照特惠信息表),点击“返回”按钮可以返回到主界面</li>
+</ol>
+</li>
+<li><ol>
+<li>附加功能:</li>
+<li>1, 使用对话框的形式代替原来输入非法登录信息的提示方式,要求如下:
+
+<ul>
+<li><ol type="a">
+<li>对话框给出提示文字;</li>
+</ol>
+</li>
+<li>ii. 包含两个按钮:点击“是”按钮后回到登录界面,点击“否”按钮后退出程序。</li>
+</ul>
+</li>
+<li>2, 在桌面上显示本应用的 Widget 组件,要求如下:
+
+<ul>
+<li><ol type="a">
+<li>能显示一些关于本应用的信息(例如应用名);</li>
+</ol>
+</li>
+<li>ii. 包含一个按钮,点击此按钮后能启动本应用。</li>
+</ul>
+</li>
+<li>3, 记住账号与密码,要求如下:
+
+<ul>
+<li><ol type="a">
+<li>程序退出后记住当前登录用户的账号与密码,重新打开本应用后能自动填充两个文本框。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>4, 记录用户登录的时间,要求如下:
+
+<ul>
+<li><ol type="a">
+<li>在主界面显示当前用户登录的时间(X 分 X 秒),并且能够实时刷新.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public class MainActivity extends Activity {
+</span><span class='line'>
+</span><span class='line'>  private Button login;
+</span><span class='line'>  private Button quitButton;
+</span><span class='line'>  private EditText nameEditText;
+</span><span class='line'>  private EditText pwdEditText; 
+</span><span class='line'>  @Override
+</span><span class='line'>  protected void onCreate(Bundle savedInstanceState) {
+</span><span class='line'>      super.onCreate(savedInstanceState);
+</span><span class='line'>      setContentView(R.layout.activity_main);
+</span><span class='line'>      login = (Button)findViewById(R.id.button2);
+</span><span class='line'>      quitButton = (Button)findViewById(R.id.button1);
+</span><span class='line'>      nameEditText = (EditText)findViewById(R.id.name);
+</span><span class='line'>      pwdEditText = (EditText)findViewById(R.id.pwd);
+</span><span class='line'>      
+</span><span class='line'>      login.setOnClickListener(new OnClickListener() {
+</span><span class='line'>          
+</span><span class='line'>          @Override
+</span><span class='line'>          public void onClick(View arg0) {
+</span><span class='line'>              // TODO Auto-generated method stub
+</span><span class='line'>              if(!nameEditText.getText().toString().equals("") && !pwdEditText.getText().toString().equals("") || (pwdEditText.getText().toString() == nameEditText.getText().toString())){
+</span><span class='line'>                  Toast.makeText(MainActivity.this ,"login successfully", Toast.LENGTH_LONG).show();
+</span><span class='line'>                  Intent intent = new Intent();
+</span><span class='line'>                  intent.setClass(MainActivity.this, listplace.class);
+</span><span class='line'>                  startActivity(intent);
+</span><span class='line'>                  finish();
+</span><span class='line'>              }else{
+</span><span class='line'>                  Toast.makeText(MainActivity.this ,"login failed", Toast.LENGTH_LONG).show();
+</span><span class='line'>              }
+</span><span class='line'>          }
+</span><span class='line'>      });
+</span><span class='line'>      
+</span><span class='line'>      quitButton.setOnClickListener(new OnClickListener() {
+</span><span class='line'>          
+</span><span class='line'>          @Override
+</span><span class='line'>          public void onClick(View arg0) {
+</span><span class='line'>              // TODO Auto-generated method stub
+</span><span class='line'>              finish();
+</span><span class='line'>          }
+</span><span class='line'>      });
+</span><span class='line'>      
+</span><span class='line'>      
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>  @Override
+</span><span class='line'>  public boolean onCreateOptionsMenu(Menu menu) {
+</span><span class='line'>      // Inflate the menu; this adds items to the action bar if it is present.
+</span><span class='line'>      getMenuInflater().inflate(R.menu.main, menu);
+</span><span class='line'>      return true;
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.example.final_test1;
+</span><span class='line'>
+</span><span class='line'>import java.util.ArrayList;
+</span><span class='line'>import java.util.HashMap;
+</span><span class='line'>import java.util.List;
+</span><span class='line'>
+</span><span class='line'>import android.app.Activity;
+</span><span class='line'>import android.content.Intent;
+</span><span class='line'>import android.os.Bundle;
+</span><span class='line'>import android.view.View;
+</span><span class='line'>import android.widget.AdapterView;
+</span><span class='line'>import android.widget.AdapterView.OnItemClickListener;
+</span><span class='line'>import android.widget.ListView;
+</span><span class='line'>import android.widget.SimpleAdapter;
+</span><span class='line'>
+</span><span class='line'>public class listplace extends Activity{
+</span><span class='line'>  private ListView listView;
+</span><span class='line'>  private List&lt;HashMap&lt;String, String&gt;&gt; mdaList = new ArrayList&lt;HashMap&lt;String,String&gt;&gt;();
+</span><span class='line'>  
+</span><span class='line'>  protected void onCreate(Bundle savedInstanceState) {
+</span><span class='line'>      super.onCreate(savedInstanceState);
+</span><span class='line'>      setContentView(R.layout.listplace);
+</span><span class='line'>      setData();
+</span><span class='line'>      listView = (ListView)findViewById(R.id.listView1);
+</span><span class='line'>      String from[] = new String[] { "info", "content" };
+</span><span class='line'>      int to[] = new int[] { R.id.info, R.id.content };
+</span><span class='line'>      SimpleAdapter spAdapter = new SimpleAdapter(this, mdaList, R.layout.listviewitem, from, to);
+</span><span class='line'>      OnItemClickListener clItemClickListener = new OnItemClickListener() {
+</span><span class='line'>
+</span><span class='line'>          @Override
+</span><span class='line'>          public void onItemClick(AdapterView&lt;?&gt; arg0, View arg1, int arg2,
+</span><span class='line'>                  long arg3) {
+</span><span class='line'>              Bundle bundle = new Bundle();
+</span><span class='line'>              bundle.putString("info", (String)mdaList.get(arg2).get("info"));
+</span><span class='line'>              bundle.putString("content", (String)mdaList.get(arg2).get("content"));
+</span><span class='line'>              bundle.putString("address", (String)mdaList.get(arg2).get("address"));
+</span><span class='line'>              bundle.putString("phone", (String)mdaList.get(arg2).get("phone"));
+</span><span class='line'>              
+</span><span class='line'>              Intent intent = new Intent();
+</span><span class='line'>              intent.setClass(listplace.this, c1.class);
+</span><span class='line'>              intent.putExtras(bundle);
+</span><span class='line'>              startActivity(intent);
+</span><span class='line'>              finish();
+</span><span class='line'>      
+</span><span class='line'>          }
+</span><span class='line'>      };
+</span><span class='line'>      listView.setAdapter(spAdapter);
+</span><span class='line'>      listView.setOnItemClickListener(clItemClickListener);
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  private void setData(){
+</span><span class='line'>      HashMap&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
+</span><span class='line'>      map.put("info", "中山大学特惠信息");
+</span><span class='line'>      map.put("content", "湖畔餐厅打折套餐");
+</span><span class='line'>      map.put("address", "内环东路中大生活区");
+</span><span class='line'>      map.put("phone", "135XXXX8888");
+</span><span class='line'>      mdaList.add(map);
+</span><span class='line'>      
+</span><span class='line'>      map = new HashMap&lt;String, String&gt;();
+</span><span class='line'>      map.put("info", "广东外语外贸大学特惠信息");
+</span><span class='line'>      map.put("content", "云山水榭，5折k歌");
+</span><span class='line'>      map.put("address", "内环东路广外生活区");
+</span><span class='line'>      map.put("phone", "136XXXX9900");
+</span><span class='line'>      mdaList.add(map);
+</span><span class='line'>      
+</span><span class='line'>      map = new HashMap&lt;String, String&gt;();
+</span><span class='line'>      map.put("info", "华南师范大学特惠信息");
+</span><span class='line'>      map.put("content", "华师体育用品");
+</span><span class='line'>      map.put("address", "中环西路华师生活区");
+</span><span class='line'>      map.put("phone", "137XXXX4458");
+</span><span class='line'>      mdaList.add(map);
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>package com.example.final_test1;
+</span><span class='line'>
+</span><span class='line'>import android.app.Activity;
+</span><span class='line'>import android.content.Intent;
+</span><span class='line'>import android.os.Bundle;
+</span><span class='line'>import android.view.View;
+</span><span class='line'>import android.view.View.OnClickListener;
+</span><span class='line'>import android.widget.Button;
+</span><span class='line'>import android.widget.TextView;
+</span><span class='line'>
+</span><span class='line'>public class c1 extends Activity{
+</span><span class='line'>  private TextView tv ;
+</span><span class='line'>  private Button bt;
+</span><span class='line'>  
+</span><span class='line'>  protected void onCreate(Bundle savedInstanceState) {
+</span><span class='line'>      super.onCreate(savedInstanceState);
+</span><span class='line'>      setContentView(R.layout.c1);
+</span><span class='line'>      tv = (TextView)findViewById(R.id.tv);
+</span><span class='line'>      bt = (Button)findViewById(R.id.b1);
+</span><span class='line'>      
+</span><span class='line'>      Bundle bundle = this.getIntent().getExtras();
+</span><span class='line'>      String infoString = bundle.getString("info");
+</span><span class='line'>      String addressString = bundle.getString("address");
+</span><span class='line'>      String contentString = bundle.getString("content");
+</span><span class='line'>      String phoneString = bundle.getString("phone");
+</span><span class='line'>      
+</span><span class='line'>      tv.setText(infoString + "\n" + addressString + "\n" + contentString + "\n" + phoneString + "\n");
+</span><span class='line'>      
+</span><span class='line'>      bt.setOnClickListener(new OnClickListener() {
+</span><span class='line'>          
+</span><span class='line'>          @Override
+</span><span class='line'>          public void onClick(View arg0) {
+</span><span class='line'>              // TODO Auto-generated method stub
+</span><span class='line'>              Intent intent = new Intent();
+</span><span class='line'>              intent.setClass(c1.this, listplace.class);
+</span><span class='line'>              startActivity(intent);
+</span><span class='line'>              finish();
+</span><span class='line'>          }
+</span><span class='line'>      });
+</span><span class='line'>  }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+</span><span class='line'>    xmlns:tools="http://schemas.android.com/tools"
+</span><span class='line'>    android:layout_width="match_parent"
+</span><span class='line'>    android:layout_height="match_parent"
+</span><span class='line'>    android:paddingBottom="@dimen/activity_vertical_margin"
+</span><span class='line'>    android:paddingLeft="@dimen/activity_horizontal_margin"
+</span><span class='line'>    android:paddingRight="@dimen/activity_horizontal_margin"
+</span><span class='line'>    android:paddingTop="@dimen/activity_vertical_margin"
+</span><span class='line'>    android:orientation="vertical"
+</span><span class='line'>    tools:context=".MainActivity" &gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;TextView
+</span><span class='line'>        android:layout_width="wrap_content"
+</span><span class='line'>        android:layout_height="wrap_content"
+</span><span class='line'>        android:layout_marginLeft="40dp"
+</span><span class='line'>        android:text="大学城特惠网"
+</span><span class='line'>        android:textSize="30dp" /&gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;EditText
+</span><span class='line'>        android:id="@+id/name"
+</span><span class='line'>        android:hint="请输入您的账号"
+</span><span class='line'>        android:layout_width="match_parent"
+</span><span class='line'>        android:layout_height="wrap_content"
+</span><span class='line'>        android:ems="10" &gt;
+</span><span class='line'>
+</span><span class='line'>        &lt;requestFocus /&gt;
+</span><span class='line'>    &lt;/EditText&gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;EditText
+</span><span class='line'>        android:id="@+id/pwd"
+</span><span class='line'>        android:hint="输入登录密码"
+</span><span class='line'>        android:layout_width="match_parent"
+</span><span class='line'>        android:layout_height="wrap_content"
+</span><span class='line'>        android:ems="10" /&gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;LinearLayout
+</span><span class='line'>        android:layout_width="match_parent"
+</span><span class='line'>        android:layout_height="wrap_content" &gt;
+</span><span class='line'>
+</span><span class='line'>        &lt;Button
+</span><span class='line'>            android:id="@+id/button2"
+</span><span class='line'>            android:layout_width="wrap_content"
+</span><span class='line'>            android:layout_height="wrap_content"
+</span><span class='line'>            android:layout_marginLeft="150dp"
+</span><span class='line'>            android:text="登陆" /&gt;
+</span><span class='line'>
+</span><span class='line'>        &lt;Button
+</span><span class='line'>            android:id="@+id/button1"
+</span><span class='line'>            android:layout_width="wrap_content"
+</span><span class='line'>            android:layout_height="wrap_content"
+</span><span class='line'>            android:text="退出" /&gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;/LinearLayout&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;/LinearLayout&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+</span><span class='line'>&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+</span><span class='line'>    android:layout_width="match_parent"
+</span><span class='line'>    android:layout_height="match_parent"
+</span><span class='line'>    android:orientation="vertical" &gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;TextView
+</span><span class='line'>        android:id="@+id/textView1"
+</span><span class='line'>        android:layout_width="wrap_content"
+</span><span class='line'>        android:layout_height="wrap_content"
+</span><span class='line'>        android:layout_marginBottom="20dp"
+</span><span class='line'>        android:text="android会员你好" /&gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;ListView
+</span><span class='line'>        android:id="@+id/listView1"
+</span><span class='line'>        android:layout_width="match_parent"
+</span><span class='line'>        android:layout_height="wrap_content" &gt;
+</span><span class='line'>    &lt;/ListView&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;/LinearLayout&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+</span><span class='line'>&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+</span><span class='line'>    android:layout_width="match_parent"
+</span><span class='line'>    android:layout_height="match_parent"
+</span><span class='line'>    android:orientation="vertical" &gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;TextView
+</span><span class='line'>        android:id="@+id/info"
+</span><span class='line'>        android:layout_width="wrap_content"
+</span><span class='line'>        android:layout_height="wrap_content"
+</span><span class='line'>        android:text="TextView" /&gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;TextView
+</span><span class='line'>        android:id="@+id/content"
+</span><span class='line'>        android:layout_width="wrap_content"
+</span><span class='line'>        android:layout_height="wrap_content"
+</span><span class='line'>        android:text="TextView" /&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;/LinearLayout&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+</span><span class='line'>&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+</span><span class='line'>    android:layout_width="fill_parent"
+</span><span class='line'>    android:layout_height="fill_parent"
+</span><span class='line'>    android:orientation="vertical" &gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;TextView
+</span><span class='line'>        android:id="@+id/tv"
+</span><span class='line'>        android:layout_width="fill_parent"
+</span><span class='line'>        android:layout_height="90dp"
+</span><span class='line'>         /&gt;
+</span><span class='line'>
+</span><span class='line'>    &lt;Button
+</span><span class='line'>        android:id="@+id/b1"
+</span><span class='line'>        android:layout_width="100dp"
+</span><span class='line'>        android:layout_height="wrap_content"
+</span><span class='line'>        android:text="返回" /&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;/LinearLayout&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">pb</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-09T12:52:03+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>Android</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/04/09/intro-to-the-penertration-testing-project/" title="Previous Post: Introduction to the project of network attack and defense">&laquo; Introduction to the project of network attack and defense</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/" title="Next Post: 2013 IEEE International conference on Robotics and Biomimetics">2013 IEEE International conference on Robotics and Biomimetics &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+  <section>
+    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pbking1"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end --></div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/13/my-bash-profile-configuration/">My Bash Profile Configuration</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/09/basic-idea-in-robotics/">Basic Idea in Robotics</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/09/my-vim-configuration/">My Vim Configuration</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/09/congiure-the-octopress-blog/">Congiure My Octopress Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">2013 IEEE International Conference on Robotics and Biomimetics</a>
+      </li>
+    
+  </ul>
+</section>
+<section> 
+  <h1>Categories</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (3)</a></li>
+<li class='category'><a href='/blog/categories/android/'>Android (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (1)</a></li>
+<li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>Octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/robot/'>Robot (2)</a></li>
+ 
+  </ul> 
+</section><section>
+<h1>Recent Comments</h1>
+<ul class="ds-recent-comments" data-num-items="10">
+</ul>
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pbking1.duoshuo.com"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';
+ds.async = true;ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/pbking1">@pbking1</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'pbking1',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>visitor map</h1>
+  <!--获得代码添加到这-->
+  <script type="text/javascript" src="http://jj.revolvermaps.com/2/1.js?i=9p2gbjn49gr&amp;s=220&amp;m=7&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
+</section>
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - pb -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
