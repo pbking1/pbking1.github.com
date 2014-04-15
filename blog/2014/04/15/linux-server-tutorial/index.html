@@ -704,7 +704,7 @@ sudp chown virtual:virtual /home/vsftpd
 </ul>
 
 
-<h3>linux compress</h3>
+<h3>10.linux compress</h3>
 
 <ul>
 <li>command
@@ -719,7 +719,7 @@ sudp chown virtual:virtual /home/vsftpd
 </ul>
 
 
-<h3>linux file link</h3>
+<h3>11.linux file link</h3>
 
 <ul>
 <li>Symbolic link
@@ -738,7 +738,7 @@ sudp chown virtual:virtual /home/vsftpd
 </ul>
 
 
-<h3>linux disk</h3>
+<h3>12.linux disk</h3>
 
 <ul>
 <li>useful command
@@ -763,10 +763,10 @@ sudp chown virtual:virtual /home/vsftpd
 </ul>
 
 
-<h3>linux samba</h3>
+<h3>13.linux samba</h3>
 
 <ul>
-<li>a server used to communitcate Unix to Windows</li>
+<li>a protocol used to communitcate Unix to Windows</li>
 <li>sometimes used to share the file and printer</li>
 <li>SMB protocol is running on the top of the NetBios</li>
 <li>Samba server is made of
@@ -774,6 +774,34 @@ sudp chown virtual:virtual /home/vsftpd
 <ul>
 <li>NetBios &ndash;> NMB</li>
 <li>SMB</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>14.linux NFS server</h3>
+
+<ul>
+<li>NFS is a protocol that used to share the TCP/IP network file with the other.</li>
+<li>This can share the file between different kinds of the operating system</li>
+<li>NFS can make the usage of the disk higher</li>
+<li>And the user do not need to set a home dir one their computer
+
+<ul>
+<li>and set the home dir on the remote server</li>
+</ul>
+</li>
+<li>use dynamic port distribute
+
+<ul>
+<li>because the NFS service may use lots of ports</li>
+</ul>
+</li>
+<li>RPC service mainly used to record the function of the port of the NFS</li>
+<li>and RPC service is used in the port 111
+
+<ul>
+<li>when the NFS start, it will select the port that is smaller than 1024</li>
 </ul>
 </li>
 </ul>
