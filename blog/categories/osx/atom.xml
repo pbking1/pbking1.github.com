@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OSX | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-15T19:41:56+08:00</updated>
+  <updated>2014-04-15T19:43:33+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -115,6 +115,9 @@ export ANDROID_SDK_ROOT=~/Downloads/adt-bundle-mac-x86_64-20130917/sdk</p>
 <p>export COCOS_CONSOLE_ROOT=/Users/pb/Documents/CocosBuilder-2.1-examples/cocos2d-x-3.0rc0/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 ```</p>
+
+<!--more-->
+
 ]]></content>
   </entry>
   
