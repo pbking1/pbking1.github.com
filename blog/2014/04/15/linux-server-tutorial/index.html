@@ -1,24 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linux | KING]]></title>
-  <link href="http://pbking1.github.com/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-15T17:09:20+08:00</updated>
-  <id>http://pbking1.github.com/</id>
-  <author>
-    <name><![CDATA[pb]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Linux Server Tutorial - KING</title>
+  <meta name="author" content="pb">
 
   
-  <entry>
-    <title type="html"><![CDATA[Linux Server Tutorial]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial/"/>
-    <updated>2014-04-15T14:47:08+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial</id>
-    <content type="html"><![CDATA[<h3>1.GNU plan</h3>
+  <meta name="description" content="1.GNU plan GNU plan is founded by the Richard M.Stallman and free software foundation
+In order to make sure the GNU software can be used freely
+All &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">KING</a></h1>
+  
+    <h2>Do more, say less</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://www.google.com.hk/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pbking1.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/project">Project</a></li>
+  <li><a href="/about">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Linux Server Tutorial</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-15T14:47:08+08:00" pubdate data-updated="true">Apr 15<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>1.GNU plan</h3>
 
 <ul>
 <li>GNU plan is founded by the Richard M.Stallman and free software foundation</li>
@@ -139,7 +216,7 @@ is used for tranfering the data between client and server
 </li>
 <li>also should we backup the file usesudo <code>cp /etc/vsftpd.conf /etc/vsftpd.conf_back</code></li>
 <li>and do not contain empty line after each sentance
-```
+&#8220;`
 listen=YES             #启用独立vsftpd服务器
 
 <h1>listen_ipv6=YES       不需要，注释掉</h1>
@@ -192,7 +269,7 @@ local_max_rate=256000 #最大传输速率(b/s)
   user_config_dir=/etc/vsftpd/vsftpd_user_conf   虚拟用户配置文件夹
   pam_service_name=vsftpd.vu    虚拟用户加密设置
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  ```</p>
+  &#8220;`</p>
 
 <ul>
 <li>then use <code>sudo mkdir /home/vsftpd</code> and <code>cd /home/vsftpd</code></li>
@@ -346,15 +423,20 @@ sudp chown virtual:virtual /home/vsftpd
 <li>They will download the dependency file of the softeware and compare with the system file, download all the needed dependencies.</li>
 </ul>
 </li>
-<li>some useful command
-<code>
-apt-get : used to manage the software
-apt-cache : used to check the info of the software
-apt-proxy : use to construct the proxy server of APT
-apt-show-versions : used to show the version of the software in the system
-apt-config : use the read the apt coniguration info
-</code></li>
+<li>some useful command</li>
 </ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get : used to manage the software 
+</span><span class='line'>apt-cache : used to check the info of the software
+</span><span class='line'>apt-proxy : use to construct the proxy server of APT
+</span><span class='line'>apt-show-versions : used to show the version of the software in the system
+</span><span class='line'>apt-config : use the read the apt coniguration info </span></code></pre></td></tr></table></div></figure>
 
 
 <h3>8.linux user and process management</h3>
@@ -564,167 +646,152 @@ apt-config : use the read the apt coniguration info
 </li>
 </ul>
 
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[My Vim Configuration]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/"/>
-    <updated>2014-04-09T18:35:16+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/my-vim-configuration</id>
-    <content type="html"><![CDATA[<ul>
-<li>This is the vim configuration of my mac.</li>
-<li>edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;</li>
-<li>Some of them need to install some plugins and the command line will make sense</li>
+
+<span class="byline author vcard">Posted by <span class="fn">pb</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-15T14:47:08+08:00" pubdate data-updated="true">Apr 15<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+  <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1393934169073983" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/04/13/my-bash-profile-configuration/" title="Previous Post: my bash profile configuration">&laquo; my bash profile configuration</a>
+      
+      
+    </p>
+  </footer>
+
+</article>
+
+
+
+  
+  <section>  
+    <h1>Comments</h1>  
+    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pbking1"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end --></div>  
+  </section>  
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section> 
+  <h1>Categories</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (3)</a></li>
+<li class='category'><a href='/blog/categories/android/'>Android (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (2)</a></li>
+<li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>Octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/robot/'>Robot (2)</a></li>
+ 
+  </ul> 
+</section><section>
+<ul class="ds-recent-comments" data-num-items="10">
 </ul>
-
-
-<!--more-->
-
-
-<p>```</p>
-
-<p>&ldquo; Configuration file for vim
-set modelines=0     &rdquo; CVE-2007-2438
-set number
-&ldquo; Normally we use vim-extensions. If you want true vi-compatibility
-&rdquo; remove change the following statements
-set nocompatible    &ldquo; Use Vim defaults instead of 100% vi compatibility
-set backspace=2     &rdquo; more powerful backspacing
-&ldquo; Don&rsquo;t write backup file if vim is being called by "crontab -e&rdquo;
-au BufWrite /private/tmp/crontab.<em> set nowritebackup
-&ldquo; Don&rsquo;t write backup file if vim is being called by "chpass&rdquo;
-au BufWrite /private/etc/pw.</em> set nowritebackup
-set autoread
-nmap <leader>w :w!<cr>
-&ldquo;map <leader>e :e! ~/.vim_runtime/vimrc<cr>
-&rdquo; autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
-set so=7
-set ruler
-set cmdheight=2
-set hid
-set magic
-set noerrorbells
-syntax enable</p>
-
-<p>&ldquo;ctag和taglist
-let Tlist_Ctags_Cmd=&lsquo;/usr/local/bin/ctags&rsquo;
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_WinWidth=30
-let Tlist_Process_File_Always=1
-let Tlist_Use_SingleClick=1
-let Tlist_Auto_Open=1
-map<F8> :Tlist<CR>
-set tags=tags;
-set autochdir
- "nmap ct :!ctags -R &mdash;c++-kinds=+p &mdash;fields=+iaS &mdash;extra=+q .<CR></p>
-
-<p>&ldquo;配色
-colorscheme desert</p>
-
-<p>&ldquo;python自动补全
-let g:pydiction_location=&lsquo;/usr/share/vim/vim73/ftplugin/complete-dict&rsquo;
-let g:pydiction_menu_height=15
-"winmanager
-let g:winManagerwindowLayout=&lsquo;FileExplorer|TagList&rsquo;
-nmap wm :WMToggle<CR></p>
-
-<p>&ldquo;nerdtree
-let NERDChristmasTree=1
-let NERDTreeAutoCenter=1
-let NERDTreeMouseMode=2
-let NERDTreeShowBookmarks=1
-let NREDTreeShowFiles=1
-let NERDTreeShowHidden=1
-let NERDTreeShowLineNumbers=1
-let NERDTreeWinPos=&lsquo;left&rsquo;
-let NERDTreeWinSize=31
-"nnoremap f :NERDTreeToggle
-nnoremap ff :NERDTree<CR></p>
-
-<p>set smartcase
-set hlsearch
-set tabstop=4
-set noexpandtab
-set shiftwidth=4
-set smarttab
-set confirm
-set autoindent
-set cindent
-set softtabstop=4
-set history=700
-set nobackup
-set noswapfile
-set ignorecase
-set incsearch
-set gdefault
-set langmenu=zh_CN.UTF-8
-set helplang=cn
-set statusline=%F%m%r%h%w\ [FORMAT=%{&amp;ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\&ldquo;%d/%m/%y\     &ndash;\ %H:%M\&rdquo;)}
-set laststatus=2</p>
-
-<p>filetype on
-filetype plugin on
-filetype plugin indent on
-filetype indent on
-set viminfo+=!
-set iskeyword+=_,$,@,%,#,&ndash;
-set linespace=0
-set backspace=2</p>
-
-<p>set mouse=a
-set selection=exclusive
-set selectmode=mouse,key
-set report=0
-set shortmess=atl
-set showmatch
-&ldquo;set fillchars=vert:\,stl:\,stlnc:\
-set matchtime=5
- &rdquo; 能够漂亮地显示.NFO文件
-set encoding=utf-8
-function! SetFileEncodings(encodings)</p>
-
-<pre><code>let b:myfileencodingsbak=&amp;fileencodings
-let &amp;fileencodings=a:encodings
-</code></pre>
-
-<p>endfunction
-function! RestoreFileEncodings()</p>
-
-<pre><code>let &amp;fileencodings=b:myfileencodingsbak
-unlet b:myfileencodingsbak
-</code></pre>
-
-<p>endfunction</p>
-
-<p>au BufReadPre <em>.nfo call SetFileEncodings(&lsquo;cp437&rsquo;)|set ambiwidth=single
-au BufReadPost </em>.nfo call RestoreFileEncodings()</p>
-
-<p>&ldquo; 高亮显示普通txt文件（需要txt.vim脚本）
-au BufRead,BufNewFile *  setfiletype txt</p>
-
-<p>&ldquo; C的编译和运行
-map <F5> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-exec "w&rdquo;
-exec &ldquo;!gcc % -o %&lt;&rdquo;
-exec &ldquo;! ./%&lt;&rdquo;
-endfunc</p>
-
-<p>&ldquo; C++的编译和运行
-map <F6> :call CompileRunGpp()<CR>
-func! CompileRunGpp()
-exec "w&rdquo;
-exec &ldquo;!g++ % -o %&lt;&rdquo;
-exec &ldquo;! ./%&lt;&rdquo;
-endfunc</p>
-
-<p>&ldquo;Markdown to HTML<br/>
-nmap <leader>md :%!/usr/local/bin/Markdown.pl &mdash;html4tags <cr></p>
-
-<p>```</p>
-]]></content>
-  </entry>
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pbking1.duoshuo.com"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';
+ds.async = true;ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->
+</section>
+<section>
+  <h1>visitor map</h1>
+  <!--获得代码添加到这-->
+  <script type="text/javascript" src="http://jj.revolvermaps.com/2/1.js?i=9p2gbjn49gr&amp;s=220&amp;m=7&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
+</section>
   
-</feed>
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - pb -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

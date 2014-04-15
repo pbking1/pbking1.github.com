@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[KING]]></title>
-  <link href="http://pbking1.github.io/atom.xml" rel="self"/>
-  <link href="http://pbking1.github.io/"/>
-  <updated>2014-04-13T23:49:34+08:00</updated>
-  <id>http://pbking1.github.io/</id>
+  <link href="http://pbking1.github.com/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-04-15T17:09:20+08:00</updated>
+  <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
     
@@ -14,10 +14,569 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Linux Server Tutorial]]></title>
+    <link href="http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial/"/>
+    <updated>2014-04-15T14:47:08+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial</id>
+    <content type="html"><![CDATA[<h3>1.GNU plan</h3>
+
+<ul>
+<li>GNU plan is founded by the Richard M.Stallman and free software foundation</li>
+<li>In order to make sure the GNU software can be used freely</li>
+<li>All the GNU softwares have a license called &ldquo;GNU General Public License&rdquo;, <code>GPL</code></li>
+<li>this forbid the other from adding any constrict to the GNU software and let all the people to have the right to use it.</li>
+</ul>
+
+
+<h3>2.POSIX standard</h3>
+
+<ul>
+<li>Portable Operating system Interface for Computing Systems</li>
+<li>used to solve the problem that the UNIX system have lots of versions and result in a chaos</li>
+<li>the standard is developed by the IEEE and standarded by the ANSI and ISO</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>3.Linux component</h3>
+
+<ul>
+<li>Linux kernal
+
+<ul>
+<li>is opensource because of the GPL</li>
+</ul>
+</li>
+<li>Linux Shell
+
+<ul>
+<li>is the UI</li>
+<li>have KDE (King Destop Environment) and GROME (GNU Network Object Model Environment)</li>
+<li>BASH
+
+<ul>
+<li>GNU&rsquo;s Bourne Again Shell</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Linux Filesystem
+
+<ul>
+<li>multi tree structure</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>4.How linux work</h3>
+
+<h4>start up</h4>
+
+<ul>
+<li>After the user open the power
+
+<ul>
+<li>BIOS first add electivity to check itself and initialize the system and start up the service</li>
+<li>then start up the mingetty process</li>
+</ul>
+</li>
+<li>then the shell user log in and start up the device in the sequence setting in the BIOS</li>
+<li>then start up the GRUB or LILO to get the access of the computer</li>
+<li>after that start up the linux kernel with its configuration</li>
+<li>then use the init program list</li>
+<li>after the user log in successfully, they can enter the system</li>
+</ul>
+
+
+<h3>5.FTP server</h3>
+
+<pre><code>the ftp is depend on the C/S model
+is used for tranfering the data between client and server
+</code></pre>
+
+<ul>
+<li>First the client send the connection request to the server
+
+<ul>
+<li>and the client will dynamically open a port > 1024 to wait for the connction of the server</li>
+</ul>
+</li>
+<li>After the server listened the request in the port 21
+
+<ul>
+<li>it will found a ftp connection between client and server</li>
+</ul>
+</li>
+<li>When need to transfer the data, the client will open a port > 1024 to connect to the pot 20 of the server and transfer the data through the port</li>
+<li>After transferign the data, the port will be released</li>
+</ul>
+
+
+<h4>ftp software</h4>
+
+<ul>
+<li>we can use <code>vsFTPd</code> in linux</li>
+<li>how to setup the ftp server?
+
+<ul>
+<li>first <code>sudo apt-get install vsftpd</code></li>
+<li>and use <code>sudo /etc/init.d/vsftpd start</code> to start the service
+
+<ul>
+<li>use <code>sudo /etc/init.d/vsftpd restart</code> to restart the service</li>
+<li>use <code>sudo /etc/init.d/vsftpd stop</code> to stop the service</li>
+</ul>
+</li>
+<li>configure the ftp
+
+<ul>
+<li>use <code>sudo vi /etc/vsftpd.conf</code> to edit the configuration file</li>
+<li>then use <code>sudo /etc/init.d/vsftpd restart</code> to restart the service and apply the change</li>
+</ul>
+</li>
+<li>also should we backup the file usesudo <code>cp /etc/vsftpd.conf /etc/vsftpd.conf_back</code></li>
+<li>and do not contain empty line after each sentance
+&#8220;`
+listen=YES             #启用独立vsftpd服务器
+
+<h1>listen_ipv6=YES       不需要，注释掉</h1>
+
+anonymous_enable=YES   #本服务器需要匿名访问
+local_enable=YES       #要用虚拟用户，需要本地访问的（关于本地用户和虚拟用户不要迷茫，稍后解释）
+write_enable=YES       #需要本地用户对文件进行修改和删除
+
+<h1>local_umask=022     FTP上传文件权限 ，默认是077，本服务器每个虚拟用户都有上传权限设置，总的就留空注释掉了</h1>
+
+<h1>anon_upload_enable=YES 是否允许匿名用户上传，不需要匿名上传注释掉</h1>
+
+<h1>anon_mkdir_write_enable=YES 是否允许匿名用户的写和创建目录的权限，不要匿名管理，注释掉</h1>
+
+dirmessage_enable=YES   当切换目录时，是否显示该目录下message隐藏文件的内容，这个用来显示登录信息的 设为YES
+message_file=Welcome     显示的欢迎信息，在ftp目录下建Welcome的文件，里面写上登录信息即可，一般人常用.message隐藏文件
+xferlog_enable=YES 是否激活上传和下载的日志，需要
+connect_from_port_20=YES 是否启动FTP数据端口20的连接请求  需要
+chown_uploads=YES 是否改变上传文件的所有者，我这里需要改变上传文件所有者
+chown_username=virtual 改变上传文件的所有着为virtual，这个virtual用户一会要新建的，用来实现虚拟用户登录
+xferlog日志格式ferlog_file=/var/log/vsftpd.log 上传/下载日志文件所默认的路径
+xferlog_std_format=YES 是否使用标准的ftpd xferlog日志格式
+idle_session_timeout=600 是否将在用户会话空闲10分钟后被中断
+data_connection_timeout=120 是否将在数据连接空闲2分钟后被中断
+
+<h1>nopriv_user=ftpsecure 是否运行vsftpd需要的非特殊系统用户默认nobody  不需要</h1>
+
+<h1>async_abor_enable=YES 是否是否允许运行特殊的FTP命令async   不要</h1>
+
+ascii_upload_enable=YES 是否启用上传的ascii传输方式   需要
+ascii_download_enable=YES 是否启用下载的ascii传输方式   需要
+ftpd_banner=Welcome to blah FTP service. 用户连接服务器后显示信息，显示信息可以随便写
+
+<h1>deny_email_enable=YES 是否允许某些匿名用户使用邮件地址（默认的）</h1>
+
+max_clients=10 #FTP服务器最大承载用户,本人设为10
+max_per_ip=5 #限制每个IP的进程
+local_max_rate=256000 #最大传输速率(b/s)
+
+<h1>hide_ids=YES #是否隐藏文件的所有者和组信息，不隐藏</h1>
+
+<p>idle_session_timeout= 3000  #空闲（发呆）用户会话的超时时间，若是超出这时间没有数据的传送或是指令的输入，则会强迫断线。单位为秒，默认值为300。</p></li>
+</ul>
+
+
+<p>  下面是用来虚拟用户登录的
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  guest_enable=YES             使用虚拟用户
+  guest_username=virtual       将虚拟用户等同本地用户 virtual
+  user_config_dir=/etc/vsftpd/vsftpd_user_conf   虚拟用户配置文件夹
+  pam_service_name=vsftpd.vu    虚拟用户加密设置
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  &#8220;`</p>
+
+<ul>
+<li>then use <code>sudo mkdir /home/vsftpd</code> and <code>cd /home/vsftpd</code></li>
+<li>then use <code>sudo mkdir down upload wsn</code></li>
+<li>after that setup the virtual user database
+
+<ul>
+<li>use <code>sudo vi /home/loguser.txt</code></li>
+<li>and the content is
+<code>
+down
+password1
+upload
+password2
+wsn
+password3
+</code></li>
+</ul>
+</li>
+<li>use <code>sudo apt-get install db4.7-util</code></li>
+<li>Then create a new dir and put the configuration in it.</li>
+<li>use <code>sudo mkdir /etc/vsftpd</code></li>
+<li>use <code>sudo db4.7_load -T -t hash -f /home/loguser.txt /etc/vsftpd/vsftpd_login.db</code></li>
+<li>set the access of the databases file eventually</li>
+<li>use <code>sudo chmod 600 /etc/vsftpd/vsftpd_login.db</code></li>
+<li>configure the PAM file <code>/etc/pam.d/vsftpd.vu</code></li>
+<li>use <code>sudo vi /etc/pam.d/vsftpd.vu</code> with the content
+<code>
+auth required /lib/security/pam_userdb.so db=/etc/vsftpd_login
+account required /lib/security/pam_userdb.so db=/etc/vsftpd_login
+</code></li>
+<li>PAM is used to verify the virtual user
+
+<ul>
+<li>and this is activated by the command <code>pam_service_name</code></li>
+</ul>
+</li>
+<li>Setup the local user for the virtual user
+
+<ul>
+<li>setup  a system user called <code>vsftpd</code> and the home dir is <code>/home/vsftpd</code> and the user login terminal set to /bin/false
+<code>
+sudo useradd virtual -d /home/vsftpd -s /bin/false
+sudp chown virtual:virtual /home/vsftpd
+</code></li>
+<li>and until now the three users can work now</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>6.mail server</h3>
+
+<pre><code>mail is used to communicate on the internet 
+</code></pre>
+
+<ul>
+<li>component
+
+<ul>
+<li>MUA
+
+<ul>
+<li>Mail User Agent</li>
+<li>used to help the user to send and get the email</li>
+</ul>
+</li>
+<li>MTA
+
+<ul>
+<li>Mail Transfer Agent</li>
+<li>used to monitor and send the email</li>
+</ul>
+</li>
+<li>mail protocol
+
+<ul>
+<li>SMTP
+
+<ul>
+<li>simple mail transfer protocol</li>
+<li>use port 25</li>
+<li>is a request/respond protocol</li>
+<li>and be used to setup the SMTP connection between with the remote server
+
+<ul>
+<li>can transfer the mail from client to server
+
+<ul>
+<li>or server to server</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>POP3
+
+<ul>
+<li>Post office protocol</li>
+<li>use TCP 110 port</li>
+<li>used to receive the mail</li>
+<li>e.g
+
+<ul>
+<li>the client connect with the POP3 server using TCP connection</li>
+<li>and the POP3 protocol will affirm the usernamd and userpassword</li>
+<li>after that the client can receive or delete the mail</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IMAP
+
+<ul>
+<li>Internet Message Access Protocol</li>
+<li>can be used as POP3 to receive the mail</li>
+<li>can be read offline</li>
+<li>can preview the mail</li>
+</ul>
+</li>
+<li>Web Mail
+
+<ul>
+<li>is not a protocol but a plugin</li>
+<li>use the browser to receive, send and read the mail</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>7.APT&mdash;&mdash;-software package managemnt</h3>
+
+<ul>
+<li>use <code>/etc/apt/sources.list</code> to store the software package list
+
+<ul>
+<li>which is called the <em>repository</em></li>
+</ul>
+</li>
+<li>this is widely used in the Debain linux like ubuntu</li>
+<li>if the client want to update the software
+
+<ul>
+<li>They will download the dependency file of the softeware and compare with the system file, download all the needed dependencies.</li>
+</ul>
+</li>
+<li>some useful command</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get : used to manage the software 
+</span><span class='line'>apt-cache : used to check the info of the software
+</span><span class='line'>apt-proxy : use to construct the proxy server of APT
+</span><span class='line'>apt-show-versions : used to show the version of the software in the system
+</span><span class='line'>apt-config : use the read the apt coniguration info </span></code></pre></td></tr></table></div></figure>
+
+
+<h3>8.linux user and process management</h3>
+
+<h4>user management</h4>
+
+<ul>
+<li>linux have three kinds of users
+
+<ul>
+<li>root</li>
+<li>ordinary</li>
+<li>virtual
+
+<ul>
+<li>like bin, damon, ftp, adm</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>each used have a UID(user id)</li>
+<li><code>/etc/passwd</code>
+
+<ul>
+<li>used to store the infomation of the users</li>
+</ul>
+</li>
+<li><code>/etc/shadow</code>
+
+<ul>
+<li>used to store the info that passwd file can not store
+
+<ul>
+<li>like some info about the password</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>and it is similar with the <code>/etc/group</code> and <code>/etc/gshadow</code></li>
+</ul>
+
+
+<h5>use the command to manage</h5>
+
+<ul>
+<li><p><code>whoami</code></p>
+
+<ul>
+<li>see the name of the current login user</li>
+</ul>
+</li>
+<li><p><code>who</code></p>
+
+<ul>
+<li>check the current login user</li>
+</ul>
+</li>
+<li><code>w</code>
+
+<ul>
+<li>check the detail info the current login user</li>
+</ul>
+</li>
+<li><code>id</code>
+
+<ul>
+<li>check the UID, GID and so on infomation of particular user</li>
+</ul>
+</li>
+<li><code>finger</code>
+
+<ul>
+<li>use to see the infomation of particular user</li>
+</ul>
+</li>
+<li><code>su</code>
+
+<ul>
+<li>change the login user</li>
+</ul>
+</li>
+<li><code>write</code>
+
+<ul>
+<li>send message to the particular user</li>
+</ul>
+</li>
+<li><code>wall</code>
+
+<ul>
+<li>broadcast the infomation to all user</li>
+</ul>
+</li>
+<li><code>sudo -s</code>
+
+<ul>
+<li>get the root access</li>
+</ul>
+</li>
+<li><code>useradd</code> / <code>adduser</code>
+
+<ul>
+<li>add user</li>
+</ul>
+</li>
+<li><code>passwd</code>
+
+<ul>
+<li>change the password of a user</li>
+</ul>
+</li>
+<li><code>chsh</code>
+
+<ul>
+<li>change the shell the user is using</li>
+</ul>
+</li>
+<li><code>usermod</code>
+
+<ul>
+<li>change the info of the user account</li>
+</ul>
+</li>
+<li><code>userdel</code>
+
+<ul>
+<li>delete the user</li>
+</ul>
+</li>
+<li><code>startx</code>
+
+<ul>
+<li>start the xwindows(GUI)</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>process management</h4>
+
+<h5>some useful command</h5>
+
+<ul>
+<li><code>ps</code>
+
+<ul>
+<li>see what process is running</li>
+<li>e.g <code>ps aux | more</code>
+
+<ul>
+<li><code>ps aux | grep httpd</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>| more</code>
+
+<ul>
+<li>to see the long content in several pages</li>
+</ul>
+</li>
+<li><code>kill</code>
+
+<ul>
+<li>kill the process</li>
+<li>or <code>killall</code></li>
+<li><code>kill -9</code> to kill the zombie process</li>
+<li><code>pkill name</code> to kill the process that know its name</li>
+</ul>
+</li>
+<li>top
+
+<ul>
+<li>to see the process dynamically</li>
+</ul>
+</li>
+<li><code>&amp;</code>
+
+<ul>
+<li>let the command work in the background</li>
+<li>e.g <code>make install &amp;</code></li>
+</ul>
+</li>
+<li><code>Ctrl + Z</code>
+
+<ul>
+<li>put the process in the background and pause it</li>
+</ul>
+</li>
+<li><code>jobs</code>
+
+<ul>
+<li>to see what process is in the background</li>
+</ul>
+</li>
+<li><code>fg</code>
+
+<ul>
+<li>get the background process back</li>
+</ul>
+</li>
+<li><code>bg</code>
+
+<ul>
+<li>run the backgrounf process in the background</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[My Bash Profile Configuration]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/"/>
     <updated>2014-04-13T10:14:26+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration</id>
+    <id>http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration</id>
     <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -174,9 +733,9 @@
   
   <entry>
     <title type="html"><![CDATA[Basic Idea in Robotics]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/basic-idea-in-robotics/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics/"/>
     <updated>2014-04-09T18:55:54+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/basic-idea-in-robotics</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics</id>
     <content type="html"><![CDATA[<h3>ABSTRACT:</h3>
 
 <ul>
@@ -356,9 +915,9 @@
   
   <entry>
     <title type="html"><![CDATA[My Vim Configuration]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/my-vim-configuration/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/"/>
     <updated>2014-04-09T18:35:16+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/my-vim-configuration</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/my-vim-configuration</id>
     <content type="html"><![CDATA[<ul>
 <li>This is the vim configuration of my mac.</li>
 <li>edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;</li>
@@ -642,9 +1201,9 @@
   
   <entry>
     <title type="html"><![CDATA[Congiure My Octopress Blog]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/congiure-the-octopress-blog/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog/"/>
     <updated>2014-04-09T17:03:02+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/congiure-the-octopress-blog</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog</id>
     <content type="html"><![CDATA[<h3>1.In the _config.yml file</h3>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -846,10 +1405,10 @@
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;ul class="main-navigation"&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/project"&gt;Project&lt;/a&gt;&lt;/li&gt;
-</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.io/about"&gt;About Me&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/project"&gt;Project&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="http://pbking1.github.com/about"&gt;About Me&lt;/a&gt;&lt;/li&gt;
 </span><span class='line'>&lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
 
 
@@ -923,7 +1482,21 @@
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'></span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>  &lt;!-- JiaThis Button BEGIN --&gt;
+</span><span class='line'>  &lt;div class="jiathis_style"&gt;
+</span><span class='line'>    &lt;span class="jiathis_txt"&gt;分享到：&lt;/span&gt;
+</span><span class='line'>    &lt;a class="jiathis_button_tsina"&gt;新浪微博&lt;/a&gt;
+</span><span class='line'>    &lt;a class="jiathis_button_googleplus"&gt;Google+&lt;/a&gt;
+</span><span class='line'>    &lt;a class="jiathis_button_renren"&gt;人人网&lt;/a&gt;
+</span><span class='line'>    &lt;a class="jiathis_button_qzone"&gt;QQ空间&lt;/a&gt;
+</span><span class='line'>    &lt;a class="jiathis_button_tqq"&gt;腾讯微博&lt;/a&gt;
+</span><span class='line'>    &lt;a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"&gt;更多&lt;/a&gt;
+</span><span class='line'>    &lt;a class="jiathis_counter_style"&gt;&lt;/a&gt;
+</span><span class='line'>  &lt;/div&gt;
+</span><span class='line'>  &lt;script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"&gt;&lt;/script&gt;
+</span><span class='line'>  &lt;!-- JiaThis Button END --&gt;
+</span><span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -1056,9 +1629,9 @@
   
   <entry>
     <title type="html"><![CDATA[2013 IEEE International Conference on Robotics and Biomimetics]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/"/>
     <updated>2014-04-09T13:08:03+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics</id>
     <content type="html"><![CDATA[<pre><code>Dec 12-14 2013 shenzhen, China
 </code></pre>
 
@@ -1071,9 +1644,9 @@ zhudingqiao
 
 <h4>here are the picture</h4>
 
-<p><img src="http://pbking1.github.io/images/ieee1.jpg">
-<img src="http://pbking1.github.io/images/ieee2.jpg">
-<img src="http://pbking1.github.io/images/ieee3.jpg"></p>
+<p><img src="http://pbking1.github.com/images/ieee1.jpg">
+<img src="http://pbking1.github.com/images/ieee2.jpg">
+<img src="http://pbking1.github.com/images/ieee3.jpg"></p>
 
 <!--more-->
 
@@ -1348,9 +1921,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[Final Exam of the Sysu SE Android Class]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/final-exam-of-the-android-class/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class/"/>
     <updated>2014-04-09T12:52:03+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/final-exam-of-the-android-class</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class</id>
     <content type="html"><![CDATA[<h4>在Android平台上实现一个本地应用——大学城特惠网</h4>
 
 <h5>Some key codes</h5>
@@ -2024,9 +2597,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[Introduction to the Project of Network Attack and Defense]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/intro-to-the-penertration-testing-project/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project/"/>
     <updated>2014-04-09T12:20:42+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/intro-to-the-penertration-testing-project</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project</id>
     <content type="html"><![CDATA[<pre><code>Produced by pengbin and wangyang
 </code></pre>
 
@@ -2150,9 +2723,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[CPSO-Sk 的实现(1)]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/cpso-sk-de-shi-xian-1/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1/"/>
     <updated>2014-04-09T00:36:53+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/cpso-sk-de-shi-xian-1</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1</id>
     <content type="html"><![CDATA[<ul>
 <li>其实和标准的PSO是一样的</li>
 <li><p>只是初始种群是不一样的</p>
@@ -2468,9 +3041,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[Intro to Genentic Algorithm]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/09/intro-to-genentic-algorithm/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm/"/>
     <updated>2014-04-09T00:33:05+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/09/intro-to-genentic-algorithm</id>
+    <id>http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm</id>
     <content type="html"><![CDATA[<ul>
 <li>genentic algorithm</li>
 <li>是一种由进化的灵感的来的算法，基于生物进化的机制</li>
@@ -2605,9 +3178,9 @@ name:Mario Arbulu
   
   <entry>
     <title type="html"><![CDATA[粒子群优化算法介绍]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/07/something-about-pso-algorithm/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm/"/>
     <updated>2014-04-07T23:27:24+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/07/something-about-pso-algorithm</id>
+    <id>http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm</id>
     <content type="html"><![CDATA[<ul>
 <li>缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。</li>
 <li>从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。</li>

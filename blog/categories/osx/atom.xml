@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: OSX | KING]]></title>
-  <link href="http://pbking1.github.io/blog/categories/osx/atom.xml" rel="self"/>
-  <link href="http://pbking1.github.io/"/>
-  <updated>2014-04-13T23:49:34+08:00</updated>
-  <id>http://pbking1.github.io/</id>
+  <link href="http://pbking1.github.com/blog/categories/osx/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-04-15T17:09:20+08:00</updated>
+  <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[My Bash Profile Configuration]]></title>
-    <link href="http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration/"/>
+    <link href="http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/"/>
     <updated>2014-04-13T10:14:26+08:00</updated>
-    <id>http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration</id>
+    <id>http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration</id>
     <content type="html"><![CDATA[<p>```</p>
 
 <h1>terminal</h1>

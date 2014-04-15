@@ -1,67 +1,71 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://pbking1.github.io/blog/2014/04/07/something-about-pso-algorithm/</loc>
+        <loc>http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm/</loc>
         <lastmod>2014-04-13T23:06:12+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/blog/2014/04/09/intro-to-genentic-algorithm/</loc>
+        <loc>http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm/</loc>
         <lastmod>2014-04-13T23:06:12+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/blog/2014/04/09/cpso-sk-de-shi-xian-1/</loc>
-        <lastmod>2014-04-13T23:06:12+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://pbking1.github.io/blog/2014/04/09/intro-to-the-penertration-testing-project/
-        </loc>
-        <lastmod>2014-04-13T23:06:12+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://pbking1.github.io/blog/2014/04/09/final-exam-of-the-android-class/</loc>
+        <loc>http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1/</loc>
         <lastmod>2014-04-13T23:06:12+08:00</lastmod>
     </url>
     <url>
         <loc>
-            http://pbking1.github.io/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/
+            http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project/
         </loc>
         <lastmod>2014-04-13T23:06:12+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/blog/2014/04/09/congiure-the-octopress-blog/</loc>
+        <loc>http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class/</loc>
         <lastmod>2014-04-13T23:06:12+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/blog/2014/04/09/my-vim-configuration/</loc>
+        <loc>
+            http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/
+        </loc>
+        <lastmod>2014-04-13T23:06:12+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog/</loc>
+        <lastmod>2014-04-13T23:06:12+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/</loc>
         <lastmod>2014-04-13T23:48:20+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/blog/2014/04/09/basic-idea-in-robotics/</loc>
+        <loc>http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics/</loc>
         <lastmod>2014-04-13T23:06:12+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/blog/2014/04/13/my-bash-profile-configuration/</loc>
+        <loc>http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/</loc>
         <lastmod>2014-04-13T23:06:12+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/about/</loc>
+        <loc>http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial/</loc>
+        <lastmod>2014-04-15T16:49:17+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pbking1.github.com/about/</loc>
         <lastmod>2014-04-13T13:28:47+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/blog/archives/</loc>
-        <lastmod>2014-04-13T23:48:20+08:00</lastmod>
+        <loc>http://pbking1.github.com/blog/archives/</loc>
+        <lastmod>2014-04-15T16:49:17+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/</loc>
-        <lastmod>2014-04-13T23:48:20+08:00</lastmod>
+        <loc>http://pbking1.github.com/</loc>
+        <lastmod>2014-04-15T16:49:17+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/project/</loc>
+        <loc>http://pbking1.github.com/project/</loc>
         <lastmod>2014-04-13T13:22:04+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.io/robots.txt</loc>
+        <loc>http://pbking1.github.com/robots.txt</loc>
         <lastmod>2014-04-13T12:33:03+08:00</lastmod>
     </url>
 </urlset>
