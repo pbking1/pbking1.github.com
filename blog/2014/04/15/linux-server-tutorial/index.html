@@ -220,49 +220,88 @@ is used for tranfering the data between client and server
 <li>also should we backup the file usesudo <code>cp /etc/vsftpd.conf /etc/vsftpd.conf_back</code></li>
 <li>and do not contain empty line after each sentance</li>
 </ul>
+</li>
+</ul>
 
 
-<p>  &#8220;`
-  listen=YES             #启用独立vsftpd服务器
-  #listen_ipv6=YES       不需要，注释掉
-  anonymous_enable=YES   #本服务器需要匿名访问
-  local_enable=YES       #要用虚拟用户，需要本地访问的（关于本地用户和虚拟用户不要迷茫，稍后解释）
-  write_enable=YES       #需要本地用户对文件进行修改和删除
-  #local_umask=022     FTP上传文件权限 ，默认是077，本服务器每个虚拟用户都有上传权限设置，总的就留空注释掉了
-  #anon_upload_enable=YES 是否允许匿名用户上传，不需要匿名上传注释掉
-  #anon_mkdir_write_enable=YES 是否允许匿名用户的写和创建目录的权限，不要匿名管理，注释掉
-  dirmessage_enable=YES   当切换目录时，是否显示该目录下message隐藏文件的内容，这个用来显示登录信息的 设为YES
-  message_file=Welcome     显示的欢迎信息，在ftp目录下建Welcome的文件，里面写上登录信息即可，一般人常用.message隐藏文件
-  xferlog_enable=YES 是否激活上传和下载的日志，需要
-  connect_from_port_20=YES 是否启动FTP数据端口20的连接请求  需要
-  chown_uploads=YES 是否改变上传文件的所有者，我这里需要改变上传文件所有者
-  chown_username=virtual 改变上传文件的所有着为virtual，这个virtual用户一会要新建的，用来实现虚拟用户登录
-  xferlog日志格式ferlog_file=/var/log/vsftpd.log 上传/下载日志文件所默认的路径
-  xferlog_std_format=YES 是否使用标准的ftpd xferlog日志格式
-  idle_session_timeout=600 是否将在用户会话空闲10分钟后被中断
-  data_connection_timeout=120 是否将在数据连接空闲2分钟后被中断
-  #nopriv_user=ftpsecure 是否运行vsftpd需要的非特殊系统用户默认nobody  不需要
-  #async_abor_enable=YES 是否是否允许运行特殊的FTP命令async   不要
-  ascii_upload_enable=YES 是否启用上传的ascii传输方式   需要
-  ascii_download_enable=YES 是否启用下载的ascii传输方式   需要
-  ftpd_banner=Welcome to blah FTP service. 用户连接服务器后显示信息，显示信息可以随便写
-  #deny_email_enable=YES 是否允许某些匿名用户使用邮件地址（默认的）
-  max_clients=10 #FTP服务器最大承载用户,本人设为10
-  max_per_ip=5 #限制每个IP的进程
-  local_max_rate=256000 #最大传输速率(b/s)
-  #hide_ids=YES #是否隐藏文件的所有者和组信息，不隐藏
-  idle_session_timeout= 3000  #空闲（发呆）用户会话的超时时间，若是超出这时间没有数据的传送或是指令的输入，则会强迫断线。单位为秒，默认值为300。</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>listen=YES             #启用独立vsftpd服务器
+</span><span class='line'>#listen_ipv6=YES       不需要，注释掉
+</span><span class='line'>anonymous_enable=YES   #本服务器需要匿名访问
+</span><span class='line'>local_enable=YES       #要用虚拟用户，需要本地访问的（关于本地用户和虚拟用户不要迷茫，稍后解释）
+</span><span class='line'>write_enable=YES       #需要本地用户对文件进行修改和删除
+</span><span class='line'>#local_umask=022     FTP上传文件权限 ，默认是077，本服务器每个虚拟用户都有上传权限设置，总的就留空注释掉了
+</span><span class='line'>#anon_upload_enable=YES 是否允许匿名用户上传，不需要匿名上传注释掉
+</span><span class='line'>#anon_mkdir_write_enable=YES 是否允许匿名用户的写和创建目录的权限，不要匿名管理，注释掉
+</span><span class='line'>dirmessage_enable=YES     当切换目录时，是否显示该目录下message隐藏文件的内容，这个用来显示登录信息的 设为YES
+</span><span class='line'>message_file=Welcome     显示的欢迎信息，在ftp目录下建Welcome的文件，里面写上登录信息即可，一般人常用.message隐藏文件
+</span><span class='line'>xferlog_enable=YES 是否激活上传和下载的日志，需要
+</span><span class='line'>connect_from_port_20=YES 是否启动FTP数据端口20的连接请求  需要
+</span><span class='line'>chown_uploads=YES 是否改变上传文件的所有者，我这里需要改变上传文件所有者
+</span><span class='line'>chown_username=virtual 改变上传文件的所有着为virtual，这个virtual用户一会要新建的，用来实现虚拟用户登录
+</span><span class='line'>xferlog日志格式ferlog_file=/var/log/vsftpd.log 上传/下载日志文件所默认的路径
+</span><span class='line'>xferlog_std_format=YES 是否使用标准的ftpd xferlog日志格式
+</span><span class='line'>idle_session_timeout=600 是否将在用户会话空闲10分钟后被中断
+</span><span class='line'>data_connection_timeout=120 是否将在数据连接空闲2分钟后被中断
+</span><span class='line'>#nopriv_user=ftpsecure 是否运行vsftpd需要的非特殊系统用户默认nobody  不需要
+</span><span class='line'>#async_abor_enable=YES 是否是否允许运行特殊的FTP命令async   不要
+</span><span class='line'>ascii_upload_enable=YES 是否启用上传的ascii传输方式   需要
+</span><span class='line'>ascii_download_enable=YES 是否启用下载的ascii传输方式   需要
+</span><span class='line'>ftpd_banner=Welcome to blah FTP service. 用户连接服务器后显示信息，显示信息可以随便写
+</span><span class='line'>#deny_email_enable=YES 是否允许某些匿名用户使用邮件地址（默认的）
+</span><span class='line'>max_clients=10 #FTP服务器最大承载用户,本人设为10
+</span><span class='line'>max_per_ip=5 #限制每个IP的进程
+</span><span class='line'>local_max_rate=256000 #最大传输速率(b/s)
+</span><span class='line'>#hide_ids=YES #是否隐藏文件的所有者和组信息，不隐藏
+</span><span class='line'>idle_session_timeout= 3000  #空闲（发呆）用户会话的超时时间，若是超出这时间没有数据的传送或是指令的输入，则会强迫断线。单位为秒，默认值为300。</span></code></pre></td></tr></table></div></figure>
 
-<p>  下面是用来虚拟用户登录的
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  guest_enable=YES             使用虚拟用户
-  guest_username=virtual       将虚拟用户等同本地用户 virtual
-  user_config_dir=/etc/vsftpd/vsftpd_user_conf   虚拟用户配置文件夹
-  pam_service_name=vsftpd.vu    虚拟用户加密设置
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  &#8220;`</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>下面是用来虚拟用户登录的
+</span><span class='line'>^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+</span><span class='line'>guest_enable=YES             使用虚拟用户
+</span><span class='line'>guest_username=virtual       将虚拟用户等同本地用户 virtual
+</span><span class='line'>user_config_dir=/etc/vsftpd/vsftpd_user_conf   虚拟用户配置文件夹
+</span><span class='line'>pam_service_name=vsftpd.vu    虚拟用户加密设置
+</span><span class='line'>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span></code></pre></td></tr></table></div></figure>
+
 
 <ul>
+<li><ul>
 <li>then use <code>sudo mkdir /home/vsftpd</code> and <code>cd /home/vsftpd</code></li>
 <li>then use <code>sudo mkdir down upload wsn</code></li>
 <li>after that setup the virtual user database
