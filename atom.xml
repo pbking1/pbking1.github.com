@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-18T12:23:20+08:00</updated>
+  <updated>2014-04-18T12:26:25+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -147,6 +147,7 @@
 <li>and the terminal will start up in byobu</li>
 </ul>
 </li>
+<li>and <code>tilda</code>, <code>guake</code> will be good choice of terminal</li>
 </ul>
 
 ]]></content>
