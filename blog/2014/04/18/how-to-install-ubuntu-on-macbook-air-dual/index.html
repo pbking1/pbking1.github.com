@@ -5,18 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Intro to Genentic Algorithm - KING</title>
+  <title>How to Install Ubuntu on Macbook Air Dual - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="genentic algorithm
-是一种由进化的灵感的来的算法，基于生物进化的机制
-可用于解决类似于单染色体类型的数据结构
-也可以被视为函数优化器
-适合于使用大型潜在的搜索空间并且引导他们。并且找到最优的组合。
-由john Holland提出的
-可以为优化和机器学习提供便捷有效的方法 思想 &hellip;">
-  <meta name="keywords" content="algorithm, GA, c++">
+  <meta name="description" content="1.For there are too many software that can be used in ubuntu not in OSX so I decided to install ubuntu on my macbook air I have try the mac version &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -24,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -76,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Intro to Genentic Algorithm</h1>
+      <h1 class="entry-title">How to Install Ubuntu on Macbook Air Dual</h1>
     
     
       <p class="meta">
@@ -92,7 +86,7 @@
   
 
 
-<time datetime="2014-04-09T00:33:05+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+<time datetime="2014-04-18T11:07:34+08:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com">Comments</a>
@@ -102,133 +96,132 @@
   </header>
 
 
-<div class="entry-content"><ul>
-<li>genentic algorithm</li>
-<li>是一种由进化的灵感的来的算法，基于生物进化的机制</li>
-<li>可用于解决类似于单染色体类型的数据结构</li>
-<li>也可以被视为函数优化器</li>
-<li>适合于使用大型潜在的搜索空间并且引导他们。并且找到最优的组合。</li>
-<li>由john Holland提出的</li>
-<li>可以为优化和机器学习提供便捷有效的方法</li>
+<div class="entry-content"><h4>1.For there are too many software that can be used in ubuntu not in OSX so I decided to install ubuntu on my macbook air</h4>
+
+<ul>
+<li>I have try the mac version ubuntu and <em>it do not work</em></li>
+<li>and the origin version for windows is work on mac</li>
 </ul>
 
 
-<!--more-->
-
-
-<h4>思想</h4>
+<h4>2.First use <code>Unetbootin</code> to create a usb bootable ubnutu on mac</h4>
 
 <ul>
-<li>一定数量的种群的解根据时间进化，并且在每一代进化之后都变得更加健壮</li>
-<li>并且每一个子代都是有父代交叉并且随机变化，还有其他的基因操作</li>
-</ul>
-
-
-<h4>组成</h4>
+<li>There are two ways to finish this</li>
+<li>The first is(I do not succeed in this)
 
 <ul>
-<li>基本的基因数量（基因，染色体）
+<li><code>diskutil list</code>
 
 <ul>
-<li>二进制字符串</li>
-<li>实数</li>
-<li>有规则</li>
+<li>show the disk that is mounted on your mac</li>
 </ul>
 </li>
-<li>初始化(创造)</li>
-<li>父母选择（产生后代）
+<li>then insert the usb</li>
+<li>run <code>diskutil list again</code>
 
 <ul>
-<li>随机选择父母（通过贝叶斯概率分布）</li>
-<li>染色体的改动
-
-<ul>
-<li><strong>交叉</strong>和<strong>重组</strong>
-
-<ul>
-<li>交叉
-
-<ul>
-<li>导致搜索空间中的移动</li>
-<li>在种群中存储丢失的信息</li>
+<li>and determine the device node assigned to the usb like <code>disks1s2</code></li>
 </ul>
 </li>
-<li>重组
+<li>then <code>diskutil unmountDisk /disks1s2</code></li>
+<li>after that <code>sudo dd if=/path/to/ubuntu.img.dmg of=/dev/disks1s2 bs=2m</code>
 
 <ul>
-<li>这个可以在种群进化的初期加快搜索速度</li>
-<li>它会导致一个有效的基因模板组合</li>
+<li>to create the bootable usb ubuntu</li>
+<li>and the bs is the I/O speed and the max is 2m</li>
+</ul>
+</li>
+<li>It may cost some time to complete</li>
+<li>finally run <code>eject /dev/disks1s2</code></li>
+</ul>
+</li>
+<li>The second is
+
+<ul>
+<li>use the <code>Unetbootin</code> to create the bootable usb directly</li>
 </ul>
 </li>
 </ul>
+
+
+<h4>3.Then we need the split the disk</h4>
+
+<ul>
+<li>search <code>Disk Utility</code></li>
+<li>open it and get to the <code>partition</code></li>
+<li>click &lsquo;+&rsquo; to create a partition of 40 GB
+
+<ul>
+<li>partition it in the MS-DOS(FAT)</li>
+</ul>
 </li>
-<li>一个Evaluator是连接传统遗传算法和他解决的问题的唯一连接
+<li>and click &lsquo;+&rsquo; again to create a patition of 2 GB
 
 <ul>
-<li>他会解码染色体并且分配给他一个健壮的方案</li>
+<li>make the swap sizeMS-DOS(FAT)</li>
+<li>name the partition &ldquo;swap&rdquo;</li>
+<li>restart the computer and press alt/option key when starting</li>
 </ul>
 </li>
 </ul>
+
+
+<h4>install ubuntu</h4>
+
+<ul>
+<li>when being asked for <code>installation type</code>
+
+<ul>
+<li>choose something else to partition by ourselves</li>
+<li>select <code>ext4</code> and mount <code>/</code> in the 40GB disk</li>
+<li>select <code>swap area</code> for the swap disk</li>
+</ul>
+</li>
+<li>and nothing else should be difficult</li>
+</ul>
+
+
+<h4>after installing ubuntu successfully on mac you should do</h4>
+
+<ul>
+<li><code>sudo apt-get install macfanctld</code> to enable the fan and sensor</li>
+<li><code>sudo apt-get install update &amp;&amp; sudo apt-get upgrade</code> to update the system and get wifi work(you may not get wifi work at the first time you start the system, so get a wired network and upgrade the system)</li>
+<li><code>sudo apt-get install flashplugin-installer</code> to install the adobe player</li>
+<li><code>sudo add-apt-repository ppa:linrunner/tlp</code>
+
+<ul>
+<li><code>sudo apt-get update</code></li>
+<li><code>sudo apt-get install tlp tlp-rdw</code></li>
+<li><code>sudo tlp start</code></li>
+<li>to improve battery life and reduce overhearting</li>
+</ul>
 </li>
 </ul>
+
+
+<h4>some configuration of ubuntu</h4>
+
+<ul>
+<li>first is the system mointer
+
+<ul>
+<li><code>conky</code></li>
+<li>install conky manager and you can get lots of theme of it</li>
+<li>and I have to say thats really cool</li>
+<li><code>sudo apt-add-repository -y ppa:teejee2008/ppa</code></li>
+<li><code>sudo apt-get update</code></li>
+<li><code>sudo apt-get install conky-manager</code></li>
+</ul>
 </li>
-<li>进化函数（环境）</li>
-<li>基因操作（随机重组）</li>
-<li>参数设置（训练）</li>
-</ul>
-
-
-<h4>好处</h4>
+<li>second is the byobu terminal
 
 <ul>
-<li>概念容易理解</li>
-<li>模式和应用分离开来</li>
-<li>支持多对象优化</li>
-<li>适合噪音比较多的环境</li>
-<li>总能找到答案，并且答案随着时间的变化而变好</li>
-<li>总是并行的，容易分布</li>
-<li>如果已经获得了那个遗传算法应用的知识，那么有很多种方法来加速和改进遗传算法</li>
-<li>容易去使用或者利用以前的或者自动的求解结果</li>
+<li><code>sudo apt-get install byobu</code></li>
+<li>and set the start up script in the <code>/use/bin/byobu</code></li>
+<li>and the terminal will start up in byobu</li>
 </ul>
-
-
-<h4>什么时候要用</h4>
-
-<ul>
-<li>交替的结果太慢或者太复杂</li>
-<li>需要一个实验性的工具来检测新的逼近</li>
-<li>一个和曾经被解决的问题很相似的问题</li>
-<li>相混合一个已经存在的解法</li>
-</ul>
-
-
-<h4>算法流程</h4>
-
-<ul>
-<li>伪代码</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>initialize node poupulation;
-</span><span class='line'>evaluate node population;
-</span><span class='line'>while(Termination){
-</span><span class='line'>    select parent nodes for reproduction;
-</span><span class='line'>    perform recombination and mutation;
-</span><span class='line'>    evaluate population;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>我的看法</h4>
-
-<ul>
-<li>就是不停地优化后代</li>
+</li>
 </ul>
 
 </div>
@@ -253,12 +246,12 @@
   
 
 
-<time datetime="2014-04-09T00:33:05+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+<time datetime="2014-04-18T11:07:34+08:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/algorithm/'>Algorithm</a>
+    <a class='category' href='/blog/categories/linux/'>linux</a>
   
 </span>
 
@@ -286,10 +279,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/04/07/something-about-pso-algorithm/" title="Previous Post: 粒子群优化算法介绍">&laquo; 粒子群优化算法介绍</a>
+        <a class="basic-alignment left" href="/blog/2014/04/15/linux-server-tutorial/" title="Previous Post: Linux server tutorial">&laquo; Linux server tutorial</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/" title="Next Post: CPSO-Sk 的实现(1)">CPSO-Sk 的实现(1) &raquo;</a>
       
     </p>
   </footer>
@@ -400,8 +391,8 @@ ds.charset = 'UTF-8';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/';
         var disqus_script = 'embed.js';
       
     (function () {

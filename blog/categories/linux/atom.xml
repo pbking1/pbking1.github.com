@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-15T19:43:33+08:00</updated>
+  <updated>2014-04-18T12:12:18+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -14,827 +14,138 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Linux Server Tutorial]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial/"/>
-    <updated>2014-04-15T14:47:08+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial</id>
-    <content type="html"><![CDATA[<h3>1.GNU plan</h3>
+    <title type="html"><![CDATA[How to Install Ubuntu on Macbook Air Dual]]></title>
+    <link href="http://pbking1.github.com/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/"/>
+    <updated>2014-04-18T11:07:34+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual</id>
+    <content type="html"><![CDATA[<h4>1.For there are too many software that can be used in ubuntu not in OSX so I decided to install ubuntu on my macbook air</h4>
 
 <ul>
-<li>GNU plan is founded by the Richard M.Stallman and free software foundation</li>
-<li>In order to make sure the GNU software can be used freely</li>
-<li>All the GNU softwares have a license called &ldquo;GNU General Public License&rdquo;, <code>GPL</code></li>
-<li>this forbid the other from adding any constrict to the GNU software and let all the people to have the right to use it.</li>
+<li>I have try the mac version ubuntu and <em>it do not work</em></li>
+<li>and the origin version for windows is work on mac</li>
 </ul>
 
 
-<h3>2.POSIX standard</h3>
+<h4>2.First use <code>Unetbootin</code> to create a usb bootable ubnutu on mac</h4>
 
 <ul>
-<li>Portable Operating system Interface for Computing Systems</li>
-<li>used to solve the problem that the UNIX system have lots of versions and result in a chaos</li>
-<li>the standard is developed by the IEEE and standarded by the ANSI and ISO</li>
-</ul>
-
-
-<!--more-->
-
-
-<h3>3.Linux component</h3>
-
-<ul>
-<li>Linux kernal
-
-<ul>
-<li>is opensource because of the GPL</li>
-</ul>
-</li>
-<li>Linux Shell
-
-<ul>
-<li>is the UI</li>
-<li>have KDE (King Destop Environment) and GROME (GNU Network Object Model Environment)</li>
-<li>BASH
-
-<ul>
-<li>GNU&rsquo;s Bourne Again Shell</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Linux Filesystem
-
-<ul>
-<li>multi tree structure</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>4.How linux work</h3>
-
-<h4>start up</h4>
-
-<ul>
-<li>After the user open the power
-
-<ul>
-<li>BIOS first add electivity to check itself and initialize the system and start up the service</li>
-<li>then start up the mingetty process</li>
-</ul>
-</li>
-<li>then the shell user log in and start up the device in the sequence setting in the BIOS</li>
-<li>then start up the GRUB or LILO to get the access of the computer</li>
-<li>after that start up the linux kernel with its configuration</li>
-<li>then use the init program list</li>
-<li>after the user log in successfully, they can enter the system</li>
-</ul>
-
-
-<h3>5.FTP server</h3>
-
-<pre><code>the ftp is depend on the C/S model
-is used for tranfering the data between client and server
-</code></pre>
-
-<ul>
-<li>First the client send the connection request to the server
-
-<ul>
-<li>and the client will dynamically open a port > 1024 to wait for the connction of the server</li>
-</ul>
-</li>
-<li>After the server listened the request in the port 21
-
-<ul>
-<li>it will found a ftp connection between client and server</li>
-</ul>
-</li>
-<li>When need to transfer the data, the client will open a port > 1024 to connect to the pot 20 of the server and transfer the data through the port</li>
-<li>After transferign the data, the port will be released</li>
-</ul>
-
-
-<h4>ftp software</h4>
-
-<ul>
-<li>we can use <code>vsFTPd</code> in linux</li>
-<li>how to setup the ftp server?
-
-<ul>
-<li>first <code>sudo apt-get install vsftpd</code></li>
-<li>and use <code>sudo /etc/init.d/vsftpd start</code> to start the service
-
-<ul>
-<li>use <code>sudo /etc/init.d/vsftpd restart</code> to restart the service</li>
-<li>use <code>sudo /etc/init.d/vsftpd stop</code> to stop the service</li>
-</ul>
-</li>
-<li>configure the ftp
-
-<ul>
-<li>use <code>sudo vi /etc/vsftpd.conf</code> to edit the configuration file</li>
-<li>then use <code>sudo /etc/init.d/vsftpd restart</code> to restart the service and apply the change</li>
-</ul>
-</li>
-<li>also should we backup the file usesudo <code>cp /etc/vsftpd.conf /etc/vsftpd.conf_back</code></li>
-<li>and do not contain empty line after each sentance</li>
-</ul>
-</li>
-</ul>
-
-
-<p>```</p>
-
-<pre><code>listen=YES             #启用独立vsftpd服务器
-#listen_ipv6=YES       不需要，注释掉
-anonymous_enable=YES   #本服务器需要匿名访问
-local_enable=YES       #要用虚拟用户，需要本地访问的（关于本地用户和虚拟用户不要迷茫，稍后解释）
-write_enable=YES       #需要本地用户对文件进行修改和删除
-#local_umask=022     FTP上传文件权限 ，默认是077，本服务器每个虚拟用户都有上传权限设置，总的就留空注释掉了
-#anon_upload_enable=YES 是否允许匿名用户上传，不需要匿名上传注释掉
-#anon_mkdir_write_enable=YES 是否允许匿名用户的写和创建目录的权限，不要匿名管理，注释掉
-dirmessage_enable=YES   当切换目录时，是否显示该目录下message隐藏文件的内容，这个用来显示登录信息的 设为YES
-message_file=Welcome     显示的欢迎信息，在ftp目录下建Welcome的文件，里面写上登录信息即可，一般人常用.message隐藏文件
-xferlog_enable=YES 是否激活上传和下载的日志，需要
-connect_from_port_20=YES 是否启动FTP数据端口20的连接请求  需要
-chown_uploads=YES 是否改变上传文件的所有者，我这里需要改变上传文件所有者
-chown_username=virtual 改变上传文件的所有着为virtual，这个virtual用户一会要新建的，用来实现虚拟用户登录
-xferlog日志格式ferlog_file=/var/log/vsftpd.log 上传/下载日志文件所默认的路径
-xferlog_std_format=YES 是否使用标准的ftpd xferlog日志格式
-idle_session_timeout=600 是否将在用户会话空闲10分钟后被中断
-data_connection_timeout=120 是否将在数据连接空闲2分钟后被中断
-#nopriv_user=ftpsecure 是否运行vsftpd需要的非特殊系统用户默认nobody  不需要
-#async_abor_enable=YES 是否是否允许运行特殊的FTP命令async   不要
-ascii_upload_enable=YES 是否启用上传的ascii传输方式   需要
-ascii_download_enable=YES 是否启用下载的ascii传输方式   需要
-ftpd_banner=Welcome to blah FTP service. 用户连接服务器后显示信息，显示信息可以随便写
-#deny_email_enable=YES 是否允许某些匿名用户使用邮件地址（默认的）
-max_clients=10 #FTP服务器最大承载用户,本人设为10
-max_per_ip=5 #限制每个IP的进程
-local_max_rate=256000 #最大传输速率(b/s)
-#hide_ids=YES #是否隐藏文件的所有者和组信息，不隐藏
-idle_session_timeout= 3000  #空闲（发呆）用户会话的超时时间，若是超出这时间没有数据的传送或是指令的输入，则会强迫断线。单位为秒，默认值为300。
-</code></pre>
-
-<p><code>
-</code></p>
-
-<pre><code>下面是用来虚拟用户登录的
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-guest_enable=YES             使用虚拟用户
-guest_username=virtual       将虚拟用户等同本地用户 virtual
-user_config_dir=/etc/vsftpd/vsftpd_user_conf   虚拟用户配置文件夹
-pam_service_name=vsftpd.vu    虚拟用户加密设置
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-</code></pre>
-
-<h2>```</h2>
-
-<pre><code>- then use `sudo mkdir /home/vsftpd` and `cd /home/vsftpd`
-- then use `sudo mkdir down upload wsn`
-- after that setup the virtual user database
-    - use `sudo vi /home/loguser.txt`
-    - and the content is 
-    ```
-    down 
-    password1
-    upload
-    password2
-    wsn
-    password3
-    ```
-- use `sudo apt-get install db4.7-util`
-- Then create a new dir and put the configuration in it.
-- use `sudo mkdir /etc/vsftpd`
-- use `sudo db4.7_load -T -t hash -f /home/loguser.txt /etc/vsftpd/vsftpd_login.db`
-- set the access of the databases file eventually
-- use `sudo chmod 600 /etc/vsftpd/vsftpd_login.db`
-- configure the PAM file `/etc/pam.d/vsftpd.vu`
-- use `sudo vi /etc/pam.d/vsftpd.vu` with the content
-```
-auth required /lib/security/pam_userdb.so db=/etc/vsftpd_login
-account required /lib/security/pam_userdb.so db=/etc/vsftpd_login
-```
-- PAM is used to verify the virtual user 
-    - and this is activated by the command `pam_service_name`
-- Setup the local user for the virtual user
-    - setup  a system user called `vsftpd` and the home dir is `/home/vsftpd` and the user login terminal set to /bin/false
-    ```
-    sudo useradd virtual -d /home/vsftpd -s /bin/false
-    sudp chown virtual:virtual /home/vsftpd
-    ```
-    - and until now the three users can work now
-</code></pre>
-
-<h3>6.mail server</h3>
-
-<pre><code>mail is used to communicate on the internet 
-</code></pre>
-
-<ul>
-<li>component
-
-<ul>
-<li>MUA
-
-<ul>
-<li>Mail User Agent</li>
-<li>used to help the user to send and get the email</li>
-</ul>
-</li>
-<li>MTA
-
-<ul>
-<li>Mail Transfer Agent</li>
-<li>used to monitor and send the email</li>
-</ul>
-</li>
-<li>mail protocol
-
-<ul>
-<li>SMTP
-
-<ul>
-<li>simple mail transfer protocol</li>
-<li>use port 25</li>
-<li>is a request/respond protocol</li>
-<li>and be used to setup the SMTP connection between with the remote server
-
-<ul>
-<li>can transfer the mail from client to server
-
-<ul>
-<li>or server to server</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>POP3
-
-<ul>
-<li>Post office protocol</li>
-<li>use TCP 110 port</li>
-<li>used to receive the mail</li>
-<li>e.g
-
-<ul>
-<li>the client connect with the POP3 server using TCP connection</li>
-<li>and the POP3 protocol will affirm the usernamd and userpassword</li>
-<li>after that the client can receive or delete the mail</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>IMAP
-
-<ul>
-<li>Internet Message Access Protocol</li>
-<li>can be used as POP3 to receive the mail</li>
-<li>can be read offline</li>
-<li>can preview the mail</li>
-</ul>
-</li>
-<li>Web Mail
-
-<ul>
-<li>is not a protocol but a plugin</li>
-<li>use the browser to receive, send and read the mail</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>7.APT&mdash;&mdash;-software package managemnt</h3>
-
-<ul>
-<li>use <code>/etc/apt/sources.list</code> to store the software package list
-
-<ul>
-<li>which is called the <em>repository</em></li>
-</ul>
-</li>
-<li>this is widely used in the Debain linux like ubuntu</li>
-<li>if the client want to update the software
-
-<ul>
-<li>They will download the dependency file of the softeware and compare with the system file, download all the needed dependencies.</li>
-</ul>
-</li>
-<li>some useful command
-<code>
-apt-get : used to manage the software
-apt-cache : used to check the info of the software
-apt-proxy : use to construct the proxy server of APT
-apt-show-versions : used to show the version of the software in the system
-apt-config : use the read the apt coniguration info
-</code></li>
-</ul>
-
-
-<h3>8.linux user and process management</h3>
-
-<h4>user management</h4>
-
-<ul>
-<li>linux have three kinds of users
-
-<ul>
-<li>root</li>
-<li>ordinary</li>
-<li>virtual
-
-<ul>
-<li>like bin, damon, ftp, adm</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>each used have a UID(user id)</li>
-<li><code>/etc/passwd</code>
-
-<ul>
-<li>used to store the infomation of the users</li>
-</ul>
-</li>
-<li><code>/etc/shadow</code>
-
-<ul>
-<li>used to store the info that passwd file can not store
-
-<ul>
-<li>like some info about the password</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>and it is similar with the <code>/etc/group</code> and <code>/etc/gshadow</code></li>
-</ul>
-
-
-<h5>use the command to manage</h5>
-
-<ul>
-<li><p><code>whoami</code></p>
-
-<ul>
-<li>see the name of the current login user</li>
-</ul>
-</li>
-<li><p><code>who</code></p>
-
-<ul>
-<li>check the current login user</li>
-</ul>
-</li>
-<li><code>w</code>
-
-<ul>
-<li>check the detail info the current login user</li>
-</ul>
-</li>
-<li><code>id</code>
-
-<ul>
-<li>check the UID, GID and so on infomation of particular user</li>
-</ul>
-</li>
-<li><code>finger</code>
-
-<ul>
-<li>use to see the infomation of particular user</li>
-</ul>
-</li>
-<li><code>su</code>
-
-<ul>
-<li>change the login user</li>
-</ul>
-</li>
-<li><code>write</code>
-
-<ul>
-<li>send message to the particular user</li>
-</ul>
-</li>
-<li><code>wall</code>
-
-<ul>
-<li>broadcast the infomation to all user</li>
-</ul>
-</li>
-<li><code>sudo -s</code>
-
-<ul>
-<li>get the root access</li>
-</ul>
-</li>
-<li><code>useradd</code> / <code>adduser</code>
-
-<ul>
-<li>add user</li>
-</ul>
-</li>
-<li><code>passwd</code>
-
-<ul>
-<li>change the password of a user</li>
-</ul>
-</li>
-<li><code>chsh</code>
-
-<ul>
-<li>change the shell the user is using</li>
-</ul>
-</li>
-<li><code>usermod</code>
-
-<ul>
-<li>change the info of the user account</li>
-</ul>
-</li>
-<li><code>userdel</code>
-
-<ul>
-<li>delete the user</li>
-</ul>
-</li>
-<li><code>startx</code>
-
-<ul>
-<li>start the xwindows(GUI)</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>process management</h4>
-
-<h5>some useful command</h5>
-
-<ul>
-<li><code>ps</code>
-
-<ul>
-<li>see what process is running</li>
-<li>e.g <code>ps aux | more</code>
-
-<ul>
-<li><code>ps aux | grep httpd</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>| more</code>
-
-<ul>
-<li>to see the long content in several pages</li>
-</ul>
-</li>
-<li><code>kill</code>
-
-<ul>
-<li>kill the process</li>
-<li>or <code>killall</code></li>
-<li><code>kill -9</code> to kill the zombie process</li>
-<li><code>pkill name</code> to kill the process that know its name</li>
-</ul>
-</li>
-<li>top
-
-<ul>
-<li>to see the process dynamically</li>
-</ul>
-</li>
-<li><code>&amp;</code>
-
-<ul>
-<li>let the command work in the background</li>
-<li>e.g <code>make install &amp;</code></li>
-</ul>
-</li>
-<li><code>Ctrl + Z</code>
-
-<ul>
-<li>put the process in the background and pause it</li>
-</ul>
-</li>
-<li><code>jobs</code>
+<li>There are two ways to finish this</li>
+<li>The first is(I do not succeed in this)
 
 <ul>
-<li>to see what process is in the background</li>
-</ul>
-</li>
-<li><code>fg</code>
+<li><code>diskutil list</code>
 
 <ul>
-<li>get the background process back</li>
+<li>show the disk that is mounted on your mac</li>
 </ul>
 </li>
-<li><code>bg</code>
+<li>then insert the usb</li>
+<li>run <code>diskutil list again</code>
 
 <ul>
-<li>run the backgrounf process in the background</li>
+<li>and determine the device node assigned to the usb like <code>disks1s2</code></li>
 </ul>
 </li>
-</ul>
-
+<li>then <code>diskutil unmountDisk /disks1s2</code></li>
+<li>after that <code>sudo dd if=/path/to/ubuntu.img.dmg of=/dev/disks1s2 bs=2m</code>
 
-<h3>9.linux filesystem</h3>
-
-<ul>
-<li>In the linux filesystem, the file system use inode to store the attibute of the file system.</li>
-<li>if the file pointed by the inode is opened, then the inode += 1
-
 <ul>
-<li>else if the file is close, then the inode &ndash;= 1</li>
+<li>to create the bootable usb ubuntu</li>
+<li>and the bs is the I/O speed and the max is 2m</li>
 </ul>
 </li>
-<li>linux Ext3 filesystem
-
-<ul>
-<li>develop the log system depend on the Ext2 system</li>
+<li>It may cost some time to complete</li>
+<li>finally run <code>eject /dev/disks1s2</code></li>
 </ul>
 </li>
-<li>linux Swap system
+<li>The second is
 
 <ul>
-<li>used for the exchange area</li>
-<li>and are used for the memory page to swap the space</li>
-<li>and not easy to generate the fragment</li>
+<li>use the <code>Unetbootin</code> to create the bootable usb directly</li>
 </ul>
 </li>
 </ul>
 
 
-<h3>10.linux compress</h3>
+<h4>3.Then we need the split the disk</h4>
 
 <ul>
-<li>command
+<li>search <code>Disk Utility</code></li>
+<li>open it and get to the <code>partition</code></li>
+<li>click &lsquo;+&rsquo; to create a partition of 40 GB
 
 <ul>
-<li><code>compress</code></li>
-<li><code>gzip</code> and <code>zcat</code></li>
-<li><code>bzip2</code> and <code>bzcat</code> and <code>bunzip2</code></li>
-<li><code>tar</code></li>
+<li>partition it in the MS-DOS(FAT)</li>
 </ul>
 </li>
-</ul>
-
-
-<h3>11.linux file link</h3>
-
-<ul>
-<li>Symbolic link
+<li>and click &lsquo;+&rsquo; again to create a patition of 2 GB
 
 <ul>
-<li>soft link</li>
-<li>use <code>ln</code></li>
-<li>if the file that is being linked is deleted
-
-<ul>
-<li>than the linked file can not be used.</li>
-</ul>
-</li>
+<li>make the swap sizeMS-DOS(FAT)</li>
+<li>name the partition &ldquo;swap&rdquo;</li>
+<li>restart the computer and press alt/option key when starting</li>
 </ul>
 </li>
 </ul>
 
 
-<h3>12.linux disk</h3>
+<h4>install ubuntu</h4>
 
 <ul>
-<li>useful command
-
-<ul>
-<li><code>fdisk</code></li>
-<li><code>df</code>
-
-<ul>
-<li>check the information of the disk</li>
-</ul>
-</li>
-<li><code>fsck</code></li>
-<li><code>mount</code>
+<li>when being asked for <code>installation type</code>
 
 <ul>
-<li>mount the dir in order to use the disk</li>
-</ul>
-</li>
+<li>choose something else to partition by ourselves</li>
+<li>select <code>ext4</code> and mount <code>/</code> in the 40GB disk</li>
+<li>select <code>swap area</code> for the swap disk</li>
 </ul>
 </li>
+<li>and nothing else should be difficult</li>
 </ul>
 
 
-<h3>13.linux samba</h3>
+<h4>after installing ubuntu successfully on mac you should do</h4>
 
 <ul>
-<li>a protocol used to communitcate Unix to Windows</li>
-<li>sometimes used to share the file and printer</li>
-<li>SMB protocol is running on the top of the NetBios</li>
-<li>Samba server is made of
+<li><code>sudo apt-get install macfanctld</code> to enable the fan and sensor</li>
+<li><code>sudo apt-get install update &amp;&amp; sudo apt-get upgrade</code> to update the system and get wifi work(you may not get wifi work at the first time you start the system, so get a wired network and upgrade the system)</li>
+<li><code>sudo apt-get install flashplugin-installer</code> to install the adobe player</li>
+<li><code>sudo add-apt-repository ppa:linrunner/tlp</code>
 
 <ul>
-<li>NetBios &ndash;> NMB</li>
-<li>SMB</li>
+<li><code>sudo apt-get update</code></li>
+<li><code>sudo apt-get install tlp tlp-rdw</code></li>
+<li><code>sudo tlp start</code></li>
+<li>to improve battery life and reduce overhearting</li>
 </ul>
 </li>
 </ul>
 
 
-<h3>14.linux NFS server</h3>
-
-<ul>
-<li>NFS is a protocol that used to share the TCP/IP network file with the other.</li>
-<li>This can share the file between different kinds of the operating system</li>
-<li>NFS can make the usage of the disk higher</li>
-<li>And the user do not need to set a home dir one their computer
+<h4>some configuration of ubuntu</h4>
 
 <ul>
-<li>and set the home dir on the remote server</li>
-</ul>
-</li>
-<li>use dynamic port distribute
+<li>first is the system mointer
 
 <ul>
-<li>because the NFS service may use lots of ports</li>
+<li><code>conky</code></li>
+<li>install conky manager and you can get lots of theme of it</li>
+<li>and I have to say thats really cool</li>
+<li><code>sudo apt-add-repository -y ppa:teejee2008/ppa</code></li>
+<li><code>sudo apt-get update</code></li>
+<li><code>sudo apt-get install conky-manager</code></li>
 </ul>
 </li>
-<li>RPC service mainly used to record the function of the port of the NFS</li>
-<li>and RPC service is used in the port 111
+<li>second is the byobu terminal
 
 <ul>
-<li>when the NFS start, it will select the port that is smaller than 1024</li>
+<li><code>sudo apt-get install byobu</code></li>
+<li>and set the start up script in the <code>/use/bin/byobu</code></li>
+<li>and the terminal will start up in byobu</li>
 </ul>
 </li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My Vim Configuration]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/"/>
-    <updated>2014-04-09T18:35:16+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/my-vim-configuration</id>
-    <content type="html"><![CDATA[<ul>
-<li>This is the vim configuration of my mac.</li>
-<li>edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;</li>
-<li>Some of them need to install some plugins and the command line will make sense</li>
-</ul>
-
-
-<!--more-->
-
-
-<p>```</p>
-
-<p>&ldquo; Configuration file for vim
-set modelines=0     &rdquo; CVE-2007-2438
-set number
-&ldquo; Normally we use vim-extensions. If you want true vi-compatibility
-&rdquo; remove change the following statements
-set nocompatible    &ldquo; Use Vim defaults instead of 100% vi compatibility
-set backspace=2     &rdquo; more powerful backspacing
-&ldquo; Don&rsquo;t write backup file if vim is being called by "crontab -e&rdquo;
-au BufWrite /private/tmp/crontab.<em> set nowritebackup
-&ldquo; Don&rsquo;t write backup file if vim is being called by "chpass&rdquo;
-au BufWrite /private/etc/pw.</em> set nowritebackup
-set autoread
-nmap <leader>w :w!<cr>
-&ldquo;map <leader>e :e! ~/.vim_runtime/vimrc<cr>
-&rdquo; autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
-set so=7
-set ruler
-set cmdheight=2
-set hid
-set magic
-set noerrorbells
-syntax enable</p>
-
-<p>&ldquo;ctag和taglist
-let Tlist_Ctags_Cmd=&lsquo;/usr/local/bin/ctags&rsquo;
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_WinWidth=30
-let Tlist_Process_File_Always=1
-let Tlist_Use_SingleClick=1
-let Tlist_Auto_Open=1
-map<F8> :Tlist<CR>
-set tags=tags;
-set autochdir
- "nmap ct :!ctags -R &mdash;c++-kinds=+p &mdash;fields=+iaS &mdash;extra=+q .<CR></p>
-
-<p>&ldquo;配色
-colorscheme desert</p>
-
-<p>&ldquo;python自动补全
-let g:pydiction_location=&lsquo;/usr/share/vim/vim73/ftplugin/complete-dict&rsquo;
-let g:pydiction_menu_height=15
-"winmanager
-let g:winManagerwindowLayout=&lsquo;FileExplorer|TagList&rsquo;
-nmap wm :WMToggle<CR></p>
-
-<p>&ldquo;nerdtree
-let NERDChristmasTree=1
-let NERDTreeAutoCenter=1
-let NERDTreeMouseMode=2
-let NERDTreeShowBookmarks=1
-let NREDTreeShowFiles=1
-let NERDTreeShowHidden=1
-let NERDTreeShowLineNumbers=1
-let NERDTreeWinPos=&lsquo;left&rsquo;
-let NERDTreeWinSize=31
-"nnoremap f :NERDTreeToggle
-nnoremap ff :NERDTree<CR></p>
-
-<p>set smartcase
-set hlsearch
-set tabstop=4
-set noexpandtab
-set shiftwidth=4
-set smarttab
-set confirm
-set autoindent
-set cindent
-set softtabstop=4
-set history=700
-set nobackup
-set noswapfile
-set ignorecase
-set incsearch
-set gdefault
-set langmenu=zh_CN.UTF-8
-set helplang=cn
-set statusline=%F%m%r%h%w\ [FORMAT=%{&amp;ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\&ldquo;%d/%m/%y\     &ndash;\ %H:%M\&rdquo;)}
-set laststatus=2</p>
-
-<p>filetype on
-filetype plugin on
-filetype plugin indent on
-filetype indent on
-set viminfo+=!
-set iskeyword+=_,$,@,%,#,&ndash;
-set linespace=0
-set backspace=2</p>
-
-<p>set mouse=a
-set selection=exclusive
-set selectmode=mouse,key
-set report=0
-set shortmess=atl
-set showmatch
-&ldquo;set fillchars=vert:\,stl:\,stlnc:\
-set matchtime=5
- &rdquo; 能够漂亮地显示.NFO文件
-set encoding=utf-8
-function! SetFileEncodings(encodings)</p>
-
-<pre><code>let b:myfileencodingsbak=&amp;fileencodings
-let &amp;fileencodings=a:encodings
-</code></pre>
-
-<p>endfunction
-function! RestoreFileEncodings()</p>
-
-<pre><code>let &amp;fileencodings=b:myfileencodingsbak
-unlet b:myfileencodingsbak
-</code></pre>
-
-<p>endfunction</p>
-
-<p>au BufReadPre <em>.nfo call SetFileEncodings(&lsquo;cp437&rsquo;)|set ambiwidth=single
-au BufReadPost </em>.nfo call RestoreFileEncodings()</p>
-
-<p>&ldquo; 高亮显示普通txt文件（需要txt.vim脚本）
-au BufRead,BufNewFile *  setfiletype txt</p>
-
-<p>&ldquo; C的编译和运行
-map <F5> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-exec "w&rdquo;
-exec &ldquo;!gcc % -o %&lt;&rdquo;
-exec &ldquo;! ./%&lt;&rdquo;
-endfunc</p>
-
-<p>&ldquo; C++的编译和运行
-map <F6> :call CompileRunGpp()<CR>
-func! CompileRunGpp()
-exec "w&rdquo;
-exec &ldquo;!g++ % -o %&lt;&rdquo;
-exec &ldquo;! ./%&lt;&rdquo;
-endfunc</p>
-
-<p>&ldquo;Markdown to HTML<br/>
-nmap <leader>md :%!/usr/local/bin/Markdown.pl &mdash;html4tags <cr></p>
 
-<p>```</p>
 ]]></content>
   </entry>
   
