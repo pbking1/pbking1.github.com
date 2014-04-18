@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-18T12:26:25+08:00</updated>
+  <updated>2014-04-18T16:54:27+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -148,6 +148,19 @@
 </ul>
 </li>
 <li>and <code>tilda</code>, <code>guake</code> will be good choice of terminal</li>
+</ul>
+
+
+<h4>if there is error</h4>
+
+<ul>
+<li>if face <code>xinit: server error</code>
+
+<ul>
+<li>run <code>sudo apt-get install --reinstall xorg</code></li>
+<li>and it may help</li>
+</ul>
+</li>
 </ul>
 
 ]]></content>
