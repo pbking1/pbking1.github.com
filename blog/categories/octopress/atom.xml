@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-20T15:57:36+08:00</updated>
+  <updated>2014-04-20T16:03:03+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -84,6 +84,316 @@ git add .
 git commit -m "first post"
 git remote add origin https://github.com/username/jekyll_demo.git
 git push origin gh-pages
+</code></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Congiure My Octopress Blog]]></title>
+    <link href="http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog/"/>
+    <updated>2014-04-09T17:03:02+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog</id>
+    <content type="html"><![CDATA[<h3>1.In the _config.yml file</h3>
+
+<p>```
+default_asides: [asides/recent_posts.html, asides/category_list.html, asides/comment.html, asides/github.html, custom/asides/earth.html]</p>
+
+<p>```</p>
+
+<ul>
+<li>and</li>
+</ul>
+
+
+<!--more-->
+
+
+<p>```</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</h1>
+
+<h1>3rd Party Settings</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</h1>
+
+<h1>Github repositories</h1>
+
+<p>github_user: pbking1
+github_repo_count: 3
+github_show_profile_link: true
+github_skip_forks: true</p>
+
+<h1>Google Analytics</h1>
+
+<p>google_analytics_tracking_id:</p>
+
+<h1>Facebook Like</h1>
+
+<p>facebook_like: false</p>
+
+<h1>Sina Weibo</h1>
+
+<p>sina_weibo_follow_button: true</p>
+
+<h1>comment and share</h1>
+
+<p>comment_and_share: true</p>
+
+<h1>share</h1>
+
+<p>share: true</p>
+
+<h1>Jiathis</h1>
+
+<p>jiathis: true</p>
+
+<h1>duoshuo</h1>
+
+<p>duoshuo: true
+duoshuo_comments: true
+duoshuo_short_name: pbking1
+duoshuo_asides_num: 5
+duoshuo_asides_avatars: 1
+duoshuo_asides_time: 1
+duoshuo_asides_title: 1
+duoshuo_asides_admin: 0
+duoshuo_asides_length: 20</p>
+
+<p>```</p>
+
+<ul>
+<li>are important.</li>
+</ul>
+
+
+<h3>2. When overcome the problem that there is a blank near the jiathis button</h3>
+
+<ul>
+<li>the find the file under source/javascripts/octopress.js</li>
+<li>locate the function wrapFlashVideos()</li>
+</ul>
+
+
+<p>```
+function wrapFlashVideos() {
+  $(&lsquo;object&rsquo;).each(function(i, object) {</p>
+
+<pre><code>if( $(object).find('param[name=movie]').length ){
+    $(object).wrap('&lt;div class="flash-video"&gt;')
+}
+</code></pre>
+
+<p>  });
+  $(&lsquo;iframe[src<em>=vimeo],iframe[src</em>=youtube]&rsquo;).wrap(&lsquo;<div class="flash-video">&rsquo;)
+}
+<code>
+- add the code</code>if(object.attr(&lsquo;id&rsquo;) != &ldquo;JIATHISSWF&rdquo;)<code>
+</code>
+function wrapFlashVideos() {
+  $(&lsquo;object&rsquo;).each(function(i, object) {</p>
+
+<pre><code>if(object.attr('id') != "JIATHISSWF") {
+    if( $(object).find('param[name=movie]').length ){
+        $(object).wrap('&lt;div class="flash-video"&gt;')
+    }
+}
+</code></pre>
+
+<p>  });
+  $(&lsquo;iframe[src<em>=vimeo],iframe[src</em>=youtube]&rsquo;).wrap(&lsquo;<div class="flash-video">&rsquo;)
+}
+```
+&ndash; and soon the error blank will disappear</p>
+
+<h3>3.We will use</h3>
+
+<p><code>
+rake generate
+rake deploy
+</code>
+&ndash; to update the blog</p>
+
+<ul>
+<li>And use the command
+<code>
+rake new_post["test"]
+</code></li>
+<li>to create a new post blog article called &ldquo;test&rdquo;</li>
+<li>So that you can edit the markdown file in the source/_posts</li>
+<li>Add the article under the existing content using the markdown syntax</li>
+</ul>
+
+
+<p><code>
+rake new_page["about me"]
+</code>
+&ndash; to create a new tab named &ldquo;about me&rdquo;
+&ndash; And add the following code to finish the change
+```</p>
+
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/project">Project</a></li>
+  <li><a href="/about">About Me</a></li>
+</ul>
+
+
+<p><code>
+- And we can use the command
+</code>
+rake preivew
+```
+&ndash; to preview the blog in the browser in the address &ldquo;localhost:4000&rdquo;</p>
+
+<h3>Only show the abstract of the article on the first page</h3>
+
+<ul>
+<li>Add <code>&lt;!--more--&gt;</code> in the article</li>
+<li>Then edit _config.yml in
+<code>
+excerpt_link: "read more"
+</code></li>
+</ul>
+
+
+<h3>4.if can not push the blog</h3>
+
+<ul>
+<li><p>The solution is to force a push on the master branch.</p></li>
+<li><p>Edit the Rakefile and look for this line:</p></li>
+<li><p><code>system "git push origin #{deploy_branch}"</code></p></li>
+<li><p>Alter the line by adding a plus (+) before the #{deploy_branch} tag:</p></li>
+<li><p><code>system "git push origin +#{deploy_branch}"</code></p></li>
+<li><p>Run the command</p></li>
+<li><p><code>rake deploy</code></p></li>
+<li><p>It should succeed.</p></li>
+<li><p><em>Undo</em> the edit you made to the Rakefile!</p></li>
+</ul>
+
+
+<h4>5.向Octopress添加JiaThis分享工具及冲突解决</h4>
+
+<ul>
+<li><p>在_config.yml底部添加如下配置：
+```</p>
+
+<h1>JiaThis</h1>
+
+<p>jiathis: true
+```</p></li>
+<li><p>修改<code>source/_include/post/sharing.html</code>，在最后一行<code>&lt;/div&gt;</code>前添加如下代码：</p></li>
+</ul>
+
+
+<p>```
+
+  <!-- JiaThis Button BEGIN -->
+  <div class="jiathis_style"></p>
+
+<pre><code>&lt;span class="jiathis_txt"&gt;分享到：&lt;/span&gt;
+&lt;a class="jiathis_button_tsina"&gt;新浪微博&lt;/a&gt;
+&lt;a class="jiathis_button_googleplus"&gt;Google+&lt;/a&gt;
+&lt;a class="jiathis_button_renren"&gt;人人网&lt;/a&gt;
+&lt;a class="jiathis_button_qzone"&gt;QQ空间&lt;/a&gt;
+&lt;a class="jiathis_button_tqq"&gt;腾讯微博&lt;/a&gt;
+&lt;a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"&gt;更多&lt;/a&gt;
+&lt;a class="jiathis_counter_style"&gt;&lt;/a&gt;
+</code></pre>
+
+<p>  </div>
+  <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"></script>
+  <!-- JiaThis Button END -->
+
+```</p>
+
+<ul>
+<li><p><em>解决JiaThis与Octopress冲突</em></p></li>
+<li><p>Octopress会对所有有movie属性的object标签添加一层形如<code>&lt;div class="flash-video"&gt;&lt;div&gt;</code>的wrapper，用于视频回放。</p></li>
+<li>实现代码在<code>source/javascripts/octopress.js</code>中的wrapFlashVideos()函数：</li>
+</ul>
+
+
+<p>```
+function wrapFlashVideos() {
+  $(&lsquo;object&rsquo;).each(function(object) {</p>
+
+<pre><code>object = $(object);
+if ( $('param[name=movie]', object).length ) {
+  var wrapper = object.before('&lt;div class="flash-video"&gt;&lt;div&gt;').previous();
+  $(wrapper).children().append(object);
+}
+</code></pre>
+
+<p>  });
+  $(&lsquo;iframe[src<em>=vimeo],iframe[src</em>=youtube]&rsquo;).each(function(iframe) {</p>
+
+<pre><code>iframe = $(iframe);
+var wrapper = iframe.before('&lt;div class="flash-video"&gt;&lt;div&gt;').previous();
+$(wrapper).children().append(iframe);
+</code></pre>
+
+<p>  });
+}
+```
+&ndash; 这层wrapper即是形成JiaThis分享工具条左下角小白框的原因。我们需要对object做一个判断，过滤掉JiaThis的object。 将wrapFlashVideos()函数改为以下代码即可：</p>
+
+<p>```
+function wrapFlashVideos() {
+  $(&lsquo;object&rsquo;).each(function(object) {</p>
+
+<pre><code>object = $(object);
+if (object.attr('id') != "JIATHISSWF") {
+  if ( $('param[name=movie]', object).length ) {
+</code></pre>
+
+<p>  var wrapper = object.before(&lsquo;<div class="flash-video"><div>&rsquo;).previous();
+  $(wrapper).children().append(object);</p>
+
+<pre><code>  }
+}
+</code></pre>
+
+<p>  });
+  $(&lsquo;iframe[src<em>=vimeo],iframe[src</em>=youtube]&rsquo;).each(function(iframe) {</p>
+
+<pre><code>iframe = $(iframe);
+var wrapper = iframe.before('&lt;div class="flash-video"&gt;&lt;div&gt;').previous();
+$(wrapper).children().append(iframe);
+</code></pre>
+
+<p>  });
+}
+```</p>
+
+<h3>6.加入disqus评论</h3>
+
+<ul>
+<li><p>把下面这段代码加入到系统原有的disqus_thread.html中，文件在_include/post里面
+```
+<div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /<em> * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * </em>/
+      var disqus_shortname = &lsquo;pbking1&rsquo;; // required: replace example with your forum shortname</p>
+
+<pre><code>  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</code></pre>
+
+<p>  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+```</p></li>
+<li><p>然后再在_config.yml里面加入
+<code>
+disqus_short_name: name
+disqus_show_comment_count: true
 </code></p></li>
 </ul>
 
