@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-20T13:48:16+08:00</updated>
+  <updated>2014-04-20T15:19:11+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -18,45 +18,65 @@
     <link href="http://pbking1.github.com/blog/2014/04/20/blog-on-github-page/"/>
     <updated>2014-04-20T13:32:38+08:00</updated>
     <id>http://pbking1.github.com/blog/2014/04/20/blog-on-github-page</id>
-    <content type="html"><![CDATA[<h3>why do I write this post?</h3>
+    <content type="html"><![CDATA[<h3>什么是github？</h3>
+
+<p><img src="/images/github1.jpg">
+&ndash; 是一个免费的用与存放git版本控制的软件代码和内容项目。
+&ndash; 每个项目都有一个主页，列出项目的源文件</p>
+
+<h3>什么是github page？</h3>
 
 <ul>
-<li>first
+<li>为了使的网页简洁易懂，github就设计了pages功能</li>
+<li>pages功能允许用户自定义项目首页，用来代替默认的源码列表
 
 <ul>
-<li>en&hellip;because of the speech of the system analyze and design</li>
-<li>so I decide to write a post about how to blog on github page</li>
+<li>也就是说github page可以被认为是用户编写的，托管在github上的静态网页。</li>
 </ul>
 </li>
-<li>second
+<li>github提供模板，允许站内生成网页，但也允许用户自己编写网页，然后上传。
 
 <ul>
-<li>to know more about the framework of my own blog</li>
+<li>但是这种上传并不是单纯的上传，而是会经过Jekyll程序的再处理。
+<img src="/images/git2.jpg"></li>
 </ul>
 </li>
 </ul>
 
 
-<h3>So what is github?</h3>
+<h3>什么是jekyll?</h3>
+
+<p><img src="/images/jekyll1.jpg">
+&ndash; Jekyll（发音/&lsquo;dʒiːk əl/，"杰克尔")
+&ndash; jekyll是一个静态站点生成器
+&ndash; 它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，所以实际上可以用来编写整个网站。
+&ndash; 因此</p>
+
+<pre><code>- 你先在本地编写符合Jekyll规范的网站源码，然后上传到github，由github生成并托管整个网站。
+</code></pre>
 
 <ul>
-<li>Github is a knid of tools that allow you to code with your team and have an excellent subversion control.</li>
-<li>This is a free tool.</li>
-<li>And the aim of it is to work together and be better.</li>
+<li>但是由于他生成的是静态网页，因此要添加评论功能或者其他的选择较少</li>
+<li><p>并且没有数据库，所以如果网站也越大，生成时间越长。</p></li>
+<li><p>目录结构
+<code>
+/jekyll_demo
+　　　　|--　_config.yml
+　　　　|--　_layouts
+　　　　|　　　|--　default.html
+　　　　|--　_posts
+　　　　|　　　|--　2012-08-25-hello-world.html
+　　　　|--　index.html
+</code></p></li>
+<li><p>通过简单的几条指令就可以更新博客了
+<code>
+git add .
+git commit -m "first post"
+git remote add origin https://github.com/username/jekyll_demo.git
+git push origin gh-pages
+</code></p></li>
 </ul>
 
-
-<h3>What is github page?</h3>
-
-<ul>
-<li><p>GitHub Pages are public webpages freely hosted and easily published through our site. You can create and publish them online using the Automatic Page Generator. If you prefer to work locally, you can use the GitHub for Mac and Windows apps, or the command line.</p></li>
-<li><p>Pages are served over HTTP, not HTTPS. That doesn&rsquo;t make them inherently less secure, but it does mean that you shouldn&rsquo;t use them for sensitive transactions, like sending passwords or credit card numbers.</p></li>
-</ul>
-
-
-<h3>What is octopress?</h3>
-
-<h3>How it works?</h3>
 ]]></content>
   </entry>
   
