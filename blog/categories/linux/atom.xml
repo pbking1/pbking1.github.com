@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-20T12:15:08+08:00</updated>
+  <updated>2014-04-20T12:32:36+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -145,9 +145,16 @@
 <li><code>sudo apt-get install byobu</code></li>
 <li>and set the start up script in the <code>/use/bin/byobu</code></li>
 <li>and the terminal will start up in byobu</li>
+<li><code>fn + F2</code> to  create a new terminal</li>
+<li><code>fn + F3</code> and <code>fn + F4</code> to switch the terminal</li>
 </ul>
 </li>
-<li>and <code>tilda</code>, <code>guake</code> will be good choice of terminal</li>
+<li>and <code>tilda</code>, <code>guake</code> will be good choice of terminal
+
+<ul>
+<li>press <code>F12</code> can drop down the guake terminal</li>
+</ul>
+</li>
 </ul>
 
 
@@ -824,6 +831,37 @@ apt-config : use the read the apt coniguration info
 
 <ul>
 <li>when the NFS start, it will select the port that is smaller than 1024</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>15.screen</h3>
+
+<ul>
+<li>split the screen horizontal
+
+<ul>
+<li><code>ctrl + a and shift + s</code></li>
+</ul>
+</li>
+<li>split the screen vertical(only in ubuntu/Debian)
+
+<ul>
+<li><code>ctrl + a and shift + \(|)</code></li>
+</ul>
+</li>
+<li>switch between the screen
+
+<ul>
+<li><code>ctrl + a + tab</code></li>
+</ul>
+</li>
+<li>after split the screen
+
+<ul>
+<li>then create a new windows using</li>
+<li><code>ctrl + a + c</code></li>
 </ul>
 </li>
 </ul>
