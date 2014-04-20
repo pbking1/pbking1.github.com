@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-20T12:32:36+08:00</updated>
+  <updated>2014-04-20T13:00:38+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[10 Uml Homework of System Analyze and Design]]></title>
+    <link href="http://pbking1.github.com/blog/2014/04/20/10-uml-homework-of-system-analyze-and-design/"/>
+    <updated>2014-04-20T12:57:18+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/04/20/10-uml-homework-of-system-analyze-and-design</id>
+    <content type="html"><![CDATA[<h3>1. 概念类图（Conceptual Class Diagram / Domian Model）</h3>
+
+<ul>
+<li><p>实验目的：</p>
+
+<ul>
+<li><ol>
+<li>掌握概念类图的涵义和内容</li>
+</ol>
+</li>
+<li><ol>
+<li>掌握概念类图的绘制方法</li>
+</ol>
+</li>
+<li><ol>
+<li>掌握概念类图的使用范围</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>实验内容：</p></li>
+<li><ol>
+<li>Read the game description of &ldquo;Priests and Devils&rdquo; .</li>
+</ol>
+</li>
+<li><p>Priests and Devils
+  Priests and Devils is a puzzle game in which you will help the Priests and Devils to cross the river within the time limit. There are 3 priests and 3 devils at one side of the river. They all want to get to the other side of this river, but there is only one boat and this boat can only carry two persons each time. And there must be one person steering the boat from one side to the other side. In the flash game, you can click on them to move them and click the go button to move the boat to the other direction. If the priests are out numbered by the devils on either side of the river, they get killed and the game is over. You can try it in many ways. Keep all priests alive! Good luck!</p></li>
+<li><p>and play the game ( <a href="http://www.flash-game.net/game/2535/priests-and-devils.html">http://www.flash-game.net/game/2535/priests-and-devils.html</a> ) first.</p></li>
+<li><ol>
+<li>识别游戏中出现的概念，并画出概念类图。要求给出类、属性、以及类之间的关联（建议有多重性）。</li>
+</ol>
+</li>
+</ul>
+
+
+<p><img src="http://pbking1.github.com/images/hw1.jpg">
+<img src="http://pbking1.github.com/images/hw2.jpg">
+<img src="http://pbking1.github.com/images/hw3.jpg"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Install Ubuntu on Macbook Air Dual]]></title>
