@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-20T13:03:31+08:00</updated>
+  <updated>2014-04-20T13:05:38+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -43,18 +43,17 @@
 <li>Read the game description of &ldquo;Priests and Devils&rdquo; .</li>
 </ol>
 </li>
-<li><p>Priests and Devils</p>
-
-<ul>
-<li>Priests and Devils is a puzzle game in which you will help the Priests and Devils to cross the river within the time limit. There are 3 priests and 3 devils at one side of the river. They all want to get to the other side of this river, but there is only one boat and this boat can only carry two persons each time. And there must be one person steering the boat from one side to the other side. In the flash game, you can click on them to move them and click the go button to move the boat to the other direction. If the priests are out numbered by the devils on either side of the river, they get killed and the game is over. You can try it in many ways. Keep all priests alive! Good luck!</li>
-</ul>
-</li>
+<li><p>Priests and Devils
+  Priests and Devils is a puzzle game in which you will help the Priests and Devils to cross the river within the time limit. There are 3 priests and 3 devils at one side of the river. They all want to get to the other side of this river, but there is only one boat and this boat can only carry two persons each time. And there must be one person steering the boat from one side to the other side. In the flash game, you can click on them to move them and click the go button to move the boat to the other direction. If the priests are out numbered by the devils on either side of the river, they get killed and the game is over. You can try it in many ways. Keep all priests alive! Good luck!</p></li>
 <li><p>and play the game ( <a href="http://www.flash-game.net/game/2535/priests-and-devils.html">http://www.flash-game.net/game/2535/priests-and-devils.html</a> ) first.</p></li>
 <li><ol>
 <li>识别游戏中出现的概念，并画出概念类图。要求给出类、属性、以及类之间的关联（建议有多重性）。</li>
 </ol>
 </li>
 </ul>
+
+
+<!--more-->
 
 
 <p><img src="http://pbking1.github.com/images/hw1.jpg"></p>
@@ -119,9 +118,9 @@
 </li>
 <li><p>实验内容：</p></li>
 <li><ol>
-<li>Read the material of &ldquo;simple digital watch&rdquo;</li>
-<li>simple digital watch</li>
-<li>A simple digital watch has a display and two buttons to set it, the A button and the B button. The watch has two modes of operation, display time and set time. In the display time mode, hours and minutes are displayed, separated by a flashing colon.
+<li>Read the material of &ldquo;simple digital watch&rdquo;
+simple digital watch
+A simple digital watch has a display and two buttons to set it, the A button and the B button. The watch has two modes of operation, display time and set time. In the display time mode, hours and minutes are displayed, separated by a flashing colon.
 The set time mode has two sub-modes, set hours and set minutes. The A button is used to select modes. Each time A is pressed, the mode advances in sequence: display, set hours, set minutes, display etc. Within the sub-modes, the B button is used to advance the hours or minutes once each time it is pressed. Buttons must be released before they can generate another event.</li>
 </ol>
 </li>
