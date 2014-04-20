@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-20T13:33:49+08:00</updated>
+  <updated>2014-04-20T13:48:16+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -18,7 +18,45 @@
     <link href="http://pbking1.github.com/blog/2014/04/20/blog-on-github-page/"/>
     <updated>2014-04-20T13:32:38+08:00</updated>
     <id>http://pbking1.github.com/blog/2014/04/20/blog-on-github-page</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<h3>why do I write this post?</h3>
+
+<ul>
+<li>first
+
+<ul>
+<li>en&hellip;because of the speech of the system analyze and design</li>
+<li>so I decide to write a post about how to blog on github page</li>
+</ul>
+</li>
+<li>second
+
+<ul>
+<li>to know more about the framework of my own blog</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>So what is github?</h3>
+
+<ul>
+<li>Github is a knid of tools that allow you to code with your team and have an excellent subversion control.</li>
+<li>This is a free tool.</li>
+<li>And the aim of it is to work together and be better.</li>
+</ul>
+
+
+<h3>What is github page?</h3>
+
+<ul>
+<li><p>GitHub Pages are public webpages freely hosted and easily published through our site. You can create and publish them online using the Automatic Page Generator. If you prefer to work locally, you can use the GitHub for Mac and Windows apps, or the command line.</p></li>
+<li><p>Pages are served over HTTP, not HTTPS. That doesn&rsquo;t make them inherently less secure, but it does mean that you shouldn&rsquo;t use them for sensitive transactions, like sending passwords or credit card numbers.</p></li>
+</ul>
+
+
+<h3>What is octopress?</h3>
+
+<h3>How it works?</h3>
 ]]></content>
   </entry>
   
@@ -3695,19 +3733,17 @@ name:Mario Arbulu
     <link href="http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm/"/>
     <updated>2014-04-07T23:27:24+08:00</updated>
     <id>http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm</id>
-    <content type="html"><![CDATA[<ul>
-<li>缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。</li>
-<li>从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。</li>
-<li>没有遗传算法的”交叉”和”变异“操作，他通过追随当前搜索到的最优值来寻找全局最优。</li>
-<li>这种算法实现容易并且精度高，收敛快。</li>
-<li>是一种并行算法</li>
-<li>是一种很有潜力的神经网络算法</li>
-<li>是一种演化计算的方法，来源于对一个简化社会模型的模拟</li>
-<li>在大范围的问题集中是很有效的</li>
-<li>是一种基于群智能的随机搜索算法</li>
-<li>自从PSO算法被提出以来，由于它直观的背景，简单而容易实现的特点，以及对于不同类型函数广泛的适应性，逐渐得到研究者的注意。十余年来，PSO算法的理论与应用研究都取得了很大的进展，对于算法的原理已经有了初步的了解，算法的应用也已经在不同学科中得以实现。</li>
-</ul>
-
+    <content type="html"><![CDATA[<p>&lt;本文为总结网上资料的文章，大多数内容并非本人原创>
+&ndash; 缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。
+&ndash; 从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。
+&ndash; 没有遗传算法的”交叉”和”变异“操作，他通过追随当前搜索到的最优值来寻找全局最优。
+&ndash; 这种算法实现容易并且精度高，收敛快。
+&ndash; 是一种并行算法
+&ndash; 是一种很有潜力的神经网络算法
+&ndash; 是一种演化计算的方法，来源于对一个简化社会模型的模拟
+&ndash; 在大范围的问题集中是很有效的
+&ndash; 是一种基于群智能的随机搜索算法
+&ndash; 自从PSO算法被提出以来，由于它直观的背景，简单而容易实现的特点，以及对于不同类型函数广泛的适应性，逐渐得到研究者的注意。十余年来，PSO算法的理论与应用研究都取得了很大的进展，对于算法的原理已经有了初步的了解，算法的应用也已经在不同学科中得以实现。</p>
 
 <!--more-->
 
