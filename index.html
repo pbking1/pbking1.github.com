@@ -9,9 +9,8 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="什么是github？ 是一个免费的用与存放git版本控制的软件代码和内容项目。
-每个项目都有一个主页，列出项目的源文件 什么是github page？ 为了使的网页简洁易懂，github就设计了pages功能
-pages功能允许用户自定义项目首页，用来代替默认的源码列表 也就是说github &hellip;">
+  <meta name="description" content="First is the basic About # these code are processed by the preprocessor
+After the preprocessor read the code, the preprocessor directives will deal &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +68,76 @@ pages功能允许用户自定义项目首页，用来代替默认的源码列表
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/25/c-pointer-tutorial-1/">C Pointer Tutorial (1)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-25T13:41:01+08:00" pubdate data-updated="true">Apr 25<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/25/c-pointer-tutorial-1/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>First is the basic</h3>
+
+<ul>
+<li>About <code>#</code>
+
+<ul>
+<li>these code are processed by the preprocessor</li>
+<li>After the preprocessor read the code, the preprocessor directives will deal with it</li>
+<li>then give the main code that are dealed with by the preprocessor directives to the complier</li>
+<li>like <code>#include &lt;stdio.h&gt;</code>
+
+<ul>
+<li>It means that use the content in the stdio.h to replace the <code>#</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>About <code>const</code>
+
+<ul>
+<li>the value that is named const can not be modified</li>
+<li>and it would be better to use <code>const</code> than <code>define</code> to define some const value.</li>
+</ul>
+</li>
+<li>About <code>*</code>
+
+<ul>
+<li><strong>the pointer point the address of a value that is stored in the memory</strong></li>
+</ul>
+</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -564,123 +633,6 @@ pages功能允许用户自定义项目首页，用来代替默认的源码列表
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/basic-idea-in-robotics/">Basic Idea in Robotics</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T18:55:54+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/basic-idea-in-robotics/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>ABSTRACT:</h3>
-
-<ul>
-<li>The basic idea in robotic area
-
-<ul>
-<li>A robot is an autonomous system which exists in the physical world, can sense its environment , and can act on it to achieve some goals</li>
-<li>The robotic involves autonomy, sensing, action, and achieving goals, all in the physical world</li>
-<li>The component of the robot are
-
-<ul>
-<li>physical body
-
-<ul>
-<li>it can exist and do in the physical world</li>
-</ul>
-</li>
-<li>combine
-
-<ul>
-<li>manipulation(up body)
-
-<ul>
-<li>handling objects</li>
-</ul>
-</li>
-<li>locomotion(down body).
-
-<ul>
-<li>Moving around, going places</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Sensors
-
-<ul>
-<li>It can sense/perceive its environment in order to get information about itself and its surroundings.</li>
-</ul>
-</li>
-<li>Effectors and actuators
-
-<ul>
-<li>it can take actions</li>
-<li>effector enable a robot to take a action, to do physical things
-
-<ul>
-<li>it can also be defined as any device that has an effect on the environment</li>
-<li>it range from legs, wheels to arms and fingers</li>
-</ul>
-</li>
-<li>actuator can do exact the actual work for the robot
-
-<ul>
-<li>are the effector that use underlying mechanism, such as motor and muscles.</li>
-<li>Is also the mechanism that enable the effector to execute an action or movement</li>
-<li>Such as electric motors(base on electric current), hydraulics(base on fluid pressure) ,pneumatics(base on air pressure) and photo-reactive materials ……</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Controller
-
-<ul>
-<li>it can be autonomous</li>
-<li>provide hardware and/or software that make the robot autonomous by using the sensor inputs and any other information to decide what to do ad then to control the effectors to execute that action</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/basic-idea-in-robotics/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -694,6 +646,10 @@ pages功能允许用户自定义项目首页，用来代替默认的源码列表
     <section>
   <h1>Recent_posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/25/c-pointer-tutorial-1/">C Pointer Tutorial (1)</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/04/20/blog-on-github-page/">Blog on Github Page</a>
@@ -711,10 +667,6 @@ pages功能允许用户自定义项目首页，用来代替默认的源码列表
         <a href="/blog/2014/04/15/linux-server-tutorial/">Linux Server Tutorial</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/04/13/my-bash-profile-configuration/">My Bash Profile Configuration</a>
-      </li>
-    
   </ul>
 </section>
 <section> 
@@ -728,6 +680,7 @@ pages功能允许用户自定义项目首页，用来代替默认的源码列表
 <li class='category'><a href='/blog/categories/robot/'>Robot (2)</a></li>
 <li class='category'><a href='/blog/categories/system-analyze-and-design/'>System_analyze_and_design (2)</a></li>
 <li class='category'><a href='/blog/categories/uml/'>UML (1)</a></li>
+<li class='category'><a href='/blog/categories/c-c-/'>c/c++ (1)</a></li>
  
   </ul> 
 </section><section>

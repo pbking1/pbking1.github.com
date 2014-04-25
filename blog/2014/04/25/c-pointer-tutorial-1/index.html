@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Introduction to the Project of Network Attack and Defense - KING</title>
+  <title>C Pointer Tutorial (1) - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="Produced by pengbin and wangyang Abstract A kind of penetration testing tool is introduced. And we carry out some experiments to penetrate some &hellip;">
-  <meta name="keywords" content="computer secure, c++, peneration testing, hack, winxp, linux, ubuntu, tcp/ip">
+  <meta name="description" content="First is the basic About # these code are processed by the preprocessor
+After the preprocessor read the code, the preprocessor directives will deal &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -70,7 +71,7 @@
   
   <header>
     
-      <h1 class="entry-title">Introduction to the Project of Network Attack and Defense</h1>
+      <h1 class="entry-title">C Pointer Tutorial (1)</h1>
     
     
       <p class="meta">
@@ -86,7 +87,7 @@
   
 
 
-<time datetime="2014-04-09T12:20:42+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+<time datetime="2014-04-25T13:41:01+08:00" pubdate data-updated="true">Apr 25<span>th</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com">Comments</a>
@@ -96,122 +97,36 @@
   </header>
 
 
-<div class="entry-content"><pre><code>Produced by pengbin and wangyang
-</code></pre>
-
-<h4>Abstract</h4>
+<div class="entry-content"><h3>First is the basic</h3>
 
 <ul>
-<li>A kind of penetration testing tool is introduced. And we carry out some experiments to penetrate some systems like WinXP and ubuntu linux. Also will we analyze the mechanic of the penetrating and showing why we can use the vulnerability of the system to get the whole access of it. Thus this kind of testing technology can be used in many areas which can help a good many of companies to protect their personal computer and server from the crackers that want to break into the system and do something bad.</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>What is penetration testing?</h4>
+<li>About <code>#</code>
 
 <ul>
-<li><p>The penetration testing is a kind of technic that can simulate the attacker to attack the target system ,and break their secure system. So that we can finally get the access of it.</p></li>
-<li><p>And this kind of test is not completed by a simple steps using a few tools like scanner and so on. Then write a report about it after using them.</p></li>
-<li><p>Also, it is impossible to become a good penetration tester in a night.</p></li>
-<li><p>And the process of the penetration testing is as follow:</p>
+<li>these code are processed by the preprocessor</li>
+<li>After the preprocessor read the code, the preprocessor directives will deal with it</li>
+<li>then give the main code that are dealed with by the preprocessor directives to the complier</li>
+<li>like <code>#include &lt;stdio.h&gt;</code>
 
 <ul>
-<li>Target discovery and enumeration:
-
-<ul>
-<li>Identifying the target and collecting basic information about it without making any physical connection with it.</li>
-</ul>
-</li>
-<li>Vulnerability:
-
-<ul>
-<li>Implementing various discovery methods such as scanning, remote login, and network services, to figure out different services and softwares running on the target system.</li>
-</ul>
-</li>
-<li>Exploitation:
-
-<ul>
-<li>Exploiting a known or an unknown vulnerability in any of the softwares or services running on the target system.</li>
-</ul>
-</li>
-<li>Level of control after exploitation:
-
-<ul>
-<li>This is the level of access that an attacker can get on the target system after a successful exploitation.</li>
-</ul>
-</li>
-<li>Reporting:
-
-<ul>
-<li>Preparing an advisory about the vulnerability and its possible counter measures.</li>
+<li>It means that use the content in the stdio.h to replace the <code>#</code></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-
-
-<h4>The methodology of the penetration testing</h4>
+<li>About <code>const</code>
 
 <ul>
-<li><p>Here are four famous methodologies in the field of the information security. And this can be used to define the standard steps to take in the penetration testing.</p></li>
-<li><p>NIST SP800-115</p>
-
-<ul>
-<li>The Technical Guide Information Security Testing is a document carried out by the US government in the field of security testing.</li>
+<li>the value that is named const can not be modified</li>
+<li>and it would be better to use <code>const</code> than <code>define</code> to define some const value.</li>
 </ul>
 </li>
-<li>ISSAF
+<li>About <code>*</code>
 
 <ul>
-<li>The Information Systems Security Assessment Framework is an open source testing and analyze framework.</li>
+<li><strong>the pointer point the address of a value that is stored in the memory</strong></li>
 </ul>
 </li>
-<li>OSSTMM
-
-<ul>
-<li>The Open Source Security Testing Methodology Manual is the international standard of the security testing and analyze, which many enterprise use this as the principal of their daily work.</li>
-</ul>
-</li>
-<li>PTES
-
-<ul>
-<li>This Standard redefines the standard of the penetration testing and make the penetration testing a completely new one.</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>The way of testing</h4>
-
-<ul>
-<li>white box testing
-
-<ul>
-<li><p>One of the advantage is that you know all the knowledge of the system and do not need to worry about being interrupted.</p></li>
-<li><p>But the disadvantage is that you can not test the urgent service of the system.</p></li>
-</ul>
-</li>
-<li>black box testing
-
-<ul>
-<li><p>This kind of testing does well in testing the urgent service of the system when being attacked.</p></li>
-<li><p>however, it will need a really good skill to complete the attack.</p></li>
-<li><p>Thus, as a black box tester, what you need to do is to find out the cheapest way to get the access of the system.</p></li>
-</ul>
-</li>
-</ul>
-
-
-<h4>Intro of our project</h4>
-
-<ul>
-<li><p>We are going to build a environment which contains the WinXP , ubuntu linux and Backtrace5 linux operating system connected in innet.</p></li>
-<li><p>We will first do the penetration testing on the WinXP and ubuntu platform and provide the way to practice.</p></li>
-<li><p>Then We are going to analyze the loopholes and weaknesses of the system and write something to test some loopholes code in order to have a better understanding of the mechanic.</p></li>
-<li><p>After introducing the way hackers can use to hack into your computer and we will provide some advises to let you protect your computer better than before.</p></li>
 </ul>
 
 </div>
@@ -236,8 +151,14 @@
   
 
 
-<time datetime="2014-04-09T12:20:42+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+<time datetime="2014-04-25T13:41:01+08:00" pubdate data-updated="true">Apr 25<span>th</span>, 2014</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/c-slash-c-plus-plus/'>c/c++</a>
+  
+</span>
 
 
     </p>
@@ -263,10 +184,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/" title="Previous Post: CPSO-Sk 的实现(1)">&laquo; CPSO-Sk 的实现(1)</a>
+        <a class="basic-alignment left" href="/blog/2014/04/20/blog-on-github-page/" title="Previous Post: Blog on github page">&laquo; Blog on github page</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/04/09/final-exam-of-the-android-class/" title="Next Post: Final Exam Of The Sysu SE Android Class">Final Exam Of The Sysu SE Android Class &raquo;</a>
       
     </p>
   </footer>
@@ -379,8 +298,8 @@ ds.charset = 'UTF-8';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1/';
         var disqus_script = 'embed.js';
       
     (function () {
