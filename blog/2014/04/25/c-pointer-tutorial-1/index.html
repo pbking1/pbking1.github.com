@@ -121,10 +121,191 @@ After the preprocessor read the code, the preprocessor directives will deal &hel
 <li>and it would be better to use <code>const</code> than <code>define</code> to define some const value.</li>
 </ul>
 </li>
+<li><p>About passing the value</p>
+
+<ul>
+<li>in C programming language
+
+<ul>
+<li>all the array is passed using <strong>reference</strong>(if the value change in the function, it will change.)</li>
+<li>and all the value and const value are passed using <strong>value</strong>(if the value change in the function, it will <strong>not</strong> change.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>About string I/O</p>
+
+<ul>
+<li><code>gets</code>
+
+<ul>
+<li>it is used to read a line in the content and store it as a parameter to pass to the array</li>
+<li>the input line contains: a string and a newline</li>
+</ul>
+</li>
+<li><code>puts</code></li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
 <li>About <code>*</code>
 
 <ul>
 <li><strong>the pointer point the address of a value that is stored in the memory</strong></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>data type</h3>
+
+<ul>
+<li>In C programming language, there are only 4 basic data type
+
+<ul>
+<li>int, float, pointer and polymerization</li>
+</ul>
+</li>
+<li><strong>INT</strong>
+
+<ul>
+<li>contains char, short, int and long int</li>
+<li>signed and ubsigned</li>
+<li>thr range of the variable</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th>  type</th>
+<th>range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>  char</td>
+<td>0~127</td>
+</tr>
+<tr>
+<td>  signed char</td>
+<td>-127~127</td>
+</tr>
+<tr>
+<td>  unsigned char</td>
+<td> 0~255</td>
+</tr>
+<tr>
+<td>  short int</td>
+<td>-32767~32767</td>
+</tr>
+<tr>
+<td>  unsigned short int</td>
+<td>0~65535</td>
+</tr>
+<tr>
+<td>  int</td>
+<td>-32767~32767</td>
+</tr>
+<tr>
+<td>  unsigned int</td>
+<td>0~65535</td>
+</tr>
+<tr>
+<td>  long int </td>
+<td>-2147483647~2147483647</td>
+</tr>
+<tr>
+<td>  unsigned long int </td>
+<td> 0~4294967295</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>short int is at least 16 bits</li>
+<li>long int is at least 32 bits</li>
+<li>if the computer is 32 bits then int is 32 bits
+
+<ul>
+<li>else if the computer is 64 bits than the int is 32 bits</li>
+</ul>
+</li>
+<li>The range difference in difference kinds of machine</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th>  data type</th>
+<th>32 bits compiler</th>
+<th>64 bits compiler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>  char</td>
+<td>1 byte </td>
+<td> 1 byte</td>
+</tr>
+<tr>
+<td>  char *</td>
+<td>4 bytes</td>
+<td> 8bytes</td>
+</tr>
+<tr>
+<td>  short int</td>
+<td>2 bytes</td>
+<td>2 bytes</td>
+</tr>
+<tr>
+<td>  int</td>
+<td>4 bytes</td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td>  unsigned int</td>
+<td>4 bytes </td>
+<td> 4 bytes</td>
+</tr>
+<tr>
+<td>  float </td>
+<td> 4 bytes </td>
+<td> 4 bytes</td>
+</tr>
+<tr>
+<td>  double </td>
+<td> 8 bytes </td>
+<td> 8 bytes</td>
+</tr>
+<tr>
+<td>  long </td>
+<td> 4 bytes </td>
+<td> 4 bytes</td>
+</tr>
+<tr>
+<td>  long long </td>
+<td> 8 bytes </td>
+<td> 8 bytes</td>
+</tr>
+<tr>
+<td>  unsigned long </td>
+<td> 4 bytes </td>
+<td> 8 bytes </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>use <code>sizeof(data type)</code> to get the length of the data type</li>
 </ul>
 </li>
 </ul>
