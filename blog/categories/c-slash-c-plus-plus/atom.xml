@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C/c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-slash-c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-04-26T10:50:13+08:00</updated>
+  <updated>2014-04-26T11:21:56+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -95,7 +95,7 @@
 <li><strong>INT</strong>
 
 <ul>
-<li>contains char, short, int and long int</li>
+<li>contains : char, short, int and long int</li>
 <li>signed and ubsigned</li>
 <li>thr range of the variable</li>
 </ul>
@@ -227,6 +227,22 @@
 
 <ul>
 <li>use <code>sizeof(data type)</code> to get the length of the data type</li>
+<li>add <code>0</code> before number to make it octal number</li>
+<li>add <code>0x</code> before number to make it hexadecimal number</li>
+<li>add <code>L</code> before character to make it wider charactor literal(it the environment support)
+
+<ul>
+<li>e.g <code>L'X'</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>FLOAT</strong>
+
+<ul>
+<li>contains : float, double, long double</li>
+<li>range : 10^-37 ~ 10<sup>37</sup></li>
+<li></li>
 </ul>
 </li>
 </ul>
