@@ -519,7 +519,7 @@ default_asides: [asides/recent_posts.html, asides/category_list.html, asides/com
 <h3>7.add license</h3>
 
 <ul>
-<li>1.首先source_includes\post目录中添加license.html文件</li>
+<li>1.首先<code>source\_includes\post</code>目录中添加license.html文件</li>
 </ul>
 
 
@@ -545,7 +545,7 @@ default_asides: [asides/recent_posts.html, asides/category_list.html, asides/com
 </span><span class='line'>出处： &lt;A href="http://pbking1.github.io/"&gt;http://pbking1.github.io/&lt;/A&gt; 
 </span><span class='line'>&lt;BR&gt;本文基于&lt;a target="_blank" title="Creative Commons Attribution 2.5 China Mainland License" href="http://creativecommons.org/licenses/by/2.5/cn/"&gt; 
 </span><span class='line'>署名 2.5 中国大陆&lt;/a&gt;许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名 
-</span><span class='line'>&lt;a href="http://pbking1.github.io/"&gt;pb&lt;/a&gt;（包含链接）。 &lt;/DIV&gt;&lt;/DIV&gt; 
+</span><span class='line'>&lt;a href="http://pbking1.github.io/"&gt;pb&lt;/a&gt;。 &lt;/DIV&gt;&lt;/DIV&gt; 
 </span><span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
@@ -601,7 +601,7 @@ default_asides: [asides/recent_posts.html, asides/category_list.html, asides/com
 
 
 <ul>
-<li>3.修改文件source_layouts\post.html
+<li>3.修改文件<code>source\_layouts\post.html</code>
 
 <ul>
 <li>add</li>
@@ -610,23 +610,22 @@ default_asides: [asides/recent_posts.html, asides/category_list.html, asides/com
 </ul>
 
 
-<p><DIV style="font-size:12px;BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid" class=oec2003right>
-<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px">
-<DIV style="LINE-HEIGHT: 200%; MARGIN-TOP: 10px; COLOR: #000000">
-作者： <A href="http://pbking1.github.io/">pb</A> <BR>
-出处： <A href="http://pbking1.github.io/"><a href="http://pbking1.github.io/">http://pbking1.github.io/</a></A>
-<BR>本文基于<a target="_blank" title="Creative Commons Attribution 2.5 China Mainland License" href="http://creativecommons.org/licenses/by/2.5/cn/">
-署名 2.5 中国大陆</a>许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名
-<a href="http://pbking1.github.io/">pb</a>（包含链接）。 </DIV></DIV>
- int the meta class</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- { % include post/license.html % }</span></code></pre></td></tr></table></div></figure>
+
 
 <ul>
-<li>4.在_config.yml添加配置项用来控制是否显示页面的版权信息
+<li><p>int the meta class(去掉{和%之间的空格})</p></li>
+<li><p>4.在_config.yml添加配置项用来控制是否显示页面的版权信息</p></li>
+</ul>
+
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  # Post License
-</span><span class='line'>  post_license: true</span></code></pre></td></tr></table></div></figure></li>
-</ul>
+</pre></td><td class='code'><pre><code class=''><span class='line'> # Post License
+</span><span class='line'> post_license: true</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
 
@@ -669,7 +668,7 @@ default_asides: [asides/recent_posts.html, asides/category_list.html, asides/com
 出处： <A href="http://pbking1.github.io/">http://pbking1.github.io/</A> 
 <BR>本文基于<a target="_blank" title="Creative Commons Attribution 2.5 China Mainland License" href="http://creativecommons.org/licenses/by/2.5/cn/"> 
 署名 2.5 中国大陆</a>许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名 
-<a href="http://pbking1.github.io/">pb</a>（包含链接）。 </DIV></DIV> 
+<a href="http://pbking1.github.io/">pb</a>。 </DIV></DIV> 
 
     </p>
     
