@@ -4,7 +4,7 @@
   <title><![CDATA[Category: System_analyze_and_design | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/system-analyze-and-design/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-03T21:25:11+08:00</updated>
+  <updated>2014-05-03T21:31:10+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -21,9 +21,13 @@
     <content type="html"><![CDATA[<h3>What is MVC?</h3>
 
 <ul>
+<li>MVC模式（Model-View-Controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</li>
 <li>MVC在这几年应该被非常多的人所熟悉了，因为相当多的web框架采用的是这套架构，此外，早在MFC横行的年代，MFC所采用的document/view架构也是MVC架构的变种。包括QT，它的model/view亦是如此。只不过它们都将MVC中的view和controller的功能整合到了一起。</li>
 <li>MVC的全称是model-view-controller architecture，最早被用在了smalltalk语言中。MVC最适合用在交互式的应用程序中。</li>
 </ul>
+
+
+<!--more-->
 
 
 <h3>The component of it</h3>
@@ -55,6 +59,67 @@
 <ul>
 <li>从下图中，可以看出控制器就是一个中枢，MVC的处理过程就是在用户产生行为，提交表单的时候，由Controller来制定哪一个Model来对用户行为进行处理，并且在处理后将结果返回给View，用以给用户进行显示。</li>
 <li><img src="/images/system_anaylze_mvc1.png"></li>
+</ul>
+
+
+<h3>Something important about MVC</h3>
+
+<ul>
+<li>1.MVC将数据的维护和数据的呈现，与用户的交互割裂了。Model负责的是数据的维护，就好比是DB和文件要保存数据一样，可以认为它是process。而view负责的是数据的呈现，把数据通过某种形式在用户面前展现，把它看做是output。
+
+<ul>
+<li>而controller负责的是处理用户的输入。它提供一个窗口或者是控件供用户输入数据，它就是input。所以，一个MVC架构，就是将交互式程序的process，input和output解耦合。</li>
+</ul>
+</li>
+<li>2.第二点更为重要，就是model与view和controller之间的联系。任何一个MVC框架都必须提供一个“change-propagation mechenism”(变更-传播机制)。而这个变更-传播机制是MVC框架中model和view以及controller之间的唯一的联系（The  change-propagation mechanism  is  the  only  link  between  the model and the views and controllers）。
+
+<ul>
+<li>比如说，一个用户通过controller改变了model中的数据，那么model会使用变更-传播机制来通知和它有关的view和controller，使得view去刷新数据和重新显示。</li>
+<li>有很多人总是对于MVC架构不能够熟练掌握，核心问题就在于他在使用MVC架构的时候是看不到变更-传播系统的，所以对于MVC架构的内在运行机制无法了解。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>The process of MVC</h3>
+
+<ul>
+<li><img src="/images/system_anaylze_mvc1.png"></li>
+<li>1.用户操作controller，相当于调用controller的handleEvent函数；</li>
+<li>2.handleEvent函数实际上调用的是model中的成员函数，对model中的数据进行操作；</li>
+<li>3.model中的数据被调用完成后，model会执行自身的notify函数；</li>
+<li>4.notify函数会调用和这个model有关的所有view和controller的update函数；</li>
+<li>5.update函数会调用各自的display函数和getData函数；</li>
+<li>6.当这一切都完成时，handleEvent才返回；</li>
+</ul>
+
+
+<h3>MVC usage</h3>
+
+<ul>
+<li><p>Android中界面部分也采用了当前比较流行的MVC框架，在Android中：</p>
+
+<ul>
+<li>视图（View）
+
+<ul>
+<li>一般采用XML文件进行界面的描述，使用的时候可以非常方便的引入。当然，如何你对Android了解的比较的多了话，就一定可以想到在Android中也可以使用JavaScript+HTML等的方式作为View层，当然这里需要进行Java和JavaScript之间的通信，幸运的是，Android提供了它们之间非常方便的通信实现。</li>
+</ul>
+</li>
+<li>控制器（Controller）
+
+<ul>
+<li>Android的控制层的重任通常落在了众多的Acitvity的肩上，这句话也就暗含了不要在Acitivity中写代码，要通过Activity交割Model业务逻辑层处理，这样做的另外一个原因是Android中的Acitivity的响应时间是5s，如果耗时的操作放在这里，程序就很容易被回收掉。</li>
+</ul>
+</li>
+<li>模型（Model）
+
+<ul>
+<li>对数据库的操作、对网络等的操作都应该在Model里面处理，当然对业务计算等操作也是必须放在的该层的。就是应用程序中二进制的数据。</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 ]]></content>
