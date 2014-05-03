@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-03T21:48:42+08:00</updated>
+  <updated>2014-05-03T21:52:03+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -2659,7 +2659,7 @@ sudp chown virtual:virtual /home/vsftpd
 <li>3.修改文件source_layouts\post.html
 
 <ul>
-<li>add `</li>
+<li>add</li>
 </ul>
 </li>
 </ul>
@@ -2673,10 +2673,16 @@ sudp chown virtual:virtual /home/vsftpd
 <BR>本文基于<a target="_blank" title="Creative Commons Attribution 2.5 China Mainland License" href="http://creativecommons.org/licenses/by/2.5/cn/">
 署名 2.5 中国大陆</a>许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名
 <a href="http://pbking1.github.io/">pb</a>（包含链接）。 </DIV></DIV>
-<code>int the meta class
-- 4.在_config.yml添加配置项用来控制是否显示页面的版权信息
-  -</code># Post License<code>
-  -</code>post_license: true`</p>
+ int the meta class</p>
+
+<ul>
+<li>4.在_config.yml添加配置项用来控制是否显示页面的版权信息
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  # Post License
+</span><span class='line'>  post_license: true</span></code></pre></td></tr></table></div></figure></li>
+</ul>
+
 ]]></content>
   </entry>
   

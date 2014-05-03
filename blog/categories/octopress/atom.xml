@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-03T21:48:42+08:00</updated>
+  <updated>2014-05-03T21:52:03+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -466,10 +466,10 @@ text-decoration: underline;
 ```</p>
 
 <ul>
-<li>3.修改文件source_layouts\post.html
+<li><p>3.修改文件source_layouts\post.html</p>
 
 <ul>
-<li>add <code>
+<li>add 
 
 <DIV style="font-size:12px;BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid" class=oec2003right> 
 <DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"> 
@@ -479,16 +479,16 @@ text-decoration: underline;
 <BR>本文基于<a target="_blank" title="Creative Commons Attribution 2.5 China Mainland License" href="http://creativecommons.org/licenses/by/2.5/cn/"> 
 署名 2.5 中国大陆</a>许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名 
 <a href="http://pbking1.github.io/">pb</a>（包含链接）。 </DIV></DIV> 
-</code> int the meta class</li>
+ int the meta class</li>
 </ul>
 </li>
-<li>4.在_config.yml添加配置项用来控制是否显示页面的版权信息
+<li><p>4.在_config.yml添加配置项用来控制是否显示页面的版权信息
+```</p>
 
-<ul>
-<li><code># Post License</code></li>
-<li><code>post_license: true</code></li>
-</ul>
-</li>
+<h1>Post License</h1>
+
+<p>post_license: true
+```</p></li>
 </ul>
 
 ]]></content>
