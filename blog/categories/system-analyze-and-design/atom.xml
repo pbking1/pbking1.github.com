@@ -4,7 +4,7 @@
   <title><![CDATA[Category: System_analyze_and_design | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/system-analyze-and-design/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-03T21:31:10+08:00</updated>
+  <updated>2014-05-03T21:32:40+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -84,7 +84,7 @@
 <h3>The process of MVC</h3>
 
 <ul>
-<li><img src="/images/system_anaylze_mvc1.png"></li>
+<li><img src="/images/system_anaylze_mvc2.png"></li>
 <li>1.用户操作controller，相当于调用controller的handleEvent函数；</li>
 <li>2.handleEvent函数实际上调用的是model中的成员函数，对model中的数据进行操作；</li>
 <li>3.model中的数据被调用完成后，model会执行自身的notify函数；</li>
