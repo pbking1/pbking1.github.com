@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-03T21:59:33+08:00</updated>
+  <updated>2014-05-08T22:29:22+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,362 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Note of ERP Class]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/08/the-note-of-erp-class/"/>
+    <updated>2014-05-08T18:41:12+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/08/the-note-of-erp-class</id>
+    <content type="html"><![CDATA[<h2>ERP Note</h2>
+
+<pre><code>ERP theory
+Business workflow
+ERP system modules
+Benefits of ERP
+ERP  system selection &amp; implementation
+ERP project evaluation
+Application
+</code></pre>
+
+<!--more-->
+
+
+<h4>1.ERP theory</h4>
+
+<ul>
+<li>定义产品架设的方法</li>
+<li>识别所有产品自主的要求</li>
+<li>定义真实的游戏计划和传送保证（delivery promise）</li>
+<li>提供能够真实地被集合在一起的supply chain activities的计划</li>
+<li><p>提供正确的结果的计数和有用的管理信息</p></li>
+<li><p><strong>MRP 格式</strong></p></li>
+<li>A （MPS = To Do List）</li>
+<li>*B (BOM = Bill of material)</li>
+<li>-C (INV = Available &amp; On Order)</li>
+<li><p>=D (Action=Purchase/Produce, When, Quantity)</p></li>
+<li><p><strong>Product structure(BOM)</strong></p>
+
+<ul>
+<li>data structure model which integrates with the business workflow</li>
+</ul>
+</li>
+<li><p>business 制造的关键是</p>
+
+<ul>
+<li>最好的客户服务</li>
+<li>最小的存货（inventory）</li>
+<li>最高效的操作（low cost）</li>
+</ul>
+</li>
+<li><p>MRP &ndash;> MRPII &ndash;> ERP</p></li>
+<li><strong>MRP:Material Requirements Planning</strong>
+
+<ul>
+<li>Information platform</li>
+<li>inventory mamagement</li>
+<li>supply/Demand balance</li>
+</ul>
+</li>
+<li><strong>MRPII:Manufacturing Resource Planning</strong>
+
+<ul>
+<li>Material &amp; Accounting integration</li>
+<li>cost accounting</li>
+<li>decision support</li>
+</ul>
+</li>
+<li><p><strong>ERP:Enterprise Resource Planning</strong></p>
+
+<ul>
+<li>Data integration of customers, suppliers and manufacturer</li>
+<li>supply chain optimisation</li>
+<li>JIT/LEAN/Constraint theory/Value chain</li>
+</ul>
+</li>
+<li><p><strong>Gartner Group&#8217; view on ERP standard functions:</strong></p>
+
+<ul>
+<li>1.The integration(集成) functions that exceeding the scope of MRPII</li>
+<li>2.Support the mixture manufacturing environment</li>
+<li>3.Support proactive monitoring capabilities</li>
+<li>4.Support open C/S environment</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>2.Business Flow</h4>
+
+<ul>
+<li>Departmemt</li>
+<li>Roles &amp; Responsibilities</li>
+<li><strong>Single Source</strong>
+
+<ul>
+<li>Data entry responsibity</li>
+<li>Minimize errors</li>
+</ul>
+</li>
+<li><p><strong>Data Sharing</strong></p>
+
+<ul>
+<li>Single database and rules</li>
+<li>authorization
+<IMG src="Slide15.JPG" onload="javascript:if(this.width>100){this.width=500;}&ldquo;></li>
+</ul>
+</li>
+<li><p><strong>Data Flow</strong>:Sales Orders, Stock, MRP, Purchase and Manufacturing Plan/Orders</p></li>
+<li><strong>Logistics</strong>: Supplier deliver materials, Manufacturing department arrange work orders, Stock in/out</li>
+<li><strong>Cash flow</strong>:Stock in(入手)/out &ndash;> cash in(兑现)/out</li>
+</ul>
+
+
+<h4>3.ERP System Moduels</h4>
+
+<ul>
+<li><strong>Data Integration</strong>
+
+<ul>
+<li>Item master/BOM/Inventory/Item Cost</li>
+<li>Customer/Supplier</li>
+<li>Purchaser/Sales/Shop Floor</li>
+<li>Order Management/Shipping/Contract/Quotation</li>
+<li>Invoice/GL Voucher/Aging</li>
+</ul>
+</li>
+<li><strong>Business Areas</strong>
+
+<ul>
+<li>Sales Forecast(营销预告)</li>
+<li>MRP plans/Action Message</li>
+<li>Order Management
+
+<ul>
+<li>Sales Order
+
+<ul>
+<li>Credit/Quotation</li>
+</ul>
+</li>
+<li>Purchase Order
+
+<ul>
+<li>Quality/Supplier Evaluation</li>
+</ul>
+</li>
+<li>Manufacturing Order
+
+<ul>
+<li>ItemIssuing/Receiving/Labor Report/Tracking</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Item Cost
+
+<ul>
+<li>Standard/Actual</li>
+</ul>
+</li>
+<li>C/L,A/P,A/R integration
+
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tree Based Ensemble Method Introduction]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction/"/>
+    <updated>2014-05-08T18:30:07+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction</id>
+    <content type="html"><![CDATA[<h3>Tree-based ensemble methods</h3>
+
+<pre><code>random forest
+gradient boosted decision trees
+</code></pre>
+
+<ul>
+<li>main idea is greedy algorithm
+
+<ul>
+<li>通过构造一棵决策树分类器</li>
+</ul>
+</li>
+<li>随机森林是通过构造10000课树</li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>决策树</h4>
+
+<ul>
+<li>其实就是二叉树</li>
+<li>实际应用，一般为二叉树</li>
+<li>每个非叶子节点都是一个分割
+
+<ul>
+<li>相当于一个分类条件</li>
+</ul>
+</li>
+<li>每个叶子节点都是一类性质相同的样本</li>
+<li><p>用同一种数据存在多种构造决策树的情况</p></li>
+<li><p>决策树使用来分类的模型</p>
+
+<ul>
+<li>相当于svn和LR</li>
+</ul>
+</li>
+<li>如何建树
+
+<ul>
+<li>是一种回归分类算法
+
+<ul>
+<li>“切分”和“解决”</li>
+</ul>
+</li>
+<li>一开始的时候，所有的训练样本都在根部</li>
+<li>然后分类的样本将基于选择的分类属性进行递归。</li>
+</ul>
+</li>
+<li>理论上特征是可以重复选的</li>
+<li>怎么找到比较好的树？
+
+<ul>
+<li>模型准确率高</li>
+<li>找到尽可能最小的数来满足数据
+
+<ul>
+<li>分枝少</li>
+<li>节点少</li>
+</ul>
+</li>
+<li>occam&rsquo;s Racor：在效果超不多的时候，选比较简单的模型</li>
+</ul>
+</li>
+<li>基本策略
+
+<ul>
+<li>贪心
+
+<ul>
+<li>当前把每个节点中的最优的特征作为分类标准</li>
+<li>这样就不用穷举</li>
+<li>评估
+
+<ul>
+<li>基尼系数（Gini index）</li>
+<li>信息增益
+
+<ul>
+<li>用熵来衡量</li>
+<li>混乱程度
+
+<ul>
+<li>如果容易分别出那个分类多，则混乱程度小</li>
+<li>反之同理</li>
+</ul>
+</li>
+<li>e.g 99/1（小） 50/50（大）</li>
+</ul>
+</li>
+<li>则把每个叶子节点的熵都算出来
+
+<ul>
+<li>然后整棵树的熵则是用所有叶子节点的熵加权</li>
+</ul>
+</li>
+<li>把分割前的熵减掉分割之后的，就是信息增益
+
+<ul>
+<li>如果比较大，那么就比较好</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> Gini index
+
+<ul>
+<li> 把叶子节点的熵换掉</li>
+<li> 换成基尼系数</li>
+<li> 基本上也是混乱度</li>
+<li> 只是公式不一样了</li>
+</ul>
+</li>
+<li> 整棵树的Gini系数是加权的分支的基尼</li>
+<li> 如何防止overfitting？
+
+<ul>
+<li> 早一点停止树的增长</li>
+<li> 先把所有节点来构造树，然后用的是90%的样本
+
+<ul>
+<li> 然后用剩下的样本来检验效果</li>
+<li> 但是太慢了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bagging
+
+<ul>
+<li>构造k棵树</li>
+<li>每棵树在1000各样本中随机选900个,构造决策树（只筛选样本）
+
+<ul>
+<li>然后把所有树的据结果统计，如果是分类问题，就少数服从多数。</li>
+<li>随机选出的数据室可以重复的。</li>
+</ul>
+</li>
+<li>如果是回归问题，则最终直接相加</li>
+</ul>
+</li>
+<li><p>random forest</p>
+
+<ul>
+<li>不使用全部特征</li>
+<li>不单只筛选样本，也筛选特征。</li>
+<li>e.g 每次只用随机抽取的70%的样本，只用50%随机抽取的特征，来建立决策树</li>
+<li>是目前分类回归中最好的off-the-shelf的算法
+
+<ul>
+<li>即拿即用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>这两个算法加上boosting的不同在于训练集的构造的不同。</p></li>
+<li>Boosting
+
+<ul>
+<li>结果是把每棵决策树的结果加权加起来</li>
+<li>所有样本的权值加起来为1</li>
+<li>对那些错的样本，权值是比较大的</li>
+<li>缺点是在高噪声的环境下效果很不好
+
+<ul>
+<li>优点是在低噪声环境下效果很好</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Basic Idea of MVC]]></title>
@@ -602,9 +958,177 @@ The set time mode has two sub-modes, set hours and set minutes. The A button is 
 </li>
 </ul>
 </li>
-<li><p>4.则很容易得出状态机图为
-<img src="http://pbking1.github.com/images/hw3.jpg"></p></li>
-<li><p>To be continued&hellip;&hellip;</p></li>
+<li>4.则很容易得出状态机图为
+<img src="http://pbking1.github.com/images/hw3.jpg"></li>
+</ul>
+
+
+<h3>4.用例图</h3>
+
+<ul>
+<li>1.用例图</li>
+<li>由参与者和用例以及他们之间的关系构成的用于描述系统功能的静态视图称为用例图。
+
+<ul>
+<li>常用于表示系统和环境的上下文</li>
+<li>常用于表示参与者和系统交互的目的</li>
+<li>对于客户
+
+<ul>
+<li>了解系统满足用户需求提供的服务</li>
+</ul>
+</li>
+<li>开发者
+
+<ul>
+<li>了解系统满足用户需求提供的服务</li>
+</ul>
+</li>
+<li>管理者
+
+<ul>
+<li>早期评估工作的依据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.本题的信息如下
+
+<ul>
+<li>收集整理健康计步软件的资料，主要功能包括卡路里管理，运动规划，运动跑步记录</li>
+<li>软件实体
+
+<ul>
+<li>包括人，外部系统，传感器， 时钟</li>
+<li>还有利益相关人期望系统达成的目标</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.本题的用例图如下
+<img src="http://pbking1.github.com/images/hw4.jpg"></li>
+</ul>
+
+
+<h3>5.顺序图</h3>
+
+<h4>1.什么是顺序图</h4>
+
+<pre><code>是一种UML行为图。它通过描述对象之间发送消息的时间顺序显示多个对象之间的动态协作。它可以表示用例的行为顺序，当执行一个用例行为时，时序图中的每条消息对应了一个类操作或状态机中引起转换的触发事件。
+</code></pre>
+
+<h4>2.组成元素</h4>
+
+<ul>
+<li>角色
+
+<ul>
+<li>系统角色，可以是人或者其他系统，子系统。</li>
+</ul>
+</li>
+<li><p>对象</p>
+
+<ul>
+<li>对象代表时序图中的对象在交互中所扮演的角色，位于时序图顶部和对象代表。</li>
+<li>对象一般包含以下三种命名方式：
+
+<ul>
+<li>第一种方式包含对象名和类名。</li>
+<li>第二种方式只显示类名不显示对象名，即为一个匿名对象。</li>
+<li>第三种方式只显示对象名不显示类名。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>生命线</p>
+
+<ul>
+<li>生命线代表时序图中的对象在一段时期内的存在。时序图中每个对象和底部中心都有一条垂直的虚线，这就是对象的生命线，对象间 的消息存在于两条虚线间。</li>
+</ul>
+</li>
+<li><p>激活期</p>
+
+<ul>
+<li>激活期代表时序图中的对象执行一项操作的时期，在时序图中每条生命线上的窄的矩形代表活动期。它可以被理解成C语言语义中一对花括号“{}”中的内容。</li>
+</ul>
+</li>
+<li><p>消息</p>
+
+<ul>
+<li>消息是定义交互和协作中交换信息的类，用于对实体间的通信内容建模，信息用于在实体间传递信息。允许实体请求其他的服务，类角色通过发送和接受信息进行通信。</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>3.UML三种消息</h4>
+
+<ul>
+<li>同步消息：发送者等待接收者。</li>
+<li>异步消息：消息发送后，发送者继续操作，不等待接受者响应，常用于并发。</li>
+<li>返回消息：表示消息的返回。一般同步（过程调用）的返回不需要画出，直接隐含，而异步返回则可用它。（注：如果异步消息有返回消息，必须明确表示出来）</li>
+</ul>
+
+
+<h4>4.5-1题目</h4>
+
+<pre><code>小孙从“淘宝网”某商家卖了一部手机，感觉不合适自己决定退货。请仔细研究“淘宝网”的退货业务规程，请将“客户”、“淘宝网”、“商家”三个对象作为主 要参与者，使用系统顺序图描述“淘宝网”退货的业务的系统功能与业务 实现的基本过程。
+</code></pre>
+
+<ul>
+<li>题目解析
+
+<ul>
+<li>系统功能：分发退货的信息。记录退货的信息。退货信息的返还。</li>
+<li>业务实现的基本过程：客户向淘宝网发送退货信息、淘宝网将用户的请求提交给商家、商家确认退货信息并将退货消息发给淘宝网、系统修改记录、退货信息返还用户。</li>
+<li>1、选择交易，点击退货/退款</li>
+<li>2、选择申请服务类型（退货退款/仅退款）</li>
+<li>3、选择货物状态和退款原因，填写退款金额和说明，并提交申请</li>
+<li>4、等待，卖家同意退货，退货给卖家</li>
+<li>5、退货后，请到退款详情页面“填写退货信息”</li>
+<li>6、卖家确认收货，退货成功</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>5.题目的顺序图</h4>
+
+<p><img src="http://pbking1.github.com/images/hw5-1.jpg"></p>
+
+<h4>6.BCE（boundary-control-entity patterns）模式</h4>
+
+<ul>
+<li>针对每一个用例，可以对应生成一个控制类。</li>
+<li>参与者对象只能跟边界对象互动。</li>
+<li>实体对象不能发送消息给边界对象和控制对象。 </li>
+<li>比较特别的是，如果只是单纯对数据表进行增加、删除、修改、查询的话，可以不设置控制对象，让边界对象直接发送消息给实体对象，以提高整个序列图的执行速度。</li>
+</ul>
+
+
+<h4>7.业务实体</h4>
+
+<ul>
+<li>业务实体是业务角色在进行业务活动时使用或产生的事物，在表现形式上可以是一个文档，或者是一个物品的一部分。</li>
+<li>比如在技术评审管理流程中，评审申请人将提交评审申请材料，专家将对评审材料提出评审意见，因此我们可确定的业务实体是“评审申请”和“评审意见”。每个业务实体通常具有特定的属性，比如“评审申请”业务实体具有的属性包括：申请人、评审类型、评审材料等信息。</li>
+</ul>
+
+
+<h4>8.题目5.2描述</h4>
+
+<pre><code> 在某网上商城系统中，客户可以通过购物车中商品创建订单。请研究从购物车，到提交订单的业务过程，识别以下内容：
+ 记录过程中使用的页面（UI）
+ 从页面中识别业务实体（如，用户收件地址，订单）
+ 假设，系统中有一个订单生成控制器的软件对象，它控制页面流转，处理业务实体信息，保持流程工作状态
+ 请用顺序图表示 Actor - UIs - Controller - Entities 之间协作完成创建订单任务的过程。
+</code></pre>
+
+<h4>9.题目的顺序图</h4>
+
+<p><img src="http://pbking1.github.com/images/hw5-2.jpg"></p>
+
+<ul>
+<li>To be continued&hellip;&hellip;</li>
 </ul>
 
 ]]></content>

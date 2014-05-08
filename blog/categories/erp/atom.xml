@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ERP | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/erp/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-05-08T22:29:22+08:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Note of ERP Class]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/08/the-note-of-erp-class/"/>
+    <updated>2014-05-08T18:41:12+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/08/the-note-of-erp-class</id>
+    <content type="html"><![CDATA[<h2>ERP Note</h2>
+
+<pre><code>ERP theory
+Business workflow
+ERP system modules
+Benefits of ERP
+ERP  system selection &amp; implementation
+ERP project evaluation
+Application
+</code></pre>
+
+<!--more-->
+
+
+<h4>1.ERP theory</h4>
+
+<ul>
+<li>定义产品架设的方法</li>
+<li>识别所有产品自主的要求</li>
+<li>定义真实的游戏计划和传送保证（delivery promise）</li>
+<li>提供能够真实地被集合在一起的supply chain activities的计划</li>
+<li><p>提供正确的结果的计数和有用的管理信息</p></li>
+<li><p><strong>MRP 格式</strong></p></li>
+<li>A （MPS = To Do List）</li>
+<li>*B (BOM = Bill of material)</li>
+<li>-C (INV = Available &amp; On Order)</li>
+<li><p>=D (Action=Purchase/Produce, When, Quantity)</p></li>
+<li><p><strong>Product structure(BOM)</strong></p>
+
+<ul>
+<li>data structure model which integrates with the business workflow</li>
+</ul>
+</li>
+<li><p>business 制造的关键是</p>
+
+<ul>
+<li>最好的客户服务</li>
+<li>最小的存货（inventory）</li>
+<li>最高效的操作（low cost）</li>
+</ul>
+</li>
+<li><p>MRP &ndash;> MRPII &ndash;> ERP</p></li>
+<li><strong>MRP:Material Requirements Planning</strong>
+
+<ul>
+<li>Information platform</li>
+<li>inventory mamagement</li>
+<li>supply/Demand balance</li>
+</ul>
+</li>
+<li><strong>MRPII:Manufacturing Resource Planning</strong>
+
+<ul>
+<li>Material &amp; Accounting integration</li>
+<li>cost accounting</li>
+<li>decision support</li>
+</ul>
+</li>
+<li><p><strong>ERP:Enterprise Resource Planning</strong></p>
+
+<ul>
+<li>Data integration of customers, suppliers and manufacturer</li>
+<li>supply chain optimisation</li>
+<li>JIT/LEAN/Constraint theory/Value chain</li>
+</ul>
+</li>
+<li><p><strong>Gartner Group' view on ERP standard functions:</strong></p>
+
+<ul>
+<li>1.The integration(集成) functions that exceeding the scope of MRPII</li>
+<li>2.Support the mixture manufacturing environment</li>
+<li>3.Support proactive monitoring capabilities</li>
+<li>4.Support open C/S environment</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>2.Business Flow</h4>
+
+<ul>
+<li>Departmemt</li>
+<li>Roles &amp; Responsibilities</li>
+<li><strong>Single Source</strong>
+
+<ul>
+<li>Data entry responsibity</li>
+<li>Minimize errors</li>
+</ul>
+</li>
+<li><p><strong>Data Sharing</strong></p>
+
+<ul>
+<li>Single database and rules</li>
+<li>authorization
+<IMG src="Slide15.JPG" onload="javascript:if(this.width>100){this.width=500;}&ldquo;></li>
+</ul>
+</li>
+<li><p><strong>Data Flow</strong>:Sales Orders, Stock, MRP, Purchase and Manufacturing Plan/Orders</p></li>
+<li><strong>Logistics</strong>: Supplier deliver materials, Manufacturing department arrange work orders, Stock in/out</li>
+<li><strong>Cash flow</strong>:Stock in(入手)/out &ndash;> cash in(兑现)/out</li>
+</ul>
+
+
+<h4>3.ERP System Moduels</h4>
+
+<ul>
+<li><strong>Data Integration</strong>
+
+<ul>
+<li>Item master/BOM/Inventory/Item Cost</li>
+<li>Customer/Supplier</li>
+<li>Purchaser/Sales/Shop Floor</li>
+<li>Order Management/Shipping/Contract/Quotation</li>
+<li>Invoice/GL Voucher/Aging</li>
+</ul>
+</li>
+<li><strong>Business Areas</strong>
+
+<ul>
+<li>Sales Forecast(营销预告)</li>
+<li>MRP plans/Action Message</li>
+<li>Order Management
+
+<ul>
+<li>Sales Order
+
+<ul>
+<li>Credit/Quotation</li>
+</ul>
+</li>
+<li>Purchase Order
+
+<ul>
+<li>Quality/Supplier Evaluation</li>
+</ul>
+</li>
+<li>Manufacturing Order
+
+<ul>
+<li>ItemIssuing/Receiving/Labor Report/Tracking</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Item Cost
+
+<ul>
+<li>Standard/Actual</li>
+</ul>
+</li>
+<li>C/L,A/P,A/R integration
+
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

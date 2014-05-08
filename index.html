@@ -9,8 +9,13 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="What is MVC? MVC模式（Model-View-Controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。
-MVC在这几年应该被非常多的人所熟悉了，因为相当多的web框架采用的是这套架构，此外 &hellip;">
+  <meta name="description" content="ERP Note ERP theory
+Business workflow
+ERP system modules
+Benefits of ERP
+ERP system selection &amp; implementation
+ERP project evaluation
+Application ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +73,118 @@ MVC在这几年应该被非常多的人所熟悉了，因为相当多的web框�
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/08/the-note-of-erp-class/">The Note of ERP Class</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-08T18:41:12+08:00" pubdate data-updated="true">May 8<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/08/the-note-of-erp-class/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/08/the-note-of-erp-class/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>ERP Note</h2>
+
+<pre><code>ERP theory
+Business workflow
+ERP system modules
+Benefits of ERP
+ERP  system selection &amp; implementation
+ERP project evaluation
+Application
+</code></pre>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/08/the-note-of-erp-class/">Read more</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/08/tree-based-ensemble-method-introduction/">Tree Based Ensemble Method Introduction</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-08T18:30:07+08:00" pubdate data-updated="true">May 8<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/08/tree-based-ensemble-method-introduction/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Tree-based ensemble methods</h3>
+
+<pre><code>random forest
+gradient boosted decision trees
+</code></pre>
+
+<ul>
+<li>main idea is greedy algorithm
+
+<ul>
+<li>通过构造一棵决策树分类器</li>
+</ul>
+</li>
+<li>随机森林是通过构造10000课树</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/08/tree-based-ensemble-method-introduction/">Read more</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -362,158 +479,6 @@ MVC在这几年应该被非常多的人所熟悉了，因为相当多的web框�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">How to Install Ubuntu on Macbook Air Dual</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-18T11:07:34+08:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h4>1.For there are too many software that can be used in ubuntu not in OSX so I decided to install ubuntu on my macbook air</h4>
-
-<ul>
-<li>I have try the mac version ubuntu and <em>it do not work</em></li>
-<li>and the origin version for windows is work on mac</li>
-</ul>
-
-
-<h4>2.First use <code>Unetbootin</code> to create a usb bootable ubnutu on mac</h4>
-
-<ul>
-<li>There are two ways to finish this</li>
-<li>The first is(I do not succeed in this)
-
-<ul>
-<li><code>diskutil list</code>
-
-<ul>
-<li>show the disk that is mounted on your mac</li>
-</ul>
-</li>
-<li>then insert the usb</li>
-<li>run <code>diskutil list again</code>
-
-<ul>
-<li>and determine the device node assigned to the usb like <code>disks1s2</code></li>
-</ul>
-</li>
-<li>then <code>diskutil unmountDisk /disks1s2</code></li>
-<li>after that <code>sudo dd if=/path/to/ubuntu.img.dmg of=/dev/disks1s2 bs=2m</code>
-
-<ul>
-<li>to create the bootable usb ubuntu</li>
-<li>and the bs is the I/O speed and the max is 2m</li>
-</ul>
-</li>
-<li>It may cost some time to complete</li>
-<li>finally run <code>eject /dev/disks1s2</code></li>
-</ul>
-</li>
-<li>The second is
-
-<ul>
-<li>use the <code>Unetbootin</code> to create the bootable usb directly</li>
-</ul>
-</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/15/linux-server-tutorial/">Linux Server Tutorial</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-15T14:47:08+08:00" pubdate data-updated="true">Apr 15<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/15/linux-server-tutorial/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>1.GNU plan</h3>
-
-<ul>
-<li>GNU plan is founded by the Richard M.Stallman and free software foundation</li>
-<li>In order to make sure the GNU software can be used freely</li>
-<li>All the GNU softwares have a license called &ldquo;GNU General Public License&rdquo;, <code>GPL</code></li>
-<li>this forbid the other from adding any constrict to the GNU software and let all the people to have the right to use it.</li>
-</ul>
-
-
-<h3>2.POSIX standard</h3>
-
-<ul>
-<li>Portable Operating system Interface for Computing Systems</li>
-<li>used to solve the problem that the UNIX system have lots of versions and result in a chaos</li>
-<li>the standard is developed by the IEEE and standarded by the ANSI and ISO</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/15/linux-server-tutorial/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -529,6 +494,14 @@ MVC在这几年应该被非常多的人所熟悉了，因为相当多的web框�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/08/the-note-of-erp-class/">The Note of ERP Class</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/08/tree-based-ensemble-method-introduction/">Tree Based Ensemble Method Introduction</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/03/basic-idea-of-mvc/">Basic Idea of MVC</a>
       </li>
     
@@ -540,21 +513,14 @@ MVC在这几年应该被非常多的人所熟悉了，因为相当多的web框�
         <a href="/blog/2014/04/20/blog-on-github-page/">Blog on Github Page</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/04/20/10-uml-homework-of-system-analyze-and-design/">10 Uml Homework of System Analyze and Design</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">How to Install Ubuntu on Macbook Air Dual</a>
-      </li>
-    
   </ul>
 </section>
 <section> 
   <h1>Categories</h1> 
   <ul id="categories"> 
-    <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (3)</a></li>
+    <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (4)</a></li>
 <li class='category'><a href='/blog/categories/android/'>Android (1)</a></li>
+<li class='category'><a href='/blog/categories/erp/'>ERP (1)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
 <li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>Octopress (2)</a></li>
@@ -562,6 +528,7 @@ MVC在这几年应该被非常多的人所熟悉了，因为相当多的web框�
 <li class='category'><a href='/blog/categories/system-analyze-and-design/'>System_analyze_and_design (3)</a></li>
 <li class='category'><a href='/blog/categories/uml/'>UML (1)</a></li>
 <li class='category'><a href='/blog/categories/c-c-/'>c/c++ (1)</a></li>
+<li class='category'><a href='/blog/categories/machine-learning/'>machine_learning (1)</a></li>
  
   </ul> 
 </section><section>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Machine_learning | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/machine-learning/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-05-08T22:29:22+08:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tree Based Ensemble Method Introduction]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction/"/>
+    <updated>2014-05-08T18:30:07+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction</id>
+    <content type="html"><![CDATA[<h3>Tree-based ensemble methods</h3>
+
+<pre><code>random forest
+gradient boosted decision trees
+</code></pre>
+
+<ul>
+<li>main idea is greedy algorithm
+
+<ul>
+<li>通过构造一棵决策树分类器</li>
+</ul>
+</li>
+<li>随机森林是通过构造10000课树</li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>决策树</h4>
+
+<ul>
+<li>其实就是二叉树</li>
+<li>实际应用，一般为二叉树</li>
+<li>每个非叶子节点都是一个分割
+
+<ul>
+<li>相当于一个分类条件</li>
+</ul>
+</li>
+<li>每个叶子节点都是一类性质相同的样本</li>
+<li><p>用同一种数据存在多种构造决策树的情况</p></li>
+<li><p>决策树使用来分类的模型</p>
+
+<ul>
+<li>相当于svn和LR</li>
+</ul>
+</li>
+<li>如何建树
+
+<ul>
+<li>是一种回归分类算法
+
+<ul>
+<li>“切分”和“解决”</li>
+</ul>
+</li>
+<li>一开始的时候，所有的训练样本都在根部</li>
+<li>然后分类的样本将基于选择的分类属性进行递归。</li>
+</ul>
+</li>
+<li>理论上特征是可以重复选的</li>
+<li>怎么找到比较好的树？
+
+<ul>
+<li>模型准确率高</li>
+<li>找到尽可能最小的数来满足数据
+
+<ul>
+<li>分枝少</li>
+<li>节点少</li>
+</ul>
+</li>
+<li>occam&rsquo;s Racor：在效果超不多的时候，选比较简单的模型</li>
+</ul>
+</li>
+<li>基本策略
+
+<ul>
+<li>贪心
+
+<ul>
+<li>当前把每个节点中的最优的特征作为分类标准</li>
+<li>这样就不用穷举</li>
+<li>评估
+
+<ul>
+<li>基尼系数（Gini index）</li>
+<li>信息增益
+
+<ul>
+<li>用熵来衡量</li>
+<li>混乱程度
+
+<ul>
+<li>如果容易分别出那个分类多，则混乱程度小</li>
+<li>反之同理</li>
+</ul>
+</li>
+<li>e.g 99/1（小） 50/50（大）</li>
+</ul>
+</li>
+<li>则把每个叶子节点的熵都算出来
+
+<ul>
+<li>然后整棵树的熵则是用所有叶子节点的熵加权</li>
+</ul>
+</li>
+<li>把分割前的熵减掉分割之后的，就是信息增益
+
+<ul>
+<li>如果比较大，那么就比较好</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> Gini index
+
+<ul>
+<li> 把叶子节点的熵换掉</li>
+<li> 换成基尼系数</li>
+<li> 基本上也是混乱度</li>
+<li> 只是公式不一样了</li>
+</ul>
+</li>
+<li> 整棵树的Gini系数是加权的分支的基尼</li>
+<li> 如何防止overfitting？
+
+<ul>
+<li> 早一点停止树的增长</li>
+<li> 先把所有节点来构造树，然后用的是90%的样本
+
+<ul>
+<li> 然后用剩下的样本来检验效果</li>
+<li> 但是太慢了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bagging
+
+<ul>
+<li>构造k棵树</li>
+<li>每棵树在1000各样本中随机选900个,构造决策树（只筛选样本）
+
+<ul>
+<li>然后把所有树的据结果统计，如果是分类问题，就少数服从多数。</li>
+<li>随机选出的数据室可以重复的。</li>
+</ul>
+</li>
+<li>如果是回归问题，则最终直接相加</li>
+</ul>
+</li>
+<li><p>random forest</p>
+
+<ul>
+<li>不使用全部特征</li>
+<li>不单只筛选样本，也筛选特征。</li>
+<li>e.g 每次只用随机抽取的70%的样本，只用50%随机抽取的特征，来建立决策树</li>
+<li>是目前分类回归中最好的off-the-shelf的算法
+
+<ul>
+<li>即拿即用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>这两个算法加上boosting的不同在于训练集的构造的不同。</p></li>
+<li>Boosting
+
+<ul>
+<li>结果是把每棵决策树的结果加权加起来</li>
+<li>所有样本的权值加起来为1</li>
+<li>对那些错的样本，权值是比较大的</li>
+<li>缺点是在高噪声的环境下效果很不好
+
+<ul>
+<li>优点是在低噪声环境下效果很好</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

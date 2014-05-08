@@ -5,14 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>2013 IEEE International Conference on Robotics and Biomimetics - KING</title>
+  <title>Tree Based Ensemble Method Introduction - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="Dec 12-14 2013 shenzhen, China Team members pengbin
-qiudicong
-zhudingqiao here are the picture Stable Reflex-based walking of forelimbs of a Bio- &hellip;">
-  <meta name="keywords" content="robot, c++/c">
+  <meta name="description" content="Tree-based ensemble methods random forest
+gradient boosted decision trees main idea is greedy algorithm 通过构造一棵决策树分类器 随机森林是通过构造10000课树 决策树 其实就是二叉树 &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +19,7 @@ zhudingqiao here are the picture Stable Reflex-based walking of forelimbs of a B
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -72,7 +71,7 @@ zhudingqiao here are the picture Stable Reflex-based walking of forelimbs of a B
   
   <header>
     
-      <h1 class="entry-title">2013 IEEE International Conference on Robotics and Biomimetics</h1>
+      <h1 class="entry-title">Tree Based Ensemble Method Introduction</h1>
     
     
       <p class="meta">
@@ -88,7 +87,7 @@ zhudingqiao here are the picture Stable Reflex-based walking of forelimbs of a B
   
 
 
-<time datetime="2014-04-09T13:08:03+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+<time datetime="2014-05-08T18:30:07+08:00" pubdate data-updated="true">May 8<span>th</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com">Comments</a>
@@ -98,288 +97,183 @@ zhudingqiao here are the picture Stable Reflex-based walking of forelimbs of a B
   </header>
 
 
-<div class="entry-content"><pre><code>Dec 12-14 2013 shenzhen, China
+<div class="entry-content"><h3>Tree-based ensemble methods</h3>
+
+<pre><code>random forest
+gradient boosted decision trees
 </code></pre>
 
-<h4>Team members</h4>
+<ul>
+<li>main idea is greedy algorithm
 
-<pre><code>pengbin
-qiudicong
-zhudingqiao
-</code></pre>
+<ul>
+<li>通过构造一棵决策树分类器</li>
+</ul>
+</li>
+<li>随机森林是通过构造10000课树</li>
+</ul>
 
-<h4>here are the picture</h4>
-
-<p><img src="/images/ieee1.jpg">
-<img src="/images/ieee2.jpg">
-<img src="/images/ieee3.jpg"></p>
 
 <!--more-->
 
 
-<h4>Stable Reflex-based walking of forelimbs of a Bio-inspired Quadruped Robot-Modeled Cheetah</h4>
-
-<pre><code>Osaka(大阪大学)
-Shogo Nakatsu
-</code></pre>
+<h4>决策树</h4>
 
 <ul>
-<li>talk about reflex-based control</li>
-<li>something like create muscle activity pattern through biographical electric</li>
-<li>it can react 80cm/s</li>
-<li>this is about a four legs robot</li>
-</ul>
-
-
-<h4>one of the researchers</h4>
-
-<pre><code>first one 
-name:Kottaeuser
-paderborn
-</code></pre>
+<li>其实就是二叉树</li>
+<li>实际应用，一般为二叉树</li>
+<li>每个非叶子节点都是一个分割
 
 <ul>
-<li>focusing in 3D vision</li>
-<li>some laser-based</li>
-<li>some measurement</li>
-</ul>
-
-
-<h4>first interview of the researcher</h4>
-
-<pre><code>name:C.de Chambrier
-live and work in Switzerland
-</code></pre>
-
-<ul>
-<li>And here are the answer to the four questions(<code>The answer are from the speaker not me~~~ and I make it seems like an interview to show you</code>):
-
-<ul>
-<li><strong>What are you major?</strong>
-
-<ul>
-<li>I am focusing on the AI algorithm and the strategy.</li>
-<li>that is to say I am major in the higher level of the robotics.</li>
+<li>相当于一个分类条件</li>
 </ul>
 </li>
-<li><strong>How do you get interested in robotics?</strong>
+<li>每个叶子节点都是一类性质相同的样本</li>
+<li><p>用同一种数据存在多种构造决策树的情况</p></li>
+<li><p>决策树使用来分类的模型</p>
 
 <ul>
-<li>when I am in master&rsquo;s degree, I am interested in robot</li>
+<li>相当于svn和LR</li>
 </ul>
 </li>
-<li><strong>What impressed you most?</strong>
+<li>如何建树
 
 <ul>
-<li>I am really interested in the strategy design and algorithm design of the robots.</li>
+<li>是一种回归分类算法
+
+<ul>
+<li>“切分”和“解决”</li>
 </ul>
 </li>
-<li><strong>what do you think about the robot will change the world in the next 10 years?</strong>
-
-<ul>
-<li>I have three point of view about what the robot is going to be in the next decade.</li>
-<li>first of all
-
-<ul>
-<li>Automatic cars(like google smart car), is going to develop well to drive themselves. and they will be able to work without human affection. But due to the law, they may not be able to get on the road everywhere.</li>
+<li>一开始的时候，所有的训练样本都在根部</li>
+<li>然后分类的样本将基于选择的分类属性进行递归。</li>
 </ul>
 </li>
-<li>secondly
+<li>理论上特征是可以重复选的</li>
+<li>怎么找到比较好的树？
 
 <ul>
-<li>home service robot is to be well developed. But they may be designed for specific task. Not just to make it human like.</li>
-</ul>
-</li>
-<li>thirdly
+<li>模型准确率高</li>
+<li>找到尽可能最小的数来满足数据
 
 <ul>
-<li>human-like robot are kinds of wired, because human may alloy emotional association with those robots that looks like a human. And well-designed human-like robot may still need a long time to proceed.</li>
+<li>分枝少</li>
+<li>节点少</li>
 </ul>
 </li>
+<li>occam&rsquo;s Racor：在效果超不多的时候，选比较简单的模型</li>
 </ul>
 </li>
-<li><strong>What are the biggest problems that YOU think robotics can solve in our generation?</strong>
+<li>基本策略
 
 <ul>
-<li>I think that the materials are going to be the barrier to come over.</li>
-<li>Currently, we have to use big actuators and movement which can not be smooth. The energy cost is high that a mobile robot has to carry a big battery, and yet the energy runs out so quickly. Hence, new materials that provide actions like a human body and in low energy cost are required for the future development of robotics.</li>
+<li>贪心
+
+<ul>
+<li>当前把每个节点中的最优的特征作为分类标准</li>
+<li>这样就不用穷举</li>
+<li>评估
+
+<ul>
+<li>基尼系数（Gini index）</li>
+<li>信息增益
+
+<ul>
+<li>用熵来衡量</li>
+<li>混乱程度
+
+<ul>
+<li>如果容易分别出那个分类多，则混乱程度小</li>
+<li>反之同理</li>
+</ul>
+</li>
+<li>e.g 99/1（小） 50/50（大）</li>
+</ul>
+</li>
+<li>则把每个叶子节点的熵都算出来
+
+<ul>
+<li>然后整棵树的熵则是用所有叶子节点的熵加权</li>
+</ul>
+</li>
+<li>把分割前的熵减掉分割之后的，就是信息增益
+
+<ul>
+<li>如果比较大，那么就比较好</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-
-
-<h4>second interview</h4>
-
-<pre><code> a lecturer
- name:Inaki Rano
- from UK university of UIster
- have worked 6  years 
-</code></pre>
+<li> Gini index
 
 <ul>
-<li>talk about Direct collocation for two dimensional motion camoutflage with non-holonomic, velocity and acceleration constraints</li>
-<li><strong>The movement of the human&rsquo;s hand between two location is always on a 3D plane, and he wanted to applied this phenomenon in object moving or obstacle-avoidance tasks for a grasping robot. He had mathematically proved a strong-related theory about this phenomenon</strong></li>
-<li>And here are the answer to the four questions(<code>The answer are from the speaker not me~~~ and I make it seems like an interview to show you</code>):
-
-<ul>
-<li><strong>What are you major?</strong>
-
-<ul>
-<li>all kind of fields in the robotics</li>
+<li> 把叶子节点的熵换掉</li>
+<li> 换成基尼系数</li>
+<li> 基本上也是混乱度</li>
+<li> 只是公式不一样了</li>
 </ul>
 </li>
-<li><strong>How do you get interested in robotics?</strong>
+<li> 整棵树的Gini系数是加权的分支的基尼</li>
+<li> 如何防止overfitting？
 
 <ul>
-<li>when I am in college, I am interested in robot</li>
-</ul>
-</li>
-<li><strong>What impressed you most?</strong>
+<li> 早一点停止树的增长</li>
+<li> 先把所有节点来构造树，然后用的是90%的样本
 
 <ul>
-<li>everything in the robot</li>
-</ul>
-</li>
-<li><strong>what do you think about the robot will change the world in the next 10 years?</strong>
-
-<ul>
-<li>The robot may be very common in the future life and every one will notice it</li>
-</ul>
-</li>
-<li><strong>What are the biggest problems that YOU think robotics can solve in our generation?</strong>
-
-<ul>
-<li>The Model that use to the robot may be one of the most difficult part in the robotics.</li>
+<li> 然后用剩下的样本来检验效果</li>
+<li> 但是太慢了</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-
-
-<h4>a researcher talk about using a smart phone to connect the Robot</h4>
-
-<pre><code>a girl from China State Key lab of Robotics and System
-</code></pre>
-
-<ul>
-<li>focusing in the protocol design</li>
-</ul>
-
-
-<h4>Direct and indirect social robot interactions in a hotel public space</h4>
-
-<pre><code>a japanese researcher from Tsukuba(筑波大学)
-name：潘雅冬
-</code></pre>
-
-<ul>
-<li>talk about the social robot that react in the hotel</li>
-<li>and he talk about three patterns
-
-<ul>
-<li>passing</li>
-<li>looking</li>
-<li>staying and approaching</li>
-</ul>
-</li>
-<li>using 3 kinds of robot(human-like)
-
-<ul>
-<li>NAO</li>
-<li>Gemini</li>
-<li>Palro</li>
-</ul>
-</li>
-<li>use kinect: Methodology
-
-<ul>
-<li>presence</li>
-<li>position</li>
-</ul>
 </li>
 </ul>
-
-
-<h4>南开大学教授</h4>
-
-<pre><code>段峰博士
-建立系统，一种synchronous and control system
-</code></pre>
+</li>
+<li>Bagging
 
 <ul>
-<li>also develop some kinect app on the nap robot</li>
-</ul>
-
-
-<h4>third interview</h4>
-
-<pre><code>name:Yujin Wakita
-work in AIST( The National Institute of Advanced Industrial Science and Technology)
-have participate in robotic for 23 years
-focus in UI(人机交互)
-</code></pre>
+<li>构造k棵树</li>
+<li>每棵树在1000各样本中随机选900个,构造决策树（只筛选样本）
 
 <ul>
-<li>application:
-
-<ul>
-<li>mobile assist</li>
-<li>parking</li>
-<li>power system of nurse</li>
-<li>toilet robot</li>
+<li>然后把所有树的据结果统计，如果是分类问题，就少数服从多数。</li>
+<li>随机选出的数据室可以重复的。</li>
 </ul>
 </li>
-<li>And here are the answer to the four questions(<code>The answer are from the speaker not me~~~, and I make it seems like an interview to show you</code>):
-
-<ul>
-<li><strong>What are you major?</strong>
-
-<ul>
-<li>user interface, human assistance</li>
+<li>如果是回归问题，则最终直接相加</li>
 </ul>
 </li>
-<li><strong>How do you get interested in robotics?</strong>
+<li><p>random forest</p>
 
 <ul>
-<li>when I am in high school, I am interested in robot</li>
-</ul>
-</li>
-<li><strong>What impressed you most?</strong>
+<li>不使用全部特征</li>
+<li>不单只筛选样本，也筛选特征。</li>
+<li>e.g 每次只用随机抽取的70%的样本，只用50%随机抽取的特征，来建立决策树</li>
+<li>是目前分类回归中最好的off-the-shelf的算法
 
 <ul>
-<li>the robot that can assist human</li>
-</ul>
-</li>
-<li><strong>what do you think about the robot will change the world in the next 10 years?</strong>
-
-<ul>
-<li>It is hard to say.Lots of designs and ideas are occurring. And it is hard to tell whether the assistance robots may develop towards human-like or functionally specialized.</li>
-</ul>
-</li>
-<li><strong>What are the biggest problems that YOU think robotics can solve in our generation?</strong>
-
-<ul>
-<li>the social problem that may cost by the robot</li>
+<li>即拿即用</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-
-
-<h4>Geometric balancing control of humanoid robots</h4>
-
-<pre><code>LaSabana university
-name:Mario Arbulu
-</code></pre>
+<li><p>这两个算法加上boosting的不同在于训练集的构造的不同。</p></li>
+<li>Boosting
 
 <ul>
-<li>societal side</li>
-<li>front side</li>
-<li>use attitude sensor</li>
+<li>结果是把每棵决策树的结果加权加起来</li>
+<li>所有样本的权值加起来为1</li>
+<li>对那些错的样本，权值是比较大的</li>
+<li>缺点是在高噪声的环境下效果很不好
+
+<ul>
+<li>优点是在低噪声环境下效果很好</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -404,12 +298,12 @@ name:Mario Arbulu
   
 
 
-<time datetime="2014-04-09T13:08:03+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+<time datetime="2014-05-08T18:30:07+08:00" pubdate data-updated="true">May 8<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/robot/'>Robot</a>
+    <a class='category' href='/blog/categories/algorithm/'>Algorithm</a>, <a class='category' href='/blog/categories/machine-learning/'>machine_learning</a>
   
 </span>
 
@@ -448,10 +342,10 @@ name:Mario Arbulu
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/04/09/final-exam-of-the-android-class/" title="Previous Post: Final Exam Of The Sysu SE Android Class">&laquo; Final Exam Of The Sysu SE Android Class</a>
+        <a class="basic-alignment left" href="/blog/2014/05/03/basic-idea-of-mvc/" title="Previous Post: Basic idea of MVC">&laquo; Basic idea of MVC</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/04/09/congiure-the-octopress-blog/" title="Next Post: Congiure My octopress blog">Congiure My octopress blog &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/05/08/the-note-of-erp-class/" title="Next Post: The note of ERP class">The note of ERP class &raquo;</a>
       
     </p>
   </footer>
@@ -566,8 +460,8 @@ ds.charset = 'UTF-8';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction/';
         var disqus_script = 'embed.js';
       
     (function () {
