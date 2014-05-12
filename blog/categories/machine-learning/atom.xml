@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Machine_learning | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/machine-learning/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-12T16:51:46+08:00</updated>
+  <updated>2014-05-12T22:39:54+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -308,6 +308,7 @@ saveTheta();
 
 <ul>
 <li><img src="/images/lr_gd/nq.png"></li>
+<li>and the process is shown : (385<em>10000)</em>(10000<em>385)</em>(385<em>10000)</em>10000<em>1=385</em>1</li>
 </ul>
 </li>
 <li>and we can see the feature normalise in the normal equation function
