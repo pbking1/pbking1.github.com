@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ERP | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/erp/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-12T22:39:54+08:00</updated>
+  <updated>2014-05-12T23:29:11+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -135,7 +135,7 @@ Application
 <li>Invoice/GL Voucher/Aging</li>
 </ul>
 </li>
-<li><strong>Business Areas</strong>
+<li><p><strong>Business Areas</strong></p>
 
 <ul>
 <li>Sales Forecast(营销预告)</li>
@@ -169,14 +169,10 @@ Application
 <li>Standard/Actual</li>
 </ul>
 </li>
-<li>C/L,A/P,A/R integration
-
-<ul>
-<li></li>
+<li>C/L,A/P,A/R integration</li>
 </ul>
 </li>
-</ul>
-</li>
+<li><p>To be continued&hellip;.</p></li>
 </ul>
 
 ]]></content>
