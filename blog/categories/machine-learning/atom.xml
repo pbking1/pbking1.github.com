@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Machine_learning | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/machine-learning/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-08T22:29:22+08:00</updated>
+  <updated>2014-05-12T16:51:46+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,364 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Linear_regression_tutorial]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial/"/>
+    <updated>2014-05-12T15:23:20+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial</id>
+    <content type="html"><![CDATA[<h3>First something about training the data</h3>
+
+<ul>
+<li>Training set &ndash;> learning algorithm &ndash;> hypothesis &ndash;> estimated data</li>
+<li>And we will use multiple features.
+
+<ul>
+<li><img src="/images/lr_gd/mfeat.png"></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>What is linear regression</h3>
+
+<ul>
+<li>To say the idea in normal, we will have n feature</li>
+<li>And what we are going to do is to observe them and suppose that they should be in a linear method.</li>
+<li>And we should develop a way to find out the parameter to suit the hypothesis function.</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>The first method to solve the problem(Gradient decend)</h3>
+
+<h4>how it works?</h4>
+
+<ul>
+<li>There are several ideas
+
+<ul>
+<li><strong>learn rate</strong>
+
+<ul>
+<li>if too small, the gradient descent will be slow</li>
+<li>if too large, the gradient descent will overshoot the minimum.
+
+<ul>
+<li>it may be fail to converge, or even diverge</li>
+</ul>
+</li>
+<li><img src="/images/lr_gd/apha.png"></li>
+</ul>
+</li>
+<li><strong>Cost function(J function)</strong>
+
+<ul>
+<li>The cost function has no relationship with the x and y.</li>
+<li>and it all depend on the parameter <em>theta</em></li>
+<li>and the &frac12; in the front is to make the derivation easier</li>
+<li>And the cost function is used to <em>make the err(the err between hypothesis and real data) smaller</em>.</li>
+</ul>
+</li>
+<li><strong>Hypothesis</strong>
+
+<ul>
+<li>This function is used to <em>make the function good</em>.</li>
+<li>good enough to make the y calculate by the function can came close to the real y.</li>
+<li>and we will use the err of them to see whether it is good enough or not.</li>
+<li>and with all the data, we sum them.</li>
+</ul>
+</li>
+<li><strong>theta</strong>
+
+<ul>
+<li><p>we can see in the following picture</p>
+
+<ul>
+<li>suppose that we went down the mountain and we can see all the mountain around us are higher than us</li>
+<li>and the theta in the cost function is that we <em>reduce</em> theta value in the theta direction</li>
+<li>and the deviation of the cost function on theta i is the distance that we move on theta i direction.</li>
+</ul>
+</li>
+<li><p><img src="/images/lr_gd/gdpic.png"></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Basic algorithm</strong>
+
+<ul>
+<li>start with some theta0, theta1, theta2&hellip;..</li>
+<li>Keep changing theta0, theta1, theta2&hellip;. to reduce J(theta0, theta2&hellip;) until we hopefully end up at a minimum.</li>
+<li>And this is the key idea of Gradient descend method</li>
+</ul>
+</li>
+<li><img src="/images/lr_gd/idea.png"></li>
+</ul>
+
+
+<h3>The cpp code of it</h3>
+
+<p>```</p>
+
+<h1>include&lt;stdlib.h></h1>
+
+<h1>include&lt;stdio.h></h1>
+
+<h1>include&lt;string.h></h1>
+
+<h1>include&lt;math.h></h1>
+
+<h1>define OUTPUTID 10001</h1>
+
+<h1>define BUFFERSIZE 50000</h1>
+
+<h1>define ROWNUM 10000</h1>
+
+<h1>define COLNUM 385</h1>
+
+<p>double alpha = 0.1;
+char buffer[BUFFERSIZE];
+const char *delim = &ldquo;,&rdquo;;
+double x[ROWNUM][COLNUM];
+double y[ROWNUM];
+double result[ROWNUM];
+double diff[ROWNUM];
+double theta[COLNUM];
+double temp[COLNUM];</p>
+
+<p>void readdata(char <em>, bool);
+void writedata(char </em>);
+void test();
+void gradient_descend_train();</p>
+
+<p>int main(){</p>
+
+<pre><code>readdata("train.csv", true);
+gradient_descend_train();
+readdata("test.csv", false);
+test();
+writedata("predict.csv");
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<p>void readdata(char *filename, bool haspredicted){</p>
+
+<pre><code>FILE *inputfile = fopen(filename, "r");
+
+if(inputfile == NULL){
+    system("PAUSE");
+    exit(1);
+}
+//drop the first line
+fscanf(inputfile, "%s", buffer);
+//read all lines each
+char *s;
+for(int i = 0; i &lt; ROWNUM; i++){
+
+    fscanf(inputfile, "%s", buffer);
+    //drop the first column
+    strtok(buffer, delim);
+    //read the predict y
+    if(haspredicted){
+        s = strtok(NULL, delim);
+        sscanf(s, "%lf", &amp;y[i]);
+    }
+    //init x0
+    x[i][0] = 1;
+    //read the matrix
+    for(int j = 1; j &lt; COLNUM; j++){
+        s = strtok(NULL, delim);
+        sscanf(s, "%lf", &amp;x[i][j]);
+    }
+}
+fclose(inputfile);
+</code></pre>
+
+<p>}</p>
+
+<p>void writedata(char *filename){</p>
+
+<pre><code>FILE *outputfile = fopen(filename, "w");
+
+if(outputfile == NULL){
+    system("pause");
+    exit(1);
+}
+
+fprintf(outputfile, "%s,%s\n", "Id", "reference");
+//write the result into file
+for(int i = 0, id = OUTPUTID; i &lt; ROWNUM; i++, id++){
+    //cout&lt;&lt;"write the line"&lt;&lt;i + 1&lt;&lt;endl;
+    fprintf(outputfile, "%d,%.6lf\n", id, result[i]);
+}
+fclose(outputfile);
+</code></pre>
+
+<p>}</p>
+
+<p>void initTheta(){  //init theta</p>
+
+<pre><code>char *thetafilename = "theta.dat";
+FILE *f = fopen(thetafilename, "r");
+for(int j = 0; j &lt; COLNUM; j++)
+    fscanf(f, "%lf", &amp;theta[j]);
+fclose(f);
+//init the theta
+for(int j = 0; j &lt; COLNUM; j++)
+    theta[j] = 0;
+</code></pre>
+
+<p>}</p>
+
+<p>void saveTheta(){   //save the theta</p>
+
+<pre><code>FILE *f = fopen("theta.dat", "w");
+for(int j = 0; j &lt; COLNUM; j++)
+    fprintf(f, "%lf\n", theta[j]);
+fclose(f);
+</code></pre>
+
+<p>}</p>
+
+<p>void calculateResult(){</p>
+
+<pre><code>for(int i = 0; i &lt; ROWNUM; i++){
+    result[i] = 0;
+    for(int j = 0; j &lt; COLNUM; j++){
+        result[i] += theta[j] * x[i][j];
+    }
+}
+</code></pre>
+
+<p>}</p>
+
+<p>double calculateJ(){</p>
+
+<pre><code>int turn = 0;
+double cost = 0;
+for(int i = 0; i &lt; ROWNUM; i++){
+    diff[i] = result[i] - y[i];
+    cost += diff[i]*diff[i];
+}
+cost /= (ROWNUM * 2);
+printf("%5d: J(theta) = %.6lf\n", ++turn, cost);
+return cost;
+</code></pre>
+
+<p>}</p>
+
+<p>void updateTheta(){</p>
+
+<pre><code>double sum;
+for(int j = 0 ; j &lt; COLNUM; j++){
+    sum = 0;
+    for(int i = 0; i &lt; ROWNUM; i++)
+        sum += diff[i] * x[i][j];
+    theta[j] -= alpha * sum / ROWNUM;
+}
+</code></pre>
+
+<p>}</p>
+
+<p>void gradient_descend_train(){</p>
+
+<pre><code>initTheta();
+alpha = 0.1001;
+double cost = 1000;
+while(cost &gt; 26.4){
+    calculateResult();
+    cost = calculateJ();
+    updateTheta();
+}
+saveTheta();
+</code></pre>
+
+<p>}</p>
+
+<p>void test(){</p>
+
+<pre><code>calculateResult();
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<h3>The Second method to solve the problem(normal equation)</h3>
+
+<ul>
+<li>This way is a way shown in the statistic learning.</li>
+<li>use the minimum square function to do a regression analyse on the data.
+
+<ul>
+<li><img src="/images/lr_gd/nq.png"></li>
+</ul>
+</li>
+<li>and we can see the feature normalise in the normal equation function
+
+<ul>
+<li><img src="/images/lr_gd/nfn.png"></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>The matlab code of it</h3>
+
+<ul>
+<li>The main function</li>
+</ul>
+
+
+<p>```
+%load the train data
+data = load(&lsquo;train.txt&rsquo;);
+X = data(:, 3:386);
+y = data(:, 2);
+m = length(y);
+m2 = size(X);</p>
+
+<p>%load the test data
+data2 = load(&lsquo;test.txt&rsquo;);
+feat = data2(:, 2:385);
+m3 = size(feat);</p>
+
+<p>sum_test = [0];</p>
+
+<p>%use the equation to calculate
+theta = normaleqn(X, y, w);</p>
+
+<p>%calculate the result
+result = feat * theta;</p>
+
+<p>csvwrite(&lsquo;aaa_ver3.csv&rsquo;, [linen result]);
+```</p>
+
+<ul>
+<li>The normal equation function</li>
+</ul>
+
+
+<p>```
+function [theta] = normaleqn(x, y, w)</p>
+
+<pre><code>theta = zeros(size(x, 2), 1);
+%theta = pinv(x' * x + 4000.3 * eye(size(x, 2))) * x' * y;
+ %theta = pinv(x' * x + 3.3 * eye(size(x, 2))) * x' * y;
+theta = pinv(x' * x + w * eye(size(x, 2))) * x' * y;
+</code></pre>
+
+<p>en
+```</p>
+
+<h3>The cpp code of it</h3>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tree Based Ensemble Method Introduction]]></title>
