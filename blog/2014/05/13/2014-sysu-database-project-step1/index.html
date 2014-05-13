@@ -5,63 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Bash Profile Configuration - KING</title>
+  <title>2014 Sysu Database Project Step1 - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53 &hellip;">
+  <meta name="description" content="问题描述 任务 1: 不带压缩地导入数据 这个任务要求你实现分页存储机制。 此处仅考虑定长的数据类型。对于每一列,需要将所含的定长数据如同数组 一样存储在磁盘上的页中 (更多解释见下文)。每一页的大小是固定的,可以是 4K,8K 或 16K。 在这个任务中,你需要存储 ORDERS 表中的 1. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/05/13/2014-sysu-database-project-step1">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -122,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">My Bash Profile Configuration</h1>
+      <h1 class="entry-title">2014 Sysu Database Project Step1</h1>
     
     
       <p class="meta">
@@ -138,7 +86,7 @@
   
 
 
-<time datetime="2014-04-13T10:14:26+08:00" pubdate data-updated="true">Apr 13<span>th</span>, 2014</time>
+<time datetime="2014-05-13T15:20:32+08:00" pubdate data-updated="true">May 13<span>th</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com">Comments</a>
@@ -148,7 +96,94 @@
   </header>
 
 
-<div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="entry-content"><h3>问题描述</h3>
+
+<ul>
+<li><strong>任务 1: 不带压缩地导入数据</strong>
+
+<ul>
+<li>这个任务要求你实现分页存储机制。
+
+<ul>
+<li>此处仅考虑定长的数据类型。对于每一列,需要将所含的定长数据如同数组 一样存储在磁盘上的页中 (更多解释见下文)。每一页的大小是固定的,可以是 4K,8K 或 16K。</li>
+</ul>
+</li>
+<li>在这个任务中,你需要存储 ORDERS 表中的
+
+<ul>
+<li>1.O_ORDERKEY</li>
+<li>2.O_CUSTKEY</li>
+<li>3.O_TOTALPRICE</li>
+<li>4.O_SHIPPRIORITY</li>
+</ul>
+</li>
+<li>不同列的数据类型不一样,具体请参考 TPC-H 的文档。存储之后,你需要 提供接口,以便于查询记录。查询时,要求实现给定一条记录的 ORDERKEY, 返回这条记录的 CUSTKEY,TOTALPRICE 和 SHIPPRIORITY。</li>
+<li>查询接口的具体要求,请参考提交一节。</li>
+<li>这个存储系统必须有能力处理 1G 以上的数据。允许存入内存里的页的数量 为 128。在实现这个限制之外,可以尝试其他限制并做对比。你可能需要学习 LRU 等换页机制来加速数据导入。</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li><strong>任务 2: 外排序和 RLE 压缩</strong>
+
+<ul>
+<li>本任务要求使用行程长度编码 (Run-Length Encoding) 方式压缩数据,并 将 ORDERS 表和 CUSTOMER 表以 CUSTKEY 进行 JOIN 操作。在进行压 缩前,需对数据做外排序 (见下文说明)。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>存储结构</h3>
+
+<ul>
+<li>请注意在这个项目中,磁盘的读写操作都必须以二进制模式进行。</li>
+<li>对于一个页,由于数据定长,一列可以以数组形态存在于内存中。例如,按照以下形式声明的数组,
+
+<ul>
+<li><code>int page[1024]</code></li>
+<li>可以表示一个大小为 4K 的页。使用以下代码,可以将一页写出, <code>fwrite(page, sizeof(int), 1024, f)</code>;</li>
+<li>以上代码仅供参考。具体实现时可能情况更为复杂。</li>
+</ul>
+</li>
+<li>对于一个未压缩的页,数据按如下方式按顺序排列,需要读取指定数据时, 通过下标取出对应位置的数据。
+
+<ul>
+<li><code>&lt;Val1&gt;&lt;Val2&gt;&lt;Val3&gt;&lt;Val4&gt;...</code></li>
+</ul>
+</li>
+<li>对于压缩的页,则按如下方式排列在数组中。请先自行学习行程长度编码。
+
+<ul>
+<li><code>&lt;Val1&gt;&lt;RunLength1&gt;&lt;Val2&gt;&lt;RunLength2&gt;&lt;Val3&gt;&lt;RunLength3&gt;...</code></li>
+</ul>
+</li>
+<li>一页可以是 4K,8K 或 64K。</li>
+</ul>
+
+
+<h3>外排序</h3>
+
+<ul>
+<li>在做 JOIN 之前,需要进行外排序。
+
+<ul>
+<li>简单地说,需要先分别读进每 128 页 进行排序,得到一个个顺串。然后同时对所有顺串进行归并,归并后的结果即 为排好序的数据。请参考维基百科上的说明自行学习和实现。</li>
+</ul>
+</li>
+<li>外排序需要同时处理 ORDERS 表的 CUSTKEY 列和 ORDERKEY 列,按照 CUSTKEY 进行排列,如下图所示,</li>
+<li>排完序后,CUSTKEY 的连续重复项更多了,即可对该列进行 RLE 压缩。 完成压缩后,请统计压缩效率。</li>
+<li><img src="/images/database2014pro/1.png"></li>
+</ul>
+
+
+<h3>step1 code</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -223,84 +258,161 @@
 <span class='line-number'>73</span>
 <span class='line-number'>74</span>
 <span class='line-number'>75</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#terminal
-</span><span class='line'>export PS1="\u@\h:\w $"
-</span><span class='line'>export CLICOLOR=1
-</span><span class='line'>export GREP_OPTIONS="--color=auto"
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include&lt;iostream&gt;
+</span><span class='line'>#include&lt;fstream&gt;
+</span><span class='line'>#include&lt;string&gt;
+</span><span class='line'>#include&lt;algorithm&gt;
+</span><span class='line'>#include&lt;cstdlib&gt;
+</span><span class='line'>using namespace std;
 </span><span class='line'>
-</span><span class='line'>#byobu check ignore
-</span><span class='line'>set FORCE_UNSAFE_CONFIGURE=1
+</span><span class='line'>struct database_attr{
+</span><span class='line'>  int orderkey;
+</span><span class='line'>  int custkey;
+</span><span class='line'>  int totalprice;
+</span><span class='line'>  int prior;
+</span><span class='line'>};
+</span><span class='line'>database_attr p[1024];
 </span><span class='line'>
-</span><span class='line'>#ant path
-</span><span class='line'>#ANT_ROOT=/Users/pb/Downloads/adt-bundle-mac-x86_64-20130917/sdk/tools/ant
+</span><span class='line'>int main(){
+</span><span class='line'>  fstream fin;
+</span><span class='line'>  char buf[200];
+</span><span class='line'>  string str[10][1001];
+</span><span class='line'>  string data[5][1001];
+</span><span class='line'>  int data1[5][1001];
+</span><span class='line'>  int data2[5][1001];
+</span><span class='line'>  fin.open("store_test.tbl");
+</span><span class='line'>  int row = 0;
+</span><span class='line'>  int col;
+</span><span class='line'>  int n = 9;
+</span><span class='line'>  while(!fin.eof()){
+</span><span class='line'>      row = 0;
+</span><span class='line'>      fin.getline(buf, 200, '\n');
+</span><span class='line'>      for(int i = 0; buf[i] != '\0';){
+</span><span class='line'>          if(buf[i] == '|' && n &gt; 0){
+</span><span class='line'>              row++;
+</span><span class='line'>              i++;
+</span><span class='line'>              n--;
+</span><span class='line'>          }else if(buf[i] != '|' && n &gt; 0){
+</span><span class='line'>              str[row][col] += buf[i];
+</span><span class='line'>              i++;
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>      n = 9;
+</span><span class='line'>      col++;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  for(int i = 0; i &lt; 9; i++){
+</span><span class='line'>      for(int j = 0; j &lt; 1000; j++){
+</span><span class='line'>      //  cout&lt;&lt;str[i][j]&lt;&lt;" ";
+</span><span class='line'>      }
+</span><span class='line'>      //cout&lt;&lt;endl;
+</span><span class='line'>  }
+</span><span class='line'>  //store the data in column
+</span><span class='line'>  for(int i = 0; i &lt; 9; i++){
+</span><span class='line'>      for(int j = 0; j &lt; 1000; j++){
+</span><span class='line'>          if(i == 0){
+</span><span class='line'>              data[i][j] = str[i][j];
+</span><span class='line'>          }
+</span><span class='line'>          if(i == 1){
+</span><span class='line'>              data[i][j] = str[i][j];
+</span><span class='line'>          }
+</span><span class='line'>          if(i == 3){
+</span><span class='line'>              data[i - 1][j] = str[i][j];
+</span><span class='line'>          }
+</span><span class='line'>          if(i == 7){
+</span><span class='line'>              data[i - 4][j] = str[i][j];
+</span><span class='line'>          }       
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>  for(int i = 0; i &lt; 4; i++){
+</span><span class='line'>      for(int j = 0; j &lt; 1000; j++){
+</span><span class='line'>          //cout&lt;&lt;data[i][j]&lt;&lt;" ";
+</span><span class='line'>      }
+</span><span class='line'>      //cout&lt;&lt;endl;
+</span><span class='line'>  }
+</span><span class='line'>  //check the data use the index
+</span><span class='line'>  /*
+</span><span class='line'>  int ok;
+</span><span class='line'>  cin&gt;&gt;ok;
+</span><span class='line'>  cout&lt;&lt;data[1][ok]&lt;&lt;" "&lt;&lt;data[2][ok]&lt;&lt;" "&lt;&lt;data[3][ok]&lt;&lt;endl;
+</span><span class='line'>  */
+</span><span class='line'>  fin.close();
+</span><span class='line'>  //change the string array into int array
+</span><span class='line'>  int i, j;
+</span><span class='line'>  for(i = 0; i &lt; 4; i++){
+</span><span class='line'>      for(j = 0; j &lt; 1000; j++){
+</span><span class='line'>          data1[i][j] = atoi(data[i][j].c_str());
+</span><span class='line'>      }
+</span><span class='line'>  }
 </span><span class='line'>
-</span><span class='line'># gcc 4.8
-</span><span class='line'>export PATH=$HOME/Library/gcc-4.8.0/bin:$PATH
-</span><span class='line'>
-</span><span class='line'>export BOOST_ROOT=/usr/local/Cellar/lib
-</span><span class='line'>export BOOST_INCLUDEDIR=/usr/local/Cellar/include
-</span><span class='line'>
-</span><span class='line'>##
-</span><span class='line'># Your previous /Users/pb/.bash_profile file was backed up as /Users/pb/.bash_profile.macports-saved_2013-10-12_at_14:01:02
-</span><span class='line'>##
-</span><span class='line'>
-</span><span class='line'># MacPorts Installer addition on 2013-10-12_at_14:01:02: adding an appropriate PATH variable for use with MacPorts.
-</span><span class='line'>export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-</span><span class='line'># Finished adapting your PATH environment variable for use with MacPorts.
-</span><span class='line'>
-</span><span class='line'>export CPATH=/opt/local/include
-</span><span class='line'>export LIBRARY_PATH=/opt/local/lib
-</span><span class='line'>export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/opt/local/lib
-</span><span class='line'>export PATH=/opt/local/bin:$PATH
-</span><span class='line'># To ensure that MacPorts pkg-config can find stuff that rosdep installs in /usr
-</span><span class='line'>export PKG_CONFIG_PATH=/usr/lib/pkgconfig
-</span><span class='line'>
-</span><span class='line'>#color
-</span><span class='line'>export CLICOLOR=1
-</span><span class='line'>export LSCOLORS=ExFxCxDxBxegedabagacad
-</span><span class='line'>
-</span><span class='line'>#wxpython
-</span><span class='line'>export VERSIONER_PYTHON_PREFER_32_BIT
-</span><span class='line'>
-</span><span class='line'>#sudo error
-</span><span class='line'>unset LD_LIBRARY_PATH
-</span><span class='line'>unset DYLD_LIBRARY_PATH
-</span><span class='line'>
-</span><span class='line'>#tornade
-</span><span class='line'>export PYTHONPATH=$PYTHONPATH:~/Document/python/software/tornado-3.1.1
-</span><span class='line'>
-</span><span class='line'>#android sdk
-</span><span class='line'>export PATH=$PATH:~/Downloads/adt-bundle-mac-x86_64-20130917/sdk/platform-tools
-</span><span class='line'>
-</span><span class='line'>#android ndk
-</span><span class='line'>export ANDROID_NDK_ROOT=~/Documents/android/NDK/android-ndk-r9d
-</span><span class='line'>export NDK_ROOT=~/Documents/android/NDK/android-ndk-r9d
-</span><span class='line'>export ANDROID_SDK_ROOT=~/Downloads/adt-bundle-mac-x86_64-20130917/sdk
-</span><span class='line'>
-</span><span class='line'>#cocos2dx
-</span><span class='line'>#export COCOS2DX_ROOT=~/Documents/CocosBuilder-2.1-examples/cocos2d-x-2.2.2
-</span><span class='line'>
-</span><span class='line'>#mysql path
-</span><span class='line'>export PATH=$PATH:/usr/local/mysql/bin
-</span><span class='line'>
-</span><span class='line'>#Tomcat
-</span><span class='line'>#export PATH=$PATH:/usr/local/apache-tomcat-7.0.52/bin
-</span><span class='line'>
-</span><span class='line'>#colt linear algebra lib
-</span><span class='line'>export CLASSPATH=/opt/share/colt/lib/colt.jar:/opt/share/colt/lib/concurrent.jar:$CLASSPATH
-</span><span class='line'>
-</span><span class='line'>#mlpack machinelearning library
-</span><span class='line'>
-</span><span class='line'>export ANT_ROOT=/usr/local/ant
+</span><span class='line'>  for(i = 0; i &lt; 4; i++){
+</span><span class='line'>      for(j = 0; j &lt; 1000; j++){
+</span><span class='line'>          data2[i][j] = data1[i][j];
+</span><span class='line'>          if(j &lt; 10)
+</span><span class='line'>              cout&lt;&lt;data2[i][j]&lt;&lt;" ";
+</span><span class='line'>      }
+</span><span class='line'>      cout&lt;&lt;endl;
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  //store the array into struct array
+</span><span class='line'>  for(i = 0; i &lt; 4; i++){
+</span><span class='line'>      for(j = 0; j &lt; 1000; j++){
+</span><span class='line'>          p[j].orderkey = data2[0][j];
+</span><span class='line'>          p[j].custkey = data2[1][j];
+</span><span class='line'>          p[j].totalprice = data2[2][j];
+</span><span class='line'>          p[j].prior = data2[3][j];
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>      
+</span><span class='line'>  cout&lt;&lt;"The id 1 has "&lt;&lt;p[0].orderkey&lt;&lt;" "&lt;&lt;p[0].custkey&lt;&lt;" "&lt;&lt;p[0].totalprice&lt;&lt;" "&lt;&lt;p[0].prior&lt;&lt;endl;
+</span><span class='line'>  return 0;
+</span><span class='line'>}
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-</span><span class='line'>
-</span><span class='line'>export COCOS_CONSOLE_ROOT=/Users/pb/Documents/CocosBuilder-2.1-examples/cocos2d-x-3.0rc0/tools/cocos2d-console/bin
-</span><span class='line'>export PATH=$COCOS_CONSOLE_ROOT:$PATH</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure>
 
 
-<!--more-->
+<h3>step2 code</h3>
+
+<ul>
+<li>to be continued</li>
+</ul>
 
 </div>
 
@@ -324,12 +436,12 @@
   
 
 
-<time datetime="2014-04-13T10:14:26+08:00" pubdate data-updated="true">Apr 13<span>th</span>, 2014</time>
+<time datetime="2014-05-13T15:20:32+08:00" pubdate data-updated="true">May 13<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/osx/'>OSX</a>
+    <a class='category' href='/blog/categories/database/'>database</a>
   
 </span>
 
@@ -368,10 +480,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/04/09/basic-idea-in-robotics/" title="Previous Post: Basic idea in robotics">&laquo; Basic idea in robotics</a>
+        <a class="basic-alignment left" href="/blog/2014/05/12/linear-regression-tutorial/" title="Previous Post: linear_regression_tutorial">&laquo; linear_regression_tutorial</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/04/15/linux-server-tutorial/" title="Next Post: Linux server tutorial">Linux server tutorial &raquo;</a>
       
     </p>
   </footer>
@@ -487,8 +597,8 @@ ds.charset = 'UTF-8';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/05/13/2014-sysu-database-project-step1/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/05/13/2014-sysu-database-project-step1/';
         var disqus_script = 'embed.js';
       
     (function () {
