@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-14T10:14:11+08:00</updated>
+  <updated>2014-05-14T13:26:11+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,263 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Tutorial 1]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1/"/>
+    <updated>2014-05-14T13:11:01+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1</id>
+    <content type="html"><![CDATA[<ul>
+<li>1.一点基本语法</li>
+<li>用NSLog打印，代替printf（也是可以用的）</li>
+<li>用NSDate来获取时间</li>
+<li><p>用NSData来把数据char*转成string存起来</p></li>
+<li><p>源码</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;Foundation/Foundation.h&gt;
+</span><span class='line'>
+</span><span class='line'>int main(int argc, const char * argv[])
+</span><span class='line'>{
+</span><span class='line'>
+</span><span class='line'>    @autoreleasepool {
+</span><span class='line'>        
+</span><span class='line'>        // insert code here...
+</span><span class='line'>        NSLog(@"Hello, World!");
+</span><span class='line'>        
+</span><span class='line'>    }
+</span><span class='line'>    int i;
+</span><span class='line'>    for(i = 0; i &lt;= 5; i++)
+</span><span class='line'>        NSLog(@"%d\n", i);
+</span><span class='line'>   
+</span><span class='line'>    NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-(24*60*60)];
+</span><span class='line'>    NSLog(@"yesterday is %@", yesterday);
+</span><span class='line'>    
+</span><span class='line'>    NSDate *tomorrow = [NSDate dateWithTimeIntervalSinceNow:+(24*60*60)];
+</span><span class='line'>    NSLog(@"tomorrow is %@", tomorrow);
+</span><span class='line'>    
+</span><span class='line'>    const char *string = "Hi this is pb";
+</span><span class='line'>    NSData *data = [NSData dataWithBytes:string length:strlen(string) + 1];
+</span><span class='line'>    NSLog(@"data is %@", data);
+</span><span class='line'>    NSLog(@"%lu Bytes string is '%s'", (unsigned long)[data length], [data bytes]);
+</span><span class='line'>    return 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>2.线程的同步与锁
+　　- 要说明线程的同步与锁，最好的例子可能就是多个窗口同时售票的售票系统了。我们知道在java中，使用synchronized来同步，而iphone虽然没有提供类似java下的synchronized关键字，但提供了NSCondition对象接口。</p>
+
+<ul>
+<li>查看NSCondition的接口说明可以看出，NSCondition是iphone下的锁对象，所以我们可以使用NSCondition实现iphone中的线程安全。这是来源于网上的一个例子：</li>
+</ul>
+</li>
+<li><p>2.多个窗口同时售票的售票系统代码</p></li>
+<li>AppDelegate.h</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;Cocoa/Cocoa.h&gt;
+</span><span class='line'>
+</span><span class='line'>@interface AppDelegate : NSObject &lt;NSApplicationDelegate&gt;{
+</span><span class='line'>    int tickets;
+</span><span class='line'>    int count;
+</span><span class='line'>    NSThread *ticketThreadone;
+</span><span class='line'>    NSThread *ticketThreadtwo;
+</span><span class='line'>    NSCondition *ticketsCondition;
+</span><span class='line'>    NSWindow *windows;
+</span><span class='line'>    
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>@property (assign) IBOutlet NSWindow *window;
+</span><span class='line'>
+</span><span class='line'>@end
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>AppDelegate.cpp</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import "AppDelegate.h"
+</span><span class='line'>
+</span><span class='line'>@implementation AppDelegate
+</span><span class='line'>@synthesize window;
+</span><span class='line'>
+</span><span class='line'>- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+</span><span class='line'>{
+</span><span class='line'>    tickets = 100;
+</span><span class='line'>    count = 0;
+</span><span class='line'>    
+</span><span class='line'>    ticketsCondition = [[NSCondition alloc] init]; //初始化锁对象
+</span><span class='line'>    ticketThreadone = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil]; //初始化线程1
+</span><span class='line'>    [ticketThreadone setName:@"Thread-1"];
+</span><span class='line'>    [ticketThreadone start];
+</span><span class='line'>    
+</span><span class='line'>    ticketThreadtwo = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];  //初始化线程2
+</span><span class='line'>    [ticketThreadtwo setName:@"Thread-2"];
+</span><span class='line'>    [ticketThreadtwo start];
+</span><span class='line'>    
+</span><span class='line'>    [window makeKeyWindow];  //出错了，无法在窗口中运行，只能在命令行中运行，不知道为什么？求知道的筒子解答下~
+</span><span class='line'>    
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)run{
+</span><span class='line'>    while(TRUE){
+</span><span class='line'>        [ticketsCondition lock];
+</span><span class='line'>        if(tickets &gt; 0)
+</span><span class='line'>        {
+</span><span class='line'>            [NSThread sleepForTimeInterval:0.5];
+</span><span class='line'>            count = 100 - tickets;
+</span><span class='line'>            NSLog(@"current tickets count are: %d, sell %d, thread name: %@", tickets, count, [[NSThread currentThread] name]);
+</span><span class='line'>            tickets--;
+</span><span class='line'>        }else
+</span><span class='line'>        {
+</span><span class='line'>            break;
+</span><span class='line'>        }
+</span><span class='line'>        [ticketsCondition unlock];
+</span><span class='line'>    }
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)dealloc{
+</span><span class='line'>    [ticketThreadone release];  //释放内存
+</span><span class='line'>    [ticketThreadtwo release];
+</span><span class='line'>    [ticketsCondition release];
+</span><span class='line'>    [window release];
+</span><span class='line'>    [super dealloc];
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>@end
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Trouble shooting</li>
+<li>1.ARC forbids explicit message send of &lsquo;release&rsquo;
+&lsquo;release&rsquo; is unavailable: not available in automatic reference counting mode
+
+<ul>
+<li>错误原因：因为我们设置了用ARC来管理内存释放，我们却又调用了release方法去释放对象。</li>
+<li>(From the Internet)
+
+<ul>
+<li>ARC是iOS 5推出的新功能，全称叫 ARC(Automatic Reference Counting)。简单地说，就是代码中自动加入了retain/release，原先需要手动添加的用来处理内存管理的引用计数的代码可以自动地由编译器完成了。该机制在 iOS 5/ Mac OS X 10.7 开始导入，利用 Xcode4.2 可以使用该机制。简单地理解ARC，就是通过指定的语法，让编译器(LLVM 3.0)在编译代码时，自动生成实例的引用计数管理部分代码。有一点，ARC并不是GC，它只是一种代码静态分析（Static Analyzer）工具。</li>
+</ul>
+</li>
+<li>how to solve it?
+
+<ul>
+<li>找到项目中的Build setting
+
+<ul>
+<li>把<code>Objective-C Automatic Reference</code>从YES改成NO</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IOS Keybroad Topdown]]></title>
@@ -5225,324 +5482,6 @@ name:Mario Arbulu
 <li><p>Then We are going to analyze the loopholes and weaknesses of the system and write something to test some loopholes code in order to have a better understanding of the mechanic.</p></li>
 <li><p>After introducing the way hackers can use to hack into your computer and we will provide some advises to let you protect your computer better than before.</p></li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[CPSO-Sk 的实现(1)]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1/"/>
-    <updated>2014-04-09T00:36:53+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1</id>
-    <content type="html"><![CDATA[<ul>
-<li>其实和标准的PSO是一样的</li>
-<li><p>只是初始种群是不一样的</p>
-
-<ul>
-<li>假设标准版的种群大小是100的话，那么</li>
-<li>这个版本是把100分成10份，然后再对每一份使用标准版的算法</li>
-</ul>
-</li>
-<li><p>因此这两个算法本质上没有区别，只是初始种群大小不一样而已</p></li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li>以下是伪代码</li>
-</ul>
-
-
-<h3>伪代码</h3>
-
-<ul>
-<li>假设我们的算法初始种群分成10份</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>如何初始化：
-</span><span class='line'>for i=0:种群大小
-</span><span class='line'>    for j=0:维度{
-</span><span class='line'>        对每个个体的位置进行随机化
-</span><span class='line'>        对每个个体的速度进行随机化
-</span><span class='line'>        对每个个体的最佳位置为粒子的位置
-</span><span class='line'>    }
-</span><span class='line'>for i=0:种群大小{
-</span><span class='line'>    计算适应度
-</span><span class='line'>    把每个粒子的最佳适应度初始化为初始值
-</span><span class='line'>}
-</span><span class='line'>把全局最优初始化为0     </span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>更新局部最优值
-</span><span class='line'>if(如果粒子的最佳适应度比现在的适应度 大)
-</span><span class='line'>    for i=0:维度
-</span><span class='line'>        把粒子的历史最佳更新为粒子的位置
-</span><span class='line'>    把粒子的最佳适应度更新为粒子现在的适应度</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>全局最优：
-</span><span class='line'>if(索引为0)
-</span><span class='line'>    for i=1:种群大小
-</span><span class='line'>        if(适应度小于索引第一个粒子的适应度){
-</span><span class='line'>            把s=第i个粒子的适应度
-</span><span class='line'>            flag=i
-</span><span class='line'>        }
-</span><span class='line'>    for i=0:维度
-</span><span class='line'>        把全局最优位置更新为第flag个的位置
-</span><span class='line'>    把全局最适应的值更新为第flag个的适应值
-</span><span class='line'>else{
-</span><span class='line'>    for i=0:种群大小
-</span><span class='line'>        if（如果最佳适应值小于全局最优）{
-</span><span class='line'>            for i=0:维度
-</span><span class='line'>                把最佳适应度更新成现在这个粒子的最佳适应度
-</span><span class='line'>            把全局最佳适应度更新为现在粒子的最佳适应度
-</span><span class='line'>        }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>计算适应值函数</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>首先把种群分成10份，为了方便起见，相当于每相隔10个就停止然后对这10个粒子用PSO
-</span><span class='line'>然后就开始对包含10个粒子的子种群
-</span><span class='line'>    定义最大循环次数，建立一个循环
-</span><span class='line'>        if（达到最大循环次数或者满足停止条件）
-</span><span class='line'>            输出最佳适应值和取得这个值所需要的迭代次数
-</span><span class='line'>        else{
-</span><span class='line'>            for i=1:种群大小{
-</span><span class='line'>                for i=1:维度{
-</span><span class='line'>                    更新个体速度：使用公式一
-</span><span class='line'>                    判断速度是否超过最大速度
-</span><span class='line'>                        如果超过了就把速度更新给最大速度
-</span><span class='line'>                    判断位置是否越界（小于最小值或者大于最大值）
-</span><span class='line'>                        乘上对应边界的两倍再减掉现在的位置
-</span><span class='line'>                }
-</span><span class='line'>                计算适应值
-</span><span class='line'>                计算局部最优解
-</span><span class='line'>            }
-</span><span class='line'>            计算全局最优
-</span><span class='line'>        }</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>C++ source code</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#include&lt;iostream&gt;
-</span><span class='line'>#include&lt;cmath&gt;
-</span><span class='line'>#include&lt;cstdlib&gt;
-</span><span class='line'>#include&lt;cstdio&gt;
-</span><span class='line'>#include "data.h"
-</span><span class='line'>
-</span><span class='line'>using namespace std;
-</span><span class='line'>#define C1 2
-</span><span class='line'>#define C2 2
-</span><span class='line'>#define VMAX 5.0
-</span><span class='line'>#define Iteration 10000
-</span><span class='line'>#define rand1() (double)(rand() / (double)RAND_MAX)
-</span><span class='line'>double global_best = 10000.0;
-</span><span class='line'>double v[100000] = {0};
-</span><span class='line'>const int X_const = 5;
-</span><span class='line'>double time_pso = 0.0;
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>struct particle{
-</span><span class='line'>  double current;
-</span><span class='line'>  double personal_best;
-</span><span class='line'>};
-</span><span class='line'>
-</span><span class='line'>struct particle p[100000];
-</span><span class='line'>
-</span><span class='line'>double fitness(double x){
-</span><span class='line'>  return x * x - 20 * x + 100;
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>void init(){                                                                                                                                
-</span><span class='line'>  int i;                                                                                                                                     
-</span><span class='line'>  for(i = 0; i &lt; 100000; i++){                                                                                                            
-</span><span class='line'>      p[i].current = -2 + i;                                                                                                                 
-</span><span class='line'>      p[i].personal_best = p[i].current;                                                                                                     
-</span><span class='line'>      v[i] = 0;                                                
-</span><span class='line'>  }
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>void cpso_sk(){
-</span><span class='line'>  int iter = 1;
-</span><span class='line'>  clock_t start, end;
-</span><span class='line'>  start = clock();
-</span><span class='line'>  int particle_num = 100000;
-</span><span class='line'>  int split = 1000;
-</span><span class='line'>  int count = particle_num / split;
-</span><span class='line'>  for(int i = 0; i &lt; particle_num; i+=count){
-</span><span class='line'>      while(iter &lt; Iteration){
-</span><span class='line'>          for(int j = i; j &lt; count; j++)
-</span><span class='line'>              if(fitness(p[j].current) &lt; fitness(p[j].personal_best))
-</span><span class='line'>                  p[j].personal_best = p[j].current;
-</span><span class='line'>          for(int k = i; k &lt; count; k++)
-</span><span class='line'>              if(fitness(p[k].current) &lt; fitness(global_best))
-</span><span class='line'>                  global_best = p[k].current;
-</span><span class='line'>          for(int u = i; u &lt; count; u++){
-</span><span class='line'>              v[u] =X_const * (v[u] + C1 * rand1() * (p[u].personal_best - p[u].current) + C2 * rand1() * (global_best - p[u].current));
-</span><span class='line'>              if(v[u] &gt; VMAX)
-</span><span class='line'>                  v[u] = VMAX;
-</span><span class='line'>          }
-</span><span class='line'>          for(int j = i; j &lt; count; j++)
-</span><span class='line'>              p[j].current += v[j];
-</span><span class='line'>          iter++;
-</span><span class='line'>      }
-</span><span class='line'>      end = clock();
-</span><span class='line'>      time_pso = end - start;
-</span><span class='line'>  }
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>int main(){
-</span><span class='line'>  init();
-</span><span class='line'>  cpso_sk();
-</span><span class='line'>  cout&lt;&lt;"The cpso algorithm use "&lt;&lt;time_pso&lt;&lt;" in the funtion 1 and the global best is "&lt;&lt;global_best;
-</span><span class='line'>  return 0;
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

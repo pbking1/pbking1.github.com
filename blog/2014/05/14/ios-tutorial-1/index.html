@@ -5,11 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Bash Profile Configuration - KING</title>
+  <title>IOS Tutorial 1 - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="1
+  <meta name="description" content="1.一点基本语法
+用NSLog打印，代替printf（也是可以用的）
+用NSDate来获取时间
+用NSData来把数据char*转成string存起来
+源码 1
 2
 3
 4
@@ -34,34 +38,7 @@
 23
 24
 25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53 &hellip;">
+26 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,7 +47,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -122,7 +99,7 @@
   
   <header>
     
-      <h1 class="entry-title">My Bash Profile Configuration</h1>
+      <h1 class="entry-title">IOS Tutorial 1</h1>
     
     
       <p class="meta">
@@ -138,7 +115,7 @@
   
 
 
-<time datetime="2014-04-13T10:14:26+08:00" pubdate data-updated="true">Apr 13<span>th</span>, 2014</time>
+<time datetime="2014-05-14T13:11:01+08:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com">Comments</a>
@@ -148,7 +125,123 @@
   </header>
 
 
-<div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="entry-content"><ul>
+<li>1.一点基本语法</li>
+<li>用NSLog打印，代替printf（也是可以用的）</li>
+<li>用NSDate来获取时间</li>
+<li><p>用NSData来把数据char*转成string存起来</p></li>
+<li><p>源码</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;Foundation/Foundation.h&gt;
+</span><span class='line'>
+</span><span class='line'>int main(int argc, const char * argv[])
+</span><span class='line'>{
+</span><span class='line'>
+</span><span class='line'>    @autoreleasepool {
+</span><span class='line'>        
+</span><span class='line'>        // insert code here...
+</span><span class='line'>        NSLog(@"Hello, World!");
+</span><span class='line'>        
+</span><span class='line'>    }
+</span><span class='line'>    int i;
+</span><span class='line'>    for(i = 0; i &lt;= 5; i++)
+</span><span class='line'>        NSLog(@"%d\n", i);
+</span><span class='line'>   
+</span><span class='line'>    NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-(24*60*60)];
+</span><span class='line'>    NSLog(@"yesterday is %@", yesterday);
+</span><span class='line'>    
+</span><span class='line'>    NSDate *tomorrow = [NSDate dateWithTimeIntervalSinceNow:+(24*60*60)];
+</span><span class='line'>    NSLog(@"tomorrow is %@", tomorrow);
+</span><span class='line'>    
+</span><span class='line'>    const char *string = "Hi this is pb";
+</span><span class='line'>    NSData *data = [NSData dataWithBytes:string length:strlen(string) + 1];
+</span><span class='line'>    NSLog(@"data is %@", data);
+</span><span class='line'>    NSLog(@"%lu Bytes string is '%s'", (unsigned long)[data length], [data bytes]);
+</span><span class='line'>    return 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>2.线程的同步与锁
+　　- 要说明线程的同步与锁，最好的例子可能就是多个窗口同时售票的售票系统了。我们知道在java中，使用synchronized来同步，而iphone虽然没有提供类似java下的synchronized关键字，但提供了NSCondition对象接口。</p>
+
+<ul>
+<li>查看NSCondition的接口说明可以看出，NSCondition是iphone下的锁对象，所以我们可以使用NSCondition实现iphone中的线程安全。这是来源于网上的一个例子：</li>
+</ul>
+</li>
+<li><p>2.多个窗口同时售票的售票系统代码</p></li>
+<li>AppDelegate.h</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;Cocoa/Cocoa.h&gt;
+</span><span class='line'>
+</span><span class='line'>@interface AppDelegate : NSObject &lt;NSApplicationDelegate&gt;{
+</span><span class='line'>    int tickets;
+</span><span class='line'>    int count;
+</span><span class='line'>    NSThread *ticketThreadone;
+</span><span class='line'>    NSThread *ticketThreadtwo;
+</span><span class='line'>    NSCondition *ticketsCondition;
+</span><span class='line'>    NSWindow *windows;
+</span><span class='line'>    
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>@property (assign) IBOutlet NSWindow *window;
+</span><span class='line'>
+</span><span class='line'>@end
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>AppDelegate.cpp</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -199,108 +292,87 @@
 <span class='line-number'>49</span>
 <span class='line-number'>50</span>
 <span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#terminal
-</span><span class='line'>export PS1="\u@\h:\w $"
-</span><span class='line'>export CLICOLOR=1
-</span><span class='line'>export GREP_OPTIONS="--color=auto"
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import "AppDelegate.h"
 </span><span class='line'>
-</span><span class='line'>#byobu check ignore
-</span><span class='line'>set FORCE_UNSAFE_CONFIGURE=1
+</span><span class='line'>@implementation AppDelegate
+</span><span class='line'>@synthesize window;
 </span><span class='line'>
-</span><span class='line'>#ant path
-</span><span class='line'>#ANT_ROOT=/Users/pb/Downloads/adt-bundle-mac-x86_64-20130917/sdk/tools/ant
+</span><span class='line'>- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+</span><span class='line'>{
+</span><span class='line'>    tickets = 100;
+</span><span class='line'>    count = 0;
+</span><span class='line'>    
+</span><span class='line'>    ticketsCondition = [[NSCondition alloc] init]; //初始化锁对象
+</span><span class='line'>    ticketThreadone = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil]; //初始化线程1
+</span><span class='line'>    [ticketThreadone setName:@"Thread-1"];
+</span><span class='line'>    [ticketThreadone start];
+</span><span class='line'>    
+</span><span class='line'>    ticketThreadtwo = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];  //初始化线程2
+</span><span class='line'>    [ticketThreadtwo setName:@"Thread-2"];
+</span><span class='line'>    [ticketThreadtwo start];
+</span><span class='line'>    
+</span><span class='line'>    [window makeKeyWindow];  //出错了，无法在窗口中运行，只能在命令行中运行，不知道为什么？求知道的筒子解答下~
+</span><span class='line'>    
+</span><span class='line'>}
 </span><span class='line'>
-</span><span class='line'># gcc 4.8
-</span><span class='line'>export PATH=$HOME/Library/gcc-4.8.0/bin:$PATH
+</span><span class='line'>- (void)run{
+</span><span class='line'>    while(TRUE){
+</span><span class='line'>        [ticketsCondition lock];
+</span><span class='line'>        if(tickets &gt; 0)
+</span><span class='line'>        {
+</span><span class='line'>            [NSThread sleepForTimeInterval:0.5];
+</span><span class='line'>            count = 100 - tickets;
+</span><span class='line'>            NSLog(@"current tickets count are: %d, sell %d, thread name: %@", tickets, count, [[NSThread currentThread] name]);
+</span><span class='line'>            tickets--;
+</span><span class='line'>        }else
+</span><span class='line'>        {
+</span><span class='line'>            break;
+</span><span class='line'>        }
+</span><span class='line'>        [ticketsCondition unlock];
+</span><span class='line'>    }
+</span><span class='line'>}
 </span><span class='line'>
-</span><span class='line'>export BOOST_ROOT=/usr/local/Cellar/lib
-</span><span class='line'>export BOOST_INCLUDEDIR=/usr/local/Cellar/include
-</span><span class='line'>
-</span><span class='line'>##
-</span><span class='line'># Your previous /Users/pb/.bash_profile file was backed up as /Users/pb/.bash_profile.macports-saved_2013-10-12_at_14:01:02
-</span><span class='line'>##
-</span><span class='line'>
-</span><span class='line'># MacPorts Installer addition on 2013-10-12_at_14:01:02: adding an appropriate PATH variable for use with MacPorts.
-</span><span class='line'>export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-</span><span class='line'># Finished adapting your PATH environment variable for use with MacPorts.
-</span><span class='line'>
-</span><span class='line'>export CPATH=/opt/local/include
-</span><span class='line'>export LIBRARY_PATH=/opt/local/lib
-</span><span class='line'>export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/opt/local/lib
-</span><span class='line'>export PATH=/opt/local/bin:$PATH
-</span><span class='line'># To ensure that MacPorts pkg-config can find stuff that rosdep installs in /usr
-</span><span class='line'>export PKG_CONFIG_PATH=/usr/lib/pkgconfig
-</span><span class='line'>
-</span><span class='line'>#color
-</span><span class='line'>export CLICOLOR=1
-</span><span class='line'>export LSCOLORS=ExFxCxDxBxegedabagacad
-</span><span class='line'>
-</span><span class='line'>#wxpython
-</span><span class='line'>export VERSIONER_PYTHON_PREFER_32_BIT
-</span><span class='line'>
-</span><span class='line'>#sudo error
-</span><span class='line'>unset LD_LIBRARY_PATH
-</span><span class='line'>unset DYLD_LIBRARY_PATH
-</span><span class='line'>
-</span><span class='line'>#tornade
-</span><span class='line'>export PYTHONPATH=$PYTHONPATH:~/Document/python/software/tornado-3.1.1
-</span><span class='line'>
-</span><span class='line'>#android sdk
-</span><span class='line'>export PATH=$PATH:~/Downloads/adt-bundle-mac-x86_64-20130917/sdk/platform-tools
-</span><span class='line'>
-</span><span class='line'>#android ndk
-</span><span class='line'>export ANDROID_NDK_ROOT=~/Documents/android/NDK/android-ndk-r9d
-</span><span class='line'>export NDK_ROOT=~/Documents/android/NDK/android-ndk-r9d
-</span><span class='line'>export ANDROID_SDK_ROOT=~/Downloads/adt-bundle-mac-x86_64-20130917/sdk
-</span><span class='line'>
-</span><span class='line'>#cocos2dx
-</span><span class='line'>#export COCOS2DX_ROOT=~/Documents/CocosBuilder-2.1-examples/cocos2d-x-2.2.2
-</span><span class='line'>
-</span><span class='line'>#mysql path
-</span><span class='line'>export PATH=$PATH:/usr/local/mysql/bin
-</span><span class='line'>
-</span><span class='line'>#Tomcat
-</span><span class='line'>#export PATH=$PATH:/usr/local/apache-tomcat-7.0.52/bin
-</span><span class='line'>
-</span><span class='line'>#colt linear algebra lib
-</span><span class='line'>export CLASSPATH=/opt/share/colt/lib/colt.jar:/opt/share/colt/lib/concurrent.jar:$CLASSPATH
-</span><span class='line'>
-</span><span class='line'>#mlpack machinelearning library
-</span><span class='line'>
-</span><span class='line'>export ANT_ROOT=/usr/local/ant
+</span><span class='line'>- (void)dealloc{
+</span><span class='line'>    [ticketThreadone release];  //释放内存
+</span><span class='line'>    [ticketThreadtwo release];
+</span><span class='line'>    [ticketsCondition release];
+</span><span class='line'>    [window release];
+</span><span class='line'>    [super dealloc];
+</span><span class='line'>}
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 </span><span class='line'>
-</span><span class='line'>export COCOS_CONSOLE_ROOT=/Users/pb/Documents/CocosBuilder-2.1-examples/cocos2d-x-3.0rc0/tools/cocos2d-console/bin
-</span><span class='line'>export PATH=$COCOS_CONSOLE_ROOT:$PATH</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>@end
+</span></code></pre></td></tr></table></div></figure>
 
 
-<!--more-->
+<ul>
+<li>Trouble shooting</li>
+<li>1.ARC forbids explicit message send of &lsquo;release&rsquo;
+&lsquo;release&rsquo; is unavailable: not available in automatic reference counting mode
+
+<ul>
+<li>错误原因：因为我们设置了用ARC来管理内存释放，我们却又调用了release方法去释放对象。</li>
+<li>(From the Internet)
+
+<ul>
+<li>ARC是iOS 5推出的新功能，全称叫 ARC(Automatic Reference Counting)。简单地说，就是代码中自动加入了retain/release，原先需要手动添加的用来处理内存管理的引用计数的代码可以自动地由编译器完成了。该机制在 iOS 5/ Mac OS X 10.7 开始导入，利用 Xcode4.2 可以使用该机制。简单地理解ARC，就是通过指定的语法，让编译器(LLVM 3.0)在编译代码时，自动生成实例的引用计数管理部分代码。有一点，ARC并不是GC，它只是一种代码静态分析（Static Analyzer）工具。</li>
+</ul>
+</li>
+<li>how to solve it?
+
+<ul>
+<li>找到项目中的Build setting
+
+<ul>
+<li>把<code>Objective-C Automatic Reference</code>从YES改成NO</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 </div>
 
@@ -324,12 +396,12 @@
   
 
 
-<time datetime="2014-04-13T10:14:26+08:00" pubdate data-updated="true">Apr 13<span>th</span>, 2014</time>
+<time datetime="2014-05-14T13:11:01+08:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/osx/'>OSX</a>
+    <a class='category' href='/blog/categories/ios/'>IOS</a>
   
 </span>
 
@@ -368,10 +440,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/04/09/basic-idea-in-robotics/" title="Previous Post: Basic idea in robotics">&laquo; Basic idea in robotics</a>
+        <a class="basic-alignment left" href="/blog/2014/05/14/ios-keybroad-topdown/" title="Previous Post: IOS keybroad topdown">&laquo; IOS keybroad topdown</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/04/15/linux-server-tutorial/" title="Next Post: Linux server tutorial">Linux server tutorial &raquo;</a>
       
     </p>
   </footer>
@@ -488,8 +558,8 @@ ds.charset = 'UTF-8';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1/';
         var disqus_script = 'embed.js';
       
     (function () {
