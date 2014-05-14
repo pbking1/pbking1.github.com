@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-14T17:24:38+08:00</updated>
+  <updated>2014-05-14T17:25:47+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -22,6 +22,9 @@
 <li>键盘收起以及弹出对话框</li>
 <li>在<code>ViewController.h</code>里面加入<code>-(IBAction)View_TouchDown:(id)sender</code>;</li>
 </ul>
+
+
+<!--more-->
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -172,8 +175,15 @@
 <li>1.一点基本语法</li>
 <li>用NSLog打印，代替printf（也是可以用的）</li>
 <li>用NSDate来获取时间</li>
-<li><p>用NSData来把数据char*转成string存起来</p></li>
-<li><p>源码</p></li>
+<li>用NSData来把数据char*转成string存起来</li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>源码</li>
 </ul>
 
 
