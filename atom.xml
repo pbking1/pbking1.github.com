@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-13T18:12:18+08:00</updated>
+  <updated>2014-05-14T10:14:11+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Keybroad Topdown]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/14/ios-keybroad-topdown/"/>
+    <updated>2014-05-14T10:10:47+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/14/ios-keybroad-topdown</id>
+    <content type="html"><![CDATA[<h3>How to deal with the problem that the keybroad will not disappear?</h3>
+
+<ul>
+<li>In IOS7</li>
+<li>add <code>- (IBAction)View_TouchDown:(id)sender</code> in ViewController.h</li>
+<li>add</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- (IBAction)View_TouchDown:(id)sender
+</span><span class='line'>{
+</span><span class='line'>    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>in the ViewController.m</li>
+<li>And go to the iphone storybroad and set the background view&rsquo;s <strong>Custom class</strong> into <code>UIControl</code>.
+
+<ul>
+<li>pull the <code>Top down</code> to the back ground and select <em>View_TouchDown</em>.</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2014 Sysu Database Project Step1]]></title>
@@ -5505,143 +5543,6 @@ name:Mario Arbulu
 </span><span class='line'>
 </span><span class='line'>
 </span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Intro to Genentic Algorithm]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm/"/>
-    <updated>2014-04-09T00:33:05+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/intro-to-genentic-algorithm</id>
-    <content type="html"><![CDATA[<ul>
-<li>genentic algorithm</li>
-<li>是一种由进化的灵感的来的算法，基于生物进化的机制</li>
-<li>可用于解决类似于单染色体类型的数据结构</li>
-<li>也可以被视为函数优化器</li>
-<li>适合于使用大型潜在的搜索空间并且引导他们。并且找到最优的组合。</li>
-<li>由john Holland提出的</li>
-<li>可以为优化和机器学习提供便捷有效的方法</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>思想</h4>
-
-<ul>
-<li>一定数量的种群的解根据时间进化，并且在每一代进化之后都变得更加健壮</li>
-<li>并且每一个子代都是有父代交叉并且随机变化，还有其他的基因操作</li>
-</ul>
-
-
-<h4>组成</h4>
-
-<ul>
-<li>基本的基因数量（基因，染色体）
-
-<ul>
-<li>二进制字符串</li>
-<li>实数</li>
-<li>有规则</li>
-</ul>
-</li>
-<li>初始化(创造)</li>
-<li>父母选择（产生后代）
-
-<ul>
-<li>随机选择父母（通过贝叶斯概率分布）</li>
-<li>染色体的改动
-
-<ul>
-<li><strong>交叉</strong>和<strong>重组</strong>
-
-<ul>
-<li>交叉
-
-<ul>
-<li>导致搜索空间中的移动</li>
-<li>在种群中存储丢失的信息</li>
-</ul>
-</li>
-<li>重组
-
-<ul>
-<li>这个可以在种群进化的初期加快搜索速度</li>
-<li>它会导致一个有效的基因模板组合</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>一个Evaluator是连接传统遗传算法和他解决的问题的唯一连接
-
-<ul>
-<li>他会解码染色体并且分配给他一个健壮的方案</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>进化函数（环境）</li>
-<li>基因操作（随机重组）</li>
-<li>参数设置（训练）</li>
-</ul>
-
-
-<h4>好处</h4>
-
-<ul>
-<li>概念容易理解</li>
-<li>模式和应用分离开来</li>
-<li>支持多对象优化</li>
-<li>适合噪音比较多的环境</li>
-<li>总能找到答案，并且答案随着时间的变化而变好</li>
-<li>总是并行的，容易分布</li>
-<li>如果已经获得了那个遗传算法应用的知识，那么有很多种方法来加速和改进遗传算法</li>
-<li>容易去使用或者利用以前的或者自动的求解结果</li>
-</ul>
-
-
-<h4>什么时候要用</h4>
-
-<ul>
-<li>交替的结果太慢或者太复杂</li>
-<li>需要一个实验性的工具来检测新的逼近</li>
-<li>一个和曾经被解决的问题很相似的问题</li>
-<li>相混合一个已经存在的解法</li>
-</ul>
-
-
-<h4>算法流程</h4>
-
-<ul>
-<li>伪代码</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>initialize node poupulation;
-</span><span class='line'>evaluate node population;
-</span><span class='line'>while(Termination){
-</span><span class='line'>    select parent nodes for reproduction;
-</span><span class='line'>    perform recombination and mutation;
-</span><span class='line'>    evaluate population;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>我的看法</h4>
-
-<ul>
-<li>就是不停地优化后代</li>
-</ul>
 
 ]]></content>
   </entry>

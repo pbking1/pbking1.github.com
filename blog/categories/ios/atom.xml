@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: IOS | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-05-14T10:14:11+08:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Keybroad Topdown]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/14/ios-keybroad-topdown/"/>
+    <updated>2014-05-14T10:10:47+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/14/ios-keybroad-topdown</id>
+    <content type="html"><![CDATA[<h3>How to deal with the problem that the keybroad will not disappear?</h3>
+
+<ul>
+<li>In IOS7</li>
+<li>add <code>- (IBAction)View_TouchDown:(id)sender</code> in ViewController.h</li>
+<li>add
+```</li>
+<li>(IBAction)View_TouchDown:(id)sender
+{
+  [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}</li>
+</ul>
+
+
+<p><code>``
+- in the ViewController.m
+- And go to the iphone storybroad and set the background view's **Custom class** into</code>UIControl`.</p>
+
+<pre><code>- pull the `Top down` to the back ground and select *View_TouchDown*.
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

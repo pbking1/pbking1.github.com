@@ -9,7 +9,12 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="问题描述 任务 1: 不带压缩地导入数据 这个任务要求你实现分页存储机制。 此处仅考虑定长的数据类型。对于每一列,需要将所含的定长数据如同数组 一样存储在磁盘上的页中 (更多解释见下文)。每一页的大小是固定的,可以是 4K,8K 或 16K。 在这个任务中,你需要存储 ORDERS 表中的 1. &hellip;">
+  <meta name="description" content="How to deal with the problem that the keybroad will not disappear? In IOS7
+add - (IBAction)View_TouchDown:(id)sender in ViewController.h
+add 1
+2
+3
+4 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +72,74 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/14/ios-keybroad-topdown/">IOS Keybroad Topdown</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T10:10:47+08:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/14/ios-keybroad-topdown/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/14/ios-keybroad-topdown/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>How to deal with the problem that the keybroad will not disappear?</h3>
+
+<ul>
+<li>In IOS7</li>
+<li>add <code>- (IBAction)View_TouchDown:(id)sender</code> in ViewController.h</li>
+<li>add</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- (IBAction)View_TouchDown:(id)sender
+</span><span class='line'>{
+</span><span class='line'>    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>in the ViewController.m</li>
+<li>And go to the iphone storybroad and set the background view&rsquo;s <strong>Custom class</strong> into <code>UIControl</code>.
+
+<ul>
+<li>pull the <code>Top down</code> to the back ground and select <em>View_TouchDown</em>.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -386,57 +459,6 @@ gradient boosted decision trees
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/03/basic-idea-of-mvc/">Basic Idea of MVC</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-03T21:21:20+08:00" pubdate data-updated="true">May 3<span>rd</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/03/basic-idea-of-mvc/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/03/basic-idea-of-mvc/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>What is MVC?</h3>
-
-<ul>
-<li>MVC模式（Model-View-Controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</li>
-<li>MVC在这几年应该被非常多的人所熟悉了，因为相当多的web框架采用的是这套架构，此外，早在MFC横行的年代，MFC所采用的document/view架构也是MVC架构的变种。包括QT，它的model/view亦是如此。只不过它们都将MVC中的view和controller的功能整合到了一起。</li>
-<li>MVC的全称是model-view-controller architecture，最早被用在了smalltalk语言中。MVC最适合用在交互式的应用程序中。</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/03/basic-idea-of-mvc/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -450,6 +472,10 @@ gradient boosted decision trees
     <section>
   <h1>Recent_posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/ios-keybroad-topdown/">IOS Keybroad Topdown</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/05/13/2014-sysu-database-project-step1/">2014 Sysu Database Project Step1</a>
@@ -467,10 +493,6 @@ gradient boosted decision trees
         <a href="/blog/2014/05/08/the-note-of-erp-class/">The Note of ERP Class</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/05/08/tree-based-ensemble-method-introduction/">Tree Based Ensemble Method Introduction</a>
-      </li>
-    
   </ul>
 </section>
 <section> 
@@ -479,6 +501,7 @@ gradient boosted decision trees
     <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (4)</a></li>
 <li class='category'><a href='/blog/categories/android/'>Android (1)</a></li>
 <li class='category'><a href='/blog/categories/erp/'>ERP (1)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>IOS (1)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
 <li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>Octopress (2)</a></li>
