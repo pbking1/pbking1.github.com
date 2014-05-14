@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-14T17:16:19+08:00</updated>
+  <updated>2014-05-14T17:17:29+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -94,13 +94,27 @@
 
 <ul>
 <li><p>最后再在storybroad里面用outlet把整个屏幕和<code>View_TouchDown</code>连接起来就可以了</p></li>
-<li><p>Touble shoot
-  -1.出现<code>'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:</code></p>
+<li><p>Touble shoot</p>
 
-<pre><code>  - 说明`self.viewController = [[[ViewController alloc] initWithNibName:@"name" bundle:nil] autorelease];`
-      - 里面的name写错了
-          - 要写成和ViewController一样的名字才行。
-</code></pre></li>
+<ul>
+<li>1.出现<code>'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:</code>
+
+<ul>
+<li>说明<code>self.viewController = [[[ViewController alloc] initWithNibName:@"name" bundle:nil] autorelease];</code>
+
+<ul>
+<li>里面的name写错了
+
+<ul>
+<li>要写成和ViewController一样的名字才行。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 ]]></content>
