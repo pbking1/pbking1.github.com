@@ -9,7 +9,17 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="数据库存取 &#8220;` &#8220;` Touble shoot -1.出现'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle: - 说明`self.viewController = [[[ &hellip;">
+  <meta name="description" content="键盘收起以及弹出对话框
+在ViewController.h里面加入-(IBAction)View_TouchDown:(id)sender; 1
+2
+3
+4
+5
+6
+7
+8
+9
+#import &lt;UIKit/UIKit.h&gt; @interface ViewController : &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,17 +107,126 @@
 
 
 <div class="entry-content"><ul>
-<li>数据库存取</li>
+<li>键盘收起以及弹出对话框</li>
+<li>在<code>ViewController.h</code>里面加入<code>-(IBAction)View_TouchDown:(id)sender</code>;</li>
 </ul>
 
 
-<p>&#8220;`</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
+</span><span class='line'>
+</span><span class='line'>@interface ViewController : UIViewController
+</span><span class='line'>
+</span><span class='line'>@property (strong, nonatomic) IBOutlet UITextField *tempText;
+</span><span class='line'>
+</span><span class='line'>-(IBAction)showMessage;
+</span><span class='line'>-(IBAction)View_TouchDown:(id)sender;
+</span><span class='line'>@end
+</span></code></pre></td></tr></table></div></figure>
 
-<p>&#8220;`</p>
 
 <ul>
-<li>Touble shoot
-  -1.出现<code>'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:</code>
+<li>在<code>ViewController.m</code>里面加入以下代码</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- (IBAction)View_TouchDown:(id)sender
+</span><span class='line'>{
+</span><span class='line'>    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>得到的全部代码如下</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import "ViewController.h"
+</span><span class='line'>
+</span><span class='line'>@interface ViewController ()
+</span><span class='line'>
+</span><span class='line'>@end
+</span><span class='line'>
+</span><span class='line'>@implementation ViewController
+</span><span class='line'>
+</span><span class='line'>- (void)viewDidLoad
+</span><span class='line'>{
+</span><span class='line'>    [super viewDidLoad];
+</span><span class='line'>  // Do any additional setup after loading the view, typically from a nib.
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)didReceiveMemoryWarning
+</span><span class='line'>{
+</span><span class='line'>    [super didReceiveMemoryWarning];
+</span><span class='line'>    // Dispose of any resources that can be recreated.
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (IBAction)showMessage  //弹出对话框
+</span><span class='line'>{
+</span><span class='line'>    UIAlertView *a = [[UIAlertView alloc]
+</span><span class='line'>                      initWithTitle:@"I am pb" message:@"hello world" delegate:nil cancelButtonTitle:@"I can do it" otherButtonTitles: nil];
+</span><span class='line'>    [a show];
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (IBAction)View_TouchDown:(id)sender
+</span><span class='line'>{
+</span><span class='line'>    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>@end
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>最后再在storybroad里面用outlet把整个屏幕和<code>View_TouchDown</code>连接起来就可以了</p></li>
+<li><p>Touble shoot
+  -1.出现<code>'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:</code></p>
 
 <pre><code>  - 说明`self.viewController = [[[ViewController alloc] initWithNibName:@"name" bundle:nil] autorelease];`
       - 里面的name写错了
