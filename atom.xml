@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-14T17:25:47+08:00</updated>
+  <updated>2014-05-14T22:31:00+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,267 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Tutorial 3 Tabhost]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost/"/>
+    <updated>2014-05-14T21:25:25+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost</id>
+    <content type="html"><![CDATA[<h3>源代码</h3>
+
+<ul>
+<li>把数据载入到tableview中，，点击某一个item就可以出发alert对话框。</li>
+<li>Cell 的样式也是可以自定义的
+
+<ul>
+<li>通过UITableViewCell来设置样式</li>
+</ul>
+</li>
+<li>在<code>AppDelegate.h</code>中</li>
+<li>加入mainView的声明
+
+<ul>
+<li><strong>注意要加<code>#import "ViewController.h"</code></strong></li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
+</span><span class='line'>#import "ViewController.h"
+</span><span class='line'>
+</span><span class='line'>@interface AppDelegate : UIResponder &lt;UIApplicationDelegate&gt;
+</span><span class='line'>
+</span><span class='line'>@property (strong, nonatomic) UIWindow *window;
+</span><span class='line'>@property (strong, nonatomic) ViewController *mainView;
+</span><span class='line'>
+</span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>在<code>AppDelegate.m</code>中加入以下代码</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- (void)dealloc
+</span><span class='line'>{
+</span><span class='line'>    [_window release];
+</span><span class='line'>    [_mainView release];
+</span><span class='line'>    [super dealloc];
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+</span><span class='line'>{
+</span><span class='line'>    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+</span><span class='line'>    self.mainView = [[[ViewController alloc] init] autorelease];
+</span><span class='line'>    
+</span><span class='line'>    self.window.rootViewController = self.mainView;
+</span><span class='line'>    [self.window makeKeyAndVisible];
+</span><span class='line'>    // Override point for customization after application launch.
+</span><span class='line'>    return YES;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>修改<code>ViewController.h</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
+</span><span class='line'>
+</span><span class='line'>@interface ViewController : UIViewController&lt;UITableViewDataSource, UITableViewDelegate&gt;
+</span><span class='line'>
+</span><span class='line'>@property (nonatomic, retain) NSMutableArray *datalist;
+</span><span class='line'>@property (nonatomic, retain) UITableView *myTableView;
+</span><span class='line'>
+</span><span class='line'>@end
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>文件<code>ViewController.m</code>如下</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import "ViewController.h"
+</span><span class='line'>
+</span><span class='line'>@interface ViewController ()
+</span><span class='line'>
+</span><span class='line'>@end
+</span><span class='line'>
+</span><span class='line'>@implementation ViewController
+</span><span class='line'>@synthesize datalist;
+</span><span class='line'>@synthesize myTableView;
+</span><span class='line'>
+</span><span class='line'>- (void)viewDidLoad
+</span><span class='line'>{
+</span><span class='line'>    [super viewDidLoad];
+</span><span class='line'>  // Do any additional setup after loading the view, typically from a nib.
+</span><span class='line'>    NSMutableArray *list = [NSArray arrayWithObjects:@"武汉",@"上海",@"北京",@"深圳",@"广州",@"重庆",@"香港",@"台海",@"天津", nil];
+</span><span class='line'>    self.datalist = list;
+</span><span class='line'>    
+</span><span class='line'>    UITableView *tableview = [[[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain] autorelease];
+</span><span class='line'>    //set the data source
+</span><span class='line'>    tableview.dataSource = self;
+</span><span class='line'>    //set the delegate
+</span><span class='line'>    tableview.delegate = self;
+</span><span class='line'>    //set the background
+</span><span class='line'>    //tableview.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Background.png"]];
+</span><span class='line'>    self.myTableView = tableview;
+</span><span class='line'>    [self.view addSubview:myTableView];
+</span><span class='line'>    
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+</span><span class='line'>{
+</span><span class='line'>    static NSString *CellWithIdentifier = @"Cell";
+</span><span class='line'>    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
+</span><span class='line'>    if(cell == nil){
+</span><span class='line'>        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellWithIdentifier];
+</span><span class='line'>    }
+</span><span class='line'>    NSUInteger row = [indexPath row];
+</span><span class='line'>    cell.textLabel.text = [self.datalist objectAtIndex:row];
+</span><span class='line'>    return cell;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+</span><span class='line'>{
+</span><span class='line'>    return [self.datalist count];
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+</span><span class='line'>{
+</span><span class='line'>    return 70;  //设置行高
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+</span><span class='line'>{
+</span><span class='line'>    NSString *msg = [[NSString alloc] initWithFormat:@"You choose :%@",  [self.datalist objectAtIndex:[indexPath row]]];
+</span><span class='line'>    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+</span><span class='line'>    [msg release];
+</span><span class='line'>    [alert show];
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+</span><span class='line'>{
+</span><span class='line'>    NSLog(@"delete");  //滑动删除
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)didReceiveMemoryWarning
+</span><span class='line'>{
+</span><span class='line'>    [super didReceiveMemoryWarning];
+</span><span class='line'>    // Dispose of any resources that can be recreated.
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IOS Tutorial 2]]></title>
@@ -5496,132 +5757,6 @@ name:Mario Arbulu
 </span></code></pre></td></tr></table></div></figure>
 
 
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Introduction to the Project of Network Attack and Defense]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project/"/>
-    <updated>2014-04-09T12:20:42+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project</id>
-    <content type="html"><![CDATA[<pre><code>Produced by pengbin and wangyang
-</code></pre>
-
-<h4>Abstract</h4>
-
-<ul>
-<li>A kind of penetration testing tool is introduced. And we carry out some experiments to penetrate some systems like WinXP and ubuntu linux. Also will we analyze the mechanic of the penetrating and showing why we can use the vulnerability of the system to get the whole access of it. Thus this kind of testing technology can be used in many areas which can help a good many of companies to protect their personal computer and server from the crackers that want to break into the system and do something bad.</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>What is penetration testing?</h4>
-
-<ul>
-<li><p>The penetration testing is a kind of technic that can simulate the attacker to attack the target system ,and break their secure system. So that we can finally get the access of it.</p></li>
-<li><p>And this kind of test is not completed by a simple steps using a few tools like scanner and so on. Then write a report about it after using them.</p></li>
-<li><p>Also, it is impossible to become a good penetration tester in a night.</p></li>
-<li><p>And the process of the penetration testing is as follow:</p>
-
-<ul>
-<li>Target discovery and enumeration:
-
-<ul>
-<li>Identifying the target and collecting basic information about it without making any physical connection with it.</li>
-</ul>
-</li>
-<li>Vulnerability:
-
-<ul>
-<li>Implementing various discovery methods such as scanning, remote login, and network services, to figure out different services and softwares running on the target system.</li>
-</ul>
-</li>
-<li>Exploitation:
-
-<ul>
-<li>Exploiting a known or an unknown vulnerability in any of the softwares or services running on the target system.</li>
-</ul>
-</li>
-<li>Level of control after exploitation:
-
-<ul>
-<li>This is the level of access that an attacker can get on the target system after a successful exploitation.</li>
-</ul>
-</li>
-<li>Reporting:
-
-<ul>
-<li>Preparing an advisory about the vulnerability and its possible counter measures.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>The methodology of the penetration testing</h4>
-
-<ul>
-<li><p>Here are four famous methodologies in the field of the information security. And this can be used to define the standard steps to take in the penetration testing.</p></li>
-<li><p>NIST SP800-115</p>
-
-<ul>
-<li>The Technical Guide Information Security Testing is a document carried out by the US government in the field of security testing.</li>
-</ul>
-</li>
-<li>ISSAF
-
-<ul>
-<li>The Information Systems Security Assessment Framework is an open source testing and analyze framework.</li>
-</ul>
-</li>
-<li>OSSTMM
-
-<ul>
-<li>The Open Source Security Testing Methodology Manual is the international standard of the security testing and analyze, which many enterprise use this as the principal of their daily work.</li>
-</ul>
-</li>
-<li>PTES
-
-<ul>
-<li>This Standard redefines the standard of the penetration testing and make the penetration testing a completely new one.</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>The way of testing</h4>
-
-<ul>
-<li>white box testing
-
-<ul>
-<li><p>One of the advantage is that you know all the knowledge of the system and do not need to worry about being interrupted.</p></li>
-<li><p>But the disadvantage is that you can not test the urgent service of the system.</p></li>
-</ul>
-</li>
-<li>black box testing
-
-<ul>
-<li><p>This kind of testing does well in testing the urgent service of the system when being attacked.</p></li>
-<li><p>however, it will need a really good skill to complete the attack.</p></li>
-<li><p>Thus, as a black box tester, what you need to do is to find out the cheapest way to get the access of the system.</p></li>
-</ul>
-</li>
-</ul>
-
-
-<h4>Intro of our project</h4>
-
-<ul>
-<li><p>We are going to build a environment which contains the WinXP , ubuntu linux and Backtrace5 linux operating system connected in innet.</p></li>
-<li><p>We will first do the penetration testing on the WinXP and ubuntu platform and provide the way to practice.</p></li>
-<li><p>Then We are going to analyze the loopholes and weaknesses of the system and write something to test some loopholes code in order to have a better understanding of the mechanic.</p></li>
-<li><p>After introducing the way hackers can use to hack into your computer and we will provide some advises to let you protect your computer better than before.</p></li>
-</ul>
 
 ]]></content>
   </entry>

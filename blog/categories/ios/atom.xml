@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-14T17:25:47+08:00</updated>
+  <updated>2014-05-14T22:31:00+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,169 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Tutorial 3 Tabhost]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost/"/>
+    <updated>2014-05-14T21:25:25+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost</id>
+    <content type="html"><![CDATA[<h3>源代码</h3>
+
+<ul>
+<li>把数据载入到tableview中，，点击某一个item就可以出发alert对话框。</li>
+<li>Cell 的样式也是可以自定义的
+
+<ul>
+<li>通过UITableViewCell来设置样式</li>
+</ul>
+</li>
+<li>在<code>AppDelegate.h</code>中</li>
+<li>加入mainView的声明
+
+<ul>
+<li><strong>注意要加<code>#import "ViewController.h"</code></strong></li>
+</ul>
+</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>import &lt;UIKit/UIKit.h></h1>
+
+<h1>import &ldquo;ViewController.h&rdquo;</h1>
+
+<p>@interface AppDelegate : UIResponder <UIApplicationDelegate></p>
+
+<p>@property (strong, nonatomic) UIWindow <em>window;
+@property (strong, nonatomic) ViewController </em>mainView;</p>
+
+<p>@end
+<code>``
+- 在</code>AppDelegate.m`中加入以下代码</p>
+
+<p>```
+&ndash; (void)dealloc
+{</p>
+
+<pre><code>[_window release];
+[_mainView release];
+[super dealloc];
+</code></pre>
+
+<p>}</p>
+
+<ul>
+<li><p>(BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions
+{
+  self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+  self.mainView = [[[ViewController alloc] init] autorelease];</p>
+
+<p>  self.window.rootViewController = self.mainView;
+  [self.window makeKeyAndVisible];
+  // Override point for customization after application launch.
+  return YES;
+}
+```</p></li>
+<li>修改<code>ViewController.h</code></li>
+</ul>
+
+
+<p>```</p>
+
+<h1>import &lt;UIKit/UIKit.h></h1>
+
+<p>@interface ViewController : UIViewController&lt;UITableViewDataSource, UITableViewDelegate></p>
+
+<p>@property (nonatomic, retain) NSMutableArray <em>datalist;
+@property (nonatomic, retain) UITableView </em>myTableView;</p>
+
+<p>@end</p>
+
+<p>```</p>
+
+<ul>
+<li>文件<code>ViewController.m</code>如下</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>import &ldquo;ViewController.h&rdquo;</h1>
+
+<p>@interface ViewController ()</p>
+
+<p>@end</p>
+
+<p>@implementation ViewController
+@synthesize datalist;
+@synthesize myTableView;</p>
+
+<ul>
+<li><p>(void)viewDidLoad
+{
+  [super viewDidLoad];
+  // Do any additional setup after loading the view, typically from a nib.
+  NSMutableArray *list = [NSArray arrayWithObjects:@&ldquo;武汉&rdquo;,@&ldquo;上海&rdquo;,@&ldquo;北京&rdquo;,@&ldquo;深圳&rdquo;,@&ldquo;广州&rdquo;,@&ldquo;重庆&rdquo;,@&ldquo;香港&rdquo;,@&ldquo;台海&rdquo;,@&ldquo;天津&rdquo;, nil];
+  self.datalist = list;</p>
+
+<p>  UITableView *tableview = [[[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain] autorelease];
+  //set the data source
+  tableview.dataSource = self;
+  //set the delegate
+  tableview.delegate = self;
+  //set the background
+  //tableview.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@&ldquo;Background.png&rdquo;]];
+  self.myTableView = tableview;
+  [self.view addSubview:myTableView];</p></li>
+</ul>
+
+
+<p>}</p>
+
+<ul>
+<li><p>(UITableViewCell <em>)tableView:(UITableView </em>)tableView cellForRowAtIndexPath:(NSIndexPath <em>)indexPath
+{
+  static NSString </em>CellWithIdentifier = @&ldquo;Cell&rdquo;;
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
+  if(cell == nil){
+      cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellWithIdentifier];
+  }
+  NSUInteger row = [indexPath row];
+  cell.textLabel.text = [self.datalist objectAtIndex:row];
+  return cell;
+}</p></li>
+<li><p>(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+  return [self.datalist count];
+}</p></li>
+<li><p>(CGFloat)tableView:(UITableView <em>)tableView heightForRowAtIndexPath:(NSIndexPath </em>)indexPath
+{
+  return 70;  //设置行高
+}</p></li>
+<li><p>(void)tableView:(UITableView <em>)tableView didSelectRowAtIndexPath:(NSIndexPath </em>)indexPath
+{
+  NSString <em>msg = [[NSString alloc] initWithFormat:@&ldquo;You choose :%@&rdquo;,  [self.datalist objectAtIndex:[indexPath row]]];
+  UIAlertView </em>alert = [[UIAlertView alloc] initWithTitle:@&ldquo;Alert&rdquo; message:msg delegate:self cancelButtonTitle:@&ldquo;OK&rdquo; otherButtonTitles:nil, nil];
+  [msg release];
+  [alert show];
+}</p></li>
+<li><p>(void)tableView:(UITableView <em>)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath </em>)indexPath
+{
+  NSLog(@&ldquo;delete&rdquo;);  //滑动删除
+}</p></li>
+<li><p>(void)didReceiveMemoryWarning
+{
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
+}</p></li>
+</ul>
+
+
+<p>@end
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IOS Tutorial 2]]></title>
