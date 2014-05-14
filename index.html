@@ -9,36 +9,7 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="1.一点基本语法
-用NSLog打印，代替printf（也是可以用的）
-用NSDate来获取时间
-用NSData来把数据char*转成string存起来
-源码 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26 &hellip;">
+  <meta name="description" content="Touble shoot -1.出现'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle: - 说明`self.viewController = [[[ViewController alloc] &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,6 +67,54 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/14/ios-tutorial-2/">IOS Tutorial 2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T16:34:49+08:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/14/ios-tutorial-2/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-2/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>Touble shoot
+  -1.出现<code>'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:</code>
+
+<pre><code>  - 说明`self.viewController = [[[ViewController alloc] initWithNibName:@"name" bundle:nil] autorelease];`
+      - 里面的name写错了
+          - 要写成和ViewController一样的名字才行。
+</code></pre></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -381,6 +400,18 @@
 <li>在模拟器上按<code>Shift+command+h</code></li>
 </ul>
 </li>
+<li><p>3.出现<code>Auto Layout on iOS Versions prior to 6.0</code></p>
+
+<ul>
+<li>界面设置问题</li>
+<li>找到storybroad
+
+<ul>
+<li>打开属性栏，把<code>Use AutoLayout</code>去掉。</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -664,59 +695,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/08/the-note-of-erp-class/">The Note of ERP Class</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-08T18:41:12+08:00" pubdate data-updated="true">May 8<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/08/the-note-of-erp-class/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/08/the-note-of-erp-class/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>ERP Note</h2>
-
-<pre><code>ERP theory
-Business workflow
-ERP system modules
-Benefits of ERP
-ERP  system selection &amp; implementation
-ERP project evaluation
-Application
-</code></pre>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/08/the-note-of-erp-class/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -730,6 +708,10 @@ Application
     <section>
   <h1>Recent_posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/ios-tutorial-2/">IOS Tutorial 2</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/05/14/ios-tutorial-1/">IOS Tutorial 1</a>
@@ -747,10 +729,6 @@ Application
         <a href="/blog/2014/05/12/linear-regression-tutorial/">Linear_regression_tutorial</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/05/10/the-difference-between-data-mining-and-machine-learning/">The Difference Between Data Mining and Machine Learning</a>
-      </li>
-    
   </ul>
 </section>
 <section> 
@@ -759,7 +737,7 @@ Application
     <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (4)</a></li>
 <li class='category'><a href='/blog/categories/android/'>Android (1)</a></li>
 <li class='category'><a href='/blog/categories/erp/'>ERP (1)</a></li>
-<li class='category'><a href='/blog/categories/ios/'>IOS (2)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>IOS (3)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
 <li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>Octopress (2)</a></li>

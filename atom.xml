@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-14T14:17:34+08:00</updated>
+  <updated>2014-05-14T16:38:17+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Tutorial 2]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-2/"/>
+    <updated>2014-05-14T16:34:49+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-2</id>
+    <content type="html"><![CDATA[<ul>
+<li>Touble shoot
+  -1.出现<code>'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:</code>
+
+<pre><code>  - 说明`self.viewController = [[[ViewController alloc] initWithNibName:@"name" bundle:nil] autorelease];`
+      - 里面的name写错了
+          - 要写成和ViewController一样的名字才行。
+</code></pre></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IOS Tutorial 1]]></title>
@@ -269,6 +287,18 @@
 
 <ul>
 <li>在模拟器上按<code>Shift+command+h</code></li>
+</ul>
+</li>
+<li><p>3.出现<code>Auto Layout on iOS Versions prior to 6.0</code></p>
+
+<ul>
+<li>界面设置问题</li>
+<li>找到storybroad
+
+<ul>
+<li>打开属性栏，把<code>Use AutoLayout</code>去掉。</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -5362,132 +5392,6 @@ name:Mario Arbulu
 </span></code></pre></td></tr></table></div></figure>
 
 
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Introduction to the Project of Network Attack and Defense]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project/"/>
-    <updated>2014-04-09T12:20:42+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project</id>
-    <content type="html"><![CDATA[<pre><code>Produced by pengbin and wangyang
-</code></pre>
-
-<h4>Abstract</h4>
-
-<ul>
-<li>A kind of penetration testing tool is introduced. And we carry out some experiments to penetrate some systems like WinXP and ubuntu linux. Also will we analyze the mechanic of the penetrating and showing why we can use the vulnerability of the system to get the whole access of it. Thus this kind of testing technology can be used in many areas which can help a good many of companies to protect their personal computer and server from the crackers that want to break into the system and do something bad.</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>What is penetration testing?</h4>
-
-<ul>
-<li><p>The penetration testing is a kind of technic that can simulate the attacker to attack the target system ,and break their secure system. So that we can finally get the access of it.</p></li>
-<li><p>And this kind of test is not completed by a simple steps using a few tools like scanner and so on. Then write a report about it after using them.</p></li>
-<li><p>Also, it is impossible to become a good penetration tester in a night.</p></li>
-<li><p>And the process of the penetration testing is as follow:</p>
-
-<ul>
-<li>Target discovery and enumeration:
-
-<ul>
-<li>Identifying the target and collecting basic information about it without making any physical connection with it.</li>
-</ul>
-</li>
-<li>Vulnerability:
-
-<ul>
-<li>Implementing various discovery methods such as scanning, remote login, and network services, to figure out different services and softwares running on the target system.</li>
-</ul>
-</li>
-<li>Exploitation:
-
-<ul>
-<li>Exploiting a known or an unknown vulnerability in any of the softwares or services running on the target system.</li>
-</ul>
-</li>
-<li>Level of control after exploitation:
-
-<ul>
-<li>This is the level of access that an attacker can get on the target system after a successful exploitation.</li>
-</ul>
-</li>
-<li>Reporting:
-
-<ul>
-<li>Preparing an advisory about the vulnerability and its possible counter measures.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>The methodology of the penetration testing</h4>
-
-<ul>
-<li><p>Here are four famous methodologies in the field of the information security. And this can be used to define the standard steps to take in the penetration testing.</p></li>
-<li><p>NIST SP800-115</p>
-
-<ul>
-<li>The Technical Guide Information Security Testing is a document carried out by the US government in the field of security testing.</li>
-</ul>
-</li>
-<li>ISSAF
-
-<ul>
-<li>The Information Systems Security Assessment Framework is an open source testing and analyze framework.</li>
-</ul>
-</li>
-<li>OSSTMM
-
-<ul>
-<li>The Open Source Security Testing Methodology Manual is the international standard of the security testing and analyze, which many enterprise use this as the principal of their daily work.</li>
-</ul>
-</li>
-<li>PTES
-
-<ul>
-<li>This Standard redefines the standard of the penetration testing and make the penetration testing a completely new one.</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>The way of testing</h4>
-
-<ul>
-<li>white box testing
-
-<ul>
-<li><p>One of the advantage is that you know all the knowledge of the system and do not need to worry about being interrupted.</p></li>
-<li><p>But the disadvantage is that you can not test the urgent service of the system.</p></li>
-</ul>
-</li>
-<li>black box testing
-
-<ul>
-<li><p>This kind of testing does well in testing the urgent service of the system when being attacked.</p></li>
-<li><p>however, it will need a really good skill to complete the attack.</p></li>
-<li><p>Thus, as a black box tester, what you need to do is to find out the cheapest way to get the access of the system.</p></li>
-</ul>
-</li>
-</ul>
-
-
-<h4>Intro of our project</h4>
-
-<ul>
-<li><p>We are going to build a environment which contains the WinXP , ubuntu linux and Backtrace5 linux operating system connected in innet.</p></li>
-<li><p>We will first do the penetration testing on the WinXP and ubuntu platform and provide the way to practice.</p></li>
-<li><p>Then We are going to analyze the loopholes and weaknesses of the system and write something to test some loopholes code in order to have a better understanding of the mechanic.</p></li>
-<li><p>After introducing the way hackers can use to hack into your computer and we will provide some advises to let you protect your computer better than before.</p></li>
-</ul>
 
 ]]></content>
   </entry>
