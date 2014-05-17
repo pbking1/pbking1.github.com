@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-17T10:58:13+08:00</updated>
+  <updated>2014-05-17T11:26:57+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -489,6 +489,17 @@ text-decoration: underline;
  # Post License
  post_license: true
 </code></p>
+
+<h3>8.add 3D tag cloud</h3>
+
+<ul>
+<li>download the package first</li>
+<li>1.Copy the <code>plugins/category_cloud.rb</code> to your <code>octopress/plugins/</code>;</li>
+<li>2.Copy the <code>source/_includes/custom/asides/category_cloud.html</code> to your <code>octopress/source/_includes/custom/asides/</code>;</li>
+<li>3.Add the <code>octopress/source/_includes/custom/asides/</code> in Step 2 to your <code>default_asides</code> in your <code>octopress/_config.yml</code> file;</li>
+<li>4.Copy the <code>source/javascripts/tagcloud.swf</code> to your <code>source/javascripts/</code> folder.</li>
+</ul>
+
 ]]></content>
   </entry>
   
