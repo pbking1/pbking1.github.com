@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-18T20:09:55+08:00</updated>
+  <updated>2014-05-18T20:12:23+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -753,6 +753,12 @@
 }
 &#8220;`</p></li>
 <li>这个只能让上面原有的时间什么的消失，但是从根本上不能解决问题</li>
+</ul>
+</li>
+<li><p>5.如果刚开始打开ios模拟器发现太大了</p>
+
+<ul>
+<li>再Window->scale那里可以调整成75%就可以使得模拟器看起来大小比较科学了。</li>
 </ul>
 </li>
 </ul>
