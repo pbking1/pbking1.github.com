@@ -401,6 +401,26 @@
 </li>
 </ul>
 </li>
+<li><p>4.ios7的全屏问题</p>
+
+<ul>
+<li>在viewcontroller里面加入以下代码
+&#8220;`</li>
+<li><p>(void)viewDidLayoutSubviews{</p>
+
+<p>  if ([self respondsToSelector:@selector(topLayoutGuide)]) // iOS 7 or above
+  {
+      CGFloat top = self.topLayoutGuide.length;
+      if(self.view.frame.origin.y == 0){
+          // We only want to do this once, or if the view has somehow been &quot;restored&quot; by other code.
+          self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + top, self.view.frame.size.width, self.view.frame.size.    height &ndash; top);
+      }
+  }
+}
+&#8220;`</p></li>
+<li>这个只能让上面原有的时间什么的消失，但是从根本上不能解决问题</li>
+</ul>
+</li>
 </ul>
 
 </div>

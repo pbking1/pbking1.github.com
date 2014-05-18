@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-17T11:52:23+08:00</updated>
+  <updated>2014-05-18T20:09:55+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -483,6 +483,26 @@ NSWindow *windows;
 <li>打开属性栏，把<code>Use AutoLayout</code>去掉。</li>
 </ul>
 </li>
+</ul>
+</li>
+<li><p>4.ios7的全屏问题</p>
+
+<ul>
+<li>在viewcontroller里面加入以下代码
+```</li>
+<li><p>(void)viewDidLayoutSubviews{</p>
+
+<p>  if ([self respondsToSelector:@selector(topLayoutGuide)]) // iOS 7 or above
+  {
+      CGFloat top = self.topLayoutGuide.length;
+      if(self.view.frame.origin.y == 0){
+          // We only want to do this once, or if the view has somehow been &quot;restored&quot; by other code.
+          self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + top, self.view.frame.size.width, self.view.frame.size.    height &ndash; top);
+      }
+  }
+}
+```</p></li>
+<li>这个只能让上面原有的时间什么的消失，但是从根本上不能解决问题</li>
 </ul>
 </li>
 </ul>
