@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-20T20:03:11+08:00</updated>
+  <updated>2014-05-20T20:18:35+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,158 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Use CocoaPods to Management Dependence in Xcode5]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/20/use-cocoapods-to-management-dependence-in-xcode5/"/>
+    <updated>2014-05-20T20:05:22+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/20/use-cocoapods-to-management-dependence-in-xcode5</id>
+    <content type="html"><![CDATA[<h3>What is CocoaPods?</h3>
+
+<ul>
+<li>CocoaPods is a tools used to management the Third party code in IOS project</li>
+</ul>
+
+
+<h3>How to install it?</h3>
+
+<ul>
+<li>use the ruby gem to install
+
+<ul>
+<li><code>sudo gem install cocoapods</code></li>
+<li>and the ruby should be above ruby 2.0</li>
+<li><code>pod setup</code>
+
+<ul>
+<li>this step is download the info in the ~/.cocoapods</li>
+<li>and you can use <code>du -sh *</code> to see how it process</li>
+</ul>
+</li>
+<li>if the gem is too old
+
+<ul>
+<li>use <code>sudo gem update --system</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>most inportantly
+
+<ul>
+<li>for the ruby&rsquo;s software source is using the Amazon could and will be block by the great fire wall.</li>
+<li><p>so you need to change to ruby temperatly</p>
+
+<p>  <code>
+  gem sources --remove https://rubygems.org/
+  gem sources -a http://ruby.taobao.org/
+ </code></p></li>
+<li>after that
+
+<ul>
+<li>you can install the pod</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>and when you need to use the pod
+
+<ul>
+<li>change back to the origin source</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>how to use it?</h3>
+
+<ul>
+<li>we will need a file called <code>Podfile</code>
+
+<ul>
+<li>and the content of it is
+<code>
+platform :ios, '7.0'
+pod 'Mantle'
+pod 'LBBlurredImage'
+pod 'TSMessages'
+pod 'ReactiveCocoa'
+</code></li>
+<li>then press <code>ctrl + O</code> and rename into <code>Podfile</code></li>
+<li>press <code>ctrl + x</code> to exit</li>
+</ul>
+</li>
+<li><p>after that</p>
+
+<ul>
+<li>use <code>pod install</code>
+
+<ul>
+<li>and you will see
+<code>
+$ pod install
+Analyzing dependencies
+CocoaPods 0.28.0 is available.
+Downloading dependencies
+Installing HexColors (2.2.1)
+Installing LBBlurredImage (0.1.0)
+Installing Mantle (1.3.1)
+Installing ReactiveCocoa (2.1.7)
+Installing TSMessages (0.9.4)
+Generating Pods project
+Integrating client project
+[!] From now on use `SimpleWeather.xcworkspace`.
+</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>and the Cocoapods will create a xxxxx.xcworkspce</p></li>
+</ul>
+
+
+<h3>Something else</h3>
+
+<ul>
+<li>after you use <code>pod install</code>
+
+<ul>
+<li>a file called <code>Podfile.lock</code> will be generated and this file should not be add into the .gitignore.</li>
+<li>for this file will lock on all the version of the dependences</li>
+<li>and you will not be able to change the version of these dependences even you use <code>pod install</code></li>
+<li>and only the command <code>pod update</code> will work.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>generate the doc</h3>
+
+<ul>
+<li>use <code>brew install appledoc</code> to generate the Third party library doc</li>
+</ul>
+
+
+<h3>search the library you want in the cocapods library</h3>
+
+<ul>
+<li>use <code>pod search library_name</code>
+
+<ul>
+<li>like <code>pod search json</code></li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Build a Xib Program in Xcode5]]></title>
@@ -568,233 +720,6 @@ self.window.rootViewController=self.viewController;
 </li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IOS Tutorial 1]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1/"/>
-    <updated>2014-05-14T13:11:01+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1</id>
-    <content type="html"><![CDATA[<ul>
-<li>1.一点基本语法</li>
-<li>用NSLog打印，代替printf（也是可以用的）</li>
-<li>用NSDate来获取时间</li>
-<li>用NSData来把数据char*转成string存起来</li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li>源码
-```
-
-<h1>import &lt;Foundation/Foundation.h></h1></li>
-</ul>
-
-
-<p>int main(int argc, const char * argv[])
-{</p>
-
-<pre><code>@autoreleasepool {
-
-    // insert code here...
-    NSLog(@"Hello, World!");
-
-}
-int i;
-for(i = 0; i &lt;= 5; i++)
-    NSLog(@"%d\n", i);
-
-NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-(24*60*60)];
-NSLog(@"yesterday is %@", yesterday);
-
-NSDate *tomorrow = [NSDate dateWithTimeIntervalSinceNow:+(24*60*60)];
-NSLog(@"tomorrow is %@", tomorrow);
-
-const char *string = "Hi this is pb";
-NSData *data = [NSData dataWithBytes:string length:strlen(string) + 1];
-NSLog(@"data is %@", data);
-NSLog(@"%lu Bytes string is '%s'", (unsigned long)[data length], [data bytes]);
-return 0;
-</code></pre>
-
-<p>}
-```</p>
-
-<ul>
-<li><p>2.线程的同步与锁
-　　- 要说明线程的同步与锁，最好的例子可能就是多个窗口同时售票的售票系统了。我们知道在java中，使用synchronized来同步，而iphone虽然没有提供类似java下的synchronized关键字，但提供了NSCondition对象接口。</p>
-
-<ul>
-<li>查看NSCondition的接口说明可以看出，NSCondition是iphone下的锁对象，所以我们可以使用NSCondition实现iphone中的线程安全。这是来源于网上的一个例子：</li>
-</ul>
-</li>
-<li><p>2.多个窗口同时售票的售票系统代码</p></li>
-<li>AppDelegate.h</li>
-</ul>
-
-
-<p>```</p>
-
-<h1>import &lt;Cocoa/Cocoa.h></h1>
-
-<p>@interface AppDelegate : NSObject <NSApplicationDelegate>{</p>
-
-<pre><code>int tickets;
-int count;
-NSThread *ticketThreadone;
-NSThread *ticketThreadtwo;
-NSCondition *ticketsCondition;
-NSWindow *windows;
-</code></pre>
-
-<p>}</p>
-
-<p>@property (assign) IBOutlet NSWindow *window;</p>
-
-<p>@end</p>
-
-<p>```</p>
-
-<ul>
-<li>AppDelegate.cpp</li>
-</ul>
-
-
-<p>```</p>
-
-<h1>import &ldquo;AppDelegate.h&rdquo;</h1>
-
-<p>@implementation AppDelegate
-@synthesize window;</p>
-
-<ul>
-<li><p>(void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-  tickets = 100;
-  count = 0;</p>
-
-<p>  ticketsCondition = [[NSCondition alloc] init]; //初始化锁对象
-  ticketThreadone = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil]; //初始化线程1
-  [ticketThreadone setName:@&ldquo;Thread-1&rdquo;];
-  [ticketThreadone start];</p>
-
-<p>  ticketThreadtwo = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];  //初始化线程2
-  [ticketThreadtwo setName:@&ldquo;Thread-2&rdquo;];
-  [ticketThreadtwo start];</p>
-
-<p>  [window makeKeyWindow];  //出错了，无法在窗口中运行，只能在命令行中运行，不知道为什么？求知道的筒子解答下~</p></li>
-</ul>
-
-
-<p>}</p>
-
-<ul>
-<li><p>(void)run{
-  while(TRUE){
-      [ticketsCondition lock];
-      if(tickets > 0)
-      {
-          [NSThread sleepForTimeInterval:0.5];
-          count = 100 &ndash; tickets;
-          NSLog(@&ldquo;current tickets count are: %d, sell %d, thread name: %@&rdquo;, tickets, count, [[NSThread currentThread] name]);
-          tickets&mdash;;
-      }else
-      {
-          break;
-      }
-      [ticketsCondition unlock];
-  }
-}</p></li>
-<li><p>(void)dealloc{
-  [ticketThreadone release];  //释放内存
-  [ticketThreadtwo release];
-  [ticketsCondition release];
-  [window release];
-  [super dealloc];
-}</p></li>
-</ul>
-
-
-<p>@end</p>
-
-<p>```</p>
-
-<ul>
-<li>Trouble shooting</li>
-<li><p>1.ARC forbids explicit message send of &lsquo;release&rsquo;
-&lsquo;release&rsquo; is unavailable: not available in automatic reference counting mode</p>
-
-<ul>
-<li>错误原因：因为我们设置了用ARC来管理内存释放，我们却又调用了release方法去释放对象。</li>
-<li>(From the Internet)
-
-<ul>
-<li>ARC是iOS 5推出的新功能，全称叫 ARC(Automatic Reference Counting)。简单地说，就是代码中自动加入了retain/release，原先需要手动添加的用来处理内存管理的引用计数的代码可以自动地由编译器完成了。该机制在 iOS 5/ Mac OS X 10.7 开始导入，利用 Xcode4.2 可以使用该机制。简单地理解ARC，就是通过指定的语法，让编译器(LLVM 3.0)在编译代码时，自动生成实例的引用计数管理部分代码。有一点，ARC并不是GC，它只是一种代码静态分析（Static Analyzer）工具。</li>
-</ul>
-</li>
-<li>how to solve it?
-
-<ul>
-<li>找到项目中的Build setting
-
-<ul>
-<li>把<code>Objective-C Automatic Reference</code>从YES改成NO</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>2.找不到HOME键</p>
-
-<ul>
-<li>在模拟器上按<code>Shift+command+h</code></li>
-</ul>
-</li>
-<li><p>3.出现<code>Auto Layout on iOS Versions prior to 6.0</code></p>
-
-<ul>
-<li>界面设置问题</li>
-<li>找到storybroad
-
-<ul>
-<li>打开属性栏，把<code>Use AutoLayout</code>去掉。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>4.ios7的全屏问题</p>
-
-<ul>
-<li>在viewcontroller里面加入以下代码
-```</li>
-<li><p>(void)viewDidLayoutSubviews{</p>
-
-<p>  if ([self respondsToSelector:@selector(topLayoutGuide)]) // iOS 7 or above
-  {
-      CGFloat top = self.topLayoutGuide.length;
-      if(self.view.frame.origin.y == 0){
-          // We only want to do this once, or if the view has somehow been &quot;restored&quot; by other code.
-          self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + top, self.view.frame.size.width, self.view.frame.size.    height &ndash; top);
-      }
-  }
-}
-```</p></li>
-<li>这个只能让上面原有的时间什么的消失，但是从根本上不能解决问题</li>
-</ul>
-</li>
-<li><p>5.如果刚开始打开ios模拟器发现太大了</p>
-
-<ul>
-<li>再Window->scale那里可以调整成75%就可以使得模拟器看起来大小比较科学了。</li>
 </ul>
 </li>
 </ul>

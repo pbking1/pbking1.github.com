@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-20T20:03:11+08:00</updated>
+  <updated>2014-05-20T20:18:35+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,185 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Use CocoaPods to Management Dependence in Xcode5]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/20/use-cocoapods-to-management-dependence-in-xcode5/"/>
+    <updated>2014-05-20T20:05:22+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/20/use-cocoapods-to-management-dependence-in-xcode5</id>
+    <content type="html"><![CDATA[<h3>What is CocoaPods?</h3>
+
+<ul>
+<li>CocoaPods is a tools used to management the Third party code in IOS project</li>
+</ul>
+
+
+<h3>How to install it?</h3>
+
+<ul>
+<li>use the ruby gem to install
+
+<ul>
+<li><code>sudo gem install cocoapods</code></li>
+<li>and the ruby should be above ruby 2.0</li>
+<li><code>pod setup</code>
+
+<ul>
+<li>this step is download the info in the ~/.cocoapods</li>
+<li>and you can use <code>du -sh *</code> to see how it process</li>
+</ul>
+</li>
+<li>if the gem is too old
+
+<ul>
+<li>use <code>sudo gem update --system</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>most inportantly
+
+<ul>
+<li>for the ruby&rsquo;s software source is using the Amazon could and will be block by the great fire wall.</li>
+<li><p>so you need to change to ruby temperatly</p>
+
+<p>  <code>
+  gem sources --remove https://rubygems.org/
+  gem sources -a http://ruby.taobao.org/
+ </code></p></li>
+<li>after that
+
+<ul>
+<li>you can install the pod</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>and when you need to use the pod
+
+<ul>
+<li>change back to the origin source</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>how to use it?</h3>
+
+<ul>
+<li>we will need a file called <code>Podfile</code>
+
+<ul>
+<li>and the content of it is</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>platform :ios, '7.0'
+</span><span class='line'>pod 'Mantle'
+</span><span class='line'>pod 'LBBlurredImage'
+</span><span class='line'>pod 'TSMessages'
+</span><span class='line'>pod 'ReactiveCocoa'</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>- then press `ctrl + O` and rename into `Podfile`
+- press `ctrl + x` to exit 
+</code></pre>
+
+<ul>
+<li>after that
+
+<ul>
+<li>use <code>pod install</code>
+
+<ul>
+<li>and you will see</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ pod install
+</span><span class='line'>Analyzing dependencies
+</span><span class='line'>CocoaPods 0.28.0 is available.
+</span><span class='line'>Downloading dependencies
+</span><span class='line'>Installing HexColors (2.2.1)
+</span><span class='line'>Installing LBBlurredImage (0.1.0)
+</span><span class='line'>Installing Mantle (1.3.1)
+</span><span class='line'>Installing ReactiveCocoa (2.1.7)
+</span><span class='line'>Installing TSMessages (0.9.4)
+</span><span class='line'>Generating Pods project
+</span><span class='line'>Integrating client project
+</span><span class='line'>[!] From now on use `SimpleWeather.xcworkspace`.</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>and the Cocoapods will create a xxxxx.xcworkspce</li>
+</ul>
+
+
+<h3>Something else</h3>
+
+<ul>
+<li>after you use <code>pod install</code>
+
+<ul>
+<li>a file called <code>Podfile.lock</code> will be generated and this file should not be add into the .gitignore.</li>
+<li>for this file will lock on all the version of the dependences</li>
+<li>and you will not be able to change the version of these dependences even you use <code>pod install</code></li>
+<li>and only the command <code>pod update</code> will work.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>generate the doc</h3>
+
+<ul>
+<li>use <code>brew install appledoc</code> to generate the Third party library doc</li>
+</ul>
+
+
+<h3>search the library you want in the cocapods library</h3>
+
+<ul>
+<li>use <code>pod search library_name</code>
+
+<ul>
+<li>like <code>pod search json</code></li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Build a Xib Program in Xcode5]]></title>
@@ -4498,188 +4677,6 @@ sudp chown virtual:virtual /home/vsftpd
 
 
 <!--more-->
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Basic Idea in Robotics]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics/"/>
-    <updated>2014-04-09T18:55:54+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics</id>
-    <content type="html"><![CDATA[<h3>ABSTRACT:</h3>
-
-<ul>
-<li>The basic idea in robotic area
-
-<ul>
-<li>A robot is an autonomous system which exists in the physical world, can sense its environment , and can act on it to achieve some goals</li>
-<li>The robotic involves autonomy, sensing, action, and achieving goals, all in the physical world</li>
-<li>The component of the robot are
-
-<ul>
-<li>physical body
-
-<ul>
-<li>it can exist and do in the physical world</li>
-</ul>
-</li>
-<li>combine
-
-<ul>
-<li>manipulation(up body)
-
-<ul>
-<li>handling objects</li>
-</ul>
-</li>
-<li>locomotion(down body).
-
-<ul>
-<li>Moving around, going places</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Sensors
-
-<ul>
-<li>It can sense/perceive its environment in order to get information about itself and its surroundings.</li>
-</ul>
-</li>
-<li>Effectors and actuators
-
-<ul>
-<li>it can take actions</li>
-<li>effector enable a robot to take a action, to do physical things
-
-<ul>
-<li>it can also be defined as any device that has an effect on the environment</li>
-<li>it range from legs, wheels to arms and fingers</li>
-</ul>
-</li>
-<li>actuator can do exact the actual work for the robot
-
-<ul>
-<li>are the effector that use underlying mechanism, such as motor and muscles.</li>
-<li>Is also the mechanism that enable the effector to execute an action or movement</li>
-<li>Such as electric motors(base on electric current), hydraulics(base on fluid pressure) ,pneumatics(base on air pressure) and photo-reactive materials ……</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Controller
-
-<ul>
-<li>it can be autonomous</li>
-<li>provide hardware and/or software that make the robot autonomous by using the sensor inputs and any other information to decide what to do ad then to control the effectors to execute that action</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<h3>Some useful info about ATLAS robot</h3>
-
-<ul>
-<li><p>1.ATLAS robot has 27 total degrees of freedom.</p></li>
-<li><p>2.ATLAS has 27 powerful actuators. They are very strong.</p>
-
-<ul>
-<li>And they are using the Hydraulic Actuator</li>
-</ul>
-</li>
-<li><p>3.Even though ATLAS uses hydraulic actuators, the robot still uses gears. And</p>
-
-<ul>
-<li>it is possible to have backlash if you use hydraulic actuators.</li>
-<li>And the backlash means any looseness between meshing gears</li>
-</ul>
-</li>
-<li><p>4.ATLAS robot27 joints are rotational.</p>
-
-<ul>
-<li>And they use position control, torque control and PID control.</li>
-</ul>
-</li>
-<li><p>5.ATLAS arms have 7 DOF. This means that manipulator is redundant.</p>
-
-<ul>
-<li>The controllable degrees of freedom > total degrees of freedom</li>
-</ul>
-</li>
-<li><p>6.Hands and feet are the end-effectors of the robot.</p></li>
-<li><p>7.drive:</p>
-
-<ul>
-<li>ATLAS need to detect depth through vision. Is stereopsis desired? True</li>
-</ul>
-</li>
-<li><p>8.In order to ATLAS to be able to detect LANES on a road, Edge detection might be most useful</p></li>
-<li><p>9.walk:</p>
-
-<ul>
-<li>if one leg (angle, knee and hip) has 4 DOF, and four PID controller needs to control the motion of the leg.</li>
-</ul>
-</li>
-<li><p>10.clear the way</p>
-
-<ul>
-<li>compliance would not be beneficial in removing blocks to protect the robot from being hurt.</li>
-<li>Torque control is the control method used to grab the door handle firmly</li>
-<li>When open a door, we can choose Robustness to optimize path planning trajectories.</li>
-</ul>
-</li>
-<li><p>11.climb ladder</p>
-
-<ul>
-<li>In order for robots to be successful in the real world they need to deal with uncertainty.</li>
-<li>Programming robots to do the same thing over and over does not work in real environments. Instead they need to be able to generalize.</li>
-<li>In the scenario, there are multiple ways in which ATLAS could coordinate the motion between his arms and legs. One coordination scheme for climbing could be the alternating gait(the way of walking)</li>
-</ul>
-</li>
-<li><p>12.pip detection</p>
-
-<ul>
-<li>Laser-range scanner to compute distance is the most useful in helping the robot move through the building and find the leaking pipe</li>
-</ul>
-</li>
-<li><p>13.valve closing</p>
-
-<ul>
-<li>In the scenario the robot is using a P controller on each of the arm joint to control how much the joint should move, during experimental results it was shown that controller showed large oscillatory behavior during the initial motion the hand.
-
-<ul>
-<li>PD Controller would do a better job at eliminating such error</li>
-</ul>
-</li>
-<li>After the controller is changed, the oscillatory behavior disappeared. But now the controller war not eliminating the steady-state error effectively
-
-<ul>
-<li>PID controller would do a better job at eliminating the current and previous error</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>14.type of sensor</p>
-
-<ul>
-<li>cameras is a Exteroceptive sensor</li>
-<li>robot need dynamic stability to maintain the balance.</li>
-<li>Encode sensor can detect the position of its joints through this kind of sensor</li>
-<li>Tactile sensor can detect touching object</li>
-<li>ATLAS is not equip with Bump sensor</li>
-<li>The force torque sensors give internal information of the robot state(Proprioceptive)</li>
-<li>In some parts of the task, we want ATLAS not to be compliant but to be? Stiff</li>
-</ul>
-</li>
-</ul>
 
 ]]></content>
   </entry>
