@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-20T19:56:25+08:00</updated>
+  <updated>2014-05-20T20:00:56+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -39,29 +39,28 @@
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>self.window= [[[UIWindowalloc]initWithFrame:[[UIScreenmainScreen]bounds]]autorelease];
-</span><span class='line'>
 </span><span class='line'>self.viewController= [[[PT4ViewControlleralloc]initWithNibName:@"PT4ViewController"bundle:nil]autorelease];
-</span><span class='line'>
 </span><span class='line'>self.window.rootViewController=self.viewController;
-</span><span class='line'>
 </span><span class='line'>[self.windowmakeKeyAndVisible];</span></code></pre></td></tr></table></div></figure>
 
 
-<pre><code>- 7.处理好内存分配以及dealloc方法.
-
-```
-- (void)dealloc
-{
-    [_window release];
-    [_viewController release];
-    [super dealloc];
-}
-```
+<pre><code>- 8.处理好内存分配以及dealloc方法.
 </code></pre>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- (void)dealloc
+</span><span class='line'>{
+</span><span class='line'>  [_window release];
+</span><span class='line'>  [_viewController release];
+</span><span class='line'>  [super dealloc];
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
 ]]></content>
   </entry>
   
