@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-20T16:41:49+08:00</updated>
+  <updated>2014-05-20T19:51:41+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Build a Xib Program in Xcode5]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/20/build-a-xib-program-in-xcode5/"/>
+    <updated>2014-05-20T19:45:48+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/20/build-a-xib-program-in-xcode5</id>
+    <content type="html"><![CDATA[<ul>
+<li>由于xcode5里面默认使用了storyboard这种视图控制器，因此有以下的解决方案
+
+<ul>
+<li>1.新建工程&mdash;ios&mdash;-Application&mdash;-Single View Application</li>
+<li>2.将自动生成的Main.storyboard,ViewController.h,ViewController.m这三个文件彻底删除</li>
+<li>3.在项目设置里面,将MainInterface这一项中的内容删除置为空</li>
+<li>4.新建一个类,继承UIViewController,并且选中WithXIB for user interface.并且把内存计数器改为MRC.(改成MRC的方法就是再build setting里面找automatic, 然后把Object-C Automatic Reference Counting改成NO)</li>
+<li>5.在AppDelegate中,导入新建的类:ViewController.h</li>
+<li>6.在AppDelegate.h中,添加属性:@property(strong,nonatomic)ViewController*viewController;</li>
+<li>7.在AppDelegate.m中,添加以下代码:
+&#8220;`
+self.window= [[[UIWindowalloc]initWithFrame:[[UIScreenmainScreen]bounds]]autorelease];</li>
+</ul>
+
+
+<p>  self.viewController= [[[PT4ViewControlleralloc]initWithNibName:@&ldquo;PT4ViewController&#8221;bundle:nil]autorelease];</p>
+
+<p>  self.window.rootViewController=self.viewController;</p>
+
+<p>  [self.windowmakeKeyAndVisible];
+  &#8220;`</p>
+
+<ul>
+<li>7.处理好内存分配以及dealloc方法.
+&#8220;`</li>
+<li>(void)dealloc
+{
+  [<em>window release];
+  [</em>viewController release];
+  [super dealloc];
+}
+&#8220;`</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Sysu公选食品安全和法律的考试资料]]></title>
@@ -4629,292 +4674,6 @@ sudp chown virtual:virtual /home/vsftpd
 </ul>
 </li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My Vim Configuration]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/"/>
-    <updated>2014-04-09T18:35:16+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/my-vim-configuration</id>
-    <content type="html"><![CDATA[<ul>
-<li>This is the vim configuration of my mac.</li>
-<li>edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;</li>
-<li>Some of them need to install some plugins and the command line will make sense</li>
-</ul>
-
-
-<!--more-->
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-<span class='line-number'>127</span>
-<span class='line-number'>128</span>
-<span class='line-number'>129</span>
-<span class='line-number'>130</span>
-<span class='line-number'>131</span>
-<span class='line-number'>132</span>
-<span class='line-number'>133</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>" Configuration file for vim
-</span><span class='line'>set modelines=0     " CVE-2007-2438
-</span><span class='line'>set number
-</span><span class='line'>" Normally we use vim-extensions. If you want true vi-compatibility
-</span><span class='line'>" remove change the following statements
-</span><span class='line'>set nocompatible    " Use Vim defaults instead of 100% vi compatibility
-</span><span class='line'>set backspace=2     " more powerful backspacing 
-</span><span class='line'>" Don't write backup file if vim is being called by "crontab -e"
-</span><span class='line'>au BufWrite /private/tmp/crontab.* set nowritebackup
-</span><span class='line'>" Don't write backup file if vim is being called by "chpass"
-</span><span class='line'>au BufWrite /private/etc/pw.* set nowritebackup
-</span><span class='line'>set autoread
-</span><span class='line'>nmap &lt;leader&gt;w :w!&lt;cr&gt;
-</span><span class='line'>"map &lt;leader&gt;e :e! ~/.vim_runtime/vimrc&lt;cr&gt;
-</span><span class='line'>" autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
-</span><span class='line'>set so=7
-</span><span class='line'>set ruler
-</span><span class='line'>set cmdheight=2
-</span><span class='line'>set hid
-</span><span class='line'>set magic
-</span><span class='line'>set noerrorbells
-</span><span class='line'>syntax enable
-</span><span class='line'>
-</span><span class='line'>"ctag和taglist
-</span><span class='line'>let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-</span><span class='line'>let Tlist_Show_One_File=1
-</span><span class='line'>let Tlist_Exit_OnlyWindow=1
-</span><span class='line'>let Tlist_WinWidth=30
-</span><span class='line'>let Tlist_Process_File_Always=1
-</span><span class='line'>let Tlist_Use_SingleClick=1
-</span><span class='line'>let Tlist_Auto_Open=1
-</span><span class='line'>map&lt;F8&gt; :Tlist&lt;CR&gt;
-</span><span class='line'>set tags=tags;
-</span><span class='line'>set autochdir
-</span><span class='line'> "nmap ct :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .&lt;CR&gt;
-</span><span class='line'>
-</span><span class='line'>"配色
-</span><span class='line'>colorscheme desert
-</span><span class='line'> 
-</span><span class='line'>"python自动补全
-</span><span class='line'>let g:pydiction_location='/usr/share/vim/vim73/ftplugin/complete-dict'
-</span><span class='line'>let g:pydiction_menu_height=15
-</span><span class='line'>"winmanager
-</span><span class='line'>let g:winManagerwindowLayout='FileExplorer|TagList'
-</span><span class='line'>nmap wm :WMToggle&lt;CR&gt;
-</span><span class='line'>
-</span><span class='line'>"nerdtree
-</span><span class='line'>let NERDChristmasTree=1
-</span><span class='line'>let NERDTreeAutoCenter=1
-</span><span class='line'>let NERDTreeMouseMode=2
-</span><span class='line'>let NERDTreeShowBookmarks=1
-</span><span class='line'>let NREDTreeShowFiles=1
-</span><span class='line'>let NERDTreeShowHidden=1
-</span><span class='line'>let NERDTreeShowLineNumbers=1
-</span><span class='line'>let NERDTreeWinPos='left'
-</span><span class='line'>let NERDTreeWinSize=31
-</span><span class='line'>"nnoremap f :NERDTreeToggle
-</span><span class='line'>nnoremap ff :NERDTree&lt;CR&gt;     
-</span><span class='line'>
-</span><span class='line'>set smartcase
-</span><span class='line'>set hlsearch
-</span><span class='line'>set tabstop=4
-</span><span class='line'>set noexpandtab
-</span><span class='line'>set shiftwidth=4
-</span><span class='line'>set smarttab
-</span><span class='line'>set confirm
-</span><span class='line'>set autoindent
-</span><span class='line'>set cindent
-</span><span class='line'>set softtabstop=4
-</span><span class='line'>set history=700
-</span><span class='line'>set nobackup
-</span><span class='line'>set noswapfile
-</span><span class='line'>set ignorecase
-</span><span class='line'>set incsearch
-</span><span class='line'>set gdefault
-</span><span class='line'>set langmenu=zh_CN.UTF-8
-</span><span class='line'>set helplang=cn
-</span><span class='line'>set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\     -\ %H:%M\")}
-</span><span class='line'>set laststatus=2
-</span><span class='line'>
-</span><span class='line'>filetype on
-</span><span class='line'>filetype plugin on
-</span><span class='line'>filetype plugin indent on
-</span><span class='line'>filetype indent on
-</span><span class='line'>set viminfo+=!
-</span><span class='line'>set iskeyword+=_,$,@,%,#,-
-</span><span class='line'>set linespace=0
-</span><span class='line'>set backspace=2
-</span><span class='line'>
-</span><span class='line'>set mouse=a
-</span><span class='line'>set selection=exclusive
-</span><span class='line'>set selectmode=mouse,key
-</span><span class='line'>set report=0
-</span><span class='line'>set shortmess=atl
-</span><span class='line'>set showmatch
-</span><span class='line'>"set fillchars=vert:\,stl:\,stlnc:\
-</span><span class='line'>set matchtime=5
-</span><span class='line'> " 能够漂亮地显示.NFO文件
-</span><span class='line'>set encoding=utf-8
-</span><span class='line'>function! SetFileEncodings(encodings)
-</span><span class='line'>    let b:myfileencodingsbak=&fileencodings
-</span><span class='line'>    let &fileencodings=a:encodings
-</span><span class='line'>endfunction
-</span><span class='line'>function! RestoreFileEncodings()
-</span><span class='line'>    let &fileencodings=b:myfileencodingsbak
-</span><span class='line'>    unlet b:myfileencodingsbak
-</span><span class='line'>endfunction
-</span><span class='line'>
-</span><span class='line'>au BufReadPre *.nfo call SetFileEncodings('cp437')|set ambiwidth=single
-</span><span class='line'>au BufReadPost *.nfo call RestoreFileEncodings()
-</span><span class='line'>
-</span><span class='line'>" 高亮显示普通txt文件（需要txt.vim脚本）
-</span><span class='line'>au BufRead,BufNewFile *  setfiletype txt
-</span><span class='line'>
-</span><span class='line'>" C的编译和运行
-</span><span class='line'>map &lt;F5&gt; :call CompileRunGcc()&lt;CR&gt;
-</span><span class='line'>func! CompileRunGcc()
-</span><span class='line'>exec "w"
-</span><span class='line'>exec "!gcc % -o %&lt;"
-</span><span class='line'>exec "! ./%&lt;"
-</span><span class='line'>endfunc
-</span><span class='line'>
-</span><span class='line'>" C++的编译和运行
-</span><span class='line'>map &lt;F6&gt; :call CompileRunGpp()&lt;CR&gt;
-</span><span class='line'>func! CompileRunGpp()
-</span><span class='line'>exec "w"
-</span><span class='line'>exec "!g++ % -o %&lt;"
-</span><span class='line'>exec "! ./%&lt;"
-</span><span class='line'>endfunc
-</span><span class='line'>
-</span><span class='line'>"Markdown to HTML  
-</span><span class='line'>nmap &lt;leader&gt;md :%!/usr/local/bin/Markdown.pl --html4tags &lt;cr&gt;
-</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Android - KING</title>
+  <title>Build a Xib Program in Xcode5 - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="Category: Android">
+  <meta name="description" content="由于xcode5里面默认使用了storyboard这种视图控制器，因此有以下的解决方案 1.新建工程&mdash;ios&mdash;-Application&mdash;-Single View Application
+2.将自动生成的Main.storyboard, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.comblog/categories/android">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/05/20/build-a-xib-program-in-xcode5">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -71,37 +72,128 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Android</h1>
+    
+      <h1 class="entry-title">Build a Xib Program in Xcode5</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-20T19:45:48+08:00" pubdate data-updated="true">May 20<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><ul>
+<li>由于xcode5里面默认使用了storyboard这种视图控制器，因此有以下的解决方案
 
-  
-  <h2>2014</h2>
+<ul>
+<li>1.新建工程&mdash;ios&mdash;-Application&mdash;-Single View Application</li>
+<li>2.将自动生成的Main.storyboard,ViewController.h,ViewController.m这三个文件彻底删除</li>
+<li>3.在项目设置里面,将MainInterface这一项中的内容删除置为空</li>
+<li>4.新建一个类,继承UIViewController,并且选中WithXIB for user interface.并且把内存计数器改为MRC.(改成MRC的方法就是再build setting里面找automatic, 然后把Object-C Automatic Reference Counting改成NO)</li>
+<li>5.在AppDelegate中,导入新建的类:ViewController.h</li>
+<li>6.在AppDelegate.h中,添加属性:@property(strong,nonatomic)ViewController*viewController;</li>
+<li>7.在AppDelegate.m中,添加以下代码:
+&#8220;`
+self.window= [[[UIWindowalloc]initWithFrame:[[UIScreenmainScreen]bounds]]autorelease];</li>
+</ul>
 
-<article>
-  
-<h1><a href="/blog/2014/04/09/final-exam-of-the-android-class/">Final Exam of the Sysu SE Android Class</a></h1>
-<time datetime="2014-04-09T12:52:03+08:00" pubdate><span class='month'>Apr</span> <span class='day'>09</span> <span class='year'>2014</span></time>
 
+<p>  self.viewController= [[[PT4ViewControlleralloc]initWithNibName:@&ldquo;PT4ViewController&#8221;bundle:nil]autorelease];</p>
 
-<footer>
-  <span class="categories"> <span><i class="fa fa-tag icon-color"></i> </span><a class='category' href='/blog/categories/android/'>Android</a></span>
-</footer>
+<p>  self.window.rootViewController=self.viewController;</p>
 
+<p>  [self.windowmakeKeyAndVisible];
+  &#8220;`</p>
 
-</article>
+<ul>
+<li>7.处理好内存分配以及dealloc方法.
+&#8220;`</li>
+<li>(void)dealloc
+{
+  [<em>window release];
+  [</em>viewController release];
+  [super dealloc];
+}
+&#8220;`</li>
+</ul>
+</li>
+</ul>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">pb</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-20T19:45:48+08:00" pubdate data-updated="true">May 20<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ios/'>IOS</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/20/sysugong-xuan-shi-pin-an-quan-he-fa-lu-de-kao-shi-zi-liao/" title="Previous Post: sysu公选食品安全和法律的考试资料">&laquo; sysu公选食品安全和法律的考试资料</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -229,7 +321,10 @@ ds.charset = 'UTF-8';
       var disqus_shortname = 'pbking1';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/05/20/build-a-xib-program-in-xcode5/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/05/20/build-a-xib-program-in-xcode5/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

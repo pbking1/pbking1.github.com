@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-20T16:41:49+08:00</updated>
+  <updated>2014-05-20T19:51:41+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Build a Xib Program in Xcode5]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/20/build-a-xib-program-in-xcode5/"/>
+    <updated>2014-05-20T19:45:48+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/20/build-a-xib-program-in-xcode5</id>
+    <content type="html"><![CDATA[<ul>
+<li>由于xcode5里面默认使用了storyboard这种视图控制器，因此有以下的解决方案
+
+<ul>
+<li>1.新建工程&mdash;ios&mdash;-Application&mdash;-Single View Application</li>
+<li>2.将自动生成的Main.storyboard,ViewController.h,ViewController.m这三个文件彻底删除</li>
+<li>3.在项目设置里面,将MainInterface这一项中的内容删除置为空</li>
+<li>4.新建一个类,继承UIViewController,并且选中WithXIB for user interface.并且把内存计数器改为MRC.(改成MRC的方法就是再build setting里面找automatic, 然后把Object-C Automatic Reference Counting改成NO)</li>
+<li>5.在AppDelegate中,导入新建的类:ViewController.h</li>
+<li>6.在AppDelegate.h中,添加属性:@property(strong,nonatomic)ViewController*viewController;</li>
+<li>7.在AppDelegate.m中,添加以下代码:
+```
+self.window= [[[UIWindowalloc]initWithFrame:[[UIScreenmainScreen]bounds]]autorelease];</li>
+</ul>
+
+
+<p>  self.viewController= [[[PT4ViewControlleralloc]initWithNibName:@&ldquo;PT4ViewController"bundle:nil]autorelease];</p>
+
+<p>  self.window.rootViewController=self.viewController;</p>
+
+<p>  [self.windowmakeKeyAndVisible];
+  ```</p>
+
+<ul>
+<li>7.处理好内存分配以及dealloc方法.
+```</li>
+<li>(void)dealloc
+{
+  [<em>window release];
+  [</em>viewController release];
+  [super dealloc];
+}
+```</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Perceptual Hash Algorithm in Objective C]]></title>
