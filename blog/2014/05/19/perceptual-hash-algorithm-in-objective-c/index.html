@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>IOS Tutorial 3 Tabhost - KING</title>
+  <title>Perceptual Hash Algorithm in Objective C - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="源代码 把数据载入到tableview中，，点击某一个item就可以出发alert对话框。
-Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在AppDelegate.h中
-加入mainView的声明 注意要加#import "ViewController.h" 1 &hellip;">
+  <meta name="description" content="此文为借鉴阮一峰2011年和2013年发布的相似图片搜索远离 原文已经写得很好了，所以我只是把它整理了一下，学习学习~~ 又名感知哈希算法 主要思想是 对每个图片生成一个“指纹”字符串，然后比较不同图片的指纹。结果越接近，就说明图片越相似 这种算法的优点是简单快速，不收图片大小缩放的影响 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -77,7 +75,7 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
   
   <header>
     
-      <h1 class="entry-title">IOS Tutorial 3 Tabhost</h1>
+      <h1 class="entry-title">Perceptual Hash Algorithm in Objective C</h1>
     
     
       <p class="meta">
@@ -93,7 +91,7 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
   
 
 
-<time datetime="2014-05-14T21:25:25+08:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+<time datetime="2014-05-19T17:47:06+08:00" pubdate data-updated="true">May 19<span>th</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com">Comments</a>
@@ -103,51 +101,145 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
   </header>
 
 
-<div class="entry-content"><h3>源代码</h3>
+<div class="entry-content"><h4>此文为借鉴阮一峰2011年和2013年发布的相似图片搜索远离</h4>
 
 <ul>
-<li>把数据载入到tableview中，，点击某一个item就可以出发alert对话框。</li>
-<li>Cell 的样式也是可以自定义的
+<li>原文已经写得很好了，所以我只是把它整理了一下，学习学习~~</li>
+</ul>
+
+
+<h3>又名感知哈希算法</h3>
 
 <ul>
-<li>通过UITableViewCell来设置样式</li>
+<li>主要思想是
+
+<ul>
+<li>对每个图片生成一个“指纹”字符串，然后比较不同图片的指纹。结果越接近，就说明图片越相似</li>
 </ul>
 </li>
-<li>在<code>AppDelegate.h</code>中</li>
-<li>加入mainView的声明
+<li>这种算法的优点是简单快速，不收图片大小缩放的影响
 
 <ul>
-<li><strong>注意要加<code>#import "ViewController.h"</code></strong></li>
+<li>缺点是图片内容不能变更。如果在图片上加几个文字，他就认不出来了</li>
 </ul>
 </li>
+<li>因此最佳应用应该是根据缩略图找出原图</li>
 </ul>
 
 
 <!--more-->
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
-</span><span class='line'>#import "ViewController.h"
-</span><span class='line'>
-</span><span class='line'>@interface AppDelegate : UIResponder &lt;UIApplicationDelegate&gt;
-</span><span class='line'>
-</span><span class='line'>@property (strong, nonatomic) UIWindow *window;
-</span><span class='line'>@property (strong, nonatomic) ViewController *mainView;
-</span><span class='line'>
-</span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
-
+<ul>
+<li>算法样例
 
 <ul>
-<li>在<code>AppDelegate.m</code>中加入以下代码</li>
+<li>第一步 缩小尺寸
+
+<ul>
+<li>把图片缩小大8*8的尺寸，总共有64个像素。这一步的作用是去除图片的细节，只保留结构，明暗等基本信息，摒弃不同的尺寸，比例带来的图片差异</li>
+</ul>
+</li>
+<li>第二步 简化色彩
+
+<ul>
+<li>将缩小之后的图片转为64级灰度。也就是说，所有的像素点总共之后64中颜色</li>
+</ul>
+</li>
+<li>第三步 计算平均值
+
+<ul>
+<li>计算所有64个像素的灰度平均值</li>
+</ul>
+</li>
+<li>第四步 比较像素的灰度
+
+<ul>
+<li>把每个像素的灰度，和平均值进行比较。大于或者等于平均值的，记为1；小于平均值，记为0；</li>
+</ul>
+</li>
+<li>第五步 计算hash值
+
+<ul>
+<li>把上一步比较的结果，组合在一起，就构成一个64位的整数，这就是这张图片的指纹。组合的次序并不重要，只要保证所有图片采用同样的次序就行了。</li>
+<li>hash_value = 127ysje82ewrdfw3(16个数字)</li>
+<li>这个值也就是指纹</li>
+<li>得到指纹之后就可以对比不同的图片，看看64为中有多少位是不一样的。理论上，这等同与计算”汉明距离“。如果不相同的数据位不超过5，这就说明两张图片很相似；如果大于10，就说明这是两张不同的图片。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>网上其他两种类似的算法</h3>
+
+<h4>颜色分布法</h4>
+
+<ul>
+<li>每张图片都可以生成颜色分布的直方图。如果两种那个图片的直方图很接近，那么就可以认为他们很相似</li>
+<li>由于任何一种颜色都是有红绿蓝三原色（RGB）构成的，所以可以画出四幅图（三原色直方图和最后合成的直方图）</li>
+<li>如果每种原色都可以取256个值，那么整个颜色空间共有1600万种颜色（256的三次方）。针对这1600万种颜色比较直方图，计算量实在太大了，因此需要采用简化方法。可以将0～255分成四个区：0～63为第0区，64～127为第1区，128～191为第2区，192～255为第3区。这意味着红绿蓝分别有4个区，总共可以构成64种组合（4的3次方）。</li>
+<li>任何一种颜色必然属于这64种组合中的一种，这样就可以统计每一种组合包含的像素数量。</li>
+<li><img src="/images/oc_algorithm1.png"></li>
+<li>上图是某张图片的颜色分布表，将表中最后一栏提取出来，组成一个64维向量(7414, 230, 0, 0, 8, &hellip;, 109, 0, 0, 3415, 53929)。这个向量就是这张图片的特征值或者叫&#8221;指纹&#8221;。</li>
+<li>于是，寻找相似图片就变成了找出与其最相似的向量。这可以用皮尔逊相关系数或者余弦相似度算出。</li>
+</ul>
+
+
+<h4>内容特征法</h4>
+
+<ul>
+<li>除了颜色构成还可以从比较图片内容的相似性入手</li>
+<li>首先
+
+<ul>
+<li>把图片装成一张比较小的灰度图片，假设为50*50像素。然后，确定一个阀值，把灰度图片转成黑白图片</li>
+</ul>
+</li>
+<li>其次
+
+<ul>
+<li>如果两张图片很相似，那么他们的黑白轮廓应该是相近的。因此，问题就变成了如何去顶一个合理的阀值，正确的呈现图片中的轮廓</li>
+</ul>
+</li>
+<li>因此
+
+<ul>
+<li><strong>前景色和背景色反差越大，轮廓就越明显</strong></li>
+<li>这意味着，如果我们找到一个值，可以使得前景色和背景色格子的“类内差异最小”，或者“类间差异最大”，那么这个值就是理想的阀值</li>
+</ul>
+</li>
+<li>后来因为有个如本的学者叫大津展之证明了两个是一样的，可以用他的“大津法”来求阀值
+
+<ul>
+<li>假定一张图片共有n个像素，其中灰度值小于阈值的像素为 n1 个，大于等于阈值的像素为 n2 个（ n1 + n2 = n ）。w1 和 w2 表示这两种像素各自的比重。
+
+<ul>
+<li>w1 = n1 / n</li>
+<li>w2 = n2 / n</li>
+</ul>
+</li>
+<li>再假定，所有灰度值小于阈值的像素的平均值和方差分别为 μ1 和 σ1，所有灰度值大于等于阈值的像素的平均值和方差分别为 μ2 和 σ2。于是，可以得到
+
+<ul>
+<li>类内差异 = w1(σ1的平方) + w2(σ2的平方)
+　　      &ndash; 类间差异 = w1w2(μ1-μ2)^</li>
+</ul>
+</li>
+<li>可以证明，这两个式子是等价的：得到&#8221;类内差异&#8221;的最小值，等同于得到&#8221;类间差异&#8221;的最大值。不过，从计算难度看，后者的计算要容易一些。</li>
+<li>下一步用&#8221;穷举法&#8221;，将阈值从灰度的最低值到最高值，依次取一遍，分别代入上面的算式。使得&#8221;类内差异最小&#8221;或&#8221;类间差异最大&#8221;的那个值，就是最终的阈值.</li>
+<li><p>有了50x50像素的黑白缩略图，就等于有了一个50x50的0-1矩阵。矩阵的每个值对应原图的一个像素，0表示黑色，1表示白色。这个矩阵就是一张图片的特征矩阵。</p></li>
+<li><p>两个特征矩阵的不同之处越少，就代表两张图片越相似。这可以用&#8221;异或运算&#8221;实现（即两个值之中只有一个为1，则运算结果为1，否则运算结果为0）。对不同图片的特征矩阵进行&#8221;异或运算&#8221;，结果中的1越少，就是越相似的图片。</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>objective c源码</h3>
+
+<ul>
+<li>tphash.h</li>
 </ul>
 
 
@@ -161,58 +253,20 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>- (void)dealloc
-</span><span class='line'>{
-</span><span class='line'>    [_window release];
-</span><span class='line'>    [_mainView release];
-</span><span class='line'>    [super dealloc];
-</span><span class='line'>}
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;Foundation/Foundation.h&gt;
 </span><span class='line'>
-</span><span class='line'>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-</span><span class='line'>{
-</span><span class='line'>    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-</span><span class='line'>    self.mainView = [[[ViewController alloc] init] autorelease];
-</span><span class='line'>    
-</span><span class='line'>    self.window.rootViewController = self.mainView;
-</span><span class='line'>    [self.window makeKeyAndVisible];
-</span><span class='line'>    // Override point for customization after application launch.
-</span><span class='line'>    return YES;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>@interface tphash : NSObject
+</span><span class='line'>
+</span><span class='line'>+ (uint64_t)ptHash:(UIImage*)image;
+</span><span class='line'>+ (int)hamdistance:(uint64_t)x with:(uint64_t) y;
+</span><span class='line'>+ (UIImage *)scaleImage:(UIImage *)image toSize(CGSize)newSize;
+</span><span class='line'>+ (uint64_t *) convertTogreyscale64Array: (UIImage *)i;
+</span><span class='line'>
+</span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
-<li>修改<code>ViewController.h</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
-</span><span class='line'>
-</span><span class='line'>@interface ViewController : UIViewController&lt;UITableViewDataSource, UITableViewDelegate&gt;
-</span><span class='line'>
-</span><span class='line'>@property (nonatomic, retain) NSMutableArray *datalist;
-</span><span class='line'>@property (nonatomic, retain) UITableView *myTableView;
-</span><span class='line'>
-</span><span class='line'>@end
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>文件<code>ViewController.m</code>如下</li>
+<li>tphash.m</li>
 </ul>
 
 
@@ -287,77 +341,80 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
 <span class='line-number'>69</span>
 <span class='line-number'>70</span>
 <span class='line-number'>71</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import "ViewController.h"
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import "tphash.h"
 </span><span class='line'>
-</span><span class='line'>@interface ViewController ()
+</span><span class='line'>@implementation tphash
 </span><span class='line'>
-</span><span class='line'>@end
-</span><span class='line'>
-</span><span class='line'>@implementation ViewController
-</span><span class='line'>@synthesize datalist;
-</span><span class='line'>@synthesize myTableView;
-</span><span class='line'>
-</span><span class='line'>- (void)viewDidLoad
-</span><span class='line'>{
-</span><span class='line'>    [super viewDidLoad];
-</span><span class='line'>  // Do any additional setup after loading the view, typically from a nib.
-</span><span class='line'>    NSMutableArray *list = [NSArray arrayWithObjects:@"武汉",@"上海",@"北京",@"深圳",@"广州",@"重庆",@"香港",@"台海",@"天津", nil];
-</span><span class='line'>    self.datalist = list;
-</span><span class='line'>    
-</span><span class='line'>    UITableView *tableview = [[[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain] autorelease];
-</span><span class='line'>    //set the data source
-</span><span class='line'>    tableview.dataSource = self;
-</span><span class='line'>    //set the delegate
-</span><span class='line'>    tableview.delegate = self;
-</span><span class='line'>    //set the background
-</span><span class='line'>    //tableview.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Background.png"]];
-</span><span class='line'>    self.myTableView = tableview;
-</span><span class='line'>    [self.view addSubview:myTableView];
-</span><span class='line'>    
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-</span><span class='line'>{
-</span><span class='line'>    static NSString *CellWithIdentifier = @"Cell";
-</span><span class='line'>    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
-</span><span class='line'>    if(cell == nil){
-</span><span class='line'>        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellWithIdentifier];
+</span><span class='line'>+ (uint64_t)ptHash:(UIImage *)image{
+</span><span class='line'>    image = [self scaleImage:image toSize:CGSizeMake(8,8)];
+</span><span class='line'>    uint64_t* imageArray = [self convertTogreyscale64Array:image];
+</span><span class='line'>    int sum = 0;
+</span><span class='line'>    for(int i = 0; i &lt; 64; i++){
+</span><span class='line'>        sum += imageArray[i];
 </span><span class='line'>    }
-</span><span class='line'>    NSUInteger row = [indexPath row];
-</span><span class='line'>    cell.textLabel.text = [self.datalist objectAtIndex:row];
-</span><span class='line'>    return cell;
+</span><span class='line'>    uint8_t avg = sum/64;
+</span><span class='line'>    uint64_t ret = 0;
+</span><span class='line'>    for(int i = 0; i &lt; 64; i++){
+</span><span class='line'>        if(imageArray[i] &gt;= avg){
+</span><span class='line'>            ret++;
+</span><span class='line'>        }
+</span><span class='line'>        ret &lt;&lt;= 1;
+</span><span class='line'>    }
+</span><span class='line'>    return ret;
 </span><span class='line'>}
 </span><span class='line'>
-</span><span class='line'>- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-</span><span class='line'>{
-</span><span class='line'>    return [self.datalist count];
+</span><span class='line'>+ (int)hamdistance:(uint64_t)x with:(uint64_t) y{
+</span><span class='line'>    unsigned dist = 0, val = x^y;
+</span><span class='line'>    while (val) {
+</span><span class='line'>        ++dist;
+</span><span class='line'>        val &= val - 1;
+</span><span class='line'>    }
 </span><span class='line'>}
 </span><span class='line'>
-</span><span class='line'>- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-</span><span class='line'>{
-</span><span class='line'>    return 70;  //设置行高
+</span><span class='line'>+ (UIImage *)scaleImage:(UIImage *)image toSize(CGSize)newSize{
+</span><span class='line'>    UIGraphicsBeginIMageContextWithOptions(newSize, NO, 0.0);
+</span><span class='line'>    [image drawInRect:CGRectMake(0,0,newSize.width, newSize.height)];
+</span><span class='line'>    UIImage *newImage = UIGraphicsBeginImageFromCurrentImageContext();
+</span><span class='line'>    UIGraphicsEndImageContext();
+</span><span class='line'>    return newImage;
 </span><span class='line'>}
 </span><span class='line'>
-</span><span class='line'>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-</span><span class='line'>{
-</span><span class='line'>    NSString *msg = [[NSString alloc] initWithFormat:@"You choose :%@",  [self.datalist objectAtIndex:[indexPath row]]];
-</span><span class='line'>    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-</span><span class='line'>    [msg release];
-</span><span class='line'>    [alert show];
+</span><span class='line'>+ (uint64_t *) convertTogreyscale64Array: (UIImage *)i{
+</span><span class='line'>    int kRed = 1;
+</span><span class='line'>    int kGreen = 2;
+</span><span class='line'>    int kBlue = 4;
+</span><span class='line'>    
+</span><span class='line'>    int colors = kGreen;
+</span><span class='line'>    int m_width = i.size.width;
+</span><span class='line'>    int m_height = i.size.height;
+</span><span class='line'>    
+</span><span class='line'>    uint32_t *rgbImage = (uint32_t *) malloc(m_width * meight * sizeof(uint32_t));
+</span><span class='line'>    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+</span><span class='line'>    CGContextRef context = CGBitmapContextCreate(rgbImage, m_width, m_height, 8, m_width * 4, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipLast);
+</span><span class='line'>    CGContextSetInterpolationQuality(context, kCGInterpolationHigh);
+</span><span class='line'>    CGContextSetShouldAntialias(context, NO);
+</span><span class='line'>    CGContextDrawImage(context, CGRectMake(0, 0, m_width, m_height), [i CGImage]);
+</span><span class='line'>    CGContextRelease(context);
+</span><span class='line'>    CGColorSpaceRelease(colorSpace);
+</span><span class='line'>    
+</span><span class='line'>    uint8_t *m_imageData = (uint8_t *) malloc(m_width * m_height);
+</span><span class='line'>    for(int y = 0; y &lt; m_height; y++) {
+</span><span class='line'>        for(int x = 0; x &lt; m_width; x++) {
+</span><span class='line'>            uint32_t rgbPixel=rgbImage[y*m_width+x];
+</span><span class='line'>            uint32_t sum=0,count=0;
+</span><span class='line'>            if (colors & kRed) {sum += (rgbPixel&gt;&gt;24)&255; count++;}
+</span><span class='line'>            if (colors & kGreen) {sum += (rgbPixel&gt;&gt;16)&255; count++;}
+</span><span class='line'>            if (colors & kBlue) {sum += (rgbPixel&gt;&gt;8)&255; count++;}
+</span><span class='line'>            m_imageData[y*m_width+x]=sum/count/4;
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>    free(rgbImage);
+</span><span class='line'>    return m_imageData;
 </span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-</span><span class='line'>{
-</span><span class='line'>    NSLog(@"delete");  //滑动删除
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)didReceiveMemoryWarning
-</span><span class='line'>{
-</span><span class='line'>    [super didReceiveMemoryWarning];
-</span><span class='line'>    // Dispose of any resources that can be recreated.
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>@end
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
 
@@ -381,12 +438,12 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
   
 
 
-<time datetime="2014-05-14T21:25:25+08:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+<time datetime="2014-05-19T17:47:06+08:00" pubdate data-updated="true">May 19<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/ios/'>IOS</a>
+    <a class='category' href='/blog/categories/algorithm/'>Algorithm</a>, <a class='category' href='/blog/categories/ios/'>IOS,</a>
   
 </span>
 
@@ -402,10 +459,8 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/05/14/ios-tutorial-2/" title="Previous Post: IOS tutorial 2">&laquo; IOS tutorial 2</a>
+        <a class="basic-alignment left" href="/blog/2014/05/14/2014-uc-interview-coding/" title="Previous Post: 2014 UC interview coding">&laquo; 2014 UC interview coding</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/05/14/2014-uc-interview-coding/" title="Next Post: 2014 UC interview coding">2014 UC interview coding &raquo;</a>
       
     </p>
   </footer>
@@ -544,8 +599,8 @@ ds.charset = 'UTF-8';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c/';
         var disqus_script = 'embed.js';
       
     (function () {
