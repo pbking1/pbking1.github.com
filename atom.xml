@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-20T15:06:11+08:00</updated>
+  <updated>2014-05-20T16:37:26+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -18,7 +18,7 @@
     <link href="http://pbking1.github.com/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c/"/>
     <updated>2014-05-19T17:47:06+08:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c</id>
-    <content type="html"><![CDATA[<h4>此文为借鉴阮一峰2011年和2013年发布的相似图片搜索远离</h4>
+    <content type="html"><![CDATA[<h4>此文为借鉴阮一峰2011年和2013年发布的相似图片搜索原理</h4>
 
 <ul>
 <li>原文已经写得很好了，所以我只是把它整理了一下，学习学习~~</li>

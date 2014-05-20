@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: IOS, | KING]]></title>
+  <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-20T15:06:11+08:00</updated>
+  <updated>2014-05-20T16:37:26+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -18,7 +18,7 @@
     <link href="http://pbking1.github.com/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c/"/>
     <updated>2014-05-19T17:47:06+08:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c</id>
-    <content type="html"><![CDATA[<h4>此文为借鉴阮一峰2011年和2013年发布的相似图片搜索远离</h4>
+    <content type="html"><![CDATA[<h4>此文为借鉴阮一峰2011年和2013年发布的相似图片搜索原理</h4>
 
 <ul>
 <li>原文已经写得很好了，所以我只是把它整理了一下，学习学习~~</li>
@@ -257,6 +257,509 @@
 
 
 <p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Tutorial 3 Tabhost]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost/"/>
+    <updated>2014-05-14T21:25:25+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost</id>
+    <content type="html"><![CDATA[<h3>源代码</h3>
+
+<ul>
+<li>把数据载入到tableview中，，点击某一个item就可以出发alert对话框。</li>
+<li>Cell 的样式也是可以自定义的
+
+<ul>
+<li>通过UITableViewCell来设置样式</li>
+</ul>
+</li>
+<li>在<code>AppDelegate.h</code>中</li>
+<li>加入mainView的声明
+
+<ul>
+<li><strong>注意要加<code>#import "ViewController.h"</code></strong></li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<p>```</p>
+
+<h1>import &lt;UIKit/UIKit.h></h1>
+
+<h1>import &ldquo;ViewController.h&rdquo;</h1>
+
+<p>@interface AppDelegate : UIResponder <UIApplicationDelegate></p>
+
+<p>@property (strong, nonatomic) UIWindow <em>window;
+@property (strong, nonatomic) ViewController </em>mainView;</p>
+
+<p>@end
+<code>``
+- 在</code>AppDelegate.m`中加入以下代码</p>
+
+<p>```
+&ndash; (void)dealloc
+{</p>
+
+<pre><code>[_window release];
+[_mainView release];
+[super dealloc];
+</code></pre>
+
+<p>}</p>
+
+<ul>
+<li><p>(BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions
+{
+  self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+  self.mainView = [[[ViewController alloc] init] autorelease];</p>
+
+<p>  self.window.rootViewController = self.mainView;
+  [self.window makeKeyAndVisible];
+  // Override point for customization after application launch.
+  return YES;
+}
+```</p></li>
+<li>修改<code>ViewController.h</code></li>
+</ul>
+
+
+<p>```</p>
+
+<h1>import &lt;UIKit/UIKit.h></h1>
+
+<p>@interface ViewController : UIViewController&lt;UITableViewDataSource, UITableViewDelegate></p>
+
+<p>@property (nonatomic, retain) NSMutableArray <em>datalist;
+@property (nonatomic, retain) UITableView </em>myTableView;</p>
+
+<p>@end</p>
+
+<p>```</p>
+
+<ul>
+<li>文件<code>ViewController.m</code>如下</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>import &ldquo;ViewController.h&rdquo;</h1>
+
+<p>@interface ViewController ()</p>
+
+<p>@end</p>
+
+<p>@implementation ViewController
+@synthesize datalist;
+@synthesize myTableView;</p>
+
+<ul>
+<li><p>(void)viewDidLoad
+{
+  [super viewDidLoad];
+  // Do any additional setup after loading the view, typically from a nib.
+  NSMutableArray *list = [NSArray arrayWithObjects:@&ldquo;武汉&rdquo;,@&ldquo;上海&rdquo;,@&ldquo;北京&rdquo;,@&ldquo;深圳&rdquo;,@&ldquo;广州&rdquo;,@&ldquo;重庆&rdquo;,@&ldquo;香港&rdquo;,@&ldquo;台海&rdquo;,@&ldquo;天津&rdquo;, nil];
+  self.datalist = list;</p>
+
+<p>  UITableView *tableview = [[[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain] autorelease];
+  //set the data source
+  tableview.dataSource = self;
+  //set the delegate
+  tableview.delegate = self;
+  //set the background
+  //tableview.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@&ldquo;Background.png&rdquo;]];
+  self.myTableView = tableview;
+  [self.view addSubview:myTableView];</p></li>
+</ul>
+
+
+<p>}</p>
+
+<ul>
+<li><p>(UITableViewCell <em>)tableView:(UITableView </em>)tableView cellForRowAtIndexPath:(NSIndexPath <em>)indexPath
+{
+  static NSString </em>CellWithIdentifier = @&ldquo;Cell&rdquo;;
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
+  if(cell == nil){
+      cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellWithIdentifier];
+  }
+  NSUInteger row = [indexPath row];
+  cell.textLabel.text = [self.datalist objectAtIndex:row];
+  return cell;
+}</p></li>
+<li><p>(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+  return [self.datalist count];
+}</p></li>
+<li><p>(CGFloat)tableView:(UITableView <em>)tableView heightForRowAtIndexPath:(NSIndexPath </em>)indexPath
+{
+  return 70;  //设置行高
+}</p></li>
+<li><p>(void)tableView:(UITableView <em>)tableView didSelectRowAtIndexPath:(NSIndexPath </em>)indexPath
+{
+  NSString <em>msg = [[NSString alloc] initWithFormat:@&ldquo;You choose :%@&rdquo;,  [self.datalist objectAtIndex:[indexPath row]]];
+  UIAlertView </em>alert = [[UIAlertView alloc] initWithTitle:@&ldquo;Alert&rdquo; message:msg delegate:self cancelButtonTitle:@&ldquo;OK&rdquo; otherButtonTitles:nil, nil];
+  [msg release];
+  [alert show];
+}</p></li>
+<li><p>(void)tableView:(UITableView <em>)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath </em>)indexPath
+{
+  NSLog(@&ldquo;delete&rdquo;);  //滑动删除
+}</p></li>
+<li><p>(void)didReceiveMemoryWarning
+{
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
+}</p></li>
+</ul>
+
+
+<p>@end
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Tutorial 2]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-2/"/>
+    <updated>2014-05-14T16:34:49+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-2</id>
+    <content type="html"><![CDATA[<ul>
+<li>键盘收起以及弹出对话框</li>
+<li>在<code>ViewController.h</code>里面加入<code>-(IBAction)View_TouchDown:(id)sender</code>;</li>
+</ul>
+
+
+<!--more-->
+
+
+<p>```</p>
+
+<h1>import &lt;UIKit/UIKit.h></h1>
+
+<p>@interface ViewController : UIViewController</p>
+
+<p>@property (strong, nonatomic) IBOutlet UITextField *tempText;</p>
+
+<p>&ndash;(IBAction)showMessage;
+&ndash;(IBAction)View_TouchDown:(id)sender;
+@end</p>
+
+<p><code>
+- 在`ViewController.m`里面加入以下代码
+</code>
+&ndash; (IBAction)View_TouchDown:(id)sender
+{</p>
+
+<pre><code>[[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<ul>
+<li>得到的全部代码如下</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>import &ldquo;ViewController.h&rdquo;</h1>
+
+<p>@interface ViewController ()</p>
+
+<p>@end</p>
+
+<p>@implementation ViewController</p>
+
+<ul>
+<li><p>(void)viewDidLoad
+{
+  [super viewDidLoad];
+  // Do any additional setup after loading the view, typically from a nib.
+}</p></li>
+<li><p>(void)didReceiveMemoryWarning
+{
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
+}</p></li>
+<li><p>(IBAction)showMessage  //弹出对话框
+{
+  UIAlertView *a = [[UIAlertView alloc]
+                    initWithTitle:@&ldquo;I am pb&rdquo; message:@&ldquo;hello world&rdquo; delegate:nil cancelButtonTitle:@&ldquo;I can do it&rdquo; otherButtonTitles: nil];
+  [a show];
+}</p></li>
+<li><p>(IBAction)View_TouchDown:(id)sender
+{
+  [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}</p></li>
+</ul>
+
+
+<p>@end</p>
+
+<p>```</p>
+
+<ul>
+<li><p>最后再在storybroad里面用outlet把整个屏幕和<code>View_TouchDown</code>连接起来就可以了</p></li>
+<li><p>Touble shoot</p>
+
+<ul>
+<li>1.出现<code>'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:</code>
+
+<ul>
+<li>说明<code>self.viewController = [[[ViewController alloc] initWithNibName:@"name" bundle:nil] autorelease];</code>
+
+<ul>
+<li>里面的name写错了
+
+<ul>
+<li>要写成和ViewController一样的名字才行。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Tutorial 1]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1/"/>
+    <updated>2014-05-14T13:11:01+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1</id>
+    <content type="html"><![CDATA[<ul>
+<li>1.一点基本语法</li>
+<li>用NSLog打印，代替printf（也是可以用的）</li>
+<li>用NSDate来获取时间</li>
+<li>用NSData来把数据char*转成string存起来</li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>源码
+```
+
+<h1>import &lt;Foundation/Foundation.h></h1></li>
+</ul>
+
+
+<p>int main(int argc, const char * argv[])
+{</p>
+
+<pre><code>@autoreleasepool {
+
+    // insert code here...
+    NSLog(@"Hello, World!");
+
+}
+int i;
+for(i = 0; i &lt;= 5; i++)
+    NSLog(@"%d\n", i);
+
+NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-(24*60*60)];
+NSLog(@"yesterday is %@", yesterday);
+
+NSDate *tomorrow = [NSDate dateWithTimeIntervalSinceNow:+(24*60*60)];
+NSLog(@"tomorrow is %@", tomorrow);
+
+const char *string = "Hi this is pb";
+NSData *data = [NSData dataWithBytes:string length:strlen(string) + 1];
+NSLog(@"data is %@", data);
+NSLog(@"%lu Bytes string is '%s'", (unsigned long)[data length], [data bytes]);
+return 0;
+</code></pre>
+
+<p>}
+```</p>
+
+<ul>
+<li><p>2.线程的同步与锁
+　　- 要说明线程的同步与锁，最好的例子可能就是多个窗口同时售票的售票系统了。我们知道在java中，使用synchronized来同步，而iphone虽然没有提供类似java下的synchronized关键字，但提供了NSCondition对象接口。</p>
+
+<ul>
+<li>查看NSCondition的接口说明可以看出，NSCondition是iphone下的锁对象，所以我们可以使用NSCondition实现iphone中的线程安全。这是来源于网上的一个例子：</li>
+</ul>
+</li>
+<li><p>2.多个窗口同时售票的售票系统代码</p></li>
+<li>AppDelegate.h</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>import &lt;Cocoa/Cocoa.h></h1>
+
+<p>@interface AppDelegate : NSObject <NSApplicationDelegate>{</p>
+
+<pre><code>int tickets;
+int count;
+NSThread *ticketThreadone;
+NSThread *ticketThreadtwo;
+NSCondition *ticketsCondition;
+NSWindow *windows;
+</code></pre>
+
+<p>}</p>
+
+<p>@property (assign) IBOutlet NSWindow *window;</p>
+
+<p>@end</p>
+
+<p>```</p>
+
+<ul>
+<li>AppDelegate.cpp</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>import &ldquo;AppDelegate.h&rdquo;</h1>
+
+<p>@implementation AppDelegate
+@synthesize window;</p>
+
+<ul>
+<li><p>(void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+  tickets = 100;
+  count = 0;</p>
+
+<p>  ticketsCondition = [[NSCondition alloc] init]; //初始化锁对象
+  ticketThreadone = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil]; //初始化线程1
+  [ticketThreadone setName:@&ldquo;Thread-1&rdquo;];
+  [ticketThreadone start];</p>
+
+<p>  ticketThreadtwo = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];  //初始化线程2
+  [ticketThreadtwo setName:@&ldquo;Thread-2&rdquo;];
+  [ticketThreadtwo start];</p>
+
+<p>  [window makeKeyWindow];  //出错了，无法在窗口中运行，只能在命令行中运行，不知道为什么？求知道的筒子解答下~</p></li>
+</ul>
+
+
+<p>}</p>
+
+<ul>
+<li><p>(void)run{
+  while(TRUE){
+      [ticketsCondition lock];
+      if(tickets > 0)
+      {
+          [NSThread sleepForTimeInterval:0.5];
+          count = 100 &ndash; tickets;
+          NSLog(@&ldquo;current tickets count are: %d, sell %d, thread name: %@&rdquo;, tickets, count, [[NSThread currentThread] name]);
+          tickets&mdash;;
+      }else
+      {
+          break;
+      }
+      [ticketsCondition unlock];
+  }
+}</p></li>
+<li><p>(void)dealloc{
+  [ticketThreadone release];  //释放内存
+  [ticketThreadtwo release];
+  [ticketsCondition release];
+  [window release];
+  [super dealloc];
+}</p></li>
+</ul>
+
+
+<p>@end</p>
+
+<p>```</p>
+
+<ul>
+<li>Trouble shooting</li>
+<li><p>1.ARC forbids explicit message send of &lsquo;release&rsquo;
+&lsquo;release&rsquo; is unavailable: not available in automatic reference counting mode</p>
+
+<ul>
+<li>错误原因：因为我们设置了用ARC来管理内存释放，我们却又调用了release方法去释放对象。</li>
+<li>(From the Internet)
+
+<ul>
+<li>ARC是iOS 5推出的新功能，全称叫 ARC(Automatic Reference Counting)。简单地说，就是代码中自动加入了retain/release，原先需要手动添加的用来处理内存管理的引用计数的代码可以自动地由编译器完成了。该机制在 iOS 5/ Mac OS X 10.7 开始导入，利用 Xcode4.2 可以使用该机制。简单地理解ARC，就是通过指定的语法，让编译器(LLVM 3.0)在编译代码时，自动生成实例的引用计数管理部分代码。有一点，ARC并不是GC，它只是一种代码静态分析（Static Analyzer）工具。</li>
+</ul>
+</li>
+<li>how to solve it?
+
+<ul>
+<li>找到项目中的Build setting
+
+<ul>
+<li>把<code>Objective-C Automatic Reference</code>从YES改成NO</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.找不到HOME键</p>
+
+<ul>
+<li>在模拟器上按<code>Shift+command+h</code></li>
+</ul>
+</li>
+<li><p>3.出现<code>Auto Layout on iOS Versions prior to 6.0</code></p>
+
+<ul>
+<li>界面设置问题</li>
+<li>找到storybroad
+
+<ul>
+<li>打开属性栏，把<code>Use AutoLayout</code>去掉。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>4.ios7的全屏问题</p>
+
+<ul>
+<li>在viewcontroller里面加入以下代码
+```</li>
+<li><p>(void)viewDidLayoutSubviews{</p>
+
+<p>  if ([self respondsToSelector:@selector(topLayoutGuide)]) // iOS 7 or above
+  {
+      CGFloat top = self.topLayoutGuide.length;
+      if(self.view.frame.origin.y == 0){
+          // We only want to do this once, or if the view has somehow been &quot;restored&quot; by other code.
+          self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + top, self.view.frame.size.width, self.view.frame.size.    height &ndash; top);
+      }
+  }
+}
+```</p></li>
+<li>这个只能让上面原有的时间什么的消失，但是从根本上不能解决问题</li>
+</ul>
+</li>
+<li><p>5.如果刚开始打开ios模拟器发现太大了</p>
+
+<ul>
+<li>再Window->scale那里可以调整成75%就可以使得模拟器看起来大小比较科学了。</li>
+</ul>
+</li>
+</ul>
+
 ]]></content>
   </entry>
   
