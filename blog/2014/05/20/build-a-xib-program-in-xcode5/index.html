@@ -115,37 +115,37 @@
 <li>6.在AppDelegate.h中,添加属性:@property(strong,nonatomic)ViewController*viewController;</li>
 <li>7.在AppDelegate.m中,添加以下代码:</li>
 </ul>
-
-
-<p>  &#8220;`
-  self.window= [[[UIWindowalloc]initWithFrame:[[UIScreenmainScreen]bounds]]autorelease];</p>
-
-<p>  self.viewController= [[[PT4ViewControlleralloc]initWithNibName:@&ldquo;PT4ViewController&#8221;bundle:nil]autorelease];</p>
-
-<p>  self.window.rootViewController=self.viewController;</p>
-
-<p>  [self.windowmakeKeyAndVisible];
-  &#8220;`</p>
-
-<ul>
-<li>7.处理好内存分配以及dealloc方法.</li>
-</ul>
-
-
-<p>  &#8220;`</p>
-
-<ul>
-<li>(void)dealloc
-{
-  [<em>window release];
-  [</em>viewController release];
-  [super dealloc];
-}
-&#8220;`</li>
-</ul>
 </li>
 </ul>
 
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>self.window= [[[UIWindowalloc]initWithFrame:[[UIScreenmainScreen]bounds]]autorelease];
+</span><span class='line'>
+</span><span class='line'>self.viewController= [[[PT4ViewControlleralloc]initWithNibName:@"PT4ViewController"bundle:nil]autorelease];
+</span><span class='line'>
+</span><span class='line'>self.window.rootViewController=self.viewController;
+</span><span class='line'>
+</span><span class='line'>[self.windowmakeKeyAndVisible];</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>- 7.处理好内存分配以及dealloc方法.
+
+```
+- (void)dealloc
+{
+    [_window release];
+    [_viewController release];
+    [super dealloc];
+}
+```
+</code></pre>
 </div>
 
 

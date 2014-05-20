@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-20T19:54:19+08:00</updated>
+  <updated>2014-05-20T19:55:23+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -31,37 +31,34 @@
 <li>6.在AppDelegate.h中,添加属性:@property(strong,nonatomic)ViewController*viewController;</li>
 <li>7.在AppDelegate.m中,添加以下代码:</li>
 </ul>
-
-
-<p>  ```
-  self.window= [[[UIWindowalloc]initWithFrame:[[UIScreenmainScreen]bounds]]autorelease];</p>
-
-<p>  self.viewController= [[[PT4ViewControlleralloc]initWithNibName:@&ldquo;PT4ViewController"bundle:nil]autorelease];</p>
-
-<p>  self.window.rootViewController=self.viewController;</p>
-
-<p>  [self.windowmakeKeyAndVisible];
-  ```</p>
-
-<ul>
-<li>7.处理好内存分配以及dealloc方法.</li>
-</ul>
-
-
-<p>  ```</p>
-
-<ul>
-<li>(void)dealloc
-{
-  [<em>window release];
-  [</em>viewController release];
-  [super dealloc];
-}
-```</li>
-</ul>
 </li>
 </ul>
 
+
+<p>```</p>
+
+<pre><code>self.window= [[[UIWindowalloc]initWithFrame:[[UIScreenmainScreen]bounds]]autorelease];
+
+self.viewController= [[[PT4ViewControlleralloc]initWithNibName:@"PT4ViewController"bundle:nil]autorelease];
+
+self.window.rootViewController=self.viewController;
+
+[self.windowmakeKeyAndVisible];
+</code></pre>
+
+<p>```</p>
+
+<pre><code>- 7.处理好内存分配以及dealloc方法.
+
+```
+- (void)dealloc
+{
+    [_window release];
+    [_viewController release];
+    [super dealloc];
+}
+```
+</code></pre>
 ]]></content>
   </entry>
   
