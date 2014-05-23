@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T15:48:39+08:00</updated>
+  <updated>2014-05-23T16:01:02+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -38,21 +38,26 @@
 <ul>
 <li>add the following code</li>
 </ul>
-
-
-<p>  <code>
-  else if (_type == BACKTOMAINPAGE)  //?
-  {
-      self.frame = CGRectMake(50, 50, 40, 44);
-      [self setTitle:@"返回主页" forState:UIControlStateNormal];
-      [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
-  }
- </code></p></li>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>     else if (_type == BACKTOMAINPAGE)  //?
+</span><span class='line'>      {
+</span><span class='line'>          self.frame = CGRectMake(50, 50, 40, 44);
+</span><span class='line'>          [self setTitle:@"返回主页" forState:UIControlStateNormal];
+</span><span class='line'>          [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
+</span><span class='line'>      }</span></code></pre></td></tr></table></div></figure>
 
 
 <!--more-->
@@ -61,34 +66,50 @@
 <pre><code>    - go to Controller -&gt; 我 -&gt; 应用推荐 -&gt; OrderDetailViewController.m
         - and this is create a button on the right top corner and its function is to went back to the mainpage
         - add the following code in `viewdidload` function
+</code></pre>
 
-        ```
-        ButtonFactory *buttonFactory = [ButtonFactory factory];
-        UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
-        [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-        self.navigationItem.rightBarButtonItem = rightBarItem;
-        [rightBarItem release];
-        ```
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>     ButtonFactory *buttonFactory = [ButtonFactory factory];
+</span><span class='line'>              UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
+</span><span class='line'>              [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
+</span><span class='line'>          UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+</span><span class='line'>          self.navigationItem.rightBarButtonItem = rightBarItem;
+</span><span class='line'>              [rightBarItem release];</span></code></pre></td></tr></table></div></figure>
 
-        - add a new function called `gobacktomain`
+
+<pre><code>        - add a new function called `gobacktomain`
             - this is a selector that used to find the main viewcontroller and jump to it.
             - the code in it is
-
-            ```
-            - (void)gobacktomain:(id)paramSender{
-                UIViewController *target = nil;
-                for(UIViewController *controller in self.navigationController.viewControllers){
-                    if([controller isKindOfClass:[HomePageViewController class]]){
-                        target = controller;
-                    }
-                }
-                if(target){
-                    [self.navigationController popToViewController:target animated:YES];
-                }
-            }
-            ```
 </code></pre>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>         - (void)gobacktomain:(id)paramSender{
+</span><span class='line'>              UIViewController *target = nil;
+</span><span class='line'>              for(UIViewController *controller in self.navigationController.viewControllers){
+</span><span class='line'>                  if([controller isKindOfClass:[HomePageViewController class]]){
+</span><span class='line'>                      target = controller;
+</span><span class='line'>                  }
+</span><span class='line'>              }
+</span><span class='line'>              if(target){
+</span><span class='line'>                  [self.navigationController popToViewController:target animated:YES];
+</span><span class='line'>              }
+</span><span class='line'>          }</span></code></pre></td></tr></table></div></figure>
+
 ]]></content>
   </entry>
   
