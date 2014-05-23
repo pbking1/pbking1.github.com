@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T17:13:47+08:00</updated>
+  <updated>2014-05-23T17:14:56+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -36,17 +36,18 @@
 <li>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m
 
 <ul>
-<li>add the following code
-<code>
-else if (_type == BACKTOMAINPAGE)  //?
-{
-  self.frame = CGRectMake(50, 50, 40, 44);
-  [self setTitle:@"返回主页" forState:UIControlStateNormal];
-  [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
-}
-</code></li>
+<li>add the following code</li>
 </ul>
-</li>
+
+
+<p>  <code>
+  else if (_type == BACKTOMAINPAGE)  //?
+  {
+      self.frame = CGRectMake(50, 50, 40, 44);
+      [self setTitle:@"返回主页" forState:UIControlStateNormal];
+      [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
+  }
+ </code></p></li>
 </ul>
 </li>
 </ul>
