@@ -160,17 +160,17 @@
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>     ButtonFactory *buttonFactory = [ButtonFactory factory];
-</span><span class='line'>              UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
-</span><span class='line'>              [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
-</span><span class='line'>          UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-</span><span class='line'>          self.navigationItem.rightBarButtonItem = rightBarItem;
-</span><span class='line'>              [rightBarItem release];</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ButtonFactory *buttonFactory = [ButtonFactory factory];
+</span><span class='line'>UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
+</span><span class='line'>      [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
+</span><span class='line'>  UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+</span><span class='line'>  self.navigationItem.rightBarButtonItem = rightBarItem;
+</span><span class='line'>      [rightBarItem release];</span></code></pre></td></tr></table></div></figure>
 
 
-<pre><code>        - add a new function called `gobacktomain`
-            - this is a selector that used to find the main viewcontroller and jump to it.
-            - the code in it is
+<pre><code>    - add a new function called `gobacktomain`
+        - this is a selector that used to find the main viewcontroller and jump to it.
+        - the code in it is
 </code></pre>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -184,17 +184,17 @@
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>         - (void)gobacktomain:(id)paramSender{
-</span><span class='line'>              UIViewController *target = nil;
-</span><span class='line'>              for(UIViewController *controller in self.navigationController.viewControllers){
-</span><span class='line'>                  if([controller isKindOfClass:[HomePageViewController class]]){
-</span><span class='line'>                      target = controller;
-</span><span class='line'>                  }
-</span><span class='line'>              }
-</span><span class='line'>              if(target){
-</span><span class='line'>                  [self.navigationController popToViewController:target animated:YES];
-</span><span class='line'>              }
-</span><span class='line'>          }</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- (void)gobacktomain:(id)paramSender{
+</span><span class='line'>    UIViewController *target = nil;
+</span><span class='line'>  for(UIViewController *controller in self.navigationController.viewControllers){
+</span><span class='line'>      if([controller isKindOfClass:[HomePageViewController class]]){
+</span><span class='line'>                  target = controller;
+</span><span class='line'>          }
+</span><span class='line'>  }
+</span><span class='line'>  if(target){
+</span><span class='line'>      [self.navigationController popToViewController:target animated:YES];
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
