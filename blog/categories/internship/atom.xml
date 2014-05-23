@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Internship | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/internship/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T15:41:09+08:00</updated>
+  <updated>2014-05-23T15:45:06+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -33,39 +33,50 @@
 <li>add <code>#define BACKTOMAINPAGE 13</code> at the end</li>
 </ul>
 </li>
-<li>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m
+<li><p>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m</p>
 
 <ul>
-<li>add the following code
-<code>
-else if (_type == BACKTOMAINPAGE)  //?
-{
-  self.frame = CGRectMake(50, 50, 40, 44);
-  [self setTitle:@"返回主页" forState:UIControlStateNormal];
-  [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
-}
-</code></li>
+<li>add the following code</li>
 </ul>
-</li>
-<li>go to Controller &ndash;> 我 &ndash;> 应用推荐 &ndash;> OrderDetailViewController.m
+
+
+<p>  <code>
+  else if (_type == BACKTOMAINPAGE)  //?
+  {
+      self.frame = CGRectMake(50, 50, 40, 44);
+      [self setTitle:@"返回主页" forState:UIControlStateNormal];
+      [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
+  }
+ </code></p></li>
+<li><p>go to Controller &ndash;> 我 &ndash;> 应用推荐 &ndash;> OrderDetailViewController.m</p>
 
 <ul>
 <li>and this is create a button on the right top corner and its function is to went back to the mainpage</li>
-<li><p>add the following code in <code>viewdidload</code> function
-<code>
-ButtonFactory *buttonFactory = [ButtonFactory factory];
-UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
-[rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
-UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-self.navigationItem.rightBarButtonItem = rightBarItem;
-[rightBarItem release];
-</code></p></li>
-<li><p>add a new function called <code>gobacktomain</code></p>
+<li>add the following code in <code>viewdidload</code> function</li>
+</ul>
+
+
+<p>  <code>
+  ButtonFactory *buttonFactory = [ButtonFactory factory];
+  UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
+  [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
+  UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+  self.navigationItem.rightBarButtonItem = rightBarItem;
+  [rightBarItem release];
+ </code></p>
+
+<ul>
+<li>add a new function called <code>gobacktomain</code>
 
 <ul>
 <li>this is a selector that used to find the main viewcontroller and jump to it.</li>
-<li>the code in it is
-```</li>
+<li>the code in it is</li>
+</ul>
+
+
+<p>  ```</p>
+
+<ul>
 <li>(void)gobacktomain:(id)paramSender{
   UIViewController <em>target = nil;
   for(UIViewController </em>controller in self.navigationController.viewControllers){
