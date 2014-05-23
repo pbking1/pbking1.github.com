@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Interview | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/interview/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T15:18:55+08:00</updated>
+  <updated>2014-05-23T15:37:40+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,216 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Zst Internship IOS Code Step1]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step1/"/>
+    <updated>2014-05-23T11:47:46+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step1</id>
+    <content type="html"><![CDATA[<h3>In order to understand better about the code of the project in zst ios project, first list the folder</h3>
+
+<ul>
+<li>in the <code>huyihui</code> folder
+
+<ul>
+<li>image</li>
+<li>Third party</li>
+<li>Sections</li>
+<li>Controller</li>
+<li>Model</li>
+<li>Public</li>
+<li>AppDelegate.h</li>
+<li>AppDelegate.m</li>
+<li>Main.storyboard</li>
+<li>ViewController.h</li>
+<li>ViewController.m</li>
+<li>Images.xcassets</li>
+<li>Supporting Files</li>
+<li>Products</li>
+</ul>
+</li>
+<li>For the project is nearly finished, so I do not introduce the framework they use.</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>First in the <code>Image</code> folder</h3>
+
+<ul>
+<li>There are following pics
+
+<ul>
+<li>the login picture, the registe picture, the personal center picture, the general picture, the shopping picture, the first page picture, the search picture</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Second in the <code>Third Party</code> folder</h3>
+
+<ul>
+<li>mainly used for the ailipay and the shared sdk</li>
+<li>There is a class <code>AGViewDelegate</code> which is used for the sharing</li>
+</ul>
+
+
+<h3>Third in the <code>Section</code> folder</h3>
+
+<ul>
+<li><p>we can see the following</p>
+
+<ul>
+<li>ButtonFactory
+
+<ul>
+<li>ButtonFactory.h</li>
+<li>ButtonFactory.m</li>
+</ul>
+</li>
+<li>Buttons
+
+<ul>
+<li>CreateButton.h</li>
+<li>CreateButton.m</li>
+</ul>
+</li>
+<li>SectionFactory.h</li>
+<li>SectionFactory.m</li>
+<li>ButtonMacro.h</li>
+</ul>
+</li>
+<li><p>And I think this folder is implement the <code>factory mode</code></p></li>
+<li>and most of the button is implement in the <code>CreateButton.m</code> file</li>
+</ul>
+
+
+<h3>Fourth in the <code>Controller</code> folder</h3>
+
+<ul>
+<li>Here comes <code>the most important</code>one</li>
+<li>we can see the following
+
+<ul>
+<li>BaseViewController.h</li>
+<li>BaseViewController.m</li>
+<li>Mediator
+
+<ul>
+<li>CoordinatingController.h</li>
+<li>CoordinatingController.m</li>
+</ul>
+</li>
+<li>login_and_registe
+
+<ul>
+<li><img src="/images/internship_zst/1.png"></li>
+</ul>
+</li>
+<li>first_page
+
+<ul>
+<li>firstpageandmore(is a tableview that used to show more about the product)
+
+<ul>
+<li><img src="/images/internship_zst/2.png"></li>
+</ul>
+</li>
+<li>shopping()
+
+<ul>
+<li><img src="/images/internship_zst/3.png"></li>
+<li>(those that contrain cell.xib is use to define the layout of the cell of the tableview)</li>
+</ul>
+</li>
+<li>detailsoftheproduct()
+
+<ul>
+<li><img src="/images/internship_zst/4.png"></li>
+</ul>
+</li>
+<li>tuangou
+
+<ul>
+<li><img src="/images/internship_zst/5.png"></li>
+</ul>
+</li>
+<li>preferential_ticket
+
+<ul>
+<li><img src="/images/internship_zst/6.png"></li>
+</ul>
+</li>
+<li>HomePageViewController.h</li>
+<li>HomePageViewController.m</li>
+<li>HomePageViewController.xib</li>
+<li>NewProductCollectionView.xib</li>
+<li>HomeCollectionHeader0.xib</li>
+<li>HomeCollectionHeader1.xib</li>
+<li>HomeCollectionHeader2.xib</li>
+<li>OrdinaryProductImageDetailCell.xib</li>
+<li>ProductImageDetailCell.xib</li>
+<li>ProductConstants.h</li>
+</ul>
+</li>
+<li>search
+
+<ul>
+<li><img src="/images/internship_zst/7.png"></li>
+</ul>
+</li>
+<li>shoppingcart
+
+<ul>
+<li><img src="/images/internship_zst/8.png"></li>
+</ul>
+</li>
+<li>comment_and_share
+
+<ul>
+<li><img src="/images/internship_zst/9.png"></li>
+</ul>
+</li>
+<li>me
+
+<ul>
+<li>AppRecommand
+
+<ul>
+<li><img src="/images/internship_zst/10.png"></li>
+</ul>
+</li>
+<li><img src="/images/internship_zst/11.png"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Fifth is the <code>Model</code></h3>
+
+<ul>
+<li>we can see the following</li>
+<li><img src="/images/internship_zst/12.png"></li>
+</ul>
+
+
+<h3>Sixth is the <code>Public</code></h3>
+
+<ul>
+<li>we can see the following</li>
+<li><img src="/images/internship_zst/13.png"></li>
+<li><img src="/images/internship_zst/14.png"></li>
+<li><img src="/images/internship_zst/15.png"></li>
+<li><img src="/images/internship_zst/16.png"></li>
+<li><img src="/images/internship_zst/17.png"></li>
+<li><img src="/images/internship_zst/18.png"></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2014 UC Interview Coding]]></title>

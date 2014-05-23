@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Internship | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/internship/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-05-23T15:37:40+08:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Zst Internship IOS Code Step2]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step2/"/>
+    <updated>2014-05-23T15:21:09+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step2</id>
+    <content type="html"><![CDATA[<h3>Here are the method added</h3>
+
+<ul>
+<li>I want to implement a button that used to went back to the main page if the user suddenly do not want to continue ordering the things
+
+<ul>
+<li>First
+
+<ul>
+<li>Go to Sections &ndash;> ButtonMacro.h
+
+<ul>
+<li>add <code>#define BACKTOMAINPAGE 13</code> at the end</li>
+</ul>
+</li>
+<li>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m
+
+<ul>
+<li>add the following code
+<code>
+else if (_type == BACKTOMAINPAGE)  //?
+{
+  self.frame = CGRectMake(50, 50, 40, 44);
+  [self setTitle:@"返回主页" forState:UIControlStateNormal];
+  [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
+}
+</code></li>
+</ul>
+</li>
+<li>go to Controller &ndash;> 我 &ndash;> 应用推荐 &ndash;> OrderDetailViewController.m
+
+<ul>
+<li><p>add the following code in <code>viewdidload</code> function
+<code>
+ButtonFactory *buttonFactory = [ButtonFactory factory];
+UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
+[rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
+UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+self.navigationItem.rightBarButtonItem = rightBarItem;
+[rightBarItem release];
+</code></p></li>
+<li><p>add a new function called <code>gobacktomain</code></p>
+
+<ul>
+<li>the code in it is
+```</li>
+<li>(void)gobacktomain:(id)paramSender{
+  UIViewController <em>target = nil;
+  for(UIViewController </em>controller in self.navigationController.viewControllers){
+      if([controller isKindOfClass:[HomePageViewController class]]){
+          target = controller;
+      }
+  }
+  if(target){
+      [self.navigationController popToViewController:target animated:YES];
+  }
+}
+```</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
