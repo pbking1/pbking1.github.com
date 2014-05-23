@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T16:01:02+08:00</updated>
+  <updated>2014-05-23T17:13:47+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -36,7 +36,15 @@
 <li>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m
 
 <ul>
-<li>add the following code</li>
+<li>add the following code
+<code>
+else if (_type == BACKTOMAINPAGE)  //?
+{
+  self.frame = CGRectMake(50, 50, 40, 44);
+  [self setTitle:@"返回主页" forState:UIControlStateNormal];
+  [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
+}
+</code></li>
 </ul>
 </li>
 </ul>
@@ -45,18 +53,6 @@
 </li>
 </ul>
 
-
-<p>```</p>
-
-<pre><code>        else if (_type == BACKTOMAINPAGE)  //?
-        {
-            self.frame = CGRectMake(50, 50, 40, 44);
-            [self setTitle:@"返回主页" forState:UIControlStateNormal];
-            [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
-        }
-</code></pre>
-
-<p>```</p>
 
 <!--more-->
 
@@ -64,21 +60,17 @@
 <pre><code>    - go to Controller -&gt; 我 -&gt; 应用推荐 -&gt; OrderDetailViewController.m
         - and this is create a button on the right top corner and its function is to went back to the mainpage
         - add the following code in `viewdidload` function
-</code></pre>
 
-<p>```</p>
-
-<pre><code>        ButtonFactory *buttonFactory = [ButtonFactory factory];
+        ```
+        ButtonFactory *buttonFactory = [ButtonFactory factory];
         UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
         [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
         self.navigationItem.rightBarButtonItem = rightBarItem;
         [rightBarItem release];
-</code></pre>
+        ```
 
-<p>```</p>
-
-<pre><code>        - add a new function called `gobacktomain`
+        - add a new function called `gobacktomain`
             - this is a selector that used to find the main viewcontroller and jump to it.
             - the code in it is
 </code></pre>

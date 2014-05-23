@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T16:01:02+08:00</updated>
+  <updated>2014-05-23T17:13:47+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -36,7 +36,15 @@
 <li>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m
 
 <ul>
-<li>add the following code</li>
+<li>add the following code
+<code>
+else if (_type == BACKTOMAINPAGE)  //?
+{
+  self.frame = CGRectMake(50, 50, 40, 44);
+  [self setTitle:@"返回主页" forState:UIControlStateNormal];
+  [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
+}
+</code></li>
 </ul>
 </li>
 </ul>
@@ -44,20 +52,6 @@
 </ul>
 </li>
 </ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>     else if (_type == BACKTOMAINPAGE)  //?
-</span><span class='line'>      {
-</span><span class='line'>          self.frame = CGRectMake(50, 50, 40, 44);
-</span><span class='line'>          [self setTitle:@"返回主页" forState:UIControlStateNormal];
-</span><span class='line'>          [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
-</span><span class='line'>      }</span></code></pre></td></tr></table></div></figure>
 
 
 <!--more-->
@@ -66,23 +60,17 @@
 <pre><code>    - go to Controller -&gt; 我 -&gt; 应用推荐 -&gt; OrderDetailViewController.m
         - and this is create a button on the right top corner and its function is to went back to the mainpage
         - add the following code in `viewdidload` function
-</code></pre>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>     ButtonFactory *buttonFactory = [ButtonFactory factory];
-</span><span class='line'>              UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
-</span><span class='line'>              [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
-</span><span class='line'>          UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-</span><span class='line'>          self.navigationItem.rightBarButtonItem = rightBarItem;
-</span><span class='line'>              [rightBarItem release];</span></code></pre></td></tr></table></div></figure>
+        ```
+        ButtonFactory *buttonFactory = [ButtonFactory factory];
+        UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
+        [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+        self.navigationItem.rightBarButtonItem = rightBarItem;
+        [rightBarItem release];
+        ```
 
-
-<pre><code>        - add a new function called `gobacktomain`
+        - add a new function called `gobacktomain`
             - this is a selector that used to find the main viewcontroller and jump to it.
             - the code in it is
 </code></pre>
