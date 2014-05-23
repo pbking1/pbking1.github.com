@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Internship | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/internship/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T17:20:12+08:00</updated>
+  <updated>2014-05-23T17:21:31+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -38,12 +38,12 @@
 <ul>
 <li>add the following code
 ```
-  else if (_type == BACKTOMAINPAGE)
-  {
-      self.frame = CGRectMake(50, 50, 40, 44);
-      [self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateNormal];
-      [self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateHighlighted];
-  }</li>
+else if (_type == BACKTOMAINPAGE)
+{
+self.frame = CGRectMake(50, 50, 40, 44);
+[self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateNormal];
+[self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateHighlighted];
+}</li>
 </ul>
 </li>
 </ul>
@@ -61,17 +61,21 @@
 <pre><code>    - go to Controller -&gt; 我 -&gt; 应用推荐 -&gt; OrderDetailViewController.m
         - and this is create a button on the right top corner and its function is to went back to the mainpage
         - add the following code in `viewdidload` function
+</code></pre>
 
-        ```
-        ButtonFactory *buttonFactory = [ButtonFactory factory];
+<p>```</p>
+
+<pre><code>        ButtonFactory *buttonFactory = [ButtonFactory factory];
         UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
         [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
         self.navigationItem.rightBarButtonItem = rightBarItem;
         [rightBarItem release];
-        ```
+</code></pre>
 
-        - add a new function called `gobacktomain`
+<p>```</p>
+
+<pre><code>        - add a new function called `gobacktomain`
             - this is a selector that used to find the main viewcontroller and jump to it.
             - the code in it is
 </code></pre>
