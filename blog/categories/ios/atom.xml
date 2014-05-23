@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-20T20:18:35+08:00</updated>
+  <updated>2014-05-23T15:03:29+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,235 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Zst Internship IOS Code Step1]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step1/"/>
+    <updated>2014-05-23T11:47:46+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step1</id>
+    <content type="html"><![CDATA[<h3>In order to understand better about the code of the project in zst ios project, first list the dir</h3>
+
+<ul>
+<li>in the <code>huyihui</code> folder
+
+<ul>
+<li>image</li>
+<li>Third party</li>
+<li>Sections</li>
+<li>Controller</li>
+<li>Model</li>
+<li>Public</li>
+<li>AppDelegate.h</li>
+<li>AppDelegate.m</li>
+<li>Main.storyboard</li>
+<li>ViewController.h</li>
+<li>ViewController.m</li>
+<li>Images.xcassets</li>
+<li>Supporting Files</li>
+<li>Products</li>
+</ul>
+</li>
+<li>For the project is nearly finished, so I do not introduce the framework they use.</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>First in the <code>Image</code> folder</h3>
+
+<ul>
+<li>There are following pics
+
+<ul>
+<li>the login picture, the registe picture, the personal center picture, the general picture, the shopping picture, the first page picture, the search picture</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Second in the <code>Third Party</code> folder</h3>
+
+<ul>
+<li>mainly used for the ailipay and the shared sdk</li>
+<li>There is a class <code>AGViewDelegate</code> which is used for the sharing</li>
+</ul>
+
+
+<h3>Third in the <code>Section</code> folder</h3>
+
+<ul>
+<li><p>we can see the following</p>
+
+<ul>
+<li>ButtonFactory
+
+<ul>
+<li>ButtonFactory.h</li>
+<li>ButtonFactory.m</li>
+</ul>
+</li>
+<li>Buttons
+
+<ul>
+<li>CreateButton.h</li>
+<li>CreateButton.m</li>
+</ul>
+</li>
+<li>SectionFactory.h</li>
+<li>SectionFactory.m</li>
+<li>ButtonMacro.h</li>
+</ul>
+</li>
+<li><p>And I think this folder is implement the <code>factory mode</code></p></li>
+<li>and most of the button is implement in the <code>CreateButton.m</code> file</li>
+</ul>
+
+
+<h3>Fourth in the <code>Controller</code> folder</h3>
+
+<ul>
+<li>Here comes <code>the most important</code>one</li>
+<li>we can see the following
+
+<ul>
+<li>BaseViewController.h</li>
+<li>BaseViewController.m</li>
+<li>Mediator
+
+<ul>
+<li>CoordinatingController.h</li>
+<li>CoordinatingController.m</li>
+</ul>
+</li>
+<li>login_and_registe
+
+<ul>
+<li>LoginViewController.h</li>
+<li>LoginViewController.m</li>
+<li>LoginViewController.xib</li>
+<li>RegisterVC.h</li>
+<li>RegisterVC.m</li>
+<li>RegisterVC.xib</li>
+<li>FindPasswordVC.h</li>
+<li>FindPasswordVC.m</li>
+<li>FindPasswordVC.xib</li>
+</ul>
+</li>
+<li>first_page
+
+<ul>
+<li>firstpageandmore(is a tableview that used to show more about the product)
+
+<ul>
+<li>MoreProductVC.h</li>
+<li>MoreProductVC.m</li>
+<li>MoreProductVC.xib</li>
+<li>MoreProductCell.xib</li>
+</ul>
+</li>
+<li>shopping()
+
+<ul>
+<li>BuyProductViewController.h</li>
+<li>BuyProductViewController.m</li>
+<li>BuyProductViewController.xib</li>
+<li>BuyProductCollectionViewHeader0.xib</li>
+<li>BuyProductCollectionViewHeader1.xib</li>
+<li>BuyProductCollectionViewHeader2.xib</li>
+<li>BuyProductCollectionViewFooter.xib</li>
+<li>BuyProductViewAttributeCell.xib(those that contrain cell.xib is use to define the layout of the cell of the tableview)</li>
+</ul>
+</li>
+<li>detailsoftheproduct()
+
+<ul>
+<li>GroupBuyItemDetailViewController.h</li>
+<li>GroupBuyItemDetailViewController.m</li>
+<li>GroupBuyItemDetailViewController.xib</li>
+<li>GroupBuyItemDetailCell.xib</li>
+<li>OrdinaryProductDetailCell.xib</li>
+<li>OrdinaryProductAttrCell.xib</li>
+<li>OrdinaryProductCommentCell.xib</li>
+<li>OrdinaryProductCommentExpandCell.xib</li>
+</ul>
+</li>
+<li>tuangou
+
+<ul>
+<li>FlashSaleViewController.h</li>
+<li>FlashSaleViewController.m</li>
+<li>FlashSaleViewController.xib</li>
+<li>FlashSaleItemCell.xib</li>
+<li>GroupBuyCell.xib</li>
+</ul>
+</li>
+<li>preferential_ticket
+
+<ul>
+<li>CouponViewController.h</li>
+<li>CouponViewController.m</li>
+<li>CouponViewController.xib</li>
+<li>CouponCell.xib</li>
+<li>ActivateCouponViewController.h</li>
+<li>ActivateCouponViewController.m</li>
+<li>ActivateCouponViewController.xib</li>
+<li>UsingCouponViewController.h</li>
+<li>UsingCouponViewController.m</li>
+<li>UsingCouponViewController.xib</li>
+<li>SelectCouponCell.xib</li>
+</ul>
+</li>
+<li>HomePageViewController.h</li>
+<li>HomePageViewController.m</li>
+<li>HomePageViewController.xib</li>
+<li>NewProductCollectionView.xib</li>
+<li>HomeCollectionHeader0.xib</li>
+<li>HomeCollectionHeader1.xib</li>
+<li>HomeCollectionHeader2.xib</li>
+<li>OrdinaryProductImageDetailCell.xib</li>
+<li>ProductImageDetailCell.xib</li>
+<li>ProductConstants.h</li>
+</ul>
+</li>
+<li>search
+
+<ul>
+<li>MyCustomerCell.h</li>
+<li>MyCustomerCell.m</li>
+<li>MyCustomerCell.xib</li>
+<li>searchResultViewController.h</li>
+<li>searchResultViewController.m</li>
+<li>searchResultViewcontroller.xib</li>
+<li>ProductSearchViewController.h</li>
+<li>ProductSearchViewController.m</li>
+<li>ProductSearchViewController.xib</li>
+<li>SearchMyProduct.h</li>
+<li>SearchMyProduct.m</li>
+<li>SearchMyProduct.xib</li>
+<li>SelectRequireViewController.h</li>
+<li>SelectRequireViewController.m</li>
+<li>SelectRequireViewController.xib</li>
+<li>searchResultCollectionCell.xib</li>
+<li>searchResultHorizonCell.xib</li>
+<li>UIImage+imageWithColor.h</li>
+<li>UIImage+imageWithColor.m</li>
+<li>SpecificationSelect.h</li>
+<li>SpecificationSelect.m</li>
+<li>SpecificationSelect.xib</li>
+<li>SpecificationSelect.xib</li>
+<li>RefreshFooterView.xib</li>
+</ul>
+</li>
+<li>shoppingcart</li>
+<li>comment_and_share</li>
+<li>me</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Use CocoaPods to Management Dependence in Xcode5]]></title>
@@ -614,116 +843,6 @@ self.window.rootViewController=self.viewController;
 
 <p>@end
 ```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IOS Tutorial 2]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-2/"/>
-    <updated>2014-05-14T16:34:49+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-2</id>
-    <content type="html"><![CDATA[<ul>
-<li>键盘收起以及弹出对话框</li>
-<li>在<code>ViewController.h</code>里面加入<code>-(IBAction)View_TouchDown:(id)sender</code>;</li>
-</ul>
-
-
-<!--more-->
-
-
-<p>```</p>
-
-<h1>import &lt;UIKit/UIKit.h></h1>
-
-<p>@interface ViewController : UIViewController</p>
-
-<p>@property (strong, nonatomic) IBOutlet UITextField *tempText;</p>
-
-<p>&ndash;(IBAction)showMessage;
-&ndash;(IBAction)View_TouchDown:(id)sender;
-@end</p>
-
-<p><code>
-- 在`ViewController.m`里面加入以下代码
-</code>
-&ndash; (IBAction)View_TouchDown:(id)sender
-{</p>
-
-<pre><code>[[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
-</code></pre>
-
-<p>}</p>
-
-<p>```</p>
-
-<ul>
-<li>得到的全部代码如下</li>
-</ul>
-
-
-<p>```</p>
-
-<h1>import &ldquo;ViewController.h&rdquo;</h1>
-
-<p>@interface ViewController ()</p>
-
-<p>@end</p>
-
-<p>@implementation ViewController</p>
-
-<ul>
-<li><p>(void)viewDidLoad
-{
-  [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
-}</p></li>
-<li><p>(void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}</p></li>
-<li><p>(IBAction)showMessage  //弹出对话框
-{
-  UIAlertView *a = [[UIAlertView alloc]
-                    initWithTitle:@&ldquo;I am pb&rdquo; message:@&ldquo;hello world&rdquo; delegate:nil cancelButtonTitle:@&ldquo;I can do it&rdquo; otherButtonTitles: nil];
-  [a show];
-}</p></li>
-<li><p>(IBAction)View_TouchDown:(id)sender
-{
-  [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
-}</p></li>
-</ul>
-
-
-<p>@end</p>
-
-<p>```</p>
-
-<ul>
-<li><p>最后再在storybroad里面用outlet把整个屏幕和<code>View_TouchDown</code>连接起来就可以了</p></li>
-<li><p>Touble shoot</p>
-
-<ul>
-<li>1.出现<code>'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:</code>
-
-<ul>
-<li>说明<code>self.viewController = [[[ViewController alloc] initWithNibName:@"name" bundle:nil] autorelease];</code>
-
-<ul>
-<li>里面的name写错了
-
-<ul>
-<li>要写成和ViewController一样的名字才行。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
 ]]></content>
   </entry>
   

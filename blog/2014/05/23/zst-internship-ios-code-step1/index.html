@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>C Pointer Tutorial (1) - KING</title>
+  <title>Zst Internship IOS Code Step1 - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="First is the basic About # these code are processed by the preprocessor
-After the preprocessor read the code, the preprocessor directives will deal &hellip;">
+  <meta name="description" content="In order to understand better about the code of the project in zst ios project, first list the dir in the huyihui folder image
+Third party
+Sections &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ After the preprocessor read the code, the preprocessor directives will deal &hel
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step1">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -76,7 +77,7 @@ After the preprocessor read the code, the preprocessor directives will deal &hel
   
   <header>
     
-      <h1 class="entry-title">C Pointer Tutorial (1)</h1>
+      <h1 class="entry-title">Zst Internship IOS Code Step1</h1>
     
     
       <p class="meta">
@@ -92,7 +93,7 @@ After the preprocessor read the code, the preprocessor directives will deal &hel
   
 
 
-<time datetime="2014-04-25T13:41:01+08:00" pubdate data-updated="true">Apr 25<span>th</span>, 2014</time>
+<time datetime="2014-05-23T11:47:46+08:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com">Comments</a>
@@ -102,231 +103,223 @@ After the preprocessor read the code, the preprocessor directives will deal &hel
   </header>
 
 
-<div class="entry-content"><h3>First is the basic</h3>
+<div class="entry-content"><h3>In order to understand better about the code of the project in zst ios project, first list the dir</h3>
 
 <ul>
-<li>About <code>#</code>
+<li>in the <code>huyihui</code> folder
 
 <ul>
-<li>these code are processed by the preprocessor</li>
-<li>After the preprocessor read the code, the preprocessor directives will deal with it</li>
-<li>then give the main code that are dealed with by the preprocessor directives to the complier</li>
-<li>like <code>#include &lt;stdio.h&gt;</code>
-
-<ul>
-<li>It means that use the content in the stdio.h to replace the <code>#</code></li>
+<li>image</li>
+<li>Third party</li>
+<li>Sections</li>
+<li>Controller</li>
+<li>Model</li>
+<li>Public</li>
+<li>AppDelegate.h</li>
+<li>AppDelegate.m</li>
+<li>Main.storyboard</li>
+<li>ViewController.h</li>
+<li>ViewController.m</li>
+<li>Images.xcassets</li>
+<li>Supporting Files</li>
+<li>Products</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>About <code>const</code>
-
-<ul>
-<li>the value that is named const can not be modified</li>
-<li>and it would be better to use <code>const</code> than <code>define</code> to define some const value.</li>
-</ul>
-</li>
-<li><p>About passing the value</p>
-
-<ul>
-<li>in C programming language
-
-<ul>
-<li>all the array is passed using <strong>reference</strong>(if the value change in the function, it will change.)</li>
-<li>and all the value and const value are passed using <strong>value</strong>(if the value change in the function, it will <strong>not</strong> change.)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>About string I/O</p>
-
-<ul>
-<li><code>gets</code>
-
-<ul>
-<li>it is used to read a line in the content and store it as a parameter to pass to the array</li>
-<li>the input line contains: a string and a newline</li>
-</ul>
-</li>
-<li><code>puts</code></li>
-</ul>
-</li>
+<li>For the project is nearly finished, so I do not introduce the framework they use.</li>
 </ul>
 
 
 <!--more-->
 
 
-<ul>
-<li>About <code>*</code>
+<h3>First in the <code>Image</code> folder</h3>
 
 <ul>
-<li><strong>the pointer point the address of a value that is stored in the memory</strong></li>
+<li>There are following pics
+
+<ul>
+<li>the login picture, the registe picture, the personal center picture, the general picture, the shopping picture, the first page picture, the search picture</li>
 </ul>
 </li>
 </ul>
 
 
-<h3>data type</h3>
+<h3>Second in the <code>Third Party</code> folder</h3>
 
 <ul>
-<li>In C programming language, there are only 4 basic data type
+<li>mainly used for the ailipay and the shared sdk</li>
+<li>There is a class <code>AGViewDelegate</code> which is used for the sharing</li>
+</ul>
+
+
+<h3>Third in the <code>Section</code> folder</h3>
 
 <ul>
-<li>int, float, pointer and polymerization</li>
+<li><p>we can see the following</p>
+
+<ul>
+<li>ButtonFactory
+
+<ul>
+<li>ButtonFactory.h</li>
+<li>ButtonFactory.m</li>
 </ul>
 </li>
-<li><strong>INT</strong>
+<li>Buttons
 
 <ul>
-<li>contains : char, short, int and long int</li>
-<li>signed and ubsigned</li>
-<li>thr range of the variable</li>
-</ul>
-
-
-<table>
-<thead>
-<tr>
-<th>  type</th>
-<th>range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>  char</td>
-<td>0~127</td>
-</tr>
-<tr>
-<td>  signed char</td>
-<td>-127~127</td>
-</tr>
-<tr>
-<td>  unsigned char</td>
-<td> 0~255</td>
-</tr>
-<tr>
-<td>  short int</td>
-<td>-32767~32767</td>
-</tr>
-<tr>
-<td>  unsigned short int</td>
-<td>0~65535</td>
-</tr>
-<tr>
-<td>  int</td>
-<td>-32767~32767</td>
-</tr>
-<tr>
-<td>  unsigned int</td>
-<td>0~65535</td>
-</tr>
-<tr>
-<td>  long int </td>
-<td>-2147483647~2147483647</td>
-</tr>
-<tr>
-<td>  unsigned long int </td>
-<td> 0~4294967295</td>
-</tr>
-</tbody>
-</table>
-
-
-<ul>
-<li>short int is at least 16 bits</li>
-<li>long int is at least 32 bits</li>
-<li>if the computer is 32 bits then int is 32 bits
-
-<ul>
-<li>else if the computer is 64 bits than the int is 32 bits</li>
+<li>CreateButton.h</li>
+<li>CreateButton.m</li>
 </ul>
 </li>
-<li>The range difference in difference kinds of machine</li>
-</ul>
-
-
-<table>
-<thead>
-<tr>
-<th>  data type</th>
-<th>32 bits compiler</th>
-<th>64 bits compiler</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>  char</td>
-<td>1 byte </td>
-<td> 1 byte</td>
-</tr>
-<tr>
-<td>  char *</td>
-<td>4 bytes</td>
-<td> 8bytes</td>
-</tr>
-<tr>
-<td>  short int</td>
-<td>2 bytes</td>
-<td>2 bytes</td>
-</tr>
-<tr>
-<td>  int</td>
-<td>4 bytes</td>
-<td>4 bytes</td>
-</tr>
-<tr>
-<td>  unsigned int</td>
-<td>4 bytes </td>
-<td> 4 bytes</td>
-</tr>
-<tr>
-<td>  float </td>
-<td> 4 bytes </td>
-<td> 4 bytes</td>
-</tr>
-<tr>
-<td>  double </td>
-<td> 8 bytes </td>
-<td> 8 bytes</td>
-</tr>
-<tr>
-<td>  long </td>
-<td> 4 bytes </td>
-<td> 4 bytes</td>
-</tr>
-<tr>
-<td>  long long </td>
-<td> 8 bytes </td>
-<td> 8 bytes</td>
-</tr>
-<tr>
-<td>  unsigned long </td>
-<td> 4 bytes </td>
-<td> 8 bytes </td>
-</tr>
-</tbody>
-</table>
-
-
-<ul>
-<li>use <code>sizeof(data type)</code> to get the length of the data type</li>
-<li>add <code>0</code> before number to make it octal number</li>
-<li>add <code>0x</code> before number to make it hexadecimal number</li>
-<li>add <code>L</code> before character to make it wider charactor literal(it the environment support)
-
-<ul>
-<li>e.g <code>L'X'</code></li>
+<li>SectionFactory.h</li>
+<li>SectionFactory.m</li>
+<li>ButtonMacro.h</li>
 </ul>
 </li>
+<li><p>And I think this folder is implement the <code>factory mode</code></p></li>
+<li>and most of the button is implement in the <code>CreateButton.m</code> file</li>
 </ul>
-</li>
-<li><strong>FLOAT</strong>
+
+
+<h3>Fourth in the <code>Controller</code> folder</h3>
 
 <ul>
-<li>contains : float, double, long double</li>
-<li>range : 10^-37 ~ 10<sup>37</sup></li>
-<li>in</li>
+<li>Here comes <code>the most important</code>one</li>
+<li>we can see the following
+
+<ul>
+<li>BaseViewController.h</li>
+<li>BaseViewController.m</li>
+<li>Mediator
+
+<ul>
+<li>CoordinatingController.h</li>
+<li>CoordinatingController.m</li>
+</ul>
+</li>
+<li>login_and_registe
+
+<ul>
+<li>LoginViewController.h</li>
+<li>LoginViewController.m</li>
+<li>LoginViewController.xib</li>
+<li>RegisterVC.h</li>
+<li>RegisterVC.m</li>
+<li>RegisterVC.xib</li>
+<li>FindPasswordVC.h</li>
+<li>FindPasswordVC.m</li>
+<li>FindPasswordVC.xib</li>
+</ul>
+</li>
+<li>first_page
+
+<ul>
+<li>firstpageandmore(is a tableview that used to show more about the product)
+
+<ul>
+<li>MoreProductVC.h</li>
+<li>MoreProductVC.m</li>
+<li>MoreProductVC.xib</li>
+<li>MoreProductCell.xib</li>
+</ul>
+</li>
+<li>shopping()
+
+<ul>
+<li>BuyProductViewController.h</li>
+<li>BuyProductViewController.m</li>
+<li>BuyProductViewController.xib</li>
+<li>BuyProductCollectionViewHeader0.xib</li>
+<li>BuyProductCollectionViewHeader1.xib</li>
+<li>BuyProductCollectionViewHeader2.xib</li>
+<li>BuyProductCollectionViewFooter.xib</li>
+<li>BuyProductViewAttributeCell.xib(those that contrain cell.xib is use to define the layout of the cell of the tableview)</li>
+</ul>
+</li>
+<li>detailsoftheproduct()
+
+<ul>
+<li>GroupBuyItemDetailViewController.h</li>
+<li>GroupBuyItemDetailViewController.m</li>
+<li>GroupBuyItemDetailViewController.xib</li>
+<li>GroupBuyItemDetailCell.xib</li>
+<li>OrdinaryProductDetailCell.xib</li>
+<li>OrdinaryProductAttrCell.xib</li>
+<li>OrdinaryProductCommentCell.xib</li>
+<li>OrdinaryProductCommentExpandCell.xib</li>
+</ul>
+</li>
+<li>tuangou
+
+<ul>
+<li>FlashSaleViewController.h</li>
+<li>FlashSaleViewController.m</li>
+<li>FlashSaleViewController.xib</li>
+<li>FlashSaleItemCell.xib</li>
+<li>GroupBuyCell.xib</li>
+</ul>
+</li>
+<li>preferential_ticket
+
+<ul>
+<li>CouponViewController.h</li>
+<li>CouponViewController.m</li>
+<li>CouponViewController.xib</li>
+<li>CouponCell.xib</li>
+<li>ActivateCouponViewController.h</li>
+<li>ActivateCouponViewController.m</li>
+<li>ActivateCouponViewController.xib</li>
+<li>UsingCouponViewController.h</li>
+<li>UsingCouponViewController.m</li>
+<li>UsingCouponViewController.xib</li>
+<li>SelectCouponCell.xib</li>
+</ul>
+</li>
+<li>HomePageViewController.h</li>
+<li>HomePageViewController.m</li>
+<li>HomePageViewController.xib</li>
+<li>NewProductCollectionView.xib</li>
+<li>HomeCollectionHeader0.xib</li>
+<li>HomeCollectionHeader1.xib</li>
+<li>HomeCollectionHeader2.xib</li>
+<li>OrdinaryProductImageDetailCell.xib</li>
+<li>ProductImageDetailCell.xib</li>
+<li>ProductConstants.h</li>
+</ul>
+</li>
+<li>search
+
+<ul>
+<li>MyCustomerCell.h</li>
+<li>MyCustomerCell.m</li>
+<li>MyCustomerCell.xib</li>
+<li>searchResultViewController.h</li>
+<li>searchResultViewController.m</li>
+<li>searchResultViewcontroller.xib</li>
+<li>ProductSearchViewController.h</li>
+<li>ProductSearchViewController.m</li>
+<li>ProductSearchViewController.xib</li>
+<li>SearchMyProduct.h</li>
+<li>SearchMyProduct.m</li>
+<li>SearchMyProduct.xib</li>
+<li>SelectRequireViewController.h</li>
+<li>SelectRequireViewController.m</li>
+<li>SelectRequireViewController.xib</li>
+<li>searchResultCollectionCell.xib</li>
+<li>searchResultHorizonCell.xib</li>
+<li>UIImage+imageWithColor.h</li>
+<li>UIImage+imageWithColor.m</li>
+<li>SpecificationSelect.h</li>
+<li>SpecificationSelect.m</li>
+<li>SpecificationSelect.xib</li>
+<li>SpecificationSelect.xib</li>
+<li>RefreshFooterView.xib</li>
+</ul>
+</li>
+<li>shoppingcart</li>
+<li>comment_and_share</li>
+<li>me</li>
 </ul>
 </li>
 </ul>
@@ -353,12 +346,12 @@ After the preprocessor read the code, the preprocessor directives will deal &hel
   
 
 
-<time datetime="2014-04-25T13:41:01+08:00" pubdate data-updated="true">Apr 25<span>th</span>, 2014</time>
+<time datetime="2014-05-23T11:47:46+08:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/c-slash-c-plus-plus/'>c/c++</a>
+    <a class='category' href='/blog/categories/ios/'>IOS</a>
   
 </span>
 
@@ -374,10 +367,8 @@ After the preprocessor read the code, the preprocessor directives will deal &hel
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/04/20/blog-on-github-page/" title="Previous Post: Blog on github page">&laquo; Blog on github page</a>
+        <a class="basic-alignment left" href="/blog/2014/05/20/use-cocoapods-to-management-dependence-in-xcode5/" title="Previous Post: use CocoaPods to management dependence in xcode5">&laquo; use CocoaPods to management dependence in xcode5</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/05/03/basic-idea-of-mvc/" title="Next Post: Basic idea of MVC">Basic idea of MVC &raquo;</a>
       
     </p>
   </footer>
@@ -516,8 +507,8 @@ ds.charset = 'UTF-8';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step1/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step1/';
         var disqus_script = 'embed.js';
       
     (function () {
