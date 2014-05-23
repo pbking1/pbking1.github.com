@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T17:22:55+08:00</updated>
+  <updated>2014-05-23T17:24:31+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -36,14 +36,7 @@
 <li>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m
 
 <ul>
-<li>add the following code
-```
-else if (_type == BACKTOMAINPAGE)
-{
-self.frame = CGRectMake(50, 50, 40, 44);
-[self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateNormal];
-[self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateHighlighted];
-}</li>
+<li>add the following code</li>
 </ul>
 </li>
 </ul>
@@ -52,16 +45,33 @@ self.frame = CGRectMake(50, 50, 40, 44);
 </li>
 </ul>
 
+
+<p>```
+else if (_type == BACKTOMAINPAGE)
+{</p>
+
+<pre><code>self.frame = CGRectMake(50, 50, 40, 44);
+[self setTitle:@"返回主页" forState:UIControlStateNormal];
+[self setTitle:@"返回主页" forState:UIControlStateHighlighted];
+</code></pre>
+
+<p>}</p>
 
 <p>```</p>
 
 <!--more-->
 
 
-<pre><code>    - go to Controller -&gt; 我 -&gt; 应用推荐 -&gt; OrderDetailViewController.m
-        - and this is create a button on the right top corner and its function is to went back to the mainpage
-        - add the following code in `viewdidload` function
-</code></pre>
+<ul>
+<li>go to Controller &ndash;> 我 &ndash;> 应用推荐 &ndash;> OrderDetailViewController.m
+
+<ul>
+<li>and this is create a button on the right top corner and its function is to went back to the mainpage</li>
+<li>add the following code in <code>viewdidload</code> function</li>
+</ul>
+</li>
+</ul>
+
 
 <p>```</p>
 
@@ -73,11 +83,11 @@ self.navigationItem.rightBarButtonItem = rightBarItem;
 [rightBarItem release];
 </code></pre>
 
-<p>```</p>
+<p><code>``
+- add a new function called</code>gobacktomain`</p>
 
-<pre><code>    - add a new function called `gobacktomain`
-        - this is a selector that used to find the main viewcontroller and jump to it.
-        - the code in it is
+<pre><code>- this is a selector that used to find the main viewcontroller and jump to it.
+- the code in it is
 </code></pre>
 
 <p>```</p>
