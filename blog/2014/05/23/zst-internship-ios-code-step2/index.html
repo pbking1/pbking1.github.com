@@ -116,7 +116,7 @@
 <li>add <code>#define BACKTOMAINPAGE 13</code> at the end</li>
 </ul>
 </li>
-<li><p>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m</p>
+<li>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m
 
 <ul>
 <li>add the following code</li>
@@ -131,57 +131,47 @@
       [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
   }
  </code></p></li>
-<li><p>go to Controller &ndash;> 我 &ndash;> 应用推荐 &ndash;> OrderDetailViewController.m</p>
-
-<ul>
-<li>and this is create a button on the right top corner and its function is to went back to the mainpage</li>
-<li>add the following code in <code>viewdidload</code> function</li>
-</ul>
-
-
-<p>  <code>
-  ButtonFactory *buttonFactory = [ButtonFactory factory];
-  UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
-  [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
-  UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-  self.navigationItem.rightBarButtonItem = rightBarItem;
-  [rightBarItem release];
- </code></p>
-
-<ul>
-<li>add a new function called <code>gobacktomain</code>
-
-<ul>
-<li>this is a selector that used to find the main viewcontroller and jump to it.</li>
-<li>the code in it is</li>
-</ul>
-
-
-<p>  &#8220;`</p>
-
-<ul>
-<li>(void)gobacktomain:(id)paramSender{
-  UIViewController <em>target = nil;
-  for(UIViewController </em>controller in self.navigationController.viewControllers){
-      if([controller isKindOfClass:[HomePageViewController class]]){
-          target = controller;
-      }
-  }
-  if(target){
-      [self.navigationController popToViewController:target animated:YES];
-  }
-}
-&#8220;`</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 
+
+<!--more-->
+
+
+<pre><code>    - go to Controller -&gt; 我 -&gt; 应用推荐 -&gt; OrderDetailViewController.m
+        - and this is create a button on the right top corner and its function is to went back to the mainpage
+        - add the following code in `viewdidload` function
+
+        ```
+        ButtonFactory *buttonFactory = [ButtonFactory factory];
+        UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
+        [rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+        self.navigationItem.rightBarButtonItem = rightBarItem;
+        [rightBarItem release];
+        ```
+
+        - add a new function called `gobacktomain`
+            - this is a selector that used to find the main viewcontroller and jump to it.
+            - the code in it is
+
+            ```
+            - (void)gobacktomain:(id)paramSender{
+                UIViewController *target = nil;
+                for(UIViewController *controller in self.navigationController.viewControllers){
+                    if([controller isKindOfClass:[HomePageViewController class]]){
+                        target = controller;
+                    }
+                }
+                if(target){
+                    [self.navigationController popToViewController:target animated:YES];
+                }
+            }
+            ```
+</code></pre>
 </div>
 
 
