@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Internship | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/internship/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T17:17:57+08:00</updated>
+  <updated>2014-05-23T17:18:59+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -39,13 +39,13 @@
 <li>add the following code
 
 <ul>
-<li><p>```
+<li>```
 else if (_type == BACKTOMAINPAGE)
 {
   self.frame = CGRectMake(50, 50, 40, 44);
   [self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateNormal];
   [self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateHighlighted];
-}</p></li>
+}</li>
 </ul>
 
 
