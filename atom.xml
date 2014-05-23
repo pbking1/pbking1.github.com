@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T17:18:59+08:00</updated>
+  <updated>2014-05-23T17:20:12+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -36,20 +36,7 @@
 <li>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m
 
 <ul>
-<li>add the following code
-
-<ul>
-<li>&#8220;`
-else if (_type == BACKTOMAINPAGE)
-{
-  self.frame = CGRectMake(50, 50, 40, 44);
-  [self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateNormal];
-  [self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateHighlighted];
-}</li>
-</ul>
-
-
-<p>  &#8220;`</p></li>
+<li>add the following code</li>
 </ul>
 </li>
 </ul>
@@ -57,6 +44,23 @@ else if (_type == BACKTOMAINPAGE)
 </ul>
 </li>
 </ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>         else if (_type == BACKTOMAINPAGE) 
+</span><span class='line'>          {
+</span><span class='line'>              self.frame = CGRectMake(50, 50, 40, 44);
+</span><span class='line'>              [self setTitle:@"返回主页" forState:UIControlStateNormal];
+</span><span class='line'>              [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
+</span><span class='line'>          }
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 
 <!--more-->

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T17:18:59+08:00</updated>
+  <updated>2014-05-23T17:20:12+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -37,19 +37,13 @@
 
 <ul>
 <li>add the following code
-
-<ul>
-<li>```
-else if (_type == BACKTOMAINPAGE)
-{
-  self.frame = CGRectMake(50, 50, 40, 44);
-  [self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateNormal];
-  [self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateHighlighted];
-}</li>
-</ul>
-
-
-<p>  ```</p></li>
+```
+  else if (_type == BACKTOMAINPAGE)
+  {
+      self.frame = CGRectMake(50, 50, 40, 44);
+      [self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateNormal];
+      [self setTitle:@&ldquo;返回主页&rdquo; forState:UIControlStateHighlighted];
+  }</li>
 </ul>
 </li>
 </ul>
@@ -58,6 +52,8 @@ else if (_type == BACKTOMAINPAGE)
 </li>
 </ul>
 
+
+<p>```</p>
 
 <!--more-->
 
