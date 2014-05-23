@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T15:37:40+08:00</updated>
+  <updated>2014-05-23T15:41:09+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -50,6 +50,7 @@ else if (_type == BACKTOMAINPAGE)  //?
 <li>go to Controller &ndash;> 我 &ndash;> 应用推荐 &ndash;> OrderDetailViewController.m
 
 <ul>
+<li>and this is create a button on the right top corner and its function is to went back to the mainpage</li>
 <li><p>add the following code in <code>viewdidload</code> function
 <code>
 ButtonFactory *buttonFactory = [ButtonFactory factory];
@@ -62,6 +63,7 @@ self.navigationItem.rightBarButtonItem = rightBarItem;
 <li><p>add a new function called <code>gobacktomain</code></p>
 
 <ul>
+<li>this is a selector that used to find the main viewcontroller and jump to it.</li>
 <li>the code in it is
 ```</li>
 <li>(void)gobacktomain:(id)paramSender{

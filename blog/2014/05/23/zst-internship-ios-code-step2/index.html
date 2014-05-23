@@ -133,6 +133,7 @@ else if (_type == BACKTOMAINPAGE)  //?
 <li>go to Controller &ndash;> 我 &ndash;> 应用推荐 &ndash;> OrderDetailViewController.m
 
 <ul>
+<li>and this is create a button on the right top corner and its function is to went back to the mainpage</li>
 <li><p>add the following code in <code>viewdidload</code> function
 <code>
 ButtonFactory *buttonFactory = [ButtonFactory factory];
@@ -145,6 +146,7 @@ self.navigationItem.rightBarButtonItem = rightBarItem;
 <li><p>add a new function called <code>gobacktomain</code></p>
 
 <ul>
+<li>this is a selector that used to find the main viewcontroller and jump to it.</li>
 <li>the code in it is
 &#8220;`</li>
 <li>(void)gobacktomain:(id)paramSender{
