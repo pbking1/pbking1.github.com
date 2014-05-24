@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Machine_learning | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/machine-learning/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-23T17:24:31+08:00</updated>
+  <updated>2014-05-24T10:37:16+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Intro to Recommandation System]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/24/intro-to-recommandation-system/"/>
+    <updated>2014-05-24T10:32:15+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/24/intro-to-recommandation-system</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Linear_regression_tutorial]]></title>
