@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-25T15:07:25+08:00</updated>
+  <updated>2014-05-26T09:53:12+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -18,21 +18,18 @@
     <link href="http://pbking1.github.com/blog/2014/05/24/intro-to-recommandation-system/"/>
     <updated>2014-05-24T10:32:15+08:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/24/intro-to-recommandation-system</id>
-    <content type="html"><![CDATA[<ul>
-<li>Problem formulation
+    <content type="html"><![CDATA[<h3>Problem formulation</h3>
 
-<ul>
-<li>可能会有99%的数据是不知道的（用问号表示）</li>
-<li>因此可以去猜那些不知道的数据是多少</li>
-<li>然后把得分最高的电影推荐给他就可以了</li>
-<li>所以其实是一个矩阵补全系统</li>
-</ul>
-</li>
-</ul>
-
+<pre><code>可能会有99%的数据是不知道的（用问号表示）
+因此可以去猜那些不知道的数据是多少
+然后把得分最高的电影推荐给他就可以了
+所以其实是一个矩阵补全系统
+</code></pre>
 
 <!--more-->
 
+
+<h3>基本思想和方法</h3>
 
 <ul>
 <li><p>基于人口统计学的推荐系统</p>
@@ -96,6 +93,24 @@
 
 <ul>
 <li>通过计算两个向量之间的夹角的余弦值来计算物品之间的相似性</li>
+<li>公式为
+
+<ul>
+<li><img src="http://pbking1.github.com/images/recommander_system/1.png"></li>
+</ul>
+</li>
+<li>这个算法也有改进版（修正的余弦相似性）
+
+<ul>
+<li>由于余弦相似度度量方法中没有考虑到不同用户的评分尺寸问题，修正的余弦相似性度量方法通过减去用户对项目的平均评分来改善上述缺陷。</li>
+<li>公式为
+
+<ul>
+<li><img src="http://pbking1.github.com/images/recommander_system/2.png"></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>基于关联的相似度计算
@@ -112,7 +127,29 @@
 </li>
 </ul>
 </li>
-<li><p>其中一种实现</p>
+<li><p>预测值的计算</p>
+
+<ul>
+<li>根据之前计算好的物品之间的相似度，接下来对用户未打分的物品进行预测，有两种预测方法。
+
+<ul>
+<li>1.加权求和
+
+<ul>
+<li>通过公式
+
+<ul>
+<li><img src="http://pbking1.github.com/images/recommander_system/3.png"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.回归</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>推荐系统的其中一种实现</p>
 
 <ul>
 <li>1.建立物品的同现矩阵
@@ -132,6 +169,21 @@
 </li>
 </ul>
 </li>
+</ul>
+
+
+<h3>源码</h3>
+
+<ul>
+<li>to be continued&hellip;</li>
+</ul>
+
+
+<h3>参考文献</h3>
+
+<ul>
+<li>《基于项目评分预测的协同过滤推荐算法》 邓爱林</li>
+<li>相似度计算 <a href="http://blog.sina.com.cn/s/blog_7e11a6260101l9iq.html">http://blog.sina.com.cn/s/blog_7e11a6260101l9iq.html</a></li>
 </ul>
 
 ]]></content>
