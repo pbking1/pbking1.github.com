@@ -10,13 +10,9 @@
 
   
   <meta name="description" content="
-genentic algorithm
-是一种由进化的灵感的来的算法，基于生物进化的机制
-可用于解决类似于单染色体类型的数据结构
-也可以被视为函数优化器
-适合于使用大型潜在的搜索空间并且引导他们。并且找到最优的组合。
-由john Holland提出的
-可以为优化和机器学习提供便捷有效的方法 ">
+其实和标准的PSO是一样的
+只是初始种群是不一样的 假设标准版的种群大小是100的话，那么
+这个版本是把100分成10份，然后再对每一份使用标准版的算法 因此这两个算法本质上没有区别，只是初始种群大小不一样而已 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +75,61 @@ genentic algorithm
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/">CPSO-Sk 的实现(1)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-09T00:36:53+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>其实和标准的PSO是一样的</li>
+<li><p>只是初始种群是不一样的</p>
+
+<ul>
+<li>假设标准版的种群大小是100的话，那么</li>
+<li>这个版本是把100分成10份，然后再对每一份使用标准版的算法</li>
+</ul>
+</li>
+<li><p>因此这两个算法本质上没有区别，只是初始种群大小不一样而已</p></li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/">Read more</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -201,6 +252,10 @@ genentic algorithm
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/26/the-way-to-use-sysu-vpn-at-home/">The Way to Use SYSU Vpn at Home</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/24/intro-to-recommandation-system/">Intro to Recommandation System</a>
       </li>
     
@@ -216,10 +271,6 @@ genentic algorithm
         <a href="/blog/2014/05/20/use-cocoapods-to-management-dependence-in-xcode5/">Use CocoaPods to Management Dependence in Xcode5</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/05/20/build-a-xib-program-in-xcode5/">Build a Xib Program in Xcode5</a>
-      </li>
-    
   </ul>
 </section>
 <section> 
@@ -232,6 +283,7 @@ genentic algorithm
 <li class='category'><a href='/blog/categories/internship/'>Internship (1)</a></li>
 <li class='category'><a href='/blog/categories/interview/'>Interview (2)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
+<li class='category'><a href='/blog/categories/network/'>Network (1)</a></li>
 <li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>Octopress (2)</a></li>
 <li class='category'><a href='/blog/categories/robot/'>Robot (2)</a></li>
@@ -261,7 +313,7 @@ ds.charset = 'UTF-8';
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+31.25%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+8.75%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+8.75%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+8.75%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+8.75%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+8.75%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+12.5%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+16.25%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+20.0%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+12.5%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+8.75%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fothers%27+style%3D%27font-size%3A+8.75%25%27%3Eothers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+12.5%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+16.25%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+8.75%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+31.25%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+8.75%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+8.75%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+8.75%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+8.75%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+8.75%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+12.5%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+16.25%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+20.0%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+8.75%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+12.5%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+8.75%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fothers%27+style%3D%27font-size%3A+8.75%25%27%3Eothers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+12.5%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+16.25%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+8.75%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 

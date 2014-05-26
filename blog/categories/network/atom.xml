@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Network | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/network/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-05-26T10:16:45+08:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Way to Use SYSU Vpn at Home]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/26/the-way-to-use-sysu-vpn-at-home/"/>
+    <updated>2014-05-26T10:11:49+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/26/the-way-to-use-sysu-vpn-at-home</id>
+    <content type="html"><![CDATA[<h3>中山大学校园VPN的使用方法</h3>
+
+<ul>
+<li>使用SSL VPN时，它不需安装配置客户端软件，就像平时上网一样，校园网用户在校外的网络（校内的网络不能使用）可通过浏览器登录：</li>
+</ul>
+
+
+<!--more-->
+
+
+<pre><code>- 网址：https://sslvpn.sysu.org.cn
+</code></pre>
+
+<ul>
+<li><p>在弹出的认证页面中输入NetID及密码（到网络中心申请NetID和密码）、完成身份认证后便可使用SSL VPN隧道服务。学生用户开通校园网（已缴纳网络使用费）后即可获VPN增值服务。</p></li>
+<li><p>注销SSL VPN有两种方式：一是直接在SSL VPN 登录界面中点击“注销”即可（注意：直接关闭网页，SSL VPN不会自动注销）。二是在桌面的任务栏中对"SSL VPN 系统托盘"图标点击鼠标右键，然后选择“退出”即可注销SSL VPN。</p></li>
+</ul>
+
+
+<h3>注意事项</h3>
+
+<ul>
+<li>使用前要确保账户有钱</li>
+<li>退出时记得注销账户</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
