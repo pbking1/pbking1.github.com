@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-26T10:16:45+08:00</updated>
+  <updated>2014-05-26T18:02:56+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,205 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[KNN in Matlab(knnclassify)]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify/"/>
+    <updated>2014-05-26T17:55:05+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify</id>
+    <content type="html"><![CDATA[<ul>
+<li>refer from
+
+<ul>
+<li><a href="http://blog.csdn.net/boyxiaolong/article/details/7062394">http://blog.csdn.net/boyxiaolong/article/details/7062394</a></li>
+<li><a href="http://blog.csdn.net/aladdina/article/details/4141127">http://blog.csdn.net/aladdina/article/details/4141127</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>What is KNN</h3>
+
+<ul>
+<li>simlpy, a method use to classify or regression</li>
+<li>idea
+
+<ul>
+<li>如果一个样本在特征空间中的k个最相 似(即特征空间中最邻近)的样本中的大多数属于某一个类别，则该样本也属于这个类别。</li>
+</ul>
+</li>
+<li>KNN算法不仅可以用于分类，还可以用于回归。通过找出一个样本的k个最近邻居，将这些邻居的属性的平均值赋给该样本，就可以得到该样本的属性。更有用的方法是将不同距离的邻居对该样本产生的影响给予不同的权值(weight)，如权值与距离成正比。</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3><code>knnclassify</code> in matlab</h3>
+
+<ul>
+<li>sample</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>train_data = load('train.csv');
+</span><span class='line'>test_data = load('test.csv');
+</span><span class='line'>
+</span><span class='line'>X = train_data(:, 3:3074);
+</span><span class='line'>Y = train_data(:, 2);
+</span><span class='line'>x = test_data(:, 2:3073);
+</span><span class='line'>
+</span><span class='line'>label = knnclassify(x,X,Y,10,'cosine','random');</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>knnclassify(test_data,train_data,train_label,numberoflabel,&lsquo;cosine&rsquo;,&lsquo;random&rsquo;);</li>
+</ul>
+
+
+<h3>main function</h3>
+
+<ul>
+<li>1.CLASS = KNNCLASSIFY(SAMPLE,TRAINING,GROUP)
+
+<ul>
+<li>标号和训练数据必须有相同的行数；训练数据和测试数据必须有相同的列；函数对于无效值或者空值会作为丢失值或者忽略这一行。</li>
+</ul>
+</li>
+<li>2.CLASS = KNNCLASSIFY(SAMPLE,TRAINING,GROUP,K)
+
+<ul>
+<li>此函数允许你设置距离矩阵形式，如：
+
+<ul>
+<li>&lsquo;euclidean&rsquo;    欧氏距离，默认的</li>
+<li>&lsquo;cityblock&rsquo;    绝对差的和</li>
+<li>&lsquo;cosine&rsquo;     角度距离</li>
+<li>&lsquo;correlation&rsquo; 相关距离</li>
+<li>&lsquo;Hamming&rsquo;      汉明距离</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.CLASS =KNNCLASSIFY(SAMPLE,TRAINING,GROUP,K,DISTANCE,RULE)
+
+<ul>
+<li>本函数允许你选择如何对样本进行分类，如你可以选择：
+
+<ul>
+<li>&lsquo;nearest&rsquo;  最近的K个的最多数</li>
+<li>&lsquo;random&rsquo;    随机的最多数</li>
+<li>&lsquo;consensus&rsquo; 投票法，默认的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Quick Black Box Testing on App]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/26/quick-black-box-testing-on-app/"/>
+    <updated>2014-05-26T14:39:28+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/26/quick-black-box-testing-on-app</id>
+    <content type="html"><![CDATA[<h3>some quick black box testing tools</h3>
+
+<ul>
+<li>calabash</li>
+<li>appium</li>
+<li>appgrader</li>
+<li>monkey(adb 自带)</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>and if you want to install app on the blue stack simulater</h3>
+
+<ul>
+<li>use SnapPea_apk_installer</li>
+<li><a href="http://mac.softpedia.com/dyn-postdownload.php?p=133201&amp;t=0&amp;i=1">http://mac.softpedia.com/dyn-postdownload.php?p=133201&amp;t=0&amp;i=1</a></li>
+</ul>
+
+
+<h3>appium</h3>
+
+<ul>
+<li>how to install
+
+<ul>
+<li><code>brew install node</code>      # get node.js</li>
+<li><code>npm install -g appium</code> # get appium</li>
+<li><code>npm install wd</code>        # get appium client</li>
+<li><code>appium &amp;</code>              # start appium</li>
+<li><code>node your-appium-test.js</code></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>monkey</h3>
+
+<ul>
+<li><p>Monkey测试是Android平台下自动化测试的一种快速有效的手段，通过Monkey工具可以模拟用户触摸屏幕、滑动轨迹球、按键等操作来对模拟器或者手机设备上的软件进行压力测试，检测该软件的稳定性、健壮性。它的原理是向系统发送伪随机的用户事件流（如按键输入、触摸输入、手势输入等），实现对正在开发的应用程序进行压力测试。</p></li>
+<li><p>Monkey的特性
+ -（1）测试的对象仅为应用程序包（apk包），有一定的局限性；
+ -（2）Monkey测试使用的事件流数据流是随机的，不能进行自定义；
+ -（3）可对MonkeyTest的对象、事件数量、类型、频率等进行设置。</p></li>
+<li><p>Monkey测试的停止条件
+  -（1）如果先顶了Monkey运行在一个或几个特定的包上，那么它会检测试图转到它包的操作，并对其进行阻止；
+  -（2）如果应用程序崩溃或接收到任何失控异常，Monkey将停止并报错；
+  -（3）如果应用程序产生了应用程序不响应（application not responding）的错误，Monkey将会停止并报错。
+通过多次并且不同设定下的Monkey测试才算它是一个稳定性和健壮性足够的程序。</p></li>
+<li><p>随着测试的深入，我们需要忽略App的崩溃（App的崩溃会导致Monkey测试的停止），而不是停住，monkey同样能做到。&mdash;ignore crashes
+甚至，它还能生成profiling报告。 &mdash;hprof</p></li>
+<li><p>Monkey具体参数的设定可参考：</p>
+
+<ul>
+<li><a href="http://developer.android.com/tools/help/monkey.html">http://developer.android.com/tools/help/monkey.html</a></li>
+</ul>
+</li>
+<li><p>使用方法</p>
+
+<ul>
+<li>本方法基于mac上的bluestack模拟器</li>
+<li>1.首先打开bluestack模拟器，然后进行<code>adb connect localhost:10001</code></li>
+<li>2.显示连接上了之后，使用SnapPea_APK_Installer安装需要测试的apk</li>
+<li>3.然后成功安装上之后。由于需要知道应用程序的主Activity，则用<code>adb shell</code>进入模拟器的系统，然后再<code>data/data</code>里面看名字，但是由于bluestack没有破解，所以权限不够，看不了</li>
+<li>4.因此，用命令<code>adb shell monkey 100</code>,让他随机测一下，然后看看报的主程序名字是什么。
+
+<ul>
+<li>adb shell monkey [options]
+
+<ul>
+<li>如果不指定options，Monkey将以无反馈模式启动，并把事件任意发送到安装在目标环境中的全部包。下面是一个更为典型的命令行示例，它启动指定的应用程序，并向其发送1000个伪随机事件：</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>5.再用<code>adb shell monkey -p com.baofood -v 1000000 -hprof</code>去测试
+
+<ul>
+<li>monkey -p（package的意思）  指定文件名 -v（测试的次数和频率） number（次数）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Way to Use SYSU Vpn at Home]]></title>
@@ -3490,337 +3689,6 @@ gradient boosted decision trees
 </ul>
 </li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[C Pointer Tutorial (1)]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1/"/>
-    <updated>2014-04-25T13:41:01+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1</id>
-    <content type="html"><![CDATA[<h3>First is the basic</h3>
-
-<ul>
-<li>About <code>#</code>
-
-<ul>
-<li>these code are processed by the preprocessor</li>
-<li>After the preprocessor read the code, the preprocessor directives will deal with it</li>
-<li>then give the main code that are dealed with by the preprocessor directives to the complier</li>
-<li>like <code>#include &lt;stdio.h&gt;</code>
-
-<ul>
-<li>It means that use the content in the stdio.h to replace the <code>#</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>About <code>const</code>
-
-<ul>
-<li>the value that is named const can not be modified</li>
-<li>and it would be better to use <code>const</code> than <code>define</code> to define some const value.</li>
-</ul>
-</li>
-<li><p>About passing the value</p>
-
-<ul>
-<li>in C programming language
-
-<ul>
-<li>all the array is passed using <strong>reference</strong>(if the value change in the function, it will change.)</li>
-<li>and all the value and const value are passed using <strong>value</strong>(if the value change in the function, it will <strong>not</strong> change.)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>About string I/O</p>
-
-<ul>
-<li><code>gets</code>
-
-<ul>
-<li>it is used to read a line in the content and store it as a parameter to pass to the array</li>
-<li>the input line contains: a string and a newline</li>
-</ul>
-</li>
-<li><code>puts</code></li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li>About <code>*</code>
-
-<ul>
-<li><strong>the pointer point the address of a value that is stored in the memory</strong></li>
-</ul>
-</li>
-</ul>
-
-
-<h3>data type</h3>
-
-<ul>
-<li>In C programming language, there are only 4 basic data type
-
-<ul>
-<li>int, float, pointer and polymerization</li>
-</ul>
-</li>
-<li><strong>INT</strong>
-
-<ul>
-<li>contains : char, short, int and long int</li>
-<li>signed and ubsigned</li>
-<li>thr range of the variable</li>
-</ul>
-
-
-<table>
-<thead>
-<tr>
-<th>  type</th>
-<th>range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>  char</td>
-<td>0~127</td>
-</tr>
-<tr>
-<td>  signed char</td>
-<td>-127~127</td>
-</tr>
-<tr>
-<td>  unsigned char</td>
-<td> 0~255</td>
-</tr>
-<tr>
-<td>  short int</td>
-<td>-32767~32767</td>
-</tr>
-<tr>
-<td>  unsigned short int</td>
-<td>0~65535</td>
-</tr>
-<tr>
-<td>  int</td>
-<td>-32767~32767</td>
-</tr>
-<tr>
-<td>  unsigned int</td>
-<td>0~65535</td>
-</tr>
-<tr>
-<td>  long int </td>
-<td>-2147483647~2147483647</td>
-</tr>
-<tr>
-<td>  unsigned long int </td>
-<td> 0~4294967295</td>
-</tr>
-</tbody>
-</table>
-
-
-<ul>
-<li>short int is at least 16 bits</li>
-<li>long int is at least 32 bits</li>
-<li>if the computer is 32 bits then int is 32 bits
-
-<ul>
-<li>else if the computer is 64 bits than the int is 32 bits</li>
-</ul>
-</li>
-<li>The range difference in difference kinds of machine</li>
-</ul>
-
-
-<table>
-<thead>
-<tr>
-<th>  data type</th>
-<th>32 bits compiler</th>
-<th>64 bits compiler</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>  char</td>
-<td>1 byte </td>
-<td> 1 byte</td>
-</tr>
-<tr>
-<td>  char *</td>
-<td>4 bytes</td>
-<td> 8bytes</td>
-</tr>
-<tr>
-<td>  short int</td>
-<td>2 bytes</td>
-<td>2 bytes</td>
-</tr>
-<tr>
-<td>  int</td>
-<td>4 bytes</td>
-<td>4 bytes</td>
-</tr>
-<tr>
-<td>  unsigned int</td>
-<td>4 bytes </td>
-<td> 4 bytes</td>
-</tr>
-<tr>
-<td>  float </td>
-<td> 4 bytes </td>
-<td> 4 bytes</td>
-</tr>
-<tr>
-<td>  double </td>
-<td> 8 bytes </td>
-<td> 8 bytes</td>
-</tr>
-<tr>
-<td>  long </td>
-<td> 4 bytes </td>
-<td> 4 bytes</td>
-</tr>
-<tr>
-<td>  long long </td>
-<td> 8 bytes </td>
-<td> 8 bytes</td>
-</tr>
-<tr>
-<td>  unsigned long </td>
-<td> 4 bytes </td>
-<td> 8 bytes </td>
-</tr>
-</tbody>
-</table>
-
-
-<ul>
-<li>use <code>sizeof(data type)</code> to get the length of the data type</li>
-<li>add <code>0</code> before number to make it octal number</li>
-<li>add <code>0x</code> before number to make it hexadecimal number</li>
-<li>add <code>L</code> before character to make it wider charactor literal(it the environment support)
-
-<ul>
-<li>e.g <code>L'X'</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>FLOAT</strong>
-
-<ul>
-<li>contains : float, double, long double</li>
-<li>range : 10^-37 ~ 10<sup>37</sup></li>
-<li>in</li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Blog on Github Page]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/20/blog-on-github-page/"/>
-    <updated>2014-04-20T13:32:38+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/20/blog-on-github-page</id>
-    <content type="html"><![CDATA[<h3>什么是github？</h3>
-
-<p><img src="http://pbking1.github.com/images/github1.png"></p>
-
-<ul>
-<li>是一个免费的用与存放git版本控制的软件代码和内容项目。</li>
-<li>每个项目都有一个主页，列出项目的源文件</li>
-</ul>
-
-
-<h3>什么是github page？</h3>
-
-<ul>
-<li>为了使的网页简洁易懂，github就设计了pages功能</li>
-<li>pages功能允许用户自定义项目首页，用来代替默认的源码列表
-
-<ul>
-<li>也就是说github page可以被认为是用户编写的，托管在github上的静态网页。</li>
-</ul>
-</li>
-<li>github提供模板，允许站内生成网页，但也允许用户自己编写网页，然后上传。
-
-<ul>
-<li>但是这种上传并不是单纯的上传，而是会经过Jekyll程序的再处理。</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<p><img src="http://pbking1.github.com/images/git2.png"></p>
-
-<h3>什么是jekyll?</h3>
-
-<p><img src="http://pbking1.github.com/images/jekyll1.png"></p>
-
-<ul>
-<li>Jekyll（发音/&lsquo;dʒiːk əl/，&#8221;杰克尔&#8221;)</li>
-<li>jekyll是一个静态站点生成器</li>
-<li>它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，所以实际上可以用来编写整个网站。</li>
-<li>因此
-
-<ul>
-<li>你先在本地编写符合Jekyll规范的网站源码，然后上传到github，由github生成并托管整个网站。</li>
-</ul>
-</li>
-<li>但是由于他生成的是静态网页，因此要添加评论功能或者其他的选择较少</li>
-<li><p>并且没有数据库，所以如果网站也越大，生成时间越长。</p></li>
-<li><p>目录结构</p></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/jekyll_demo
-</span><span class='line'>　　　　|--　_config.yml
-</span><span class='line'>　　　　|--　_layouts
-</span><span class='line'>　　　　|　　　|--　default.html 
-</span><span class='line'>　　　　|--　_posts
-</span><span class='line'>　　　　|　　　|--　2012-08-25-hello-world.html
-</span><span class='line'>　　　　|--　index.html</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<ul>
-<li>通过简单的几条指令就可以更新博客了</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
-</span><span class='line'>git commit -m "first post"
-</span><span class='line'>git remote add origin https://github.com/username/jekyll_demo.git
-</span><span class='line'>git push origin gh-pages</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Linux - KING</title>
+  <title>KNN in Matlab(knnclassify) - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="Category: Linux">
+  <meta name="description" content="refer from http://blog.csdn.net/boyxiaolong/article/details/7062394
+http://blog.csdn.net/aladdina/article/details/4141127 What is KNN simlpy, a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.comblog/categories/linux">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -71,67 +72,188 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Linux</h1>
+    
+      <h1 class="entry-title">KNN in Matlab(knnclassify)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T17:55:05+08:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><ul>
+<li>refer from
 
-  
-  <h2>2014</h2>
-
-<article>
-  
-<h1><a href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">How to Install Ubuntu on Macbook Air Dual</a></h1>
-<time datetime="2014-04-18T11:07:34+08:00" pubdate><span class='month'>Apr</span> <span class='day'>18</span> <span class='year'>2014</span></time>
-
-
-<footer>
-  <span class="categories"> <span><i class="fa fa-tag icon-color"></i> </span><a class='category' href='/blog/categories/linux/'>Linux</a></span>
-</footer>
+<ul>
+<li><a href="http://blog.csdn.net/boyxiaolong/article/details/7062394">http://blog.csdn.net/boyxiaolong/article/details/7062394</a></li>
+<li><a href="http://blog.csdn.net/aladdina/article/details/4141127">http://blog.csdn.net/aladdina/article/details/4141127</a></li>
+</ul>
+</li>
+</ul>
 
 
-</article>
+<h3>What is KNN</h3>
+
+<ul>
+<li>simlpy, a method use to classify or regression</li>
+<li>idea
+
+<ul>
+<li>如果一个样本在特征空间中的k个最相 似(即特征空间中最邻近)的样本中的大多数属于某一个类别，则该样本也属于这个类别。</li>
+</ul>
+</li>
+<li>KNN算法不仅可以用于分类，还可以用于回归。通过找出一个样本的k个最近邻居，将这些邻居的属性的平均值赋给该样本，就可以得到该样本的属性。更有用的方法是将不同距离的邻居对该样本产生的影响给予不同的权值(weight)，如权值与距离成正比。</li>
+</ul>
 
 
-
-<article>
-  
-<h1><a href="/blog/2014/04/15/linux-server-tutorial/">Linux Server Tutorial</a></h1>
-<time datetime="2014-04-15T14:47:08+08:00" pubdate><span class='month'>Apr</span> <span class='day'>15</span> <span class='year'>2014</span></time>
+<!--more-->
 
 
-<footer>
-  <span class="categories"> <span><i class="fa fa-tag icon-color"></i> </span><a class='category' href='/blog/categories/linux/'>Linux</a></span>
-</footer>
+<h3><code>knnclassify</code> in matlab</h3>
+
+<ul>
+<li>sample</li>
+</ul>
 
 
-</article>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>train_data = load('train.csv');
+</span><span class='line'>test_data = load('test.csv');
+</span><span class='line'>
+</span><span class='line'>X = train_data(:, 3:3074);
+</span><span class='line'>Y = train_data(:, 2);
+</span><span class='line'>x = test_data(:, 2:3073);
+</span><span class='line'>
+</span><span class='line'>label = knnclassify(x,X,Y,10,'cosine','random');</span></code></pre></td></tr></table></div></figure>
 
 
-
-<article>
-  
-<h1><a href="/blog/2014/04/09/my-vim-configuration/">My Vim Configuration</a></h1>
-<time datetime="2014-04-09T18:35:16+08:00" pubdate><span class='month'>Apr</span> <span class='day'>09</span> <span class='year'>2014</span></time>
+<ul>
+<li>knnclassify(test_data,train_data,train_label,numberoflabel,&lsquo;cosine&rsquo;,&lsquo;random&rsquo;);</li>
+</ul>
 
 
-<footer>
-  <span class="categories"> <span><i class="fa fa-tag icon-color"></i> </span><a class='category' href='/blog/categories/linux/'>Linux</a></span>
-</footer>
+<h3>main function</h3>
 
+<ul>
+<li>1.CLASS = KNNCLASSIFY(SAMPLE,TRAINING,GROUP)
 
-</article>
+<ul>
+<li>标号和训练数据必须有相同的行数；训练数据和测试数据必须有相同的列；函数对于无效值或者空值会作为丢失值或者忽略这一行。</li>
+</ul>
+</li>
+<li>2.CLASS = KNNCLASSIFY(SAMPLE,TRAINING,GROUP,K)
+
+<ul>
+<li>此函数允许你设置距离矩阵形式，如：
+
+<ul>
+<li>&lsquo;euclidean&rsquo;    欧氏距离，默认的</li>
+<li>&lsquo;cityblock&rsquo;    绝对差的和</li>
+<li>&lsquo;cosine&rsquo;     角度距离</li>
+<li>&lsquo;correlation&rsquo; 相关距离</li>
+<li>&lsquo;Hamming&rsquo;      汉明距离</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.CLASS =KNNCLASSIFY(SAMPLE,TRAINING,GROUP,K,DISTANCE,RULE)
+
+<ul>
+<li>本函数允许你选择如何对样本进行分类，如你可以选择：
+
+<ul>
+<li>&lsquo;nearest&rsquo;  最近的K个的最多数</li>
+<li>&lsquo;random&rsquo;    随机的最多数</li>
+<li>&lsquo;consensus&rsquo; 投票法，默认的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">pb</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T17:55:05+08:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/algorithm/'>Algorithm</a>, <a class='category' href='/blog/categories/machine-learning/'>machine_learning</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/26/quick-black-box-testing-on-app/" title="Previous Post: quick black box testing on app">&laquo; quick black box testing on app</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -264,7 +386,10 @@ ds.charset = 'UTF-8';
       var disqus_shortname = 'pbking1';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

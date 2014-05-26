@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-26T10:16:45+08:00</updated>
+  <updated>2014-05-26T18:02:56+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,99 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[KNN in Matlab(knnclassify)]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify/"/>
+    <updated>2014-05-26T17:55:05+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify</id>
+    <content type="html"><![CDATA[<ul>
+<li>refer from
+
+<ul>
+<li><a href="http://blog.csdn.net/boyxiaolong/article/details/7062394">http://blog.csdn.net/boyxiaolong/article/details/7062394</a></li>
+<li><a href="http://blog.csdn.net/aladdina/article/details/4141127">http://blog.csdn.net/aladdina/article/details/4141127</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>What is KNN</h3>
+
+<ul>
+<li>simlpy, a method use to classify or regression</li>
+<li>idea
+
+<ul>
+<li>如果一个样本在特征空间中的k个最相 似(即特征空间中最邻近)的样本中的大多数属于某一个类别，则该样本也属于这个类别。</li>
+</ul>
+</li>
+<li>KNN算法不仅可以用于分类，还可以用于回归。通过找出一个样本的k个最近邻居，将这些邻居的属性的平均值赋给该样本，就可以得到该样本的属性。更有用的方法是将不同距离的邻居对该样本产生的影响给予不同的权值(weight)，如权值与距离成正比。</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3><code>knnclassify</code> in matlab</h3>
+
+<ul>
+<li>sample
+```
+train_data = load(&lsquo;train.csv&rsquo;);
+test_data = load(&lsquo;test.csv&rsquo;);</li>
+</ul>
+
+
+<p>X = train_data(:, 3:3074);
+Y = train_data(:, 2);
+x = test_data(:, 2:3073);</p>
+
+<p>label = knnclassify(x,X,Y,10,&lsquo;cosine&rsquo;,&lsquo;random&rsquo;);
+```
+&ndash; knnclassify(test_data,train_data,train_label,numberoflabel,&lsquo;cosine&rsquo;,&lsquo;random&rsquo;);</p>
+
+<h3>main function</h3>
+
+<ul>
+<li>1.CLASS = KNNCLASSIFY(SAMPLE,TRAINING,GROUP)
+
+<ul>
+<li>标号和训练数据必须有相同的行数；训练数据和测试数据必须有相同的列；函数对于无效值或者空值会作为丢失值或者忽略这一行。</li>
+</ul>
+</li>
+<li>2.CLASS = KNNCLASSIFY(SAMPLE,TRAINING,GROUP,K)
+
+<ul>
+<li>此函数允许你设置距离矩阵形式，如：
+
+<ul>
+<li>&lsquo;euclidean&rsquo;    欧氏距离，默认的</li>
+<li>&lsquo;cityblock&rsquo;    绝对差的和</li>
+<li>&lsquo;cosine&rsquo;     角度距离</li>
+<li>&lsquo;correlation&rsquo; 相关距离</li>
+<li>&lsquo;Hamming&rsquo;      汉明距离</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.CLASS =KNNCLASSIFY(SAMPLE,TRAINING,GROUP,K,DISTANCE,RULE)
+
+<ul>
+<li>本函数允许你选择如何对样本进行分类，如你可以选择：
+
+<ul>
+<li>&lsquo;nearest&rsquo;  最近的K个的最多数</li>
+<li>&lsquo;random&rsquo;    随机的最多数</li>
+<li>&lsquo;consensus&rsquo; 投票法，默认的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Intro to Recommandation System]]></title>
@@ -979,233 +1072,6 @@ gradient boosted decision trees
 </li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[CPSO-Sk 的实现(1)]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1/"/>
-    <updated>2014-04-09T00:36:53+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1</id>
-    <content type="html"><![CDATA[<ul>
-<li>其实和标准的PSO是一样的</li>
-<li><p>只是初始种群是不一样的</p>
-
-<ul>
-<li>假设标准版的种群大小是100的话，那么</li>
-<li>这个版本是把100分成10份，然后再对每一份使用标准版的算法</li>
-</ul>
-</li>
-<li><p>因此这两个算法本质上没有区别，只是初始种群大小不一样而已</p></li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li>以下是伪代码</li>
-</ul>
-
-
-<h3>伪代码</h3>
-
-<ul>
-<li>假设我们的算法初始种群分成10份</li>
-</ul>
-
-
-<p>```
-如何初始化：
-for i=0:种群大小</p>
-
-<pre><code>for j=0:维度{
-    对每个个体的位置进行随机化
-    对每个个体的速度进行随机化
-    对每个个体的最佳位置为粒子的位置
-}
-</code></pre>
-
-<p>for i=0:种群大小{</p>
-
-<pre><code>计算适应度
-把每个粒子的最佳适应度初始化为初始值
-</code></pre>
-
-<p>}
-把全局最优初始化为0   <br/>
-```</p>
-
-<p>```
-更新局部最优值
-if(如果粒子的最佳适应度比现在的适应度 大)</p>
-
-<pre><code>for i=0:维度
-    把粒子的历史最佳更新为粒子的位置
-把粒子的最佳适应度更新为粒子现在的适应度
-</code></pre>
-
-<p>```</p>
-
-<p>```
-全局最优：
-if(索引为0)</p>
-
-<pre><code>for i=1:种群大小
-    if(适应度小于索引第一个粒子的适应度){
-        把s=第i个粒子的适应度
-        flag=i
-    }
-for i=0:维度
-    把全局最优位置更新为第flag个的位置
-把全局最适应的值更新为第flag个的适应值
-</code></pre>
-
-<p>else{</p>
-
-<pre><code>for i=0:种群大小
-    if（如果最佳适应值小于全局最优）{
-        for i=0:维度
-            把最佳适应度更新成现在这个粒子的最佳适应度
-        把全局最佳适应度更新为现在粒子的最佳适应度
-    }
-</code></pre>
-
-<p>}
-```</p>
-
-<p><code>
-计算适应值函数
-</code></p>
-
-<p>```
-首先把种群分成10份，为了方便起见，相当于每相隔10个就停止然后对这10个粒子用PSO
-然后就开始对包含10个粒子的子种群</p>
-
-<pre><code>定义最大循环次数，建立一个循环
-    if（达到最大循环次数或者满足停止条件）
-        输出最佳适应值和取得这个值所需要的迭代次数
-    else{
-        for i=1:种群大小{
-            for i=1:维度{
-                更新个体速度：使用公式一
-                判断速度是否超过最大速度
-                    如果超过了就把速度更新给最大速度
-                判断位置是否越界（小于最小值或者大于最大值）
-                    乘上对应边界的两倍再减掉现在的位置
-            }
-            计算适应值
-            计算局部最优解
-        }
-        计算全局最优
-    }
-</code></pre>
-
-<p>```</p>
-
-<h3>C++ source code</h3>
-
-<p>```</p>
-
-<h1>include<iostream></h1>
-
-<h1>include<cmath></h1>
-
-<h1>include<cstdlib></h1>
-
-<h1>include<cstdio></h1>
-
-<h1>include &ldquo;data.h&rdquo;</h1>
-
-<p>using namespace std;</p>
-
-<h1>define C1 2</h1>
-
-<h1>define C2 2</h1>
-
-<h1>define VMAX 5.0</h1>
-
-<h1>define Iteration 10000</h1>
-
-<h1>define rand1() (double)(rand() / (double)RAND_MAX)</h1>
-
-<p>double global_best = 10000.0;
-double v[100000] = {0};
-const int X_const = 5;
-double time_pso = 0.0;</p>
-
-<p>struct particle{</p>
-
-<pre><code>double current;
-double personal_best;
-</code></pre>
-
-<p>};</p>
-
-<p>struct particle p[100000];</p>
-
-<p>double fitness(double x){</p>
-
-<pre><code>return x * x - 20 * x + 100;
-</code></pre>
-
-<p>}</p>
-
-<p>void init(){</p>
-
-<pre><code>int i;                                                                                                                                     
-for(i = 0; i &lt; 100000; i++){                                                                                                            
-    p[i].current = -2 + i;                                                                                                                 
-    p[i].personal_best = p[i].current;                                                                                                     
-    v[i] = 0;                                                
-}
-</code></pre>
-
-<p>}</p>
-
-<p>void cpso_sk(){</p>
-
-<pre><code>int iter = 1;
-clock_t start, end;
-start = clock();
-int particle_num = 100000;
-int split = 1000;
-int count = particle_num / split;
-for(int i = 0; i &lt; particle_num; i+=count){
-    while(iter &lt; Iteration){
-        for(int j = i; j &lt; count; j++)
-            if(fitness(p[j].current) &lt; fitness(p[j].personal_best))
-                p[j].personal_best = p[j].current;
-        for(int k = i; k &lt; count; k++)
-            if(fitness(p[k].current) &lt; fitness(global_best))
-                global_best = p[k].current;
-        for(int u = i; u &lt; count; u++){
-            v[u] =X_const * (v[u] + C1 * rand1() * (p[u].personal_best - p[u].current) + C2 * rand1() * (global_best - p[u].current));
-            if(v[u] &gt; VMAX)
-                v[u] = VMAX;
-        }
-        for(int j = i; j &lt; count; j++)
-            p[j].current += v[j];
-        iter++;
-    }
-    end = clock();
-    time_pso = end - start;
-}
-</code></pre>
-
-<p>}</p>
-
-<p>int main(){</p>
-
-<pre><code>init();
-cpso_sk();
-cout&lt;&lt;"The cpso algorithm use "&lt;&lt;time_pso&lt;&lt;" in the funtion 1 and the global best is "&lt;&lt;global_best;
-return 0;
-</code></pre>
-
-<p>}</p>
-
-<p>```</p>
 ]]></content>
   </entry>
   
