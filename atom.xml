@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-27T13:22:21+08:00</updated>
+  <updated>2014-05-27T13:23:03+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -136,7 +136,7 @@
 <li><p>你喜欢用什么方法来开发支持多平台的应用？紫色为HTML5、绿色为混合应用、红色为一个原生加一个HTML5、蓝色为原生；从上到下依次为全球化企业、大型企业、中型公司、小公司、初创企业（少于5人）、整体。</p>
 
 <ul>
-<li><img src="compare_8.png"></li>
+<li><img src="http://pbking1.github.com/images/internship_zst/compare_8.png"></li>
 <li>HTML5是大型企业打造大量应用的一个重要技术趋势（参见上图）。在全球化企业中，近40%的开发人员表示将采用纯HTML5技术开发多平台应用</li>
 </ul>
 </li>
