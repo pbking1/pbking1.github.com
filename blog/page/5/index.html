@@ -9,9 +9,7 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="1.GNU plan GNU plan is founded by the Richard M.Stallman and free software foundation
-In order to make sure the GNU software can be used freely
-All &hellip;">
+  <meta name="description" content="1.For there are too many software that can be used in ubuntu not in OSX so I decided to install ubuntu on my macbook air I have try the mac version &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +72,97 @@ All &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">How to Install Ubuntu on Macbook Air Dual</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-18T11:07:34+08:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h4>1.For there are too many software that can be used in ubuntu not in OSX so I decided to install ubuntu on my macbook air</h4>
+
+<ul>
+<li>I have try the mac version ubuntu and <em>it do not work</em></li>
+<li>and the origin version for windows is work on mac</li>
+</ul>
+
+
+<h4>2.First use <code>Unetbootin</code> to create a usb bootable ubnutu on mac</h4>
+
+<ul>
+<li>There are two ways to finish this</li>
+<li>The first is(I do not succeed in this)
+
+<ul>
+<li><code>diskutil list</code>
+
+<ul>
+<li>show the disk that is mounted on your mac</li>
+</ul>
+</li>
+<li>then insert the usb</li>
+<li>run <code>diskutil list again</code>
+
+<ul>
+<li>and determine the device node assigned to the usb like <code>disks1s2</code></li>
+</ul>
+</li>
+<li>then <code>diskutil unmountDisk /disks1s2</code></li>
+<li>after that <code>sudo dd if=/path/to/ubuntu.img.dmg of=/dev/disks1s2 bs=2m</code>
+
+<ul>
+<li>to create the bootable usb ubuntu</li>
+<li>and the bs is the I/O speed and the max is 2m</li>
+</ul>
+</li>
+<li>It may cost some time to complete</li>
+<li>finally run <code>eject /dev/disks1s2</code></li>
+</ul>
+</li>
+<li>The second is
+
+<ul>
+<li>use the <code>Unetbootin</code> to create the bootable usb directly</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">Read more</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -550,64 +639,6 @@ All &hellip;">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">2013 IEEE International Conference on Robotics and Biomimetics</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T13:08:03+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><pre><code>Dec 12-14 2013 shenzhen, China
-</code></pre>
-
-<h4>Team members</h4>
-
-<pre><code>pengbin
-qiudicong
-zhudingqiao
-</code></pre>
-
-<h4>here are the picture</h4>
-
-<p><img src="/images/ieee1.jpg">
-<img src="/images/ieee2.jpg">
-<img src="/images/ieee3.jpg"></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
@@ -622,6 +653,10 @@ zhudingqiao
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi/">HTML5和移动平台的原生应用对比</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/05/26/knn-in-matlab-knnclassify/">KNN in Matlab(knnclassify)</a>
@@ -639,17 +674,13 @@ zhudingqiao
         <a href="/blog/2014/05/24/intro-to-recommandation-system/">Intro to Recommandation System</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/05/23/zst-internship-ios-code-step2/">Zst Internship IOS Code Step2</a>
-      </li>
-    
   </ul>
 </section>
 <section> 
   <h1>Categories</h1> 
   <ul id="categories"> 
     <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (8)</a></li>
-<li class='category'><a href='/blog/categories/android/'>Android (1)</a></li>
+<li class='category'><a href='/blog/categories/android/'>Android (2)</a></li>
 <li class='category'><a href='/blog/categories/erp/'>ERP (1)</a></li>
 <li class='category'><a href='/blog/categories/ios/'>IOS (8)</a></li>
 <li class='category'><a href='/blog/categories/internship/'>Internship (1)</a></li>
@@ -664,6 +695,7 @@ zhudingqiao
 <li class='category'><a href='/blog/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/blog/categories/c-c-/'>c/c++ (1)</a></li>
 <li class='category'><a href='/blog/categories/database/'>database (1)</a></li>
+<li class='category'><a href='/blog/categories/html/'>html (1)</a></li>
 <li class='category'><a href='/blog/categories/machine-learning/'>machine_learning (5)</a></li>
 <li class='category'><a href='/blog/categories/others/'>others (1)</a></li>
 <li class='category'><a href='/blog/categories/software/'>software (1)</a></li>
@@ -688,7 +720,7 @@ ds.charset = 'UTF-8';
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+35.0%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+8.75%25%27%3Eandroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+8.75%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+8.75%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+8.75%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+8.75%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+8.75%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+12.5%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+16.25%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+23.75%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+8.75%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+12.5%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+8.75%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fothers%27+style%3D%27font-size%3A+8.75%25%27%3Eothers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+12.5%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware%27+style%3D%27font-size%3A+8.75%25%27%3Esoftware%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+16.25%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ftesting%27+style%3D%27font-size%3A+8.75%25%27%3Etesting%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+8.75%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+35.0%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+8.75%25%27%3Eandroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+12.5%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+8.75%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+8.75%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+8.75%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+8.75%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+8.75%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+12.5%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+16.25%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+23.75%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+8.75%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+12.5%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+8.75%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fothers%27+style%3D%27font-size%3A+8.75%25%27%3Eothers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+12.5%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware%27+style%3D%27font-size%3A+8.75%25%27%3Esoftware%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+16.25%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ftesting%27+style%3D%27font-size%3A+8.75%25%27%3Etesting%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+8.75%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 
