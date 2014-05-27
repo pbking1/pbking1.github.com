@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-05-27T13:25:32+08:00</updated>
+  <updated>2014-05-27T17:36:36+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,177 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Build Ios Webapp Using Phonegap and Jquery Mobile]]></title>
+    <link href="http://pbking1.github.com/blog/2014/05/27/build-ios-webapp-using-phonegap-and-jquery-mobile/"/>
+    <updated>2014-05-27T17:30:09+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/27/build-ios-webapp-using-phonegap-and-jquery-mobile</id>
+    <content type="html"><![CDATA[<h3>first install phonegap</h3>
+
+<ul>
+<li>download <code>phonegap-2.9.1</code>
+
+<ul>
+<li>enter the lib/ios/bin</li>
+<li>use the command <code>./create ~/Documents/html_app/testphonegap test_phonegap test1</code>
+
+<ul>
+<li>to create the project that is located in <code>~/Documents/html_app/</code> and the name of it is <code>test_phonegap</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>then use xcode to open the project</h3>
+
+<ul>
+<li>add the following code in the index.html and run the simulater</li>
+<li>the jquery mobile is used from internet and we do not need to download it
+
+<ul>
+<li>but I can not find out a way to use the jquery mobile js file in my computer</li>
+</ul>
+</li>
+<li>remember to add <code>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;</code> to enable the chinese utf-8</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;html&gt;
+</span><span class='line'>    &lt;head&gt;
+</span><span class='line'>        &lt;link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"&gt;
+</span><span class='line'>            &lt;script src="http://code.jquery.com/jquery-1.8.3.min.js"&gt;&lt;/script&gt;
+</span><span class='line'>            &lt;script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"&gt;&lt;/script&gt;
+</span><span class='line'>             &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+</span><span class='line'>    &lt;/head&gt;
+</span><span class='line'>    &lt;body&gt;
+</span><span class='line'>        &lt;div data-role="page" id="pageone"&gt;
+</span><span class='line'>            &lt;div data-role="header"&gt;
+</span><span class='line'>                &lt;h1&gt;欢迎来到我的主页&lt;/h1&gt;
+</span><span class='line'>                &lt;div data-role="navbar"&gt;
+</span><span class='line'>                    &lt;ul&gt;
+</span><span class='line'>                        &lt;li&gt;&lt;a href="#" class="ui-btn-active" data-icon="home"&gt;首页&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>                        &lt;li&gt;&lt;a href="#pagetwo" data-icon="arrow-r"&gt;页面二&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>                    &lt;/ul&gt;
+</span><span class='line'>                &lt;/div&gt;
+</span><span class='line'>                &lt;select name="day" id="day"&gt;
+</span><span class='line'>                    &lt;optgroup label="Weekdays"&gt;
+</span><span class='line'>                        &lt;option value="mon"&gt;Monday&lt;/option&gt;
+</span><span class='line'>                        &lt;option value="tue"&gt;Tuesday&lt;/option&gt;
+</span><span class='line'>                        &lt;option value="wed"&gt;Wednesday&lt;/option&gt;
+</span><span class='line'>                    &lt;/optgroup&gt;
+</span><span class='line'>                    &lt;optgroup label="Weekends"&gt;
+</span><span class='line'>                        &lt;option value="sat"&gt;Saturday&lt;/option&gt;
+</span><span class='line'>                        &lt;option value="sun"&gt;Sunday&lt;/option&gt;
+</span><span class='line'>                    &lt;/optgroup&gt;
+</span><span class='line'>                &lt;/select&gt;
+</span><span class='line'>            &lt;/div&gt;
+</span><span class='line'>            
+</span><span class='line'>            &lt;div data-role="content"&gt;
+</span><span class='line'>                &lt;p&gt;本例设有 ui-btn-active 类，请注意首页按钮时突出显示的（已选）。&lt;/p&gt;
+</span><span class='line'>                &lt;p&gt;如果点击页面二，您会注意到按钮不会突出显示。&lt;/p&gt;
+</span><span class='line'>            &lt;/div&gt;
+</span><span class='line'>            
+</span><span class='line'>            &lt;div data-role="footer"&gt;
+</span><span class='line'>                &lt;h1&gt;我的页脚&lt;/h1&gt;
+</span><span class='line'>            &lt;/div&gt;
+</span><span class='line'>        &lt;/div&gt;
+</span><span class='line'>        
+</span><span class='line'>        &lt;div data-role="page" id="pagetwo"&gt;
+</span><span class='line'>            &lt;div data-role="header"&gt;
+</span><span class='line'>                &lt;h1&gt;欢迎来到我的主页&lt;/h1&gt;
+</span><span class='line'>                &lt;div data-role="navbar"&gt;
+</span><span class='line'>                    &lt;ul&gt;
+</span><span class='line'>                        &lt;li&gt;&lt;a href="#pageone" data-icon="home"&gt;首页&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>                        &lt;li&gt;&lt;a href="#" data-icon="arrow-r"&gt;页面二&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>                    &lt;/ul&gt;
+</span><span class='line'>                &lt;/div&gt;
+</span><span class='line'>            &lt;/div&gt;
+</span><span class='line'>            
+</span><span class='line'>            &lt;div data-role="content"&gt;
+</span><span class='line'>                &lt;p&gt;本页中没有被预选的按钮（突出显示）。&lt;/p&gt; 
+</span><span class='line'>                &lt;p&gt;如需让按钮被选的外观表示当前正在访问页面，请返回导航栏教程，继续向下阅读。&lt;/p&gt;
+</span><span class='line'>            &lt;/div&gt;
+</span><span class='line'>            
+</span><span class='line'>            &lt;div data-role="footer"&gt;
+</span><span class='line'>                &lt;h1&gt;我的页脚&lt;/h1&gt;
+</span><span class='line'>            &lt;/div&gt;
+</span><span class='line'>        &lt;/div&gt; 
+</span><span class='line'>    &lt;/body&gt;
+</span><span class='line'>&lt;/html&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HTML5和移动平台的原生应用对比]]></title>
@@ -3566,193 +3737,6 @@ Application
 </ul>
 </li>
 <li><p>To be continued&hellip;.</p></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Tree Based Ensemble Method Introduction]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction/"/>
-    <updated>2014-05-08T18:30:07+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction</id>
-    <content type="html"><![CDATA[<h3>Tree-based ensemble methods</h3>
-
-<pre><code>random forest
-gradient boosted decision trees
-</code></pre>
-
-<ul>
-<li>main idea is greedy algorithm
-
-<ul>
-<li>通过构造一棵决策树分类器</li>
-</ul>
-</li>
-<li>随机森林是通过构造10000课树</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>决策树</h4>
-
-<ul>
-<li>其实就是二叉树</li>
-<li>实际应用，一般为二叉树</li>
-<li>每个非叶子节点都是一个分割
-
-<ul>
-<li>相当于一个分类条件</li>
-</ul>
-</li>
-<li>每个叶子节点都是一类性质相同的样本</li>
-<li><p>用同一种数据存在多种构造决策树的情况</p></li>
-<li><p>决策树使用来分类的模型</p>
-
-<ul>
-<li>相当于svn和LR</li>
-</ul>
-</li>
-<li>如何建树
-
-<ul>
-<li>是一种回归分类算法
-
-<ul>
-<li>“切分”和“解决”</li>
-</ul>
-</li>
-<li>一开始的时候，所有的训练样本都在根部</li>
-<li>然后分类的样本将基于选择的分类属性进行递归。</li>
-</ul>
-</li>
-<li>理论上特征是可以重复选的</li>
-<li>怎么找到比较好的树？
-
-<ul>
-<li>模型准确率高</li>
-<li>找到尽可能最小的数来满足数据
-
-<ul>
-<li>分枝少</li>
-<li>节点少</li>
-</ul>
-</li>
-<li>occam&rsquo;s Racor：在效果超不多的时候，选比较简单的模型</li>
-</ul>
-</li>
-<li>基本策略
-
-<ul>
-<li>贪心
-
-<ul>
-<li>当前把每个节点中的最优的特征作为分类标准</li>
-<li>这样就不用穷举</li>
-<li>评估
-
-<ul>
-<li>基尼系数（Gini index）</li>
-<li>信息增益
-
-<ul>
-<li>用熵来衡量</li>
-<li>混乱程度
-
-<ul>
-<li>如果容易分别出那个分类多，则混乱程度小</li>
-<li>反之同理</li>
-</ul>
-</li>
-<li>e.g 99/1（小） 50/50（大）</li>
-</ul>
-</li>
-<li>则把每个叶子节点的熵都算出来
-
-<ul>
-<li>然后整棵树的熵则是用所有叶子节点的熵加权</li>
-</ul>
-</li>
-<li>把分割前的熵减掉分割之后的，就是信息增益
-
-<ul>
-<li>如果比较大，那么就比较好</li>
-</ul>
-</li>
-</ul>
-</li>
-<li> Gini index
-
-<ul>
-<li> 把叶子节点的熵换掉</li>
-<li> 换成基尼系数</li>
-<li> 基本上也是混乱度</li>
-<li> 只是公式不一样了</li>
-</ul>
-</li>
-<li> 整棵树的Gini系数是加权的分支的基尼</li>
-<li> 如何防止overfitting？
-
-<ul>
-<li> 早一点停止树的增长</li>
-<li> 先把所有节点来构造树，然后用的是90%的样本
-
-<ul>
-<li> 然后用剩下的样本来检验效果</li>
-<li> 但是太慢了</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Bagging
-
-<ul>
-<li>构造k棵树</li>
-<li>每棵树在1000各样本中随机选900个,构造决策树（只筛选样本）
-
-<ul>
-<li>然后把所有树的据结果统计，如果是分类问题，就少数服从多数。</li>
-<li>随机选出的数据室可以重复的。</li>
-</ul>
-</li>
-<li>如果是回归问题，则最终直接相加</li>
-</ul>
-</li>
-<li><p>random forest</p>
-
-<ul>
-<li>不使用全部特征</li>
-<li>不单只筛选样本，也筛选特征。</li>
-<li>e.g 每次只用随机抽取的70%的样本，只用50%随机抽取的特征，来建立决策树</li>
-<li>是目前分类回归中最好的off-the-shelf的算法
-
-<ul>
-<li>即拿即用</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>这两个算法加上boosting的不同在于训练集的构造的不同。</p></li>
-<li>Boosting
-
-<ul>
-<li>结果是把每棵决策树的结果加权加起来</li>
-<li>所有样本的权值加起来为1</li>
-<li>对那些错的样本，权值是比较大的</li>
-<li>缺点是在高噪声的环境下效果很不好
-
-<ul>
-<li>优点是在低噪声环境下效果很好</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
 ]]></content>
