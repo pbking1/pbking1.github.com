@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Matlab | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/matlab/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-06-02T15:11:42+08:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Matlab Array Type Change]]></title>
+    <link href="http://pbking1.github.com/blog/2014/06/02/matlab-array-type-change/"/>
+    <updated>2014-06-02T14:57:28+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/02/matlab-array-type-change</id>
+    <content type="html"><![CDATA[<h3>How to convert between cell, double and char array?</h3>
+
+<ul>
+<li>there are three type of array in matlab
+
+<ul>
+<li>cell array</li>
+<li>double array</li>
+<li>char array</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>How to convert double array to char array?</h4>
+
+<ul>
+<li>use <code>num2str</code> or <code>mat2str</code></li>
+</ul>
+
+
+<h4>How to convert char array to double array?</h4>
+
+<ul>
+<li>use <code>str2num</code>&lt;0.0001> and <code>str2double</code>&lt;0.01></li>
+</ul>
+
+
+<h4>How to convert cell array to char array?</h4>
+
+<ul>
+<li>use <code>cell2mat</code></li>
+</ul>
+
+
+<h4>How to convert char array to cell array?</h4>
+
+<ul>
+<li>use <code>cellstr</code></li>
+</ul>
+
+
+<h3>How to convert cell array to double array?</h3>
+
+<ul>
+<li>use <code>cell2mat</code> and <code>str2num</code></li>
+</ul>
+
+
+<h4>How to convert double array to cell array?</h4>
+
+<ul>
+<li>use <code>num2cell</code></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
