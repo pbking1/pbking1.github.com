@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Matlab | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/matlab/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-02T15:11:42+08:00</updated>
+  <updated>2014-06-02T15:20:32+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Matlab Classification Method]]></title>
+    <link href="http://pbking1.github.com/blog/2014/06/02/matlab-classification-method/"/>
+    <updated>2014-06-02T15:15:11+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/02/matlab-classification-method</id>
+    <content type="html"><![CDATA[<h3>The method in the system</h3>
+
+<ul>
+<li>MultiNomial logistic Regressoin</li>
+<li>Random Forest
+
+<ul>
+<li>good classifier</li>
+<li><p><code>
+Factor = TreeBagger(numberoftree, train_data, train_label);
+[predict_label, scores] = predict(Factor, test_data);
+</code></p></li>
+</ul>
+</li>
+<li>Navie Bayes</li>
+<li>SVM</li>
+<li>KNN</li>
+<li>Ensembles for boosting, Bagging or Random Subspace</li>
+<li>discriminant analysis classifier</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Matlab Array Type Change]]></title>
