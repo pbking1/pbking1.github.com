@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Matlab | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/matlab/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-02T15:38:35+08:00</updated>
+  <updated>2014-06-02T15:41:36+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -33,6 +33,13 @@
 </li>
 </ul>
 </li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
 <li><p>Random Forest</p>
 
 <ul>
@@ -90,7 +97,14 @@
 </li>
 </ul>
 </li>
-<li>discriminant analysis classifier</li>
+<li>discriminant analysis classifier
+
+<ul>
+<li><code>Factor = ClassificationDiscriminant(train_data, train_label);</code></li>
+<li><code>Factor = ClassificationDiscriminant(train_data, train_label, 'discrimType', 'non-linear...');</code></li>
+<li><code>[predict_label, scores] = predict(Factor, test_data);</code></li>
+</ul>
+</li>
 </ul>
 
 ]]></content>

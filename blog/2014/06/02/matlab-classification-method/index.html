@@ -117,6 +117,13 @@ scores = mnrval(Factor, &hellip;">
 </li>
 </ul>
 </li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
 <li><p>Random Forest</p>
 
 <ul>
@@ -174,7 +181,14 @@ scores = mnrval(Factor, &hellip;">
 </li>
 </ul>
 </li>
-<li>discriminant analysis classifier</li>
+<li>discriminant analysis classifier
+
+<ul>
+<li><code>Factor = ClassificationDiscriminant(train_data, train_label);</code></li>
+<li><code>Factor = ClassificationDiscriminant(train_data, train_label, 'discrimType', 'non-linear...');</code></li>
+<li><code>[predict_label, scores] = predict(Factor, test_data);</code></li>
+</ul>
+</li>
 </ul>
 
 </div>
