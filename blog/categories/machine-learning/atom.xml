@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Machine_learning | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/machine-learning/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-02T15:20:32+08:00</updated>
+  <updated>2014-06-02T15:22:23+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -26,6 +26,7 @@
 
 <ul>
 <li>good classifier</li>
+<li>score is the probability output</li>
 <li><p><code>
 Factor = TreeBagger(numberoftree, train_data, train_label);
 [predict_label, scores] = predict(Factor, test_data);
