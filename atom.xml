@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-02T16:38:55+08:00</updated>
+  <updated>2014-06-06T17:39:03+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,161 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Phonegap 框架原理]]></title>
+    <link href="http://pbking1.github.com/blog/2014/06/06/phonegap-kuang-jia-yuan-li/"/>
+    <updated>2014-06-06T17:03:43+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/06/phonegap-kuang-jia-yuan-li</id>
+    <content type="html"><![CDATA[<h4>phonegap 实现原理</h4>
+
+<ul>
+<li><code>关键</code>
+
+<ul>
+<li>1.用webview在本地来渲染解析html
+
+<ul>
+<li><strong>因此实际上他就是一个内嵌的浏览器</strong>
+
+<ul>
+<li>类似于一个WebView，但是phonegap对webview做了些改造</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.基于plugin模式来封装调用原生API
+
+<ul>
+<li>以原生app的方式来运行</li>
+<li>用js调用原生的功能</li>
+</ul>
+</li>
+<li>3.在框架首次启动的时候加载CallbackServer线程，并且监听前端XHR请求和链表中有无数据
+
+<ul>
+<li>当XHR请求来了而链表为空，则线程等待10秒
+
+<ul>
+<li>如果这个时间内有数据来，那么就唤醒线程把数据传到前端</li>
+</ul>
+</li>
+<li>如果10s后没有数据，则传空数据回前端</li>
+<li><code>基于服务器推技术</code></li>
+</ul>
+</li>
+<li>4.同步请求和异步请求有关键的区别</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li><code>他如何实现跨平台的</code>
+
+<ul>
+<li>phonegap在每一种中都实现了一套后台的框架，分别和每个平台的API进行交互，从而调用它的原生API，然后对应开发人员提供统一的接口，也就是phonegap的API。</li>
+<li>因此，开发人员只需要使用web技术就可以对移动平台进行快速开发</li>
+<li>而且跨平台也是只是前端跨平台。</li>
+</ul>
+</li>
+<li><code>这个开源的项目的贡献者</code>
+
+<ul>
+<li>这个开源项目中IBM贡献的代码比创始者（温哥华的一家小公司）还多。</li>
+<li>Apache Cordova是phongap贡献给apache的一个开源项目
+
+<ul>
+<li>他有phonegap里面的核心代码</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>phonegap的优点</h4>
+
+<ul>
+<li>app的前台兼容性好</li>
+<li>标准化， 由于使用的是W3C标准，所以web前端可直接用于web app。</li>
+<li>js+html5和java+xml很像</li>
+<li>装起来也不麻烦，用起来比较容易</li>
+<li>提供硬件访问</li>
+</ul>
+
+
+<h4>phonegap的缺点</h4>
+
+<ul>
+<li>反应很慢（亲身实践过）</li>
+<li>交互很差</li>
+<li>内存消耗大
+
+<ul>
+<li>有人做过测试，和用java写android对比，phonegap明显消耗更多内存</li>
+<li>而且释放内存很慢</li>
+</ul>
+</li>
+<li>调试也麻烦</li>
+</ul>
+
+
+<h4>有谁在用</h4>
+
+<ul>
+<li>wikipedia
+
+<ul>
+<li>它的移动应用就是用phonegap写的</li>
+</ul>
+</li>
+<li>Facebook
+
+<ul>
+<li>移动版SDK的一部分是cordova的一个分支</li>
+</ul>
+</li>
+<li>Salesforce
+
+<ul>
+<li>移动版的SDK的一部分是cordova的一个分支</li>
+</ul>
+</li>
+<li>IBM
+
+<ul>
+<li>移动平台建立在phonegap上</li>
+<li>并且积极参与到phonegap的开发里面</li>
+</ul>
+</li>
+<li>Microsoft
+
+<ul>
+<li>正在积极参与windows phone的那一部分的开发</li>
+</ul>
+</li>
+<li>Adobe
+
+<ul>
+<li>2011年Adobe收购了phonegap得私人开发商Notibi，并将phonegap贡献给apache并且开源</li>
+</ul>
+</li>
+<li>blackberry</li>
+<li>zynga
+
+<ul>
+<li>用phonegap和html5写了不少很好的游戏</li>
+</ul>
+</li>
+<li>cisco</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Matlab Classification Method]]></title>
@@ -3171,498 +3326,6 @@
 <li>to be continued</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linear_regression_tutorial]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial/"/>
-    <updated>2014-05-12T15:23:20+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial</id>
-    <content type="html"><![CDATA[<h3>First something about training the data</h3>
-
-<ul>
-<li>Training set &ndash;> learning algorithm &ndash;> hypothesis &ndash;> estimated data</li>
-<li>And we will use multiple features.
-
-<ul>
-<li><img src="http://pbking1.github.com/images/lr_gd/mfeat.png"></li>
-</ul>
-</li>
-</ul>
-
-
-<h3>What is linear regression</h3>
-
-<ul>
-<li>To say the idea in normal, we will have n feature</li>
-<li>And what we are going to do is to observe them and suppose that they should be in a linear method.</li>
-<li>And we should develop a way to find out the parameter to suit the hypothesis function.</li>
-</ul>
-
-
-<!--more-->
-
-
-<h3>The first method to solve the problem(Gradient decend)</h3>
-
-<h4>how it works?</h4>
-
-<ul>
-<li>There are several ideas
-
-<ul>
-<li><strong>learn rate</strong>
-
-<ul>
-<li>if too small, the gradient descent will be slow</li>
-<li>if too large, the gradient descent will overshoot the minimum.
-
-<ul>
-<li>it may be fail to converge, or even diverge</li>
-</ul>
-</li>
-<li><img src="http://pbking1.github.com/images/lr_gd/apha.png"></li>
-</ul>
-</li>
-<li><strong>Cost function(J function)</strong>
-
-<ul>
-<li>The cost function has no relationship with the x and y.</li>
-<li>and it all depend on the parameter <em>theta</em></li>
-<li>and the &frac12; in the front is to make the derivation easier</li>
-<li>And the cost function is used to <em>make the err(the err between hypothesis and real data) smaller</em>.</li>
-</ul>
-</li>
-<li><strong>Hypothesis</strong>
-
-<ul>
-<li>This function is used to <em>make the function good</em>.</li>
-<li>good enough to make the y calculate by the function can came close to the real y.</li>
-<li>and we will use the err of them to see whether it is good enough or not.</li>
-<li>and with all the data, we sum them.</li>
-</ul>
-</li>
-<li><strong>theta</strong>
-
-<ul>
-<li><p>we can see in the following picture</p>
-
-<ul>
-<li>suppose that we went down the mountain and we can see all the mountain around us are higher than us</li>
-<li>and the theta in the cost function is that we <em>reduce</em> theta value in the theta direction</li>
-<li>and the deviation of the cost function on theta i is the distance that we move on theta i direction.</li>
-</ul>
-</li>
-<li><p><img src="http://pbking1.github.com/images/lr_gd/gdpic.png"></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Basic algorithm</strong>
-
-<ul>
-<li>start with some theta0, theta1, theta2&hellip;..</li>
-<li>Keep changing theta0, theta1, theta2&hellip;. to reduce J(theta0, theta2&hellip;) until we hopefully end up at a minimum.</li>
-<li>And this is the key idea of Gradient descend method</li>
-</ul>
-</li>
-<li><img src="http://pbking1.github.com/images/lr_gd/idea.png"></li>
-</ul>
-
-
-<h3>The cpp code of it</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-<span class='line-number'>127</span>
-<span class='line-number'>128</span>
-<span class='line-number'>129</span>
-<span class='line-number'>130</span>
-<span class='line-number'>131</span>
-<span class='line-number'>132</span>
-<span class='line-number'>133</span>
-<span class='line-number'>134</span>
-<span class='line-number'>135</span>
-<span class='line-number'>136</span>
-<span class='line-number'>137</span>
-<span class='line-number'>138</span>
-<span class='line-number'>139</span>
-<span class='line-number'>140</span>
-<span class='line-number'>141</span>
-<span class='line-number'>142</span>
-<span class='line-number'>143</span>
-<span class='line-number'>144</span>
-<span class='line-number'>145</span>
-<span class='line-number'>146</span>
-<span class='line-number'>147</span>
-<span class='line-number'>148</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#include&lt;stdlib.h&gt;
-</span><span class='line'>#include&lt;stdio.h&gt;
-</span><span class='line'>#include&lt;string.h&gt;
-</span><span class='line'>#include&lt;math.h&gt;
-</span><span class='line'>
-</span><span class='line'>#define OUTPUTID 10001
-</span><span class='line'>#define BUFFERSIZE 50000
-</span><span class='line'>#define ROWNUM 10000
-</span><span class='line'>#define COLNUM 385
-</span><span class='line'>
-</span><span class='line'>double alpha = 0.1;
-</span><span class='line'>char buffer[BUFFERSIZE];
-</span><span class='line'>const char *delim = ",";
-</span><span class='line'>double x[ROWNUM][COLNUM];
-</span><span class='line'>double y[ROWNUM];
-</span><span class='line'>double result[ROWNUM];
-</span><span class='line'>double diff[ROWNUM];
-</span><span class='line'>double theta[COLNUM];
-</span><span class='line'>double temp[COLNUM];
-</span><span class='line'>
-</span><span class='line'>void readdata(char *, bool);
-</span><span class='line'>void writedata(char *);
-</span><span class='line'>void test();
-</span><span class='line'>void gradient_descend_train();
-</span><span class='line'>
-</span><span class='line'>int main(){
-</span><span class='line'>  readdata("train.csv", true);
-</span><span class='line'>  gradient_descend_train();
-</span><span class='line'>  readdata("test.csv", false);
-</span><span class='line'>  test();
-</span><span class='line'>  writedata("predict.csv");
-</span><span class='line'>  return 0;
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>void readdata(char *filename, bool haspredicted){
-</span><span class='line'>  FILE *inputfile = fopen(filename, "r");
-</span><span class='line'>
-</span><span class='line'>  if(inputfile == NULL){
-</span><span class='line'>      system("PAUSE");
-</span><span class='line'>      exit(1);
-</span><span class='line'>  }
-</span><span class='line'>  //drop the first line
-</span><span class='line'>  fscanf(inputfile, "%s", buffer);
-</span><span class='line'>  //read all lines each
-</span><span class='line'>  char *s;
-</span><span class='line'>  for(int i = 0; i &lt; ROWNUM; i++){
-</span><span class='line'>      
-</span><span class='line'>      fscanf(inputfile, "%s", buffer);
-</span><span class='line'>      //drop the first column
-</span><span class='line'>      strtok(buffer, delim);
-</span><span class='line'>      //read the predict y
-</span><span class='line'>      if(haspredicted){
-</span><span class='line'>          s = strtok(NULL, delim);
-</span><span class='line'>          sscanf(s, "%lf", &y[i]);
-</span><span class='line'>      }
-</span><span class='line'>      //init x0
-</span><span class='line'>      x[i][0] = 1;
-</span><span class='line'>      //read the matrix
-</span><span class='line'>      for(int j = 1; j &lt; COLNUM; j++){
-</span><span class='line'>          s = strtok(NULL, delim);
-</span><span class='line'>          sscanf(s, "%lf", &x[i][j]);
-</span><span class='line'>      }
-</span><span class='line'>  }
-</span><span class='line'>  fclose(inputfile);
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>void writedata(char *filename){
-</span><span class='line'>  FILE *outputfile = fopen(filename, "w");
-</span><span class='line'>  
-</span><span class='line'>  if(outputfile == NULL){
-</span><span class='line'>      system("pause");
-</span><span class='line'>      exit(1);
-</span><span class='line'>  }
-</span><span class='line'>
-</span><span class='line'>  fprintf(outputfile, "%s,%s\n", "Id", "reference");
-</span><span class='line'>  //write the result into file
-</span><span class='line'>  for(int i = 0, id = OUTPUTID; i &lt; ROWNUM; i++, id++){
-</span><span class='line'>      //cout&lt;&lt;"write the line"&lt;&lt;i + 1&lt;&lt;endl;
-</span><span class='line'>      fprintf(outputfile, "%d,%.6lf\n", id, result[i]);
-</span><span class='line'>  }
-</span><span class='line'>  fclose(outputfile);
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>void initTheta(){  //init theta
-</span><span class='line'>  char *thetafilename = "theta.dat";
-</span><span class='line'>  FILE *f = fopen(thetafilename, "r");
-</span><span class='line'>  for(int j = 0; j &lt; COLNUM; j++)
-</span><span class='line'>      fscanf(f, "%lf", &theta[j]);
-</span><span class='line'>  fclose(f);
-</span><span class='line'>  //init the theta
-</span><span class='line'>  for(int j = 0; j &lt; COLNUM; j++)
-</span><span class='line'>      theta[j] = 0;
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>void saveTheta(){   //save the theta
-</span><span class='line'>  FILE *f = fopen("theta.dat", "w");
-</span><span class='line'>  for(int j = 0; j &lt; COLNUM; j++)
-</span><span class='line'>      fprintf(f, "%lf\n", theta[j]);
-</span><span class='line'>  fclose(f);
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>void calculateResult(){
-</span><span class='line'>  for(int i = 0; i &lt; ROWNUM; i++){
-</span><span class='line'>      result[i] = 0;
-</span><span class='line'>      for(int j = 0; j &lt; COLNUM; j++){
-</span><span class='line'>          result[i] += theta[j] * x[i][j];
-</span><span class='line'>      }
-</span><span class='line'>  }
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>double calculateJ(){
-</span><span class='line'>  int turn = 0;
-</span><span class='line'>  double cost = 0;
-</span><span class='line'>  for(int i = 0; i &lt; ROWNUM; i++){
-</span><span class='line'>      diff[i] = result[i] - y[i];
-</span><span class='line'>      cost += diff[i]*diff[i];
-</span><span class='line'>  }
-</span><span class='line'>  cost /= (ROWNUM * 2);
-</span><span class='line'>  printf("%5d: J(theta) = %.6lf\n", ++turn, cost);
-</span><span class='line'>  return cost;
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>void updateTheta(){
-</span><span class='line'>  double sum;
-</span><span class='line'>  for(int j = 0 ; j &lt; COLNUM; j++){
-</span><span class='line'>      sum = 0;
-</span><span class='line'>      for(int i = 0; i &lt; ROWNUM; i++)
-</span><span class='line'>          sum += diff[i] * x[i][j];
-</span><span class='line'>      theta[j] -= alpha * sum / ROWNUM;
-</span><span class='line'>  }
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>void gradient_descend_train(){
-</span><span class='line'>  initTheta();
-</span><span class='line'>  alpha = 0.1001;
-</span><span class='line'>  double cost = 1000;
-</span><span class='line'>  while(cost &gt; 26.4){
-</span><span class='line'>      calculateResult();
-</span><span class='line'>      cost = calculateJ();
-</span><span class='line'>      updateTheta();
-</span><span class='line'>  }
-</span><span class='line'>  saveTheta();
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>void test(){
-</span><span class='line'>  calculateResult();
-</span><span class='line'>}
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>The Second method to solve the problem(normal equation)</h3>
-
-<ul>
-<li>This way is a way shown in the statistic learning.</li>
-<li>use the minimum square function to do a regression analyse on the data.
-
-<ul>
-<li><img src="http://pbking1.github.com/images/lr_gd/nq.png"></li>
-<li>and the process is shown : (385<em>10000)</em>(10000<em>385)</em>(385<em>10000)</em>10000<em>1=385</em>1</li>
-</ul>
-</li>
-<li>and we can see the feature normalise in the normal equation function
-
-<ul>
-<li><img src="http://pbking1.github.com/images/lr_gd/nfn.png"></li>
-</ul>
-</li>
-</ul>
-
-
-<h3>The matlab code of it</h3>
-
-<ul>
-<li>The main function</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>%load the train data
-</span><span class='line'>data = load('train.txt');
-</span><span class='line'>X = data(:, 3:386);
-</span><span class='line'>y = data(:, 2);
-</span><span class='line'>m = length(y);
-</span><span class='line'>m2 = size(X);
-</span><span class='line'>
-</span><span class='line'>%load the test data
-</span><span class='line'>data2 = load('test.txt');
-</span><span class='line'>feat = data2(:, 2:385);
-</span><span class='line'>m3 = size(feat);
-</span><span class='line'>
-</span><span class='line'>sum_test = [0];
-</span><span class='line'>
-</span><span class='line'>%use the equation to calculate
-</span><span class='line'>theta = normaleqn(X, y, w);
-</span><span class='line'>
-</span><span class='line'>%calculate the result
-</span><span class='line'>result = feat * theta;
-</span><span class='line'>
-</span><span class='line'>csvwrite('aaa_ver3.csv', [linen result]);</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>The normal equation function</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>function [theta] = normaleqn(x, y, w)
-</span><span class='line'>    theta = zeros(size(x, 2), 1);
-</span><span class='line'>    %theta = pinv(x' * x + 4000.3 * eye(size(x, 2))) * x' * y;
-</span><span class='line'>     %theta = pinv(x' * x + 3.3 * eye(size(x, 2))) * x' * y;
-</span><span class='line'>    theta = pinv(x' * x + w * eye(size(x, 2))) * x' * y;
-</span><span class='line'>en</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>The cpp code of it</h3>
 ]]></content>
   </entry>
   
