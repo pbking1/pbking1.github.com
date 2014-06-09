@@ -5,39 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>IOS Tutorial 1 - KING</title>
+  <title>Use Sqlite in Html5 - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="1.一点基本语法
-用NSLog打印，代替printf（也是可以用的）
-用NSDate来获取时间
-用NSData来把数据char*转成string存起来 源码 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26 &hellip;">
+  <meta name="description" content="There are three ways to store data using html5 using database (sqlite)
+using localStorage will only store on client, will not send to server
+this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -46,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/06/09/use-sqlite-in-html5">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -103,7 +77,7 @@
   
   <header>
     
-      <h1 class="entry-title">IOS Tutorial 1</h1>
+      <h1 class="entry-title">Use Sqlite in Html5</h1>
     
     
       <p class="meta">
@@ -119,7 +93,7 @@
   
 
 
-<time datetime="2014-05-14T13:11:01+08:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+<time datetime="2014-06-09T10:50:05+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com">Comments</a>
@@ -130,10 +104,21 @@
 
 
 <div class="entry-content"><ul>
-<li>1.一点基本语法</li>
-<li>用NSLog打印，代替printf（也是可以用的）</li>
-<li>用NSDate来获取时间</li>
-<li>用NSData来把数据char*转成string存起来</li>
+<li>There are three ways to store data using html5
+
+<ul>
+<li>using database (sqlite)</li>
+<li>using localStorage
+
+<ul>
+<li>will only store on client, will not send to server</li>
+<li>this data can be read even using different block on the same browser</li>
+<li>the data will not disapear unless you delete it</li>
+</ul>
+</li>
+<li>using sessionStorage</li>
+</ul>
+</li>
 </ul>
 
 
@@ -141,114 +126,25 @@
 
 
 <ul>
-<li>源码</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;Foundation/Foundation.h&gt;
-</span><span class='line'>
-</span><span class='line'>int main(int argc, const char * argv[])
-</span><span class='line'>{
-</span><span class='line'>
-</span><span class='line'>    @autoreleasepool {
-</span><span class='line'>        
-</span><span class='line'>        // insert code here...
-</span><span class='line'>        NSLog(@"Hello, World!");
-</span><span class='line'>        
-</span><span class='line'>    }
-</span><span class='line'>    int i;
-</span><span class='line'>    for(i = 0; i &lt;= 5; i++)
-</span><span class='line'>        NSLog(@"%d\n", i);
-</span><span class='line'>   
-</span><span class='line'>    NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-(24*60*60)];
-</span><span class='line'>    NSLog(@"yesterday is %@", yesterday);
-</span><span class='line'>    
-</span><span class='line'>    NSDate *tomorrow = [NSDate dateWithTimeIntervalSinceNow:+(24*60*60)];
-</span><span class='line'>    NSLog(@"tomorrow is %@", tomorrow);
-</span><span class='line'>    
-</span><span class='line'>    const char *string = "Hi this is pb";
-</span><span class='line'>    NSData *data = [NSData dataWithBytes:string length:strlen(string) + 1];
-</span><span class='line'>    NSLog(@"data is %@", data);
-</span><span class='line'>    NSLog(@"%lu Bytes string is '%s'", (unsigned long)[data length], [data bytes]);
-</span><span class='line'>    return 0;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
+<li><p>The localStorage and sessionStorage are storing the data on your computer and after the web page is loaded</p>
 
 <ul>
-<li><p>2.线程的同步与锁
-　　- 要说明线程的同步与锁，最好的例子可能就是多个窗口同时售票的售票系统了。我们知道在java中，使用synchronized来同步，而iphone虽然没有提供类似java下的synchronized关键字，但提供了NSCondition对象接口。</p>
-
-<ul>
-<li>查看NSCondition的接口说明可以看出，NSCondition是iphone下的锁对象，所以我们可以使用NSCondition实现iphone中的线程安全。这是来源于网上的一个例子：</li>
+<li>we can use javascript to get the data</li>
 </ul>
 </li>
-<li><p>2.多个窗口同时售票的售票系统代码</p></li>
-<li>AppDelegate.h</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;Cocoa/Cocoa.h&gt;
-</span><span class='line'>
-</span><span class='line'>@interface AppDelegate : NSObject &lt;NSApplicationDelegate&gt;{
-</span><span class='line'>    int tickets;
-</span><span class='line'>    int count;
-</span><span class='line'>    NSThread *ticketThreadone;
-</span><span class='line'>    NSThread *ticketThreadtwo;
-</span><span class='line'>    NSCondition *ticketsCondition;
-</span><span class='line'>    NSWindow *windows;
-</span><span class='line'>    
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>@property (assign) IBOutlet NSWindow *window;
-</span><span class='line'>
-</span><span class='line'>@end
-</span></code></pre></td></tr></table></div></figure>
-
+<li><p>running the first time</p>
 
 <ul>
-<li>AppDelegate.cpp</li>
+<li>use all the following code can see the db insert and query successfully</li>
+</ul>
+</li>
+<li>but in the second time
+
+<ul>
+<li>you should note the create and insert</li>
+<li>then you can see the result</li>
+</ul>
+</li>
 </ul>
 
 
@@ -287,147 +183,42 @@
 <span class='line-number'>33</span>
 <span class='line-number'>34</span>
 <span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import "AppDelegate.h"
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;html&gt;
+</span><span class='line'>  &lt;body&gt;
+</span><span class='line'>      &lt;script type="text/javascript"&gt;
+</span><span class='line'>          //the first way to store the data
+</span><span class='line'>          if(localStorage.pagecount){
+</span><span class='line'>              localStorage.pagecount = Number(localStorage.pagecount) + 1;
+</span><span class='line'>              }else{
+</span><span class='line'>              localStorage.pagecount = 1;
+</span><span class='line'>          }
+</span><span class='line'>          document.write("Visits: " + localStorage.pagecount + " time(s).");
 </span><span class='line'>
-</span><span class='line'>@implementation AppDelegate
-</span><span class='line'>@synthesize window;
-</span><span class='line'>
-</span><span class='line'>- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-</span><span class='line'>{
-</span><span class='line'>    tickets = 100;
-</span><span class='line'>    count = 0;
-</span><span class='line'>    
-</span><span class='line'>    ticketsCondition = [[NSCondition alloc] init]; //初始化锁对象
-</span><span class='line'>    ticketThreadone = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil]; //初始化线程1
-</span><span class='line'>    [ticketThreadone setName:@"Thread-1"];
-</span><span class='line'>    [ticketThreadone start];
-</span><span class='line'>    
-</span><span class='line'>    ticketThreadtwo = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];  //初始化线程2
-</span><span class='line'>    [ticketThreadtwo setName:@"Thread-2"];
-</span><span class='line'>    [ticketThreadtwo start];
-</span><span class='line'>    
-</span><span class='line'>    [window makeKeyWindow];  //出错了，无法在窗口中运行，只能在命令行中运行，不知道为什么？求知道的筒子解答下~
-</span><span class='line'>    
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)run{
-</span><span class='line'>    while(TRUE){
-</span><span class='line'>        [ticketsCondition lock];
-</span><span class='line'>        if(tickets &gt; 0)
-</span><span class='line'>        {
-</span><span class='line'>            [NSThread sleepForTimeInterval:0.5];
-</span><span class='line'>            count = 100 - tickets;
-</span><span class='line'>            NSLog(@"current tickets count are: %d, sell %d, thread name: %@", tickets, count, [[NSThread currentThread] name]);
-</span><span class='line'>            tickets--;
-</span><span class='line'>        }else
-</span><span class='line'>        {
-</span><span class='line'>            break;
-</span><span class='line'>        }
-</span><span class='line'>        [ticketsCondition unlock];
-</span><span class='line'>    }
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)dealloc{
-</span><span class='line'>    [ticketThreadone release];  //释放内存
-</span><span class='line'>    [ticketThreadtwo release];
-</span><span class='line'>    [ticketsCondition release];
-</span><span class='line'>    [window release];
-</span><span class='line'>    [super dealloc];
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>@end
+</span><span class='line'>          //the second way to store the data
+</span><span class='line'>          //using sqlite
+</span><span class='line'>          var db = openDatabase("mytestdb", "1.0", "stu list", 1024*1024, function(){});
+</span><span class='line'>          //use the command `openDatabase` can create a data base
+</span><span class='line'>          //name, version, discription, db size
+</span><span class='line'>          alert("&lt;p&gt;create db success&lt;/p&gt;");
+</span><span class='line'>          db.transaction(function(tx){
+</span><span class='line'>                  tx.executeSql("CREATE TABLE IF NOT EXISTS test(id int UNIQUE, title TEXT, content TEXT)");
+</span><span class='line'>                  document.write("&lt;p&gt;create table test successfully&lt;/p&gt;");
+</span><span class='line'>                  tx.executeSql("insert into test(id, title, content) values(1, '111', 'swq')");
+</span><span class='line'>                  tx.executeSql("insert into test(id, title, content) values(2, 'bbb', 'sawf')");
+</span><span class='line'>                  document.write("&lt;p&gt;insert two contents successfully&lt;/p&gt;");
+</span><span class='line'>                  tx.executeSql("SELECT * FROM test", [], function(tx, rs){
+</span><span class='line'>                      var len = rs.rows.length;
+</span><span class='line'>                      alert(len + "");
+</span><span class='line'>                      for(var i = 0; i &lt; rs.rows.length; i++){
+</span><span class='line'>                          var testObj = rs.rows.item(i);
+</span><span class='line'>                          alert(testObj.id + "-----" + testObj.title);
+</span><span class='line'>                      }
+</span><span class='line'>                  });
+</span><span class='line'>          });
+</span><span class='line'>      &lt;/script&gt;
+</span><span class='line'>  &lt;/body&gt;
+</span><span class='line'>&lt;/html&gt;
 </span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Trouble shooting</li>
-<li><p>1.ARC forbids explicit message send of &lsquo;release&rsquo;
-&lsquo;release&rsquo; is unavailable: not available in automatic reference counting mode</p>
-
-<ul>
-<li>错误原因：因为我们设置了用ARC来管理内存释放，我们却又调用了release方法去释放对象。</li>
-<li>(From the Internet)
-
-<ul>
-<li>ARC是iOS 5推出的新功能，全称叫 ARC(Automatic Reference Counting)。简单地说，就是代码中自动加入了retain/release，原先需要手动添加的用来处理内存管理的引用计数的代码可以自动地由编译器完成了。该机制在 iOS 5/ Mac OS X 10.7 开始导入，利用 Xcode4.2 可以使用该机制。简单地理解ARC，就是通过指定的语法，让编译器(LLVM 3.0)在编译代码时，自动生成实例的引用计数管理部分代码。有一点，ARC并不是GC，它只是一种代码静态分析（Static Analyzer）工具。</li>
-</ul>
-</li>
-<li>how to solve it?
-
-<ul>
-<li>找到项目中的Build setting
-
-<ul>
-<li>把<code>Objective-C Automatic Reference</code>从YES改成NO</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>2.找不到HOME键</p>
-
-<ul>
-<li>在模拟器上按<code>Shift+command+h</code></li>
-</ul>
-</li>
-<li><p>3.出现<code>Auto Layout on iOS Versions prior to 6.0</code></p>
-
-<ul>
-<li>界面设置问题</li>
-<li>找到storybroad
-
-<ul>
-<li>打开属性栏，把<code>Use AutoLayout</code>去掉。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>4.ios7的全屏问题</p>
-
-<ul>
-<li>在viewcontroller里面加入以下代码
-&#8220;`</li>
-<li><p>(void)viewDidLayoutSubviews{</p>
-
-<p>  if ([self respondsToSelector:@selector(topLayoutGuide)]) // iOS 7 or above
-  {
-      CGFloat top = self.topLayoutGuide.length;
-      if(self.view.frame.origin.y == 0){
-          // We only want to do this once, or if the view has somehow been &quot;restored&quot; by other code.
-          self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + top, self.view.frame.size.width, self.view.frame.size.    height &ndash; top);
-      }
-  }
-}
-&#8220;`</p></li>
-<li>这个只能让上面原有的时间什么的消失，但是从根本上不能解决问题</li>
-</ul>
-</li>
-<li><p>5.如果刚开始打开ios模拟器发现太大了</p>
-
-<ul>
-<li>再Window->scale那里可以调整成75%就可以使得模拟器看起来大小比较科学了。</li>
-</ul>
-</li>
-</ul>
 
 </div>
 
@@ -451,12 +242,12 @@
   
 
 
-<time datetime="2014-05-14T13:11:01+08:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+<time datetime="2014-06-09T10:50:05+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/ios/'>IOS</a>
+    <a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/html/'>html</a>
   
 </span>
 
@@ -472,10 +263,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/05/13/2014-sysu-database-project-step1/" title="Previous Post: 2014 sysu database project step1">&laquo; 2014 sysu database project step1</a>
+        <a class="basic-alignment left" href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/" title="Previous Post: phonegap 框架原理">&laquo; phonegap 框架原理</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/05/14/ios-tutorial-2/" title="Next Post: IOS tutorial 2">IOS tutorial 2 &raquo;</a>
       
     </p>
   </footer>
@@ -619,8 +408,8 @@ ds.charset = 'UTF-8';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/06/09/use-sqlite-in-html5/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/06/09/use-sqlite-in-html5/';
         var disqus_script = 'embed.js';
       
     (function () {
