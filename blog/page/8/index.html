@@ -5,13 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Use Sqlite in Html5 - KING</title>
+  <title>KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="There are three ways to store data using html5 using database (sqlite)
-using localStorage will only store on client, will not send to server
-this &hellip;">
+  <meta name="description" content="&lt;本文为总结网上资料的文章，大多数内容并非本人原创>
+&ndash; 缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。
+&ndash; 从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。
+&ndash; 没有遗传算法的” &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +21,7 @@ this &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/06/09/use-sqlite-in-html5">
+  <link rel="canonical" href="http://pbking1.github.com/blog/page/8">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -72,12 +73,15 @@ this &hellip;">
 </header> -->
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">Use Sqlite in Html5</h1>
+      <h1 class="entry-title"><a href="/blog/2014/04/07/something-about-pso-algorithm/">粒子群优化算法介绍</a></h1>
     
     
       <p class="meta">
@@ -93,193 +97,46 @@ this &hellip;">
   
 
 
-<time datetime="2014-06-09T10:50:05+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2014</time>
+<time datetime="2014-04-07T23:27:24+08:00" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time>
         
-           | <a href="#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com">Comments</a>
+           | <a href="/blog/2014/04/07/something-about-pso-algorithm/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm/">Comments</a>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><ul>
-<li>There are three ways to store data using html5
-
-<ul>
-<li>using database (sqlite)</li>
-<li>using localStorage
-
-<ul>
-<li>will only store on client, will not send to server</li>
-<li>this data can be read even using different block on the same browser</li>
-<li>the data will not disapear unless you delete it</li>
-</ul>
-</li>
-<li>using sessionStorage</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li><p>The localStorage and sessionStorage are storing the data on your computer and after the web page is loaded</p>
-
-<ul>
-<li>we can use javascript to get the data</li>
-</ul>
-</li>
-<li><p>running the first time</p>
-
-<ul>
-<li>use all the following code can see the db insert and query successfully</li>
-</ul>
-</li>
-<li>but in the second time
-
-<ul>
-<li>you should note the create and insert</li>
-<li>then you can see the result</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;html&gt;
-</span><span class='line'>  &lt;body&gt;
-</span><span class='line'>      &lt;script type="text/javascript"&gt;
-</span><span class='line'>          //the first way to store the data
-</span><span class='line'>          if(localStorage.pagecount){
-</span><span class='line'>              localStorage.pagecount = Number(localStorage.pagecount) + 1;
-</span><span class='line'>              }else{
-</span><span class='line'>              localStorage.pagecount = 1;
-</span><span class='line'>          }
-</span><span class='line'>          document.write("Visits: " + localStorage.pagecount + " time(s).");
-</span><span class='line'>
-</span><span class='line'>          //the second way to store the data
-</span><span class='line'>          //using sqlite
-</span><span class='line'>          var db = openDatabase("mytestdb", "1.0", "stu list", 1024*1024, function(){});
-</span><span class='line'>          //use the command `openDatabase` can create a data base
-</span><span class='line'>          //name, version, discription, db size
-</span><span class='line'>          alert("&lt;p&gt;create db success&lt;/p&gt;");
-</span><span class='line'>          db.transaction(function(tx){
-</span><span class='line'>                  tx.executeSql("CREATE TABLE IF NOT EXISTS test(id int UNIQUE, title TEXT, content TEXT)");
-</span><span class='line'>                  document.write("&lt;p&gt;create table test successfully&lt;/p&gt;");
-</span><span class='line'>                  tx.executeSql("insert into test(id, title, content) values(1, '111', 'swq')");
-</span><span class='line'>                  tx.executeSql("insert into test(id, title, content) values(2, 'bbb', 'sawf')");
-</span><span class='line'>                  document.write("&lt;p&gt;insert two contents successfully&lt;/p&gt;");
-</span><span class='line'>                  tx.executeSql("SELECT * FROM test", [], function(tx, rs){
-</span><span class='line'>                      var len = rs.rows.length;
-</span><span class='line'>                      alert(len + "");
-</span><span class='line'>                      for(var i = 0; i &lt; rs.rows.length; i++){
-</span><span class='line'>                          var testObj = rs.rows.item(i);
-</span><span class='line'>                          alert(testObj.id + "-----" + testObj.title);
-</span><span class='line'>                      }
-</span><span class='line'>                  });
-</span><span class='line'>          });
-</span><span class='line'>      &lt;/script&gt;
-</span><span class='line'>  &lt;/body&gt;
-</span><span class='line'>&lt;/html&gt;
-</span></code></pre></td></tr></table></div></figure>
+  <div class="entry-content"><p>&lt;本文为总结网上资料的文章，大多数内容并非本人原创>
+&ndash; 缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。
+&ndash; 从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。
+&ndash; 没有遗传算法的”交叉”和”变异“操作，他通过追随当前搜索到的最优值来寻找全局最优。
+&ndash; 这种算法实现容易并且精度高，收敛快。
+&ndash; 是一种并行算法
+&ndash; 是一种很有潜力的神经网络算法
+&ndash; 是一种演化计算的方法，来源于对一个简化社会模型的模拟
+&ndash; 在大范围的问题集中是很有效的
+&ndash; 是一种基于群智能的随机搜索算法
+&ndash; 自从PSO算法被提出以来，由于它直观的背景，简单而容易实现的特点，以及对于不同类型函数广泛的适应性，逐渐得到研究者的注意。十余年来，PSO算法的理论与应用研究都取得了很大的进展，对于算法的原理已经有了初步的了解，算法的应用也已经在不同学科中得以实现。</p>
 
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">pb</span></span>
-
-      
-
-
-
-
-
-
-
-
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/07/something-about-pso-algorithm/">Read more</a>
+    </footer>
   
 
 
-<time datetime="2014-06-09T10:50:05+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2014</time>
-      
-
-<span class="categories">
+    </article>
   
-    <a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/html/'>html</a>
-  
-</span>
-
-
-    </p>
+  <div class="pagination">
     
-      <div class="sharing">
-  
-  
-  
-</div>
-
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/" title="Previous Post: phonegap 框架原理">&laquo; phonegap 框架原理</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2014/06/09/tofel-experience-have-not-passed-100-yes/" title="Next Post: TOFEL experience(have not passed 100 yes)">TOFEL experience(have not passed 100 yes) &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a class="next" href="/blog/page/7/"><i class="fa fa-chevron-circle-right fa-2x icon-color icon-homepage"></i></a>
+    
+  </div>
 </div>
-  </section>
-
-</div>
-
 <aside class="sidebar">
   
     <section>
@@ -359,7 +216,7 @@ ds.charset = 'UTF-8';
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/pbking1">@pbking1</a> on GitHub
@@ -393,7 +250,6 @@ ds.charset = 'UTF-8';
   
 </aside>
 
-
     </div>
   </div>
   <!-- <footer role="contentinfo"><p>
@@ -410,10 +266,7 @@ ds.charset = 'UTF-8';
       var disqus_shortname = 'pbking1';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/06/09/use-sqlite-in-html5/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/06/09/use-sqlite-in-html5/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

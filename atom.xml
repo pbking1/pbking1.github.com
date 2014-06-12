@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-09T11:02:48+08:00</updated>
+  <updated>2014-06-12T09:10:56+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,328 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Note of the Uml Final Exam]]></title>
+    <link href="http://pbking1.github.com/blog/2014/06/11/the-note-of-the-uml-final-exam/"/>
+    <updated>2014-06-11T00:00:00+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/11/the-note-of-the-uml-final-exam</id>
+    <content type="html"><![CDATA[<h3>UML final exam note</h3>
+
+<ul>
+<li>3个小时</li>
+</ul>
+
+
+<h4>选择题</h4>
+
+<ul>
+<li>10个选择，一题2分</li>
+<li>去看下up（书上第二章）。</li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>画图题</h4>
+
+<ul>
+<li>考试的时候把图导出来，贴到word里面</li>
+<li>除了组件图</li>
+<li>剩下的每个图18分钟</li>
+<li><p>1.用例图</p>
+
+<ul>
+<li>给一个中文文档</li>
+<li>用例是什么？
+
+<ul>
+<li>text，interaction（system和Actor）</li>
+<li>fill goal(一切围绕)</li>
+<li>用一个人，然后一个系统的服务来满足一个goal</li>
+<li>有可能服务和goal名字一样</li>
+<li>像数据库叫后台参与者</li>
+<li>像银行那些叫支持性参与者</li>
+<li>文档从头到尾只有一个人
+
+<ul>
+<li>有的时候可能有一个actress</li>
+</ul>
+</li>
+<li>goal一定是动词或者动名词，来表达实现goal。
+
+<ul>
+<li>通常在开始或者结束</li>
+</ul>
+</li>
+<li><p>看段落就好了，不用研究细节</p></li>
+<li><p>0分</p>
+
+<ul>
+<li>用例图里面出现主菜单，什么什么界面，什么什么功能（功能倾向）</li>
+<li>有操作流程倾向（不要画得有顺序）</li>
+<li>只要出现就完蛋</li>
+<li>没框（boundry）扣一分
+
+<ul>
+<li>画了框没写名字扣一分</li>
+<li>定范围</li>
+</ul>
+</li>
+<li>Actor主要参与者一定画在图的左边
+
+<ul>
+<li>画了管理员扣一分</li>
+</ul>
+</li>
+<li>goal写在框里面也就是椭圆里面的东西
+
+<ul>
+<li>一定要有extend或者include</li>
+<li>一定要是虚线，实线就会被扣分</li>
+<li>箭头方向一定要是正确的，extend指向goal，include相反</li>
+<li>主要的节点有两个至三个include或者extend</li>
+<li>名字要是动词，不能是名词Actor和用例相连的图，一定要用没有箭头的实线相连</li>
+<li>外部子系统一定要画出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.活动图</p>
+
+<ul>
+<li>考一个用例的活动图</li>
+<li>一定有一个用例在里面</li>
+<li>表示控制权的转移</li>
+<li>准则
+
+<ul>
+<li>老板准则
+
+<ul>
+<li>如果画了登陆（扣1分）</li>
+</ul>
+</li>
+<li>基本应用过程准则
+
+<ul>
+<li>东西不能太大</li>
+<li>把东西说详细</li>
+</ul>
+</li>
+<li>size
+
+<ul>
+<li>规模不能太大</li>
+<li>单操作的东西不要画</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>每个用例一定都能找到一个UI</li>
+<li>不能include，不然就违背了size准则</li>
+<li>简化的写就好了</li>
+<li>还有一种多泳道的图
+
+<ul>
+<li>考试不考</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.状态图
+
+<ul>
+<li>其实把状态计画好了就行了</li>
+<li>定义状态
+
+<ul>
+<li>把步骤写出来就好了</li>
+<li>基本上不用太在意细节</li>
+</ul>
+</li>
+<li>状态图是时间的生命周期</li>
+<li>条件的变迁采用guard</li>
+<li>考试
+
+<ul>
+<li>一定要找到guard</li>
+<li>怎么起名？
+
+<ul>
+<li>不能说“按continue”，而要说“选房间”</li>
+<li>要说用户做的外部事件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>4.领域模型（概念类图）</p>
+
+<ul>
+<li>识别一个用例里面的名词</li>
+<li>太多动词或者太多线，就0分</li>
+<li>一定要找概念（抽象出类）</li>
+<li>通常Actor不要画在属性里面</li>
+<li>扣分点
+
+<ul>
+<li>如果写了button，则扣分</li>
+<li>如果出现database，扣分</li>
+<li>在一个领域模型里面，这两个东西首要不要出现</li>
+<li>命名必须是名词，不能使动词，用了就完蛋</li>
+<li>属性给一些重要的就可以了，不要画一个图全部都没有属性的</li>
+<li>不要在属性里面写操作！</li>
+<li>关联
+
+<ul>
+<li>如果关联出现箭头而不是直线</li>
+<li>则扣分</li>
+<li>箭头一般都是include，所以不要画箭头</li>
+<li>关联上一定要有名字（包含contain）</li>
+<li>记得写多重性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在一段文档中经常出现的名词，一定要挑出来</li>
+<li>抽象出的类不能出现复数或者抽象数据类型</li>
+<li>描述类就赶紧加上</li>
+<li>写在框里面的名词不能无中生有</li>
+</ul>
+</li>
+<li><p>5.顺序图</p>
+
+<ul>
+<li>要用（BCE规则）画</li>
+<li>用来表达一个场景的人机交互的事件的序列</li>
+<li>一般是表达主场景和频繁出现的</li>
+<li>考试考主场景
+
+<ul>
+<li>用户达成目标的最便捷的方式</li>
+<li>或者最期望的方式</li>
+<li>主场景没有if条件</li>
+<li>既然是系统顺序图，第一个对象一定是system，不然就0分</li>
+<li>要加“：”
+
+<ul>
+<li>表示对象</li>
+</ul>
+</li>
+<li>在User后面的那个就是”:System”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>6.包图</p>
+
+<ul>
+<li>比较容易，也比较简洁</li>
+<li>使用MVC，来构建城市模型（考题）</li>
+<li>然后把需要的类和控制器填到三个package里面</li>
+<li>把界面放在视图层</li>
+</ul>
+</li>
+<li><p>7.交互图</p>
+
+<ul>
+<li>注意起名字</li>
+<li>和顺序图内容差不多</li>
+<li>和包图里面的MVC的三个包内容一致
+
+<ul>
+<li>比如view就要再包图的view包里面</li>
+</ul>
+</li>
+<li>去官网看一下老师发给教程
+
+<ul>
+<li>讲的比较详细</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>8.设计类图</p>
+
+<ul>
+<li>把控制器和实体类画进去</li>
+<li>除了控制器之外，其他的东西和领域模型里面是一样的</li>
+<li>属性的关联一定要实现</li>
+</ul>
+</li>
+<li><p>9.部署图（附加题）</p>
+
+<ul>
+<li>差不多的</li>
+<li>部署条件是告诉你的</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TOFEL Experience(have Not Passed 100 Yes)]]></title>
+    <link href="http://pbking1.github.com/blog/2014/06/09/tofel-experience-have-not-passed-100-yes/"/>
+    <updated>2014-06-09T14:45:34+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/09/tofel-experience-have-not-passed-100-yes</id>
+    <content type="html"><![CDATA[<ul>
+<li>just for myself~~</li>
+</ul>
+
+
+<h3>reading</h3>
+
+<ul>
+<li>just reading the computer text book</li>
+<li>do some more reading on <the economic> and <new york time></li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>listening</h3>
+
+<ul>
+<li>listen to the TPO carefully and do many times</li>
+<li>watch the US or UK movie without seeing what they are saying</li>
+</ul>
+
+
+<h3>writing</h3>
+
+<ul>
+<li>write in simple way</li>
+<li>do not use too many words that you do not know very well</li>
+</ul>
+
+
+<h3>speaking</h3>
+
+<ul>
+<li>speak louder and clearer</li>
+<li>do more practice like speaking loudly after lunch or recite the good paper</li>
+</ul>
+
+
+<h4>some tips for taking tofel test in China</h4>
+
+<ul>
+<li>ID card is the only thing that are needed for the test</li>
+<li>try order the test two month before the data you want</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Use Sqlite in Html5]]></title>
@@ -2663,467 +2985,6 @@
 </span><span class='line'>}
 </span><span class='line'>
 </span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IOS Tutorial 2]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-2/"/>
-    <updated>2014-05-14T16:34:49+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-2</id>
-    <content type="html"><![CDATA[<ul>
-<li>键盘收起以及弹出对话框</li>
-<li>在<code>ViewController.h</code>里面加入<code>-(IBAction)View_TouchDown:(id)sender</code>;</li>
-</ul>
-
-
-<!--more-->
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
-</span><span class='line'>
-</span><span class='line'>@interface ViewController : UIViewController
-</span><span class='line'>
-</span><span class='line'>@property (strong, nonatomic) IBOutlet UITextField *tempText;
-</span><span class='line'>
-</span><span class='line'>-(IBAction)showMessage;
-</span><span class='line'>-(IBAction)View_TouchDown:(id)sender;
-</span><span class='line'>@end
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>在<code>ViewController.m</code>里面加入以下代码</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>- (IBAction)View_TouchDown:(id)sender
-</span><span class='line'>{
-</span><span class='line'>    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>得到的全部代码如下</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import "ViewController.h"
-</span><span class='line'>
-</span><span class='line'>@interface ViewController ()
-</span><span class='line'>
-</span><span class='line'>@end
-</span><span class='line'>
-</span><span class='line'>@implementation ViewController
-</span><span class='line'>
-</span><span class='line'>- (void)viewDidLoad
-</span><span class='line'>{
-</span><span class='line'>    [super viewDidLoad];
-</span><span class='line'>  // Do any additional setup after loading the view, typically from a nib.
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)didReceiveMemoryWarning
-</span><span class='line'>{
-</span><span class='line'>    [super didReceiveMemoryWarning];
-</span><span class='line'>    // Dispose of any resources that can be recreated.
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (IBAction)showMessage  //弹出对话框
-</span><span class='line'>{
-</span><span class='line'>    UIAlertView *a = [[UIAlertView alloc]
-</span><span class='line'>                      initWithTitle:@"I am pb" message:@"hello world" delegate:nil cancelButtonTitle:@"I can do it" otherButtonTitles: nil];
-</span><span class='line'>    [a show];
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (IBAction)View_TouchDown:(id)sender
-</span><span class='line'>{
-</span><span class='line'>    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>@end
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><p>最后再在storybroad里面用outlet把整个屏幕和<code>View_TouchDown</code>连接起来就可以了</p></li>
-<li><p>Touble shoot</p>
-
-<ul>
-<li>1.出现<code>'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:</code>
-
-<ul>
-<li>说明<code>self.viewController = [[[ViewController alloc] initWithNibName:@"name" bundle:nil] autorelease];</code>
-
-<ul>
-<li>里面的name写错了
-
-<ul>
-<li>要写成和ViewController一样的名字才行。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IOS Tutorial 1]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1/"/>
-    <updated>2014-05-14T13:11:01+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1</id>
-    <content type="html"><![CDATA[<ul>
-<li>1.一点基本语法</li>
-<li>用NSLog打印，代替printf（也是可以用的）</li>
-<li>用NSDate来获取时间</li>
-<li>用NSData来把数据char*转成string存起来</li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li>源码</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;Foundation/Foundation.h&gt;
-</span><span class='line'>
-</span><span class='line'>int main(int argc, const char * argv[])
-</span><span class='line'>{
-</span><span class='line'>
-</span><span class='line'>    @autoreleasepool {
-</span><span class='line'>        
-</span><span class='line'>        // insert code here...
-</span><span class='line'>        NSLog(@"Hello, World!");
-</span><span class='line'>        
-</span><span class='line'>    }
-</span><span class='line'>    int i;
-</span><span class='line'>    for(i = 0; i &lt;= 5; i++)
-</span><span class='line'>        NSLog(@"%d\n", i);
-</span><span class='line'>   
-</span><span class='line'>    NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-(24*60*60)];
-</span><span class='line'>    NSLog(@"yesterday is %@", yesterday);
-</span><span class='line'>    
-</span><span class='line'>    NSDate *tomorrow = [NSDate dateWithTimeIntervalSinceNow:+(24*60*60)];
-</span><span class='line'>    NSLog(@"tomorrow is %@", tomorrow);
-</span><span class='line'>    
-</span><span class='line'>    const char *string = "Hi this is pb";
-</span><span class='line'>    NSData *data = [NSData dataWithBytes:string length:strlen(string) + 1];
-</span><span class='line'>    NSLog(@"data is %@", data);
-</span><span class='line'>    NSLog(@"%lu Bytes string is '%s'", (unsigned long)[data length], [data bytes]);
-</span><span class='line'>    return 0;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><p>2.线程的同步与锁
-　　- 要说明线程的同步与锁，最好的例子可能就是多个窗口同时售票的售票系统了。我们知道在java中，使用synchronized来同步，而iphone虽然没有提供类似java下的synchronized关键字，但提供了NSCondition对象接口。</p>
-
-<ul>
-<li>查看NSCondition的接口说明可以看出，NSCondition是iphone下的锁对象，所以我们可以使用NSCondition实现iphone中的线程安全。这是来源于网上的一个例子：</li>
-</ul>
-</li>
-<li><p>2.多个窗口同时售票的售票系统代码</p></li>
-<li>AppDelegate.h</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;Cocoa/Cocoa.h&gt;
-</span><span class='line'>
-</span><span class='line'>@interface AppDelegate : NSObject &lt;NSApplicationDelegate&gt;{
-</span><span class='line'>    int tickets;
-</span><span class='line'>    int count;
-</span><span class='line'>    NSThread *ticketThreadone;
-</span><span class='line'>    NSThread *ticketThreadtwo;
-</span><span class='line'>    NSCondition *ticketsCondition;
-</span><span class='line'>    NSWindow *windows;
-</span><span class='line'>    
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>@property (assign) IBOutlet NSWindow *window;
-</span><span class='line'>
-</span><span class='line'>@end
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>AppDelegate.cpp</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import "AppDelegate.h"
-</span><span class='line'>
-</span><span class='line'>@implementation AppDelegate
-</span><span class='line'>@synthesize window;
-</span><span class='line'>
-</span><span class='line'>- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-</span><span class='line'>{
-</span><span class='line'>    tickets = 100;
-</span><span class='line'>    count = 0;
-</span><span class='line'>    
-</span><span class='line'>    ticketsCondition = [[NSCondition alloc] init]; //初始化锁对象
-</span><span class='line'>    ticketThreadone = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil]; //初始化线程1
-</span><span class='line'>    [ticketThreadone setName:@"Thread-1"];
-</span><span class='line'>    [ticketThreadone start];
-</span><span class='line'>    
-</span><span class='line'>    ticketThreadtwo = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];  //初始化线程2
-</span><span class='line'>    [ticketThreadtwo setName:@"Thread-2"];
-</span><span class='line'>    [ticketThreadtwo start];
-</span><span class='line'>    
-</span><span class='line'>    [window makeKeyWindow];  //出错了，无法在窗口中运行，只能在命令行中运行，不知道为什么？求知道的筒子解答下~
-</span><span class='line'>    
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)run{
-</span><span class='line'>    while(TRUE){
-</span><span class='line'>        [ticketsCondition lock];
-</span><span class='line'>        if(tickets &gt; 0)
-</span><span class='line'>        {
-</span><span class='line'>            [NSThread sleepForTimeInterval:0.5];
-</span><span class='line'>            count = 100 - tickets;
-</span><span class='line'>            NSLog(@"current tickets count are: %d, sell %d, thread name: %@", tickets, count, [[NSThread currentThread] name]);
-</span><span class='line'>            tickets--;
-</span><span class='line'>        }else
-</span><span class='line'>        {
-</span><span class='line'>            break;
-</span><span class='line'>        }
-</span><span class='line'>        [ticketsCondition unlock];
-</span><span class='line'>    }
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)dealloc{
-</span><span class='line'>    [ticketThreadone release];  //释放内存
-</span><span class='line'>    [ticketThreadtwo release];
-</span><span class='line'>    [ticketsCondition release];
-</span><span class='line'>    [window release];
-</span><span class='line'>    [super dealloc];
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>@end
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Trouble shooting</li>
-<li><p>1.ARC forbids explicit message send of &lsquo;release&rsquo;
-&lsquo;release&rsquo; is unavailable: not available in automatic reference counting mode</p>
-
-<ul>
-<li>错误原因：因为我们设置了用ARC来管理内存释放，我们却又调用了release方法去释放对象。</li>
-<li>(From the Internet)
-
-<ul>
-<li>ARC是iOS 5推出的新功能，全称叫 ARC(Automatic Reference Counting)。简单地说，就是代码中自动加入了retain/release，原先需要手动添加的用来处理内存管理的引用计数的代码可以自动地由编译器完成了。该机制在 iOS 5/ Mac OS X 10.7 开始导入，利用 Xcode4.2 可以使用该机制。简单地理解ARC，就是通过指定的语法，让编译器(LLVM 3.0)在编译代码时，自动生成实例的引用计数管理部分代码。有一点，ARC并不是GC，它只是一种代码静态分析（Static Analyzer）工具。</li>
-</ul>
-</li>
-<li>how to solve it?
-
-<ul>
-<li>找到项目中的Build setting
-
-<ul>
-<li>把<code>Objective-C Automatic Reference</code>从YES改成NO</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>2.找不到HOME键</p>
-
-<ul>
-<li>在模拟器上按<code>Shift+command+h</code></li>
-</ul>
-</li>
-<li><p>3.出现<code>Auto Layout on iOS Versions prior to 6.0</code></p>
-
-<ul>
-<li>界面设置问题</li>
-<li>找到storybroad
-
-<ul>
-<li>打开属性栏，把<code>Use AutoLayout</code>去掉。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>4.ios7的全屏问题</p>
-
-<ul>
-<li>在viewcontroller里面加入以下代码
-&#8220;`</li>
-<li><p>(void)viewDidLayoutSubviews{</p>
-
-<p>  if ([self respondsToSelector:@selector(topLayoutGuide)]) // iOS 7 or above
-  {
-      CGFloat top = self.topLayoutGuide.length;
-      if(self.view.frame.origin.y == 0){
-          // We only want to do this once, or if the view has somehow been &quot;restored&quot; by other code.
-          self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + top, self.view.frame.size.width, self.view.frame.size.    height &ndash; top);
-      }
-  }
-}
-&#8220;`</p></li>
-<li>这个只能让上面原有的时间什么的消失，但是从根本上不能解决问题</li>
-</ul>
-</li>
-<li><p>5.如果刚开始打开ios模拟器发现太大了</p>
-
-<ul>
-<li>再Window->scale那里可以调整成75%就可以使得模拟器看起来大小比较科学了。</li>
-</ul>
-</li>
-</ul>
 
 ]]></content>
   </entry>
