@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Database | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/database/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-14T14:37:44+08:00</updated>
+  <updated>2014-06-14T14:39:13+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -99,7 +99,7 @@
 </li>
 <li>外排序需要同时处理 ORDERS 表的 CUSTKEY 列和 ORDERKEY 列,按照 CUSTKEY 进行排列,如下图所示,</li>
 <li>排完序后,CUSTKEY 的连续重复项更多了,即可对该列进行 RLE 压缩。 完成压缩后,请统计压缩效率。</li>
-<li>{% img /images/database2014pro/1.png %}</li>
+<li><img src="/images/database2014pro/1.png"></li>
 </ul>
 
 

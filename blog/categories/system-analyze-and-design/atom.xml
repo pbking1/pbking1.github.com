@@ -4,7 +4,7 @@
   <title><![CDATA[Category: System_analyze_and_design | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/system-analyze-and-design/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-14T14:37:44+08:00</updated>
+  <updated>2014-06-14T14:39:13+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,273 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[UML Final Exam Note]]></title>
+    <link href="http://pbking1.github.com/blog/2014/06/11/the-note-of-the-uml-final-exam/"/>
+    <updated>2014-06-11T14:45:34+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/11/the-note-of-the-uml-final-exam</id>
+    <content type="html"><![CDATA[<h3>UML final exam note</h3>
+
+<ul>
+<li>3个小时</li>
+</ul>
+
+
+<h4>选择题</h4>
+
+<ul>
+<li>10个选择，一题2分</li>
+<li>去看下up（书上第二章）。</li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>画图题</h4>
+
+<ul>
+<li>考试的时候把图导出来，贴到word里面</li>
+<li>除了组件图</li>
+<li>剩下的每个图18分钟</li>
+<li><p>1.用例图</p>
+
+<ul>
+<li>给一个中文文档</li>
+<li>用例是什么？
+
+<ul>
+<li>text，interaction（system和Actor）</li>
+<li>fill goal(一切围绕)</li>
+<li>用一个人，然后一个系统的服务来满足一个goal</li>
+<li>有可能服务和goal名字一样</li>
+<li>像数据库叫后台参与者</li>
+<li>像银行那些叫支持性参与者</li>
+<li>文档从头到尾只有一个人
+
+<ul>
+<li>有的时候可能有一个actress</li>
+</ul>
+</li>
+<li>goal一定是动词或者动名词，来表达实现goal。
+
+<ul>
+<li>通常在开始或者结束</li>
+</ul>
+</li>
+<li><p>看段落就好了，不用研究细节</p></li>
+<li><p>0分</p>
+
+<ul>
+<li>用例图里面出现主菜单，什么什么界面，什么什么功能（功能倾向）</li>
+<li>有操作流程倾向（不要画得有顺序）</li>
+<li>只要出现就完蛋</li>
+<li>没框（boundry）扣一分
+
+<ul>
+<li>画了框没写名字扣一分</li>
+<li>定范围</li>
+</ul>
+</li>
+<li>Actor主要参与者一定画在图的左边
+
+<ul>
+<li>画了管理员扣一分</li>
+</ul>
+</li>
+<li>goal写在框里面也就是椭圆里面的东西
+
+<ul>
+<li>一定要有extend或者include</li>
+<li>一定要是虚线，实线就会被扣分</li>
+<li>箭头方向一定要是正确的，extend指向goal，include相反</li>
+<li>主要的节点有两个至三个include或者extend</li>
+<li>名字要是动词，不能是名词Actor和用例相连的图，一定要用没有箭头的实线相连</li>
+<li>外部子系统一定要画出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.活动图</p>
+
+<ul>
+<li>考一个用例的活动图</li>
+<li>一定有一个用例在里面</li>
+<li>表示控制权的转移</li>
+<li>准则
+
+<ul>
+<li>老板准则
+
+<ul>
+<li>如果画了登陆（扣1分）</li>
+</ul>
+</li>
+<li>基本应用过程准则
+
+<ul>
+<li>东西不能太大</li>
+<li>把东西说详细</li>
+</ul>
+</li>
+<li>size
+
+<ul>
+<li>规模不能太大</li>
+<li>单操作的东西不要画</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>每个用例一定都能找到一个UI</li>
+<li>不能include，不然就违背了size准则</li>
+<li>简化的写就好了</li>
+<li>还有一种多泳道的图
+
+<ul>
+<li>考试不考</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.状态图
+
+<ul>
+<li>其实把状态计画好了就行了</li>
+<li>定义状态
+
+<ul>
+<li>把步骤写出来就好了</li>
+<li>基本上不用太在意细节</li>
+</ul>
+</li>
+<li>状态图是时间的生命周期</li>
+<li>条件的变迁采用guard</li>
+<li>考试
+
+<ul>
+<li>一定要找到guard</li>
+<li>怎么起名？
+
+<ul>
+<li>不能说“按continue”，而要说“选房间”</li>
+<li>要说用户做的外部事件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>4.领域模型（概念类图）</p>
+
+<ul>
+<li>识别一个用例里面的名词</li>
+<li>太多动词或者太多线，就0分</li>
+<li>一定要找概念（抽象出类）</li>
+<li>通常Actor不要画在属性里面</li>
+<li>扣分点
+
+<ul>
+<li>如果写了button，则扣分</li>
+<li>如果出现database，扣分</li>
+<li>在一个领域模型里面，这两个东西首要不要出现</li>
+<li>命名必须是名词，不能使动词，用了就完蛋</li>
+<li>属性给一些重要的就可以了，不要画一个图全部都没有属性的</li>
+<li>不要在属性里面写操作！</li>
+<li>关联
+
+<ul>
+<li>如果关联出现箭头而不是直线</li>
+<li>则扣分</li>
+<li>箭头一般都是include，所以不要画箭头</li>
+<li>关联上一定要有名字（包含contain）</li>
+<li>记得写多重性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在一段文档中经常出现的名词，一定要挑出来</li>
+<li>抽象出的类不能出现复数或者抽象数据类型</li>
+<li>描述类就赶紧加上</li>
+<li>写在框里面的名词不能无中生有</li>
+</ul>
+</li>
+<li><p>5.顺序图</p>
+
+<ul>
+<li>要用（BCE规则）画</li>
+<li>用来表达一个场景的人机交互的事件的序列</li>
+<li>一般是表达主场景和频繁出现的</li>
+<li>考试考主场景
+
+<ul>
+<li>用户达成目标的最便捷的方式</li>
+<li>或者最期望的方式</li>
+<li>主场景没有if条件</li>
+<li>既然是系统顺序图，第一个对象一定是system，不然就0分</li>
+<li>要加“：”
+
+<ul>
+<li>表示对象</li>
+</ul>
+</li>
+<li>在User后面的那个就是”:System”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>6.包图</p>
+
+<ul>
+<li>比较容易，也比较简洁</li>
+<li>使用MVC，来构建城市模型（考题）</li>
+<li>然后把需要的类和控制器填到三个package里面</li>
+<li>把界面放在视图层</li>
+</ul>
+</li>
+<li><p>7.交互图</p>
+
+<ul>
+<li>注意起名字</li>
+<li>和顺序图内容差不多</li>
+<li>和包图里面的MVC的三个包内容一致
+
+<ul>
+<li>比如view就要再包图的view包里面</li>
+</ul>
+</li>
+<li>去官网看一下老师发给教程
+
+<ul>
+<li>讲的比较详细</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>8.设计类图</p>
+
+<ul>
+<li>把控制器和实体类画进去</li>
+<li>除了控制器之外，其他的东西和领域模型里面是一样的</li>
+<li>属性的关联一定要实现</li>
+</ul>
+</li>
+<li><p>9.部署图（附加题）</p>
+
+<ul>
+<li>差不多的</li>
+<li>部署条件是告诉你的</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Phonegap 框架原理]]></title>
@@ -213,7 +480,7 @@
 
 <ul>
 <li>从下图中，可以看出控制器就是一个中枢，MVC的处理过程就是在用户产生行为，提交表单的时候，由Controller来制定哪一个Model来对用户行为进行处理，并且在处理后将结果返回给View，用以给用户进行显示。</li>
-<li>{% img /images/system_anaylze_mvc1.png %}</li>
+<li><img src="/images/system_anaylze_mvc1.png"></li>
 </ul>
 
 
@@ -239,7 +506,7 @@
 <h3>The process of MVC</h3>
 
 <ul>
-<li>{% img /images/system_anaylze_mvc2.png %}</li>
+<li><img src="/images/system_anaylze_mvc2.png"></li>
 <li>1.用户操作controller，相当于调用controller的handleEvent函数；</li>
 <li>2.handleEvent函数实际上调用的是model中的成员函数，对model中的数据进行操作；</li>
 <li>3.model中的数据被调用完成后，model会执行自身的notify函数；</li>
@@ -287,7 +554,7 @@
     <id>http://pbking1.github.com/blog/2014/04/20/blog-on-github-page</id>
     <content type="html"><![CDATA[<h3>什么是github？</h3>
 
-<p>{% img /images/github1.png %}</p>
+<p><img src="/images/github1.png"></p>
 
 <ul>
 <li>是一个免费的用与存放git版本控制的软件代码和内容项目。</li>
@@ -317,11 +584,11 @@
 <!--more-->
 
 
-<p>{% img /images/git2.png %}</p>
+<p><img src="/images/git2.png"></p>
 
 <h3>什么是jekyll?</h3>
 
-<p>{% img /images/jekyll1.png %}</p>
+<p><img src="/images/jekyll1.png"></p>
 
 <ul>
 <li>Jekyll（发音/&lsquo;dʒiːk əl/，"杰克尔")</li>
@@ -405,7 +672,7 @@ git push origin gh-pages
 <li>其次是设计领域模型的步骤。</li>
 <li>首先从业务中抽取名词,然后从提取出来的名词中中总结业务实 体,区分名词汇中的属性,角色,实体和实例,形成问题域中的操作 实体的集合。其次是从业务实体集合中抽象业务模型,简历问题域的 概念。最后是用 UML 提供的方法和图例进行领域模型的设计,确定 模型之间的关系。</li>
 <li>因此我们可以从文本中抽取出包含的类 Priest, Devil, puzzleGame, River, RiverSide, Boat, 另外还有 Player, Clock 类。
-{% img /images/hw1.jpg %}</li>
+<img src="/images/hw1.jpg"></li>
 </ul>
 
 
@@ -452,7 +719,7 @@ git push origin gh-pages
 </ul>
 
 
-<p>{% img /images/hw2.jpg %}</p>
+<p><img src="/images/hw2.jpg"></p>
 
 <h3>3. 状态机图（State Machine Diagram）</h3>
 
@@ -504,7 +771,7 @@ The set time mode has two sub-modes, set hours and set minutes. The A button is 
 </ul>
 </li>
 <li>4.则很容易得出状态机图为
-{% img /images/hw3.jpg %}</li>
+<img src="/images/hw3.jpg"></li>
 </ul>
 
 
@@ -551,7 +818,7 @@ The set time mode has two sub-modes, set hours and set minutes. The A button is 
 </ul>
 </li>
 <li>3.本题的用例图如下
-{% img /images/hw4.jpg %}</li>
+<img src="/images/hw4.jpg"></li>
 </ul>
 
 
@@ -639,7 +906,7 @@ The set time mode has two sub-modes, set hours and set minutes. The A button is 
 
 <h4>5.题目的顺序图</h4>
 
-<p>{% img /images/hw5-1.jpg %}</p>
+<p><img src="/images/hw5-1.jpg"></p>
 
 <h4>6.BCE（boundary-control-entity patterns）模式</h4>
 
@@ -670,7 +937,7 @@ The set time mode has two sub-modes, set hours and set minutes. The A button is 
 
 <h4>9.题目的顺序图</h4>
 
-<p>{% img /images/hw5-2.jpg %}</p>
+<p><img src="/images/hw5-2.jpg"></p>
 
 <ul>
 <li>To be continued&hellip;&hellip;</li>

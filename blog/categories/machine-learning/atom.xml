@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Machine_learning | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/machine-learning/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-14T14:37:44+08:00</updated>
+  <updated>2014-06-14T14:39:13+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -286,7 +286,7 @@ x = test_data(:, 2:3073);</p>
 <li>公式为
 
 <ul>
-<li>{% img /images/recommander_system/1.png %}</li>
+<li><img src="/images/recommander_system/1.png"></li>
 </ul>
 </li>
 <li>这个算法也有改进版（修正的余弦相似性）
@@ -296,7 +296,7 @@ x = test_data(:, 2:3073);</p>
 <li>公式为
 
 <ul>
-<li>{% img /images/recommander_system/2.png %}</li>
+<li><img src="/images/recommander_system/2.png"></li>
 </ul>
 </li>
 </ul>
@@ -329,7 +329,7 @@ x = test_data(:, 2:3073);</p>
 <li>通过公式
 
 <ul>
-<li>{% img /images/recommander_system/3.png %}</li>
+<li><img src="/images/recommander_system/3.png"></li>
 </ul>
 </li>
 </ul>
@@ -391,7 +391,7 @@ x = test_data(:, 2:3073);</p>
 <li>And we will use multiple features.
 
 <ul>
-<li>{% img /images/lr_gd/mfeat.png %}</li>
+<li><img src="/images/lr_gd/mfeat.png"></li>
 </ul>
 </li>
 </ul>
@@ -427,7 +427,7 @@ x = test_data(:, 2:3073);</p>
 <li>it may be fail to converge, or even diverge</li>
 </ul>
 </li>
-<li>{% img /images/lr_gd/apha.png %}</li>
+<li><img src="/images/lr_gd/apha.png"></li>
 </ul>
 </li>
 <li><strong>Cost function(J function)</strong>
@@ -459,7 +459,7 @@ x = test_data(:, 2:3073);</p>
 <li>and the deviation of the cost function on theta i is the distance that we move on theta i direction.</li>
 </ul>
 </li>
-<li><p>{% img /images/lr_gd/gdpic.png %}</p></li>
+<li><p><img src="/images/lr_gd/gdpic.png"></p></li>
 </ul>
 </li>
 </ul>
@@ -472,7 +472,7 @@ x = test_data(:, 2:3073);</p>
 <li>And this is the key idea of Gradient descend method</li>
 </ul>
 </li>
-<li>{% img /images/lr_gd/idea.png %}</li>
+<li><img src="/images/lr_gd/idea.png"></li>
 </ul>
 
 
@@ -673,14 +673,14 @@ saveTheta();
 <li>use the minimum square function to do a regression analyse on the data.
 
 <ul>
-<li>{% img /images/lr_gd/nq.png %}</li>
+<li><img src="/images/lr_gd/nq.png"></li>
 <li>and the process is shown : (385<em>10000)</em>(10000<em>385)</em>(385<em>10000)</em>10000<em>1=385</em>1</li>
 </ul>
 </li>
 <li>and we can see the feature normalise in the normal equation function
 
 <ul>
-<li>{% img /images/lr_gd/nfn.png %}</li>
+<li><img src="/images/lr_gd/nfn.png"></li>
 </ul>
 </li>
 </ul>

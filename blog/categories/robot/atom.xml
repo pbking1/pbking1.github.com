@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Robot | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/robot/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-14T14:37:44+08:00</updated>
+  <updated>2014-06-14T14:39:13+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -212,9 +212,9 @@ zhudingqiao
 
 <h4>here are the picture</h4>
 
-<p>{% img /images/ieee1.jpg %}
-{% img /images/ieee2.jpg %}
-{% img /images/ieee3.jpg %}</p>
+<p><img src="/images/ieee1.jpg">
+<img src="/images/ieee2.jpg">
+<img src="/images/ieee3.jpg"></p>
 
 <!--more-->
 

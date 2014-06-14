@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-14T14:37:44+08:00</updated>
+  <updated>2014-06-14T14:39:13+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -189,7 +189,7 @@ x = test_data(:, 2:3073);</p>
 <li>公式为
 
 <ul>
-<li>{% img /images/recommander_system/1.png %}</li>
+<li><img src="/images/recommander_system/1.png"></li>
 </ul>
 </li>
 <li>这个算法也有改进版（修正的余弦相似性）
@@ -199,7 +199,7 @@ x = test_data(:, 2:3073);</p>
 <li>公式为
 
 <ul>
-<li>{% img /images/recommander_system/2.png %}</li>
+<li><img src="/images/recommander_system/2.png"></li>
 </ul>
 </li>
 </ul>
@@ -232,7 +232,7 @@ x = test_data(:, 2:3073);</p>
 <li>通过公式
 
 <ul>
-<li>{% img /images/recommander_system/3.png %}</li>
+<li><img src="/images/recommander_system/3.png"></li>
 </ul>
 </li>
 </ul>
@@ -367,7 +367,7 @@ x = test_data(:, 2:3073);</p>
 <li>由于任何一种颜色都是有红绿蓝三原色（RGB）构成的，所以可以画出四幅图（三原色直方图和最后合成的直方图）</li>
 <li>如果每种原色都可以取256个值，那么整个颜色空间共有1600万种颜色（256的三次方）。针对这1600万种颜色比较直方图，计算量实在太大了，因此需要采用简化方法。可以将0～255分成四个区：0～63为第0区，64～127为第1区，128～191为第2区，192～255为第3区。这意味着红绿蓝分别有4个区，总共可以构成64种组合（4的3次方）。</li>
 <li>任何一种颜色必然属于这64种组合中的一种，这样就可以统计每一种组合包含的像素数量。</li>
-<li>{% img /images/oc_algorithm1.png %}</li>
+<li><img src="/images/oc_algorithm1.png"></li>
 <li>上图是某张图片的颜色分布表，将表中最后一栏提取出来，组成一个64维向量(7414, 230, 0, 0, 8, &hellip;, 109, 0, 0, 3415, 53929)。这个向量就是这张图片的特征值或者叫"指纹"。</li>
 <li>于是，寻找相似图片就变成了找出与其最相似的向量。这可以用皮尔逊相关系数或者余弦相似度算出。</li>
 </ul>
@@ -541,7 +541,7 @@ x = test_data(:, 2:3073);</p>
 <li>And we will use multiple features.
 
 <ul>
-<li>{% img /images/lr_gd/mfeat.png %}</li>
+<li><img src="/images/lr_gd/mfeat.png"></li>
 </ul>
 </li>
 </ul>
@@ -577,7 +577,7 @@ x = test_data(:, 2:3073);</p>
 <li>it may be fail to converge, or even diverge</li>
 </ul>
 </li>
-<li>{% img /images/lr_gd/apha.png %}</li>
+<li><img src="/images/lr_gd/apha.png"></li>
 </ul>
 </li>
 <li><strong>Cost function(J function)</strong>
@@ -609,7 +609,7 @@ x = test_data(:, 2:3073);</p>
 <li>and the deviation of the cost function on theta i is the distance that we move on theta i direction.</li>
 </ul>
 </li>
-<li><p>{% img /images/lr_gd/gdpic.png %}</p></li>
+<li><p><img src="/images/lr_gd/gdpic.png"></p></li>
 </ul>
 </li>
 </ul>
@@ -622,7 +622,7 @@ x = test_data(:, 2:3073);</p>
 <li>And this is the key idea of Gradient descend method</li>
 </ul>
 </li>
-<li>{% img /images/lr_gd/idea.png %}</li>
+<li><img src="/images/lr_gd/idea.png"></li>
 </ul>
 
 
@@ -823,14 +823,14 @@ saveTheta();
 <li>use the minimum square function to do a regression analyse on the data.
 
 <ul>
-<li>{% img /images/lr_gd/nq.png %}</li>
+<li><img src="/images/lr_gd/nq.png"></li>
 <li>and the process is shown : (385<em>10000)</em>(10000<em>385)</em>(385<em>10000)</em>10000<em>1=385</em>1</li>
 </ul>
 </li>
 <li>and we can see the feature normalise in the normal equation function
 
 <ul>
-<li>{% img /images/lr_gd/nfn.png %}</li>
+<li><img src="/images/lr_gd/nfn.png"></li>
 </ul>
 </li>
 </ul>
