@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Interview | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/interview/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-12T09:28:37+08:00</updated>
+  <updated>2014-06-14T14:37:44+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -116,7 +116,7 @@
 <li>login_and_registe
 
 <ul>
-<li><img src="/images/internship_zst/1.png"></li>
+<li>{% img /images/internship_zst/1.png %}</li>
 </ul>
 </li>
 <li>first_page
@@ -125,32 +125,32 @@
 <li>firstpageandmore(is a tableview that used to show more about the product)
 
 <ul>
-<li><img src="/images/internship_zst/2.png"></li>
+<li>{% img /images/internship_zst/2.png %}</li>
 </ul>
 </li>
 <li>shopping()
 
 <ul>
-<li><img src="/images/internship_zst/3.png"></li>
+<li>{% img /images/internship_zst/3.png %}</li>
 <li>(those that contrain cell.xib is use to define the layout of the cell of the tableview)</li>
 </ul>
 </li>
 <li>detailsoftheproduct()
 
 <ul>
-<li><img src="/images/internship_zst/4.png"></li>
+<li>{% img /images/internship_zst/4.png %}</li>
 </ul>
 </li>
 <li>tuangou
 
 <ul>
-<li><img src="/images/internship_zst/5.png"></li>
+<li>{% img /images/internship_zst/5.png %}</li>
 </ul>
 </li>
 <li>preferential_ticket
 
 <ul>
-<li><img src="/images/internship_zst/6.png"></li>
+<li>{% img /images/internship_zst/6.png %}</li>
 </ul>
 </li>
 <li>HomePageViewController.h</li>
@@ -168,19 +168,19 @@
 <li>search
 
 <ul>
-<li><img src="/images/internship_zst/7.png"></li>
+<li>{% img /images/internship_zst/7.png %}</li>
 </ul>
 </li>
 <li>shoppingcart
 
 <ul>
-<li><img src="/images/internship_zst/8.png"></li>
+<li>{% img /images/internship_zst/8.png %}</li>
 </ul>
 </li>
 <li>comment_and_share
 
 <ul>
-<li><img src="/images/internship_zst/9.png"></li>
+<li>{% img /images/internship_zst/9.png %}</li>
 </ul>
 </li>
 <li>me
@@ -189,10 +189,10 @@
 <li>AppRecommand
 
 <ul>
-<li><img src="/images/internship_zst/10.png"></li>
+<li>{% img /images/internship_zst/10.png %}</li>
 </ul>
 </li>
-<li><img src="/images/internship_zst/11.png"></li>
+<li>{% img /images/internship_zst/11.png %}</li>
 </ul>
 </li>
 </ul>
@@ -204,7 +204,7 @@
 
 <ul>
 <li>we can see the following</li>
-<li><img src="/images/internship_zst/12.png"></li>
+<li>{% img /images/internship_zst/12.png %}</li>
 </ul>
 
 
@@ -212,12 +212,12 @@
 
 <ul>
 <li>we can see the following</li>
-<li><img src="/images/internship_zst/13.png"></li>
-<li><img src="/images/internship_zst/14.png"></li>
-<li><img src="/images/internship_zst/15.png"></li>
-<li><img src="/images/internship_zst/16.png"></li>
-<li><img src="/images/internship_zst/17.png"></li>
-<li><img src="/images/internship_zst/18.png"></li>
+<li>{% img /images/internship_zst/13.png %}</li>
+<li>{% img /images/internship_zst/14.png %}</li>
+<li>{% img /images/internship_zst/15.png %}</li>
+<li>{% img /images/internship_zst/16.png %}</li>
+<li>{% img /images/internship_zst/17.png %}</li>
+<li>{% img /images/internship_zst/18.png %}</li>
 </ul>
 
 ]]></content>

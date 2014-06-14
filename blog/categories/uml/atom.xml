@@ -4,7 +4,7 @@
   <title><![CDATA[Category: UML | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/uml/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-12T09:28:37+08:00</updated>
+  <updated>2014-06-14T14:37:44+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -61,7 +61,7 @@
 <li>其次是设计领域模型的步骤。</li>
 <li>首先从业务中抽取名词,然后从提取出来的名词中中总结业务实 体,区分名词汇中的属性,角色,实体和实例,形成问题域中的操作 实体的集合。其次是从业务实体集合中抽象业务模型,简历问题域的 概念。最后是用 UML 提供的方法和图例进行领域模型的设计,确定 模型之间的关系。</li>
 <li>因此我们可以从文本中抽取出包含的类 Priest, Devil, puzzleGame, River, RiverSide, Boat, 另外还有 Player, Clock 类。
-<img src="/images/hw1.jpg"></li>
+{% img /images/hw1.jpg %}</li>
 </ul>
 
 
@@ -108,7 +108,7 @@
 </ul>
 
 
-<p><img src="/images/hw2.jpg"></p>
+<p>{% img /images/hw2.jpg %}</p>
 
 <h3>3. 状态机图（State Machine Diagram）</h3>
 
@@ -160,7 +160,7 @@ The set time mode has two sub-modes, set hours and set minutes. The A button is 
 </ul>
 </li>
 <li>4.则很容易得出状态机图为
-<img src="/images/hw3.jpg"></li>
+{% img /images/hw3.jpg %}</li>
 </ul>
 
 
@@ -207,7 +207,7 @@ The set time mode has two sub-modes, set hours and set minutes. The A button is 
 </ul>
 </li>
 <li>3.本题的用例图如下
-<img src="/images/hw4.jpg"></li>
+{% img /images/hw4.jpg %}</li>
 </ul>
 
 
@@ -295,7 +295,7 @@ The set time mode has two sub-modes, set hours and set minutes. The A button is 
 
 <h4>5.题目的顺序图</h4>
 
-<p><img src="/images/hw5-1.jpg"></p>
+<p>{% img /images/hw5-1.jpg %}</p>
 
 <h4>6.BCE（boundary-control-entity patterns）模式</h4>
 
@@ -326,7 +326,7 @@ The set time mode has two sub-modes, set hours and set minutes. The A button is 
 
 <h4>9.题目的顺序图</h4>
 
-<p><img src="/images/hw5-2.jpg"></p>
+<p>{% img /images/hw5-2.jpg %}</p>
 
 <ul>
 <li>To be continued&hellip;&hellip;</li>

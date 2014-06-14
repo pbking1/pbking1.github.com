@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-12T09:28:37+08:00</updated>
+  <updated>2014-06-14T14:37:44+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -20,7 +20,7 @@
     <id>http://pbking1.github.com/blog/2014/04/20/blog-on-github-page</id>
     <content type="html"><![CDATA[<h3>什么是github？</h3>
 
-<p><img src="/images/github1.png"></p>
+<p>{% img /images/github1.png %}</p>
 
 <ul>
 <li>是一个免费的用与存放git版本控制的软件代码和内容项目。</li>
@@ -50,11 +50,11 @@
 <!--more-->
 
 
-<p><img src="/images/git2.png"></p>
+<p>{% img /images/git2.png %}</p>
 
 <h3>什么是jekyll?</h3>
 
-<p><img src="/images/jekyll1.png"></p>
+<p>{% img /images/jekyll1.png %}</p>
 
 <ul>
 <li>Jekyll（发音/&lsquo;dʒiːk əl/，"杰克尔")</li>
@@ -234,10 +234,10 @@ rake new_page["about me"]
 ```</p>
 
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/project">Project</a></li>
-  <li><a href="/about">About Me</a></li>
+  <li><a href="{{ root_url }}/">Blog</a></li>
+  <li><a href="{{ root_url }}/blog/archives">Archives</a></li>
+  <li><a href="{{ root_url }}/project">Project</a></li>
+  <li><a href="{{ root_url }}/about">About Me</a></li>
 </ul>
 
 
@@ -289,7 +289,7 @@ excerpt_link: "read more"
 
 
 <p>```
-
+{% if site.jiathis %}
   <!-- JiaThis Button BEGIN -->
   <div class="jiathis_style"></p>
 
@@ -306,7 +306,7 @@ excerpt_link: "read more"
 <p>  </div>
   <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"></script>
   <!-- JiaThis Button END -->
-
+{% endif %}
 ```</p>
 
 <ul>
@@ -406,7 +406,7 @@ disqus_show_comment_count: true
 
 
 <p>```
-</p>
+{% if site.post_license %}</p>
 
 <DIV style="font-size:12px;BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid" class=oec2003right> 
 <DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"> 
@@ -420,7 +420,7 @@ disqus_show_comment_count: true
 
 
 <p>
-
+{% endif %}
 ```</p>
 
 <ul>
