@@ -9,10 +9,7 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="有两套题，c++和java，我选了c++
-考了树的前序和中序遍历
-还有虚函数多态，继承
-考了指针引用和（数据类型和数据结构的size， 也就是占用的内存） 笔试题一 在不能用for和while的情况下，找到一串字符串中第一个只出现一次的字符（仅包含26个英文字母） 思路：用递归 源码：to be &hellip;">
+  <meta name="description" content="此文为借鉴阮一峰2011年和2013年发布的相似图片搜索原理 原文已经写得很好了，所以我只是把它整理了一下，学习学习~~ 又名感知哈希算法 主要思想是 对每个图片生成一个“指纹”字符串，然后比较不同图片的指纹。结果越接近，就说明图片越相似 这种算法的优点是简单快速，不收图片大小缩放的影响 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +72,74 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c/">Perceptual Hash Algorithm in Objective C</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-19T17:47:06+08:00" pubdate data-updated="true">May 19<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h4>此文为借鉴阮一峰2011年和2013年发布的相似图片搜索原理</h4>
+
+<ul>
+<li>原文已经写得很好了，所以我只是把它整理了一下，学习学习~~</li>
+</ul>
+
+
+<h3>又名感知哈希算法</h3>
+
+<ul>
+<li>主要思想是
+
+<ul>
+<li>对每个图片生成一个“指纹”字符串，然后比较不同图片的指纹。结果越接近，就说明图片越相似</li>
+</ul>
+</li>
+<li>这种算法的优点是简单快速，不收图片大小缩放的影响
+
+<ul>
+<li>缺点是图片内容不能变更。如果在图片上加几个文字，他就认不出来了</li>
+</ul>
+</li>
+<li>因此最佳应用应该是根据缩略图找出原图</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c/">Read more</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -365,70 +430,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/12/linear-regression-tutorial/">Linear_regression_tutorial</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-12T15:23:20+08:00" pubdate data-updated="true">May 12<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/12/linear-regression-tutorial/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>First something about training the data</h3>
-
-<ul>
-<li>Training set &ndash;> learning algorithm &ndash;> hypothesis &ndash;> estimated data</li>
-<li>And we will use multiple features.
-
-<ul>
-<li><img src="/images/lr_gd/mfeat.png"></li>
-</ul>
-</li>
-</ul>
-
-
-<h3>What is linear regression</h3>
-
-<ul>
-<li>To say the idea in normal, we will have n feature</li>
-<li>And what we are going to do is to observe them and suppose that they should be in a linear method.</li>
-<li>And we should develop a way to find out the parameter to suit the hypothesis function.</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/12/linear-regression-tutorial/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
@@ -445,6 +446,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/20/something-basic-about-software-testing/">Something Basic About Software Testing</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/11/the-note-of-the-uml-final-exam/">UML Final Exam Note</a>
       </li>
     
@@ -458,10 +463,6 @@
     
       <li class="post">
         <a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/">Phonegap 框架原理</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/02/matlab-classification-method/">Matlab Classification Method</a>
       </li>
     
   </ul>
@@ -489,7 +490,7 @@
 <li class='category'><a href='/blog/categories/matlab/'>matlab (2)</a></li>
 <li class='category'><a href='/blog/categories/other/'>other (1)</a></li>
 <li class='category'><a href='/blog/categories/others/'>others (1)</a></li>
-<li class='category'><a href='/blog/categories/software-testing/'>software_testing (1)</a></li>
+<li class='category'><a href='/blog/categories/software-testing/'>software_testing (2)</a></li>
  
   </ul> 
 </section><section>
@@ -510,7 +511,7 @@ ds.charset = 'UTF-8';
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+31.666666666666668%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+21.666666666666668%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+8.333333333333334%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+18.333333333333336%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+8.333333333333334%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+11.666666666666668%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+15.0%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+25.0%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+11.666666666666668%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+8.333333333333334%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+11.666666666666668%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+8.333333333333334%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fothers%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Eothers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+11.666666666666668%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+21.666666666666668%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+11.666666666666668%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+31.666666666666668%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+21.666666666666668%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+8.333333333333334%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+18.333333333333336%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+8.333333333333334%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+11.666666666666668%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+15.0%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+25.0%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+11.666666666666668%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+8.333333333333334%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+11.666666666666668%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+8.333333333333334%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fothers%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Eothers%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+11.666666666666668%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+11.666666666666668%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+21.666666666666668%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+11.666666666666668%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 

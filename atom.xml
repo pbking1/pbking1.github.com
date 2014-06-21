@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-17T14:48:52+08:00</updated>
+  <updated>2014-06-21T16:19:26+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,406 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Something Basic About Software Testing]]></title>
+    <link href="http://pbking1.github.com/blog/2014/06/20/something-basic-about-software-testing/"/>
+    <updated>2014-06-20T20:24:14+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/20/something-basic-about-software-testing</id>
+    <content type="html"><![CDATA[<h3>一些常识性的问题</h3>
+
+<ul>
+<li>软件测试者的目标是什么？
+
+<ul>
+<li>找bug，并且尽快的找到和修复</li>
+</ul>
+</li>
+<li>在一个已经完成的产品上修复一个bug比在一开始就找到要难更多倍</li>
+<li>为什么完全测试一个软件是不可能的？
+
+<ul>
+<li>因为太多输入输出</li>
+<li>太多路径组合</li>
+</ul>
+</li>
+<li>测试人员最重要的技能是编程</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>Failure, Fault and Error</h3>
+
+<ul>
+<li>Failure
+
+<ul>
+<li>一个系统的状态出现不正确的行为</li>
+</ul>
+</li>
+<li>Fault
+
+<ul>
+<li>也叫“bug”和“defect”</li>
+<li>导致failure的原因</li>
+</ul>
+</li>
+<li>Error
+
+<ul>
+<li>由于人类的错误导致的fault</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>bug</h3>
+
+<ul>
+<li>编程错误比bug要多得多</li>
+<li>不是所有的软件在发布之前都会被修复</li>
+</ul>
+
+
+<h3>Software Quarlity</h3>
+
+<ul>
+<li>要写出没有bug的程序是不可能的</li>
+<li>有三个要素能够导致程序中的bug
+
+<ul>
+<li>程序的复杂性</li>
+<li>程序的需求可变性</li>
+<li>程序的需求不变性</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>QA和QC</h3>
+
+<ul>
+<li>QA面向过程，QC面向产品</li>
+<li>QA是制定方案确保系统能够达到目标</li>
+<li>QC是指定方案来评估一个系统
+
+<ul>
+<li>validation
+
+<ul>
+<li>我们建立的系统是否是正确的</li>
+</ul>
+</li>
+<li>verification
+
+<ul>
+<li>我们是否使用正确的方法的研发了系统</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>test stub 和 test driven(单元测试)</h3>
+
+<ul>
+<li>test stub
+
+<ul>
+<li>自顶向下， stub out</li>
+</ul>
+</li>
+<li>test driver
+
+<ul>
+<li>自下而上</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>失效性测试和通过性测试的区别</h3>
+
+<h3>非功能性测试和功能性测试的区别</h3>
+
+<h3>PMOD</h3>
+
+<ul>
+<li>探索性测试方法</li>
+<li>黑盒测试
+
+<ul>
+<li>忽略内部实现的测试</li>
+</ul>
+</li>
+<li>白盒测试
+
+<ul>
+<li>基于分析代码逻辑的测试</li>
+</ul>
+</li>
+<li>基于模型的测试</li>
+</ul>
+
+
+<h3>test oracle</h3>
+
+<ul>
+<li>用来检测待测系统在一个特定执行中的行为是否正确的方法</li>
+</ul>
+
+
+<h3>白盒测试</h3>
+
+<ul>
+<li>重点
+
+<ul>
+<li>动态白盒测试和调试的相似性</li>
+<li>单元测试，集成测试，系统测试的等级划分和概念</li>
+<li>测试驱动的概念（test driver）</li>
+<li>测试的柱和桩的概念和区别</li>
+</ul>
+</li>
+<li>考点
+
+<ul>
+<li>动态白盒测试
+
+<ul>
+<li>控制流：代码行，分支，条件，基本路径覆盖。循环至少走0次和1次。</li>
+<li>数据流： 定义使用对，DCU，DPU，选择合适的测试用例进行覆盖
+
+<ul>
+<li>x的du-path
+
+<ul>
+<li>起点一定要是def(x)</li>
+<li>终点一定要是p-use(x)或者c-use(x)</li>
+</ul>
+</li>
+<li>def
+
+<ul>
+<li>用来定义变量
+
+<ul>
+<li>x = 0; def(x)</li>
+<li><em>y = 1; def(</em>y)</li>
+<li>scanf(&ldquo;%d %d&rdquo;. &amp;x, &amp;y); def(x), def(y)</li>
+<li>int x[10]; def(x). def(x[0]), def(x[9])</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>undef
+
+<ul>
+<li>不可使用的变量
+
+<ul>
+<li>free(p); undef(*p)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>定义使用对</li>
+<li>Cuse, puse, 选择测试用例覆盖
+
+<ul>
+<li>c-use(x): x直接影响计算或者就是输出的一部分
+
+<ul>
+<li>y = x + 1;</li>
+<li>printf(&ldquo;%d&rdquo;, x);</li>
+</ul>
+</li>
+<li>p-use(x): x间接影响或者会影响一个控制流
+
+<ul>
+<li>if(x == 0) y = 1;</li>
+<li>switch(x) case 1: &hellip; default:&hellip;</li>
+<li>if(A[i + 1] > 0) return ;   p-use(A), p-use(i), p-use(A[i+1])</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>循环覆盖测试：循环要循环执行0次1次多次。  多次，如果没规定，尽量大。
+
+<ul>
+<li>如果有循环，用例必须包含0次和1次和多次，多次如果没有说明，随便选个数，如10）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>控制流</p>
+
+<ul>
+<li>基本快</li>
+<li>分支</li>
+<li>循环</li>
+<li>基本路径</li>
+<li>控制流图
+
+<ul>
+<li>用处是使得我们准备覆盖的路径是足够的</li>
+<li>有三种
+
+<ul>
+<li>条件if （菱形）</li>
+<li>合并merge（圆形）</li>
+<li>执行computation（长方形）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>覆盖
+
+<ul>
+<li>基本块覆盖
+
+<ul>
+<li>基本块：单入口，单出口，顺序执行</li>
+<li>其实就是每一行代码（除了括号和do），然后如果有while和do，则do为一个汇集点指向下一句语句</li>
+</ul>
+</li>
+<li>循环覆盖
+
+<ul>
+<li>有两个基本要点
+
+<ul>
+<li>一个是循环体</li>
+<li>一个是控制条件(if)</li>
+</ul>
+</li>
+<li>其实就是改变循环次数来达到覆盖循环的目的</li>
+<li>一般是0，1，多次</li>
+</ul>
+</li>
+<li>基本路径覆盖
+
+<ul>
+<li>基本路径集
+
+<ul>
+<li>可以用来组成其他路径的最小集合</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据流</p>
+
+<ul>
+<li>只关心数据的变化而不关心是否有判断条件或者循环</li>
+</ul>
+</li>
+<li>逻辑</li>
+<li>交互</li>
+<li>突变</li>
+</ul>
+
+
+<h3>黑盒测试</h3>
+
+<ul>
+<li>三种级别
+
+<ul>
+<li>等级一
+
+<ul>
+<li>一个输入 &ndash;> 一个输出</li>
+<li>等价类划分（划分输入区域成为等价类）</li>
+<li>边界值分析（对每个等价类进行边界值分析）</li>
+<li>因果图和决策表（通过把输入输出以边的形式来分析关联）
+
+<ul>
+<li>把起因和结果关联起来的图</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>等级二
+
+<ul>
+<li>多个输入 &ndash;> 一个输出</li>
+<li>组合覆盖</li>
+<li>带约束的组合覆盖</li>
+</ul>
+</li>
+<li>等级三
+
+<ul>
+<li>多步多个输入 &ndash;> 一个输出</li>
+<li>基于事件的覆盖
+
+<ul>
+<li>e.g 例如GUI程序 == 一系列事件</li>
+</ul>
+</li>
+<li>基于状态的覆盖
+
+<ul>
+<li>e.g 例如GUI程序 == 一系列状态特征</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>自动测试工具</h3>
+
+<ul>
+<li>回归测试</li>
+<li>接受测试</li>
+<li>beta测试</li>
+<li>alpha测试</li>
+</ul>
+
+
+<h3>测试文档</h3>
+
+<ul>
+<li>测试计划与测试方案的区别？
+
+<ul>
+<li>测试计划
+
+<ul>
+<li>组织管理层面</li>
+<li> 对测试全过程的组织、资源、原则等进行规定和约束，并制定测试全过程各个阶段的任务及时间进度安排，提出对各项任务的评估、风险分析和需求管理。</li>
+<li>也就是行动纲要</li>
+</ul>
+</li>
+<li>测试方案
+
+<ul>
+<li>技术层面</li>
+<li>描述需要测试的特性、测试的方法、测试环境的规划、测试工具的设计和选择、测试用例的设计方法、测试代码的设计方案。</li>
+<li>也就是具体措施</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[UML Final Exam Note]]></title>
@@ -2721,270 +3121,6 @@
 </li>
 <li>源码：to be continued&hellip;.</li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IOS Tutorial 3 Tabhost]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost/"/>
-    <updated>2014-05-14T21:25:25+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost</id>
-    <content type="html"><![CDATA[<h3>源代码</h3>
-
-<ul>
-<li>把数据载入到tableview中，，点击某一个item就可以出发alert对话框。</li>
-<li>Cell 的样式也是可以自定义的
-
-<ul>
-<li>通过UITableViewCell来设置样式</li>
-</ul>
-</li>
-<li>在<code>AppDelegate.h</code>中</li>
-<li>加入mainView的声明
-
-<ul>
-<li><strong>注意要加<code>#import "ViewController.h"</code></strong></li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
-</span><span class='line'>#import "ViewController.h"
-</span><span class='line'>
-</span><span class='line'>@interface AppDelegate : UIResponder &lt;UIApplicationDelegate&gt;
-</span><span class='line'>
-</span><span class='line'>@property (strong, nonatomic) UIWindow *window;
-</span><span class='line'>@property (strong, nonatomic) ViewController *mainView;
-</span><span class='line'>
-</span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>在<code>AppDelegate.m</code>中加入以下代码</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>- (void)dealloc
-</span><span class='line'>{
-</span><span class='line'>    [_window release];
-</span><span class='line'>    [_mainView release];
-</span><span class='line'>    [super dealloc];
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-</span><span class='line'>{
-</span><span class='line'>    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-</span><span class='line'>    self.mainView = [[[ViewController alloc] init] autorelease];
-</span><span class='line'>    
-</span><span class='line'>    self.window.rootViewController = self.mainView;
-</span><span class='line'>    [self.window makeKeyAndVisible];
-</span><span class='line'>    // Override point for customization after application launch.
-</span><span class='line'>    return YES;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>修改<code>ViewController.h</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
-</span><span class='line'>
-</span><span class='line'>@interface ViewController : UIViewController&lt;UITableViewDataSource, UITableViewDelegate&gt;
-</span><span class='line'>
-</span><span class='line'>@property (nonatomic, retain) NSMutableArray *datalist;
-</span><span class='line'>@property (nonatomic, retain) UITableView *myTableView;
-</span><span class='line'>
-</span><span class='line'>@end
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>文件<code>ViewController.m</code>如下</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import "ViewController.h"
-</span><span class='line'>
-</span><span class='line'>@interface ViewController ()
-</span><span class='line'>
-</span><span class='line'>@end
-</span><span class='line'>
-</span><span class='line'>@implementation ViewController
-</span><span class='line'>@synthesize datalist;
-</span><span class='line'>@synthesize myTableView;
-</span><span class='line'>
-</span><span class='line'>- (void)viewDidLoad
-</span><span class='line'>{
-</span><span class='line'>    [super viewDidLoad];
-</span><span class='line'>  // Do any additional setup after loading the view, typically from a nib.
-</span><span class='line'>    NSMutableArray *list = [NSArray arrayWithObjects:@"武汉",@"上海",@"北京",@"深圳",@"广州",@"重庆",@"香港",@"台海",@"天津", nil];
-</span><span class='line'>    self.datalist = list;
-</span><span class='line'>    
-</span><span class='line'>    UITableView *tableview = [[[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain] autorelease];
-</span><span class='line'>    //set the data source
-</span><span class='line'>    tableview.dataSource = self;
-</span><span class='line'>    //set the delegate
-</span><span class='line'>    tableview.delegate = self;
-</span><span class='line'>    //set the background
-</span><span class='line'>    //tableview.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Background.png"]];
-</span><span class='line'>    self.myTableView = tableview;
-</span><span class='line'>    [self.view addSubview:myTableView];
-</span><span class='line'>    
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-</span><span class='line'>{
-</span><span class='line'>    static NSString *CellWithIdentifier = @"Cell";
-</span><span class='line'>    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
-</span><span class='line'>    if(cell == nil){
-</span><span class='line'>        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellWithIdentifier];
-</span><span class='line'>    }
-</span><span class='line'>    NSUInteger row = [indexPath row];
-</span><span class='line'>    cell.textLabel.text = [self.datalist objectAtIndex:row];
-</span><span class='line'>    return cell;
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-</span><span class='line'>{
-</span><span class='line'>    return [self.datalist count];
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-</span><span class='line'>{
-</span><span class='line'>    return 70;  //设置行高
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-</span><span class='line'>{
-</span><span class='line'>    NSString *msg = [[NSString alloc] initWithFormat:@"You choose :%@",  [self.datalist objectAtIndex:[indexPath row]]];
-</span><span class='line'>    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-</span><span class='line'>    [msg release];
-</span><span class='line'>    [alert show];
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-</span><span class='line'>{
-</span><span class='line'>    NSLog(@"delete");  //滑动删除
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)didReceiveMemoryWarning
-</span><span class='line'>{
-</span><span class='line'>    [super didReceiveMemoryWarning];
-</span><span class='line'>    // Dispose of any resources that can be recreated.
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>
