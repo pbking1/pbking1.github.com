@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software_testing | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/software-testing/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-21T16:19:26+08:00</updated>
+  <updated>2014-06-21T22:16:45+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -62,6 +62,12 @@
 
 <ul>
 <li>由于人类的错误导致的fault</li>
+</ul>
+</li>
+<li>test oracle
+
+<ul>
+<li>一个用来判断测试是否通过的机制</li>
 </ul>
 </li>
 </ul>
@@ -132,10 +138,6 @@
 </li>
 </ul>
 
-
-<h3>失效性测试和通过性测试的区别</h3>
-
-<h3>非功能性测试和功能性测试的区别</h3>
 
 <h3>PMOD</h3>
 
@@ -333,8 +335,100 @@
 
 <ul>
 <li>一个输入 &ndash;> 一个输出</li>
-<li>等价类划分（划分输入区域成为等价类）</li>
-<li>边界值分析（对每个等价类进行边界值分析）</li>
+<li>等价类划分（划分输入区域成为等价类）
+
+<ul>
+<li>e.g 例如学号为07000-07100
+
+<ul>
+<li>求学号的等价类
+
+<ul>
+<li>首先是5位数
+
+<ul>
+<li>‘07050’</li>
+</ul>
+</li>
+<li>小于07000的五位数
+
+<ul>
+<li>‘00000’</li>
+</ul>
+</li>
+<li>大于07100的五位数
+
+<ul>
+<li>‘99999’</li>
+</ul>
+</li>
+<li>小于五位数非空的数字
+
+<ul>
+<li>‘1’</li>
+</ul>
+</li>
+<li>大于五位数非空的数字
+
+<ul>
+<li>‘99999999’</li>
+</ul>
+</li>
+<li>有非数字的
+
+<ul>
+<li>‘aa1’</li>
+<li>有三种（大于，小于和等于5位数的）</li>
+</ul>
+</li>
+<li>空串
+
+<ul>
+<li>“ ”</li>
+</ul>
+</li>
+<li>空
+
+<ul>
+<li>&ldquo;&rdquo;</li>
+</ul>
+</li>
+<li>超长的
+
+<ul>
+<li>“999999999999999999999999999999999999”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>边界值分析（对每个等价类进行边界值分析）
+
+<ul>
+<li>其实就是找边界值</li>
+<li>e.g
+
+<ul>
+<li>有几个类</li>
+<li>c1:(0,2)  c2:[2,5) c3:[5, 10000)</li>
+<li>则c1的边界为0.001，1.999， 2</li>
+<li>c2为2.001， 5</li>
+<li>c3为5.001</li>
+</ul>
+</li>
+<li>规律为(x,x), [x,x]
+
+<ul>
+<li>左边圆括号：x + 0.001</li>
+<li>右边圆括号：x &ndash; 0.001(不是很清楚) 和 x</li>
+<li>左边方括号：x + 0.001</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>因果图和决策表（通过把输入输出以边的形式来分析关联）
 
 <ul>
@@ -347,8 +441,20 @@
 
 <ul>
 <li>多个输入 &ndash;> 一个输出</li>
-<li>组合覆盖</li>
-<li>带约束的组合覆盖</li>
+<li>组合覆盖
+
+<ul>
+<li>覆盖每个t路交互至少一次</li>
+</ul>
+</li>
+<li>带约束的组合覆盖
+
+<ul>
+<li>覆盖符合约束的所有参数组合</li>
+<li>删除不可能的参数组合</li>
+<li>删除冗余组合</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>等级三
