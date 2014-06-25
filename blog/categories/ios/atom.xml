@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-23T19:44:02+08:00</updated>
+  <updated>2014-06-25T14:44:26+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,75 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Segment Control]]></title>
+    <link href="http://pbking1.github.com/blog/2014/06/25/ios-segment-control/"/>
+    <updated>2014-06-25T11:01:49+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/25/ios-segment-control</id>
+    <content type="html"><![CDATA[<h3>segment control</h3>
+
+<ul>
+<li>这一段是使用CGrectmake在view上直接按照坐标大小画segment control</li>
+<li>因为tabbar只能按照默认的放在底部</li>
+<li>因此要使用放在顶部的类似tabbar的效果有两种方式
+
+<ul>
+<li>一种就是segment control，每点击一个item就跳转到那个item对应的view那里</li>
+<li>还有一种是使用button来仿造tabbar</li>
+<li>不过总体来说还是button效果好一点</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<p>```
+&ndash; (void)viewDidLoad
+{</p>
+
+<pre><code>[super viewDidLoad];
+//segment control
+NSArray *items = [NSArray arrayWithObjects:@"关注项目", @"全部项目", nil];
+UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:items];
+[segmentedControl setFrame:CGRectMake(15, 50, 300, 50)];  //画segment control
+[segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];  //响应事件
+[segmentedControl setTag:1];
+[self.view addSubview:segmentedControl];
+[segmentedControl release];
+</code></pre>
+
+<p>}
+```</p>
+
+<ul>
+<li>接下来通过使用不同的segmentControl里面的index来判断点了哪个，然后进行跳转</li>
+</ul>
+
+
+<p>```
+&ndash; (void)segmentedControlChangedValue:(UISegmentedControl *)segmentedControl {</p>
+
+<pre><code>NSInteger selectedindex = [segmentedControl selectedSegmentIndex];
+if(selectedindex == 0){
+    partViewController *p = [[partViewController alloc] init];
+    [self presentModalViewController:p animated:YES];
+    //[self dismissModalViewControllerAnimated:YES];
+    [p release];
+}else if(selectedindex == 1){
+    allproViewController *a = [[allproViewController alloc] init];
+    [self presentModalViewController:a animated:YES];
+    //[self dismissModalViewControllerAnimated:YES];
+    [a release];
+}
+</code></pre>
+
+<p>}
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Build Ios Webapp Using Phonegap and Jquery Mobile]]></title>
@@ -575,45 +644,6 @@ Integrating client project
 
 <ul>
 <li>like <code>pod search json</code></li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Build a Xib Program in Xcode5]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/20/build-a-xib-program-in-xcode5/"/>
-    <updated>2014-05-20T19:45:48+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/20/build-a-xib-program-in-xcode5</id>
-    <content type="html"><![CDATA[<ul>
-<li>由于xcode5里面默认使用了storyboard这种视图控制器，因此有以下的解决方案
-
-<ul>
-<li>1.新建工程&mdash;ios&mdash;-Application&mdash;-Single View Application</li>
-<li>2.将自动生成的Main.storyboard,ViewController.h,ViewController.m这三个文件彻底删除</li>
-<li>3.在项目设置里面,将MainInterface这一项中的内容删除置为空</li>
-<li>4.新建一个类,继承UIViewController,并且选中WithXIB for user interface.并且把内存计数器改为MRC.(改成MRC的方法就是再build setting里面找automatic, 然后把Object-C Automatic Reference Counting改成NO)
-<!--more--></li>
-<li>5.在AppDelegate中,导入新建的类:ViewController.h</li>
-<li>6.在AppDelegate.h中,添加属性:@property(strong,nonatomic)ViewController*viewController;</li>
-<li>7.在AppDelegate.m中,添加以下代码:
-<code>
-self.window= [[[UIWindowalloc]initWithFrame:[[UIScreenmainScreen]bounds]]autorelease];
-self.viewController= [[[PT4ViewControlleralloc]initWithNibName:@"PT4ViewController"bundle:nil]autorelease];
-self.window.rootViewController=self.viewController;
-[self.windowmakeKeyAndVisible];
-</code></li>
-<li>8.处理好内存分配以及dealloc方法.
-```</li>
-<li>(void)dealloc
-{
-  [<em>window release];
-  [</em>viewController release];
-  [super dealloc];
-}
-```</li>
 </ul>
 </li>
 </ul>

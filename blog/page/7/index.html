@@ -9,9 +9,7 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="This is the vim configuration of my mac.
-edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;
-Some of them need to install some plugins and &hellip;">
+  <meta name="description" content="1. 概念类图（Conceptual Class Diagram / Domian Model） 实验目的： 掌握概念类图的涵义和内容 掌握概念类图的绘制方法 掌握概念类图的使用范围 实验内容： Read the game description of &ldquo;Priests and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +78,546 @@ Some of them need to install some plugins and &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/04/20/10-uml-homework-of-system-analyze-and-design/">10 Uml Homework of System Analyze and Design</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-20T12:57:18+08:00" pubdate data-updated="true">Apr 20<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/20/10-uml-homework-of-system-analyze-and-design/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/20/10-uml-homework-of-system-analyze-and-design/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>1. 概念类图（Conceptual Class Diagram / Domian Model）</h3>
+
+<ul>
+<li><p>实验目的：</p>
+
+<ul>
+<li><ol>
+<li>掌握概念类图的涵义和内容</li>
+</ol>
+</li>
+<li><ol>
+<li>掌握概念类图的绘制方法</li>
+</ol>
+</li>
+<li><ol>
+<li>掌握概念类图的使用范围</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>实验内容：</p></li>
+<li><ol>
+<li>Read the game description of &ldquo;Priests and Devils&rdquo; .</li>
+</ol>
+</li>
+<li><p>Priests and Devils
+  Priests and Devils is a puzzle game in which you will help the Priests and Devils to cross the river within the time limit. There are 3 priests and 3 devils at one side of the river. They all want to get to the other side of this river, but there is only one boat and this boat can only carry two persons each time. And there must be one person steering the boat from one side to the other side. In the flash game, you can click on them to move them and click the go button to move the boat to the other direction. If the priests are out numbered by the devils on either side of the river, they get killed and the game is over. You can try it in many ways. Keep all priests alive! Good luck!</p></li>
+<li><p>and play the game ( <a href="http://www.flash-game.net/game/2535/priests-and-devils.html">http://www.flash-game.net/game/2535/priests-and-devils.html</a> ) first.</p></li>
+<li><ol>
+<li>识别游戏中出现的概念，并画出概念类图。要求给出类、属性、以及类之间的关联（建议有多重性）。</li>
+</ol>
+</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/20/10-uml-homework-of-system-analyze-and-design/">Read more</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">How to Install Ubuntu on Macbook Air Dual</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-18T11:07:34+08:00" pubdate data-updated="true">Apr 18<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h4>1.For there are too many software that can be used in ubuntu not in OSX so I decided to install ubuntu on my macbook air</h4>
+
+<ul>
+<li>I have try the mac version ubuntu and <em>it do not work</em></li>
+<li>and the origin version for windows is work on mac</li>
+</ul>
+
+
+<h4>2.First use <code>Unetbootin</code> to create a usb bootable ubnutu on mac</h4>
+
+<ul>
+<li>There are two ways to finish this</li>
+<li>The first is(I do not succeed in this)
+
+<ul>
+<li><code>diskutil list</code>
+
+<ul>
+<li>show the disk that is mounted on your mac</li>
+</ul>
+</li>
+<li>then insert the usb</li>
+<li>run <code>diskutil list again</code>
+
+<ul>
+<li>and determine the device node assigned to the usb like <code>disks1s2</code></li>
+</ul>
+</li>
+<li>then <code>diskutil unmountDisk /disks1s2</code></li>
+<li>after that <code>sudo dd if=/path/to/ubuntu.img.dmg of=/dev/disks1s2 bs=2m</code>
+
+<ul>
+<li>to create the bootable usb ubuntu</li>
+<li>and the bs is the I/O speed and the max is 2m</li>
+</ul>
+</li>
+<li>It may cost some time to complete</li>
+<li>finally run <code>eject /dev/disks1s2</code></li>
+</ul>
+</li>
+<li>The second is
+
+<ul>
+<li>use the <code>Unetbootin</code> to create the bootable usb directly</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/18/how-to-install-ubuntu-on-macbook-air-dual/">Read more</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/15/linux-server-tutorial/">Linux Server Tutorial</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-15T14:47:08+08:00" pubdate data-updated="true">Apr 15<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/15/linux-server-tutorial/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>1.GNU plan</h3>
+
+<ul>
+<li>GNU plan is founded by the Richard M.Stallman and free software foundation</li>
+<li>In order to make sure the GNU software can be used freely</li>
+<li>All the GNU softwares have a license called &ldquo;GNU General Public License&rdquo;, <code>GPL</code></li>
+<li>this forbid the other from adding any constrict to the GNU software and let all the people to have the right to use it.</li>
+</ul>
+
+
+<h3>2.POSIX standard</h3>
+
+<ul>
+<li>Portable Operating system Interface for Computing Systems</li>
+<li>used to solve the problem that the UNIX system have lots of versions and result in a chaos</li>
+<li>the standard is developed by the IEEE and standarded by the ANSI and ISO</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/15/linux-server-tutorial/">Read more</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/13/my-bash-profile-configuration/">My Bash Profile Configuration</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-13T10:14:26+08:00" pubdate data-updated="true">Apr 13<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/13/my-bash-profile-configuration/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#terminal
+</span><span class='line'>export PS1="\u@\h:\w $"
+</span><span class='line'>export CLICOLOR=1
+</span><span class='line'>export GREP_OPTIONS="--color=auto"
+</span><span class='line'>
+</span><span class='line'>#byobu check ignore
+</span><span class='line'>set FORCE_UNSAFE_CONFIGURE=1
+</span><span class='line'>
+</span><span class='line'>#ant path
+</span><span class='line'>#ANT_ROOT=/Users/pb/Downloads/adt-bundle-mac-x86_64-20130917/sdk/tools/ant
+</span><span class='line'>
+</span><span class='line'># gcc 4.8
+</span><span class='line'>export PATH=$HOME/Library/gcc-4.8.0/bin:$PATH
+</span><span class='line'>
+</span><span class='line'>export BOOST_ROOT=/usr/local/Cellar/lib
+</span><span class='line'>export BOOST_INCLUDEDIR=/usr/local/Cellar/include
+</span><span class='line'>
+</span><span class='line'>##
+</span><span class='line'># Your previous /Users/pb/.bash_profile file was backed up as /Users/pb/.bash_profile.macports-saved_2013-10-12_at_14:01:02
+</span><span class='line'>##
+</span><span class='line'>
+</span><span class='line'># MacPorts Installer addition on 2013-10-12_at_14:01:02: adding an appropriate PATH variable for use with MacPorts.
+</span><span class='line'>export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+</span><span class='line'># Finished adapting your PATH environment variable for use with MacPorts.
+</span><span class='line'>
+</span><span class='line'>export CPATH=/opt/local/include
+</span><span class='line'>export LIBRARY_PATH=/opt/local/lib
+</span><span class='line'>export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/opt/local/lib
+</span><span class='line'>export PATH=/opt/local/bin:$PATH
+</span><span class='line'># To ensure that MacPorts pkg-config can find stuff that rosdep installs in /usr
+</span><span class='line'>export PKG_CONFIG_PATH=/usr/lib/pkgconfig
+</span><span class='line'>
+</span><span class='line'>#color
+</span><span class='line'>export CLICOLOR=1
+</span><span class='line'>export LSCOLORS=ExFxCxDxBxegedabagacad
+</span><span class='line'>
+</span><span class='line'>#wxpython
+</span><span class='line'>export VERSIONER_PYTHON_PREFER_32_BIT
+</span><span class='line'>
+</span><span class='line'>#sudo error
+</span><span class='line'>unset LD_LIBRARY_PATH
+</span><span class='line'>unset DYLD_LIBRARY_PATH
+</span><span class='line'>
+</span><span class='line'>#tornade
+</span><span class='line'>export PYTHONPATH=$PYTHONPATH:~/Document/python/software/tornado-3.1.1
+</span><span class='line'>
+</span><span class='line'>#android sdk
+</span><span class='line'>export PATH=$PATH:~/Downloads/adt-bundle-mac-x86_64-20130917/sdk/platform-tools
+</span><span class='line'>
+</span><span class='line'>#android ndk
+</span><span class='line'>export ANDROID_NDK_ROOT=~/Documents/android/NDK/android-ndk-r9d
+</span><span class='line'>export NDK_ROOT=~/Documents/android/NDK/android-ndk-r9d
+</span><span class='line'>export ANDROID_SDK_ROOT=~/Downloads/adt-bundle-mac-x86_64-20130917/sdk
+</span><span class='line'>
+</span><span class='line'>#cocos2dx
+</span><span class='line'>#export COCOS2DX_ROOT=~/Documents/CocosBuilder-2.1-examples/cocos2d-x-2.2.2
+</span><span class='line'>
+</span><span class='line'>#mysql path
+</span><span class='line'>export PATH=$PATH:/usr/local/mysql/bin
+</span><span class='line'>
+</span><span class='line'>#Tomcat
+</span><span class='line'>#export PATH=$PATH:/usr/local/apache-tomcat-7.0.52/bin
+</span><span class='line'>
+</span><span class='line'>#colt linear algebra lib
+</span><span class='line'>export CLASSPATH=/opt/share/colt/lib/colt.jar:/opt/share/colt/lib/concurrent.jar:$CLASSPATH
+</span><span class='line'>
+</span><span class='line'>#mlpack machinelearning library
+</span><span class='line'>
+</span><span class='line'>export ANT_ROOT=/usr/local/ant
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+</span><span class='line'>
+</span><span class='line'>export COCOS_CONSOLE_ROOT=/Users/pb/Documents/CocosBuilder-2.1-examples/cocos2d-x-3.0rc0/tools/cocos2d-console/bin
+</span><span class='line'>export PATH=$COCOS_CONSOLE_ROOT:$PATH</span></code></pre></td></tr></table></div></figure>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/13/my-bash-profile-configuration/">Read more</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/09/basic-idea-in-robotics/">Basic Idea in Robotics</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-09T18:55:54+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/09/basic-idea-in-robotics/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>ABSTRACT:</h3>
+
+<ul>
+<li>The basic idea in robotic area
+
+<ul>
+<li>A robot is an autonomous system which exists in the physical world, can sense its environment , and can act on it to achieve some goals</li>
+<li>The robotic involves autonomy, sensing, action, and achieving goals, all in the physical world</li>
+<li>The component of the robot are
+
+<ul>
+<li>physical body
+
+<ul>
+<li>it can exist and do in the physical world</li>
+</ul>
+</li>
+<li>combine
+
+<ul>
+<li>manipulation(up body)
+
+<ul>
+<li>handling objects</li>
+</ul>
+</li>
+<li>locomotion(down body).
+
+<ul>
+<li>Moving around, going places</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sensors
+
+<ul>
+<li>It can sense/perceive its environment in order to get information about itself and its surroundings.</li>
+</ul>
+</li>
+<li>Effectors and actuators
+
+<ul>
+<li>it can take actions</li>
+<li>effector enable a robot to take a action, to do physical things
+
+<ul>
+<li>it can also be defined as any device that has an effect on the environment</li>
+<li>it range from legs, wheels to arms and fingers</li>
+</ul>
+</li>
+<li>actuator can do exact the actual work for the robot
+
+<ul>
+<li>are the effector that use underlying mechanism, such as motor and muscles.</li>
+<li>Is also the mechanism that enable the effector to execute an action or movement</li>
+<li>Such as electric motors(base on electric current), hydraulics(base on fluid pressure) ,pneumatics(base on air pressure) and photo-reactive materials ……</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Controller
+
+<ul>
+<li>it can be autonomous</li>
+<li>provide hardware and/or software that make the robot autonomous by using the sensor inputs and any other information to decide what to do ad then to control the effectors to execute that action</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/09/basic-idea-in-robotics/">Read more</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/04/09/my-vim-configuration/">My Vim Configuration</a></h1>
     
     
@@ -124,338 +662,6 @@ Some of them need to install some plugins and &hellip;">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/congiure-the-octopress-blog/">Congiure My Octopress Blog</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T17:03:02+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/congiure-the-octopress-blog/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>1.In the _config.yml file</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>default_asides: [asides/recent_posts.html, asides/category_list.html, asides/comment.html, asides/github.html, custom/asides/earth.html]
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>and</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/congiure-the-octopress-blog/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">2013 IEEE International Conference on Robotics and Biomimetics</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T13:08:03+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><pre><code>Dec 12-14 2013 shenzhen, China
-</code></pre>
-
-<h4>Team members</h4>
-
-<pre><code>pengbin
-qiudicong
-zhudingqiao
-</code></pre>
-
-<h4>here are the picture</h4>
-
-<p><img src="/images/ieee1.jpg">
-<img src="/images/ieee2.jpg">
-<img src="/images/ieee3.jpg"></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/final-exam-of-the-android-class/">Final Exam of the Sysu SE Android Class</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T12:52:03+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/final-exam-of-the-android-class/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h4>在Android平台上实现一个本地应用——大学城特惠网</h4>
-
-<h5>Some key codes</h5>
-
-<ul>
-<li>应用功能描述:
-
-<ul>
-<li><ol>
-<li>具有登录界面,可以输入账号和密码,并且有两个按钮“登录”和“退出”。如果点击“退出”按钮可以直接退出程序(如图一所示);</li>
-</ol>
-</li>
-<li><ol>
-<li>登录账号和密码可任意输入,当账号和密码非空且一样时视作合法。如果输入信息不合法时,显示“账号或密码错误!”(如图二,图三所示);</li>
-</ol>
-</li>
-<li><ol>
-<li>成功登录后显示主界面(如图四所示):主界面顶部显示登录界面输入的账号,下面是一个列表,显示特惠信息表中所有条目(每个条目显示学校与打折信息);</li>
-</ol>
-</li>
-<li><ol>
-<li>点击每个列表项可进入查看相应的特惠信息的明细(参照特惠信息表),点击“返回”按钮可以返回到主界面</li>
-</ol>
-</li>
-<li><ol>
-<li>附加功能:</li>
-<li>1, 使用对话框的形式代替原来输入非法登录信息的提示方式,要求如下:
-
-<ul>
-<li><ol type="a">
-<li>对话框给出提示文字;</li>
-</ol>
-</li>
-<li>ii. 包含两个按钮:点击“是”按钮后回到登录界面,点击“否”按钮后退出程序。</li>
-</ul>
-</li>
-<li>2, 在桌面上显示本应用的 Widget 组件,要求如下:
-
-<ul>
-<li><ol type="a">
-<li>能显示一些关于本应用的信息(例如应用名);</li>
-</ol>
-</li>
-<li>ii. 包含一个按钮,点击此按钮后能启动本应用。</li>
-</ul>
-</li>
-<li>3, 记住账号与密码,要求如下:
-
-<ul>
-<li><ol type="a">
-<li>程序退出后记住当前登录用户的账号与密码,重新打开本应用后能自动填充两个文本框。</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>4, 记录用户登录的时间,要求如下:
-
-<ul>
-<li><ol type="a">
-<li>在主界面显示当前用户登录的时间(X 分 X 秒),并且能够实时刷新.</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/final-exam-of-the-android-class/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/intro-to-the-penertration-testing-project/">Introduction to the Project of Network Attack and Defense</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T12:20:42+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/intro-to-the-penertration-testing-project/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><pre><code>Produced by pengbin and wangyang
-</code></pre>
-
-<h4>Abstract</h4>
-
-<ul>
-<li>A kind of penetration testing tool is introduced. And we carry out some experiments to penetrate some systems like WinXP and ubuntu linux. Also will we analyze the mechanic of the penetrating and showing why we can use the vulnerability of the system to get the whole access of it. Thus this kind of testing technology can be used in many areas which can help a good many of companies to protect their personal computer and server from the crackers that want to break into the system and do something bad.</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/intro-to-the-penertration-testing-project/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/">CPSO-Sk 的实现(1)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T00:36:53+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>其实和标准的PSO是一样的</li>
-<li><p>只是初始种群是不一样的</p>
-
-<ul>
-<li>假设标准版的种群大小是100的话，那么</li>
-<li>这个版本是把100分成10份，然后再对每一份使用标准版的算法</li>
-</ul>
-</li>
-<li><p>因此这两个算法本质上没有区别，只是初始种群大小不一样而已</p></li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
@@ -472,23 +678,23 @@ zhudingqiao
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/06/20/something-basic-about-software-testing/">Something Basic About Software Testing</a>
+        <a href="/blog/2014/06/25/ios-tableview/">IOS Tableview</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/11/the-note-of-the-uml-final-exam/">UML Final Exam Note</a>
+        <a href="/blog/2014/06/25/ios-selector-jump-to-the-other-page/">IOS Selector(jump to the Other Page)</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/09/tofel-experience-have-not-passed-100-yes/">TOFEL Experience(have Not Passed 100 Yet)</a>
+        <a href="/blog/2014/06/25/ios-uilabel/">IOS UILabel</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/09/use-sqlite-in-html5/">Use Sqlite in Html5</a>
+        <a href="/blog/2014/06/25/ios-uibutton/">IOS UIButton</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/">Phonegap 框架原理</a>
+        <a href="/blog/2014/06/25/ios-segment-control/">IOS Segment Control</a>
       </li>
     
   </ul>
@@ -499,7 +705,7 @@ zhudingqiao
     <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (8)</a></li>
 <li class='category'><a href='/blog/categories/android/'>Android (5)</a></li>
 <li class='category'><a href='/blog/categories/erp/'>ERP (1)</a></li>
-<li class='category'><a href='/blog/categories/ios/'>IOS (9)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>IOS (10)</a></li>
 <li class='category'><a href='/blog/categories/internship/'>Internship (1)</a></li>
 <li class='category'><a href='/blog/categories/interview/'>Interview (2)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
@@ -536,7 +742,7 @@ ds.charset = 'UTF-8';
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+31.666666666666668%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+21.666666666666668%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+8.333333333333334%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+8.333333333333334%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+18.333333333333336%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+8.333333333333334%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+11.666666666666668%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+15.0%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+25.0%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+11.666666666666668%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+8.333333333333334%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+11.666666666666668%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+8.333333333333334%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+11.666666666666668%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+11.666666666666668%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+11.666666666666668%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+21.666666666666668%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+11.666666666666668%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+29.0%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+20.0%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+8.0%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+8.0%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+8.0%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+17.0%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+8.0%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+11.0%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+14.0%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+23.0%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+11.0%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+8.0%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+11.0%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+8.0%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+11.0%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+11.0%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+11.0%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+20.0%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+11.0%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 
