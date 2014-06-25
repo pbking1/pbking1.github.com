@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-25T16:54:44+08:00</updated>
+  <updated>2014-06-25T17:19:09+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -25,6 +25,13 @@
 
 <ul>
 <li>但是只能免费使用30天</li>
+<li>并且经过真机调试
+
+<ul>
+<li>效果做得很好，除了不能点击某个地方显示具体信息之外其他都做得很好</li>
+<li>比如可以方法缩小，左右拖，平移旋转都行</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
