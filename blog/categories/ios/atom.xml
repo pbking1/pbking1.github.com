@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-25T15:04:13+08:00</updated>
+  <updated>2014-06-25T15:41:02+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -60,6 +60,50 @@ self.text1.layer.cornerRadius = 10;
 </code></pre>
 
 <p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IOS Selector(jump to the Other Page)]]></title>
+    <link href="http://pbking1.github.com/blog/2014/06/25/ios-selector-jump-to-the-other-page/"/>
+    <updated>2014-06-25T11:02:32+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/25/ios-selector-jump-to-the-other-page</id>
+    <content type="html"><![CDATA[<h3>响应事件或者跳转</h3>
+
+<ul>
+<li>使用每个控件里面的action的selector</li>
+</ul>
+
+
+<!--more-->
+
+
+<p><code>
+UIBarButtonItem *leftbutton = [[UIBarButtonItem alloc] initWithTitle:@"cancel" style:UIBarButtonSystemItemDone target:self action:@selector(goBack)];
+</code></p>
+
+<ul>
+<li>实现selector的跳转
+
+<ul>
+<li>定义要跳转到的页面的viewcontroller</li>
+<li>用presentModalViewController跳转</li>
+<li>用完记得释放资源</li>
+</ul>
+</li>
+</ul>
+
+
+<p>```
+&ndash; (void)goBack{</p>
+
+<pre><code>basicinfo *p1 = [[basicinfo alloc] init];
+[self presentModalViewController:p1 animated:YES];
+[p1 release];
+</code></pre>
+
+<p>}
+```</p>
 ]]></content>
   </entry>
   
@@ -282,102 +326,6 @@ if(selectedindex == 0){
 </code></pre>
 
 <p></html></p>
-
-<p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Zst Internship IOS Code Step2]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step2/"/>
-    <updated>2014-05-23T15:21:09+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step2</id>
-    <content type="html"><![CDATA[<h3>Here are the method added</h3>
-
-<ul>
-<li>I want to implement a button that used to went back to the main page if the user suddenly do not want to continue ordering the things
-
-<ul>
-<li>First
-
-<ul>
-<li>Go to Sections &ndash;> ButtonMacro.h
-
-<ul>
-<li>add <code>#define BACKTOMAINPAGE 13</code> at the end</li>
-</ul>
-</li>
-<li>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m
-
-<ul>
-<li>add the following code</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<p>```
-else if (_type == BACKTOMAINPAGE)
-{</p>
-
-<pre><code>self.frame = CGRectMake(50, 50, 40, 44);
-[self setTitle:@"返回主页" forState:UIControlStateNormal];
-[self setTitle:@"返回主页" forState:UIControlStateHighlighted];
-</code></pre>
-
-<p>}</p>
-
-<p>```</p>
-
-<!--more-->
-
-
-<ul>
-<li>go to Controller &ndash;> 我 &ndash;> 应用推荐 &ndash;> OrderDetailViewController.m
-
-<ul>
-<li>and this is create a button on the right top corner and its function is to went back to the mainpage</li>
-<li>add the following code in <code>viewdidload</code> function</li>
-</ul>
-</li>
-</ul>
-
-
-<p>```</p>
-
-<pre><code>ButtonFactory *buttonFactory = [ButtonFactory factory];
-UIButton *rightBtn = [buttonFactory createButtonWithType:BACKTOMAINPAGE];
-[rightBtn addTarget:self action:@selector(gobacktomain:) forControlEvents:UIControlEventTouchUpInside];
-UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-self.navigationItem.rightBarButtonItem = rightBarItem;
-[rightBarItem release];
-</code></pre>
-
-<p><code>``
-- add a new function called</code>gobacktomain`</p>
-
-<pre><code>- this is a selector that used to find the main viewcontroller and jump to it.
-- the code in it is
-</code></pre>
-
-<p>```</p>
-
-<pre><code>- (void)gobacktomain:(id)paramSender{
-    UIViewController *target = nil;
-    for(UIViewController *controller in self.navigationController.viewControllers){
-        if([controller isKindOfClass:[HomePageViewController class]]){
-            target = controller;
-        }
-    }
-    if(target){
-        [self.navigationController popToViewController:target animated:YES];
-    }
-}
-</code></pre>
 
 <p>```</p>
 ]]></content>

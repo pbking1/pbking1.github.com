@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-25T15:04:13+08:00</updated>
+  <updated>2014-06-25T15:41:02+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -79,7 +79,43 @@
     <link href="http://pbking1.github.com/blog/2014/06/25/ios-selector-jump-to-the-other-page/"/>
     <updated>2014-06-25T11:02:32+08:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/25/ios-selector-jump-to-the-other-page</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<h3>响应事件或者跳转</h3>
+
+<ul>
+<li>使用每个控件里面的action的selector</li>
+</ul>
+
+
+<!--more-->
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>UIBarButtonItem *leftbutton = [[UIBarButtonItem alloc] initWithTitle:@"cancel" style:UIBarButtonSystemItemDone target:self action:@selector(goBack)];</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>实现selector的跳转
+
+<ul>
+<li>定义要跳转到的页面的viewcontroller</li>
+<li>用presentModalViewController跳转</li>
+<li>用完记得释放资源</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- (void)goBack{
+</span><span class='line'>    basicinfo *p1 = [[basicinfo alloc] init];
+</span><span class='line'>    [self presentModalViewController:p1 animated:YES];
+</span><span class='line'>    [p1 release];
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
 ]]></content>
   </entry>
   
