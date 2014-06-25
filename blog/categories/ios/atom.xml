@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-25T16:30:54+08:00</updated>
+  <updated>2014-06-25T16:54:44+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -21,14 +21,21 @@
     <content type="html"><![CDATA[<h3>一个非常容易使用的报表类库</h3>
 
 <ul>
-<li><p>NChart3D</p>
+<li>NChart3D
 
 <ul>
 <li>但是只能免费使用30天</li>
 </ul>
 </li>
-<li><p>在AppDelegate.m里面添加如下
-```</p>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>在AppDelegate.m里面添加如下
+```
 
 <h1>import &ldquo;AppDelegate.h&rdquo;</h1>
 
