@@ -5,13 +5,32 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>KING</title>
+  <title>IOS 报表类库（trial 30days） - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="This is the vim configuration of my mac.
-edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;
-Some of them need to install some plugins and &hellip;">
+  <meta name="description" content="一个非常容易使用的报表类库 NChart3D 但是只能免费使用30天 在AppDelegate.m里面添加如下 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+#import "AppDelegate.h"
+#import "NChart3D/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +39,7 @@ Some of them need to install some plugins and &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/page/8">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/06/25/ios-bao-biao-lei-ku-%28trial-30days%29">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -72,15 +91,12 @@ Some of them need to install some plugins and &hellip;">
 </header> -->
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/04/09/my-vim-configuration/">My Vim Configuration</a></h1>
+      <h1 class="entry-title">IOS 报表类库（trial 30days）</h1>
     
     
       <p class="meta">
@@ -96,156 +112,226 @@ Some of them need to install some plugins and &hellip;">
   
 
 
-<time datetime="2014-04-09T18:35:16+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
+<time datetime="2014-06-25T16:25:40+08:00" pubdate data-updated="true">Jun 25<span>th</span>, 2014</time>
         
-           | <a href="/blog/2014/04/09/my-vim-configuration/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/">Comments</a>
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><ul>
-<li>This is the vim configuration of my mac.</li>
-<li>edit the file in the /usr/share/vim named &ldquo;vimrc&rdquo;</li>
-<li>Some of them need to install some plugins and the command line will make sense</li>
+<div class="entry-content"><h3>一个非常容易使用的报表类库</h3>
+
+<ul>
+<li><p>NChart3D</p>
+
+<ul>
+<li>但是只能免费使用30天</li>
+</ul>
+</li>
+<li><p>在AppDelegate.m里面添加如下</p></li>
 </ul>
 
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/my-vim-configuration/">Read more</a>
-    </footer>
-  
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import "AppDelegate.h"
+</span><span class='line'>#import "NChart3D/NChart3D.h"
+</span><span class='line'>#import "ViewController.h"
+</span><span class='line'>
+</span><span class='line'>@implementation AppDelegate
+</span><span class='line'>{
+</span><span class='line'>    UIWindow *m_window;
+</span><span class='line'>}
+</span><span class='line'>@synthesize window = m_window;
+</span><span class='line'>
+</span><span class='line'>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+</span><span class='line'>{
+</span><span class='line'>    m_window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+</span><span class='line'>    m_window.userInteractionEnabled = YES;
+</span><span class='line'>    m_window.multipleTouchEnabled = YES;
+</span><span class='line'>    [m_window makeKeyAndVisible];
+</span><span class='line'>    m_window.rootViewController = [[ViewController new] autorelease];
+</span><span class='line'>    // Override point for customization after application launch.
+</span><span class='line'>    return YES;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/congiure-the-octopress-blog/">Congiure My Octopress Blog</a></h1>
-    
-    
-      <p class="meta">
-        
+<ul>
+<li>在Viewcontroller.h里面添加如下</li>
+</ul>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T17:03:02+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/congiure-the-octopress-blog/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>1.In the _config.yml file</h3>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>default_asides: [asides/recent_posts.html, asides/category_list.html, asides/comment.html, asides/github.html, custom/asides/earth.html]
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
+</span><span class='line'>#import "NChart3D/NChart3D.h"
+</span><span class='line'>
+</span><span class='line'>@interface ViewController : UIViewController&lt;NChartSeriesDataSource&gt;
+</span><span class='line'>
+</span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>在Viewcontroller.m里面添加如下</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import "ViewController.h"
+</span><span class='line'>#import "NChart3D/NChart3D.h"
+</span><span class='line'>
+</span><span class='line'>@interface ViewController ()
+</span><span class='line'>
+</span><span class='line'>@end
+</span><span class='line'>
+</span><span class='line'>@implementation ViewController
+</span><span class='line'>{
+</span><span class='line'>    NChartView *m_view;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)dealloc
+</span><span class='line'>{
+</span><span class='line'>    [m_view release];
+</span><span class='line'>    [super dealloc];
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)viewDidLoad
+</span><span class='line'>{
+</span><span class='line'>    [super viewDidLoad];
+</span><span class='line'>  // Do any additional setup after loading the view, typically from a nib.
+</span><span class='line'>    m_view = [[NChartView alloc] initWithFrame:CGRectZero];
+</span><span class='line'>    m_view.chart.licenseKey = @"";
+</span><span class='line'>    m_view.chart.cartesianSystem.margin = NChartMarginMake(10.0f, 10.0f, 10.0f, 20.0f);
+</span><span class='line'>    m_view.chart.shouldAntialias = YES;
+</span><span class='line'>    NChartColumnSeries *serires = [[NChartColumnSeries new] autorelease];
+</span><span class='line'>    serires.brush = [NChartSolidColorBrush solidColorBrushWithColor:[UIColor colorWithRed:0.0 green:0.7 blue:0.4 alpha:1.0]];
+</span><span class='line'>    serires.dataSource = self;
+</span><span class='line'>    [m_view.chart addSeries:serires];
+</span><span class='line'>    [m_view.chart updateData];
+</span><span class='line'>    self.view = m_view;   //使用新建的view
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (NSArray *)seriesDataSourcePointsForSeries:(NChartSeries *)series
+</span><span class='line'>{
+</span><span class='line'>    NSMutableArray *result = [NSMutableArray array];
+</span><span class='line'>    for(int i = 0; i &lt; 10; i++)
+</span><span class='line'>        [result addObject:[NChartPoint pointWithState:[NChartPointState pointStateAlignedToXWithX:i Y:(rand()%30) + 1]forSeries:series]];
+</span><span class='line'>    return result;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (NSString *)seriesDataSourceNameForSeries:(NChartSeries *)series
+</span><span class='line'>{
+</span><span class='line'>    return @"My series";
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)didReceiveMemoryWarning
+</span><span class='line'>{
+</span><span class='line'>    [super didReceiveMemoryWarning];
+</span><span class='line'>    // Dispose of any resources that can be recreated.
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>@end
 </span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
-<li>and</li>
+<li>效果
+
+<ul>
+<li><img src="/images/ios/ios_table1.png"></li>
+</ul>
+</li>
 </ul>
 
-
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/congiure-the-octopress-blog/">Read more</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">2013 IEEE International Conference on Robotics and Biomimetics</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">pb</span></span>
 
-<time datetime="2014-04-09T13:08:03+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><pre><code>Dec 12-14 2013 shenzhen, China
-</code></pre>
-
-<h4>Team members</h4>
-
-<pre><code>pengbin
-qiudicong
-zhudingqiao
-</code></pre>
-
-<h4>here are the picture</h4>
-
-<p><img src="/images/ieee1.jpg">
-<img src="/images/ieee2.jpg">
-<img src="/images/ieee3.jpg"></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/final-exam-of-the-android-class/">Final Exam of the Sysu SE Android Class</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -257,214 +343,42 @@ zhudingqiao
   
 
 
-<time datetime="2014-04-09T12:52:03+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/final-exam-of-the-android-class/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h4>在Android平台上实现一个本地应用——大学城特惠网</h4>
-
-<h5>Some key codes</h5>
-
-<ul>
-<li>应用功能描述:
-
-<ul>
-<li><ol>
-<li>具有登录界面,可以输入账号和密码,并且有两个按钮“登录”和“退出”。如果点击“退出”按钮可以直接退出程序(如图一所示);</li>
-</ol>
-</li>
-<li><ol>
-<li>登录账号和密码可任意输入,当账号和密码非空且一样时视作合法。如果输入信息不合法时,显示“账号或密码错误!”(如图二,图三所示);</li>
-</ol>
-</li>
-<li><ol>
-<li>成功登录后显示主界面(如图四所示):主界面顶部显示登录界面输入的账号,下面是一个列表,显示特惠信息表中所有条目(每个条目显示学校与打折信息);</li>
-</ol>
-</li>
-<li><ol>
-<li>点击每个列表项可进入查看相应的特惠信息的明细(参照特惠信息表),点击“返回”按钮可以返回到主界面</li>
-</ol>
-</li>
-<li><ol>
-<li>附加功能:</li>
-<li>1, 使用对话框的形式代替原来输入非法登录信息的提示方式,要求如下:
-
-<ul>
-<li><ol type="a">
-<li>对话框给出提示文字;</li>
-</ol>
-</li>
-<li>ii. 包含两个按钮:点击“是”按钮后回到登录界面,点击“否”按钮后退出程序。</li>
-</ul>
-</li>
-<li>2, 在桌面上显示本应用的 Widget 组件,要求如下:
-
-<ul>
-<li><ol type="a">
-<li>能显示一些关于本应用的信息(例如应用名);</li>
-</ol>
-</li>
-<li>ii. 包含一个按钮,点击此按钮后能启动本应用。</li>
-</ul>
-</li>
-<li>3, 记住账号与密码,要求如下:
-
-<ul>
-<li><ol type="a">
-<li>程序退出后记住当前登录用户的账号与密码,重新打开本应用后能自动填充两个文本框。</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>4, 记录用户登录的时间,要求如下:
-
-<ul>
-<li><ol type="a">
-<li>在主界面显示当前用户登录的时间(X 分 X 秒),并且能够实时刷新.</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/final-exam-of-the-android-class/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2014-06-25T16:25:40+08:00" pubdate data-updated="true">Jun 25<span>th</span>, 2014</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/intro-to-the-penertration-testing-project/">Introduction to the Project of Network Attack and Defense</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/ios/'>IOS</a>
+  
+</span>
 
 
-<time datetime="2014-04-09T12:20:42+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/intro-to-the-penertration-testing-project/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/intro-to-the-penertration-testing-project/">Comments</a>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><pre><code>Produced by pengbin and wangyang
-</code></pre>
-
-<h4>Abstract</h4>
-
-<ul>
-<li>A kind of penetration testing tool is introduced. And we carry out some experiments to penetrate some systems like WinXP and ubuntu linux. Also will we analyze the mechanic of the penetrating and showing why we can use the vulnerability of the system to get the whole access of it. Thus this kind of testing technology can be used in many areas which can help a good many of companies to protect their personal computer and server from the crackers that want to break into the system and do something bad.</li>
-</ul>
-
-
+      <div class="sharing">
+  
+  
+  
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/intro-to-the-penertration-testing-project/">Read more</a>
-    </footer>
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/">CPSO-Sk 的实现(1)</a></h1>
-    
-    
-      <p class="meta">
-        
+        <a class="basic-alignment left" href="/blog/2014/06/25/ios-uilabel-and-uitextfield/" title="Previous Post: IOS UILabel and UITextfield">&laquo; IOS UILabel and UITextfield</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T00:36:53+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/cpso-sk-de-shi-xian-1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>其实和标准的PSO是一样的</li>
-<li><p>只是初始种群是不一样的</p>
-
-<ul>
-<li>假设标准版的种群大小是100的话，那么</li>
-<li>这个版本是把100分成10份，然后再对每一份使用标准版的算法</li>
-</ul>
-</li>
-<li><p>因此这两个算法本质上没有区别，只是初始种群大小不一样而已</p></li>
-</ul>
-
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/cpso-sk-de-shi-xian-1/">Read more</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/9/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
-    
-    
-    <a class="next" href="/blog/page/7/"><i class="fa fa-chevron-circle-right fa-2x icon-color icon-homepage"></i></a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -543,7 +457,7 @@ ds.charset = 'UTF-8';
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/pbking1">@pbking1</a> on GitHub
@@ -577,6 +491,7 @@ ds.charset = 'UTF-8';
   
 </aside>
 
+
     </div>
   </div>
   <!-- <footer role="contentinfo"><p>
@@ -593,7 +508,10 @@ ds.charset = 'UTF-8';
       var disqus_shortname = 'pbking1';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/06/25/ios-bao-biao-lei-ku-%28trial-30days%29/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/06/25/ios-bao-biao-lei-ku-%28trial-30days%29/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-25T15:41:02+08:00</updated>
+  <updated>2014-06-25T16:30:54+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,213 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IOS 报表类库（trial 30days）]]></title>
+    <link href="http://pbking1.github.com/blog/2014/06/25/ios-bao-biao-lei-ku-%28trial-30days%29/"/>
+    <updated>2014-06-25T16:25:40+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/25/ios-bao-biao-lei-ku-(trial-30days)</id>
+    <content type="html"><![CDATA[<h3>一个非常容易使用的报表类库</h3>
+
+<ul>
+<li><p>NChart3D</p>
+
+<ul>
+<li>但是只能免费使用30天</li>
+</ul>
+</li>
+<li><p>在AppDelegate.m里面添加如下</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import "AppDelegate.h"
+</span><span class='line'>#import "NChart3D/NChart3D.h"
+</span><span class='line'>#import "ViewController.h"
+</span><span class='line'>
+</span><span class='line'>@implementation AppDelegate
+</span><span class='line'>{
+</span><span class='line'>    UIWindow *m_window;
+</span><span class='line'>}
+</span><span class='line'>@synthesize window = m_window;
+</span><span class='line'>
+</span><span class='line'>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+</span><span class='line'>{
+</span><span class='line'>    m_window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+</span><span class='line'>    m_window.userInteractionEnabled = YES;
+</span><span class='line'>    m_window.multipleTouchEnabled = YES;
+</span><span class='line'>    [m_window makeKeyAndVisible];
+</span><span class='line'>    m_window.rootViewController = [[ViewController new] autorelease];
+</span><span class='line'>    // Override point for customization after application launch.
+</span><span class='line'>    return YES;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>在Viewcontroller.h里面添加如下</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
+</span><span class='line'>#import "NChart3D/NChart3D.h"
+</span><span class='line'>
+</span><span class='line'>@interface ViewController : UIViewController&lt;NChartSeriesDataSource&gt;
+</span><span class='line'>
+</span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>在Viewcontroller.m里面添加如下</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#import "ViewController.h"
+</span><span class='line'>#import "NChart3D/NChart3D.h"
+</span><span class='line'>
+</span><span class='line'>@interface ViewController ()
+</span><span class='line'>
+</span><span class='line'>@end
+</span><span class='line'>
+</span><span class='line'>@implementation ViewController
+</span><span class='line'>{
+</span><span class='line'>    NChartView *m_view;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)dealloc
+</span><span class='line'>{
+</span><span class='line'>    [m_view release];
+</span><span class='line'>    [super dealloc];
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)viewDidLoad
+</span><span class='line'>{
+</span><span class='line'>    [super viewDidLoad];
+</span><span class='line'>  // Do any additional setup after loading the view, typically from a nib.
+</span><span class='line'>    m_view = [[NChartView alloc] initWithFrame:CGRectZero];
+</span><span class='line'>    m_view.chart.licenseKey = @"";
+</span><span class='line'>    m_view.chart.cartesianSystem.margin = NChartMarginMake(10.0f, 10.0f, 10.0f, 20.0f);
+</span><span class='line'>    m_view.chart.shouldAntialias = YES;
+</span><span class='line'>    NChartColumnSeries *serires = [[NChartColumnSeries new] autorelease];
+</span><span class='line'>    serires.brush = [NChartSolidColorBrush solidColorBrushWithColor:[UIColor colorWithRed:0.0 green:0.7 blue:0.4 alpha:1.0]];
+</span><span class='line'>    serires.dataSource = self;
+</span><span class='line'>    [m_view.chart addSeries:serires];
+</span><span class='line'>    [m_view.chart updateData];
+</span><span class='line'>    self.view = m_view;   //使用新建的view
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (NSArray *)seriesDataSourcePointsForSeries:(NChartSeries *)series
+</span><span class='line'>{
+</span><span class='line'>    NSMutableArray *result = [NSMutableArray array];
+</span><span class='line'>    for(int i = 0; i &lt; 10; i++)
+</span><span class='line'>        [result addObject:[NChartPoint pointWithState:[NChartPointState pointStateAlignedToXWithX:i Y:(rand()%30) + 1]forSeries:series]];
+</span><span class='line'>    return result;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (NSString *)seriesDataSourceNameForSeries:(NChartSeries *)series
+</span><span class='line'>{
+</span><span class='line'>    return @"My series";
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- (void)didReceiveMemoryWarning
+</span><span class='line'>{
+</span><span class='line'>    [super didReceiveMemoryWarning];
+</span><span class='line'>    // Dispose of any resources that can be recreated.
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>@end
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>效果
+
+<ul>
+<li><img src="http://pbking1.github.com/images/ios/ios_table1.png"></li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IOS UILabel and UITextfield]]></title>
@@ -2399,216 +2606,6 @@
 </span><span class='line'>      [self.navigationController popToViewController:target animated:YES];
 </span><span class='line'>  }
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Zst Internship IOS Code Step1]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step1/"/>
-    <updated>2014-05-23T11:47:46+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/23/zst-internship-ios-code-step1</id>
-    <content type="html"><![CDATA[<h3>In order to understand better about the code of the project in zst ios project, first list the folder</h3>
-
-<ul>
-<li>in the <code>huyihui</code> folder
-
-<ul>
-<li>image</li>
-<li>Third party</li>
-<li>Sections</li>
-<li>Controller</li>
-<li>Model</li>
-<li>Public</li>
-<li>AppDelegate.h</li>
-<li>AppDelegate.m</li>
-<li>Main.storyboard</li>
-<li>ViewController.h</li>
-<li>ViewController.m</li>
-<li>Images.xcassets</li>
-<li>Supporting Files</li>
-<li>Products</li>
-</ul>
-</li>
-<li>For the project is nearly finished, so I do not introduce the framework they use.</li>
-</ul>
-
-
-<!--more-->
-
-
-<h3>First in the <code>Image</code> folder</h3>
-
-<ul>
-<li>There are following pics
-
-<ul>
-<li>the login picture, the registe picture, the personal center picture, the general picture, the shopping picture, the first page picture, the search picture</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>Second in the <code>Third Party</code> folder</h3>
-
-<ul>
-<li>mainly used for the ailipay and the shared sdk</li>
-<li>There is a class <code>AGViewDelegate</code> which is used for the sharing</li>
-</ul>
-
-
-<h3>Third in the <code>Section</code> folder</h3>
-
-<ul>
-<li><p>we can see the following</p>
-
-<ul>
-<li>ButtonFactory
-
-<ul>
-<li>ButtonFactory.h</li>
-<li>ButtonFactory.m</li>
-</ul>
-</li>
-<li>Buttons
-
-<ul>
-<li>CreateButton.h</li>
-<li>CreateButton.m</li>
-</ul>
-</li>
-<li>SectionFactory.h</li>
-<li>SectionFactory.m</li>
-<li>ButtonMacro.h</li>
-</ul>
-</li>
-<li><p>And I think this folder is implement the <code>factory mode</code></p></li>
-<li>and most of the button is implement in the <code>CreateButton.m</code> file</li>
-</ul>
-
-
-<h3>Fourth in the <code>Controller</code> folder</h3>
-
-<ul>
-<li>Here comes <code>the most important</code>one</li>
-<li>we can see the following
-
-<ul>
-<li>BaseViewController.h</li>
-<li>BaseViewController.m</li>
-<li>Mediator
-
-<ul>
-<li>CoordinatingController.h</li>
-<li>CoordinatingController.m</li>
-</ul>
-</li>
-<li>login_and_registe
-
-<ul>
-<li><img src="http://pbking1.github.com/images/internship_zst/1.png"></li>
-</ul>
-</li>
-<li>first_page
-
-<ul>
-<li>firstpageandmore(is a tableview that used to show more about the product)
-
-<ul>
-<li><img src="http://pbking1.github.com/images/internship_zst/2.png"></li>
-</ul>
-</li>
-<li>shopping()
-
-<ul>
-<li><img src="http://pbking1.github.com/images/internship_zst/3.png"></li>
-<li>(those that contrain cell.xib is use to define the layout of the cell of the tableview)</li>
-</ul>
-</li>
-<li>detailsoftheproduct()
-
-<ul>
-<li><img src="http://pbking1.github.com/images/internship_zst/4.png"></li>
-</ul>
-</li>
-<li>tuangou
-
-<ul>
-<li><img src="http://pbking1.github.com/images/internship_zst/5.png"></li>
-</ul>
-</li>
-<li>preferential_ticket
-
-<ul>
-<li><img src="http://pbking1.github.com/images/internship_zst/6.png"></li>
-</ul>
-</li>
-<li>HomePageViewController.h</li>
-<li>HomePageViewController.m</li>
-<li>HomePageViewController.xib</li>
-<li>NewProductCollectionView.xib</li>
-<li>HomeCollectionHeader0.xib</li>
-<li>HomeCollectionHeader1.xib</li>
-<li>HomeCollectionHeader2.xib</li>
-<li>OrdinaryProductImageDetailCell.xib</li>
-<li>ProductImageDetailCell.xib</li>
-<li>ProductConstants.h</li>
-</ul>
-</li>
-<li>search
-
-<ul>
-<li><img src="http://pbking1.github.com/images/internship_zst/7.png"></li>
-</ul>
-</li>
-<li>shoppingcart
-
-<ul>
-<li><img src="http://pbking1.github.com/images/internship_zst/8.png"></li>
-</ul>
-</li>
-<li>comment_and_share
-
-<ul>
-<li><img src="http://pbking1.github.com/images/internship_zst/9.png"></li>
-</ul>
-</li>
-<li>me
-
-<ul>
-<li>AppRecommand
-
-<ul>
-<li><img src="http://pbking1.github.com/images/internship_zst/10.png"></li>
-</ul>
-</li>
-<li><img src="http://pbking1.github.com/images/internship_zst/11.png"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>Fifth is the <code>Model</code></h3>
-
-<ul>
-<li>we can see the following</li>
-<li><img src="http://pbking1.github.com/images/internship_zst/12.png"></li>
-</ul>
-
-
-<h3>Sixth is the <code>Public</code></h3>
-
-<ul>
-<li>we can see the following</li>
-<li><img src="http://pbking1.github.com/images/internship_zst/13.png"></li>
-<li><img src="http://pbking1.github.com/images/internship_zst/14.png"></li>
-<li><img src="http://pbking1.github.com/images/internship_zst/15.png"></li>
-<li><img src="http://pbking1.github.com/images/internship_zst/16.png"></li>
-<li><img src="http://pbking1.github.com/images/internship_zst/17.png"></li>
-<li><img src="http://pbking1.github.com/images/internship_zst/18.png"></li>
-</ul>
 
 ]]></content>
   </entry>
