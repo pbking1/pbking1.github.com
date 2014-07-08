@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Other | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/other/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-06-25T20:59:35+08:00</updated>
+  <updated>2014-07-08T16:21:25+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,97 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Use Opendns to Cross the Great Firewall in China]]></title>
+    <link href="http://pbking1.github.com/blog/2014/07/08/use-opendns-to-cross-the-great-firewall-in-china/"/>
+    <updated>2014-07-08T15:22:39+08:00</updated>
+    <id>http://pbking1.github.com/blog/2014/07/08/use-opendns-to-cross-the-great-firewall-in-china</id>
+    <content type="html"><![CDATA[<h3>How dns works?</h3>
+
+<ul>
+<li>first, when we use some domain name like &ldquo;www.facebook.com&rdquo;
+
+<ul>
+<li>and when we type the domain name into the website
+
+<ul>
+<li>the website will send the name to the dns server to check the ip</li>
+<li>then return the ip the our computer</li>
+<li>then we will know the ip of the target website
+
+<ul>
+<li>and we will be able to get to the website</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>why can we use this in China?</h3>
+
+<ul>
+<li>Because in China when you type &ldquo;www.google.com&rdquo;</li>
+<li>they block the dns parse not the connection
+
+<ul>
+<li>so we will be able to break through the wall if we use the other dns server to help use parse the domain name</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>how to use opendns</h3>
+
+<ul>
+<li>change the dns settings in the PC or laptop
+
+<ul>
+<li>if you want to use the google dns
+
+<ul>
+<li>set &ldquo;8.8.8.8&rdquo; and &ldquo;8.8.4.4&rdquo;</li>
+</ul>
+</li>
+<li>if you want to use the opendns
+
+<ul>
+<li>set &ldquo;208.67.222.222&rdquo; and &ldquo;208.67.220.220&rdquo;</li>
+<li>or set &ldquo;42.120.21.30&rdquo; and &ldquo;221.10.251.52&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>then if you are using Max 10.8 or above
+
+<ul>
+<li>you can renew the dns setting using
+
+<ul>
+<li>&ldquo;sudo killall -HUP mDNSResponder&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>when not to use opendns</h3>
+
+<ul>
+<li>when you are using the payment or something private
+
+<ul>
+<li>do not use opendns</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[TOFEL Experience(have Not Passed 100 Yet)]]></title>

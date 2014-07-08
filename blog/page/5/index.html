@@ -9,7 +9,7 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="此文为借鉴阮一峰2011年和2013年发布的相似图片搜索原理 原文已经写得很好了，所以我只是把它整理了一下，学习学习~~ 又名感知哈希算法 主要思想是 对每个图片生成一个“指纹”字符串，然后比较不同图片的指纹。结果越接近，就说明图片越相似 这种算法的优点是简单快速，不收图片大小缩放的影响 &hellip;">
+  <meta name="description" content="名词解释1 食品安全 （有担保的意思） 1.食品安全(Food safety)：确保食品按照其用途进行加工或者食用时不会对消费者产生危害 (Food safety: Assurance that food will not cause harm to the consumer when it is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -72,6 +72,57 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/20/sysugong-xuan-shi-pin-an-quan-he-fa-lu-de-kao-shi-zi-liao/">Sysu公选食品安全和法律的考试资料</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-20T16:41:05+08:00" pubdate data-updated="true">May 20<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/20/sysugong-xuan-shi-pin-an-quan-he-fa-lu-de-kao-shi-zi-liao/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/20/sysugong-xuan-shi-pin-an-quan-he-fa-lu-de-kao-shi-zi-liao/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>名词解释1 食品安全 （有担保的意思）</h3>
+
+<ul>
+<li>1.食品安全(Food safety)：确保食品按照其用途进行加工或者食用时不会对消费者产生危害 (Food safety: Assurance that food will not cause harm to the consumer when it is prepared and/or eaten according to its intended use，CAC)</li>
+<li>2.食品保障(Food security)：,为了健康生活每个人在任何时间都可获得食物 。 (Food security: Access by all people at all times to the food needed for a healthy life)</li>
+<li>食品安全&mdash;-》food safety and food security</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/20/sysugong-xuan-shi-pin-an-quan-he-fa-lu-de-kao-shi-zi-liao/">Read more</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -359,77 +410,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/13/2014-sysu-database-project-step1/">2014 Sysu Database Project Step1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-13T15:20:32+08:00" pubdate data-updated="true">May 13<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/13/2014-sysu-database-project-step1/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/13/2014-sysu-database-project-step1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>问题描述</h3>
-
-<ul>
-<li><strong>任务 1: 不带压缩地导入数据</strong>
-
-<ul>
-<li>这个任务要求你实现分页存储机制。
-
-<ul>
-<li>此处仅考虑定长的数据类型。对于每一列,需要将所含的定长数据如同数组 一样存储在磁盘上的页中 (更多解释见下文)。每一页的大小是固定的,可以是 4K,8K 或 16K。</li>
-</ul>
-</li>
-<li>在这个任务中,你需要存储 ORDERS 表中的
-
-<ul>
-<li>1.O_ORDERKEY</li>
-<li>2.O_CUSTKEY</li>
-<li>3.O_TOTALPRICE</li>
-<li>4.O_SHIPPRIORITY</li>
-</ul>
-</li>
-<li>不同列的数据类型不一样,具体请参考 TPC-H 的文档。存储之后,你需要 提供接口,以便于查询记录。查询时,要求实现给定一条记录的 ORDERKEY, 返回这条记录的 CUSTKEY,TOTALPRICE 和 SHIPPRIORITY。</li>
-<li>查询接口的具体要求,请参考提交一节。</li>
-<li>这个存储系统必须有能力处理 1G 以上的数据。允许存入内存里的页的数量 为 128。在实现这个限制之外,可以尝试其他限制并做对比。你可能需要学习 LRU 等换页机制来加速数据导入。</li>
-</ul>
-</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/13/2014-sysu-database-project-step1/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
@@ -446,6 +426,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/08/fmdb-and-tableview-in-ios/">FMDB and Tableview in IOS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/08/use-opendns-to-cross-the-great-firewall-in-china/">Use Opendns to Cross the Great Firewall in China</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/25/ios-bao-biao-lei-ku-%28trial-30days%29/">IOS 报表类库（trial 30days）</a>
       </li>
     
@@ -454,15 +442,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/25/ios-tableview/">IOS Tableview</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2014/06/25/ios-selector-jump-to-the-other-page/">IOS Selector(jump to the Other Page)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/25/ios-uibutton/">IOS UIButton</a>
       </li>
     
   </ul>
@@ -488,7 +468,7 @@
 <li class='category'><a href='/blog/categories/html/'>html (4)</a></li>
 <li class='category'><a href='/blog/categories/machine-learning/'>machine_learning (6)</a></li>
 <li class='category'><a href='/blog/categories/matlab/'>matlab (2)</a></li>
-<li class='category'><a href='/blog/categories/other/'>other (2)</a></li>
+<li class='category'><a href='/blog/categories/other/'>other (3)</a></li>
 <li class='category'><a href='/blog/categories/software-testing/'>software_testing (2)</a></li>
  
   </ul> 
@@ -510,7 +490,7 @@ ds.charset = 'UTF-8';
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+22.142857142857142%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+15.714285714285714%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+11.428571428571429%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+17.857142857142858%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+7.142857142857142%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+9.285714285714285%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+15.714285714285714%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+22.142857142857142%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+15.714285714285714%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+11.428571428571429%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+17.857142857142858%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+7.142857142857142%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+9.285714285714285%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+15.714285714285714%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 

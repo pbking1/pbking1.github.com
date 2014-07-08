@@ -215,10 +215,6 @@
         <lastmod>2014-06-25T15:07:18+08:00</lastmod>
     </url>
     <url>
-        <loc>http://pbking1.github.com/blog/2014/06/25/ios-tableview/</loc>
-        <lastmod>2014-06-25T11:09:49+08:00</lastmod>
-    </url>
-    <url>
         <loc>http://pbking1.github.com/blog/2014/06/25/ios-uilabel-and-uitextfield/</loc>
         <lastmod>2014-06-25T15:03:59+08:00</lastmod>
     </url>
@@ -227,6 +223,16 @@
             http://pbking1.github.com/blog/2014/06/25/ios-bao-biao-lei-ku-%28trial-30days%29/
         </loc>
         <lastmod>2014-06-25T17:14:28+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://pbking1.github.com/blog/2014/07/08/use-opendns-to-cross-the-great-firewall-in-china/
+        </loc>
+        <lastmod>2014-07-08T15:36:47+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pbking1.github.com/blog/2014/07/08/fmdb-and-tableview-in-ios/</loc>
+        <lastmod>2014-07-08T16:12:29+08:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/404.html</loc>
@@ -238,19 +244,19 @@
     </url>
     <url>
         <loc>http://pbking1.github.com/archives/</loc>
-        <lastmod>2014-06-25T17:14:28+08:00</lastmod>
+        <lastmod>2014-07-08T16:12:29+08:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/archives/</loc>
-        <lastmod>2014-06-25T17:14:28+08:00</lastmod>
+        <lastmod>2014-07-08T16:12:29+08:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/</loc>
-        <lastmod>2014-06-25T17:14:28+08:00</lastmod>
+        <lastmod>2014-07-08T16:12:29+08:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/</loc>
-        <lastmod>2014-06-25T17:14:28+08:00</lastmod>
+        <lastmod>2014-07-08T16:12:29+08:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/project/</loc>
