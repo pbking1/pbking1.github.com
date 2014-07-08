@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-07-08T16:46:58+08:00</updated>
+  <updated>2014-07-08T16:50:05+08:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -37,6 +37,9 @@
 </ul>
 </li>
 </ul>
+
+
+<!--more-->
 
 
 <h3>tableview is one of the most important thing in IOS</h3>
@@ -490,6 +493,9 @@
 <li>but nowadays we can not</li>
 <li>and because DNS hijacking and DNS cache posioning, we can not log in directly anymore</li>
 </ul>
+
+
+<!--more-->
 
 
 <h3>what is DNS hikacking?</h3>
