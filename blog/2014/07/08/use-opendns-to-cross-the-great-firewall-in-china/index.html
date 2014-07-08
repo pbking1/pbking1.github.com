@@ -9,7 +9,9 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="How dns works? first, when we use some domain name like &ldquo;www.facebook.com&rdquo; and when we type the domain name into the website the website &hellip;">
+  <meta name="description" content="once upon a time we can log in facebook and google directly
+but nowadays we can not
+and because DNS hijacking and DNS cache posioning, we can not log &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -101,7 +103,53 @@
   </header>
 
 
-<div class="entry-content"><h3>How dns works?</h3>
+<div class="entry-content"><h3>once upon a time</h3>
+
+<ul>
+<li>we can log in facebook and google directly</li>
+<li>but nowadays we can not</li>
+<li>and because DNS hijacking and DNS cache posioning, we can not log in directly anymore</li>
+</ul>
+
+
+<h3>what is DNS hikacking?</h3>
+
+<ul>
+<li>DNS hijacking(劫持)</li>
+<li>to simplifiy the idea
+
+<ul>
+<li>when you type in google.com, you will not attach the google.com
+
+<ul>
+<li>you will be direct to the baidu.com</li>
+</ul>
+</li>
+<li>and this is the DNS hijacking</li>
+</ul>
+</li>
+<li><strong>and the reason why this will happen is that the DNS server is cracked and the domain name will be parse to the wrong ip.</strong></li>
+<li>and recently the govenment is using this kind of strategy</li>
+</ul>
+
+
+<h3>what is DNS cache posioning?</h3>
+
+<ul>
+<li>DNS污染</li>
+<li>this idea used to be used to block the youtube, facebook website</li>
+<li>this is on the protocol layer</li>
+<li>and the mechisim is that when you want to launch the particular website
+
+<ul>
+<li>the port 53 UDP is check and when they found that you want to attach particular website, they will change the domain name parse DNS server into a wrong one and then you will not be able to get the correct ip.</li>
+<li>then you will not be able to get to the website.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>How dns works?</h3>
 
 <ul>
 <li>first, when we use some domain name like &ldquo;www.facebook.com&rdquo;
