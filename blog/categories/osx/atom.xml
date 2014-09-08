@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OSX | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-08-28T22:00:55+08:00</updated>
+  <updated>2014-09-08T15:47:09-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[My Bash Profile Configuration]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration/"/>
-    <updated>2014-04-13T10:14:26+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/13/my-bash-profile-configuration</id>
+    <link href="http://pbking1.github.com/blog/2014/04/12/my-bash-profile-configuration/"/>
+    <updated>2014-04-12T22:14:26-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/04/12/my-bash-profile-configuration</id>
     <content type="html"><![CDATA[<p>```</p>
 
 <h1>terminal</h1>

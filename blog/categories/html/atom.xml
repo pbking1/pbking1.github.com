@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Html | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/html/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-08-28T22:00:55+08:00</updated>
+  <updated>2014-09-08T15:47:09-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Use Sqlite in Html5]]></title>
-    <link href="http://pbking1.github.com/blog/2014/06/09/use-sqlite-in-html5/"/>
-    <updated>2014-06-09T10:50:05+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/06/09/use-sqlite-in-html5</id>
+    <link href="http://pbking1.github.com/blog/2014/06/08/use-sqlite-in-html5/"/>
+    <updated>2014-06-08T22:50:05-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/06/08/use-sqlite-in-html5</id>
     <content type="html"><![CDATA[<ul>
 <li>There are three ways to store data using html5
 
@@ -110,7 +110,7 @@
   <entry>
     <title type="html"><![CDATA[Phonegap 框架原理]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/06/phonegap-kuang-jia-yuan-li/"/>
-    <updated>2014-06-06T17:03:43+08:00</updated>
+    <updated>2014-06-06T05:03:43-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/06/phonegap-kuang-jia-yuan-li</id>
     <content type="html"><![CDATA[<h4>phonegap 实现原理</h4>
 
@@ -265,7 +265,7 @@
   <entry>
     <title type="html"><![CDATA[Build Ios Webapp Using Phonegap and Jquery Mobile]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/27/build-ios-webapp-using-phonegap-and-jquery-mobile/"/>
-    <updated>2014-05-27T17:30:09+08:00</updated>
+    <updated>2014-05-27T05:30:09-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/27/build-ios-webapp-using-phonegap-and-jquery-mobile</id>
     <content type="html"><![CDATA[<h3>first install phonegap</h3>
 
@@ -376,7 +376,7 @@
   <entry>
     <title type="html"><![CDATA[HTML5和移动平台的原生应用对比]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi/"/>
-    <updated>2014-05-27T13:17:39+08:00</updated>
+    <updated>2014-05-27T01:17:39-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi</id>
     <content type="html"><![CDATA[<h3>问题所在</h3>
 

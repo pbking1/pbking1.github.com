@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-08-28T22:00:55+08:00</updated>
+  <updated>2014-09-08T15:47:09-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[KNN in Matlab(knnclassify)]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify/"/>
-    <updated>2014-05-26T17:55:05+08:00</updated>
+    <updated>2014-05-26T05:55:05-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify</id>
     <content type="html"><![CDATA[<ul>
 <li>refer from
@@ -108,9 +108,9 @@ x = test_data(:, 2:3073);</p>
   
   <entry>
     <title type="html"><![CDATA[Intro to Recommandation System]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/24/intro-to-recommandation-system/"/>
-    <updated>2014-05-24T10:32:15+08:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/24/intro-to-recommandation-system</id>
+    <link href="http://pbking1.github.com/blog/2014/05/23/intro-to-recommandation-system/"/>
+    <updated>2014-05-23T22:32:15-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/05/23/intro-to-recommandation-system</id>
     <content type="html"><![CDATA[<h3>Problem formulation</h3>
 
 <pre><code>可能会有99%的数据是不知道的（用问号表示）
@@ -285,7 +285,7 @@ x = test_data(:, 2:3073);</p>
   <entry>
     <title type="html"><![CDATA[Perceptual Hash Algorithm in Objective C]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c/"/>
-    <updated>2014-05-19T17:47:06+08:00</updated>
+    <updated>2014-05-19T05:47:06-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c</id>
     <content type="html"><![CDATA[<h4>此文为借鉴阮一峰2011年和2013年发布的相似图片搜索原理</h4>
 
@@ -532,7 +532,7 @@ x = test_data(:, 2:3073);</p>
   <entry>
     <title type="html"><![CDATA[Linear_regression_tutorial]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial/"/>
-    <updated>2014-05-12T15:23:20+08:00</updated>
+    <updated>2014-05-12T03:23:20-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial</id>
     <content type="html"><![CDATA[<h3>First something about training the data</h3>
 
@@ -891,7 +891,7 @@ theta = pinv(x' * x + w * eye(size(x, 2))) * x' * y;
   <entry>
     <title type="html"><![CDATA[Tree Based Ensemble Method Introduction]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction/"/>
-    <updated>2014-05-08T18:30:07+08:00</updated>
+    <updated>2014-05-08T06:30:07-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/08/tree-based-ensemble-method-introduction</id>
     <content type="html"><![CDATA[<h3>Tree-based ensemble methods</h3>
 

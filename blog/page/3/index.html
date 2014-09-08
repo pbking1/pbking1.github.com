@@ -9,8 +9,8 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="The method in the system MultiNomial logistic Regressoin bad in high dimension Factor = mnrfit(train_data, train_label);
-scores = mnrval(Factor, &hellip;">
+  <meta name="description" content="phonegap 实现原理 关键 1.用webview在本地来渲染解析html 因此实际上他就是一个内嵌的浏览器 类似于一个WebView，但是phonegap对webview做了些改造 2.基于plugin模式来封装调用原生API 以原生app的方式来运行
+用js调用原生的功能 3. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,91 @@ scores = mnrval(Factor, &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/">Phonegap 框架原理</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-06T05:03:43-04:00" pubdate data-updated="true">Jun 6<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/06/06/phonegap-kuang-jia-yuan-li/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h4>phonegap 实现原理</h4>
+
+<ul>
+<li><code>关键</code>
+
+<ul>
+<li>1.用webview在本地来渲染解析html
+
+<ul>
+<li><strong>因此实际上他就是一个内嵌的浏览器</strong>
+
+<ul>
+<li>类似于一个WebView，但是phonegap对webview做了些改造</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.基于plugin模式来封装调用原生API
+
+<ul>
+<li>以原生app的方式来运行</li>
+<li>用js调用原生的功能</li>
+</ul>
+</li>
+<li>3.在框架首次启动的时候加载CallbackServer线程，并且监听前端XHR请求和链表中有无数据
+
+<ul>
+<li>当XHR请求来了而链表为空，则线程等待10秒
+
+<ul>
+<li>如果这个时间内有数据来，那么就唤醒线程把数据传到前端</li>
+</ul>
+</li>
+<li>如果10s后没有数据，则传空数据回前端</li>
+<li><code>基于服务器推技术</code></li>
+</ul>
+</li>
+<li>4.同步请求和异步请求有关键的区别</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/">Read more</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/06/02/matlab-classification-method/">Matlab Classification Method</a></h1>
     
     
@@ -95,7 +180,7 @@ scores = mnrval(Factor, &hellip;">
   
 
 
-<time datetime="2014-06-02T15:15:11+08:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time>
+<time datetime="2014-06-02T03:15:11-04:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time>
         
            | <a href="/blog/2014/06/02/matlab-classification-method/#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com/blog/2014/06/02/matlab-classification-method/">Comments</a>
@@ -155,7 +240,7 @@ scores = mnrval(Factor, &hellip;">
   
 
 
-<time datetime="2014-06-02T14:57:28+08:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time>
+<time datetime="2014-06-02T02:57:28-04:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time>
         
            | <a href="/blog/2014/06/02/matlab-array-type-change/#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com/blog/2014/06/02/matlab-array-type-change/">Comments</a>
@@ -211,7 +296,7 @@ scores = mnrval(Factor, &hellip;">
   
 
 
-<time datetime="2014-05-27T17:30:09+08:00" pubdate data-updated="true">May 27<span>th</span>, 2014</time>
+<time datetime="2014-05-27T05:30:09-04:00" pubdate data-updated="true">May 27<span>th</span>, 2014</time>
         
            | <a href="/blog/2014/05/27/build-ios-webapp-using-phonegap-and-jquery-mobile/#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com/blog/2014/05/27/build-ios-webapp-using-phonegap-and-jquery-mobile/">Comments</a>
@@ -271,7 +356,7 @@ scores = mnrval(Factor, &hellip;">
   
 
 
-<time datetime="2014-05-27T13:17:39+08:00" pubdate data-updated="true">May 27<span>th</span>, 2014</time>
+<time datetime="2014-05-27T01:17:39-04:00" pubdate data-updated="true">May 27<span>th</span>, 2014</time>
         
            | <a href="/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi/#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi/">Comments</a>
@@ -341,7 +426,7 @@ scores = mnrval(Factor, &hellip;">
   
 
 
-<time datetime="2014-05-26T17:55:05+08:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+<time datetime="2014-05-26T05:55:05-04:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
         
            | <a href="/blog/2014/05/26/knn-in-matlab-knnclassify/#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify/">Comments</a>
@@ -387,58 +472,6 @@ scores = mnrval(Factor, &hellip;">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/26/quick-black-box-testing-on-app/">Quick Black Box Testing on App</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T14:39:28+08:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/26/quick-black-box-testing-on-app/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/26/quick-black-box-testing-on-app/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>some quick black box testing tools</h3>
-
-<ul>
-<li>calabash</li>
-<li>appium</li>
-<li>appgrader</li>
-<li>monkey(adb 自带)</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/26/quick-black-box-testing-on-app/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
@@ -455,6 +488,10 @@ scores = mnrval(Factor, &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/09/08/php-tutorial-1/">Php Tutorial(1)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/08/fmdb-and-tableview-in-ios/">FMDB and Tableview in IOS</a>
       </li>
     
@@ -468,10 +505,6 @@ scores = mnrval(Factor, &hellip;">
     
       <li class="post">
         <a href="/blog/2014/06/25/ios-uilabel-and-uitextfield/">IOS UILabel and UITextfield</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/25/ios-selector-jump-to-the-other-page/">IOS Selector(jump to the Other Page)</a>
       </li>
     
   </ul>
@@ -498,6 +531,7 @@ scores = mnrval(Factor, &hellip;">
 <li class='category'><a href='/blog/categories/machine-learning/'>machine_learning (6)</a></li>
 <li class='category'><a href='/blog/categories/matlab/'>matlab (2)</a></li>
 <li class='category'><a href='/blog/categories/other/'>other (3)</a></li>
+<li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
 <li class='category'><a href='/blog/categories/software-testing/'>software_testing (2)</a></li>
  
   </ul> 
@@ -519,7 +553,7 @@ ds.charset = 'UTF-8';
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+22.142857142857142%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+15.714285714285714%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+11.428571428571429%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+17.857142857142858%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+7.142857142857142%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+9.285714285714285%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+15.714285714285714%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+22.142857142857142%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+15.714285714285714%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc-c%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ec%2Fc%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+11.428571428571429%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+17.857142857142858%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+7.142857142857142%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fphp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ephp%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+9.285714285714285%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+15.714285714285714%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 

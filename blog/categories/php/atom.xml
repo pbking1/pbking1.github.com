@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Php | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-09-08T15:47:09-04:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Php Tutorial(1)]]></title>
+    <link href="http://pbking1.github.com/blog/2014/09/08/php-tutorial-1/"/>
+    <updated>2014-09-08T15:46:01-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/09/08/php-tutorial-1</id>
+    <content type="html"><![CDATA[<h3>class 1</h3>
+
+<ul>
+<li><p>how the web site work when you request for the page</p>
+
+<ul>
+<li>when you log into the internet, you request for the web server for a file that is the page.</li>
+<li>if the web server is request for a html file, the server just give it back</li>
+<li>else if it is the php file, the server send the php file to the php interpreter and process the php
+
+<ul>
+<li>and after the process, the interpreter give it back</li>
+<li>(for php is an interpret kind of language and it do not need to be compile)</li>
+<li>and then the server send the php file back to the web browser</li>
+</ul>
+</li>
+<li>if the php is interacting with the database, then the code of the php will have sql query with the database.
+
+<ul>
+<li>after the query, send back to the php interpreter and then send back to the server and then send back to the web browser</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>All in all, there are can be three layer in the environment</p>
+
+<ul>
+<li>the front is the browser
+
+<ul>
+<li>html, css, coding logic</li>
+</ul>
+</li>
+<li>the middle is the server
+
+<ul>
+<li>web server and php interpreter</li>
+</ul>
+</li>
+<li>the database aspect is the third
+
+<ul>
+<li>mysql database engine</li>
+<li>phpMyAdmin(DBMS)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>the php interpretation run from the top of the file to the bottom of the top</li>
+</ul>
+
+
+<h3>class 2</h3>
+
+<ul>
+<li>&lsquo;&rsquo; these two symbol can be the end of the string</li>
+<li>the HEREdoc mechnic is the
+
+<ul>
+<li>remember that the final HERE should have no space in front of it
+<code>
+print &lt;&lt;&lt;HERE
+  &lt;p&gt;&lt;/p&gt;
+HERE;
+</code></li>
+</ul>
+</li>
+<li>or you can use the filter_input method to validate the email easily.
+
+<ul>
+<li>such as without &ldquo;.&rdquo; &ldquo;space&rdquo; and so on.</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Matlab | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/matlab/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-08-28T22:00:55+08:00</updated>
+  <updated>2014-09-08T15:47:09-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Matlab Classification Method]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/02/matlab-classification-method/"/>
-    <updated>2014-06-02T15:15:11+08:00</updated>
+    <updated>2014-06-02T03:15:11-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/02/matlab-classification-method</id>
     <content type="html"><![CDATA[<h3>The method in the system</h3>
 
@@ -113,7 +113,7 @@
   <entry>
     <title type="html"><![CDATA[Matlab Array Type Change]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/02/matlab-array-type-change/"/>
-    <updated>2014-06-02T14:57:28+08:00</updated>
+    <updated>2014-06-02T02:57:28-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/02/matlab-array-type-change</id>
     <content type="html"><![CDATA[<h3>How to convert between cell, double and char array?</h3>
 
