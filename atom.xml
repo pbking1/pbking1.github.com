@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-09-15T15:28:08-04:00</updated>
+  <updated>2014-09-15T16:12:57-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,154 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mpi_parallel_programming_2]]></title>
+    <link href="http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-2/"/>
+    <updated>2014-09-15T15:28:34-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-2</id>
+    <content type="html"><![CDATA[<h3>data type</h3>
+
+<ul>
+<li><p>there are only these data type in the MPI</p>
+
+<ul>
+<li>if you want to use struct or multi array, you need to do something else</li>
+</ul>
+</li>
+<li><table>
+<thead>
+<tr>
+<th></th>
+<th>MPI data type</th>
+<th> c data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>MPI_CHAR</td>
+<td>signed char|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_SHORT</td>
+<td>signed short int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_INT</td>
+<td>signed int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_LONG</td>
+<td>signed long int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_UNSIGNED_CHAR</td>
+<td>unsigned long int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_UNSIGNED_SHORT</td>
+<td>unsigned short int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_UNSIGNED</td>
+<td>unsigned int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_FLOAT</td>
+<td>float|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_DOUBLE</td>
+<td>double|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_LONG_DOUBLE</td>
+<td>long double|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_BYTE</td>
+<td>|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_MPI_PACKED</td>
+<td>|</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>about the status</h3>
+
+<ul>
+<li>the MPI_status combine a lots of information
+
+<ul>
+<li>there are at least three member in the status
+
+<ul>
+<li>MPI_SOURCE, MPI_TAG, MPI_ERROR</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>and we can get the size of the message using
+
+<ul>
+<li>MPI_Get_Count(MPI_Status <em>status, MPI_Datatype datatype, int</em> count_ptr);</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>The broadcast idea</h3>
+
+<ul>
+<li>you can use the MPI_Bcast idea to send the message to all the other process;
+
+<ul>
+<li>MPI_Bcast(void *message, int count, MPI_Datatype datatype, int root, MPI_Comm comm)</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>gather the data and scatter the data</h3>
+
+<ul>
+<li>use MPI_Gather
+
+<ul>
+<li>MPI_Gather(void <em>send_data, int send_count, MPI_Datatype send_type, void</em> recv_data, int recv_count, MPI_Datatype recv_type, int root, MPI_Comm comm)</li>
+</ul>
+</li>
+<li>use MPI_Scatter to scatter the data
+
+<ul>
+<li>MPI_Scatter(void <em>send_data, int send_count, MPI_Datatype send_type, void </em>recv_data, int recv_count, MPI_Datatype recv_type, int root, MPI_Comm comm);</li>
+<li>MPI_Scatter split the data referenced by send_data on the process with rank root into k segment.each of which consists of send_count elements of type send_type.</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mpi_parallel_programming_1]]></title>
@@ -3014,111 +3162,6 @@
 <li><a href="http://mobile.51cto.com/comment-386277.htm">http://mobile.51cto.com/comment-386277.htm</a></li>
 <li><a href="http://mobile.51cto.com/comment-385747.htm">http://mobile.51cto.com/comment-385747.htm</a></li>
 <li><a href="http://www.infoq.com/cn/news/2013/03/html5-native-mobile">http://www.infoq.com/cn/news/2013/03/html5-native-mobile</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[KNN in Matlab(knnclassify)]]></title>
-    <link href="http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify/"/>
-    <updated>2014-05-26T05:55:05-04:00</updated>
-    <id>http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify</id>
-    <content type="html"><![CDATA[<ul>
-<li>refer from
-
-<ul>
-<li><a href="http://blog.csdn.net/boyxiaolong/article/details/7062394">http://blog.csdn.net/boyxiaolong/article/details/7062394</a></li>
-<li><a href="http://blog.csdn.net/aladdina/article/details/4141127">http://blog.csdn.net/aladdina/article/details/4141127</a></li>
-</ul>
-</li>
-</ul>
-
-
-<h3>What is KNN</h3>
-
-<ul>
-<li>simlpy, a method use to classify or regression</li>
-<li>idea
-
-<ul>
-<li>如果一个样本在特征空间中的k个最相 似(即特征空间中最邻近)的样本中的大多数属于某一个类别，则该样本也属于这个类别。</li>
-</ul>
-</li>
-<li>KNN算法不仅可以用于分类，还可以用于回归。通过找出一个样本的k个最近邻居，将这些邻居的属性的平均值赋给该样本，就可以得到该样本的属性。更有用的方法是将不同距离的邻居对该样本产生的影响给予不同的权值(weight)，如权值与距离成正比。</li>
-</ul>
-
-
-<!--more-->
-
-
-<h3><code>knnclassify</code> in matlab</h3>
-
-<ul>
-<li>sample</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>train_data = load('train.csv');
-</span><span class='line'>test_data = load('test.csv');
-</span><span class='line'>
-</span><span class='line'>X = train_data(:, 3:3074);
-</span><span class='line'>Y = train_data(:, 2);
-</span><span class='line'>x = test_data(:, 2:3073);
-</span><span class='line'>
-</span><span class='line'>label = knnclassify(x,X,Y,10,'cosine','random');</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>knnclassify(test_data,train_data,train_label,numberoflabel,&lsquo;cosine&rsquo;,&lsquo;random&rsquo;);</li>
-</ul>
-
-
-<h3>main function</h3>
-
-<ul>
-<li>1.CLASS = KNNCLASSIFY(SAMPLE,TRAINING,GROUP)
-
-<ul>
-<li>标号和训练数据必须有相同的行数；训练数据和测试数据必须有相同的列；函数对于无效值或者空值会作为丢失值或者忽略这一行。</li>
-</ul>
-</li>
-<li>2.CLASS = KNNCLASSIFY(SAMPLE,TRAINING,GROUP,K)
-
-<ul>
-<li>此函数允许你设置距离矩阵形式，如：
-
-<ul>
-<li>&lsquo;euclidean&rsquo;    欧氏距离，默认的</li>
-<li>&lsquo;cityblock&rsquo;    绝对差的和</li>
-<li>&lsquo;cosine&rsquo;     角度距离</li>
-<li>&lsquo;correlation&rsquo; 相关距离</li>
-<li>&lsquo;Hamming&rsquo;      汉明距离</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>3.CLASS =KNNCLASSIFY(SAMPLE,TRAINING,GROUP,K,DISTANCE,RULE)
-
-<ul>
-<li>本函数允许你选择如何对样本进行分类，如你可以选择：
-
-<ul>
-<li>&lsquo;nearest&rsquo;  最近的K个的最多数</li>
-<li>&lsquo;random&rsquo;    随机的最多数</li>
-<li>&lsquo;consensus&rsquo; 投票法，默认的</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
 ]]></content>

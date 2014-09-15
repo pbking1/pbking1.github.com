@@ -5,14 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Intro to Recommandation System - KING</title>
+  <title>KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="Problem formulation 可能会有99%的数据是不知道的（用问号表示）
-因此可以去猜那些不知道的数据是多少
-然后把得分最高的电影推荐给他就可以了
-所以其实是一个矩阵补全系统 基本思想和方法 基于人口统计学的推荐系统 最简单的一种，只是根据系统用户的基本信息发现用户的相关程度， &hellip;">
+  <meta name="description" content="&lt;本文为总结网上资料的文章，大多数内容并非本人原创>
+&ndash; 缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。
+&ndash; 从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。
+&ndash; 没有遗传算法的” &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/05/23/intro-to-recommandation-system">
+  <link rel="canonical" href="http://pbking1.github.com/blog/page/10">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -73,12 +73,15 @@
 </header> -->
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">Intro to Recommandation System</h1>
+      <h1 class="entry-title"><a href="/blog/2014/04/07/something-about-pso-algorithm/">粒子群优化算法介绍</a></h1>
     
     
       <p class="meta">
@@ -94,244 +97,46 @@
   
 
 
-<time datetime="2014-05-23T22:32:15-04:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
+<time datetime="2014-04-07T11:27:24-04:00" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time>
         
-           | <a href="#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com">Comments</a>
+           | <a href="/blog/2014/04/07/something-about-pso-algorithm/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm/">Comments</a>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h3>Problem formulation</h3>
-
-<pre><code>可能会有99%的数据是不知道的（用问号表示）
-因此可以去猜那些不知道的数据是多少
-然后把得分最高的电影推荐给他就可以了
-所以其实是一个矩阵补全系统
-</code></pre>
-
-<!--more-->
-
-
-<h3>基本思想和方法</h3>
-
-<ul>
-<li><p>基于人口统计学的推荐系统</p>
-
-<ul>
-<li>最简单的一种，只是根据系统用户的基本信息发现用户的相关程度，然后把相似用户喜爱的其他用品推荐给当前用户。</li>
-<li>系统首先会根据用户的属性建模，比如用户的年龄，性别，兴趣等信息。根据这些特征计算用户间的相似度。比如系统通过计算发现用户A和C比较相似。就会把A喜欢的物品推荐给C。
-
-<ul>
-<li>优势
-
-<ul>
-<li>不需要历史数据，没有冷启动问题</li>
-<li>不依赖于物品的属性，因此其他领域的问题都可无缝接入。</li>
-</ul>
-</li>
-<li>不足：
-
-<ul>
-<li>算法比较粗糙，效果很难令人满意，只适合简单的推荐</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>content based recommender system(基于内容)</p>
-
-<ul>
-<li>使用物品本身的相似度而不是用户的相似度。</li>
-<li>e.g 通过相似度计算，发现电影A和C相似度较高，因为他们都属于爱情类。系统还会发现用户A喜欢电影A，由此得出结论，用户A很可能对电影C也感兴趣。于是将电影C推荐给A。</li>
-<li>假设有一些别的特征例如电影的浪漫成都或者动作成分含量（由专家弄出来的）</li>
-<li>因此可以把原有的评分作为输入，把专家的预测作为y
-
-<ul>
-<li>做线性回归， 把每个用户的theta学出来</li>
-<li>然后把theta和用户的评分做内积，得出那些问号的数据</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>协同过滤</p>
-
-<ul>
-<li>基于物品的协同过滤
-
-<ul>
-<li>根本思想是
-
-<ul>
-<li>预先根据所有用户的历史偏好数据计算物品之间的相似性，然后把和用户喜欢的物品相类似的物品推荐给用户。</li>
-<li>假设a和c很相近，因为喜欢a的用户同时也喜欢c，而用户A喜欢a，所以把c推荐给用户A</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>如何计算相似度</p>
-
-<ul>
-<li>基于余弦的相似度计算
-
-<ul>
-<li>通过计算两个向量之间的夹角的余弦值来计算物品之间的相似性</li>
-<li>公式为
-
-<ul>
-<li><img src="/images/recommander_system/1.png"></li>
-</ul>
-</li>
-<li>这个算法也有改进版（修正的余弦相似性）
-
-<ul>
-<li>由于余弦相似度度量方法中没有考虑到不同用户的评分尺寸问题，修正的余弦相似性度量方法通过减去用户对项目的平均评分来改善上述缺陷。</li>
-<li>公式为
-
-<ul>
-<li><img src="/images/recommander_system/2.png"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>基于关联的相似度计算
-
-<ul>
-<li>计算两个向量之间的Pearson-r关联度</li>
-</ul>
-</li>
-<li>调整的余弦相似度计算
-
-<ul>
-<li>由于基于余弦的相似度计算没有考虑不同用户的打分情况，可能有的用户偏向于给低分，有的用户偏向于给高分，该方法通过减去用户的打分的平均值消除不同用户打分习惯的影响</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>预测值的计算</p>
-
-<ul>
-<li>根据之前计算好的物品之间的相似度，接下来对用户未打分的物品进行预测，有两种预测方法。
-
-<ul>
-<li>1.加权求和
-
-<ul>
-<li>通过公式
-
-<ul>
-<li><img src="/images/recommander_system/3.png"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>2.回归</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>推荐系统的其中一种实现</p>
-
-<ul>
-<li>1.建立物品的同现矩阵
-
-<ul>
-<li>也就是按照用户分组，找出每两个物品再多少个用户中同时出现的次数</li>
-</ul>
-</li>
-<li>2.建立用户的评分矩阵
-
-<ul>
-<li>也就是每个用户对每个物品的评分</li>
-</ul>
-</li>
-<li>3.两个矩阵相乘，计算结果</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>源码</h3>
-
-<ul>
-<li>to be continued&hellip;</li>
-</ul>
-
-
-<h3>参考文献</h3>
-
-<ul>
-<li>《基于项目评分预测的协同过滤推荐算法》 邓爱林</li>
-<li>相似度计算 <a href="http://blog.sina.com.cn/s/blog_7e11a6260101l9iq.html">http://blog.sina.com.cn/s/blog_7e11a6260101l9iq.html</a></li>
-</ul>
+  <div class="entry-content"><p>&lt;本文为总结网上资料的文章，大多数内容并非本人原创>
+&ndash; 缩写为PSO。是近些年发展起来的一种新的进化算法。和模拟退火算法相似。
+&ndash; 从随机解出发，通过迭代寻找最优解，他也是通过适应度来评价解的品质，但是他比遗传算法的规则更为简单。
+&ndash; 没有遗传算法的”交叉”和”变异“操作，他通过追随当前搜索到的最优值来寻找全局最优。
+&ndash; 这种算法实现容易并且精度高，收敛快。
+&ndash; 是一种并行算法
+&ndash; 是一种很有潜力的神经网络算法
+&ndash; 是一种演化计算的方法，来源于对一个简化社会模型的模拟
+&ndash; 在大范围的问题集中是很有效的
+&ndash; 是一种基于群智能的随机搜索算法
+&ndash; 自从PSO算法被提出以来，由于它直观的背景，简单而容易实现的特点，以及对于不同类型函数广泛的适应性，逐渐得到研究者的注意。十余年来，PSO算法的理论与应用研究都取得了很大的进展，对于算法的原理已经有了初步的了解，算法的应用也已经在不同学科中得以实现。</p>
 
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">pb</span></span>
-
-      
-
-
-
-
-
-
-
-
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/07/something-about-pso-algorithm/">Read more</a>
+    </footer>
   
 
 
-<time datetime="2014-05-23T22:32:15-04:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time>
-      
-
-<span class="categories">
+    </article>
   
-    <a class='category' href='/blog/categories/algorithm/'>Algorithm</a>, <a class='category' href='/blog/categories/machine-learning/'>machine_learning</a>
-  
-</span>
-
-
-    </p>
+  <div class="pagination">
     
-      <div class="sharing">
-  
-  
-  
-</div>
-
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2014/05/23/zst-internship-ios-code-step2/" title="Previous Post: Zst Internship IOS Code step2">&laquo; Zst Internship IOS Code step2</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2014/05/25/the-way-to-use-sysu-vpn-at-home/" title="Next Post: The way to use SYSU vpn at home">The way to use SYSU vpn at home &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a class="next" href="/blog/page/9/"><i class="fa fa-chevron-circle-right fa-2x icon-color icon-homepage"></i></a>
+    
+  </div>
 </div>
-  </section>
-
-</div>
-
 <aside class="sidebar">
   
     <section>
@@ -347,7 +152,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password/">Solution to Access Denied for User 'Root'@'localhost' (Using password:YES)</a>
+        <a href="/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password/">Solution to Access Denied for User &#8216;Root&#8217;@&#8217;localhost&#8217; (Using password:YES)</a>
       </li>
     
       <li class="post">
@@ -412,7 +217,7 @@ ds.charset = 'UTF-8';
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/pbking1">@pbking1</a> on GitHub
@@ -446,7 +251,6 @@ ds.charset = 'UTF-8';
   
 </aside>
 
-
     </div>
   </div>
   <!-- <footer role="contentinfo"><p>
@@ -463,10 +267,7 @@ ds.charset = 'UTF-8';
       var disqus_shortname = 'pbking1';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/05/23/intro-to-recommandation-system/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/05/23/intro-to-recommandation-system/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

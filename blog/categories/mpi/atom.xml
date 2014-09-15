@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mpi | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/mpi/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-09-15T15:28:08-04:00</updated>
+  <updated>2014-09-15T16:12:57-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,154 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mpi_parallel_programming_2]]></title>
+    <link href="http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-2/"/>
+    <updated>2014-09-15T15:28:34-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-2</id>
+    <content type="html"><![CDATA[<h3>data type</h3>
+
+<ul>
+<li><p>there are only these data type in the MPI</p>
+
+<ul>
+<li>if you want to use struct or multi array, you need to do something else</li>
+</ul>
+</li>
+<li><table>
+<thead>
+<tr>
+<th></th>
+<th>MPI data type</th>
+<th> c data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>MPI_CHAR</td>
+<td>signed char|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_SHORT</td>
+<td>signed short int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_INT</td>
+<td>signed int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_LONG</td>
+<td>signed long int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_UNSIGNED_CHAR</td>
+<td>unsigned long int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_UNSIGNED_SHORT</td>
+<td>unsigned short int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_UNSIGNED</td>
+<td>unsigned int|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_FLOAT</td>
+<td>float|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_DOUBLE</td>
+<td>double|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_LONG_DOUBLE</td>
+<td>long double|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_BYTE</td>
+<td>|</td>
+</tr>
+<tr>
+<td></td>
+<td>MPI_MPI_PACKED</td>
+<td>|</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>about the status</h3>
+
+<ul>
+<li>the MPI_status combine a lots of information
+
+<ul>
+<li>there are at least three member in the status
+
+<ul>
+<li>MPI_SOURCE, MPI_TAG, MPI_ERROR</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>and we can get the size of the message using
+
+<ul>
+<li>MPI_Get_Count(MPI_Status <em>status, MPI_Datatype datatype, int</em> count_ptr);</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>The broadcast idea</h3>
+
+<ul>
+<li>you can use the MPI_Bcast idea to send the message to all the other process;
+
+<ul>
+<li>MPI_Bcast(void *message, int count, MPI_Datatype datatype, int root, MPI_Comm comm)</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>gather the data and scatter the data</h3>
+
+<ul>
+<li>use MPI_Gather
+
+<ul>
+<li>MPI_Gather(void <em>send_data, int send_count, MPI_Datatype send_type, void</em> recv_data, int recv_count, MPI_Datatype recv_type, int root, MPI_Comm comm)</li>
+</ul>
+</li>
+<li>use MPI_Scatter to scatter the data
+
+<ul>
+<li>MPI_Scatter(void <em>send_data, int send_count, MPI_Datatype send_type, void </em>recv_data, int recv_count, MPI_Datatype recv_type, int root, MPI_Comm comm);</li>
+<li>MPI_Scatter split the data referenced by send_data on the process with rank root into k segment.each of which consists of send_count elements of type send_type.</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mpi_parallel_programming_1]]></title>
