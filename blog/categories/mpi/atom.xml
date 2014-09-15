@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Mpi | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/mpi/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2014-09-15T14:54:12-04:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mpi_parallel_programming_1]]></title>
+    <link href="http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-1/"/>
+    <updated>2014-09-15T14:19:13-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-1</id>
+    <content type="html"><![CDATA[<h3>difference between SIMD and MIMD</h3>
+
+<ul>
+<li>difference kinds of computer architecture is using the Flynn to classify
+
+<ul>
+<li>SISD</li>
+<li>SIMD</li>
+<li>MISD</li>
+<li>MIMD</li>
+</ul>
+</li>
+<li>we only talk about the SIMD and MIMD here
+
+<ul>
+<li>SIMD means that one command deal with many data streams
+
+<ul>
+<li>most of the single core machine is SIMD machine</li>
+<li>and these kinds of machine is most used in the image processing and multimedia processing.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<pre><code>- MIMD means that many commands deal with many data streams
+    - the lastest multicore platform is a MIMD machine
+    - the MIMD are asynchronous
+    - 
+</code></pre>
+
+<h4>the multi core hardware architecture</h4>
+
+<ul>
+<li>the multicore CPU is combine many CPU into one chip. and each CPU core has a single processor.
+
+<ul>
+<li>each core has it&rsquo;s own cache. (some other may share one cache between multi CPU)</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>message passing</h3>
+
+<ul>
+<li>There are two methods in the message passing
+
+<ul>
+<li><p>MPI_Send</p>
+
+<ul>
+<li>void * buffer, int count, MPI_Datatype datatype, int destination, int tag, MPI_Comm communicator</li>
+</ul>
+</li>
+<li><p>MPI_Recv</p>
+
+<ul>
+<li>void * buffer, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm communicator, MPI_Status status</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
