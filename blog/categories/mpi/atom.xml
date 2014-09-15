@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mpi | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/mpi/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-09-15T14:54:12-04:00</updated>
+  <updated>2014-09-15T15:28:08-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -72,16 +72,93 @@
 <li>There are two methods in the message passing
 
 <ul>
-<li><p>MPI_Send</p>
+<li>MPI_Send
 
 <ul>
 <li>void * buffer, int count, MPI_Datatype datatype, int destination, int tag, MPI_Comm communicator</li>
+<li>e.g
+
+<ul>
+<li>MPI_Send(&amp;x, 1, MPI_FLOAT, 1, 0, MPI_COMM_WORLD);</li>
 </ul>
 </li>
-<li><p>MPI_Recv</p>
+</ul>
+</li>
+<li>MPI_Recv
 
 <ul>
 <li>void * buffer, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm communicator, MPI_Status status</li>
+<li>MPI_Recv(&amp;x, 1, MPI_FLOAT, 0, 0, MPI_COMM_WORLD, &amp;status);</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>sample program</h3>
+
+<p>```</p>
+
+<h1>include &ldquo;mpi.h&rdquo;</h1>
+
+<p>int main(int argc, char *argv[]){</p>
+
+<pre><code>int rank; //rank of the process
+int source; //rank of the sender
+int dest;   //rank of the receiver
+int num;    //number of the processers
+int tags;
+char messages[1000];
+MPI_Status status;
+
+//setting up the MPI
+MPI_init(&amp;argc, &amp;argv);
+
+//find out the rank of the curret program
+MPI_Comm_rank(MPI_COMM_WORLD, rank);
+
+//find out the number of the processers
+MPI_Common_Size(MPI_COMM_WORLD, &amp;p);
+
+if(rank != 0){ //if the current program is not the root program
+    sprintf(message, "hello from %d", rank);
+    dest = 0;
+    MPI_Send(message, strlen(message) + 1, MPI_CHAR, dest, tag, MPI_COMM_WORLD);
+}else{
+    sprintf(message, "hello from ");
+    MPI_Recv(message, 100, MPI_CHAR, source, tag, MPI_COMM_WORLD, &amp;status);
+    printf("%s\n", message);
+}
+MPI_Finalize();
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<h3>how to run the program</h3>
+
+<ul>
+<li>for c++
+
+<ul>
+<li><code>mpic++ -o test test.cpp</code></li>
+</ul>
+</li>
+<li>for c
+
+<ul>
+<li><code>mpicc -o test test.c</code></li>
+</ul>
+</li>
+<li>run
+
+<ul>
+<li>for m core computer
+
+<ul>
+<li><code>mpirun -np m test</code></li>
 </ul>
 </li>
 </ul>

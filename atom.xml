@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-09-15T14:54:12-04:00</updated>
+  <updated>2014-09-15T15:28:08-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -72,16 +72,117 @@
 <li>There are two methods in the message passing
 
 <ul>
-<li><p>MPI_Send</p>
+<li>MPI_Send
 
 <ul>
 <li>void * buffer, int count, MPI_Datatype datatype, int destination, int tag, MPI_Comm communicator</li>
+<li>e.g
+
+<ul>
+<li>MPI_Send(&amp;x, 1, MPI_FLOAT, 1, 0, MPI_COMM_WORLD);</li>
 </ul>
 </li>
-<li><p>MPI_Recv</p>
+</ul>
+</li>
+<li>MPI_Recv
 
 <ul>
 <li>void * buffer, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm communicator, MPI_Status status</li>
+<li>MPI_Recv(&amp;x, 1, MPI_FLOAT, 0, 0, MPI_COMM_WORLD, &amp;status);</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>sample program</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include "mpi.h"
+</span><span class='line'>int main(int argc, char *argv[]){
+</span><span class='line'>  int rank; //rank of the process
+</span><span class='line'>  int source; //rank of the sender
+</span><span class='line'>  int dest;   //rank of the receiver
+</span><span class='line'>  int num;    //number of the processers
+</span><span class='line'>  int tags;
+</span><span class='line'>  char messages[1000];
+</span><span class='line'>  MPI_Status status;
+</span><span class='line'>
+</span><span class='line'>  //setting up the MPI
+</span><span class='line'>  MPI_init(&argc, &argv);
+</span><span class='line'>
+</span><span class='line'>  //find out the rank of the curret program
+</span><span class='line'>  MPI_Comm_rank(MPI_COMM_WORLD, rank);
+</span><span class='line'>
+</span><span class='line'>  //find out the number of the processers
+</span><span class='line'>  MPI_Common_Size(MPI_COMM_WORLD, &p);
+</span><span class='line'>
+</span><span class='line'>  if(rank != 0){ //if the current program is not the root program
+</span><span class='line'>      sprintf(message, "hello from %d", rank);
+</span><span class='line'>      dest = 0;
+</span><span class='line'>      MPI_Send(message, strlen(message) + 1, MPI_CHAR, dest, tag, MPI_COMM_WORLD);
+</span><span class='line'>  }else{
+</span><span class='line'>      sprintf(message, "hello from ");
+</span><span class='line'>      MPI_Recv(message, 100, MPI_CHAR, source, tag, MPI_COMM_WORLD, &status);
+</span><span class='line'>      printf("%s\n", message);
+</span><span class='line'>  }
+</span><span class='line'>  MPI_Finalize();
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>how to run the program</h3>
+
+<ul>
+<li>for c++
+
+<ul>
+<li><code>mpic++ -o test test.cpp</code></li>
+</ul>
+</li>
+<li>for c
+
+<ul>
+<li><code>mpicc -o test test.c</code></li>
+</ul>
+</li>
+<li>run
+
+<ul>
+<li>for m core computer
+
+<ul>
+<li><code>mpirun -np m test</code></li>
 </ul>
 </li>
 </ul>
