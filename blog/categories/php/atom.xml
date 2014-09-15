@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Php | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-09-08T19:00:45-04:00</updated>
+  <updated>2014-09-15T09:24:33-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Solution to Access Denied for User 'Root'@'localhost' (Using password:YES)]]></title>
+    <link href="http://pbking1.github.com/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password/"/>
+    <updated>2014-09-09T11:49:30-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password</id>
+    <content type="html"><![CDATA[<h3>Access denied for user &lsquo;root&rsquo;@&lsquo;localhost&rsquo; (using password:YES)</h3>
+
+<ul>
+<li>in mac
+
+<ul>
+<li>open the my.conf in the directory /usr/local/mysql</li>
+<li>add <code>skip-grant-tables</code></li>
+<li>restart the mysql service
+
+<ul>
+<li><code>sudo /usr/local/mysql/bin/mysqld_safe &amp;</code></li>
+</ul>
+</li>
+<li>then use <code>mysql -uroot -p</code>
+
+<ul>
+<li>you can login without password</li>
+<li>then update the password after <code>use mysql;</code></li>
+<li><code>update user set password=PASSWORD("rootadmin") where user='root';</code></li>
+</ul>
+</li>
+<li>after that
+
+<ul>
+<li>delete the <code>skip-grant-tables</code> add in the my.conf file</li>
+</ul>
+</li>
+<li>restart the mysql service</li>
+<li>then you can use the <code>mysql -u root -q</code> to login with your new password</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Php Tutorial(1)]]></title>
