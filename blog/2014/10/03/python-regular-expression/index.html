@@ -262,14 +262,12 @@ then can match a, aa, aaa
 <li>compile the expression to speed up
 
 <ul>
-<li>&#8220;`
-r = r&#8217;\d{3,4}&ndash;?\d{8}&lsquo;
-p_telephone = re.compile&reg;
-p_telephone.findall(&#8216;010-12345678&rsquo;)
-
-<h1>output [&lsquo;010-12345678&rsquo;]</h1>
-
-<p>&#8220;`</p></li>
+<li><code>
+r = r'\d{3,4}-?\d{8}'
+p_telephone = re.compile(r)
+p_telephone.findall('010-12345678')
+//output ['010-12345678']
+</code></li>
 <li>and you can add attribute while compile</li>
 </ul>
 </li>
@@ -280,12 +278,10 @@ p_telephone.findall(&#8216;010-12345678&rsquo;)
 
 <ul>
 <li>only search from the front</li>
-<li>&#8220;`
-p_telephone.match(&lsquo;o010-12345678&rsquo;)
-
-<h1>output nothing because the 010-12345678 is not start from the begin</h1>
-
-<p>&#8220;`</p></li>
+<li><code>
+p_telephone.match('o010-12345678')
+//output nothing because the 010-12345678 is not start from the begin
+</code></li>
 </ul>
 </li>
 <li>search
