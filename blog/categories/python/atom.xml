@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-10-03T16:50:46-04:00</updated>
+  <updated>2014-10-03T16:52:01-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -52,24 +52,18 @@ import re
 
 <ul>
 <li>use to direct to a range of the string set</li>
-<li>```
+<li><code>
 s = r'abc'
-re.findall(s, &ldquo;aaaaaaaabc&rdquo;)
-
-<h1>use []</h1>
-
-rt = &ldquo;top tip tap twp tep&rdquo;
+re.findall(s, "aaaaaaaabc")
+//use []
+rt = "top tip tap twp tep"
 r1 = r"t[io]p"
 re.findall(r1, rt)
-
-<h1>output [&lsquo;top&rsquo;], [&lsquo;tip&rsquo;]</h1>
-
+//output ['top'], ['tip']
 r2 = r"t[^io]p"
 re.findall(r2, rt)
-
-<h1>output [&lsquo;tap&rsquo;],[&lsquo;tep&rsquo;], [&lsquo;twp&rsquo;]</h1>
-
-<p>```</p></li>
+//output ['tap'],['tep'], ['twp']
+</code></li>
 <li>and oral character is no use in the []</li>
 <li>also can use <code>r'0-3'</code> replace <code>r'0123'</code>
 
@@ -83,13 +77,11 @@ re.findall(r2, rt)
 
 <ul>
 <li>use the match the head of the line</li>
-<li>```
+<li><code>
 s = r'^t'
-st = &lsquo;tss&rsquo;
-
-<h1>output [&rsquo;t']</h1>
-
-<p>```</p></li>
+st = 'tss'
+//output ['t']
+</code></li>
 </ul>
 </li>
 <li>like $
@@ -131,14 +123,12 @@ st = &lsquo;tss&rsquo;
 <ul>
 <li>match multiple character</li>
 <li>means repeat the character in front of the * for 0-many times</li>
-<li>```
-r = r'ab*&lsquo;
-rt = 'abbbbbb&rsquo;
+<li><code>
+r = r'ab*'
+rt = 'abbbbbb'
 re.findall(r, rt)
-
-<h1>output[&lsquo;abbbbbb&rsquo;]</h1>
-
-<p>```</p></li>
+//output['abbbbbb']
+</code></li>
 </ul>
 </li>
 <li>like +
@@ -234,38 +224,32 @@ p_telephone.match(&lsquo;o010-12345678&rsquo;)
 <li>sub()
 
 <ul>
-<li>```
+<li><code>
 r = r'c..t'
-re.sub(r, &lsquo;aaa&rsquo;, &lsquo;caat cast cccc&rsquo;)
-
-<h1>output &lsquo;aaa aaa cccc&rsquo;</h1>
-
-<p>```</p></li>
+re.sub(r, 'aaa', 'caat cast cccc')
+//output 'aaa aaa cccc'
+</code></li>
 </ul>
 </li>
 <li>subn()
 
 <ul>
 <li>the difference between sub and subj is that subj provide a count of the how many stuff you replace</li>
-<li>```
+<li><code>
 r = r'c..t'
-re.subn(r, &lsquo;aaa&rsquo;, &lsquo;caat cast cccc&rsquo;)
-
-<h1>output &lsquo;aaa aaa cccc&rsquo;, 2</h1>
-
-<p>```</p></li>
+re.subn(r, 'aaa', 'caat cast cccc')
+//output 'aaa aaa cccc', 2
+</code></li>
 </ul>
 </li>
 <li>split()
 
 <ul>
 <li>split the string using a regular express</li>
-<li>```
-re.split(r'[+*-]&lsquo;, '1+2-3*5&rsquo;)
-
-<h1>output [&lsquo;1&rsquo;, &lsquo;2&rsquo;, &lsquo;3&rsquo;, &lsquo;5&rsquo;]</h1>
-
-<p>```</p></li>
+<li><code>
+re.split(r'[\+\*\-]', '1+2-3*5')
+//output ['1', '2', '3', '5']
+</code></li>
 </ul>
 </li>
 <li>use <code>dir(re)</code> to see what functions re have</li>
