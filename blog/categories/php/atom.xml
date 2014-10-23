@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Php | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-10-03T16:53:22-04:00</updated>
+  <updated>2014-10-23T09:22:33-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Database_and_backend_injection]]></title>
+    <link href="http://pbking1.github.com/blog/2014/10/23/database-and-backend-injection/"/>
+    <updated>2014-10-23T09:13:16-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/10/23/database-and-backend-injection</id>
+    <content type="html"><![CDATA[<h3>database ER diagram</h3>
+
+<ul>
+<li><img src="/images/lab4_db.jpg"></li>
+<li><img src="/images/database_lingma_structure.png"></li>
+</ul>
+
+
+<!--more-->
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Solution to Access Denied for User 'Root'@'localhost' (Using password:YES)]]></title>

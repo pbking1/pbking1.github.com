@@ -9,9 +9,8 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="什么是github？ 是一个免费的用与存放git版本控制的软件代码和内容项目。
-每个项目都有一个主页，列出项目的源文件 什么是github page？ 为了使的网页简洁易懂，github就设计了pages功能
-pages功能允许用户自定义项目首页，用来代替默认的源码列表 也就是说github &hellip;">
+  <meta name="description" content="First is the basic About # these code are processed by the preprocessor
+After the preprocessor read the code, the preprocessor directives will deal &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +73,100 @@ pages功能允许用户自定义项目首页，用来代替默认的源码列表
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/25/c-pointer-tutorial-1/">C Pointer Tutorial (1)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-25T01:41:01-04:00" pubdate data-updated="true">Apr 25<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/25/c-pointer-tutorial-1/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>First is the basic</h3>
+
+<ul>
+<li>About <code>#</code>
+
+<ul>
+<li>these code are processed by the preprocessor</li>
+<li>After the preprocessor read the code, the preprocessor directives will deal with it</li>
+<li>then give the main code that are dealed with by the preprocessor directives to the complier</li>
+<li>like <code>#include &lt;stdio.h&gt;</code>
+
+<ul>
+<li>It means that use the content in the stdio.h to replace the <code>#</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>About <code>const</code>
+
+<ul>
+<li>the value that is named const can not be modified</li>
+<li>and it would be better to use <code>const</code> than <code>define</code> to define some const value.</li>
+</ul>
+</li>
+<li><p>About passing the value</p>
+
+<ul>
+<li>in C programming language
+
+<ul>
+<li>all the array is passed using <strong>reference</strong>(if the value change in the function, it will change.)</li>
+<li>and all the value and const value are passed using <strong>value</strong>(if the value change in the function, it will <strong>not</strong> change.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>About string I/O</p>
+
+<ul>
+<li><code>gets</code>
+
+<ul>
+<li>it is used to read a line in the content and store it as a parameter to pass to the array</li>
+<li>the input line contains: a string and a newline</li>
+</ul>
+</li>
+<li><code>puts</code></li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/25/c-pointer-tutorial-1/">Read more</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -569,123 +662,6 @@ pages功能允许用户自定义项目首页，用来代替默认的源码列表
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/09/basic-idea-in-robotics/">Basic Idea in Robotics</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T06:55:54-04:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/09/basic-idea-in-robotics/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/04/09/basic-idea-in-robotics/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>ABSTRACT:</h3>
-
-<ul>
-<li>The basic idea in robotic area
-
-<ul>
-<li>A robot is an autonomous system which exists in the physical world, can sense its environment , and can act on it to achieve some goals</li>
-<li>The robotic involves autonomy, sensing, action, and achieving goals, all in the physical world</li>
-<li>The component of the robot are
-
-<ul>
-<li>physical body
-
-<ul>
-<li>it can exist and do in the physical world</li>
-</ul>
-</li>
-<li>combine
-
-<ul>
-<li>manipulation(up body)
-
-<ul>
-<li>handling objects</li>
-</ul>
-</li>
-<li>locomotion(down body).
-
-<ul>
-<li>Moving around, going places</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Sensors
-
-<ul>
-<li>It can sense/perceive its environment in order to get information about itself and its surroundings.</li>
-</ul>
-</li>
-<li>Effectors and actuators
-
-<ul>
-<li>it can take actions</li>
-<li>effector enable a robot to take a action, to do physical things
-
-<ul>
-<li>it can also be defined as any device that has an effect on the environment</li>
-<li>it range from legs, wheels to arms and fingers</li>
-</ul>
-</li>
-<li>actuator can do exact the actual work for the robot
-
-<ul>
-<li>are the effector that use underlying mechanism, such as motor and muscles.</li>
-<li>Is also the mechanism that enable the effector to execute an action or movement</li>
-<li>Such as electric motors(base on electric current), hydraulics(base on fluid pressure) ,pneumatics(base on air pressure) and photo-reactive materials ……</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Controller
-
-<ul>
-<li>it can be autonomous</li>
-<li>provide hardware and/or software that make the robot autonomous by using the sensor inputs and any other information to decide what to do ad then to control the effectors to execute that action</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/09/basic-idea-in-robotics/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
@@ -702,6 +678,10 @@ pages功能允许用户自定义项目首页，用来代替默认的源码列表
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/23/database-and-backend-injection/">Database_and_backend_injection</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/03/python-regular-expression/">Python Regular Expression</a>
       </li>
     
@@ -715,10 +695,6 @@ pages功能允许用户自定义项目首页，用来代替默认的源码列表
     
       <li class="post">
         <a href="/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password/">Solution to Access Denied for User &#8216;Root&#8217;@&#8217;localhost&#8217; (Using password:YES)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/08/php-tutorial-1/">Php Tutorial(1)</a>
       </li>
     
   </ul>
@@ -740,13 +716,13 @@ pages功能允许用户自定义项目首页，用来代替默认的源码列表
 <li class='category'><a href='/blog/categories/system-analyze-and-design/'>System_analyze_and_design (5)</a></li>
 <li class='category'><a href='/blog/categories/uml/'>UML (2)</a></li>
 <li class='category'><a href='/blog/categories/c/'>c (1)</a></li>
-<li class='category'><a href='/blog/categories/database/'>database (1)</a></li>
+<li class='category'><a href='/blog/categories/database/'>database (2)</a></li>
 <li class='category'><a href='/blog/categories/html/'>html (4)</a></li>
 <li class='category'><a href='/blog/categories/machine-learning/'>machine_learning (6)</a></li>
 <li class='category'><a href='/blog/categories/matlab/'>matlab (2)</a></li>
 <li class='category'><a href='/blog/categories/mpi/'>mpi (2)</a></li>
 <li class='category'><a href='/blog/categories/other/'>other (3)</a></li>
-<li class='category'><a href='/blog/categories/php/'>php (2)</a></li>
+<li class='category'><a href='/blog/categories/php/'>php (3)</a></li>
 <li class='category'><a href='/blog/categories/python/'>python (1)</a></li>
 <li class='category'><a href='/blog/categories/software-testing/'>software_testing (2)</a></li>
  
@@ -769,7 +745,7 @@ ds.charset = 'UTF-8';
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+22.142857142857142%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+15.714285714285714%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ec%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+11.428571428571429%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+17.857142857142858%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmpi%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Empi%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+7.142857142857142%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fphp%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ephp%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Epython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+9.285714285714285%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+15.714285714285714%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+22.142857142857142%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+15.714285714285714%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ec%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+11.428571428571429%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+17.857142857142858%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmpi%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Empi%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+7.142857142857142%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fphp%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Ephp%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Epython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+9.285714285714285%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+15.714285714285714%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EUML%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 
