@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Database | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/database/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-10-23T09:59:58-04:00</updated>
+  <updated>2014-10-23T10:04:17-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -22,12 +22,28 @@
 
 <ul>
 <li><img src="/images/php_project/lab4_db.jpg"></li>
-<li>some change in the</li>
+<li>some change in the database relationship</li>
 <li><img src="http://pbking1.github.com/images/php_project/database_lingma_structure.png" style="height: 100px; width: 220px"></li>
 </ul>
 
 
 <!--more-->
+
+
+<h3>database insertion</h3>
+
+<ul>
+<li><p>database connection
+<code>
+$conn = mysql_connect("localhost","pengbin","pengbin");
+mysql_select_db("pengbin_db", $conn);
+</code></p></li>
+<li><p>database insertion
+<code>
+$sql = "insert into T_CUSTOMER (CustomerName, CustomerAddress, Notes, Active) values ('$_POST[name]','$_POST[address]','$_POST[note]','$_POST[Active]')";
+mysql_query($sql, $conn);
+</code></p></li>
+</ul>
 
 ]]></content>
   </entry>
