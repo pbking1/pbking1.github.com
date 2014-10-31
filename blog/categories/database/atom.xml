@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Database | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/database/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-10-23T10:50:42-04:00</updated>
+  <updated>2014-10-30T21:44:57-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -22,7 +22,7 @@
 
 <ul>
 <li><img src="/images/php_project/lab4_db.jpg"></li>
-<li>some change in the database relationship</li>
+<li>some change in the database <strong>relationship</strong></li>
 <li><img src="http://pbking1.github.com/images/php_project/database_lingma_structure.png" style="height: 300px; width: 300px"></li>
 <li>we have
 
@@ -46,6 +46,7 @@
 
 
 <ul>
+<li><strong>Table structure</strong></li>
 <li><img src="/images/php_project/1.png"></li>
 <li><img src="/images/php_project/2.png"></li>
 <li><img src="/images/php_project/3.png"></li>
