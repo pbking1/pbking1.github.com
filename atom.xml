@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-10-30T21:44:57-04:00</updated>
+  <updated>2014-11-01T00:27:45-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Install Python Package on Redhat Without Root Access]]></title>
+    <link href="http://pbking1.github.com/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/"/>
+    <updated>2014-11-01T00:01:13-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access</id>
+    <content type="html"><![CDATA[<h3>What to do when need to install python package on the server without root access</h3>
+
+<ul>
+<li>today I went through a problem that I want to have the python package installed on the high performance server but without the root access</li>
+<li>and what I need to do is to install the python 2.7.3 first and then install all the package that scrapy need and finaly get scrapy run</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>process I use</h3>
+
+<ul>
+<li>And one most important things you need to care about is that
+
+<ul>
+<li><p>first install python</p>
+
+<ul>
+<li>download the python first and compile the package of it.</li>
+<li>then remember the export the python path to the .bashrc and .bash_profile</li>
+<li>so that when you simply type <code>python</code> it will not use the default setting of the system</li>
+<li>or you can type the absolute path of the python and use the python in the bin directory</li>
+</ul>
+</li>
+<li><p>then install the scrapy from source</p>
+
+<ul>
+<li><p>but when you finish install the scrapy</p>
+
+<ul>
+<li>you will find out that it will tell you that you do not have some package like Twist , zope, interface and lxml, and cssselect</li>
+<li>so what you need to do is to fix all this missing stuff</li>
+<li>so use <code>wget</code> to download the source file of these missing file and install them</li>
+</ul>
+</li>
+<li><p>the will comes the most difficult part</p>
+
+<ul>
+<li>when you try to install the lxml
+
+<ul>
+<li>you will find out that the system do not have the require of the lxml package
+
+<ul>
+<li>the libxml2 and libxslt</li>
+<li>so what you need to do is to download all the file</li>
+<li>and build it from source
+
+<ul>
+<li>and remember to add prefix and correct all the path error</li>
+<li>and it would be a good way to output the error log to a file and analyze them using the <code>&gt;&amp; output file</code></li>
+<li><strong>and do not hesitate to modify the Makefile or setup.py file when neccessary</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2014_indianapolis_redefined_hackathron]]></title>
@@ -3044,103 +3120,6 @@ re.split(r'[\+\*\-]', '1+2-3*5')
 </ul>
 </li>
 <li>cisco</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Matlab Classification Method]]></title>
-    <link href="http://pbking1.github.com/blog/2014/06/02/matlab-classification-method/"/>
-    <updated>2014-06-02T03:15:11-04:00</updated>
-    <id>http://pbking1.github.com/blog/2014/06/02/matlab-classification-method</id>
-    <content type="html"><![CDATA[<h3>The method in the system</h3>
-
-<ul>
-<li>MultiNomial logistic Regressoin
-
-<ul>
-<li>bad in high dimension
-
-<ul>
-<li><code>Factor = mnrfit(train_data, train_label);</code></li>
-<li><code>scores = mnrval(Factor, test_data);</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li><p>Random Forest</p>
-
-<ul>
-<li>good classifier</li>
-<li>score is the probability output
-
-<ul>
-<li><code>Factor = TreeBagger(numberoftree, train_data, train_label);</code></li>
-<li><code>[predict_label, scores] = predict(Factor, test_data);</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Navie Bayes</p>
-
-<ul>
-<li><code>Factor = NaiveBayes(train_data, train_label);</code></li>
-<li><code>Scores = posterior(Factor, test_data);</code></li>
-<li><code>[Scores, predict_label] = posterior(Factor, test_data);</code></li>
-<li><code>predict_label = predict(Factor, test_data);</code></li>
-<li><code>accuracy = length(find(predict_label == test_label))/length(test_label)*100;</code></li>
-</ul>
-</li>
-<li>SVM
-
-<ul>
-<li><code>Factor = svmtrain(train_label, train_data, '-b 1');</code></li>
-<li><code>[predict_label, accuracy, scores] = svmpredict(test_label, test_data, Factor, '-b 1');</code></li>
-</ul>
-</li>
-<li>KNN
-
-<ul>
-<li><code>predict_label = knnclassify(test_data, train_data, train_label, num_neighbors);</code></li>
-<li>In matlab 2012
-
-<ul>
-<li><code>Factor = ClassificationKNN.fit(train_data, train_label, 'NumNeighbors', numofneighbours);</code></li>
-<li><code>[predict_label, scores] = predict(Factor, test_data);</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Ensembles for boosting, Bagging or Random Subspace
-
-<ul>
-<li>In matlab2012
-
-<ul>
-<li><code>Factor = fitensemble(train_data, train_label, 'AdaBoostM2', 100, 'tree');</code></li>
-<li><code>Factor = fitensemble(train_data, train_label, 'AdaBoostM2', 100, 'tree', 'type', 'classification');</code></li>
-<li><code>Factor = fitensemble(train_data, train_label, 'SubSpace', 50, 'KNN');</code></li>
-<li><code>[predict_label, scores] = predict(Factor, test_data);</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>discriminant analysis classifier
-
-<ul>
-<li><code>Factor = ClassificationDiscriminant(train_data, train_label);</code></li>
-<li><code>Factor = ClassificationDiscriminant(train_data, train_label, 'discrimType', 'non-linear...');</code></li>
-<li><code>[predict_label, scores] = predict(Factor, test_data);</code></li>
-</ul>
-</li>
 </ul>
 
 ]]></content>

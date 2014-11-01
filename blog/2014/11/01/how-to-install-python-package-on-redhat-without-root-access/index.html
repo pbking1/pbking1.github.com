@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>KING</title>
+  <title>How to Install Python Package on Redhat Without Root Access - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="There are three ways to store data using html5 using database (sqlite)
-using localStorage will only store on client, will not send to server
-this &hellip;">
+  <meta name="description" content="What to do when need to install python package on the server without root access today I went through a problem that I want to have the python &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ this &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/page/4">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -72,15 +70,12 @@ this &hellip;">
 </header> -->
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/06/08/use-sqlite-in-html5/">Use Sqlite in Html5</a></h1>
+      <h1 class="entry-title">How to Install Python Package on Redhat Without Root Access</h1>
     
     
       <p class="meta">
@@ -96,141 +91,95 @@ this &hellip;">
   
 
 
-<time datetime="2014-06-08T22:50:05-04:00" pubdate data-updated="true">Jun 8<span>th</span>, 2014</time>
+<time datetime="2014-11-01T00:01:13-04:00" pubdate data-updated="true">Nov 1<span>st</span>, 2014</time>
         
-           | <a href="/blog/2014/06/08/use-sqlite-in-html5/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/06/08/use-sqlite-in-html5/">Comments</a>
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><ul>
-<li>There are three ways to store data using html5
+<div class="entry-content"><h3>What to do when need to install python package on the server without root access</h3>
 
 <ul>
-<li>using database (sqlite)</li>
-<li>using localStorage
+<li>today I went through a problem that I want to have the python package installed on the high performance server but without the root access</li>
+<li>and what I need to do is to install the python 2.7.3 first and then install all the package that scrapy need and finaly get scrapy run</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>process I use</h3>
 
 <ul>
-<li>will only store on client, will not send to server</li>
-<li>this data can be read even using different block on the same browser</li>
-<li>the data will not disapear unless you delete it</li>
-</ul>
-</li>
-<li>using sessionStorage</li>
-</ul>
-</li>
-</ul>
+<li>And one most important things you need to care about is that
 
+<ul>
+<li><p>first install python</p>
+
+<ul>
+<li>download the python first and compile the package of it.</li>
+<li>then remember the export the python path to the .bashrc and .bash_profile</li>
+<li>so that when you simply type <code>python</code> it will not use the default setting of the system</li>
+<li>or you can type the absolute path of the python and use the python in the bin directory</li>
+</ul>
+</li>
+<li><p>then install the scrapy from source</p>
+
+<ul>
+<li><p>but when you finish install the scrapy</p>
+
+<ul>
+<li>you will find out that it will tell you that you do not have some package like Twist , zope, interface and lxml, and cssselect</li>
+<li>so what you need to do is to fix all this missing stuff</li>
+<li>so use <code>wget</code> to download the source file of these missing file and install them</li>
+</ul>
+</li>
+<li><p>the will comes the most difficult part</p>
+
+<ul>
+<li>when you try to install the lxml
+
+<ul>
+<li>you will find out that the system do not have the require of the lxml package
+
+<ul>
+<li>the libxml2 and libxslt</li>
+<li>so what you need to do is to download all the file</li>
+<li>and build it from source
+
+<ul>
+<li>and remember to add prefix and correct all the path error</li>
+<li>and it would be a good way to output the error log to a file and analyze them using the <code>&gt;&amp; output file</code></li>
+<li><strong>and do not hesitate to modify the Makefile or setup.py file when neccessary</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/06/08/use-sqlite-in-html5/">Read more</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/">Phonegap 框架原理</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">pb</span></span>
 
-<time datetime="2014-06-06T05:03:43-04:00" pubdate data-updated="true">Jun 6<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/06/06/phonegap-kuang-jia-yuan-li/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h4>phonegap 实现原理</h4>
-
-<ul>
-<li><code>关键</code>
-
-<ul>
-<li>1.用webview在本地来渲染解析html
-
-<ul>
-<li><strong>因此实际上他就是一个内嵌的浏览器</strong>
-
-<ul>
-<li>类似于一个WebView，但是phonegap对webview做了些改造</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>2.基于plugin模式来封装调用原生API
-
-<ul>
-<li>以原生app的方式来运行</li>
-<li>用js调用原生的功能</li>
-</ul>
-</li>
-<li>3.在框架首次启动的时候加载CallbackServer线程，并且监听前端XHR请求和链表中有无数据
-
-<ul>
-<li>当XHR请求来了而链表为空，则线程等待10秒
-
-<ul>
-<li>如果这个时间内有数据来，那么就唤醒线程把数据传到前端</li>
-</ul>
-</li>
-<li>如果10s后没有数据，则传空数据回前端</li>
-<li><code>基于服务器推技术</code></li>
-</ul>
-</li>
-<li>4.同步请求和异步请求有关键的区别</li>
-</ul>
-</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/02/matlab-classification-method/">Matlab Classification Method</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -242,240 +191,42 @@ this &hellip;">
   
 
 
-<time datetime="2014-06-02T03:15:11-04:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time>
-        
-           | <a href="/blog/2014/06/02/matlab-classification-method/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/06/02/matlab-classification-method/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>The method in the system</h3>
-
-<ul>
-<li>MultiNomial logistic Regressoin
-
-<ul>
-<li>bad in high dimension
-
-<ul>
-<li><code>Factor = mnrfit(train_data, train_label);</code></li>
-<li><code>scores = mnrval(Factor, test_data);</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/06/02/matlab-classification-method/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2014-11-01T00:01:13-04:00" pubdate data-updated="true">Nov 1<span>st</span>, 2014</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/02/matlab-array-type-change/">Matlab Array Type Change</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/python/'>python</a>
+  
+</span>
 
 
-<time datetime="2014-06-02T02:57:28-04:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time>
-        
-           | <a href="/blog/2014/06/02/matlab-array-type-change/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/06/02/matlab-array-type-change/">Comments</a>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><h3>How to convert between cell, double and char array?</h3>
-
-<ul>
-<li>there are three type of array in matlab
-
-<ul>
-<li>cell array</li>
-<li>double array</li>
-<li>char array</li>
-</ul>
-</li>
-</ul>
-
-
+      <div class="sharing">
+  
+  
+  
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/06/02/matlab-array-type-change/">Read more</a>
-    </footer>
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/27/build-ios-webapp-using-phonegap-and-jquery-mobile/">Build Ios Webapp Using Phonegap and Jquery Mobile</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-27T05:30:09-04:00" pubdate data-updated="true">May 27<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/27/build-ios-webapp-using-phonegap-and-jquery-mobile/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/27/build-ios-webapp-using-phonegap-and-jquery-mobile/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>first install phonegap</h3>
-
-<ul>
-<li>download <code>phonegap-2.9.1</code>
-
-<ul>
-<li>enter the lib/ios/bin</li>
-<li>use the command <code>./create ~/Documents/html_app/testphonegap test_phonegap test1</code>
-
-<ul>
-<li>to create the project that is located in <code>~/Documents/html_app/</code> and the name of it is <code>test_phonegap</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/27/build-ios-webapp-using-phonegap-and-jquery-mobile/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+        <a class="basic-alignment left" href="/blog/2014/10/30/2014-indianapolis-redefined-hackathron/" title="Previous Post: 2014_indianapolis_redefined_hackathron">&laquo; 2014_indianapolis_redefined_hackathron</a>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi/">HTML5和移动平台的原生应用对比</a></h1>
-    
-    
-      <p class="meta">
-        
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-27T01:17:39-04:00" pubdate data-updated="true">May 27<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>问题所在</h3>
-
-<ul>
-<li>當前熱門已極的移动開發，所面臨的卻是一個使用平台與裝置類型極其複雜的開發環境，光就行動平台而言，便同時有Windows、Mac、iOS與Android四大平台；再就CPU機器碼來說，則有Intel與ARM兩大平台；即使是Android平台，開發者可能面對的會是百家爭鳴、大小廠牌林立的複雜狀況。</li>
-</ul>
-
-
-<h3>哪些App适合用HTML5开发？</h3>
-
-<ul>
-<li>搜索产品</li>
-<li>社交产品</li>
-<li>资讯新闻产品</li>
-<li>游戏产品</li>
-</ul>
-
-
-<h3>HTML5的优点</h3>
-
-<ul>
-<li>HTML5最主要的优势就在于它适合<strong><code>众多平台</code></strong>，从PC浏览器到手机、平板电脑，甚至将来的智能电视。只要设备浏览器支持HTML5，HTML5应用或游戏在该平台中就可以直接运行。</li>
-<li>如今大部分浏览器</li>
-<li><img src="/images/internship_zst/compare_1.png"></li>
-<li>这带来原生应用所没有的优点(注：原生应用通常需要进行重新设计，方能投放至另一个目标操作系统)。若开发者想要将自己的iOS游戏移植到Android平台，他就需要对游戏做出根本性的调整。有了HTML5技术，此过程就会简单许多。</li>
-<li>HTML5可<code>跨平台</code>运行</li>
-</ul>
-
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi/">Read more</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/5/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
-    
-    
-    <a class="next" href="/blog/page/3/"><i class="fa fa-chevron-circle-right fa-2x icon-color icon-homepage"></i></a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -558,7 +309,7 @@ ds.charset = 'UTF-8';
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/pbking1">@pbking1</a> on GitHub
@@ -592,6 +343,7 @@ ds.charset = 'UTF-8';
   
 </aside>
 
+
     </div>
   </div>
   <!-- <footer role="contentinfo"><p>
@@ -608,7 +360,10 @@ ds.charset = 'UTF-8';
       var disqus_shortname = 'pbking1';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

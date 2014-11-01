@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-10-30T21:44:57-04:00</updated>
+  <updated>2014-11-01T00:27:45-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Install Python Package on Redhat Without Root Access]]></title>
+    <link href="http://pbking1.github.com/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/"/>
+    <updated>2014-11-01T00:01:13-04:00</updated>
+    <id>http://pbking1.github.com/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access</id>
+    <content type="html"><![CDATA[<h3>What to do when need to install python package on the server without root access</h3>
+
+<ul>
+<li>today I went through a problem that I want to have the python package installed on the high performance server but without the root access</li>
+<li>and what I need to do is to install the python 2.7.3 first and then install all the package that scrapy need and finaly get scrapy run</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>process I use</h3>
+
+<ul>
+<li>And one most important things you need to care about is that
+
+<ul>
+<li><p>first install python</p>
+
+<ul>
+<li>download the python first and compile the package of it.</li>
+<li>then remember the export the python path to the .bashrc and .bash_profile</li>
+<li>so that when you simply type <code>python</code> it will not use the default setting of the system</li>
+<li>or you can type the absolute path of the python and use the python in the bin directory</li>
+</ul>
+</li>
+<li><p>then install the scrapy from source</p>
+
+<ul>
+<li><p>but when you finish install the scrapy</p>
+
+<ul>
+<li>you will find out that it will tell you that you do not have some package like Twist , zope, interface and lxml, and cssselect</li>
+<li>so what you need to do is to fix all this missing stuff</li>
+<li>so use <code>wget</code> to download the source file of these missing file and install them</li>
+</ul>
+</li>
+<li><p>the will comes the most difficult part</p>
+
+<ul>
+<li>when you try to install the lxml
+
+<ul>
+<li>you will find out that the system do not have the require of the lxml package
+
+<ul>
+<li>the libxml2 and libxslt</li>
+<li>so what you need to do is to download all the file</li>
+<li>and build it from source
+
+<ul>
+<li>and remember to add prefix and correct all the path error</li>
+<li>and it would be a good way to output the error log to a file and analyze them using the <code>&gt;&amp; output file</code></li>
+<li><strong>and do not hesitate to modify the Makefile or setup.py file when neccessary</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2014_indianapolis_redefined_hackathron]]></title>
