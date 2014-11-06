@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-11-01T00:27:45-04:00</updated>
+  <updated>2014-11-05T21:27:29-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,130 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Iupui Mason High Performance Mass]]></title>
+    <link href="http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass/"/>
+    <updated>2014-11-05T20:55:25-05:00</updated>
+    <id>http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass</id>
+    <content type="html"><![CDATA[<h3>In the iupui mason server</h3>
+
+<ul>
+<li>there are 20 server, each have 10 gigabit ethernet</li>
+<li>4 cpu in each server
+
+<ul>
+<li>8 core processor each cpu</li>
+<li>total 32 core in each server</li>
+</ul>
+</li>
+<li>in the /scratch or /tmp there are total 400 GB disk storage
+
+<ul>
+<li>and the file will be delete after 14 days since they are created</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>when login</h3>
+
+<ul>
+<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x75;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#109;&#x61;&#x73;&#x6f;&#x6e;&#x2e;&#x69;&#x6e;&#100;&#105;&#97;&#x6e;&#x61;&#46;&#101;&#x64;&#x75;">&#117;&#x73;&#x65;&#114;&#110;&#97;&#109;&#101;&#x40;&#x6d;&#x61;&#115;&#111;&#x6e;&#46;&#105;&#110;&#x64;&#x69;&#x61;&#x6e;&#x61;&#46;&#x65;&#x64;&#x75;</a>&rdquo;
+
+<ul>
+<li>will result in two server
+
+<ul>
+<li>h1.mason.indiana.edu</li>
+<li>h2.mason.indiana.edu</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>cpu/memory limit</h3>
+
+<ul>
+<li>user process on login node are limited to 20 minutes CPU time
+
+<ul>
+<li>if exceeded, will be killed automatically</li>
+</ul>
+</li>
+<li>use TORQUE <code>qsub</code> to submit job that need more than 20 minutes cpu time
+
+<ul>
+<li><p><code>qsub</code></p>
+
+<ul>
+<li><code>qsub -l walltime=10:00:00 job.script</code>
+
+<ul>
+<li>for the system default time is 60 minutes
+
+<ul>
+<li>so use walltime to use more time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>qsub -l nodes=1:ppn=2 job.script</code>
+
+<ul>
+<li>run the script in a node and using two core processers</li>
+</ul>
+</li>
+<li><code>qsub -l nodes=4:ppn=31,vmem=100gb -l walltime=20:00:00 jobscript.script</code>
+
+<ul>
+<li>if use multi commands, use <code>-l</code> to separate the argument</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>qstat</code></p>
+
+<ul>
+<li><code>qstat -a</code>
+
+<ul>
+<li>display all job</li>
+</ul>
+</li>
+<li><code>qstat -n</code>
+
+<ul>
+<li>list the nodes allocated to a job</li>
+</ul>
+</li>
+<li><code>qstat -r</code>
+
+<ul>
+<li>list the job that are running</li>
+</ul>
+</li>
+<li><code>qstat -u username@host</code>
+
+<ul>
+<li>display the job owned by the username</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>qdel</code></li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Install Python Package on Redhat Without Root Access]]></title>
@@ -2966,161 +3090,6 @@ re.split(r'[\+\*\-]', '1+2-3*5')
 </span><span class='line'>  &lt;/body&gt;
 </span><span class='line'>&lt;/html&gt;
 </span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Phonegap 框架原理]]></title>
-    <link href="http://pbking1.github.com/blog/2014/06/06/phonegap-kuang-jia-yuan-li/"/>
-    <updated>2014-06-06T05:03:43-04:00</updated>
-    <id>http://pbking1.github.com/blog/2014/06/06/phonegap-kuang-jia-yuan-li</id>
-    <content type="html"><![CDATA[<h4>phonegap 实现原理</h4>
-
-<ul>
-<li><code>关键</code>
-
-<ul>
-<li>1.用webview在本地来渲染解析html
-
-<ul>
-<li><strong>因此实际上他就是一个内嵌的浏览器</strong>
-
-<ul>
-<li>类似于一个WebView，但是phonegap对webview做了些改造</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>2.基于plugin模式来封装调用原生API
-
-<ul>
-<li>以原生app的方式来运行</li>
-<li>用js调用原生的功能</li>
-</ul>
-</li>
-<li>3.在框架首次启动的时候加载CallbackServer线程，并且监听前端XHR请求和链表中有无数据
-
-<ul>
-<li>当XHR请求来了而链表为空，则线程等待10秒
-
-<ul>
-<li>如果这个时间内有数据来，那么就唤醒线程把数据传到前端</li>
-</ul>
-</li>
-<li>如果10s后没有数据，则传空数据回前端</li>
-<li><code>基于服务器推技术</code></li>
-</ul>
-</li>
-<li>4.同步请求和异步请求有关键的区别</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li><code>他如何实现跨平台的</code>
-
-<ul>
-<li>phonegap在每一种中都实现了一套后台的框架，分别和每个平台的API进行交互，从而调用它的原生API，然后对应开发人员提供统一的接口，也就是phonegap的API。</li>
-<li>因此，开发人员只需要使用web技术就可以对移动平台进行快速开发</li>
-<li>而且跨平台也是只是前端跨平台。</li>
-</ul>
-</li>
-<li><code>这个开源的项目的贡献者</code>
-
-<ul>
-<li>这个开源项目中IBM贡献的代码比创始者（温哥华的一家小公司）还多。</li>
-<li>Apache Cordova是phongap贡献给apache的一个开源项目
-
-<ul>
-<li>他有phonegap里面的核心代码</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>phonegap的优点</h4>
-
-<ul>
-<li>app的前台兼容性好</li>
-<li>标准化， 由于使用的是W3C标准，所以web前端可直接用于web app。</li>
-<li>js+html5和java+xml很像</li>
-<li>装起来也不麻烦，用起来比较容易</li>
-<li>提供硬件访问</li>
-</ul>
-
-
-<h4>phonegap的缺点</h4>
-
-<ul>
-<li>反应很慢（亲身实践过）</li>
-<li>交互很差</li>
-<li>内存消耗大
-
-<ul>
-<li>有人做过测试，和用java写android对比，phonegap明显消耗更多内存</li>
-<li>而且释放内存很慢</li>
-</ul>
-</li>
-<li>调试也麻烦</li>
-</ul>
-
-
-<h4>有谁在用</h4>
-
-<ul>
-<li>wikipedia
-
-<ul>
-<li>它的移动应用就是用phonegap写的</li>
-</ul>
-</li>
-<li>Facebook
-
-<ul>
-<li>移动版SDK的一部分是cordova的一个分支</li>
-</ul>
-</li>
-<li>Salesforce
-
-<ul>
-<li>移动版的SDK的一部分是cordova的一个分支</li>
-</ul>
-</li>
-<li>IBM
-
-<ul>
-<li>移动平台建立在phonegap上</li>
-<li>并且积极参与到phonegap的开发里面</li>
-</ul>
-</li>
-<li>Microsoft
-
-<ul>
-<li>正在积极参与windows phone的那一部分的开发</li>
-</ul>
-</li>
-<li>Adobe
-
-<ul>
-<li>2011年Adobe收购了phonegap得私人开发商Notibi，并将phonegap贡献给apache并且开源</li>
-</ul>
-</li>
-<li>blackberry</li>
-<li>zynga
-
-<ul>
-<li>用phonegap和html5写了不少很好的游戏</li>
-</ul>
-</li>
-<li>cisco</li>
-</ul>
 
 ]]></content>
   </entry>

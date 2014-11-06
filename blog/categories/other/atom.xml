@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Other | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/other/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-11-01T00:27:45-04:00</updated>
+  <updated>2014-11-05T21:27:29-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,130 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Iupui Mason High Performance Mass]]></title>
+    <link href="http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass/"/>
+    <updated>2014-11-05T20:55:25-05:00</updated>
+    <id>http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass</id>
+    <content type="html"><![CDATA[<h3>In the iupui mason server</h3>
+
+<ul>
+<li>there are 20 server, each have 10 gigabit ethernet</li>
+<li>4 cpu in each server
+
+<ul>
+<li>8 core processor each cpu</li>
+<li>total 32 core in each server</li>
+</ul>
+</li>
+<li>in the /scratch or /tmp there are total 400 GB disk storage
+
+<ul>
+<li>and the file will be delete after 14 days since they are created</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>when login</h3>
+
+<ul>
+<li>use &ldquo;<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x75;&#115;&#x65;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#109;&#x61;&#115;&#111;&#x6e;&#x2e;&#105;&#x6e;&#100;&#x69;&#97;&#110;&#x61;&#x2e;&#101;&#100;&#117;">&#117;&#x73;&#x65;&#x72;&#110;&#x61;&#x6d;&#101;&#x40;&#109;&#x61;&#x73;&#111;&#x6e;&#x2e;&#105;&#x6e;&#x64;&#x69;&#x61;&#x6e;&#97;&#x2e;&#101;&#100;&#x75;</a>&rdquo;
+
+<ul>
+<li>will result in two server
+
+<ul>
+<li>h1.mason.indiana.edu</li>
+<li>h2.mason.indiana.edu</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>cpu/memory limit</h3>
+
+<ul>
+<li>user process on login node are limited to 20 minutes CPU time
+
+<ul>
+<li>if exceeded, will be killed automatically</li>
+</ul>
+</li>
+<li>use TORQUE <code>qsub</code> to submit job that need more than 20 minutes cpu time
+
+<ul>
+<li><p><code>qsub</code></p>
+
+<ul>
+<li><code>qsub -l walltime=10:00:00 job.script</code>
+
+<ul>
+<li>for the system default time is 60 minutes
+
+<ul>
+<li>so use walltime to use more time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>qsub -l nodes=1:ppn=2 job.script</code>
+
+<ul>
+<li>run the script in a node and using two core processers</li>
+</ul>
+</li>
+<li><code>qsub -l nodes=4:ppn=31,vmem=100gb -l walltime=20:00:00 jobscript.script</code>
+
+<ul>
+<li>if use multi commands, use <code>-l</code> to separate the argument</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>qstat</code></p>
+
+<ul>
+<li><code>qstat -a</code>
+
+<ul>
+<li>display all job</li>
+</ul>
+</li>
+<li><code>qstat -n</code>
+
+<ul>
+<li>list the nodes allocated to a job</li>
+</ul>
+</li>
+<li><code>qstat -r</code>
+
+<ul>
+<li>list the job that are running</li>
+</ul>
+</li>
+<li><code>qstat -u username@host</code>
+
+<ul>
+<li>display the job owned by the username</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>qdel</code></li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Use Opendns to Cross the Great Firewall in China]]></title>

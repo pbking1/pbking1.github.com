@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Python Regular Expression - KING</title>
+  <title>Iupui Mason High Performance Mass - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="regular expression use the match string but not all the string can be matched basic character in python 1
-import re ordinary character like re&#8217; &hellip;">
+  <meta name="description" content="In the iupui mason server there are 20 server, each have 10 gigabit ethernet
+4 cpu in each server 8 core processor each cpu
+total 32 core in each &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ import re ordinary character like re&#8217; &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/10/03/python-regular-expression">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -76,7 +77,7 @@ import re ordinary character like re&#8217; &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Python Regular Expression</h1>
+      <h1 class="entry-title">Iupui Mason High Performance Mass</h1>
     
     
       <p class="meta">
@@ -92,7 +93,7 @@ import re ordinary character like re&#8217; &hellip;">
   
 
 
-<time datetime="2014-10-03T13:00:03-04:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2014</time>
+<time datetime="2014-11-05T20:55:25-05:00" pubdate data-updated="true">Nov 5<span>th</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com">Comments</a>
@@ -102,13 +103,22 @@ import re ordinary character like re&#8217; &hellip;">
   </header>
 
 
-<div class="entry-content"><h3>regular expression</h3>
+<div class="entry-content"><h3>In the iupui mason server</h3>
 
 <ul>
-<li>use the match string
+<li>there are 20 server, each have 10 gigabit ethernet</li>
+<li>4 cpu in each server
 
 <ul>
-<li>but not all the string can be matched</li>
+<li>8 core processor each cpu</li>
+<li>total 32 core in each server</li>
+</ul>
+</li>
+<li>in the /scratch or /tmp there are total 400 GB disk storage
+
+<ul>
+<li>and the file will be delete after 14 days since they are created</li>
+<li></li>
 </ul>
 </li>
 </ul>
@@ -117,138 +127,17 @@ import re ordinary character like re&#8217; &hellip;">
 <!--more-->
 
 
-<h3>basic character in python</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import re</span></code></pre></td></tr></table></div></figure>
-
+<h3>when login</h3>
 
 <ul>
-<li>ordinary character
+<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x75;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#109;&#x61;&#x73;&#x6f;&#x6e;&#x2e;&#x69;&#x6e;&#100;&#105;&#97;&#x6e;&#x61;&#46;&#101;&#x64;&#x75;">&#117;&#x73;&#x65;&#114;&#110;&#97;&#109;&#101;&#x40;&#x6d;&#x61;&#115;&#111;&#x6e;&#46;&#105;&#110;&#x64;&#x69;&#x61;&#x6e;&#x61;&#46;&#x65;&#x64;&#x75;</a>&rdquo;
 
 <ul>
-<li>like re&#8217;test&#8217; will match the string test</li>
-</ul>
-</li>
-<li>oral character
+<li>will result in two server
 
 <ul>
-<li>like . ^ $ * + ? {} [] \ | ()</li>
-<li>like []
-
-<ul>
-<li>use to direct to a range of the string set</li>
-<li><code>
-s = r'abc'
-re.findall(s, "aaaaaaaabc")
-//use []
-rt = "top tip tap twp tep"
-r1 = r"t[io]p"
-re.findall(r1, rt)
-//output ['top'], ['tip']
-r2 = r"t[^io]p"
-re.findall(r2, rt)
-//output ['tap'],['tep'], ['twp']
-</code></li>
-<li>and oral character is no use in the []</li>
-<li>also can use <code>r'0-3'</code> replace <code>r'0123'</code>
-
-<ul>
-<li>use &lsquo;r&rsquo;[0-3a-cA-C]&lsquo;&rsquo; replace <code>r'[0123abcABC]'</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>like ^
-
-<ul>
-<li>use the match the head of the line</li>
-<li><code>
-s = r'^t'
-st = 'tss'
-//output ['t']
-</code></li>
-</ul>
-</li>
-<li>like $
-
-<ul>
-<li>use to match the end of the line</li>
-</ul>
-</li>
-<li>like \
-
-<ul>
-<li>used if you want to transform the oral character into a original one</li>
-<li>use &lsquo;^&rsquo; to make ^ as a original character</li>
-<li>and can be used as
-
-<ul>
-<li>\d match [0-9]</li>
-<li>\D match [^0-9]</li>
-<li>\s match [\t\n\r\f\v]
-
-<ul>
-<li>means and empty character</li>
-</ul>
-</li>
-<li>\S match [^\t\n\r\f\v]
-
-<ul>
-<li>means non empty character</li>
-</ul>
-</li>
-<li>\w match [a-zA-Z0-9]</li>
-<li>\W match [^a-zA-Z0-9]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>like *
-
-<ul>
-<li>match multiple character</li>
-<li>means repeat the character in front of the * for 0-many times</li>
-<li><code>
-r = r'ab*'
-rt = 'abbbbbb'
-re.findall(r, rt)
-//output['abbbbbb']
-</code></li>
-</ul>
-</li>
-<li>like +
-
-<ul>
-<li>match the charter that appear more than one time</li>
-</ul>
-</li>
-<li>like ?
-
-<ul>
-<li> match the charter that appear zero or one time</li>
-<li>can be used as minimum match
-
-<ul>
-<li><code>r = r'ab+?'</code></li>
-<li><code>rt = 'abbbbbb'</code></li>
-<li>output the ab</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>like the {}
-
-<ul>
-<li>means that the character can be repeat how many times</li>
-<li><code>
-r = r'a{1,3}'
-rt = 'aaaaa'
-then can match a, aa, aaa
-</code></li>
-<li>{0,} == *</li>
-<li>{1,} == +</li>
-<li>{0,1} == ?</li>
+<li>h1.mason.indiana.edu</li>
+<li>h2.mason.indiana.edu</li>
 </ul>
 </li>
 </ul>
@@ -256,131 +145,78 @@ then can match a, aa, aaa
 </ul>
 
 
-<h3>functions</h3>
+<h3>cpu/memory limit</h3>
 
 <ul>
-<li>compile the expression to speed up
+<li>user process on login node are limited to 20 minutes CPU time
 
 <ul>
-<li><code>
-r = r'\d{3,4}-?\d{8}'
-p_telephone = re.compile(r)
-p_telephone.findall('010-12345678')
-//output ['010-12345678']
-</code></li>
-<li>and you can add attribute while compile</li>
+<li>if exceeded, will be killed automatically</li>
 </ul>
 </li>
-<li><p>there are some normal functions</p>
+<li>use TORQUE <code>qsub</code> to submit job that need more than 20 minutes cpu time
 
 <ul>
-<li>match
+<li><p><code>qsub</code></p>
 
 <ul>
-<li>only search from the front</li>
-<li><code>
-p_telephone.match('o010-12345678')
-//output nothing because the 010-12345678 is not start from the begin
-</code></li>
-</ul>
-</li>
-<li>search
+<li><code>qsub -l walltime=10:00:00 job.script</code>
 
 <ul>
-<li>search the whole string</li>
-<li>no matter where the number is , if you can find it, you can find it.</li>
-</ul>
-</li>
-<li>findall</li>
-<li>finditer
+<li>for the system default time is 60 minutes
 
 <ul>
-<li>the same as findall but you need to use iter so that you can get the value</li>
+<li>so use walltime to use more time</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>and there are sub(), subn(), split()</p>
+<li><code>qsub -l nodes=1:ppn=2 job.script</code>
 
 <ul>
-<li>sub()
-
-<ul>
-<li><code>
-r = r'c..t'
-re.sub(r, 'aaa', 'caat cast cccc')
-//output 'aaa aaa cccc'
-</code></li>
+<li>run the script in a node and using two core processers</li>
 </ul>
 </li>
-<li>subn()
+<li><code>qsub -l nodes=4:ppn=31,vmem=100gb -l walltime=20:00:00 jobscript.script</code>
 
 <ul>
-<li>the difference between sub and subj is that subj provide a count of the how many stuff you replace</li>
-<li><code>
-r = r'c..t'
-re.subn(r, 'aaa', 'caat cast cccc')
-//output 'aaa aaa cccc', 2
-</code></li>
-</ul>
-</li>
-<li>split()
-
-<ul>
-<li>split the string using a regular express</li>
-<li><code>
-re.split(r'[\+\*\-]', '1+2-3*5')
-//output ['1', '2', '3', '5']
-</code></li>
-</ul>
-</li>
-<li>use <code>dir(re)</code> to see what functions re have</li>
+<li>if use multi commands, use <code>-l</code> to separate the argument</li>
 </ul>
 </li>
 </ul>
-
-
-<h3>flags in re module</h3>
-
-<table>
-<thead>
-<tr>
-<th>flags </th>
-<th>meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>dotall, S</td>
-<td> let . match all the character contains \n</td>
-</tr>
-<tr>
-<td>ignore case, I </td>
-<td>make the match no sensitive about the uppercase and lowercase</td>
-</tr>
-<tr>
-<td>locale, L </td>
-<td> do locale-aware match, match the French or the other language</td>
-</tr>
-<tr>
-<td>multiline, M </td>
-<td> match multiline, affect ^ and $</td>
-</tr>
-<tr>
-<td>verbose, X </td>
-<td> can use the REs verbose status, and make the organise more clearly</td>
-</tr>
-</tbody>
-</table>
-
-
-<h3>devision</h3>
+</li>
+<li><p><code>qstat</code></p>
 
 <ul>
-<li>()</li>
-<li><code>email = r'\w{3}@\w+(\.com|\.cn)'</code></li>
-<li>use the () to divide the .com and .cn</li>
-<li>so that we can use the regular form to match email address</li>
+<li><code>qstat -a</code>
+
+<ul>
+<li>display all job</li>
+</ul>
+</li>
+<li><code>qstat -n</code>
+
+<ul>
+<li>list the nodes allocated to a job</li>
+</ul>
+</li>
+<li><code>qstat -r</code>
+
+<ul>
+<li>list the job that are running</li>
+</ul>
+</li>
+<li><code>qstat -u username@host</code>
+
+<ul>
+<li>display the job owned by the username</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>qdel</code></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -405,12 +241,12 @@ re.split(r'[\+\*\-]', '1+2-3*5')
   
 
 
-<time datetime="2014-10-03T13:00:03-04:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2014</time>
+<time datetime="2014-11-05T20:55:25-05:00" pubdate data-updated="true">Nov 5<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/python/'>python</a>
+    <a class='category' href='/blog/categories/high-performance/'>high_performance</a>, <a class='category' href='/blog/categories/other/'>other</a>
   
 </span>
 
@@ -426,10 +262,8 @@ re.split(r'[\+\*\-]', '1+2-3*5')
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/09/15/mpi-parallel-programming-2/" title="Previous Post: mpi_parallel_programming_2">&laquo; mpi_parallel_programming_2</a>
+        <a class="basic-alignment left" href="/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/" title="Previous Post: how to install python package on redhat without root access">&laquo; how to install python package on redhat without root access</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/10/23/database-and-backend-injection/" title="Next Post: database_and_backend_injection">database_and_backend_injection &raquo;</a>
       
     </p>
   </footer>
@@ -578,8 +412,8 @@ ds.charset = 'UTF-8';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/10/03/python-regular-expression/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/10/03/python-regular-expression/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass/';
+        var disqus_url = 'http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass/';
         var disqus_script = 'embed.js';
       
     (function () {
