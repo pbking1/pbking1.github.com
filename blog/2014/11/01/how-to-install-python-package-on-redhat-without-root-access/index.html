@@ -9,7 +9,8 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="What to do when need to install python package on the server without root access today I went through a problem that I want to have the python &hellip;">
+  <meta name="description" content="dependent of scrapy remember that the scrapt need python2.7 to run
+and there will be lots of package need to be installed What to do when need to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -101,7 +102,15 @@
   </header>
 
 
-<div class="entry-content"><h3>What to do when need to install python package on the server without root access</h3>
+<div class="entry-content"><h3>dependent of scrapy</h3>
+
+<ul>
+<li>remember that the scrapt need python2.7 to run</li>
+<li>and there will be lots of package need to be installed</li>
+</ul>
+
+
+<h3>What to do when need to install python package on the server without root access</h3>
 
 <ul>
 <li>today I went through a problem that I want to have the python package installed on the high performance server but without the root access</li>
@@ -163,6 +172,29 @@
 </li>
 </ul>
 </li>
+<li>also there are problem when try to install cffi and libffi
+
+<ul>
+<li>when compile the libffi library
+
+<ul>
+<li>remember to include the path of the libffi library when building the cffi
+
+<ul>
+<li>use <code>build_ext -l library_absolute_path -l library2_absolute_path</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>after install the scrapy successfully
+
+<ul>
+<li>use the scrapy executable file in the bin of the scrapy source code</li>
+<li><code>python2.7 ./scrapy crawl linkedin.com</code></li>
 </ul>
 </li>
 </ul>
