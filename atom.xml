@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-11-21T22:23:04-05:00</updated>
+  <updated>2014-12-28T18:04:30-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -231,6 +231,18 @@
 </span><span class='line'>xlabel('index of skill number')
 </span><span class='line'>ylabel('number of the people')</span></code></pre></td></tr></table></div></figure>
 
+
+<h3>diff the file</h3>
+
+<ul>
+<li>diff whole_file subfile | grep &ldquo;&lt; &rdquo; | sed &rsquo;s/&lt; //g&#8217;
+
+<ul>
+<li>using this command can get all the content in the subfile out of the wholefile</li>
+</ul>
+</li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -266,7 +278,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#x75;&#115;&#x65;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#x6d;&#x61;&#x73;&#x6f;&#x6e;&#x2e;&#105;&#110;&#x64;&#105;&#97;&#110;&#x61;&#46;&#101;&#100;&#117;">&#x75;&#115;&#x65;&#x72;&#x6e;&#x61;&#x6d;&#101;&#x40;&#109;&#x61;&#115;&#111;&#x6e;&#46;&#x69;&#110;&#x64;&#x69;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x75;&#x73;&#101;&#x72;&#x6e;&#97;&#109;&#x65;&#x40;&#109;&#x61;&#x73;&#x6f;&#110;&#x2e;&#x69;&#110;&#100;&#105;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#100;&#x75;">&#x75;&#115;&#101;&#114;&#110;&#x61;&#x6d;&#101;&#64;&#109;&#97;&#115;&#111;&#110;&#x2e;&#x69;&#x6e;&#100;&#x69;&#97;&#110;&#x61;&#46;&#101;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server

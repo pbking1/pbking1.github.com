@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-11-21T22:23:04-05:00</updated>
+  <updated>2014-12-28T18:04:30-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -191,6 +191,18 @@ title(&lsquo;skill line plot&rsquo;)
 xlabel(&lsquo;index of skill number&rsquo;)
 ylabel(&lsquo;number of the people&rsquo;)
 ```</p>
+
+<h3>diff the file</h3>
+
+<ul>
+<li>diff whole_file subfile | grep &ldquo;&lt; &rdquo; | sed &rsquo;s/&lt; //g'
+
+<ul>
+<li>using this command can get all the content in the subfile out of the wholefile</li>
+</ul>
+</li>
+</ul>
+
 ]]></content>
   </entry>
   
