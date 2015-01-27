@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Difference Between Malloc and New in C++ - KING</title>
+  <meta name="author" content="pb">
+
+  
+  <meta name="description" content="new and delete the way it allocate and release memory the memory is allocate from Free Store
+will return a fully typed pointer if failed will not &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pbking1.github.com/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+
+  
+<form action="http://www.google.com.hk/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pbking1.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+
+<ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog">Blogs</a></li>
+  <li><a href="/archives">Archieves</a></li>
+  <li><a href="/project">Project</a></li>
+  <li><a href="/about">About Me</a></li>
+</ul>
+
+</nav>
+  <!-- <header role="banner"><hgroup>
+  <h1><a href="/">KING</a></h1>
+  
+    <h2>Do more, say less</h2>
+  
+</hgroup>
+
+
+</header> -->
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Difference Between Malloc and New in C++</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-27T15:30:52-05:00" pubdate data-updated="true">Jan 27<span>th</span>, 2015</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>new and delete</h3>
+
+<ul>
+<li><p>the way it allocate and release memory</p>
+
+<ul>
+<li>the memory is allocate from <code>Free Store</code></li>
+<li>will return a fully typed pointer
+
+<ul>
+<li>if failed will not return NULL</li>
+</ul>
+</li>
+<li>the compiler will calculate the size</li>
+<li>reallocate is not handled intuitively, using copy constructor</li>
+<li>whether called malloc and delete can be user defined</li>
+<li>can add a new memory allocator to deal with low memory</li>
+<li>new and delete can be overwrite legally</li>
+<li>use constructor/destructor to initial/destory object</li>
+</ul>
+</li>
+<li><p>new 动态创建和释放数组或者单个对象</p>
+
+<ul>
+<li>动态创建对象的时候，只需要指定其数据类型，不必为该对象命名</li>
+<li>如果分配失败了，会抛出异常。</li>
+<li>new 表达式返回指向该新建对象的指针</li>
+<li>我们可以通过这个指针来访问新建的对象</li>
+<li>int *p = new int
+
+<ul>
+<li>返回类型为int*类型， 分配大小为sizeof(int)</li>
+</ul>
+</li>
+<li>int *p = new int[100]
+
+<ul>
+<li>返回类型为int*类型, 分配大小为sizeof(int) * 100</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>三种特殊指针</p>
+
+<ul>
+<li>void* 表示未确定类型的指针，更明确的说是指申请内存空间时还不知道user是用来储存什么类型的数据的。</li>
+<li>零值指针：值为0的指针。可以是任何一种指针类型。</li>
+<li>NULL指针：不提供任何地址信息的指针</li>
+</ul>
+</li>
+<li><p>new 动态创建的对象是可以初始化的。</p>
+
+<ul>
+<li>e.g int *p = new int(1000)</li>
+<li>如果不初始化，就会使用这个类的默认构造函数来初始化。
+
+<ul>
+<li>e.g int *p = new int()  //初始化为0</li>
+</ul>
+</li>
+<li>但是如果对象是内置的，就没有初始化
+
+<ul>
+<li>e.g int *p = new int //指向一个没有初始化的int
+
+<ul>
+<li>string *str = new string()  //初始化为空串，因为string自带的默认构造函数会初始化为空串</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>delete</p>
+
+<ul>
+<li>delete p;
+
+<ul>
+<li>但是释放完p的内存之后，p会变成不确定的指针</li>
+<li>因此要把p赋值为0
+
+<ul>
+<li>明确指针不再指向任何对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>malloc and free</h3>
+
+<ul>
+<li><p>the way it allocate and release memory</p>
+
+<ul>
+<li>the memory is allocate from <code>Heap</code></li>
+<li>will return a void pointer
+
+<ul>
+<li>will return NULL if failed</li>
+</ul>
+</li>
+<li>the space and size need to be specified(固定)</li>
+<li>will not called new/delete</li>
+<li>it is simple to reallocate large memory</li>
+<li>user can not write code into allocation sequence to help with low memory</li>
+<li>malloc/free can not be overriden legally</li>
+</ul>
+</li>
+<li><p>malloc 动态内存分配</p>
+
+<ul>
+<li>void *malloc(int size)</li>
+<li>向系统申请分配指定size个字节的内存空间</li>
+<li>申请之后要检查是否分配成功</li>
+<li>不用之后要释放：把纸箱这块内存的指针指向NULL, 防止程序不小心使用了它
+
+<ul>
+<li>如果忘了释放就是内存泄露</li>
+</ul>
+</li>
+<li>操作系统中有一个记录空闲内存位置的链表，每次收到程序申请的时候，就会遍历这个链表，找到第一个空间大于申请的空间的堆节点，然后把该节点从链表中删除，把这个节点的空间分配给程序。</li>
+<li> int p;
+
+<ul>
+<li>p = (int*)malloc(sizeof(int) * 128)</li>
+<li>p指针会存储存储单元的首地址</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">pb</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-27T15:30:52-05:00" pubdate data-updated="true">Jan 27<span>th</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/c/'>c</a>, <a class='category' href='/blog/categories/c-plus-plus/'>c++</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/11/21/vi-regular-expression-1/" title="Previous Post: vi regular expression and data processing(1)">&laquo; vi regular expression and data processing(1)</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/">Difference Between Malloc and New in C++</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/21/vi-regular-expression-1/">Vi Regular Expression and Data Processing(1)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/05/iupui-mason-high-performance-mass/">Iupui Mason High Performance Mass</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/">How to Install Python Package on Redhat Without Root Access</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/30/2014-indianapolis-redefined-hackathron/">2014_indianapolis_redefined_hackathron</a>
+      </li>
+    
+  </ul>
+</section>
+<section> 
+  <h1>Categories</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (8)</a></li>
+<li class='category'><a href='/blog/categories/android/'>Android (5)</a></li>
+<li class='category'><a href='/blog/categories/erp/'>ERP (1)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>IOS (14)</a></li>
+<li class='category'><a href='/blog/categories/internship/'>Internship (1)</a></li>
+<li class='category'><a href='/blog/categories/interview/'>Interview (2)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (4)</a></li>
+<li class='category'><a href='/blog/categories/network/'>Network (1)</a></li>
+<li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>Octopress (2)</a></li>
+<li class='category'><a href='/blog/categories/robot/'>Robot (2)</a></li>
+<li class='category'><a href='/blog/categories/system-analyze-and-design/'>System_analyze_and_design (5)</a></li>
+<li class='category'><a href='/blog/categories/uml/'>UML (2)</a></li>
+<li class='category'><a href='/blog/categories/c/'>c (2)</a></li>
+<li class='category'><a href='/blog/categories/c-/'>c++ (1)</a></li>
+<li class='category'><a href='/blog/categories/database/'>database (2)</a></li>
+<li class='category'><a href='/blog/categories/hackathron/'>hackathron (1)</a></li>
+<li class='category'><a href='/blog/categories/high-performance/'>high_performance (1)</a></li>
+<li class='category'><a href='/blog/categories/html/'>html (5)</a></li>
+<li class='category'><a href='/blog/categories/machine-learning/'>machine_learning (6)</a></li>
+<li class='category'><a href='/blog/categories/matlab/'>matlab (2)</a></li>
+<li class='category'><a href='/blog/categories/mpi/'>mpi (2)</a></li>
+<li class='category'><a href='/blog/categories/other/'>other (4)</a></li>
+<li class='category'><a href='/blog/categories/php/'>php (4)</a></li>
+<li class='category'><a href='/blog/categories/python/'>python (3)</a></li>
+<li class='category'><a href='/blog/categories/software-testing/'>software_testing (2)</a></li>
+<li class='category'><a href='/blog/categories/vim/'>vim (1)</a></li>
+ 
+  </ul> 
+</section><section>
+<ul class="ds-recent-comments" data-num-items="10">
+</ul>
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"pbking1.duoshuo.com"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';
+ds.async = true;ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->
+</section>
+<section>
+  <h1>Tag Cloud</h1>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+22.142857142857142%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+15.714285714285714%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ec%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ec%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhackathron%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ehackathron%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhigh-performance%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ehigh_performance%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+15.714285714285714%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+13.571428571428571%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+17.857142857142858%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmpi%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Empi%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+7.142857142857142%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fphp%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Ephp%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Epython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+9.285714285714285%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+15.714285714285714%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EUML%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fvim%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Evim%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+</section>
+
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/pbking1">@pbking1</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'pbking1',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>visitor map</h1>
+  <!--获得代码添加到这-->
+  <script type="text/javascript" src="http://jj.revolvermaps.com/2/1.js?i=9p2gbjn49gr&amp;s=220&amp;m=7&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
+</section>
+  
+</aside>
+
+
+    </div>
+  </div>
+  <!-- <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - pb -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+
+
+</footer> -->
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'pbking1';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pbking1.github.com/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/';
+        var disqus_url = 'http://pbking1.github.com/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

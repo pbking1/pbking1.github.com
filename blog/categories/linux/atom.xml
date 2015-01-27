@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2014-12-28T18:04:30-05:00</updated>
+  <updated>2015-01-27T18:34:12-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -201,6 +201,26 @@ ylabel(&lsquo;number of the people&rsquo;)
 <li>using this command can get all the content in the subfile out of the wholefile</li>
 </ul>
 </li>
+</ul>
+
+
+<h3>if you want to separate one very long string</h3>
+
+<ul>
+<li>use &ldquo;\r&rdquo; to replace &ldquo;,&rdquo; not &ldquo;\n&rdquo; in vim</li>
+<li>or use
+
+<ul>
+<li><code>tr ", " "\n"</code></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>erase the empty line</h3>
+
+<ul>
+<li><code>sed 's/^*$//g' file</code></li>
 </ul>
 
 ]]></content>
