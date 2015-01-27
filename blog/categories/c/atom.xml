@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-01-27T18:34:12-05:00</updated>
+  <updated>2015-01-27T18:34:48-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<h3>new and delete</h3>
 
 <ul>
-<li><p>the way it allocate and release memory</p>
+<li>the way it allocate and release memory
 
 <ul>
 <li>the memory is allocate from <code>Free Store</code></li>
@@ -39,6 +39,13 @@
 <li>use constructor/destructor to initial/destory object</li>
 </ul>
 </li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
 <li><p>new 动态创建和释放数组或者单个对象</p>
 
 <ul>
