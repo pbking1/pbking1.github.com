@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-06T00:50:01-05:00</updated>
+  <updated>2015-02-06T00:50:58-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -396,7 +396,15 @@
 
 <h3>sample</h3>
 
-<h2>&ndash; makefile</h2>
+<ul>
+<li>makefile
+
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -413,51 +421,50 @@
 
 
 <ul>
-<li>index.cpp</li>
+<li><p>index.cpp</p></li>
+<li><p>&#8220;`</p>
+
+<p>   #include&lt;xapian.h>
+   #include<iostream>
+   #include<string>
+  using namespace std;
+   #define CONTENT &ldquo;70:69， I love you This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。&rdquo;
+   #define INDEX_PATH &ldquo;./index_data&rdquo;
+   #define WORD1 &ldquo;I love you&rdquo;
+   #define WORD2 &ldquo;ILU&rdquo;
+  int main(int argc, char *argv[]){
+  try{
+      //The text to be indexed
+      string content(CONTENT);</p>
+
+<pre><code>  //open a database and write
+  Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
+
+  //term generator
+  Xapian::TermGenerator indexer;
+
+  //add synonym
+  db.add_synonym(string(WORD1), string(WORD2));
+
+  //Make document
+  Xapian::Document doc;
+  doc.set_data(content);
+  indexer.set_document(doc);
+  indexer.index_text(content);
+
+  //add document to db
+  db.add_document(doc);
+
+  //flush to disk
+  db.commit();
+</code></pre>
+
+<p>  }catch(const Xapian::Error &amp;e){
+      cout&lt;&lt;e.get_description()&lt;&lt;endl;
+  }
+  return 0;}</p></li>
 </ul>
 
-
-<h2>&ndash; &#8220;`</h2>
-
-<pre><code> #include&lt;xapian.h&gt;
- #include&lt;iostream&gt;
- #include&lt;string&gt;
-using namespace std;
- #define CONTENT "70:69， I love you This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。"
- #define INDEX_PATH "./index_data"
- #define WORD1 "I love you"
- #define WORD2 "ILU"
-int main(int argc, char *argv[]){
-try{
-    //The text to be indexed
-    string content(CONTENT);
-
-    //open a database and write
-    Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
-
-    //term generator
-    Xapian::TermGenerator indexer;
-
-    //add synonym
-    db.add_synonym(string(WORD1), string(WORD2));
-
-    //Make document
-    Xapian::Document doc;
-    doc.set_data(content);
-    indexer.set_document(doc);
-    indexer.index_text(content);
-
-    //add document to db
-    db.add_document(doc);
-
-    //flush to disk
-    db.commit();
-
-}catch(const Xapian::Error &amp;e){
-    cout&lt;&lt;e.get_description()&lt;&lt;endl;
-}
-return 0;}
-</code></pre>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1289,7 +1296,7 @@ return 0;
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x75;&#115;&#101;&#114;&#x6e;&#97;&#x6d;&#x65;&#x40;&#109;&#97;&#x73;&#111;&#x6e;&#x2e;&#105;&#x6e;&#100;&#x69;&#x61;&#110;&#97;&#x2e;&#101;&#100;&#117;">&#117;&#115;&#x65;&#114;&#x6e;&#97;&#109;&#x65;&#64;&#x6d;&#x61;&#x73;&#111;&#110;&#x2e;&#105;&#x6e;&#x64;&#x69;&#97;&#x6e;&#x61;&#46;&#101;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#117;&#x73;&#101;&#x72;&#110;&#x61;&#x6d;&#101;&#x40;&#x6d;&#97;&#x73;&#x6f;&#x6e;&#x2e;&#105;&#110;&#100;&#105;&#x61;&#110;&#97;&#46;&#101;&#x64;&#117;">&#x75;&#x73;&#x65;&#x72;&#x6e;&#97;&#109;&#101;&#x40;&#109;&#x61;&#x73;&#111;&#x6e;&#46;&#105;&#110;&#x64;&#105;&#x61;&#110;&#97;&#x2e;&#101;&#x64;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
