@@ -9,7 +9,8 @@
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="中山大学校园VPN的使用方法 使用SSL VPN时，它不需安装配置客户端软件，就像平时上网一样，校园网用户在校外的网络（校内的网络不能使用）可通过浏览器登录： ">
+  <meta name="description" content="refer from http://blog.csdn.net/boyxiaolong/article/details/7062394
+http://blog.csdn.net/aladdina/article/details/4141127 What is KNN simlpy, a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -72,6 +73,125 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/knn-in-matlab-knnclassify/">KNN in Matlab(knnclassify)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T05:55:05-04:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/26/knn-in-matlab-knnclassify/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>refer from
+
+<ul>
+<li><a href="http://blog.csdn.net/boyxiaolong/article/details/7062394">http://blog.csdn.net/boyxiaolong/article/details/7062394</a></li>
+<li><a href="http://blog.csdn.net/aladdina/article/details/4141127">http://blog.csdn.net/aladdina/article/details/4141127</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>What is KNN</h3>
+
+<ul>
+<li>simlpy, a method use to classify or regression</li>
+<li>idea
+
+<ul>
+<li>如果一个样本在特征空间中的k个最相 似(即特征空间中最邻近)的样本中的大多数属于某一个类别，则该样本也属于这个类别。</li>
+</ul>
+</li>
+<li>KNN算法不仅可以用于分类，还可以用于回归。通过找出一个样本的k个最近邻居，将这些邻居的属性的平均值赋给该样本，就可以得到该样本的属性。更有用的方法是将不同距离的邻居对该样本产生的影响给予不同的权值(weight)，如权值与距离成正比。</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/26/knn-in-matlab-knnclassify/">Read more</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/26/quick-black-box-testing-on-app/">Quick Black Box Testing on App</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-26T02:39:28-04:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/26/quick-black-box-testing-on-app/#disqus_thread"
+             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/26/quick-black-box-testing-on-app/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>some quick black box testing tools</h3>
+
+<ul>
+<li>calabash</li>
+<li>appium</li>
+<li>appgrader</li>
+<li>monkey(adb 自带)</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/26/quick-black-box-testing-on-app/">Read more</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -327,131 +447,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/20/use-cocoapods-to-management-dependence-in-xcode5/">Use CocoaPods to Management Dependence in Xcode5</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-20T08:05:22-04:00" pubdate data-updated="true">May 20<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/20/use-cocoapods-to-management-dependence-in-xcode5/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/20/use-cocoapods-to-management-dependence-in-xcode5/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>What is CocoaPods?</h3>
-
-<ul>
-<li>CocoaPods is a tools used to management the Third party code in IOS project</li>
-</ul>
-
-
-<h3>How to install it?</h3>
-
-<ul>
-<li>use the ruby gem to install
-
-<ul>
-<li><code>sudo gem install cocoapods</code></li>
-<li>and the ruby should be above ruby 2.0</li>
-<li><code>pod setup</code>
-
-<ul>
-<li>this step is download the info in the ~/.cocoapods</li>
-<li>and you can use <code>du -sh *</code> to see how it process</li>
-</ul>
-</li>
-<li>if the gem is too old
-
-<ul>
-<li>use <code>sudo gem update --system</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/20/use-cocoapods-to-management-dependence-in-xcode5/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/20/build-a-xib-program-in-xcode5/">Build a Xib Program in Xcode5</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-20T07:45:48-04:00" pubdate data-updated="true">May 20<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/20/build-a-xib-program-in-xcode5/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/20/build-a-xib-program-in-xcode5/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>由于xcode5里面默认使用了storyboard这种视图控制器，因此有以下的解决方案
-
-<ul>
-<li>1.新建工程&mdash;ios&mdash;-Application&mdash;-Single View Application</li>
-<li>2.将自动生成的Main.storyboard,ViewController.h,ViewController.m这三个文件彻底删除</li>
-<li>3.在项目设置里面,将MainInterface这一项中的内容删除置为空</li>
-<li>4.新建一个类,继承UIViewController,并且选中WithXIB for user interface.并且把内存计数器改为MRC.(改成MRC的方法就是再build setting里面找automatic, 然后把Object-C Automatic Reference Counting改成NO)
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/20/build-a-xib-program-in-xcode5/">Read more</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
@@ -468,6 +463,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/02/05/public-speech-note/">Public Speech Note</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/05/xapian-tutorial-2/">Xapian_tutorial_2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/02/05/xapian-tutorial-1/">Xapian_tutorial_1</a>
       </li>
     
@@ -477,14 +480,6 @@
     
       <li class="post">
         <a href="/blog/2014/11/21/vi-regular-expression-1/">Vi Regular Expression and Data Processing(1)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/05/iupui-mason-high-performance-mass/">Iupui Mason High Performance Mass</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/">How to Install Python Package on Redhat Without Root Access</a>
       </li>
     
   </ul>
@@ -506,7 +501,7 @@
 <li class='category'><a href='/blog/categories/system-analyze-and-design/'>System_analyze_and_design (5)</a></li>
 <li class='category'><a href='/blog/categories/uml/'>UML (2)</a></li>
 <li class='category'><a href='/blog/categories/c/'>c (2)</a></li>
-<li class='category'><a href='/blog/categories/c-/'>c++ (2)</a></li>
+<li class='category'><a href='/blog/categories/c-/'>c++ (3)</a></li>
 <li class='category'><a href='/blog/categories/database/'>database (2)</a></li>
 <li class='category'><a href='/blog/categories/hackathron/'>hackathron (1)</a></li>
 <li class='category'><a href='/blog/categories/high-performance/'>high_performance (1)</a></li>
@@ -514,10 +509,10 @@
 <li class='category'><a href='/blog/categories/machine-learning/'>machine_learning (6)</a></li>
 <li class='category'><a href='/blog/categories/matlab/'>matlab (2)</a></li>
 <li class='category'><a href='/blog/categories/mpi/'>mpi (2)</a></li>
-<li class='category'><a href='/blog/categories/other/'>other (4)</a></li>
+<li class='category'><a href='/blog/categories/other/'>other (5)</a></li>
 <li class='category'><a href='/blog/categories/php/'>php (4)</a></li>
 <li class='category'><a href='/blog/categories/python/'>python (3)</a></li>
-<li class='category'><a href='/blog/categories/search-engine/'>search_engine (1)</a></li>
+<li class='category'><a href='/blog/categories/search-engine/'>search_engine (2)</a></li>
 <li class='category'><a href='/blog/categories/software-testing/'>software_testing (2)</a></li>
 <li class='category'><a href='/blog/categories/vim/'>vim (1)</a></li>
  
@@ -540,7 +535,7 @@ ds.charset = 'UTF-8';
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+22.142857142857142%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+15.714285714285714%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ec%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ec%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhackathron%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ehackathron%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhigh-performance%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ehigh_performance%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+15.714285714285714%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+13.571428571428571%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+17.857142857142858%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmpi%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Empi%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+7.142857142857142%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fphp%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Ephp%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Epython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+9.285714285714285%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsearch-engine%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Esearch_engine%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+15.714285714285714%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EUML%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fvim%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Evim%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+22.142857142857142%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+15.714285714285714%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ec%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Ec%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhackathron%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ehackathron%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhigh-performance%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ehigh_performance%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+15.714285714285714%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+13.571428571428571%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+17.857142857142858%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmpi%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Empi%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+7.142857142857142%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+15.714285714285714%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fphp%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Ephp%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Epython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+9.285714285714285%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsearch-engine%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esearch_engine%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+15.714285714285714%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EUML%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fvim%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Evim%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 

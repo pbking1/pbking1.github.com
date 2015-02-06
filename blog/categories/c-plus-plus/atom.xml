@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-05T19:40:17-05:00</updated>
+  <updated>2015-02-06T00:25:22-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Xapian_tutorial_2]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-2/"/>
+    <updated>2015-02-05T19:54:20-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-2</id>
+    <content type="html"><![CDATA[<h3>The expand of synonym(同义词)</h3>
+
+<ul>
+<li>such as ‘I love you‘ and &lsquo;ILU&rsquo;</li>
+<li>process to do this
+
+<ul>
+<li>Write the synonym into database
+
+<ul>
+<li>use <code>WriteDatabase::add_synonym(term,synonym)</code></li>
+<li>but we can only do &lsquo;I love you&rsquo; &ndash;> &lsquo;ILU&rsquo;
+
+<ul>
+<li>if we want to reverse it, we need to add the reverse version</li>
+</ul>
+</li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Xapian_tutorial_1]]></title>
