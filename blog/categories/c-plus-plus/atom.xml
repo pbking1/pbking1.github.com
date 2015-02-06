@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-05T19:39:33-05:00</updated>
+  <updated>2015-02-05T19:40:17-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -29,6 +29,9 @@
 <li>first of all, xapian is an open source c++ search engine.</li>
 <li>also note that xapian is called &ldquo;Zap-in&rdquo;</li>
 </ul>
+
+
+<!--more-->
 
 
 <h4>basic data structure</h4>

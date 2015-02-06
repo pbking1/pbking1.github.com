@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-05T19:39:33-05:00</updated>
+  <updated>2015-02-05T19:40:17-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -29,6 +29,9 @@
 <li>first of all, xapian is an open source c++ search engine.</li>
 <li>also note that xapian is called &ldquo;Zap-in&rdquo;</li>
 </ul>
+
+
+<!--more-->
 
 
 <h4>basic data structure</h4>
@@ -786,7 +789,7 @@ return 0;
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#x75;&#x73;&#101;&#x72;&#x6e;&#x61;&#109;&#x65;&#64;&#109;&#x61;&#115;&#111;&#x6e;&#x2e;&#x69;&#x6e;&#x64;&#x69;&#x61;&#x6e;&#97;&#46;&#x65;&#100;&#117;">&#117;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#109;&#x61;&#x73;&#x6f;&#x6e;&#x2e;&#x69;&#x6e;&#x64;&#105;&#x61;&#110;&#x61;&#46;&#x65;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#x75;&#x73;&#101;&#x72;&#110;&#97;&#x6d;&#101;&#64;&#109;&#x61;&#115;&#111;&#x6e;&#x2e;&#105;&#110;&#x64;&#x69;&#x61;&#x6e;&#97;&#46;&#101;&#100;&#117;">&#117;&#115;&#101;&#x72;&#110;&#x61;&#109;&#x65;&#64;&#109;&#x61;&#115;&#111;&#x6e;&#46;&#105;&#x6e;&#100;&#x69;&#97;&#110;&#x61;&#46;&#x65;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
