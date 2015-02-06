@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-06T00:26:10-05:00</updated>
+  <updated>2015-02-06T00:49:11-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -37,11 +37,135 @@
 </li>
 </ul>
 </li>
-<li></li>
 </ul>
 </li>
 </ul>
 
+
+<h3>use the synonym when query</h3>
+
+<ul>
+<li>use <code>QueryParser::set_database()</code> to set db</li>
+<li>when using the <code>QueryParser::set_database()</code>, the second parameter use <code>FLAG_SYNONYM</code> or <code>FLAG_AUTO_SYNONYMS</code></li>
+<li><code>FLAG_SYNONYM</code> is the ~WORD format in the query sentence. expend the synonym of the word automatically</li>
+<li><code>FLAG_AUTO_SYNONYMS</code> is expend all the phrase, do not need to write ~</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>sample</h3>
+
+<ul>
+<li>makefile</li>
+<li><p>```</p>
+
+<p>  all:
+      g++ -o index -I/usr/local/include -l xapian index.cpp
+      g++ -o query -I/usr/local/include -l xapian query.cpp
+  clean:
+      rm -rf index index_data/ query
+```</p></li>
+<li><p>index.cpp</p></li>
+</ul>
+
+
+<h2>&ndash; ```</h2>
+
+<pre><code> #include&lt;xapian.h&gt;
+ #include&lt;iostream&gt;
+ #include&lt;string&gt;
+using namespace std;
+ #define CONTENT "70:69， I love you This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。"
+ #define INDEX_PATH "./index_data"
+ #define WORD1 "I love you"
+ #define WORD2 "ILU"
+int main(int argc, char *argv[]){
+try{
+    //The text to be indexed
+    string content(CONTENT);
+
+    //open a database and write
+    Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
+
+    //term generator
+    Xapian::TermGenerator indexer;
+
+    //add synonym
+    db.add_synonym(string(WORD1), string(WORD2));
+
+    //Make document
+    Xapian::Document doc;
+    doc.set_data(content);
+    indexer.set_document(doc);
+    indexer.index_text(content);
+
+    //add document to db
+    db.add_document(doc);
+
+    //flush to disk
+    db.commit();
+
+}catch(const Xapian::Error &amp;e){
+    cout&lt;&lt;e.get_description()&lt;&lt;endl;
+}
+return 0;}
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>query.cpp</li>
+</ul>
+
+
+<p>```</p>
+
+<pre><code> #include&lt;xapian.h&gt;
+ #include&lt;iostream&gt;
+ #include&lt;string&gt;
+using namespace std;
+ #define QUERY "~ILU AND Chinese"
+ #define INDEX_PATH "./index_data"
+ #define F_DOCID 1
+int main(){
+
+try{
+    //The string for query
+    string query_str(QUERY);
+    //open the database
+    Xapian::Database db(string(INDEX_PATH));
+
+    //open search handle
+    Xapian::Enquire enquire(db);
+
+    //Parser Query
+    Xapian::QueryParser qp;
+    qp.set_database(db);
+    Xapian::Query query = qp.parse_query(query_str, Xapian::QueryParser::FLAG_SYNONYM);
+    cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
+
+    //find the top 10 result
+    enquire.set_query(query);
+    Xapian::MSet result = enquire.get_mset(0,10);
+    cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
+
+    //print the result
+    for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
+        Xapian::Document doc = iter.get_document();
+        cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
+    }
+
+}catch(const Xapian::Error e){
+    cout&lt;&lt;e.get_description()&lt;&lt;endl;
+}
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
 ]]></content>
   </entry>
   

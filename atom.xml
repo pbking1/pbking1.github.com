@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-06T00:26:10-05:00</updated>
+  <updated>2015-02-06T00:49:11-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -376,10 +376,212 @@
 </li>
 </ul>
 </li>
-<li></li>
 </ul>
 </li>
 </ul>
+
+
+<h3>use the synonym when query</h3>
+
+<ul>
+<li>use <code>QueryParser::set_database()</code> to set db</li>
+<li>when using the <code>QueryParser::set_database()</code>, the second parameter use <code>FLAG_SYNONYM</code> or <code>FLAG_AUTO_SYNONYMS</code></li>
+<li><code>FLAG_SYNONYM</code> is the ~WORD format in the query sentence. expend the synonym of the word automatically</li>
+<li><code>FLAG_AUTO_SYNONYMS</code> is expend all the phrase, do not need to write ~</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>sample</h3>
+
+<ul>
+<li>makefile</li>
+<li><p>&#8220;`</p>
+
+<p>  all:
+      g++ -o index -I/usr/local/include -l xapian index.cpp
+      g++ -o query -I/usr/local/include -l xapian query.cpp
+  clean:
+      rm -rf index index_data/ query</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>- index.cpp
+</span><span class='line'>
+</span><span class='line'>- ```
+</span><span class='line'>-  
+</span><span class='line'>     #include&lt;xapian.h&gt;
+</span><span class='line'>     #include&lt;iostream&gt;
+</span><span class='line'>     #include&lt;string&gt;
+</span><span class='line'>    using namespace std;
+</span><span class='line'>     #define CONTENT "70:69， I love you This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。"
+</span><span class='line'>     #define INDEX_PATH "./index_data"
+</span><span class='line'>     #define WORD1 "I love you"
+</span><span class='line'>     #define WORD2 "ILU"
+</span><span class='line'>    int main(int argc, char *argv[]){
+</span><span class='line'>  try{
+</span><span class='line'>      //The text to be indexed
+</span><span class='line'>      string content(CONTENT);
+</span><span class='line'>
+</span><span class='line'>      //open a database and write
+</span><span class='line'>      Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
+</span><span class='line'>      
+</span><span class='line'>      //term generator
+</span><span class='line'>      Xapian::TermGenerator indexer;
+</span><span class='line'>
+</span><span class='line'>      //add synonym
+</span><span class='line'>      db.add_synonym(string(WORD1), string(WORD2));
+</span><span class='line'>
+</span><span class='line'>      //Make document
+</span><span class='line'>      Xapian::Document doc;
+</span><span class='line'>      doc.set_data(content);
+</span><span class='line'>      indexer.set_document(doc);
+</span><span class='line'>      indexer.index_text(content);
+</span><span class='line'>
+</span><span class='line'>      //add document to db
+</span><span class='line'>      db.add_document(doc);
+</span><span class='line'>
+</span><span class='line'>      //flush to disk
+</span><span class='line'>      db.commit();
+</span><span class='line'>
+</span><span class='line'>  }catch(const Xapian::Error &e){
+</span><span class='line'>      cout&lt;&lt;e.get_description()&lt;&lt;endl;
+</span><span class='line'>  }
+</span><span class='line'>  return 0;}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>query.cpp</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> #include&lt;xapian.h&gt;
+</span><span class='line'> #include&lt;iostream&gt;
+</span><span class='line'> #include&lt;string&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'> #define QUERY "~ILU AND Chinese"
+</span><span class='line'> #define INDEX_PATH "./index_data"
+</span><span class='line'> #define F_DOCID 1
+</span><span class='line'>int main(){
+</span><span class='line'>  
+</span><span class='line'>try{
+</span><span class='line'>  //The string for query
+</span><span class='line'>  string query_str(QUERY);
+</span><span class='line'>  //open the database
+</span><span class='line'>  Xapian::Database db(string(INDEX_PATH));
+</span><span class='line'>  
+</span><span class='line'>  //open search handle
+</span><span class='line'>  Xapian::Enquire enquire(db);
+</span><span class='line'>
+</span><span class='line'>  //Parser Query
+</span><span class='line'>  Xapian::QueryParser qp;
+</span><span class='line'>  qp.set_database(db);
+</span><span class='line'>  Xapian::Query query = qp.parse_query(query_str, Xapian::QueryParser::FLAG_SYNONYM);
+</span><span class='line'>  cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
+</span><span class='line'>
+</span><span class='line'>  //find the top 10 result
+</span><span class='line'>  enquire.set_query(query);
+</span><span class='line'>  Xapian::MSet result = enquire.get_mset(0,10);
+</span><span class='line'>  cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
+</span><span class='line'>
+</span><span class='line'>  //print the result
+</span><span class='line'>  for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
+</span><span class='line'>      Xapian::Document doc = iter.get_document();
+</span><span class='line'>      cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'>}catch(const Xapian::Error e){
+</span><span class='line'>  cout&lt;&lt;e.get_description()&lt;&lt;endl;
+</span><span class='line'>}
+</span><span class='line'>return 0;
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>
@@ -1160,7 +1362,7 @@ return 0;
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#117;&#x73;&#101;&#x72;&#x6e;&#97;&#109;&#101;&#64;&#x6d;&#x61;&#x73;&#x6f;&#110;&#46;&#105;&#x6e;&#x64;&#x69;&#x61;&#110;&#97;&#x2e;&#x65;&#100;&#117;">&#x75;&#115;&#101;&#114;&#110;&#97;&#x6d;&#101;&#64;&#109;&#97;&#115;&#111;&#x6e;&#x2e;&#105;&#110;&#x64;&#105;&#x61;&#x6e;&#97;&#46;&#101;&#x64;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x75;&#115;&#x65;&#x72;&#x6e;&#x61;&#109;&#101;&#x40;&#x6d;&#97;&#115;&#111;&#x6e;&#x2e;&#x69;&#110;&#x64;&#x69;&#97;&#110;&#97;&#46;&#101;&#100;&#x75;">&#117;&#115;&#x65;&#114;&#110;&#97;&#109;&#x65;&#x40;&#109;&#97;&#115;&#111;&#x6e;&#x2e;&#105;&#x6e;&#x64;&#x69;&#97;&#x6e;&#x61;&#46;&#101;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
