@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Search_engine | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/search-engine/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-06T00:49:11-05:00</updated>
+  <updated>2015-02-06T00:50:01-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -57,17 +57,21 @@
 
 <h3>sample</h3>
 
-<ul>
-<li>makefile</li>
-<li><p>```</p>
+<h2>&ndash; makefile</h2>
 
-<p>  all:
-      g++ -o index -I/usr/local/include -l xapian index.cpp
-      g++ -o query -I/usr/local/include -l xapian query.cpp
-  clean:
-      rm -rf index index_data/ query
-```</p></li>
-<li><p>index.cpp</p></li>
+<p>```</p>
+
+<pre><code>all:
+    g++ -o index -I/usr/local/include -l xapian index.cpp
+    g++ -o query -I/usr/local/include -l xapian query.cpp
+clean:
+    rm -rf index index_data/ query
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>index.cpp</li>
 </ul>
 
 
