@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-01-27T18:34:48-05:00</updated>
+  <updated>2015-02-05T19:39:33-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,342 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Xapian_tutorial_1]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-1/"/>
+    <updated>2015-02-05T16:40:48-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-1</id>
+    <content type="html"><![CDATA[<ul>
+<li>note:some of the content and code are refer from <a href="http://www.coder4.com/archives/2218">http://www.coder4.com/archives/2218</a></li>
+</ul>
+
+
+<h3>basic index build and search</h3>
+
+<ul>
+<li>first of all, xapian is an open source c++ search engine.</li>
+<li>also note that xapian is called &ldquo;Zap-in&rdquo;</li>
+</ul>
+
+
+<h4>basic data structure</h4>
+
+<ul>
+<li>used for search
+
+<ul>
+<li><code>Xapian::Database</code>
+
+<ul>
+<li>used to read index</li>
+</ul>
+</li>
+<li><code>Xapian::Enquire</code>
+
+<ul>
+<li>use with Database</li>
+<li>use to search</li>
+</ul>
+</li>
+<li><code>Xapian::QueryParser</code>
+
+<ul>
+<li>query sentence parser</li>
+</ul>
+</li>
+<li><code>Xapian::Query</code>
+
+<ul>
+<li>query</li>
+</ul>
+</li>
+<li><code>Xapian::MSet</code>
+
+<ul>
+<li>the result set returned by searching</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>used for build index
+
+<ul>
+<li><code>Xapian::WritableDatabase</code>
+
+<ul>
+<li>use for built index</li>
+</ul>
+</li>
+<li><code>Xapian::TermGenerator</code>
+
+<ul>
+<li>use for cut sentence, build index.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>for both
+
+<ul>
+<li><code>Xapian::Document</code>
+
+<ul>
+<li>abstract of document</li>
+</ul>
+</li>
+<li> <code>Xapian::SimpleStopper</code>
+
+<ul>
+<li> the word used for ending</li>
+</ul>
+</li>
+<li> <code>Xapian::Error</code>
+
+<ul>
+<li> exception</li>
+<li> use get_description() to get detailed info.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>how to build index</h4>
+
+<ul>
+<li>open a <code>Xapian::WritableDatabase</code></li>
+<li>Then prepare for the document
+
+<ul>
+<li>use <code>set_data(string)</code> to set data(only one)</li>
+<li>use <code>add_value(slot, string)</code> to set field(can have more), slot can not be -1</li>
+<li>these two method is only used for storage
+
+<ul>
+<li>not used for parse or index</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>build index field
+
+<ul>
+<li>use <code>Document.add_term(word, pos)</code></li>
+<li>use <code>Xapian::TermGenerator</code> and <code>.set_document(doc)</code>
+
+<ul>
+<li>then pass the string using delimiter space into index_text</li>
+<li>then the doc will have the index field of this document</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>after building the document, import into database</li>
+<li>use DB.commit()</li>
+</ul>
+
+
+<h4>how to query</h4>
+
+<ul>
+<li>open <code>Xapian::Database</code>, the path is the same as WriteableDatabase</li>
+<li>use DB to construct <code>Xapian::Enquire</code></li>
+<li>use <code>Xapian::QueryParser</code> to parse the string and generate <code>Xapian::Query</code></li>
+<li>use <code>enquire.set_query()</code> to query</li>
+<li>get the result set by using <code>enquire.get_mset(start, len)</code>.</li>
+<li>use <code>Xapian::MsetIterator</code> to traverse the MSet.
+
+<ul>
+<li>use <code>get_rank()</code> to get the rank</li>
+<li>use <code>get_document</code> to get the document</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>query grammer</h4>
+
+<ul>
+<li><code>Term | Term | Term</code></li>
+<li><code>Term -&gt; Term ~ Term</code>
+
+<ul>
+<li><code>~</code> is used for similar word</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>About field</h4>
+
+<ul>
+<li>When building index
+
+<ul>
+<li>use <code>Xapian::TermGenerator</code> for example
+
+<ul>
+<li>we need to set the <code>TermGenerator.set_database(db)</code></li>
+<li>when building the index field
+
+<ul>
+<li><code>index_text(text, wdf_inc=1, prefix)</code>
+
+<ul>
+<li>The second and third parameter are default</li>
+<li>The second is TF increase</li>
+<li>The third is prefix</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When query
+
+<ul>
+<li>add mapping using <code>Xapian::QueryParser</code></li>
+<li><code>.add_prefix("title", "T")</code></li>
+<li>Then the <code>qp.parse_query</code> can have field when query the string</li>
+<li>for example
+
+<ul>
+<li>&lsquo;title:news AND content:basketball&rsquo;</li>
+<li>and now there are two field</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>sample code</h4>
+
+<ul>
+<li>create_index.cpp</li>
+</ul>
+
+
+<p> &#8220;`
+ #include&lt;xapian.h></p>
+
+<h1>include<iostream></h1>
+
+<h1>include<string></h1>
+
+<p>using namespace std;</p>
+
+<h1>define CONTENT &ldquo;70:69， This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。&rdquo;</h1>
+
+<h1>define TITLE &ldquo;This is a news&rdquo;</h1>
+
+<h1>define INDEX_PATH &ldquo;./index_data&rdquo;</h1>
+
+<h1>define F_DOCID 1</h1>
+
+<p>int main(int argc, char *argv[]){</p>
+
+<pre><code>try{
+    //The text to be indexed
+    string content(CONTENT);
+    string title(TITLE);
+
+    //open a database and write
+    Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
+
+    //term generator
+    Xapian::TermGenerator indexer;
+
+    //Make document
+    Xapian::Document doc;
+    doc.add_value(F_DOCID, string("1104"));
+    doc.set_data(content);
+    indexer.set_document(doc);
+    indexer.index_text(title, 1, "T");
+    indexer.index_text(content, 1, "C");
+
+    //add document to db
+    db.add_document(doc);
+
+    //flush to disk
+    db.commit();
+
+}catch(const Xapian::Error &amp;e){
+    cout&lt;&lt;e.get_description()&lt;&lt;endl;
+}
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<p> &#8220;`</p>
+
+<ul>
+<li>search.cpp</li>
+</ul>
+
+
+<p> &#8220;`</p>
+
+<h1>include&lt;xapian.h></h1>
+
+<h1>include<iostream></h1>
+
+<h1>include<string></h1>
+
+<p>using namespace std;</p>
+
+<h1>define QUERY &ldquo;title:news AND content:70&rdquo;</h1>
+
+<h1>define INDEX_PATH &ldquo;./index_data&rdquo;</h1>
+
+<h1>define F_DOCID 1</h1>
+
+<p>int main(){</p>
+
+<pre><code>try{
+    //The string for query
+    string query_str(QUERY);
+
+    //open the database
+    Xapian::Database db(string(INDEX_PATH));
+
+    //open search handle
+    Xapian::Enquire enquire(db);
+
+    //Parser Query
+    Xapian::QueryParser qp;
+    qp.add_prefix("title", "T");
+    qp.add_prefix("content", "C");
+    Xapian::Query query = qp.parse_query(query_str);
+    cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
+
+    //find the top 10 result
+    enquire.set_query(query);
+    Xapian::MSet result = enquire.get_mset(0,10);
+    cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
+
+    //print the result
+    for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
+        Xapian::Document doc = iter.get_document();
+        cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
+    }
+
+}catch(const Xapian::Error e){
+    cout&lt;&lt;e.get_description()&lt;&lt;endl;
+}
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<p> &#8220;`</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Difference Between Malloc and New in C++]]></title>
@@ -450,7 +786,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#117;&#x73;&#x65;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#x6d;&#x61;&#x73;&#111;&#110;&#x2e;&#105;&#x6e;&#100;&#105;&#97;&#110;&#x61;&#46;&#101;&#100;&#x75;">&#117;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#109;&#97;&#115;&#x6f;&#x6e;&#x2e;&#105;&#x6e;&#x64;&#105;&#97;&#x6e;&#x61;&#46;&#x65;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#x75;&#x73;&#101;&#x72;&#x6e;&#x61;&#109;&#x65;&#64;&#109;&#x61;&#115;&#111;&#x6e;&#x2e;&#x69;&#x6e;&#x64;&#x69;&#x61;&#x6e;&#97;&#46;&#x65;&#100;&#117;">&#117;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#109;&#x61;&#x73;&#x6f;&#x6e;&#x2e;&#x69;&#x6e;&#x64;&#105;&#x61;&#110;&#x61;&#46;&#x65;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
@@ -3076,273 +3412,6 @@ re.split(r'[\+\*\-]', '1+2-3*5')
 <li>也就是具体措施</li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[UML Final Exam Note]]></title>
-    <link href="http://pbking1.github.com/blog/2014/06/11/the-note-of-the-uml-final-exam/"/>
-    <updated>2014-06-11T02:45:34-04:00</updated>
-    <id>http://pbking1.github.com/blog/2014/06/11/the-note-of-the-uml-final-exam</id>
-    <content type="html"><![CDATA[<h3>UML final exam note</h3>
-
-<ul>
-<li>3个小时</li>
-</ul>
-
-
-<h4>选择题</h4>
-
-<ul>
-<li>10个选择，一题2分</li>
-<li>去看下up（书上第二章）。</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>画图题</h4>
-
-<ul>
-<li>考试的时候把图导出来，贴到word里面</li>
-<li>除了组件图</li>
-<li>剩下的每个图18分钟</li>
-<li><p>1.用例图</p>
-
-<ul>
-<li>给一个中文文档</li>
-<li>用例是什么？
-
-<ul>
-<li>text，interaction（system和Actor）</li>
-<li>fill goal(一切围绕)</li>
-<li>用一个人，然后一个系统的服务来满足一个goal</li>
-<li>有可能服务和goal名字一样</li>
-<li>像数据库叫后台参与者</li>
-<li>像银行那些叫支持性参与者</li>
-<li>文档从头到尾只有一个人
-
-<ul>
-<li>有的时候可能有一个actress</li>
-</ul>
-</li>
-<li>goal一定是动词或者动名词，来表达实现goal。
-
-<ul>
-<li>通常在开始或者结束</li>
-</ul>
-</li>
-<li><p>看段落就好了，不用研究细节</p></li>
-<li><p>0分</p>
-
-<ul>
-<li>用例图里面出现主菜单，什么什么界面，什么什么功能（功能倾向）</li>
-<li>有操作流程倾向（不要画得有顺序）</li>
-<li>只要出现就完蛋</li>
-<li>没框（boundry）扣一分
-
-<ul>
-<li>画了框没写名字扣一分</li>
-<li>定范围</li>
-</ul>
-</li>
-<li>Actor主要参与者一定画在图的左边
-
-<ul>
-<li>画了管理员扣一分</li>
-</ul>
-</li>
-<li>goal写在框里面也就是椭圆里面的东西
-
-<ul>
-<li>一定要有extend或者include</li>
-<li>一定要是虚线，实线就会被扣分</li>
-<li>箭头方向一定要是正确的，extend指向goal，include相反</li>
-<li>主要的节点有两个至三个include或者extend</li>
-<li>名字要是动词，不能是名词Actor和用例相连的图，一定要用没有箭头的实线相连</li>
-<li>外部子系统一定要画出来</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>2.活动图</p>
-
-<ul>
-<li>考一个用例的活动图</li>
-<li>一定有一个用例在里面</li>
-<li>表示控制权的转移</li>
-<li>准则
-
-<ul>
-<li>老板准则
-
-<ul>
-<li>如果画了登陆（扣1分）</li>
-</ul>
-</li>
-<li>基本应用过程准则
-
-<ul>
-<li>东西不能太大</li>
-<li>把东西说详细</li>
-</ul>
-</li>
-<li>size
-
-<ul>
-<li>规模不能太大</li>
-<li>单操作的东西不要画</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>每个用例一定都能找到一个UI</li>
-<li>不能include，不然就违背了size准则</li>
-<li>简化的写就好了</li>
-<li>还有一种多泳道的图
-
-<ul>
-<li>考试不考</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>3.状态图
-
-<ul>
-<li>其实把状态计画好了就行了</li>
-<li>定义状态
-
-<ul>
-<li>把步骤写出来就好了</li>
-<li>基本上不用太在意细节</li>
-</ul>
-</li>
-<li>状态图是时间的生命周期</li>
-<li>条件的变迁采用guard</li>
-<li>考试
-
-<ul>
-<li>一定要找到guard</li>
-<li>怎么起名？
-
-<ul>
-<li>不能说“按continue”，而要说“选房间”</li>
-<li>要说用户做的外部事件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>4.领域模型（概念类图）</p>
-
-<ul>
-<li>识别一个用例里面的名词</li>
-<li>太多动词或者太多线，就0分</li>
-<li>一定要找概念（抽象出类）</li>
-<li>通常Actor不要画在属性里面</li>
-<li>扣分点
-
-<ul>
-<li>如果写了button，则扣分</li>
-<li>如果出现database，扣分</li>
-<li>在一个领域模型里面，这两个东西首要不要出现</li>
-<li>命名必须是名词，不能使动词，用了就完蛋</li>
-<li>属性给一些重要的就可以了，不要画一个图全部都没有属性的</li>
-<li>不要在属性里面写操作！</li>
-<li>关联
-
-<ul>
-<li>如果关联出现箭头而不是直线</li>
-<li>则扣分</li>
-<li>箭头一般都是include，所以不要画箭头</li>
-<li>关联上一定要有名字（包含contain）</li>
-<li>记得写多重性</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>在一段文档中经常出现的名词，一定要挑出来</li>
-<li>抽象出的类不能出现复数或者抽象数据类型</li>
-<li>描述类就赶紧加上</li>
-<li>写在框里面的名词不能无中生有</li>
-</ul>
-</li>
-<li><p>5.顺序图</p>
-
-<ul>
-<li>要用（BCE规则）画</li>
-<li>用来表达一个场景的人机交互的事件的序列</li>
-<li>一般是表达主场景和频繁出现的</li>
-<li>考试考主场景
-
-<ul>
-<li>用户达成目标的最便捷的方式</li>
-<li>或者最期望的方式</li>
-<li>主场景没有if条件</li>
-<li>既然是系统顺序图，第一个对象一定是system，不然就0分</li>
-<li>要加“：”
-
-<ul>
-<li>表示对象</li>
-</ul>
-</li>
-<li>在User后面的那个就是”:System”</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>6.包图</p>
-
-<ul>
-<li>比较容易，也比较简洁</li>
-<li>使用MVC，来构建城市模型（考题）</li>
-<li>然后把需要的类和控制器填到三个package里面</li>
-<li>把界面放在视图层</li>
-</ul>
-</li>
-<li><p>7.交互图</p>
-
-<ul>
-<li>注意起名字</li>
-<li>和顺序图内容差不多</li>
-<li>和包图里面的MVC的三个包内容一致
-
-<ul>
-<li>比如view就要再包图的view包里面</li>
-</ul>
-</li>
-<li>去官网看一下老师发给教程
-
-<ul>
-<li>讲的比较详细</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>8.设计类图</p>
-
-<ul>
-<li>把控制器和实体类画进去</li>
-<li>除了控制器之外，其他的东西和领域模型里面是一样的</li>
-<li>属性的关联一定要实现</li>
-</ul>
-</li>
-<li><p>9.部署图（附加题）</p>
-
-<ul>
-<li>差不多的</li>
-<li>部署条件是告诉你的</li>
 </ul>
 </li>
 </ul>
