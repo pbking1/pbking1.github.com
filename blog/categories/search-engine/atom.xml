@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Search_engine | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/search-engine/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-06T02:42:58-05:00</updated>
+  <updated>2015-02-08T18:56:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,97 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Xapian_tutorial_3]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/06/xapian-tutorial-3/"/>
+    <updated>2015-02-06T02:50:50-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/02/06/xapian-tutorial-3</id>
+    <content type="html"><![CDATA[<h4>filter</h4>
+
+<ul>
+<li>There is a <code>faceted Search</code>, which is to preview the result of the query in many category.
+
+<ul>
+<li>like if we search for &lsquo;apple&rsquo;
+
+<ul>
+<li>the result may be classified into two
+
+<ul>
+<li>one is apple fruit</li>
+<li>one is apple company</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>actually, this is a filter.
+
+<ul>
+<li>we can classify before index, and store into index</li>
+<li>and use value to filter them when query</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>how to build filter value</h4>
+
+<ul>
+<li>use <code>Document::add_value</code></li>
+</ul>
+
+
+<h4>how to use filter when query</h4>
+
+<ul>
+<li>two ways
+
+<ul>
+<li>one is use <code>Xapian::MatchDecider</code>, this return a bool value.
+
+<ul>
+<li>or we can use <code>Xapian::ValueSetMatchDecider</code>
+
+<ul>
+<li><code>Xapian::ValueSetMatchDecider(slot, inclusive)</code>
+
+<ul>
+<li>slot means which slot to filter</li>
+<li>inclusive means using filter or reduce</li>
+</ul>
+</li>
+<li>use <code>Xapian::ValueSetMatchDecider::add_value(string)</code>
+
+<ul>
+<li>user can decide one or many set of value
+
+<ul>
+<li>when document belong to one of these value
+
+<ul>
+<li>make it filter or stay</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>use <code>MatchSpy</code></li>
+</ul>
+</li>
+</ul>
+
+
+<h4>sample</h4>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Xapian_tutorial_2]]></title>
@@ -72,12 +163,11 @@
       rm -rf index index_data/ query
 ```</p></li>
 <li><p>index.cpp</p></li>
-<li><p>```</p>
-
-<p>   #include&lt;xapian.h>
+<li><p>```
+   #include&lt;xapian.h>
    #include<iostream>
    #include<string>
-  using namespace std;
+   using namespace std;
    #define CONTENT &ldquo;70:69， I love you This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。&rdquo;
    #define INDEX_PATH &ldquo;./index_data&rdquo;
    #define WORD1 &ldquo;I love you&rdquo;

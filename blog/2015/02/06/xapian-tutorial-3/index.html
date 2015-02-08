@@ -5,17 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Database_and_backend_injection - KING</title>
+  <title>Xapian_tutorial_3 - KING</title>
   <meta name="author" content="pb">
 
   
-  <meta name="description" content="database ER diagram some change in the database relationship we have T_ADMIN
-T_USER
-T_USER_CLASS
-T_PROJECT
-T_PRO_LEVEL
-T_PROJECT_STATISTICS
-T_TASK &hellip;">
+  <meta name="description" content="filter There is a faceted Search, which is to preview the result of the query in many category. like if we search for &lsquo;apple&rsquo; the result &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +18,7 @@ T_TASK &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pbking1.github.com/blog/2014/10/23/database-and-backend-injection">
+  <link rel="canonical" href="http://pbking1.github.com/blog/2015/02/06/xapian-tutorial-3">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
@@ -81,7 +75,7 @@ T_TASK &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Database_and_backend_injection</h1>
+      <h1 class="entry-title">Xapian_tutorial_3</h1>
     
     
       <p class="meta">
@@ -97,7 +91,7 @@ T_TASK &hellip;">
   
 
 
-<time datetime="2014-10-23T09:13:16-04:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2014</time>
+<time datetime="2015-02-06T02:50:50-05:00" pubdate data-updated="true">Feb 6<span>th</span>, 2015</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://pbking1.github.com">Comments</a>
@@ -107,67 +101,89 @@ T_TASK &hellip;">
   </header>
 
 
-<div class="entry-content"><h3>database ER diagram</h3>
+<div class="entry-content"><h4>filter</h4>
 
 <ul>
-<li><img src="/images/php_project/lab4_db.jpg"></li>
-<li>some change in the database <strong>relationship</strong></li>
-<li><img src="/images/php_project/database_lingma_structure.png" style="height: 300px; width: 300px"></li>
-<li>we have
+<li>There is a <code>faceted Search</code>, which is to preview the result of the query in many category.
 
 <ul>
-<li>T_ADMIN</li>
-<li>T_USER</li>
-<li>T_USER_CLASS</li>
-<li>T_PROJECT</li>
-<li>T_PRO_LEVEL</li>
-<li>T_PROJECT_STATISTICS</li>
-<li>T_TASK</li>
-<li>T_SUBTASK</li>
-<li>T_MATERIAL</li>
-<li>T_CUSTOMER</li>
+<li>like if we search for &lsquo;apple&rsquo;
+
+<ul>
+<li>the result may be classified into two
+
+<ul>
+<li>one is apple fruit</li>
+<li>one is apple company</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>actually, this is a filter.
+
+<ul>
+<li>we can classify before index, and store into index</li>
+<li>and use value to filter them when query</li>
 </ul>
 </li>
 </ul>
 
 
-<!--more-->
-
+<h4>how to build filter value</h4>
 
 <ul>
-<li><strong>Table structure</strong></li>
-<li><img src="/images/php_project/1.png"></li>
-<li><img src="/images/php_project/2.png"></li>
-<li><img src="/images/php_project/3.png"></li>
-<li><img src="/images/php_project/4.png"></li>
-<li><img src="/images/php_project/5.png"></li>
-<li><img src="/images/php_project/6.png"></li>
-<li><img src="/images/php_project/7.png"></li>
-<li><img src="/images/php_project/8.png"></li>
-<li><img src="/images/php_project/9.png"></li>
-<li><img src="/images/php_project/10.png">
-
-<h3>database insertion</h3></li>
-<li>database connection</li>
+<li>use <code>Document::add_value</code></li>
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$conn = mysql_connect("localhost","pengbin","pengbin");
-</span><span class='line'>mysql_select_db("pengbin_db", $conn);</span></code></pre></td></tr></table></div></figure>
-
+<h4>how to use filter when query</h4>
 
 <ul>
-<li>database insertion</li>
+<li>two ways
+
+<ul>
+<li>one is use <code>Xapian::MatchDecider</code>, this return a bool value.
+
+<ul>
+<li>or we can use <code>Xapian::ValueSetMatchDecider</code>
+
+<ul>
+<li><code>Xapian::ValueSetMatchDecider(slot, inclusive)</code>
+
+<ul>
+<li>slot means which slot to filter</li>
+<li>inclusive means using filter or reduce</li>
+</ul>
+</li>
+<li>use <code>Xapian::ValueSetMatchDecider::add_value(string)</code>
+
+<ul>
+<li>user can decide one or many set of value
+
+<ul>
+<li>when document belong to one of these value
+
+<ul>
+<li>make it filter or stay</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>use <code>MatchSpy</code></li>
+</ul>
+</li>
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$sql = "insert into T_CUSTOMER (CustomerName, CustomerAddress, Notes, Active) values ('$_POST[name]','$_POST[address]','$_POST[note]','$_POST[Active]')";
-</span><span class='line'>mysql_query($sql, $conn);</span></code></pre></td></tr></table></div></figure>
-
+<h4>sample</h4>
 </div>
 
 
@@ -190,12 +206,12 @@ T_TASK &hellip;">
   
 
 
-<time datetime="2014-10-23T09:13:16-04:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2014</time>
+<time datetime="2015-02-06T02:50:50-05:00" pubdate data-updated="true">Feb 6<span>th</span>, 2015</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/database/'>database</a>, <a class='category' href='/blog/categories/php/'>php</a>
+    <a class='category' href='/blog/categories/c-plus-plus/'>c++</a>, <a class='category' href='/blog/categories/search-engine/'>search_engine</a>
   
 </span>
 
@@ -211,10 +227,8 @@ T_TASK &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/10/03/python-regular-expression/" title="Previous Post: python regular expression">&laquo; python regular expression</a>
+        <a class="basic-alignment left" href="/blog/2015/02/05/public-speech-note/" title="Previous Post: public speech note">&laquo; public speech note</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/10/30/2014-indianapolis-redefined-hackathron/" title="Next Post: 2014_indianapolis_redefined_hackathron">2014_indianapolis_redefined_hackathron &raquo;</a>
       
     </p>
   </footer>
@@ -366,8 +380,8 @@ ds.charset = 'UTF-8';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/10/23/database-and-backend-injection/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/10/23/database-and-backend-injection/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2015/02/06/xapian-tutorial-3/';
+        var disqus_url = 'http://pbking1.github.com/blog/2015/02/06/xapian-tutorial-3/';
         var disqus_script = 'embed.js';
       
     (function () {
