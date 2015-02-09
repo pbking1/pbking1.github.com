@@ -100,6 +100,94 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/05/23/zst-internship-ios-code-step2/">
+		
+			Zst Internship IOS Code Step2</a>
+	</h2>
+	<div class="entry-content">
+		<h3>Here are the method added</h3>
+
+<ul>
+<li>I want to implement a button that used to went back to the main page if the user suddenly do not want to continue ordering the things
+
+<ul>
+<li>First
+
+<ul>
+<li>Go to Sections &ndash;> ButtonMacro.h
+
+<ul>
+<li>add <code>#define BACKTOMAINPAGE 13</code> at the end</li>
+</ul>
+</li>
+<li>then go to Sections &ndash;> Buttons &ndash;> CreateButtom.m
+
+<ul>
+<li>add the following code</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>else if (_type == BACKTOMAINPAGE) 
+</span><span class='line'>{
+</span><span class='line'>    self.frame = CGRectMake(50, 50, 40, 44);
+</span><span class='line'>    [self setTitle:@"返回主页" forState:UIControlStateNormal];
+</span><span class='line'>    [self setTitle:@"返回主页" forState:UIControlStateHighlighted];
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+		
+		<a href="/blog/2014/05/23/zst-internship-ios-code-step2/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-23T03:21:09-04:00" pubdate data-updated="true">May 23<span>rd</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/ios/'>IOS</a>, <a class='category' href='/blog/categories/internship/'>Internship</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/05/23/zst-internship-ios-code-step2//blog/page/7/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/05/22/zst-internship-ios-code-step1/">
 		
 			Zst Internship IOS Code Step1</a>
@@ -410,69 +498,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/05/19/perceptual-hash-algorithm-in-objective-c//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/05/14/2014-uc-interview-coding/">
-		
-			2014 UC Interview Coding</a>
-	</h2>
-	<div class="entry-content">
-		<ul>
-<li>有两套题，c++和java，我选了c++</li>
-<li>考了树的前序和中序遍历</li>
-<li>还有虚函数多态，继承</li>
-<li>考了指针引用和（数据类型和数据结构的size， 也就是占用的内存）</li>
-</ul>
-
-
-<h3>笔试题一</h3>
-
-<ul>
-<li>在不能用for和while的情况下，找到一串字符串中第一个只出现一次的字符（仅包含26个英文字母）
-
-<ul>
-<li>思路：用递归</li>
-</ul>
-</li>
-<li>源码：to be continued&hellip;.</li>
-</ul>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-14T11:30:19-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/interview/'>Interview</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/05/14/2014-uc-interview-coding//blog/page/7/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T19:44:52-05:00</updated>
+  <updated>2015-02-08T21:53:16-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Intro_to_microeconomic_1]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-1/"/>
+    <updated>2015-02-08T21:53:03-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-1</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[xapian_tutorial_3]]></title>
@@ -1526,7 +1535,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#x75;&#115;&#101;&#114;&#110;&#x61;&#109;&#x65;&#x40;&#109;&#x61;&#x73;&#x6f;&#110;&#x2e;&#x69;&#x6e;&#100;&#105;&#x61;&#x6e;&#97;&#46;&#x65;&#100;&#117;">&#x75;&#x73;&#101;&#114;&#x6e;&#x61;&#109;&#x65;&#x40;&#x6d;&#x61;&#115;&#111;&#110;&#46;&#105;&#x6e;&#x64;&#105;&#97;&#x6e;&#97;&#46;&#x65;&#x64;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#117;&#115;&#x65;&#x72;&#x6e;&#x61;&#109;&#101;&#x40;&#x6d;&#x61;&#115;&#111;&#110;&#x2e;&#105;&#110;&#x64;&#105;&#97;&#x6e;&#97;&#46;&#101;&#100;&#x75;">&#x75;&#115;&#101;&#114;&#110;&#97;&#109;&#x65;&#x40;&#x6d;&#97;&#115;&#x6f;&#110;&#x2e;&#x69;&#110;&#x64;&#x69;&#97;&#x6e;&#x61;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
@@ -3463,51 +3472,6 @@ re.split(r'[\+\*\-]', '1+2-3*5')
 </span><span class='line'>self.text1.layer.cornerRadius = 10;
 </span><span class='line'>[text1 setBackgroundColor:[UIColor whiteColor]];
 </span><span class='line'>[self.view addSubview:text1];</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IOS selector(jump to the other page)]]></title>
-    <link href="http://pbking1.github.com/blog/2014/06/24/ios-selector-jump-to-the-other-page/"/>
-    <updated>2014-06-24T23:02:32-04:00</updated>
-    <id>http://pbking1.github.com/blog/2014/06/24/ios-selector-jump-to-the-other-page</id>
-    <content type="html"><![CDATA[<h3>响应事件或者跳转</h3>
-
-<ul>
-<li>使用每个控件里面的action的selector</li>
-</ul>
-
-
-<!--more-->
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>UIBarButtonItem *leftbutton = [[UIBarButtonItem alloc] initWithTitle:@"cancel" style:UIBarButtonSystemItemDone target:self action:@selector(goBack)];</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>实现selector的跳转
-
-<ul>
-<li>定义要跳转到的页面的viewcontroller</li>
-<li>用presentModalViewController跳转</li>
-<li>用完记得释放资源</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>- (void)goBack{
-</span><span class='line'>    basicinfo *p1 = [[basicinfo alloc] init];
-</span><span class='line'>    [self presentModalViewController:p1 animated:YES];
-</span><span class='line'>    [p1 release];
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>
