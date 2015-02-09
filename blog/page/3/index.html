@@ -100,6 +100,264 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/">
+		
+			Difference Between Malloc and New in C++</a>
+	</h2>
+	<div class="entry-content">
+		<h3>new and delete</h3>
+
+<ul>
+<li>the way it allocate and release memory
+
+<ul>
+<li>the memory is allocate from <code>Free Store</code></li>
+<li>will return a fully typed pointer
+
+<ul>
+<li>if failed will not return NULL</li>
+</ul>
+</li>
+<li>the compiler will calculate the size</li>
+<li>reallocate is not handled intuitively, using copy constructor</li>
+<li>whether called malloc and delete can be user defined</li>
+<li>can add a new memory allocator to deal with low memory</li>
+<li>new and delete can be overwrite legally</li>
+<li>use constructor/destructor to initial/destory object</li>
+</ul>
+</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-27T15:30:52-05:00" pubdate data-updated="true">Jan 27<span>th</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/c/'>c</a>, <a class='category' href='/blog/categories/cplusplus/'>cplusplus</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/11/21/vi-regular-expression-1/">
+		
+			Vi Regular Expression and Data Processing(1)</a>
+	</h2>
+	<div class="entry-content">
+		<h3>data processing is very important before data mining</h3>
+
+<ul>
+<li>like if you are going to do some data mining in the linkedin public profile</li>
+<li>1.find out the number of the people that have
+
+<pre><code> - education
+ - experience
+ - skills
+ - have all
+</code></pre></li>
+<li>2.find out all the skills and list the number of user who own them in a diagram</li>
+<li>3.find out all the company number</li>
+<li>4.find out all the people that is in US</li>
+<li>5.find out all the education level of all people
+
+<pre><code> - like undergraduate, graduate, phd
+</code></pre></li>
+<li>6.find out all the experience about job numbers
+
+<pre><code> - like 1 job, 2 jobs, 3 jobs
+</code></pre></li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/11/21/vi-regular-expression-1/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-21T15:07:04-05:00" pubdate data-updated="true">Nov 21<span>st</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/vim/'>vim</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/11/21/vi-regular-expression-1//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/11/05/iupui-mason-high-performance-mass/">
+		
+			Iupui Mason High Performance Mass</a>
+	</h2>
+	<div class="entry-content">
+		<h3>In the iupui mason server</h3>
+
+<ul>
+<li>there are 20 server, each have 10 gigabit ethernet</li>
+<li>4 cpu in each server
+
+<ul>
+<li>8 core processor each cpu</li>
+<li>total 32 core in each server</li>
+</ul>
+</li>
+<li>in the /scratch or /tmp there are total 400 GB disk storage
+
+<ul>
+<li>and the file will be delete after 14 days since they are created</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/11/05/iupui-mason-high-performance-mass/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-05T20:55:25-05:00" pubdate data-updated="true">Nov 5<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/high-performance/'>high_performance</a>, <a class='category' href='/blog/categories/other/'>other</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/11/05/iupui-mason-high-performance-mass//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/">
+		
+			How to Install Python Package on Redhat Without Root Access</a>
+	</h2>
+	<div class="entry-content">
+		<h3>dependent of scrapy</h3>
+
+<ul>
+<li>remember that the scrapt need python2.7 to run</li>
+<li>and there will be lots of package need to be installed</li>
+</ul>
+
+
+<h3>What to do when need to install python package on the server without root access</h3>
+
+<ul>
+<li>today I went through a problem that I want to have the python package installed on the high performance server but without the root access</li>
+<li>and what I need to do is to install the python 2.7.3 first and then install all the package that scrapy need and finaly get scrapy run</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-01T00:01:13-04:00" pubdate data-updated="true">Nov 1<span>st</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/python/'>python</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/10/30/2014-indianapolis-redefined-hackathron/">
 		
 			2014_indianapolis_redefined_hackathron</a>
@@ -211,335 +469,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/10/23/database-and-backend-injection//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/10/03/python-regular-expression/">
-		
-			Python Regular Expression</a>
-	</h2>
-	<div class="entry-content">
-		<h3>regular expression</h3>
-
-<ul>
-<li>use the match string
-
-<ul>
-<li>but not all the string can be matched</li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/10/03/python-regular-expression/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-03T13:00:03-04:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/python/'>python</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/10/03/python-regular-expression//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/09/15/mpi-parallel-programming-2/">
-		
-			Mpi_parallel_programming_2</a>
-	</h2>
-	<div class="entry-content">
-		<h3>data type</h3>
-
-<ul>
-<li><p>there are only these data type in the MPI</p>
-
-<ul>
-<li>if you want to use struct or multi array, you need to do something else</li>
-</ul>
-</li>
-<li><table>
-<thead>
-<tr>
-<th></th>
-<th>MPI data type</th>
-<th> c data type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>MPI_CHAR</td>
-<td>signed char|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_SHORT</td>
-<td>signed short int|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_INT</td>
-<td>signed int|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_LONG</td>
-<td>signed long int|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_UNSIGNED_CHAR</td>
-<td>unsigned long int|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_UNSIGNED_SHORT</td>
-<td>unsigned short int|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_UNSIGNED</td>
-<td>unsigned int|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_FLOAT</td>
-<td>float|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_DOUBLE</td>
-<td>double|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_LONG_DOUBLE</td>
-<td>long double|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_BYTE</td>
-<td>|</td>
-</tr>
-<tr>
-<td></td>
-<td>MPI_MPI_PACKED</td>
-<td>|</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/09/15/mpi-parallel-programming-2/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-15T15:28:34-04:00" pubdate data-updated="true">Sep 15<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/cplusplus/'>cplusplus</a>, <a class='category' href='/blog/categories/mpi/'>mpi</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/09/15/mpi-parallel-programming-2//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/09/15/mpi-parallel-programming-1/">
-		
-			Mpi_parallel_programming_1</a>
-	</h2>
-	<div class="entry-content">
-		<h3>difference between SIMD and MIMD</h3>
-
-<ul>
-<li>difference kinds of computer architecture is using the Flynn to classify
-
-<ul>
-<li>SISD</li>
-<li>SIMD</li>
-<li>MISD</li>
-<li>MIMD</li>
-</ul>
-</li>
-<li>we only talk about the SIMD and MIMD here
-
-<ul>
-<li>SIMD means that one command deal with many data streams
-
-<ul>
-<li>most of the single core machine is SIMD machine</li>
-<li>and these kinds of machine is most used in the image processing and multimedia processing.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/09/15/mpi-parallel-programming-1/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-15T14:19:13-04:00" pubdate data-updated="true">Sep 15<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/cplusplus/'>cplusplus</a>, <a class='category' href='/blog/categories/mpi/'>mpi</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/09/15/mpi-parallel-programming-1//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password/">
-		
-			Solution to Access Denied for User &#8216;Root&#8217;@&#8217;localhost&#8217; (Using password:YES)</a>
-	</h2>
-	<div class="entry-content">
-		<h3>Access denied for user &lsquo;root&rsquo;@&lsquo;localhost&rsquo; (using password:YES)</h3>
-
-<ul>
-<li>in mac
-
-<ul>
-<li>open the my.conf in the directory /usr/local/mysql</li>
-<li>add <code>skip-grant-tables</code></li>
-<li>restart the mysql service
-
-<ul>
-<li><code>sudo /usr/local/mysql/bin/mysqld_safe &amp;</code></li>
-</ul>
-</li>
-<li>then use <code>mysql -uroot -p</code>
-
-<ul>
-<li>you can login without password</li>
-<li>then update the password after <code>use mysql;</code></li>
-<li><code>update user set password=PASSWORD("rootadmin") where user='root';</code></li>
-</ul>
-</li>
-<li>after that
-
-<ul>
-<li>delete the <code>skip-grant-tables</code> add in the my.conf file</li>
-</ul>
-</li>
-<li>restart the mysql service</li>
-<li>then you can use the <code>mysql -u root -q</code> to login with your new password</li>
-</ul>
-</li>
-</ul>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-09T11:49:30-04:00" pubdate data-updated="true">Sep 9<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/php/'>php</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password//blog/page/3/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
