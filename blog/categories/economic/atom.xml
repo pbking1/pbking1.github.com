@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: economic | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/economic/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2015-02-08T21:54:11-05:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Intro_to_microeconomic_1]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-1/"/>
+    <updated>2015-02-08T21:53:03-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-1</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>

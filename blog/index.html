@@ -128,6 +128,12 @@ $(document).ready(
 <time datetime="2015-02-08T21:53:03-05:00" pubdate data-updated="true">Feb 8<span>th</span>, 2015</time></div>
 	
 
+<div class="tags">
+
+	<a class='category' href='/blog/categories/economic/'>economic</a>
+
+</div>
+
 
 	
 		<span class="comments"><a href="/blog/2015/02/08/intro-to-microeconomic-1//blog/index.html#disqus_thread">Comments</a></span>
@@ -173,60 +179,9 @@ $(document).ready(
 </ul>
 
 
-<h4>how to build filter value</h4>
-
-<ul>
-<li>use <code>Document::add_value</code></li>
-</ul>
-
-
-<h4>how to use filter when query</h4>
-
-<ul>
-<li>two ways
-
-<ul>
-<li>one is use <code>Xapian::MatchDecider</code>, this return a bool value.
-
-<ul>
-<li>or we can use <code>Xapian::ValueSetMatchDecider</code>
-
-<ul>
-<li><code>Xapian::ValueSetMatchDecider(slot, inclusive)</code>
-
-<ul>
-<li>slot means which slot to filter</li>
-<li>inclusive means using filter or reduce</li>
-</ul>
-</li>
-<li>use <code>Xapian::ValueSetMatchDecider::add_value(string)</code>
-
-<ul>
-<li>user can decide one or many set of value
-
-<ul>
-<li>when document belong to one of these value
-
-<ul>
-<li>make it filter or stay</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>use <code>MatchSpy</code></li>
-</ul>
-</li>
-</ul>
-
 
 		
-		
+		<a href="/blog/2015/02/06/xapian-tutorial-3/" class="more-link">Read more</a>
 	</div>
 
 
