@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T19:04:58-05:00</updated>
+  <updated>2015-02-08T19:05:38-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -536,54 +536,53 @@ return 0;
 <p>```</p>
 
 <ul>
-<li>search.cpp</li>
+<li><p>search.cpp
+```
+  #include&lt;xapian.h>
+  #include<iostream>
+  #include<string>
+  using namespace std;
+  #define QUERY &ldquo;title:news AND content:70&rdquo;
+  #define INDEX_PATH &ldquo;./index_data&rdquo;
+  #define F_DOCID 1
+  int main(){
+      try{
+          //The string for query
+          string query_str(QUERY);</p>
+
+<pre><code>      //open the database
+      Xapian::Database db(string(INDEX_PATH));
+
+      //open search handle
+      Xapian::Enquire enquire(db);
+
+      //Parser Query
+      Xapian::QueryParser qp;
+      qp.add_prefix("title", "T");
+      qp.add_prefix("content", "C");
+      Xapian::Query query = qp.parse_query(query_str);
+      cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
+
+      //find the top 10 result
+      enquire.set_query(query);
+      Xapian::MSet result = enquire.get_mset(0,10);
+      cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
+
+      //print the result
+      for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
+          Xapian::Document doc = iter.get_document();
+          cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
+      }
+
+  }catch(const Xapian::Error e){
+      cout&lt;&lt;e.get_description()&lt;&lt;endl;
+  }
+  return 0;
+</code></pre>
+
+<p>  }</p></li>
 </ul>
 
-
-<p>```</p>
-
-<pre><code>#include&lt;xapian.h&gt;
-#include&lt;iostream&gt;
-#include&lt;string&gt;
-using namespace std;
-#define QUERY "title:news AND content:70"
-#define INDEX_PATH "./index_data"
-#define F_DOCID 1
-int main(){
-    try{
-        //The string for query
-        string query_str(QUERY);
-
-        //open the database
-        Xapian::Database db(string(INDEX_PATH));
-
-        //open search handle
-        Xapian::Enquire enquire(db);
-
-        //Parser Query
-        Xapian::QueryParser qp;
-        qp.add_prefix("title", "T");
-        qp.add_prefix("content", "C");
-        Xapian::Query query = qp.parse_query(query_str);
-        cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
-
-        //find the top 10 result
-        enquire.set_query(query);
-        Xapian::MSet result = enquire.get_mset(0,10);
-        cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
-
-        //print the result
-        for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
-            Xapian::Document doc = iter.get_document();
-            cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
-        }
-
-    }catch(const Xapian::Error e){
-        cout&lt;&lt;e.get_description()&lt;&lt;endl;
-    }
-    return 0;
-}
-</code></pre>
 
 <p>```</p>
 ]]></content>
