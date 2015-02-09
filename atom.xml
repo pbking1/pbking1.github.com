@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T19:02:00-05:00</updated>
+  <updated>2015-02-08T19:02:45-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -906,114 +906,150 @@
 </ul>
 
 
-<p>&#8220;`</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>     #include&lt;xapian.h&gt;
+</span><span class='line'>  #include&lt;iostream&gt;
+</span><span class='line'>  #include&lt;string&gt;
+</span><span class='line'>  using namespace std;
+</span><span class='line'>
+</span><span class='line'>  #define CONTENT "70:69， This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。"
+</span><span class='line'>
+</span><span class='line'>  #define TITLE "This is a news"
+</span><span class='line'>
+</span><span class='line'>  #define INDEX_PATH "./index_data"
+</span><span class='line'>
+</span><span class='line'>  #define F_DOCID 1
+</span><span class='line'>
+</span><span class='line'>  int main(int argc, char *argv[]){
+</span><span class='line'>      try{
+</span><span class='line'>          //The text to be indexed
+</span><span class='line'>          string content(CONTENT);
+</span><span class='line'>          string title(TITLE);
+</span><span class='line'>
+</span><span class='line'>          //open a database and write
+</span><span class='line'>          Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
+</span><span class='line'>          
+</span><span class='line'>          //term generator
+</span><span class='line'>          Xapian::TermGenerator indexer;
+</span><span class='line'>
+</span><span class='line'>          //Make document
+</span><span class='line'>          Xapian::Document doc;
+</span><span class='line'>          doc.add_value(F_DOCID, string("1104"));
+</span><span class='line'>          doc.set_data(content);
+</span><span class='line'>          indexer.set_document(doc);
+</span><span class='line'>          indexer.index_text(title, 1, "T");
+</span><span class='line'>          indexer.index_text(content, 1, "C");
+</span><span class='line'>
+</span><span class='line'>          //add document to db
+</span><span class='line'>          db.add_document(doc);
+</span><span class='line'>
+</span><span class='line'>          //flush to disk
+</span><span class='line'>          db.commit();
+</span><span class='line'>
+</span><span class='line'>      }catch(const Xapian::Error &e){
+</span><span class='line'>          cout&lt;&lt;e.get_description()&lt;&lt;endl;
+</span><span class='line'>      }
+</span><span class='line'>      return 0;
+</span><span class='line'>  }
+</span><span class='line'>
+</span><span class='line'> ```
+</span><span class='line'> 
+</span><span class='line'>- search.cpp</span></code></pre></td></tr></table></div></figure>
+
 
 <pre><code>#include&lt;xapian.h&gt;
 #include&lt;iostream&gt;
 #include&lt;string&gt;
 using namespace std;
 
-#define CONTENT "70:69， This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。"
-
-#define TITLE "This is a news"
+#define QUERY "title:news AND content:70"
 
 #define INDEX_PATH "./index_data"
 
 #define F_DOCID 1
 
-int main(int argc, char *argv[]){
+int main(){
     try{
-        //The text to be indexed
-        string content(CONTENT);
-        string title(TITLE);
+        //The string for query
+        string query_str(QUERY);
 
-        //open a database and write
-        Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
+        //open the database
+        Xapian::Database db(string(INDEX_PATH));
 
-        //term generator
-        Xapian::TermGenerator indexer;
+        //open search handle
+        Xapian::Enquire enquire(db);
 
-        //Make document
-        Xapian::Document doc;
-        doc.add_value(F_DOCID, string("1104"));
-        doc.set_data(content);
-        indexer.set_document(doc);
-        indexer.index_text(title, 1, "T");
-        indexer.index_text(content, 1, "C");
+        //Parser Query
+        Xapian::QueryParser qp;
+        qp.add_prefix("title", "T");
+        qp.add_prefix("content", "C");
+        Xapian::Query query = qp.parse_query(query_str);
+        cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
 
-        //add document to db
-        db.add_document(doc);
+        //find the top 10 result
+        enquire.set_query(query);
+        Xapian::MSet result = enquire.get_mset(0,10);
+        cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
 
-        //flush to disk
-        db.commit();
+        //print the result
+        for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
+            Xapian::Document doc = iter.get_document();
+            cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
+        }
 
-    }catch(const Xapian::Error &amp;e){
+    }catch(const Xapian::Error e){
         cout&lt;&lt;e.get_description()&lt;&lt;endl;
     }
     return 0;
 }
 </code></pre>
-
-<p> &#8220;`</p>
-
-<ul>
-<li>search.cpp</li>
-</ul>
-
-
-<p> &#8220;`</p>
-
-<h1>include&lt;xapian.h></h1>
-
-<h1>include<iostream></h1>
-
-<h1>include<string></h1>
-
-<p>using namespace std;</p>
-
-<h1>define QUERY &ldquo;title:news AND content:70&rdquo;</h1>
-
-<h1>define INDEX_PATH &ldquo;./index_data&rdquo;</h1>
-
-<h1>define F_DOCID 1</h1>
-
-<p>int main(){</p>
-
-<pre><code>try{
-    //The string for query
-    string query_str(QUERY);
-
-    //open the database
-    Xapian::Database db(string(INDEX_PATH));
-
-    //open search handle
-    Xapian::Enquire enquire(db);
-
-    //Parser Query
-    Xapian::QueryParser qp;
-    qp.add_prefix("title", "T");
-    qp.add_prefix("content", "C");
-    Xapian::Query query = qp.parse_query(query_str);
-    cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
-
-    //find the top 10 result
-    enquire.set_query(query);
-    Xapian::MSet result = enquire.get_mset(0,10);
-    cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
-
-    //print the result
-    for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
-        Xapian::Document doc = iter.get_document();
-        cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
-    }
-
-}catch(const Xapian::Error e){
-    cout&lt;&lt;e.get_description()&lt;&lt;endl;
-}
-return 0;
-</code></pre>
-
-<p>}</p>
 
 <p> &#8220;`</p>
 ]]></content>
@@ -1456,7 +1492,7 @@ return 0;
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#117;&#x73;&#101;&#114;&#x6e;&#x61;&#109;&#x65;&#x40;&#109;&#x61;&#115;&#111;&#110;&#x2e;&#105;&#x6e;&#x64;&#105;&#x61;&#110;&#97;&#x2e;&#x65;&#100;&#x75;">&#x75;&#115;&#x65;&#x72;&#x6e;&#97;&#109;&#101;&#64;&#x6d;&#x61;&#115;&#111;&#110;&#46;&#105;&#x6e;&#x64;&#105;&#97;&#x6e;&#x61;&#46;&#x65;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#117;&#115;&#101;&#x72;&#x6e;&#97;&#109;&#101;&#x40;&#x6d;&#x61;&#115;&#111;&#110;&#46;&#x69;&#x6e;&#100;&#x69;&#x61;&#x6e;&#97;&#46;&#101;&#100;&#117;">&#117;&#115;&#101;&#x72;&#110;&#97;&#x6d;&#101;&#x40;&#109;&#x61;&#115;&#111;&#110;&#x2e;&#x69;&#x6e;&#x64;&#105;&#x61;&#110;&#x61;&#x2e;&#x65;&#100;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server

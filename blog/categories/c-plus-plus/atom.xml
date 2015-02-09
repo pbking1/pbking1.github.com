@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T19:02:00-05:00</updated>
+  <updated>2015-02-08T19:02:45-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -482,118 +482,111 @@ return 0;
 <h4>sample code</h4>
 
 <ul>
-<li>create_index.cpp</li>
+<li><p>create_index.cpp
+```
+  #include&lt;xapian.h>
+  #include<iostream>
+  #include<string>
+  using namespace std;</p>
+
+<p>  #define CONTENT &ldquo;70:69， This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。&rdquo;</p>
+
+<p>  #define TITLE &ldquo;This is a news&rdquo;</p>
+
+<p>  #define INDEX_PATH &ldquo;./index_data&rdquo;</p>
+
+<p>  #define F_DOCID 1</p>
+
+<p>  int main(int argc, char *argv[]){
+      try{
+          //The text to be indexed
+          string content(CONTENT);
+          string title(TITLE);</p>
+
+<pre><code>      //open a database and write
+      Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
+
+      //term generator
+      Xapian::TermGenerator indexer;
+
+      //Make document
+      Xapian::Document doc;
+      doc.add_value(F_DOCID, string("1104"));
+      doc.set_data(content);
+      indexer.set_document(doc);
+      indexer.index_text(title, 1, "T");
+      indexer.index_text(content, 1, "C");
+
+      //add document to db
+      db.add_document(doc);
+
+      //flush to disk
+      db.commit();
+
+  }catch(const Xapian::Error &amp;e){
+      cout&lt;&lt;e.get_description()&lt;&lt;endl;
+  }
+  return 0;
+</code></pre>
+
+<p>  }</p></li>
 </ul>
 
-
-<p>```</p>
-
-<pre><code>#include&lt;xapian.h&gt;
-#include&lt;iostream&gt;
-#include&lt;string&gt;
-using namespace std;
-
-#define CONTENT "70:69， This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。"
-
-#define TITLE "This is a news"
-
-#define INDEX_PATH "./index_data"
-
-#define F_DOCID 1
-
-int main(int argc, char *argv[]){
-    try{
-        //The text to be indexed
-        string content(CONTENT);
-        string title(TITLE);
-
-        //open a database and write
-        Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
-
-        //term generator
-        Xapian::TermGenerator indexer;
-
-        //Make document
-        Xapian::Document doc;
-        doc.add_value(F_DOCID, string("1104"));
-        doc.set_data(content);
-        indexer.set_document(doc);
-        indexer.index_text(title, 1, "T");
-        indexer.index_text(content, 1, "C");
-
-        //add document to db
-        db.add_document(doc);
-
-        //flush to disk
-        db.commit();
-
-    }catch(const Xapian::Error &amp;e){
-        cout&lt;&lt;e.get_description()&lt;&lt;endl;
-    }
-    return 0;
-}
-</code></pre>
 
 <p> ```</p>
 
 <ul>
-<li>search.cpp</li>
-</ul>
+<li><p>search.cpp
+```
+  #include&lt;xapian.h>
+  #include<iostream>
+  #include<string>
+  using namespace std;</p>
 
+<p>  #define QUERY &ldquo;title:news AND content:70&rdquo;</p>
 
-<p> ```</p>
+<p>  #define INDEX_PATH &ldquo;./index_data&rdquo;</p>
 
-<h1>include&lt;xapian.h></h1>
+<p>  #define F_DOCID 1</p>
 
-<h1>include<iostream></h1>
+<p>  int main(){
+      try{
+          //The string for query
+          string query_str(QUERY);</p>
 
-<h1>include<string></h1>
+<pre><code>      //open the database
+      Xapian::Database db(string(INDEX_PATH));
 
-<p>using namespace std;</p>
+      //open search handle
+      Xapian::Enquire enquire(db);
 
-<h1>define QUERY &ldquo;title:news AND content:70&rdquo;</h1>
+      //Parser Query
+      Xapian::QueryParser qp;
+      qp.add_prefix("title", "T");
+      qp.add_prefix("content", "C");
+      Xapian::Query query = qp.parse_query(query_str);
+      cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
 
-<h1>define INDEX_PATH &ldquo;./index_data&rdquo;</h1>
+      //find the top 10 result
+      enquire.set_query(query);
+      Xapian::MSet result = enquire.get_mset(0,10);
+      cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
 
-<h1>define F_DOCID 1</h1>
+      //print the result
+      for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
+          Xapian::Document doc = iter.get_document();
+          cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
+      }
 
-<p>int main(){</p>
-
-<pre><code>try{
-    //The string for query
-    string query_str(QUERY);
-
-    //open the database
-    Xapian::Database db(string(INDEX_PATH));
-
-    //open search handle
-    Xapian::Enquire enquire(db);
-
-    //Parser Query
-    Xapian::QueryParser qp;
-    qp.add_prefix("title", "T");
-    qp.add_prefix("content", "C");
-    Xapian::Query query = qp.parse_query(query_str);
-    cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
-
-    //find the top 10 result
-    enquire.set_query(query);
-    Xapian::MSet result = enquire.get_mset(0,10);
-    cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
-
-    //print the result
-    for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
-        Xapian::Document doc = iter.get_document();
-        cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
-    }
-
-}catch(const Xapian::Error e){
-    cout&lt;&lt;e.get_description()&lt;&lt;endl;
-}
-return 0;
+  }catch(const Xapian::Error e){
+      cout&lt;&lt;e.get_description()&lt;&lt;endl;
+  }
+  return 0;
 </code></pre>
 
-<p>}</p>
+<p>  }</p></li>
+</ul>
+
 
 <p> ```</p>
 ]]></content>
