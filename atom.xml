@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T21:54:11-05:00</updated>
+  <updated>2015-02-08T22:00:27-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -14,11 +14,117 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Intro_to_microeconomic_4]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-4/"/>
+    <updated>2015-02-08T21:56:16-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-4</id>
+    <content type="html"><![CDATA[<h3>goal detail</h3>
+
+<ul>
+<li>Production and costs(10%–15%)
+
+<ul>
+<li>1.Production functions: short and long run</li>
+<li>2.Marginal product and diminishing returns</li>
+<li>3.Short-run costs</li>
+<li>4.Long-run costs and economies of scale</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Intro_to_microeconomic_3]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-3/"/>
+    <updated>2015-02-08T21:56:14-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-3</id>
+    <content type="html"><![CDATA[<h3>goal part3</h3>
+
+<ul>
+<li>Theory of consumer choice(5%–10%)
+
+<ul>
+<li>1.Total utility and marginal utility</li>
+<li>2.Utility maximization: equalizing marginal utility per dollar</li>
+<li>3.Individual and market demand curves</li>
+<li>4.Income and substitution effects</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Intro_to_microeconomic_2]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-2/"/>
+    <updated>2015-02-08T21:55:55-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-2</id>
+    <content type="html"><![CDATA[<h3>goal part2</h3>
+
+<ul>
+<li>Supply and demand(15%–20%)
+
+<ul>
+<li>1.Market equilibrium</li>
+<li>2.Determinants of supply and demand</li>
+<li>3.Price and quantity controls</li>
+<li>4.Elasticity
+
+<ul>
+<li>a.Price, income and cross-price elasticities of demand</li>
+<li>b.Price elasticity of supply</li>
+</ul>
+</li>
+<li>5.Consumer surplus, producer surplus and market efficiency</li>
+<li>6.Tax incidence and deadweight loss</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Intro_to_microeconomic_1]]></title>
     <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-1/"/>
     <updated>2015-02-08T21:53:03-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-1</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<h3>goal part1</h3>
+
+<ul>
+<li>Basic Economic Concepts (8%–14%)
+
+<ul>
+<li>A.Scarcity,choice and opportunity costs</li>
+<li>B.Production possibilities curve</li>
+<li>C.Comparative advantage, specialization and trade</li>
+<li>D.Economic systems</li>
+<li>E.Property rights and the role of incentives</li>
+<li><ol type="a">
+<li>Marginal analysis</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h2>#</h2>
 ]]></content>
   </entry>
   
@@ -1538,7 +1644,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#58;&#117;&#x73;&#x65;&#114;&#110;&#x61;&#109;&#101;&#x40;&#109;&#97;&#115;&#x6f;&#x6e;&#x2e;&#105;&#110;&#100;&#105;&#97;&#110;&#x61;&#46;&#x65;&#100;&#x75;">&#117;&#x73;&#x65;&#x72;&#x6e;&#97;&#109;&#x65;&#64;&#109;&#97;&#115;&#111;&#110;&#46;&#x69;&#110;&#x64;&#105;&#x61;&#110;&#x61;&#46;&#101;&#x64;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x75;&#x73;&#x65;&#114;&#110;&#97;&#x6d;&#x65;&#x40;&#x6d;&#97;&#x73;&#x6f;&#110;&#46;&#105;&#x6e;&#x64;&#105;&#97;&#110;&#97;&#x2e;&#101;&#100;&#117;">&#x75;&#x73;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#x6d;&#97;&#x73;&#x6f;&#x6e;&#46;&#x69;&#x6e;&#x64;&#x69;&#x61;&#x6e;&#97;&#46;&#x65;&#100;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
@@ -3062,419 +3168,6 @@ re.split(r'[\+\*\-]', '1+2-3*5')
 </span><span class='line'>
 </span><span class='line'>@end
 </span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[use opendns to cross the great firewall in China]]></title>
-    <link href="http://pbking1.github.com/blog/2014/07/08/use-opendns-to-cross-the-great-firewall-in-china/"/>
-    <updated>2014-07-08T03:22:39-04:00</updated>
-    <id>http://pbking1.github.com/blog/2014/07/08/use-opendns-to-cross-the-great-firewall-in-china</id>
-    <content type="html"><![CDATA[<h3>once upon a time</h3>
-
-<ul>
-<li>we can log in facebook and google directly</li>
-<li>but nowadays we can not</li>
-<li>and because DNS hijacking and DNS cache posioning, we can not log in directly anymore</li>
-</ul>
-
-
-<!--more-->
-
-
-<h3>what is DNS hikacking?</h3>
-
-<ul>
-<li>DNS hijacking(劫持)</li>
-<li>to simplifiy the idea
-
-<ul>
-<li>when you type in google.com, you will not attach the google.com
-
-<ul>
-<li>you will be direct to the baidu.com</li>
-</ul>
-</li>
-<li>and this is the DNS hijacking</li>
-</ul>
-</li>
-<li><strong>and the reason why this will happen is that the DNS server is cracked and the domain name will be parse to the wrong ip.</strong></li>
-<li>and recently the govenment is using this kind of strategy</li>
-</ul>
-
-
-<h3>what is DNS cache posioning?</h3>
-
-<ul>
-<li>DNS污染</li>
-<li>this idea used to be used to block the youtube, facebook website</li>
-<li>this is on the protocol layer</li>
-<li>and the mechisim is that when you want to launch the particular website
-
-<ul>
-<li>the port 53 UDP is check and when they found that you want to attach particular website, they will change the domain name parse DNS server into a wrong one and then you will not be able to get the correct ip.</li>
-<li>then you will not be able to get to the website.</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>How dns works?</h3>
-
-<ul>
-<li>first, when we use some domain name like &ldquo;www.facebook.com&rdquo;
-
-<ul>
-<li>and when we type the domain name into the website
-
-<ul>
-<li>the website will send the name to the dns server to check the ip</li>
-<li>then return the ip the our computer</li>
-<li>then we will know the ip of the target website
-
-<ul>
-<li>and we will be able to get to the website</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>why can we use this in China?</h3>
-
-<ul>
-<li>Because in China when you type &ldquo;www.google.com&rdquo;</li>
-<li>they block the dns parse not the connection
-
-<ul>
-<li>so we will be able to break through the wall if we use the other dns server to help use parse the domain name</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>how to use opendns</h3>
-
-<ul>
-<li>change the dns settings in the PC or laptop
-
-<ul>
-<li>if you want to use the google dns
-
-<ul>
-<li>set &ldquo;8.8.8.8&rdquo; and &ldquo;8.8.4.4&rdquo;</li>
-</ul>
-</li>
-<li>if you want to use the opendns
-
-<ul>
-<li>set &ldquo;208.67.222.222&rdquo; and &ldquo;208.67.220.220&rdquo;</li>
-<li>or set &ldquo;42.120.21.30&rdquo; and &ldquo;221.10.251.52&rdquo;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>then if you are using Max 10.8 or above
-
-<ul>
-<li>you can renew the dns setting using
-
-<ul>
-<li>&ldquo;sudo killall -HUP mDNSResponder&rdquo;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>when not to use opendns</h3>
-
-<ul>
-<li>when you are using the payment or something private
-
-<ul>
-<li>do not use opendns</li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IOS 报表类库（trial 30days）]]></title>
-    <link href="http://pbking1.github.com/blog/2014/06/25/ios-bao-biao-lei-ku-%28trial-30days%29/"/>
-    <updated>2014-06-25T04:25:40-04:00</updated>
-    <id>http://pbking1.github.com/blog/2014/06/25/ios-bao-biao-lei-ku-(trial-30days)</id>
-    <content type="html"><![CDATA[<h3>一个非常容易使用的报表类库</h3>
-
-<ul>
-<li>NChart3D
-
-<ul>
-<li>但是只能免费使用30天</li>
-<li>并且经过真机调试
-
-<ul>
-<li>效果做得很好，除了不能点击某个地方显示具体信息之外其他都做得很好</li>
-<li>比如可以方法缩小，左右拖，平移旋转都行</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li>在AppDelegate.m里面添加如下</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import "AppDelegate.h"
-</span><span class='line'>#import "NChart3D/NChart3D.h"
-</span><span class='line'>#import "ViewController.h"
-</span><span class='line'>
-</span><span class='line'>@implementation AppDelegate
-</span><span class='line'>{
-</span><span class='line'>    UIWindow *m_window;
-</span><span class='line'>}
-</span><span class='line'>@synthesize window = m_window;
-</span><span class='line'>
-</span><span class='line'>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-</span><span class='line'>{
-</span><span class='line'>    m_window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-</span><span class='line'>    m_window.userInteractionEnabled = YES;
-</span><span class='line'>    m_window.multipleTouchEnabled = YES;
-</span><span class='line'>    [m_window makeKeyAndVisible];
-</span><span class='line'>    m_window.rootViewController = [[ViewController new] autorelease];
-</span><span class='line'>    // Override point for customization after application launch.
-</span><span class='line'>    return YES;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>在Viewcontroller.h里面添加如下</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;UIKit/UIKit.h&gt;
-</span><span class='line'>#import "NChart3D/NChart3D.h"
-</span><span class='line'>
-</span><span class='line'>@interface ViewController : UIViewController&lt;NChartSeriesDataSource&gt;
-</span><span class='line'>
-</span><span class='line'>@end</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>在Viewcontroller.m里面添加如下</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import "ViewController.h"
-</span><span class='line'>#import "NChart3D/NChart3D.h"
-</span><span class='line'>
-</span><span class='line'>@interface ViewController ()
-</span><span class='line'>
-</span><span class='line'>@end
-</span><span class='line'>
-</span><span class='line'>@implementation ViewController
-</span><span class='line'>{
-</span><span class='line'>    NChartView *m_view;
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)dealloc
-</span><span class='line'>{
-</span><span class='line'>    [m_view release];
-</span><span class='line'>    [super dealloc];
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)viewDidLoad
-</span><span class='line'>{
-</span><span class='line'>    [super viewDidLoad];
-</span><span class='line'>  // Do any additional setup after loading the view, typically from a nib.
-</span><span class='line'>    m_view = [[NChartView alloc] initWithFrame:CGRectZero];
-</span><span class='line'>    m_view.chart.licenseKey = @"";
-</span><span class='line'>    m_view.chart.cartesianSystem.margin = NChartMarginMake(10.0f, 10.0f, 10.0f, 20.0f);
-</span><span class='line'>    m_view.chart.shouldAntialias = YES;
-</span><span class='line'>    NChartColumnSeries *serires = [[NChartColumnSeries new] autorelease];
-</span><span class='line'>    serires.brush = [NChartSolidColorBrush solidColorBrushWithColor:[UIColor colorWithRed:0.0 green:0.7 blue:0.4 alpha:1.0]];
-</span><span class='line'>    serires.dataSource = self;
-</span><span class='line'>    [m_view.chart addSeries:serires];
-</span><span class='line'>    [m_view.chart updateData];
-</span><span class='line'>    self.view = m_view;   //使用新建的view
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (NSArray *)seriesDataSourcePointsForSeries:(NChartSeries *)series
-</span><span class='line'>{
-</span><span class='line'>    NSMutableArray *result = [NSMutableArray array];
-</span><span class='line'>    for(int i = 0; i &lt; 10; i++)
-</span><span class='line'>        [result addObject:[NChartPoint pointWithState:[NChartPointState pointStateAlignedToXWithX:i Y:(rand()%30) + 1]forSeries:series]];
-</span><span class='line'>    return result;
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (NSString *)seriesDataSourceNameForSeries:(NChartSeries *)series
-</span><span class='line'>{
-</span><span class='line'>    return @"My series";
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- (void)didReceiveMemoryWarning
-</span><span class='line'>{
-</span><span class='line'>    [super didReceiveMemoryWarning];
-</span><span class='line'>    // Dispose of any resources that can be recreated.
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>@end
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>效果
-
-<ul>
-<li><img src="http://pbking1.github.com/images/ios/ios_table1.png"></li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IOS UILabel and UITextfield]]></title>
-    <link href="http://pbking1.github.com/blog/2014/06/25/ios-uilabel-and-uitextfield/"/>
-    <updated>2014-06-25T03:00:33-04:00</updated>
-    <id>http://pbking1.github.com/blog/2014/06/25/ios-uilabel-and-uitextfield</id>
-    <content type="html"><![CDATA[<h3>label</h3>
-
-<ul>
-<li>相当于android里面的textview</li>
-<li>用setText来设置内容</li>
-<li>setBackground来设置背景颜色</li>
-</ul>
-
-
-<!--more-->
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 60, 290, 44)];
-</span><span class='line'>[label1 setText:@"项目里程碑                          请选择&gt;"];
-</span><span class='line'>[label1 setBackgroundColor:[UIColor whiteColor]];
-</span><span class='line'>[self.view addSubview:label1];
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>textfield</h3>
-
-<ul>
-<li>相当于android里面的edittext</li>
-<li>用layer.cornerRadius设置圆角</li>
-<li>placeholder设置hint，提示</li>
-<li>貌似使用这些方法需要把UITextfield定义在.h里面</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>UITextField *text1 = [[UITextField alloc] initWithFrame:CGRectMake(10, 340, 290, 84)];
-</span><span class='line'>self.text1.placeholder = @"进度说明";
-</span><span class='line'>self.text1.layer.cornerRadius = 10;
-</span><span class='line'>[text1 setBackgroundColor:[UIColor whiteColor]];
-</span><span class='line'>[self.view addSubview:text1];</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

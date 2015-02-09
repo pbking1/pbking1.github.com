@@ -100,6 +100,182 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/06/24/ios-uibutton/">
+		
+			IOS UIButton</a>
+	</h2>
+	<div class="entry-content">
+		<h3>IOS的button其实和其他的控件使用方法差不多</h3>
+
+<ul>
+<li>首先初始化button，用CGRectMake把控件画在view上</li>
+<li>使用setTitle设置button的文字</li>
+<li>使用layer来设置边界</li>
+<li>用action里面设置selector来跳转或者响应事件</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/06/24/ios-uibutton/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-24T23:01:58-04:00" pubdate data-updated="true">Jun 24<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/ios/'>IOS</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/06/24/ios-uibutton//blog/page/5/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/06/24/ios-segment-control/">
+		
+			IOS Segment Control</a>
+	</h2>
+	<div class="entry-content">
+		<h3>segment control</h3>
+
+<ul>
+<li>这一段是使用CGrectmake在view上直接按照坐标大小画segment control</li>
+<li>因为tabbar只能按照默认的放在底部</li>
+<li>因此要使用放在顶部的类似tabbar的效果有两种方式
+
+<ul>
+<li>一种就是segment control，每点击一个item就跳转到那个item对应的view那里</li>
+<li>还有一种是使用button来仿造tabbar</li>
+<li>不过总体来说还是button效果好一点</li>
+</ul>
+</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/06/24/ios-segment-control/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-24T23:01:49-04:00" pubdate data-updated="true">Jun 24<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/ios/'>IOS</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/06/24/ios-segment-control//blog/page/5/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/06/20/something-basic-about-software-testing/">
+		
+			Something Basic About Software Testing</a>
+	</h2>
+	<div class="entry-content">
+		<h3>一些常识性的问题</h3>
+
+<ul>
+<li>软件测试者的目标是什么？
+
+<ul>
+<li>找bug，并且尽快的找到和修复</li>
+</ul>
+</li>
+<li>在一个已经完成的产品上修复一个bug比在一开始就找到要难更多倍</li>
+<li>为什么完全测试一个软件是不可能的？
+
+<ul>
+<li>因为太多输入输出</li>
+<li>太多路径组合</li>
+</ul>
+</li>
+<li>测试人员最重要的技能是编程</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/06/20/something-basic-about-software-testing/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-20T08:24:14-04:00" pubdate data-updated="true">Jun 20<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/software-testing/'>software_testing</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/06/20/something-basic-about-software-testing//blog/page/5/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/06/11/the-note-of-the-uml-final-exam/">
 		
 			UML Final Exam Note</a>
@@ -269,210 +445,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/06/08/use-sqlite-in-html5//blog/page/5/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/">
-		
-			Phonegap 框架原理</a>
-	</h2>
-	<div class="entry-content">
-		<h4>phonegap 实现原理</h4>
-
-<ul>
-<li><code>关键</code>
-
-<ul>
-<li>1.用webview在本地来渲染解析html
-
-<ul>
-<li><strong>因此实际上他就是一个内嵌的浏览器</strong>
-
-<ul>
-<li>类似于一个WebView，但是phonegap对webview做了些改造</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>2.基于plugin模式来封装调用原生API
-
-<ul>
-<li>以原生app的方式来运行</li>
-<li>用js调用原生的功能</li>
-</ul>
-</li>
-<li>3.在框架首次启动的时候加载CallbackServer线程，并且监听前端XHR请求和链表中有无数据
-
-<ul>
-<li>当XHR请求来了而链表为空，则线程等待10秒
-
-<ul>
-<li>如果这个时间内有数据来，那么就唤醒线程把数据传到前端</li>
-</ul>
-</li>
-<li>如果10s后没有数据，则传空数据回前端</li>
-<li><code>基于服务器推技术</code></li>
-</ul>
-</li>
-<li>4.同步请求和异步请求有关键的区别</li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-06T05:03:43-04:00" pubdate data-updated="true">Jun 6<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/system-analyze-and-design/'>System_analyze_and_design</a>, <a class='category' href='/blog/categories/html/'>html</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li//blog/page/5/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/02/matlab-classification-method/">
-		
-			Matlab Classification Method</a>
-	</h2>
-	<div class="entry-content">
-		<h3>The method in the system</h3>
-
-<ul>
-<li>MultiNomial logistic Regressoin
-
-<ul>
-<li>bad in high dimension
-
-<ul>
-<li><code>Factor = mnrfit(train_data, train_label);</code></li>
-<li><code>scores = mnrval(Factor, test_data);</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/06/02/matlab-classification-method/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-02T03:15:11-04:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/machine-learning/'>machine_learning</a>, <a class='category' href='/blog/categories/matlab/'>matlab</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/02/matlab-classification-method//blog/page/5/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/02/matlab-array-type-change/">
-		
-			Matlab Array Type Change</a>
-	</h2>
-	<div class="entry-content">
-		<h3>How to convert between cell, double and char array?</h3>
-
-<ul>
-<li>there are three type of array in matlab
-
-<ul>
-<li>cell array</li>
-<li>double array</li>
-<li>char array</li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/06/02/matlab-array-type-change/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-02T02:57:28-04:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/matlab/'>matlab</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/02/matlab-array-type-change//blog/page/5/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
