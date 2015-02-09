@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Cplusplus | KING]]></title>
+  <title><![CDATA[Category: cplusplus | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/cplusplus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T19:20:50-05:00</updated>
+  <updated>2015-02-08T19:28:31-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Difference Between Malloc and New in C++]]></title>
+    <title type="html"><![CDATA[difference between malloc and new in C++]]></title>
     <link href="http://pbking1.github.com/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/"/>
     <updated>2015-01-27T15:30:52-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus</id>
@@ -166,7 +166,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Mpi_parallel_programming_2]]></title>
+    <title type="html"><![CDATA[mpi_parallel_programming_2]]></title>
     <link href="http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-2/"/>
     <updated>2014-09-15T15:28:34-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-2</id>
@@ -314,7 +314,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Mpi_parallel_programming_1]]></title>
+    <title type="html"><![CDATA[mpi_parallel_programming_1]]></title>
     <link href="http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-1/"/>
     <updated>2014-09-15T14:19:13-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-1</id>

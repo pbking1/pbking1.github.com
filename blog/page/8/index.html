@@ -1,199 +1,113 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>KING</title>
-		<meta name="author" content="pb">
-		
-		<meta name="description" content="源代码 把数据载入到tableview中，，点击某一个item就可以出发alert对话框。
-Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在AppDelegate.h中
-加入mainView的声明 注意要加#import "ViewController.h" ">
-    	
-    	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-    
-		<link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
-	    <link href="/favicon.png" rel="shortcut icon">
-	    <link rel="canonical" href="">
-		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-		<link rel="stylesheet" type="text/css" href="/stylesheets/syntax.css" />
-		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Do more, say less  | KING</title>
 
-	</head>
+<meta name="author" content="pb"> 
 
-	<body>
-		<div id="logo">
-	<span id="tags"> 编程 / 思考 / 阅读 / 生活 </span>
-	<h1><a href="/">KING</a></h1>
+<meta name="description" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip"> <meta name="keywords" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">KING</a></h1>
+<h4>Do more, say less</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
 </div>
-		<div id="wrapper">
-			<div id="content" class="index">
-				<div id="sidebar">
-	<ul>
-		<li>
-			<a href="/">ARTICLES</a>
-			<!--
-			<ul>
-				
-				<li>
-					<a href="/Algorithm.html"> Algorithm</a>
-				</li>
-				
-				<li>
-					<a href="/Android.html"> Android</a>
-				</li>
-				
-				<li>
-					<a href="/Robot.html"> Robot</a>
-				</li>
-				
-				<li>
-					<a href="/Octopress.html"> Octopress</a>
-				</li>
-				
-				<li>
-					<a href="/Linux.html"> Linux</a>
-				</li>
-				
-				<li>
-					<a href="/OSX.html"> OSX</a>
-				</li>
-				
-				<li>
-					<a href="/System_analyze_and_design.html"> System_analyze_and_design</a>
-				</li>
-				
-				<li>
-					<a href="/UML.html"> UML</a>
-				</li>
-				
-				<li>
-					<a href="/c.html"> c</a>
-				</li>
-				
-				<li>
-					<a href="/machine_learning.html"> machine_learning</a>
-				</li>
-				
-				<li>
-					<a href="/ERP.html"> ERP</a>
-				</li>
-				
-				<li>
-					<a href="/database.html"> database</a>
-				</li>
-				
-				<li>
-					<a href="/IOS.html"> IOS</a>
-				</li>
-				
-				<li>
-					<a href="/Interview.html"> Interview</a>
-				</li>
-				
-				<li>
-					<a href="/other.html"> other</a>
-				</li>
-				
-				<li>
-					<a href="/Internship.html"> Internship</a>
-				</li>
-				
-				<li>
-					<a href="/Network.html"> Network</a>
-				</li>
-				
-				<li>
-					<a href="/software_testing.html"> software_testing</a>
-				</li>
-				
-				<li>
-					<a href="/html.html"> html</a>
-				</li>
-				
-				<li>
-					<a href="/matlab.html"> matlab</a>
-				</li>
-				
-				<li>
-					<a href="/php.html"> php</a>
-				</li>
-				
-				<li>
-					<a href="/cplusplus.html"> cplusplus</a>
-				</li>
-				
-				<li>
-					<a href="/mpi.html"> mpi</a>
-				</li>
-				
-				<li>
-					<a href="/python.html"> python</a>
-				</li>
-				
-				<li>
-					<a href="/hackathron.html"> hackathron</a>
-				</li>
-				
-				<li>
-					<a href="/high_performance.html"> high_performance</a>
-				</li>
-				
-				<li>
-					<a href="/vim.html"> vim</a>
-				</li>
-				
-				<li>
-					<a href="/c++.html"> c++</a>
-				</li>
-				
-				<li>
-					<a href="/search_engine.html"> search_engine</a>
-				</li>
-				
-			</ul>
-			-->
-		</li>
-		<li><a href="http://www.libingcun.com" target="_blank">ABOUT</a></li>
-		<li><a href="/links.html">LINKS</a></li>
-	</ul>
-</div>
-				<div id="main">
-				<div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/14/ios-tutorial-3-tabhost/">IOS Tutorial 3 Tabhost</a></h1>
-    
-    
-      <p class="meta">
-        
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://www.google.com.hk/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:pbking1.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
 
 
+</header>
+
+	<div id="content" class="inner">
 
 
-
-
-
-
-  
-
-
-<time datetime="2014-05-14T09:25:25-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/14/ios-tutorial-3-tabhost/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-3-tabhost/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>源代码</h3>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/05/14/ios-tutorial-3-tabhost/">
+		
+			IOS Tutorial 3 Tabhost</a>
+	</h2>
+	<div class="entry-content">
+		<h3>源代码</h3>
 
 <ul>
 <li>把数据载入到tableview中，，点击某一个item就可以出发alert对话框。</li>
@@ -213,97 +127,99 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
 </ul>
 
 
+
+		
+		<a href="/blog/2014/05/14/ios-tutorial-3-tabhost/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T09:25:25-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/ios/'>IOS</a>
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/14/ios-tutorial-3-tabhost/">Read more</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/14/ios-tutorial-2/">IOS Tutorial 2</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/2014/05/14/ios-tutorial-3-tabhost//blog/page/8/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-14T04:34:49-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/14/ios-tutorial-2/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/05/14/ios-tutorial-2/">
+		
+			IOS Tutorial 2</a>
+	</h2>
+	<div class="entry-content">
+		<ul>
 <li>键盘收起以及弹出对话框</li>
 <li>在<code>ViewController.h</code>里面加入<code>-(IBAction)View_TouchDown:(id)sender</code>;</li>
 </ul>
 
 
+
+		
+		<a href="/blog/2014/05/14/ios-tutorial-2/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T04:34:49-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/ios/'>IOS</a>
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/14/ios-tutorial-2/">Read more</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/14/ios-tutorial-1/">IOS Tutorial 1</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/2014/05/14/ios-tutorial-2//blog/page/8/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-14T01:11:01-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/14/ios-tutorial-1/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/14/ios-tutorial-1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/05/14/ios-tutorial-1/">
+		
+			IOS Tutorial 1</a>
+	</h2>
+	<div class="entry-content">
+		<ul>
 <li>1.一点基本语法</li>
 <li>用NSLog打印，代替printf（也是可以用的）</li>
 <li>用NSDate来获取时间</li>
@@ -311,49 +227,50 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
 </ul>
 
 
+
+		
+		<a href="/blog/2014/05/14/ios-tutorial-1/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T01:11:01-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/ios/'>IOS</a>
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/14/ios-tutorial-1/">Read more</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/13/2014-sysu-database-project-step1/">2014 Sysu Database Project Step1</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/2014/05/14/ios-tutorial-1//blog/page/8/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-13T03:20:32-04:00" pubdate data-updated="true">May 13<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/13/2014-sysu-database-project-step1/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/13/2014-sysu-database-project-step1/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>问题描述</h3>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/05/13/2014-sysu-database-project-step1/">
+		
+			2014 Sysu Database Project Step1</a>
+	</h2>
+	<div class="entry-content">
+		<h3>问题描述</h3>
 
 <ul>
 <li><strong>任务 1: 不带压缩地导入数据</strong>
@@ -382,49 +299,50 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
 </ul>
 
 
+
+		
+		<a href="/blog/2014/05/13/2014-sysu-database-project-step1/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-13T03:20:32-04:00" pubdate data-updated="true">May 13<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/database/'>database</a>
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/13/2014-sysu-database-project-step1/">Read more</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/12/linear-regression-tutorial/">Linear_regression_tutorial</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/2014/05/13/2014-sysu-database-project-step1//blog/page/8/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-12T03:23:20-04:00" pubdate data-updated="true">May 12<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/12/linear-regression-tutorial/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>First something about training the data</h3>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/05/12/linear-regression-tutorial/">
+		
+			Linear_regression_tutorial</a>
+	</h2>
+	<div class="entry-content">
+		<h3>First something about training the data</h3>
 
 <ul>
 <li>Training set &ndash;> learning algorithm &ndash;> hypothesis &ndash;> estimated data</li>
@@ -446,49 +364,50 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
 </ul>
 
 
+
+		
+		<a href="/blog/2014/05/12/linear-regression-tutorial/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-12T03:23:20-04:00" pubdate data-updated="true">May 12<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithm/'>Algorithm</a>, <a class='category' href='/blog/categories/c/'>c</a>, <a class='category' href='/blog/categories/machine-learning/'>machine_learning</a>
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/12/linear-regression-tutorial/">Read more</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/09/the-difference-between-data-mining-and-machine-learning/">The Difference Between Data Mining and Machine Learning</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		<span class="comments"><a href="/blog/2014/05/12/linear-regression-tutorial//blog/page/8/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-09T12:00:26-04:00" pubdate data-updated="true">May 9<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/05/09/the-difference-between-data-mining-and-machine-learning/#disqus_thread"
-             data-disqus-identifier="http://pbking1.github.com/blog/2014/05/09/the-difference-between-data-mining-and-machine-learning/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>What is machine learning?</h3>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/05/09/the-difference-between-data-mining-and-machine-learning/">
+		
+			The Difference Between Data Mining and Machine Learning</a>
+	</h2>
+	<div class="entry-content">
+		<h3>What is machine learning?</h3>
 
 <ul>
 <li>Machine learning is is a system that decide the system what to do next
@@ -517,155 +436,81 @@ Cell 的样式也是可以自定义的 通过UITableViewCell来设置样式 在A
 </ul>
 
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/09/the-difference-between-data-mining-and-machine-learning/">Read more</a>
-    </footer>
+
+		
+		<a href="/blog/2014/05/09/the-difference-between-data-mining-and-machine-learning/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
 
 
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/9/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
-    
-    
-    <a class="next" href="/blog/page/7/"><i class="fa fa-chevron-circle-right fa-2x icon-color icon-homepage"></i></a>
-    
-  </div>
+<time datetime="2014-05-09T12:00:26-04:00" pubdate data-updated="true">May 9<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/machine-learning/'>machine_learning</a>
+
 </div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+
+
+	
+		<span class="comments"><a href="/blog/2014/05/09/the-difference-between-data-mining-and-machine-learning//blog/page/8/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+<nav id="pagenavi">
     
-      <li class="post">
-        <a href="/blog/2015/02/06/xapian-tutorial-3/">Xapian_tutorial_3</a>
-      </li>
+        <a href="/blog/page/7/" class="prev">Prev</a>
     
-      <li class="post">
-        <a href="/blog/2015/02/05/public-speech-note/">Public Speech Note</a>
-      </li>
     
-      <li class="post">
-        <a href="/blog/2015/02/05/xapian-tutorial-2/">Xapian_tutorial_2</a>
-      </li>
+        <a href="/blog/page/9/" class="next">Next</a>
     
-      <li class="post">
-        <a href="/blog/2015/02/05/xapian-tutorial-1/">Xapian_tutorial_1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/">Difference Between Malloc and New in C++</a>
-      </li>
-    
-  </ul>
-</section>
-<section> 
-  <h1>Categories</h1> 
-  <ul id="categories"> 
-    <li class='category'><a href='/blog/categories/algorithm/'>Algorithm (8)</a></li>
-<li class='category'><a href='/blog/categories/android/'>Android (5)</a></li>
-<li class='category'><a href='/blog/categories/erp/'>ERP (1)</a></li>
-<li class='category'><a href='/blog/categories/ios/'>IOS (14)</a></li>
-<li class='category'><a href='/blog/categories/internship/'>Internship (1)</a></li>
-<li class='category'><a href='/blog/categories/interview/'>Interview (2)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>Linux (4)</a></li>
-<li class='category'><a href='/blog/categories/network/'>Network (1)</a></li>
-<li class='category'><a href='/blog/categories/osx/'>OSX (1)</a></li>
-<li class='category'><a href='/blog/categories/octopress/'>Octopress (2)</a></li>
-<li class='category'><a href='/blog/categories/robot/'>Robot (2)</a></li>
-<li class='category'><a href='/blog/categories/system-analyze-and-design/'>System_analyze_and_design (5)</a></li>
-<li class='category'><a href='/blog/categories/uml/'>UML (2)</a></li>
-<li class='category'><a href='/blog/categories/c/'>c (3)</a></li>
-<li class='category'><a href='/blog/categories/c-/'>c++ (3)</a></li>
-<li class='category'><a href='/blog/categories/cplusplus/'>cplusplus (3)</a></li>
-<li class='category'><a href='/blog/categories/database/'>database (2)</a></li>
-<li class='category'><a href='/blog/categories/hackathron/'>hackathron (1)</a></li>
-<li class='category'><a href='/blog/categories/high-performance/'>high_performance (1)</a></li>
-<li class='category'><a href='/blog/categories/html/'>html (5)</a></li>
-<li class='category'><a href='/blog/categories/machine-learning/'>machine_learning (6)</a></li>
-<li class='category'><a href='/blog/categories/matlab/'>matlab (2)</a></li>
-<li class='category'><a href='/blog/categories/mpi/'>mpi (2)</a></li>
-<li class='category'><a href='/blog/categories/other/'>other (5)</a></li>
-<li class='category'><a href='/blog/categories/php/'>php (4)</a></li>
-<li class='category'><a href='/blog/categories/python/'>python (3)</a></li>
-<li class='category'><a href='/blog/categories/search-engine/'>search_engine (3)</a></li>
-<li class='category'><a href='/blog/categories/software-testing/'>software_testing (2)</a></li>
-<li class='category'><a href='/blog/categories/vim/'>vim (1)</a></li>
- 
-  </ul> 
-</section><section>
-<ul class="ds-recent-comments" data-num-items="10">
-</ul>
-<!--多说js加载开始，一个页面只需要加载一次 -->
+    <div class="center"><a href="/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2015
+
+    pb
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"pbking1.duoshuo.com"};
-(function() {
-var ds = document.createElement('script');
-ds.type = 'text/javascript';
-ds.async = true;ds.src = 'http://static.duoshuo.com/embed.js';
-ds.charset = 'UTF-8';
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'pbking1';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
 </script>
-<!--多说js加载结束，一个页面只需要加载一次 -->
-</section>
-<section>
-  <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x3333FF&amp;tcolor2=0xFF00FF&amp;hicolor=0xff3333&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Falgorithm%27+style%3D%27font-size%3A+22.142857142857142%25%27%3EAlgorithm%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+15.714285714285714%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Ec%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fc%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Ec%2B%2B%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fcplusplus%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Ecplusplus%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fdatabase%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Edatabase%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Ferp%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EERP%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhackathron%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ehackathron%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhigh-performance%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Ehigh_performance%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fhtml%27+style%3D%27font-size%3A+15.714285714285714%25%27%3Ehtml%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finternship%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EInternship%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Finterview%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EInterview%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fios%27+style%3D%27font-size%3A+35.0%25%27%3EIOS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Flinux%27+style%3D%27font-size%3A+13.571428571428571%25%27%3ELinux%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmachine-learning%27+style%3D%27font-size%3A+17.857142857142858%25%27%3Emachine_learning%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmatlab%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Ematlab%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fmpi%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Empi%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fnetwork%27+style%3D%27font-size%3A+7.142857142857142%25%27%3ENetwork%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EOctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fosx%27+style%3D%27font-size%3A+7.142857142857142%25%27%3EOSX%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fother%27+style%3D%27font-size%3A+15.714285714285714%25%27%3Eother%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fphp%27+style%3D%27font-size%3A+13.571428571428571%25%27%3Ephp%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Epython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Frobot%27+style%3D%27font-size%3A+9.285714285714285%25%27%3ERobot%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsearch-engine%27+style%3D%27font-size%3A+11.428571428571429%25%27%3Esearch_engine%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsoftware-testing%27+style%3D%27font-size%3A+9.285714285714285%25%27%3Esoftware_testing%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fsystem-analyze-and-design%27+style%3D%27font-size%3A+15.714285714285714%25%27%3ESystem_analyze_and_design%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fuml%27+style%3D%27font-size%3A+9.285714285714285%25%27%3EUML%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Fpbking1.github.com%2Fblog%2Fcategories%2Fvim%27+style%3D%27font-size%3A+7.142857142857142%25%27%3Evim%3C%2Fa%3E+%3C%2Ftags%3E"></span>
-</section>
 
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/pbking1">@pbking1</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
 
-        github.showRepos({
-            user: 'pbking1',
-            count: 5,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
 
-<section>
-  <h1>visitor map</h1>
-  <!--获得代码添加到这-->
-  <script type="text/javascript" src="http://jj.revolvermaps.com/2/1.js?i=9p2gbjn49gr&amp;s=220&amp;m=7&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
-</section>
-  
-</aside>
 
-				</div>
-			</div>
-			<div id="footer">
-				<span style="color:#bbb;font-size:12px">To do less than best is a sin.</span>
-<p style="clear:both"></p>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-			</div>
-		</div>					
-	</body>
+</body>
 </html>
-

@@ -1,45 +1,104 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>IOS tutorial 2 - KING</title>
-		<meta name="author" content="pb">
-		
-		<meta name="description" content="键盘收起以及弹出对话框
-在ViewController.h里面加入-(IBAction)View_TouchDown:(id)sender; 1
-2
-3
-4
-5
-6
-7
-8
-9
-#import &lt;UIKit/UIKit.h&gt; @interface ViewController : &hellip;">
-    	
-    	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-    
-		<link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
-	    <link href="/favicon.png" rel="shortcut icon">
-	    <link rel="canonical" href="">
-		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-		<link rel="stylesheet" type="text/css" href="/stylesheets/syntax.css" />
-		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>IOS tutorial 2  | KING</title>
 
-	</head>
+<meta name="author" content="pb"> 
 
-	<body>
-		<div id="logo">
-	<span id="tags"> 编程 / 思考 / 阅读 / 生活 </span>
-	<h1><a href="/">KING</a></h1>
+<meta name="description" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip"> <meta name="keywords" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">KING</a></h1>
+<h4>Do more, say less</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
 </div>
-		<div id="wrapper">
-			<div id="content">
-				<a target="_blank" style="float:right;margin-top:15px" href="http://twitter.com/share?url=http://blog.libingcun.com/blog/2014/05/14/ios-tutorial-2/&via=libingcun&text=IOS tutorial 2"><span class="balloon">retweet</span></a>
-				<h2>IOS tutorial 2</h2>
-				<div class="cnt">
-					<ul>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://www.google.com.hk/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:pbking1.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">IOS Tutorial 2</h2>
+	<div class="entry-content"><ul>
 <li>键盘收起以及弹出对话框</li>
 <li>在<code>ViewController.h</code>里面加入<code>-(IBAction)View_TouchDown:(id)sender</code>;</li>
 </ul>
@@ -184,13 +243,70 @@
 </li>
 </ul>
 
+</div>
 
-					<br />
-					--EOF--
-					<p>若无特别说明，本站文章均为原创，转载请保留链接，谢谢</p>
-				</div>
-				<div id="disqus_thread"></div>
-				
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T04:34:49-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/ios/'>IOS</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/05/14/ios-tutorial-2/#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2015
+
+    pb
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
 
 <script type="text/javascript">
       var disqus_shortname = 'pbking1';
@@ -203,20 +319,14 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
 
 
-			</div>
-			
-			<div id="footer">
-				<span style="color:#bbb;font-size:12px">To do less than best is a sin.</span>
-<p style="clear:both"></p>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-			</div>
-		</div>
-	</body>
-</html>
 
+
+
+</body>
+</html>

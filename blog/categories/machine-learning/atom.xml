@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Machine_learning | KING]]></title>
+  <title><![CDATA[Category: machine_learning | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/machine-learning/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T19:20:50-05:00</updated>
+  <updated>2015-02-08T19:28:31-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Matlab Classification Method]]></title>
+    <title type="html"><![CDATA[matlab classification method]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/02/matlab-classification-method/"/>
     <updated>2014-06-02T03:15:11-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/02/matlab-classification-method</id>
@@ -111,7 +111,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[KNN in Matlab(knnclassify)]]></title>
+    <title type="html"><![CDATA[KNN in matlab(knnclassify)]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify/"/>
     <updated>2014-05-26T05:55:05-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/26/knn-in-matlab-knnclassify</id>
@@ -204,7 +204,7 @@ x = test_data(:, 2:3073);</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Intro to Recommandation System]]></title>
+    <title type="html"><![CDATA[Intro to recommandation system]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/23/intro-to-recommandation-system/"/>
     <updated>2014-05-23T22:32:15-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/23/intro-to-recommandation-system</id>
@@ -380,7 +380,7 @@ x = test_data(:, 2:3073);</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Linear_regression_tutorial]]></title>
+    <title type="html"><![CDATA[linear_regression_tutorial]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial/"/>
     <updated>2014-05-12T03:23:20-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial</id>
@@ -739,7 +739,7 @@ theta = pinv(x' * x + w * eye(size(x, 2))) * x' * y;
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[The Difference Between Data Mining and Machine Learning]]></title>
+    <title type="html"><![CDATA[The difference between data mining and machine learning]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/09/the-difference-between-data-mining-and-machine-learning/"/>
     <updated>2014-05-09T12:00:26-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/09/the-difference-between-data-mining-and-machine-learning</id>

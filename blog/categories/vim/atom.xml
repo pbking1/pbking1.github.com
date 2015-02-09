@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Vim | KING]]></title>
+  <title><![CDATA[Category: vim | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T19:20:50-05:00</updated>
+  <updated>2015-02-08T19:28:31-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Vi Regular Expression and Data Processing(1)]]></title>
+    <title type="html"><![CDATA[vi regular expression and data processing(1)]]></title>
     <link href="http://pbking1.github.com/blog/2014/11/21/vi-regular-expression-1/"/>
     <updated>2014-11-21T15:07:04-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/11/21/vi-regular-expression-1</id>

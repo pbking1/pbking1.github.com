@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Software_testing | KING]]></title>
+  <title><![CDATA[Category: software_testing | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/software-testing/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T19:20:50-05:00</updated>
+  <updated>2015-02-08T19:28:31-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Something Basic About Software Testing]]></title>
+    <title type="html"><![CDATA[something basic  about software testing]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/20/something-basic-about-software-testing/"/>
     <updated>2014-06-20T08:24:14-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/20/something-basic-about-software-testing</id>
@@ -520,7 +520,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Quick Black Box Testing on App]]></title>
+    <title type="html"><![CDATA[quick black box testing on app]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/26/quick-black-box-testing-on-app/"/>
     <updated>2014-05-26T02:39:28-04:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/26/quick-black-box-testing-on-app</id>
