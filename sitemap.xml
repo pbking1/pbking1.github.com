@@ -2,7 +2,7 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://pbking1.github.com/blog/2014/04/07/something-about-pso-algorithm/</loc>
-        <lastmod>2014-05-16T22:15:31-04:00</lastmod>
+        <lastmod>2015-02-08T19:08:30-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/2014/04/08/intro-to-genentic-algorithm/</loc>
@@ -10,7 +10,7 @@
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/2014/04/08/cpso-sk-de-shi-xian-1/</loc>
-        <lastmod>2014-05-16T22:15:31-04:00</lastmod>
+        <lastmod>2015-02-08T19:08:02-05:00</lastmod>
     </url>
     <url>
         <loc>
@@ -26,11 +26,11 @@
         <loc>
             http://pbking1.github.com/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/
         </loc>
-        <lastmod>2014-05-16T22:15:31-04:00</lastmod>
+        <lastmod>2015-02-08T19:08:33-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog/</loc>
-        <lastmod>2014-05-16T23:20:13-04:00</lastmod>
+        <lastmod>2015-02-08T19:08:11-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/</loc>
@@ -90,7 +90,7 @@
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial/</loc>
-        <lastmod>2014-05-25T21:55:13-04:00</lastmod>
+        <lastmod>2015-02-08T19:07:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/2014/05/13/2014-sysu-database-project-step1/</loc>
@@ -246,11 +246,11 @@
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-1/</loc>
-        <lastmod>2014-09-15T15:26:51-04:00</lastmod>
+        <lastmod>2015-02-08T19:06:55-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-2/</loc>
-        <lastmod>2014-09-15T15:53:48-04:00</lastmod>
+        <lastmod>2015-02-08T19:06:51-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/2014/10/03/python-regular-expression/</loc>
@@ -284,7 +284,7 @@
         <loc>
             http://pbking1.github.com/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/
         </loc>
-        <lastmod>2015-01-27T18:34:44-05:00</lastmod>
+        <lastmod>2015-02-08T19:06:25-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-1/</loc>
@@ -312,19 +312,19 @@
     </url>
     <url>
         <loc>http://pbking1.github.com/archives/</loc>
-        <lastmod>2015-02-08T19:05:17-05:00</lastmod>
+        <lastmod>2015-02-08T19:08:33-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/archives/</loc>
-        <lastmod>2015-02-08T19:05:17-05:00</lastmod>
+        <lastmod>2015-02-08T19:08:33-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/blog/</loc>
-        <lastmod>2015-02-08T19:05:17-05:00</lastmod>
+        <lastmod>2015-02-08T19:08:33-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/</loc>
-        <lastmod>2015-02-08T19:05:17-05:00</lastmod>
+        <lastmod>2015-02-08T19:08:33-05:00</lastmod>
     </url>
     <url>
         <loc>http://pbking1.github.com/project/</loc>
