@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T23:27:20-05:00</updated>
+  <updated>2015-02-08T23:55:30-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -260,7 +260,15 @@
     <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-1/"/>
     <updated>2015-02-08T21:53:03-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-1</id>
-    <content type="html"><![CDATA[<h3>goal part1</h3>
+    <content type="html"><![CDATA[<h3>useful resource</h3>
+
+<ul>
+<li><a href="http://www.apstudynotes.org/microeconomics/outlines/chapter-3-economic-systems/">http://www.apstudynotes.org/microeconomics/outlines/chapter-3-economic-systems/</a></li>
+<li><a href="http://wenku.baidu.com/view/beadef03de80d4d8d15a4ffb.html">http://wenku.baidu.com/view/beadef03de80d4d8d15a4ffb.html</a></li>
+</ul>
+
+
+<h3>goal part1</h3>
 
 <ul>
 <li>Basic Economic Concepts (8%–14%)
@@ -1916,7 +1924,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x75;&#115;&#101;&#x72;&#110;&#x61;&#109;&#101;&#64;&#109;&#97;&#x73;&#111;&#x6e;&#x2e;&#x69;&#110;&#x64;&#x69;&#97;&#x6e;&#97;&#46;&#101;&#x64;&#x75;">&#117;&#x73;&#101;&#114;&#110;&#97;&#109;&#x65;&#x40;&#109;&#97;&#x73;&#111;&#110;&#x2e;&#105;&#x6e;&#100;&#x69;&#97;&#x6e;&#x61;&#x2e;&#101;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#58;&#117;&#x73;&#101;&#x72;&#110;&#97;&#109;&#x65;&#x40;&#x6d;&#97;&#x73;&#111;&#110;&#46;&#105;&#x6e;&#x64;&#x69;&#97;&#110;&#x61;&#46;&#x65;&#100;&#117;">&#x75;&#x73;&#101;&#114;&#x6e;&#97;&#x6d;&#x65;&#x40;&#109;&#x61;&#x73;&#x6f;&#x6e;&#46;&#x69;&#110;&#100;&#x69;&#x61;&#x6e;&#x61;&#46;&#101;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
