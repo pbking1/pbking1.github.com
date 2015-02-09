@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Search_engine | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/search-engine/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-08T19:01:17-05:00</updated>
+  <updated>2015-02-08T19:01:44-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -486,26 +486,23 @@ return 0;
 </ul>
 
 
-<p>```
- #include&lt;xapian.h></p>
+<p>```</p>
 
-<h1>include<iostream></h1>
+<pre><code>#include&lt;xapian.h&gt;
+#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
 
-<h1>include<string></h1>
+#define CONTENT "70:69， This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。"
 
-<p>using namespace std;</p>
+#define TITLE "This is a news"
 
-<h1>define CONTENT &ldquo;70:69， This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。&rdquo;</h1>
+#define INDEX_PATH "./index_data"
 
-<h1>define TITLE &ldquo;This is a news&rdquo;</h1>
+#define F_DOCID 1
 
-<h1>define INDEX_PATH &ldquo;./index_data&rdquo;</h1>
-
-<h1>define F_DOCID 1</h1>
-
-<p>int main(int argc, char *argv[]){</p>
-
-<pre><code>try{
+int main(int argc, char *argv[]){
+try{
     //The text to be indexed
     string content(CONTENT);
     string title(TITLE);
