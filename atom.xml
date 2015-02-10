@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-10T00:32:41-05:00</updated>
+  <updated>2015-02-10T00:33:57-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -297,38 +297,36 @@
 
 <ul>
 <li>​Price of the product
-​​      &ndash; primary determinant
 
 <ul>
-<li>doesn’t cause the demand curve to shift, but a change in the quantity demanded
-​​        &ndash; all other determinants can cause the demand curve to shift,  a “decrease/increase in demand”
-​​    &ndash; Income</li>
+<li>primary determinant</li>
+<li>doesn’t cause the demand curve to shift, but a change in the quantity demanded</li>
+<li>all other determinants can cause the demand curve to shift,  a “decrease/increase in demand”</li>
 </ul>
 </li>
+<li>Income</li>
 <li>Consumer tastes</li>
 <li>Prices of substitute products</li>
 <li>Prices of complementary products</li>
 <li>Expected future price of the product</li>
 </ul>
 </li>
-<li><p>Determinants of Supply
-​    &ndash; Price of the product</p></li>
-</ul>
-
-
-<p>​        &ndash; a change in price is a ‘change in the quantity supplied’</p>
-
-<pre><code>    - a change in anything else, ‘change in supply,’ shifts the      supply curve
-</code></pre>
-
-<p>​    &ndash; Prices of inputs required to make the product</p>
-
-<pre><code>- Technology and productivity
-- Expected future price of the product
-</code></pre>
+<li><p>Determinants of Supply</p>
 
 <ul>
-<li>需求变动对市场均衡的影响
+<li>Price of the product
+
+<ul>
+<li>a change in price is a ‘change in the quantity supplied’</li>
+<li>a change in anything else, ‘change in supply,’ shifts the      supply curve</li>
+</ul>
+</li>
+<li>Prices of inputs required to make the product</li>
+<li>Technology and productivity</li>
+<li>Expected future price of the product</li>
+</ul>
+</li>
+<li><p>需求变动对市场均衡的影响</p>
 
 <ul>
 <li>需求增加引起均衡价格上升，需求减少引起均衡价格下降。</li>
@@ -2080,7 +2078,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#117;&#115;&#101;&#x72;&#110;&#x61;&#x6d;&#101;&#x40;&#109;&#97;&#115;&#x6f;&#x6e;&#x2e;&#x69;&#x6e;&#x64;&#105;&#97;&#x6e;&#97;&#46;&#x65;&#100;&#117;">&#x75;&#x73;&#x65;&#x72;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#109;&#97;&#115;&#111;&#110;&#46;&#x69;&#110;&#x64;&#105;&#x61;&#110;&#x61;&#x2e;&#x65;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#58;&#117;&#x73;&#101;&#114;&#x6e;&#97;&#x6d;&#101;&#64;&#109;&#x61;&#x73;&#111;&#110;&#x2e;&#105;&#110;&#x64;&#105;&#97;&#110;&#x61;&#46;&#x65;&#100;&#117;">&#x75;&#x73;&#x65;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#x6d;&#97;&#x73;&#x6f;&#110;&#x2e;&#105;&#x6e;&#x64;&#x69;&#97;&#110;&#x61;&#x2e;&#101;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
