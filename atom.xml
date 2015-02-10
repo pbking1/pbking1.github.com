@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-10T00:07:01-05:00</updated>
+  <updated>2015-02-10T00:27:19-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -253,12 +253,18 @@
 <!--more-->
 
 
-<h4>Market equilibrium</h4>
+<h4>Market equilibrium市场均衡</h4>
 
 <ul>
 <li>equilibrium
 
 <ul>
+<li>在市场上，市场供求达到平衡时的状态
+
+<ul>
+<li>​A state of balance between the opposing forces of shortages and surpluses盈餘</li>
+</ul>
+</li>
 <li>equally divide the property to all the society member</li>
 </ul>
 </li>
@@ -274,26 +280,85 @@
 <li>but this will reduce the stimulation of produce and work
 
 <ul>
-<li>and make the limited resource fewer
+<li>and make the limited resource fewer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>消费者和生产者根据市场价格决定愿意并且能够购买或者能够提供的商品数量，带着各自的盘算，消费者与生产者一起进入市场，最终决定市场的均衡。</li>
+</ul>
+
 
 <h4>Determinants of supply and demand</h4>
 
+<ul>
+<li>影响商品供求关系的非价格因素的变动对价格和产量的影响我们称之为供求定理</li>
+<li><p>Determinants of Demand</p>
+
+<ul>
+<li>​Price of the product
+​​      &ndash; primary determinant
+
+<ul>
+<li>doesn’t cause the demand curve to shift, but a change in the quantity demanded
+​​        &ndash; all other determinants can cause the demand curve to shift,  a “decrease/increase in demand”
+​​    &ndash; Income</li>
+</ul>
+</li>
+<li>Consumer tastes</li>
+<li>Prices of substitute products</li>
+<li>Prices of complementary products</li>
+<li>Expected future price of the product</li>
+</ul>
+</li>
+<li><p>Determinants of Supply
+​    &ndash; Price of the product
+​        &ndash; a change in price is a “change in the quantity supplied”</p>
+
+<pre><code>  - a change in anything else, “change in supply,” shifts the      supply curve
+</code></pre>
+
+​    &ndash; Prices of inputs required to make the product
+
+<ul>
+<li>Technology and productivity</li>
+<li>Expected future price of the product</li>
+</ul>
+</li>
+<li><p>需求变动对市场均衡的影响</p>
+
+<ul>
+<li>需求增加引起均衡价格上升，需求减少引起均衡价格下降。</li>
+<li>需求增加引起均衡产量增加，需求减产引起均衡产量减少。</li>
+<li>需求的变动引起均衡价格与均衡产量同方向变动。</li>
+</ul>
+</li>
+<li>供给变动对市场均衡的影响
+
+<ul>
+<li>供给增加引起均衡价格下降，供给减少引起均衡价格上升。</li>
+<li>供给增加引起均衡产量的增加，供给减少引起均衡产量的减少。</li>
+<li>供给的变动引起均衡价格反方向变动，供给的变动引起均衡产量同方向变动。</li>
+</ul>
+</li>
+<li>Supply and demand affect each other indirectly, not directly</li>
+</ul>
+
+
 <h4>Price and quantity controls</h4>
 
-<h4>Elasticity彈性</h4></li>
+<h4>Elasticity彈性</h4>
+
+<ul>
+<li><h4>Price, income and cross-price elasticities of demand</h4></li>
 </ul>
-</li>
-</ul>
-</li>
-<li><h4>Price, income and cross-price elasticities of demand</h4>
+
 
 <h4>Price elasticity of supply</h4>
 
 <h4>Consumer surplus, producer surplus and market efficiency</h4>
 
-<h4>Tax incidence and deadweight loss</h4></li>
-</ul>
-
+<h4>Tax incidence and deadweight loss</h4>
 ]]></content>
   </entry>
   
@@ -2012,7 +2077,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x75;&#x73;&#101;&#x72;&#110;&#x61;&#x6d;&#x65;&#64;&#x6d;&#97;&#115;&#111;&#x6e;&#46;&#x69;&#x6e;&#x64;&#105;&#x61;&#x6e;&#97;&#x2e;&#x65;&#100;&#x75;">&#x75;&#115;&#x65;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#x6d;&#x61;&#x73;&#111;&#110;&#46;&#105;&#110;&#100;&#x69;&#97;&#110;&#97;&#46;&#101;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x75;&#115;&#x65;&#114;&#x6e;&#97;&#109;&#x65;&#x40;&#x6d;&#x61;&#x73;&#x6f;&#x6e;&#46;&#105;&#110;&#100;&#x69;&#97;&#110;&#x61;&#46;&#101;&#100;&#x75;">&#117;&#115;&#x65;&#x72;&#x6e;&#97;&#x6d;&#101;&#64;&#109;&#97;&#115;&#111;&#x6e;&#x2e;&#x69;&#x6e;&#100;&#105;&#x61;&#x6e;&#97;&#46;&#101;&#100;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
