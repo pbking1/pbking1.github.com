@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-09T00:10:24-05:00</updated>
+  <updated>2015-02-10T00:07:01-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -280,19 +280,18 @@
 
 <h4>Price and quantity controls</h4>
 
-<h4>Elasticity</h4>
-
-<h4>Price, income and cross-price elasticities of demand</h4>
+<h4>Elasticity彈性</h4></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4>Price, income and cross-price elasticities of demand</h4>
 
 <h4>Price elasticity of supply</h4>
 
 <h4>Consumer surplus, producer surplus and market efficiency</h4>
 
 <h4>Tax incidence and deadweight loss</h4></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
 ]]></content>
@@ -357,11 +356,15 @@
 <li>can also be implement as <strong>the next best alternative given up to acquire something</strong></li>
 </ul>
 </li>
-<li>when people decide to do something, they need to compare the plan they have.
-
-<h4>Production possibilities curve生產可能性曲線</h4></li>
+<li>when people decide to do something, they need to compare the plan they have.</li>
 </ul>
 </li>
+</ul>
+
+
+<h4>Production possibilities curve生產可能性曲線</h4>
+
+<ul>
 <li>is used for resource scarcity and choice measure.
 
 <ul>
@@ -369,6 +372,33 @@
 </ul>
 </li>
 <li>Shows the combinations of two goods that can be produced if the economy uses all of its resources fully and efficiently</li>
+<li>important infomation
+
+<ul>
+<li>the point on the production possibilities curve
+
+<ul>
+<li>can be reached</li>
+<li>is efficiency</li>
+</ul>
+</li>
+<li>the point inside the production possibilities curve
+
+<ul>
+<li>can be reached</li>
+<li>is not enough efficiency</li>
+</ul>
+</li>
+<li>the point outside the production possibilities curve
+
+<ul>
+<li>can not be reached</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>生产可能性曲线的斜率越小机会成本越小</li>
+<li>经济增长使生产可能性边界向外移动</li>
 </ul>
 
 
@@ -418,14 +448,14 @@
 <ul>
 <li><strong>The government can protect property right</strong></li>
 <li>when the property of the people is not safe, people will not want to work or produce good.</li>
-<li>The miss leading of the market
+<li>The miss leading of the market市场失灵
 
 <ul>
 <li>the situation that the market can not adjust the resource
 
 <ul>
-<li>outside: produce or consume a stuff will affect the outsider&rsquo;s benefit.</li>
-<li>market force: single buyer or seller have the ability to affect the market</li>
+<li>outside外部性: produce or consume a stuff will affect the outsider&rsquo;s benefit.</li>
+<li>market force垄断: single buyer or seller have the ability to affect the market</li>
 </ul>
 </li>
 <li>so in some condition, public policy can improve efficiency.</li>
@@ -1940,6 +1970,13 @@
 <li><code>sed 's/^*$//g' file</code></li>
 </ul>
 
+
+<h3>replace the ^M into \n</h3>
+
+<ul>
+<li>use &rsquo;s/\r/\r/&#8217;</li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -1975,7 +2012,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#x75;&#115;&#x65;&#114;&#x6e;&#97;&#x6d;&#101;&#64;&#x6d;&#x61;&#x73;&#111;&#x6e;&#x2e;&#105;&#x6e;&#x64;&#105;&#97;&#110;&#x61;&#x2e;&#101;&#100;&#117;">&#117;&#x73;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#109;&#x61;&#x73;&#111;&#x6e;&#46;&#x69;&#110;&#x64;&#105;&#x61;&#x6e;&#97;&#46;&#x65;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x75;&#x73;&#101;&#x72;&#110;&#x61;&#x6d;&#x65;&#64;&#x6d;&#97;&#115;&#111;&#x6e;&#46;&#x69;&#x6e;&#x64;&#105;&#x61;&#x6e;&#97;&#x2e;&#x65;&#100;&#x75;">&#x75;&#115;&#x65;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#x6d;&#x61;&#x73;&#111;&#110;&#46;&#105;&#110;&#100;&#x69;&#97;&#110;&#97;&#46;&#101;&#x64;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
