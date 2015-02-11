@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-11T00:18:05-05:00</updated>
+  <updated>2015-02-11T00:29:27-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -285,13 +285,13 @@
 </li>
 </ul>
 </li>
-<li>消费者和生产者根据市场价格决定愿意并且能够购买或者能够提供的商品数量，带着各自的盘算，消费者与生产者一起进入市场，最终决定市场的均衡。</li>
-</ul>
-
-
-<h4>Determinants of supply and demand</h4>
+<li>消费者和生产者根据市场价格决定愿意并且能够购买或者能够提供的商品数量，带着各自的盘算，消费者与生产者一起进入市场，最终决定市场的均衡。
 
 <ul>
+<li>市场均衡图由横纵两条坐标轴和供求两条曲线构成。横坐标代表数量quantity，纵坐标代表价格price。需求曲线是向右下方倾斜的一条直线，反映需求量quantity demanded和价格之间的关系；供给曲线是向右上方倾斜的一条直线，反映供给量quantity supplied和价格之间的关系。曲线相交点代表市场均衡点，即在这个价格下，生产的产品刚好被买走。</li>
+</ul>
+</li>
+<li><h4>Determinants of supply and demand</h4></li>
 <li>影响商品供求关系的非价格因素的变动对价格和产量的影响我们称之为供求定理</li>
 <li><p>Determinants of Demand</p>
 
@@ -353,17 +353,19 @@
 <li><strong>price control are legal restriction on how high or how low a market price may go</strong>
 
 <ul>
-<li>price ceilings
+<li>price ceilings价格天花板
 
 <ul>
+<li>设定在市场均衡价格之下，导致供不应求</li>
 <li>a maximum price sellers are allowed to charge for a good or service</li>
 <li>decreases supply</li>
 <li>established under the equilibrium price</li>
 </ul>
 </li>
-<li>price floors
+<li>price floors价格地板
 
 <ul>
+<li>设定在市场均衡价格之上，导致供过于求。</li>
 <li>a minimum price buyers are required to pay for a good or service</li>
 <li>established above the equilibrium or market price</li>
 <li>causes a surplus to develop</li>
@@ -463,13 +465,19 @@
 </li>
 </ul>
 </li>
+<li>消费者剩余=支付意愿–市场价格；生产者剩余=市场价格–生产成本</li>
 </ul>
 
 
 <h4>Tax incidence and deadweight loss税收负担和无谓损失</h4>
 
 <ul>
-<li></li>
+<li>无谓损失是市场扭曲引起的总剩余减少；弹性越大，税收的无谓损失越大。
+
+<ul>
+<li>无谓损失又为社会净损失，是指由于市场未处于最优运行状态而引起的社会成本, 也就是当偏离竞争均衡时, 所损失的消费者剩余和生产者剩余</li>
+</ul>
+</li>
 </ul>
 
 ]]></content>
@@ -2193,7 +2201,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x75;&#x73;&#x65;&#x72;&#110;&#x61;&#x6d;&#x65;&#64;&#109;&#x61;&#115;&#x6f;&#110;&#x2e;&#105;&#x6e;&#100;&#105;&#x61;&#x6e;&#x61;&#46;&#x65;&#x64;&#117;">&#117;&#115;&#101;&#x72;&#110;&#x61;&#109;&#101;&#x40;&#109;&#x61;&#115;&#x6f;&#110;&#46;&#x69;&#110;&#x64;&#x69;&#x61;&#x6e;&#97;&#x2e;&#101;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#117;&#x73;&#101;&#114;&#110;&#97;&#109;&#x65;&#x40;&#109;&#97;&#x73;&#111;&#110;&#46;&#105;&#110;&#x64;&#x69;&#x61;&#x6e;&#x61;&#x2e;&#101;&#100;&#x75;">&#117;&#x73;&#101;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#x6d;&#x61;&#x73;&#111;&#110;&#x2e;&#105;&#110;&#x64;&#x69;&#97;&#110;&#x61;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
