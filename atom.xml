@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-11T00:01:48-05:00</updated>
+  <updated>2015-02-11T00:18:05-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -357,12 +357,16 @@
 
 <ul>
 <li>a maximum price sellers are allowed to charge for a good or service</li>
+<li>decreases supply</li>
+<li>established under the equilibrium price</li>
 </ul>
 </li>
 <li>price floors
 
 <ul>
 <li>a minimum price buyers are required to pay for a good or service</li>
+<li>established above the equilibrium or market price</li>
+<li>causes a surplus to develop</li>
 </ul>
 </li>
 </ul>
@@ -462,7 +466,12 @@
 </ul>
 
 
-<h4>Tax incidence and deadweight loss</h4>
+<h4>Tax incidence and deadweight loss税收负担和无谓损失</h4>
+
+<ul>
+<li></li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -528,6 +537,7 @@
 <li>when people decide to do something, they need to compare the plan they have.</li>
 </ul>
 </li>
+<li><strong>Opportunity Cost of doing A=loss in B/gain in A</strong></li>
 </ul>
 
 
@@ -571,7 +581,7 @@
 </ul>
 
 
-<h4>Comparative advantage, specialisation适应化 and trade</h4>
+<h4>Comparative advantage, specialisation专业化 and trade</h4>
 
 <ul>
 <li>people need to compare before making decision</li>
@@ -594,6 +604,7 @@
 </li>
 </ul>
 </li>
+<li>specialisation专业化指生产方各自专注于生产有比较优势的产品，可以提高产量，进而各方进行贸易，对双方都有好处，即使某一方在所有产品上都有绝对优势。</li>
 </ul>
 
 
@@ -615,6 +626,7 @@
 <h4>Property rights财产权 and the role of incentives激励</h4>
 
 <ul>
+<li>计划经济和市场经济</li>
 <li><strong>The government can protect property right</strong></li>
 <li>when the property of the people is not safe, people will not want to work or produce good.</li>
 <li>The miss leading of the market市场失灵
@@ -2181,7 +2193,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#117;&#x73;&#x65;&#114;&#110;&#97;&#x6d;&#101;&#64;&#109;&#x61;&#x73;&#111;&#x6e;&#46;&#x69;&#110;&#x64;&#x69;&#97;&#x6e;&#x61;&#x2e;&#x65;&#100;&#117;">&#x75;&#115;&#x65;&#x72;&#x6e;&#x61;&#x6d;&#101;&#x40;&#x6d;&#97;&#115;&#111;&#110;&#46;&#x69;&#x6e;&#x64;&#105;&#x61;&#110;&#x61;&#x2e;&#101;&#x64;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x75;&#x73;&#x65;&#x72;&#110;&#x61;&#x6d;&#x65;&#64;&#109;&#x61;&#115;&#x6f;&#110;&#x2e;&#105;&#x6e;&#100;&#105;&#x61;&#x6e;&#x61;&#46;&#x65;&#x64;&#117;">&#117;&#115;&#101;&#x72;&#110;&#x61;&#109;&#101;&#x40;&#109;&#x61;&#115;&#x6f;&#110;&#46;&#x69;&#110;&#x64;&#x69;&#x61;&#x6e;&#97;&#x2e;&#101;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
