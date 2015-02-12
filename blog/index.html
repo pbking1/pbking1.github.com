@@ -100,6 +100,131 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2015/02/12/linkedin-api-example/">
+		
+			Linkedin_api_example</a>
+	</h2>
+	<div class="entry-content">
+		<ul>
+<li></li>
+<li><p>code</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#! /usr/bin/env python
+</span><span class='line'># -*- coding: utf-8 -*-
+</span><span class='line'>
+</span><span class='line'>CONSUMER_KEY = 'xxxxxxx'     # This is api_key
+</span><span class='line'>CONSUMER_SECRET = 'xxxxxxx'   # This is secret_key
+</span><span class='line'>
+</span><span class='line'>USER_TOKEN = 'xxxxxxx'   # This is oauth_token
+</span><span class='line'>USER_SECRET = 'xxxxxxx'   # This is oauth_secret
+</span><span class='line'>RETURN_URL = 'http://localhost:8000'
+</span><span class='line'>
+</span><span class='line'>from linkedin import linkedin
+</span><span class='line'>from oauthlib import *
+</span><span class='line'>from urllib2 import *
+</span><span class='line'>import urllib2
+</span><span class='line'>from json import dumps, loads
+</span><span class='line'># Define CONSUMER_KEY, CONSUMER_SECRET,  
+</span><span class='line'># USER_TOKEN, and USER_SECRET from the credentials 
+</span><span class='line'># provided in your LinkedIn application
+</span><span class='line'>
+</span><span class='line'># Instantiate the developer authentication class
+</span><span class='line'>authentication = linkedin.LinkedInDeveloperAuthentication(CONSUMER_KEY, CONSUMER_SECRET, 
+</span><span class='line'>                                                      USER_TOKEN, USER_SECRET, 
+</span><span class='line'>                                                      RETURN_URL, linkedin.PERMISSIONS.enums.values())
+</span><span class='line'>
+</span><span class='line'># Pass it in to the app...
+</span><span class='line'>application = linkedin.LinkedInApplication(authentication)
+</span><span class='line'>
+</span><span class='line'>print application.get_profile()
+</span><span class='line'>
+</span><span class='line'>print application.get_profile(selectors=['id', 'first-name', 'last-name', 'location', 'distance', 'num-connections', 'skills', 'educations'])
+</span><span class='line'>
+</span><span class='line'>print application.search_company(selectors=[{'companies': ['name', 'universal-name', 'website-url']}], params={'keywords': 'apple microsoft'})
+</span><span class='line'># Search URL is https://api.linkedin.com/v1/company-search:(companies:(name,universal-name,webs
+</span><span class='line'>
+</span><span class='line'>print application.get_memberships(params={'count': 20})
+</span><span class='line'>
+</span><span class='line'>print application.get_companies(company_ids=[1035], universal_names=['apple'], selectors=['name'], params={'is-company-admin': 'true'})
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-12T14:51:14-05:00" pubdate data-updated="true">Feb 12<span>th</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/api/'>api</a>, <a class='category' href='/blog/categories/python/'>python</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/02/12/linkedin-api-example//blog/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2015/02/08/intro-to-microeconomic-8/">
 		
 			Intro_to_microeconomic_8</a>
@@ -442,64 +567,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2015/02/08/intro-to-microeconomic-4//blog/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2015/02/08/intro-to-microeconomic-3/">
-		
-			Intro_to_microeconomic_3</a>
-	</h2>
-	<div class="entry-content">
-		<h3>goal part3</h3>
-
-<ul>
-<li>Theory of consumer choice消费者选择理论(5%–10%)
-
-<ul>
-<li>1.Total utility and marginal utility</li>
-<li>2.Utility maximization: equalizing marginal utility per dollar</li>
-<li>3.Individual and market demand curves</li>
-<li>4.Income and substitution effects</li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2015/02/08/intro-to-microeconomic-3/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-02-08T21:56:14-05:00" pubdate data-updated="true">Feb 8<span>th</span>, 2015</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/economic/'>economic</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2015/02/08/intro-to-microeconomic-3//blog/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

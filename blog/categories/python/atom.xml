@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-11T23:05:00-05:00</updated>
+  <updated>2015-02-12T14:52:27-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[linkedin_api_example]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/12/linkedin-api-example/"/>
+    <updated>2015-02-12T14:51:14-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/02/12/linkedin-api-example</id>
+    <content type="html"><![CDATA[<ul>
+<li></li>
+<li><p>code
+```</p>
+
+<h1>! /usr/bin/env python</h1>
+
+<h1>&ndash;<em>&ndash; coding: utf-8 &ndash;</em>&ndash;</h1></li>
+</ul>
+
+
+<p>CONSUMER_KEY = &lsquo;xxxxxxx&rsquo;     # This is api_key
+CONSUMER_SECRET = &lsquo;xxxxxxx&rsquo;   # This is secret_key</p>
+
+<p>USER_TOKEN = &lsquo;xxxxxxx&rsquo;   # This is oauth_token
+USER_SECRET = &lsquo;xxxxxxx&rsquo;   # This is oauth_secret
+RETURN_URL = &lsquo;<a href="http://localhost:8000">http://localhost:8000</a>&rsquo;</p>
+
+<p>from linkedin import linkedin
+from oauthlib import *
+from urllib2 import *
+import urllib2
+from json import dumps, loads</p>
+
+<h1>Define CONSUMER_KEY, CONSUMER_SECRET,</h1>
+
+<h1>USER_TOKEN, and USER_SECRET from the credentials</h1>
+
+<h1>provided in your LinkedIn application</h1>
+
+<h1>Instantiate the developer authentication class</h1>
+
+<p>authentication = linkedin.LinkedInDeveloperAuthentication(CONSUMER_KEY, CONSUMER_SECRET,</p>
+
+<pre><code>                                                  USER_TOKEN, USER_SECRET, 
+                                                  RETURN_URL, linkedin.PERMISSIONS.enums.values())
+</code></pre>
+
+<h1>Pass it in to the app&hellip;</h1>
+
+<p>application = linkedin.LinkedInApplication(authentication)</p>
+
+<p>print application.get_profile()</p>
+
+<p>print application.get_profile(selectors=[&lsquo;id&rsquo;, &lsquo;first-name&rsquo;, &lsquo;last-name&rsquo;, &lsquo;location&rsquo;, &lsquo;distance&rsquo;, &lsquo;num-connections&rsquo;, &lsquo;skills&rsquo;, &lsquo;educations&rsquo;])</p>
+
+<p>print application.search_company(selectors=[{&lsquo;companies&rsquo;: [&lsquo;name&rsquo;, &lsquo;universal-name&rsquo;, &lsquo;website-url&rsquo;]}], params={&lsquo;keywords&rsquo;: &lsquo;apple microsoft&rsquo;})</p>
+
+<h1>Search URL is <a href="https://api.linkedin.com/v1/company-search:">https://api.linkedin.com/v1/company-search:</a>(companies:(name,universal-name,webs</h1>
+
+<p>print application.get_memberships(params={&lsquo;count&rsquo;: 20})</p>
+
+<p>print application.get_companies(company_ids=[1035], universal_names=[&lsquo;apple&rsquo;], selectors=[&lsquo;name&rsquo;], params={&lsquo;is-company-admin&rsquo;: &lsquo;true&rsquo;})</p>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[how to install python package on redhat without root access]]></title>
