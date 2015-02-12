@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-12T14:54:12-05:00</updated>
+  <updated>2015-02-12T14:56:55-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -30,13 +30,41 @@
 </li>
 </ul>
 </li>
-<li><p>and the sample code below is using the linkedin package from thrid party</p></li>
+<li><p>and the sample code below is using the linkedin package from thrid party</p>
+
+<ul>
+<li>you can download the package using the following link
+
+<ul>
+<li><a href="https://pypi.python.org/pypi/python-linkedin/4.0">https://pypi.python.org/pypi/python-linkedin/4.0</a></li>
+<li><a href="https://github.com/ozgur/python-linkedin">https://github.com/ozgur/python-linkedin</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>code
+
+<ul>
+<li>the following code can produce some result
+
+<ul>
+<li>but I have some problem in using the search api
+
+<ul>
+<li>application.search_profile(selectors=[{&lsquo;people&rsquo;: [&lsquo;first-name&rsquo;, &lsquo;last-name&rsquo;]}], params={&lsquo;keywords&rsquo;: &lsquo;apple microsoft&rsquo;})</li>
+</ul>
+</li>
+<li><h1>Search URL is <a href="https://api.linkedin.com/v1/people-search:">https://api.linkedin.com/v1/people-search:</a>(people:(first-name,last-name))?keywords=apple%20microsoft</h1>
+
 ```
 
 <h1>! /usr/bin/env python</h1>
 
 <h1>&ndash;<em>&ndash; coding: utf-8 &ndash;</em>&ndash;</h1></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
