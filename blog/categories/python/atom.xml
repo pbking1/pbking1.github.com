@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-12T14:52:27-05:00</updated>
+  <updated>2015-02-12T14:54:12-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -19,9 +19,20 @@
     <updated>2015-02-12T14:51:14-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/02/12/linkedin-api-example</id>
     <content type="html"><![CDATA[<ul>
-<li></li>
-<li><p>code
-```</p>
+<li><p>we can use the RESTFUL api to get some information in linkedin</p>
+
+<ul>
+<li><a href="https://apigee.com/console/linkedin">https://apigee.com/console/linkedin</a>
+
+<ul>
+<li>this is a online simluator to perform RESTFUL api of linkedin</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>and the sample code below is using the linkedin package from thrid party</p></li>
+<li>code
+```
 
 <h1>! /usr/bin/env python</h1>
 

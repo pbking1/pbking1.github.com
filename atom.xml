@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-12T14:52:27-05:00</updated>
+  <updated>2015-02-12T14:54:12-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -19,8 +19,19 @@
     <updated>2015-02-12T14:51:14-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/02/12/linkedin-api-example</id>
     <content type="html"><![CDATA[<ul>
-<li></li>
-<li><p>code</p></li>
+<li><p>we can use the RESTFUL api to get some information in linkedin</p>
+
+<ul>
+<li><a href="https://apigee.com/console/linkedin">https://apigee.com/console/linkedin</a>
+
+<ul>
+<li>this is a online simluator to perform RESTFUL api of linkedin</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>and the sample code below is using the linkedin package from thrid party</p></li>
+<li>code</li>
 </ul>
 
 
@@ -2368,7 +2379,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#x75;&#115;&#101;&#x72;&#110;&#97;&#109;&#x65;&#64;&#x6d;&#97;&#x73;&#x6f;&#110;&#46;&#x69;&#110;&#100;&#x69;&#97;&#110;&#x61;&#x2e;&#101;&#100;&#117;">&#x75;&#115;&#x65;&#x72;&#110;&#97;&#109;&#x65;&#64;&#109;&#x61;&#115;&#x6f;&#x6e;&#x2e;&#x69;&#x6e;&#100;&#x69;&#x61;&#110;&#x61;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x75;&#x73;&#101;&#114;&#110;&#97;&#109;&#x65;&#64;&#x6d;&#97;&#x73;&#111;&#110;&#x2e;&#105;&#x6e;&#x64;&#105;&#97;&#110;&#97;&#46;&#101;&#100;&#x75;">&#x75;&#x73;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#x40;&#109;&#97;&#x73;&#x6f;&#110;&#x2e;&#x69;&#110;&#x64;&#105;&#x61;&#x6e;&#x61;&#x2e;&#101;&#x64;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
