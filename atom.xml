@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-12T15:07:43-05:00</updated>
+  <updated>2015-02-12T15:08:35-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -61,7 +61,7 @@
 <li>application.search_profile(selectors=[{&lsquo;people&rsquo;: [&lsquo;first-name&rsquo;, &lsquo;last-name&rsquo;]}], params={&lsquo;keywords&rsquo;: &lsquo;apple microsoft&rsquo;})</li>
 </ul>
 </li>
-<li>Search URL is <a href="https://api.linkedin.com/v1/people-search:">https://api.linkedin.com/v1/people-search:</a>(people:(first-name,last-name))?keywords=apple%20microsoft</li>
+<li>Search URL is &lsquo;<a href="https://api.linkedin.com/v1/people-search:">https://api.linkedin.com/v1/people-search:</a>(people:(first-name,last-name))?keywords=apple%20microsoft&rsquo;</li>
 </ul>
 </li>
 </ul>
@@ -2413,7 +2413,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x75;&#115;&#x65;&#x72;&#110;&#x61;&#109;&#101;&#x40;&#109;&#97;&#115;&#111;&#x6e;&#46;&#x69;&#110;&#100;&#x69;&#x61;&#110;&#97;&#x2e;&#101;&#x64;&#117;">&#117;&#115;&#x65;&#114;&#110;&#97;&#109;&#x65;&#64;&#x6d;&#x61;&#115;&#x6f;&#110;&#x2e;&#x69;&#x6e;&#x64;&#105;&#x61;&#x6e;&#x61;&#x2e;&#101;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x75;&#x73;&#101;&#x72;&#110;&#x61;&#109;&#x65;&#64;&#109;&#x61;&#x73;&#111;&#110;&#46;&#x69;&#x6e;&#100;&#x69;&#x61;&#110;&#97;&#46;&#101;&#100;&#x75;">&#x75;&#x73;&#101;&#x72;&#x6e;&#97;&#109;&#101;&#x40;&#109;&#x61;&#x73;&#x6f;&#110;&#x2e;&#x69;&#x6e;&#100;&#x69;&#x61;&#x6e;&#97;&#x2e;&#101;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server

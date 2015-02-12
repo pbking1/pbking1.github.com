@@ -4,7 +4,7 @@
   <title><![CDATA[Category: api | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/api/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-12T15:07:43-05:00</updated>
+  <updated>2015-02-12T15:08:35-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -61,18 +61,19 @@
 <li>application.search_profile(selectors=[{&lsquo;people&rsquo;: [&lsquo;first-name&rsquo;, &lsquo;last-name&rsquo;]}], params={&lsquo;keywords&rsquo;: &lsquo;apple microsoft&rsquo;})</li>
 </ul>
 </li>
-<li>Search URL is <a href="https://api.linkedin.com/v1/people-search:">https://api.linkedin.com/v1/people-search:</a>(people:(first-name,last-name))?keywords=apple%20microsoft
-```
+<li>Search URL is &lsquo;<a href="https://api.linkedin.com/v1/people-search:">https://api.linkedin.com/v1/people-search:</a>(people:(first-name,last-name))?keywords=apple%20microsoft&rsquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p>```</p>
 
 <h1>! /usr/bin/env python</h1>
 
-<h1>&ndash;<em>&ndash; coding: utf-8 &ndash;</em>&ndash;</h1></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
+<h1>&ndash;<em>&ndash; coding: utf-8 &ndash;</em>&ndash;</h1>
 
 <p>CONSUMER_KEY = &lsquo;xxxxxxx&rsquo;     # This is api_key
 CONSUMER_SECRET = &lsquo;xxxxxxx&rsquo;   # This is secret_key</p>
