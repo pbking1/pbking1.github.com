@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-11T22:33:21-05:00</updated>
+  <updated>2015-02-11T23:05:00-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -293,7 +293,7 @@
 <h4>Income and substitution effects</h4>
 
 <ul>
-<li>Income effect ：物品A的价格下降增加了收入的实际购买力（real income），能购买更多的物品A和B。- substitution effect：物品A的价格下降使B相对于A的价格上升，能买更少的B和更多的A。- 窍门：物品A价格下降能购买更多的A（替代效应和收入效应相互加强起到同向作用），但B不确定。</li>
+<li><strong>Income effect收入效应</strong> ：物品A的价格下降增加了收入的实际购买力（real income），能购买更多的物品A和B。- <strong>substitution effect替代效应</strong>：物品A的价格下降使B相对于A的价格上升，能买更少的B和更多的A。- 窍门：物品A价格下降能购买更多的A（替代效应和收入效应相互加强起到同向作用），但B不确定。</li>
 </ul>
 
 ]]></content>
@@ -2278,7 +2278,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#58;&#117;&#x73;&#101;&#114;&#110;&#x61;&#x6d;&#x65;&#x40;&#109;&#x61;&#115;&#x6f;&#110;&#46;&#105;&#110;&#100;&#x69;&#x61;&#x6e;&#97;&#46;&#101;&#x64;&#x75;">&#x75;&#x73;&#x65;&#x72;&#x6e;&#x61;&#109;&#x65;&#64;&#109;&#97;&#x73;&#x6f;&#x6e;&#x2e;&#105;&#x6e;&#x64;&#x69;&#x61;&#x6e;&#x61;&#x2e;&#101;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#117;&#115;&#101;&#x72;&#110;&#x61;&#109;&#x65;&#64;&#x6d;&#97;&#x73;&#111;&#110;&#x2e;&#105;&#x6e;&#100;&#105;&#97;&#x6e;&#97;&#46;&#x65;&#x64;&#x75;">&#x75;&#x73;&#x65;&#114;&#x6e;&#97;&#109;&#x65;&#x40;&#x6d;&#97;&#115;&#111;&#110;&#x2e;&#105;&#110;&#x64;&#x69;&#x61;&#x6e;&#97;&#x2e;&#x65;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
