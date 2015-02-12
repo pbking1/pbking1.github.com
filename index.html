@@ -106,7 +106,7 @@ $(document).ready(
 	</h2>
 	<div class="entry-content">
 		<ul>
-<li><p>we can use the RESTFUL api to get some information in linkedin</p>
+<li>we can use the RESTFUL api to get some information in linkedin
 
 <ul>
 <li><a href="https://apigee.com/console/linkedin">https://apigee.com/console/linkedin</a>
@@ -117,117 +117,12 @@ $(document).ready(
 </li>
 </ul>
 </li>
-<li><p>and the sample code below is using the linkedin package from thrid party</p>
-
-<ul>
-<li>you can download the package using the following link
-
-<ul>
-<li><a href="https://pypi.python.org/pypi/python-linkedin/4.0">https://pypi.python.org/pypi/python-linkedin/4.0</a></li>
-<li><a href="https://github.com/ozgur/python-linkedin">https://github.com/ozgur/python-linkedin</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>code
-
-<ul>
-<li>the following code can produce some result
-
-<ul>
-<li>but I have some problem in using the search api
-
-<ul>
-<li>application.search_profile(selectors=[{&lsquo;people&rsquo;: [&lsquo;first-name&rsquo;, &lsquo;last-name&rsquo;]}], params={&lsquo;keywords&rsquo;: &lsquo;apple microsoft&rsquo;})</li>
-</ul>
-</li>
-<li><h1>Search URL is <a href="https://api.linkedin.com/v1/people-search:">https://api.linkedin.com/v1/people-search:</a>(people:(first-name,last-name))?keywords=apple%20microsoft</h1></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#! /usr/bin/env python
-</span><span class='line'># -*- coding: utf-8 -*-
-</span><span class='line'>
-</span><span class='line'>CONSUMER_KEY = 'xxxxxxx'     # This is api_key
-</span><span class='line'>CONSUMER_SECRET = 'xxxxxxx'   # This is secret_key
-</span><span class='line'>
-</span><span class='line'>USER_TOKEN = 'xxxxxxx'   # This is oauth_token
-</span><span class='line'>USER_SECRET = 'xxxxxxx'   # This is oauth_secret
-</span><span class='line'>RETURN_URL = 'http://localhost:8000'
-</span><span class='line'>
-</span><span class='line'>from linkedin import linkedin
-</span><span class='line'>from oauthlib import *
-</span><span class='line'>from urllib2 import *
-</span><span class='line'>import urllib2
-</span><span class='line'>from json import dumps, loads
-</span><span class='line'># Define CONSUMER_KEY, CONSUMER_SECRET,  
-</span><span class='line'># USER_TOKEN, and USER_SECRET from the credentials 
-</span><span class='line'># provided in your LinkedIn application
-</span><span class='line'>
-</span><span class='line'># Instantiate the developer authentication class
-</span><span class='line'>authentication = linkedin.LinkedInDeveloperAuthentication(CONSUMER_KEY, CONSUMER_SECRET, 
-</span><span class='line'>                                                      USER_TOKEN, USER_SECRET, 
-</span><span class='line'>                                                      RETURN_URL, linkedin.PERMISSIONS.enums.values())
-</span><span class='line'>
-</span><span class='line'># Pass it in to the app...
-</span><span class='line'>application = linkedin.LinkedInApplication(authentication)
-</span><span class='line'>
-</span><span class='line'>print application.get_profile()
-</span><span class='line'>
-</span><span class='line'>print application.get_profile(selectors=['id', 'first-name', 'last-name', 'location', 'distance', 'num-connections', 'skills', 'educations'])
-</span><span class='line'>
-</span><span class='line'>print application.search_company(selectors=[{'companies': ['name', 'universal-name', 'website-url']}], params={'keywords': 'apple microsoft'})
-</span><span class='line'># Search URL is https://api.linkedin.com/v1/company-search:(companies:(name,universal-name,webs
-</span><span class='line'>
-</span><span class='line'>print application.get_memberships(params={'count': 20})
-</span><span class='line'>
-</span><span class='line'>print application.get_companies(company_ids=[1035], universal_names=['apple'], selectors=['name'], params={'is-company-admin': 'true'})
-</span></code></pre></td></tr></table></div></figure>
 
 
 		
-		
+		<a href="/blog/2015/02/12/linkedin-api-example/" class="more-link">Read more</a>
 	</div>
 
 

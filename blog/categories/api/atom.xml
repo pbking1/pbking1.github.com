@@ -4,7 +4,7 @@
   <title><![CDATA[Category: api | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/api/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-12T14:56:55-05:00</updated>
+  <updated>2015-02-12T14:57:17-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -19,7 +19,7 @@
     <updated>2015-02-12T14:51:14-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/02/12/linkedin-api-example</id>
     <content type="html"><![CDATA[<ul>
-<li><p>we can use the RESTFUL api to get some information in linkedin</p>
+<li>we can use the RESTFUL api to get some information in linkedin
 
 <ul>
 <li><a href="https://apigee.com/console/linkedin">https://apigee.com/console/linkedin</a>
@@ -30,7 +30,14 @@
 </li>
 </ul>
 </li>
-<li><p>and the sample code below is using the linkedin package from thrid party</p>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>and the sample code below is using the linkedin package from thrid party
 
 <ul>
 <li>you can download the package using the following link
