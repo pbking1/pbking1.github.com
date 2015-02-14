@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: computer_architecture | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/computer-architecture/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2015-02-14T02:16:33-05:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[computer architecture chapter 1]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/13/computer-architecture-chapter-1/"/>
+    <updated>2015-02-13T14:28:43-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/02/13/computer-architecture-chapter-1</id>
+    <content type="html"><![CDATA[<h3>charpter1</h3>
+
+<ul>
+<li><p>What is computer architecture</p>
+
+<ul>
+<li>4 classes of computers
+
+<ul>
+<li>personal computer</li>
+<li>server computer</li>
+<li>embedded computer</li>
+<li>supercomputer
+<!--more--></li>
+</ul>
+</li>
+<li><p>What does “PostPC era” mean</p>
+
+<ul>
+<li>personal mobile device(PMD)</li>
+<li>cloud computing
+
+<ul>
+<li>server are replace by cloud computing</li>
+<li>Software as a Service(Saas)</li>
+</ul>
+</li>
+<li>Portion of software run on a PMD, and a portion(part of) run in the cloud</li>
+</ul>
+</li>
+<li><p>What factors could affect performance</p>
+
+<ul>
+<li>algorithm</li>
+<li>programming language, compiler, architecture</li>
+<li>processor and memory system</li>
+<li>I/O system(including OS and hardware)</li>
+</ul>
+</li>
+<li><p>Eight great ideas – Know what they mean</p>
+
+<ul>
+<li>1.design for moore&rsquo;s law</li>
+<li>2.use abstraction to simplify design</li>
+<li>3.make the common case fast</li>
+<li>4.performance via parallelism</li>
+<li>5.performance via pipelining</li>
+<li>6.performance via prediction</li>
+<li>7.hierarchy of memory</li>
+<li>8.dependability via redundancy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Different levels of program code</p>
+
+<ul>
+<li>HLL &ndash;> Assembly language &ndash;> ML</li>
+<li>5 components of a computer
+
+<ul>
+<li>input</li>
+<li>output</li>
+<li>control
+
+<ul>
+<li>tells datapath, memory, I/O what to do according to the instructions.</li>
+</ul>
+</li>
+<li>datapath
+
+<ul>
+<li>performs the arithmetic operations</li>
+</ul>
+</li>
+<li>memory</li>
+</ul>
+</li>
+<li><p>input &ndash;>()&ndash;>output</p></li>
+<li><p>What is ISA?</p>
+
+<ul>
+<li>instruction set architecture
+
+<ul>
+<li>the hardware/software interface</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Understand “Yield” in terms of chip manufacturing?</p>
+
+<ul>
+<li>Proportion of working dies per wafer晶圆(硅半导体集成电路制作所用的硅晶片)</li>
+</ul>
+</li>
+<li><p>Response time vs Throughput</p>
+
+<ul>
+<li>Response time
+
+<ul>
+<li>How long it takes to do one task</li>
+</ul>
+</li>
+<li>Throughput
+
+<ul>
+<li>Total work done per unit time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Elapsed time vs CPU time</p>
+
+<ul>
+<li>elapsed time
+
+<ul>
+<li>wall clock time
+
+<ul>
+<li>total response time, inkling everything</li>
+<li>can be used to determine the system performance</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cpu time
+
+<ul>
+<li>the time that cpu spent for <strong>a given process</strong></li>
+<li>can be divide into user CPU time and system CPU time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Know how to calculate CPU time, CPI_avg, IPC, Clock rate, Clock Cycle Time, and Performance</p>
+
+<ul>
+<li>1 cycle per second &ndash;> 1 Hz
+
+<ul>
+<li>1 GHz = 10<sup>9</sup> hz</li>
+</ul>
+</li>
+<li>clock rate(frequency)
+
+<ul>
+<li>cycle per second</li>
+</ul>
+</li>
+<li>clock cycle time(period)
+
+<ul>
+<li>duration of a clock cycle</li>
+</ul>
+</li>
+<li>CPU time
+
+<ul>
+<li>CPU time = CPU clock cycle * clock cycle time = CPU Clock cycle / Clock Rate</li>
+</ul>
+</li>
+<li>Instruction count
+
+<ul>
+<li>determine by program, ISA, compiler</li>
+</ul>
+</li>
+<li>Average cycle per instruction(CPI)
+
+<ul>
+<li>IPC = 1/CPI</li>
+</ul>
+</li>
+<li>Clock Cycle = Instruction * Average Cycle per instruction</li>
+<li>CPU time = Instruction * CPI * Clock Cycle Time
+
+<ul>
+<li>= Instruction Count * CPI / Clock Rate</li>
+<li>= Instruction Count / (Clock Rate * IPC)</li>
+<li>= (Instruction/program) * (Cycles/Instruction) * (Seconds/Cycle)</li>
+<li>= IC * PCI * CC</li>
+</ul>
+</li>
+<li>Clock Cycles = sum(CPI * Instruction Count)</li>
+<li>Performance depends on
+
+<ul>
+<li>Algorithm:affects IC, CPI</li>
+<li>programming language: affects IC, CPI</li>
+<li>Compiler:affects IC, CPI</li>
+<li>ISA:affects IC, CPI, CC</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Could explain why “Power Wall” is a problem?</p>
+
+<ul>
+<li><p>situation</p>
+
+<ul>
+<li>can not reduce voltage further, and will make transistor more leaky</li>
+</ul>
+</li>
+<li><p>Power = Capacitive Load * Voltage * Frequency</p></li>
+<li><p>Understand what are the challenges on multicore processors</p>
+
+<ul>
+<li>Multicore processors: more than one core per chip</li>
+<li>Hard to do
+
+<ul>
+<li>Programming for performance (not only for correctness)</li>
+<li>Load balancing</li>
+<li>Optimizing communication and synchronization</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Fallacies and Pitfalls</p>
+
+<ul>
+<li>Fallacy: Some commonly held misconceptions that you might encounter
+
+<ul>
+<li>Computers at low utilization use little bit power</li>
+<li>Designing for performance and designing for energy efficiency are unrelated</li>
+</ul>
+</li>
+<li>PiGall: easily made mistakes
+
+<ul>
+<li> They are only true in a limited context</li>
+<li>Can help you avoid making the same mistakes
+
+<ul>
+<li>example:
+
+<ul>
+<li>If you improve one aspect of a computer, then you would expect a proportional improvement in the overall performance</li>
+<li>Using a subset of the performance equal on as a performance metric.</li>
+<li>MIPS as a Performance Metric</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>e.g. MIPS, Amdahl’s Law, etc.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>chapter 2</h3>
+
+<ul>
+<li>Understand what is instruction and instruction set?
+
+<ul>
+<li>instruction set: the vocabulary of all commands understood
+
+<ul>
+<li>different computer have different instruction set</li>
+</ul>
+</li>
+<li>instruction: words of computer&rsquo;s language</li>
+<li>instruction set architecture(ISA): ISA serves as the interface between software and hardware
+
+<ul>
+<li>provide the mechanism by which software tells hardware what should be done</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Differences between RISC and CISC
+
+<ul>
+<li>RISC
+
+<ul>
+<li>reduced instruction set computer</li>
+<li>difference
+
+<ul>
+<li>fixed instruction lengths 32 bits</li>
+<li>load store instruction sets</li>
+<li>limited addressing modes</li>
+<li>limited operations</li>
+<li>simpler, cheaper</li>
+<li>MIPS: typical of RISC ISAs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CISC
+
+<ul>
+<li>x86</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MIPS ISA
+
+<ul>
+<li><p>MIPS has a number 32 32-bit registers</p>
+
+<ul>
+<li>32 bit data called a word</li>
+<li>memory is byte addressed
+
+<ul>
+<li>each address identifies a byte</li>
+</ul>
+</li>
+<li>MIPS is big endian</li>
+</ul>
+</li>
+<li><p>R and I types of instruction format</p>
+
+<ul>
+<li>R-format
+
+<ul>
+<li>op(6 bits)-rs(5 bits)-rt(5 bits)-rd(5 bits)-shamt(5 bits)-funct(6 bits)</li>
+<li>add, sub</li>
+</ul>
+</li>
+<li>I-format
+
+<ul>
+<li>op(6 bits)-rs(5 bits)-rt(5 bits)-constant or offset address(16 bits)</li>
+<li>addi, lw, sw, beq, bne</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Big endian, little endian</p>
+
+<ul>
+<li>little endian: <strong>least</strong> significant byte store at least-address of memory</li>
+<li>big endian: <strong>Most</strong> significant byte store at least-address of memory</li>
+</ul>
+</li>
+<li> Memory alignment
+
+<ul>
+<li>although computer are byte-addressable</li>
+<li>memory typically organised in n-byte lines</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>How to represent unsigned and signed integers</p>
+
+<ul>
+<li>What is 2s-complement, how, why
+
+<ul>
+<li>Most-negative: 1000 0000 &hellip; 0000</li>
+<li>Most-positive: 0111 1111 &hellip; 1111</li>
+<li>Bit 31 is called “sign bit”</li>
+<li>求负：取反加一</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sign extension</p>
+
+<ul>
+<li>leading bit = 1 &ndash;> negative</li>
+<li>range
+
+<ul>
+<li>–2,147,483,648t o +2,147,483,647</li>
+</ul>
+</li>
+<li>Sign extension: replicate the sign bit to the left</li>
+</ul>
+</li>
+<li><p>Logical operations: sll, srl, and, or, nor</p></li>
+<li><p>Conditional operations: beq, bne</p>
+
+<ul>
+<li>beq: branch equal</li>
+<li>bne: branch not equal</li>
+</ul>
+</li>
+<li><p>Concept of “basic block”</p>
+
+<ul>
+<li>a basic block is a sequence of instructions with no embedded branch, no branch target</li>
+</ul>
+</li>
+<li><p>How “Procedure calling” is supported</p>
+
+<ul>
+<li>procedure is used to structure program</li>
+<li>each procedure performs a specific task</li>
+<li>working like a black box</li>
+</ul>
+</li>
+<li><p>Know jal (for calling), and jr (for return)</p>
+
+<ul>
+<li>jal procedureName
+
+<ul>
+<li>puts address of following instruction in $ra</li>
+<li>jump to target address</li>
+<li>procedure call</li>
+</ul>
+</li>
+<li>jr $ra
+
+<ul>
+<li>jump-register</li>
+<li>copy $ra to PC</li>
+<li>procedure return</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Understand the fact(n) assembly example</p></li>
+<li><p>The memory layout of a program</p></li>
+<li><p>J-type instruction format, e.g., j and jal</p>
+
+<ul>
+<li>op(6 bits)-instruction address(26 bits)</li>
+</ul>
+</li>
+<li><p>Know how to calculate the target of PC-relative addressing, and target of (pseudo) direct jump addressing</p>
+
+<ul>
+<li>target address = PC + offset * 4</li>
+<li>pseudo instructions: not real instruction
+
+<ul>
+<li>move $t0, $t1 &ndash;> add $t0, $zero, $t1</li>
+<li>blt $t0, $t1, L &ndash;> slt $at, $t0, $t1
+
+<pre><code>              - bne $at, $zero, L
+</code></pre></li>
+<li>$at : assembler temporary</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Hardware synchronisation instructions</p>
+
+<ul>
+<li><p>ll rt, offset(rs)</p>
+
+<ul>
+<li>load linked</li>
+</ul>
+</li>
+<li><p>sc rt, offset(rs)</p>
+
+<ul>
+<li>store conditional</li>
+</ul>
+</li>
+<li>rt is both input and output</li>
+</ul>
+</li>
+<li><p>Know what information is stored in object modules</p>
+
+<ul>
+<li>the assembler translate program into <strong>machine instructions</strong> which are stored in object modules</li>
+</ul>
+</li>
+<li><p>Know what are Compiler, Assembler, Linker, Loader used for?</p>
+
+<ul>
+<li>C program compile through compiler</li>
+<li>the compiler come up with assembly language program</li>
+<li>then assembler generate object(Machine language module)</li>
+<li>object(machine language module and library routine) go to linker</li>
+<li>the linker static link and generate executable machine language program</li>
+<li>then go to loader and load into memory</li>
+</ul>
+</li>
+<li><p>A few fallacies and pithalls</p>
+
+<ul>
+<li>instruction count and CPI are not good performance indicators in isolation</li>
+<li>compiler optimisation are sensitive to algorithm</li>
+<li>java compiled code s significantly faster than JVM interpreted</li>
+<li>nothing can fix a dumb algorithm</li>
+<li>use assembly code for high performance</li>
+<li>powerful instruction &ndash;> high performance</li>
+<li>importance of binary compatibility => instruction set does not change</li>
+<li>sequential words are at sequential byte addresses
+
+<ul>
+<li>increment by 4</li>
+</ul>
+</li>
+<li>using a pointer to an automatic variable outside its defining procedure
+
+<ul>
+<li>e.g passing pointer back via returning result
+
+<ul>
+<li>because pointer becomes invalid when stack popped</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MIPS instruction</p></li>
+<li><table>
+<thead>
+<tr>
+<th>MIPS instructions </th>
+<th> Name </th>
+<th> format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>add</td>
+<td>add</td>
+<td>R</td>
+</tr>
+<tr>
+<td>subtract</td>
+<td>sub</td>
+<td>R</td>
+</tr>
+<tr>
+<td>add immediate</td>
+<td>addi</td>
+<td>I</td>
+</tr>
+<tr>
+<td>load word</td>
+<td>lw</td>
+<td>I</td>
+</tr>
+<tr>
+<td>store word </td>
+<td> sw </td>
+<td> I</td>
+</tr>
+<tr>
+<td>load half </td>
+<td> lh </td>
+<td> I</td>
+</tr>
+<tr>
+<td>load half unsigned </td>
+<td> lhu </td>
+<td> I</td>
+</tr>
+<tr>
+<td>store half </td>
+<td> sh </td>
+<td> I</td>
+</tr>
+<tr>
+<td>load byte </td>
+<td> lb </td>
+<td>  I </td>
+</tr>
+<tr>
+<td>load byte unsigned</td>
+<td> lbu </td>
+<td> I</td>
+</tr>
+<tr>
+<td>store byte </td>
+<td> sb </td>
+<td> I</td>
+</tr>
+<tr>
+<td>load linked </td>
+<td> ll </td>
+<td> I</td>
+</tr>
+<tr>
+<td>store conditional </td>
+<td> sc </td>
+<td> I</td>
+</tr>
+<tr>
+<td>load upper immediate </td>
+<td> lui </td>
+<td> I</td>
+</tr>
+<tr>
+<td>and </td>
+<td> and </td>
+<td> R</td>
+</tr>
+<tr>
+<td>or </td>
+<td> or </td>
+<td> R</td>
+</tr>
+<tr>
+<td>nor </td>
+<td> nor </td>
+<td> R</td>
+</tr>
+<tr>
+<td>and immediate </td>
+<td> andi </td>
+<td> I</td>
+</tr>
+<tr>
+<td>or immediate </td>
+<td> ori </td>
+<td> I</td>
+</tr>
+<tr>
+<td>shift left logical </td>
+<td> all </td>
+<td> R</td>
+</tr>
+<tr>
+<td>shift right logical </td>
+<td> srl </td>
+<td> R</td>
+</tr>
+<tr>
+<td>branch on equal </td>
+<td> beq </td>
+<td> I</td>
+</tr>
+<tr>
+<td>branch on not equal </td>
+<td> bne </td>
+<td> I</td>
+</tr>
+<tr>
+<td>set less than </td>
+<td> slt </td>
+<td> R</td>
+</tr>
+<tr>
+<td>set less than immediate  </td>
+<td> slti </td>
+<td> I</td>
+</tr>
+<tr>
+<td>set less than immediate unsigned</td>
+<td> sltiu </td>
+<td> I</td>
+</tr>
+<tr>
+<td>jump </td>
+<td> j </td>
+<td> J</td>
+</tr>
+<tr>
+<td>jump register </td>
+<td> jr </td>
+<td> R</td>
+</tr>
+<tr>
+<td>jump and link </td>
+<td> jal </td>
+<td> J</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>thus we can see that R instruction contain the kind</p>
+
+<ul>
+<li>add, sub, and, or , nor, slt, shift, jump register, move, multi</li>
+</ul>
+</li>
+<li>the I instruction contain
+
+<ul>
+<li>contain the load, store, immediate command, branch</li>
+</ul>
+</li>
+<li><p>J instruction only have j and jal</p></li>
+<li><p>segment place</p>
+
+<ul>
+<li>code segment &ndash;> data segment &ndash;> heap segment &ndash;> stack segment
+
+<h3>chapter 3</h3></li>
+</ul>
+</li>
+<li><p>Given a logic function, know how to draw its logic gate diagram</p></li>
+<li><p>Given a logic gate diagram, know how to write down its logic function</p></li>
+<li>Know how a full adder is implemented</li>
+<li>Know what are decoder and multiplexer and how they work</li>
+<li>Understand clock, register, SRAM, DRAM
+
+<ul>
+<li>SRAM:static Random Access Memory</li>
+<li>DRAM:dynamic Random Access Memory</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
