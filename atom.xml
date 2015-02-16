@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-15T22:52:50-05:00</updated>
+  <updated>2015-02-16T01:09:38-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -876,7 +876,7 @@
     <content type="html"><![CDATA[<h3>goal part8</h3>
 
 <ul>
-<li>C.Publicpolicytopromotecompetition
+<li>C.Public policy to promote competition
 
 <ul>
 <li>1.Antitrust policy</li>
@@ -949,10 +949,7 @@
 <li>A.Derived factor demand</li>
 <li>B.Marginal revenue product</li>
 <li>C.Labor market and firms’ hiring of labor</li>
-<li><ol type="a">
-<li>Market distribution of income</li>
-</ol>
-</li>
+<li>D.Market distribution of income</li>
 </ul>
 </li>
 </ul>
@@ -1079,6 +1076,7 @@
 
 <ul>
 <li>成本曲线反映产量与成本之间的关系。横坐标是产量，纵坐标是各种成本，单位是元。</li>
+<li>Q为需求数量</li>
 <li><table>
 <thead>
 <tr>
@@ -1139,6 +1137,7 @@
 <li><p>如果产量为0， 则固定成本 = 总成本</p></li>
 <li>平均固定成本随着产量的增加而递减，平均可变成本到最后肯定是递增的</li>
 <li>因此平均总成本曲线是U型的</li>
+<li><strong>边际成本和平均总成本只有在最低点相交一次</strong></li>
 <li>边际成本曲线最后是上扬的
 
 <ul>
@@ -1349,13 +1348,14 @@
 </li>
 </ul>
 </li>
-<li>消费者和生产者根据市场价格决定愿意并且能够购买或者能够提供的商品数量，带着各自的盘算，消费者与生产者一起进入市场，最终决定市场的均衡。
-
-<ul>
+<li>消费者和生产者根据市场价格决定愿意并且能够购买或者能够提供的商品数量，带着各自的盘算，消费者与生产者一起进入市场，最终决定市场的均衡。</li>
 <li>市场均衡图由横纵两条坐标轴和供求两条曲线构成。横坐标代表数量quantity，纵坐标代表价格price。需求曲线是向右下方倾斜的一条直线，反映需求量quantity demanded和价格之间的关系；供给曲线是向右上方倾斜的一条直线，反映供给量quantity supplied和价格之间的关系。曲线相交点代表市场均衡点，即在这个价格下，生产的产品刚好被买走。</li>
 </ul>
-</li>
-<li><h4>Determinants of supply and demand</h4></li>
+
+
+<h4>Determinants of supply and demand</h4>
+
+<ul>
 <li>影响商品供求关系的非价格因素的变动对价格和产量的影响我们称之为供求定理</li>
 <li><p>Determinants of Demand</p>
 
@@ -1407,6 +1407,16 @@
 </ul>
 </li>
 <li>Supply and demand affect each other indirectly, not directly</li>
+<li>正常物品的需求和收入成正比
+
+<ul>
+<li>收入增加会增加每种价格水平下的需求量，并且使得需求曲线向右移动</li>
+<li>低档物品的需求和收入成反比，收入增加会使低档物品的需求曲线向左移动</li>
+</ul>
+</li>
+<li>替代品：一种物品价格的上升引起另外一种物品需求量增减的两种物品</li>
+<li>互补品：一种物品价格上升引起梁歪一种物品需求量减少的两种物品</li>
+<li>嗜好：对一种物品的嗜好的增加会使那种物品的需求增加，并且使得他的需求曲线向右移动</li>
 </ul>
 
 
@@ -3265,7 +3275,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#117;&#115;&#x65;&#x72;&#x6e;&#x61;&#x6d;&#101;&#64;&#x6d;&#x61;&#115;&#111;&#110;&#x2e;&#x69;&#x6e;&#x64;&#x69;&#97;&#110;&#97;&#x2e;&#101;&#x64;&#x75;">&#x75;&#115;&#101;&#x72;&#x6e;&#97;&#109;&#101;&#x40;&#x6d;&#x61;&#x73;&#x6f;&#110;&#46;&#105;&#110;&#x64;&#x69;&#x61;&#110;&#97;&#46;&#x65;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#117;&#115;&#x65;&#114;&#x6e;&#x61;&#x6d;&#x65;&#64;&#x6d;&#x61;&#x73;&#111;&#x6e;&#x2e;&#105;&#x6e;&#100;&#105;&#97;&#110;&#97;&#46;&#x65;&#x64;&#x75;">&#117;&#x73;&#x65;&#114;&#x6e;&#97;&#109;&#101;&#64;&#x6d;&#x61;&#x73;&#111;&#x6e;&#46;&#105;&#110;&#100;&#x69;&#97;&#110;&#97;&#46;&#101;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
