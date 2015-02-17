@@ -920,40 +920,31 @@ int main(){
 <li><p> MIPS code:</p>
 
 <ul>
-<li> fact:</li>
-<li><pre><code> addi $sp, $sp, -8
-</code></pre></li>
-<li><pre><code> lw $ra, 4($sp)
-</code></pre></li>
-<li><pre><code> lw $a0, 0($sp)
-</code></pre></li>
-<li><pre><code> slti $t0, $a0, 1  //n &lt; 1, t0 = 1
-</code></pre></li>
-<li><pre><code> beq $t0, $zero, L1 //if t0 == 0(means n &gt;= 1)
-</code></pre>
+<li> fact:
 
-<p>go to L1</p></li>
-<li><pre><code> addi $v0, $zer0, 1
-</code></pre></li>
-<li><pre><code> addi $sp, $sp, 8
-</code></pre></li>
-<li><pre><code> jr $ra //return address                
-</code></pre></li>
-<li>  L1:</li>
-<li><pre><code> addi $a0, $a0, -1 //n = n - 1
-</code></pre></li>
-<li><pre><code> jal fact //递归
-</code></pre></li>
-<li><pre><code> sw $a0, 0($sp)
-</code></pre></li>
-<li><pre><code> sw $ra, 4($sp)
-</code></pre></li>
-<li><pre><code> addi $sp, $sp, 8
-</code></pre></li>
-<li><pre><code> multi $v0, $a0, $v0 //n*fact(n-1)
-</code></pre></li>
-<li><pre><code> jr $ra  //return address
-</code></pre></li>
+<ul>
+<li>addi $sp, $sp, -8</li>
+<li>lw $ra, 4($sp)</li>
+<li>lw $a0, 0($sp)</li>
+<li>slti $t0, $a0, 1  //n &lt; 1, t0 = 1</li>
+<li>beq $t0, $zero, L1 //if t0 == 0(means n >= 1) go to L1</li>
+<li>addi $v0, $zer0, 1</li>
+<li>addi $sp, $sp, 8</li>
+<li>jr $ra //return address</li>
+</ul>
+</li>
+<li> L1:
+
+<ul>
+<li>addi $a0, $a0, -1 //n = n &ndash; 1</li>
+<li>jal fact //递归</li>
+<li>sw $a0, 0($sp)</li>
+<li>sw $ra, 4($sp)</li>
+<li>addi $sp, $sp, 8</li>
+<li>multi $v0, $a0, $v0 //n*fact(n-1)</li>
+<li>jr $ra  //return address</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
