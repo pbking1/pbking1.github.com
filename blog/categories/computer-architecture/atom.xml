@@ -4,7 +4,7 @@
   <title><![CDATA[Category: computer_architecture | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/computer-architecture/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-17T13:01:57-05:00</updated>
+  <updated>2015-02-17T13:02:52-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -796,17 +796,17 @@
 <li>EXIT:&hellip;</li>
 </ul>
 </li>
-<li>3.leaf procedure example
+<li><p>3.leaf procedure example</p>
 
 <ul>
-<li><code>
+<li><p><code>
 int leaf_example(int, g, h, i, j){
   int f;
   f = (g + h) - (i - j);
   return f;
 }
-</code></li>
-<li>MIPS code:
+</code></p></li>
+<li><p>MIPS code:</p>
 
 <ul>
 <li><code>
@@ -824,10 +824,10 @@ jr $ra  //return
 </li>
 </ul>
 </li>
-<li> 4.no leaf procedure example
+<li><p> 4.no leaf procedure example</p>
 
 <ul>
-<li> <code>
+<li><p> <code>
 int fact(int n){
    if(n &lt; 1){
        return 1;
@@ -840,8 +840,8 @@ int main(){
    fact(n);
    printf(n);
 }
-</code></li>
-<li> MIPS code:
+</code></p></li>
+<li><p> MIPS code:</p>
 
 <ul>
 <li> <code>
