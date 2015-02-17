@@ -456,14 +456,14 @@ $(document).ready(
 <li>R-format
 
 <ul>
-<li>op(6 bits)-rs(5 bits)-rt(5 bits)-rd(5 bits)-shamt(5 bits)-funct(6 bits)</li>
+<li><code>op(6 bits)-rs(5 bits)-rt(5 bits)-rd(5 bits)-shamt(5 bits)-funct(6 bits)</code></li>
 <li>add, sub</li>
 </ul>
 </li>
 <li>I-format
 
 <ul>
-<li>op(6 bits)-rs(5 bits)-rt(5 bits)-constant or offset address(16 bits)</li>
+<li><code>op(6 bits)-rs(5 bits)-rt(5 bits)-constant or offset address(16 bits)</code></li>
 <li>addi, lw, sw, beq, bne</li>
 </ul>
 </li>
@@ -510,6 +510,19 @@ $(document).ready(
 </ul>
 </li>
 <li>Sign extension: replicate the sign bit to the left</li>
+<li>overflow problem
+
+<ul>
+<li>for add instruciton
+
+<ul>
+<li>128 + x > 2<sup>31</sup> &ndash; 1 the upper bound</li>
+<li>128 + x &lt; -2<sup>31</sup> the lower bound</li>
+</ul>
+</li>
+<li>so if you want to overflow, you need to bigger than 2<sup>31</sup> &ndash; 1 and smaller than -2<sup>31</sup></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>Logical operations: sll, srl, and, or, nor</p></li>
@@ -560,7 +573,7 @@ $(document).ready(
 <li><p>J-type instruction format, e.g., j and jal</p>
 
 <ul>
-<li>op(6 bits)-instruction address(26 bits)</li>
+<li><code>op(6 bits)-instruction address(26 bits)</code></li>
 </ul>
 </li>
 <li><p>Know how to calculate the target of PC-relative addressing, and target of (pseudo) direct jump addressing</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-17T11:47:53-05:00</updated>
+  <updated>2015-02-17T11:57:57-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -378,14 +378,14 @@
 <li>R-format
 
 <ul>
-<li>op(6 bits)-rs(5 bits)-rt(5 bits)-rd(5 bits)-shamt(5 bits)-funct(6 bits)</li>
+<li><code>op(6 bits)-rs(5 bits)-rt(5 bits)-rd(5 bits)-shamt(5 bits)-funct(6 bits)</code></li>
 <li>add, sub</li>
 </ul>
 </li>
 <li>I-format
 
 <ul>
-<li>op(6 bits)-rs(5 bits)-rt(5 bits)-constant or offset address(16 bits)</li>
+<li><code>op(6 bits)-rs(5 bits)-rt(5 bits)-constant or offset address(16 bits)</code></li>
 <li>addi, lw, sw, beq, bne</li>
 </ul>
 </li>
@@ -432,6 +432,19 @@
 </ul>
 </li>
 <li>Sign extension: replicate the sign bit to the left</li>
+<li>overflow problem
+
+<ul>
+<li>for add instruciton
+
+<ul>
+<li>128 + x > 2<sup>31</sup> &ndash; 1 the upper bound</li>
+<li>128 + x &lt; -2<sup>31</sup> the lower bound</li>
+</ul>
+</li>
+<li>so if you want to overflow, you need to bigger than 2<sup>31</sup> &ndash; 1 and smaller than -2<sup>31</sup></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>Logical operations: sll, srl, and, or, nor</p></li>
@@ -482,7 +495,7 @@
 <li><p>J-type instruction format, e.g., j and jal</p>
 
 <ul>
-<li>op(6 bits)-instruction address(26 bits)</li>
+<li><code>op(6 bits)-instruction address(26 bits)</code></li>
 </ul>
 </li>
 <li><p>Know how to calculate the target of PC-relative addressing, and target of (pseudo) direct jump addressing</p>
@@ -3303,7 +3316,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x75;&#115;&#101;&#114;&#110;&#x61;&#109;&#x65;&#64;&#109;&#97;&#x73;&#x6f;&#x6e;&#x2e;&#105;&#x6e;&#x64;&#105;&#x61;&#x6e;&#97;&#x2e;&#x65;&#100;&#117;">&#x75;&#x73;&#101;&#x72;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#109;&#x61;&#x73;&#x6f;&#x6e;&#46;&#x69;&#110;&#x64;&#x69;&#97;&#110;&#97;&#x2e;&#101;&#x64;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#117;&#x73;&#x65;&#114;&#x6e;&#97;&#109;&#x65;&#x40;&#x6d;&#97;&#115;&#111;&#x6e;&#x2e;&#105;&#x6e;&#x64;&#x69;&#x61;&#x6e;&#x61;&#x2e;&#101;&#x64;&#x75;">&#117;&#115;&#101;&#x72;&#x6e;&#97;&#x6d;&#x65;&#x40;&#109;&#x61;&#x73;&#x6f;&#110;&#46;&#105;&#110;&#x64;&#x69;&#97;&#x6e;&#x61;&#x2e;&#101;&#100;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
