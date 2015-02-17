@@ -4,7 +4,7 @@
   <title><![CDATA[Category: computer_architecture | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/computer-architecture/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-17T13:05:24-05:00</updated>
+  <updated>2015-02-17T13:51:11-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -809,17 +809,15 @@ int leaf_example(int, g, h, i, j){
 <li><p>MIPS code:</p>
 
 <ul>
-<li><code>
-addi $sp, $sp, -4  //save s0 on stack
-sw $s0, 0($sp)
-add $t0, $a0, $a1
-add $t1, $a2, $a3
-sub $s0, $t0, $t1
-add $v0, $s0, $zero   //store result
-lw $s0, 0($sp)   //store s0
-addi $sp, $sp, 4
-jr $ra  //return
-</code></li>
+<li>addi $sp, $sp, -4  //save s0 on stack</li>
+<li>sw $s0, 0($sp)</li>
+<li>add $t0, $a0, $a1</li>
+<li>add $t1, $a2, $a3</li>
+<li>sub $s0, $t0, $t1</li>
+<li>add $v0, $s0, $zero   //store result</li>
+<li>lw $s0, 0($sp)   //store s0</li>
+<li>addi $sp, $sp, 4</li>
+<li>jr $ra  //return</li>
 </ul>
 </li>
 </ul>
@@ -844,26 +842,40 @@ int main(){
 <li><p> MIPS code:</p>
 
 <ul>
-<li> <code>
-fact:
-   addi $sp, $sp, -8
-   lw $ra, 4($sp)
-   lw $a0, 0($sp)
-   slti $t0, $a0, 1  //n &lt; 1, t0 = 1
-   beq $t0, $zero, L1 //if t0 == 0(means n &gt;= 1)
-go to L1
-   addi $v0, $zer0, 1
-   addi $sp, $sp, 8
-   jr $ra //return address                
-L1:
-   addi $a0, $a0, -1 //n = n - 1
-   jal fact //递归
-   sw $a0, 0($sp)
-   sw $ra, 4($sp)
-   addi $sp, $sp, 8
-   multi $v0, $a0, $v0 //n*fact(n-1)
-   jr $ra  //return address
-</code></li>
+<li> fact:</li>
+<li><pre><code> addi $sp, $sp, -8
+</code></pre></li>
+<li><pre><code> lw $ra, 4($sp)
+</code></pre></li>
+<li><pre><code> lw $a0, 0($sp)
+</code></pre></li>
+<li><pre><code> slti $t0, $a0, 1  //n &lt; 1, t0 = 1
+</code></pre></li>
+<li><pre><code> beq $t0, $zero, L1 //if t0 == 0(means n &gt;= 1)
+</code></pre>
+
+<p>go to L1</p></li>
+<li><pre><code> addi $v0, $zer0, 1
+</code></pre></li>
+<li><pre><code> addi $sp, $sp, 8
+</code></pre></li>
+<li><pre><code> jr $ra //return address                
+</code></pre></li>
+<li>  L1:</li>
+<li><pre><code> addi $a0, $a0, -1 //n = n - 1
+</code></pre></li>
+<li><pre><code> jal fact //递归
+</code></pre></li>
+<li><pre><code> sw $a0, 0($sp)
+</code></pre></li>
+<li><pre><code> sw $ra, 4($sp)
+</code></pre></li>
+<li><pre><code> addi $sp, $sp, 8
+</code></pre></li>
+<li><pre><code> multi $v0, $a0, $v0 //n*fact(n-1)
+</code></pre></li>
+<li><pre><code> jr $ra  //return address
+</code></pre></li>
 </ul>
 </li>
 </ul>
