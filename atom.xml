@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-17T12:36:03-05:00</updated>
+  <updated>2015-02-17T13:00:45-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -449,6 +449,8 @@
 </ul>
 </li>
 <li>Sign extension: replicate the sign bit to the left</li>
+<li>2<sup>31</sup> &ndash; 1 = 0x7FFFFFFF</li>
+<li>-2<sup>31</sup> = 0x80000000</li>
 <li>overflow problem
 
 <ul>
@@ -807,11 +809,63 @@ int leaf_example(int, g, h, i, j){
 <li>MIPS code:
 
 <ul>
-<li>&#8220;`</li>
+<li><code>
+addi $sp, $sp, -4  //save s0 on stack
+sw $s0, 0($sp)
+add $t0, $a0, $a1
+add $t1, $a2, $a3
+sub $s0, $t0, $t1
+add $v0, $s0, $zero   //store result
+lw $s0, 0($sp)   //store s0
+addi $sp, $sp, 4
+jr $ra  //return
+</code></li>
 </ul>
+</li>
+</ul>
+</li>
+<li> 4.no leaf procedure example
 
+<ul>
+<li> <code>
+int fact(int n){
+   if(n &lt; 1){
+       return 1;
+   }else{
+       return n * fact(n - 1);
+   }
+}
+int main(){
+   int n = 10;
+   fact(n);
+   printf(n);
+}
+</code></li>
+<li> MIPS code:
 
-<p>  &#8220;`</p></li>
+<ul>
+<li> <code>
+fact:
+   addi $sp, $sp, -8
+   lw $ra, 4($sp)
+   lw $a0, 0($sp)
+   slti $t0, $a0, 1  //n &lt; 1, t0 = 1
+   beq $t0, $zero, L1 //if t0 == 0(means n &gt;= 1)
+go to L1
+   addi $v0, $zer0, 1
+   addi $sp, $sp, 8
+   jr $ra //return address                
+L1:
+   addi $a0, $a0, -1 //n = n - 1
+   jal fact //递归
+   sw $a0, 0($sp)
+   sw $ra, 4($sp)
+   addi $sp, $sp, 8
+   multi $v0, $a0, $v0 //n*fact(n-1)
+   jr $ra  //return address
+</code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -3382,7 +3436,7 @@ int leaf_example(int, g, h, i, j){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x75;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#x65;&#x40;&#109;&#97;&#115;&#111;&#110;&#x2e;&#x69;&#110;&#100;&#x69;&#x61;&#110;&#x61;&#46;&#101;&#x64;&#x75;">&#x75;&#115;&#x65;&#x72;&#110;&#x61;&#109;&#101;&#x40;&#109;&#x61;&#115;&#111;&#110;&#x2e;&#105;&#110;&#x64;&#x69;&#x61;&#110;&#x61;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x75;&#x73;&#101;&#x72;&#110;&#97;&#109;&#101;&#x40;&#109;&#97;&#x73;&#111;&#110;&#x2e;&#105;&#110;&#100;&#x69;&#97;&#x6e;&#x61;&#46;&#101;&#x64;&#117;">&#x75;&#115;&#x65;&#114;&#x6e;&#97;&#x6d;&#x65;&#64;&#x6d;&#x61;&#115;&#x6f;&#110;&#x2e;&#105;&#x6e;&#x64;&#105;&#97;&#x6e;&#97;&#46;&#x65;&#x64;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
