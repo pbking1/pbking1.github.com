@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-17T12:21:16-05:00</updated>
+  <updated>2015-02-17T12:36:03-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -525,8 +525,10 @@
 <li>move $t0, $t1 &ndash;> add $t0, $zero, $t1</li>
 <li>blt $t0, $t1, L &ndash;> slt $at, $t0, $t1
 
-<pre><code>              - bne $at, $zero, L
-</code></pre></li>
+<ul>
+<li> bne $at, $zero, L</li>
+</ul>
+</li>
 <li>$at : assembler temporary</li>
 </ul>
 </li>
@@ -767,6 +769,53 @@
 </ul>
 </li>
 <li><p>J instruction only have j and jal</p></li>
+<li><p>汇编代码示例</p>
+
+<ul>
+<li>1.<code>if (i == j) f = g + h; else f = g - h</code>
+
+<ul>
+<li>beq $s3, $s4, Then</li>
+<li>sub $s0, $s1, $s2</li>
+<li>J Exit</li>
+<li>Then: add $s0, $s1, $s2</li>
+<li>Exit: &hellip;</li>
+</ul>
+</li>
+<li>2.<code>while(array[i] == k) i+=1</code>
+
+<ul>
+<li>Loop:sll $t1, $s3, 2 //t1 = i * 4</li>
+<li>add $t1, $t1, $s6</li>
+<li>lw $t0, $t1</li>
+<li>beq $s5, $t0, EXIT</li>
+<li>addi $s3, $s3, 1</li>
+<li>j Loop</li>
+<li>EXIT:&hellip;</li>
+</ul>
+</li>
+<li>3.leaf procedure example
+
+<ul>
+<li><code>
+int leaf_example(int, g, h, i, j){
+  int f;
+  f = (g + h) - (i - j);
+  return f;
+}
+</code></li>
+<li>MIPS code:
+
+<ul>
+<li>&#8220;`</li>
+</ul>
+
+
+<p>  &#8220;`</p></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>segment place</p>
 
 <ul>
@@ -3333,7 +3382,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x75;&#x73;&#x65;&#114;&#x6e;&#97;&#109;&#x65;&#64;&#109;&#97;&#x73;&#x6f;&#x6e;&#46;&#105;&#110;&#100;&#105;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#100;&#x75;">&#117;&#x73;&#101;&#114;&#110;&#x61;&#109;&#x65;&#x40;&#x6d;&#x61;&#115;&#x6f;&#x6e;&#46;&#x69;&#110;&#x64;&#105;&#97;&#110;&#x61;&#x2e;&#101;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x75;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#x65;&#x40;&#109;&#97;&#115;&#111;&#110;&#x2e;&#x69;&#110;&#100;&#x69;&#x61;&#110;&#x61;&#46;&#101;&#x64;&#x75;">&#x75;&#115;&#x65;&#x72;&#110;&#x61;&#109;&#101;&#x40;&#109;&#x61;&#115;&#111;&#110;&#x2e;&#105;&#110;&#x64;&#x69;&#x61;&#110;&#x61;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server

@@ -603,8 +603,10 @@ $(document).ready(
 <li>move $t0, $t1 &ndash;> add $t0, $zero, $t1</li>
 <li>blt $t0, $t1, L &ndash;> slt $at, $t0, $t1
 
-<pre><code>              - bne $at, $zero, L
-</code></pre></li>
+<ul>
+<li> bne $at, $zero, L</li>
+</ul>
+</li>
 <li>$at : assembler temporary</li>
 </ul>
 </li>
@@ -845,6 +847,53 @@ $(document).ready(
 </ul>
 </li>
 <li><p>J instruction only have j and jal</p></li>
+<li><p>汇编代码示例</p>
+
+<ul>
+<li>1.<code>if (i == j) f = g + h; else f = g - h</code>
+
+<ul>
+<li>beq $s3, $s4, Then</li>
+<li>sub $s0, $s1, $s2</li>
+<li>J Exit</li>
+<li>Then: add $s0, $s1, $s2</li>
+<li>Exit: &hellip;</li>
+</ul>
+</li>
+<li>2.<code>while(array[i] == k) i+=1</code>
+
+<ul>
+<li>Loop:sll $t1, $s3, 2 //t1 = i * 4</li>
+<li>add $t1, $t1, $s6</li>
+<li>lw $t0, $t1</li>
+<li>beq $s5, $t0, EXIT</li>
+<li>addi $s3, $s3, 1</li>
+<li>j Loop</li>
+<li>EXIT:&hellip;</li>
+</ul>
+</li>
+<li>3.leaf procedure example
+
+<ul>
+<li><code>
+int leaf_example(int, g, h, i, j){
+  int f;
+  f = (g + h) - (i - j);
+  return f;
+}
+</code></li>
+<li>MIPS code:
+
+<ul>
+<li>&#8220;`</li>
+</ul>
+
+
+<p>  &#8220;`</p></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>segment place</p>
 
 <ul>
