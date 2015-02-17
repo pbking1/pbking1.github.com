@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-16T01:09:38-05:00</updated>
+  <updated>2015-02-17T11:30:22-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[computer architecture chapter 1]]></title>
-    <link href="http://pbking1.github.com/blog/2015/02/13/computer-architecture-chapter-1/"/>
+    <title type="html"><![CDATA[computer architecture 1]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/13/computer-architecture-1/"/>
     <updated>2015-02-13T14:28:43-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/02/13/computer-architecture-chapter-1</id>
+    <id>http://pbking1.github.com/blog/2015/02/13/computer-architecture-1</id>
     <content type="html"><![CDATA[<h3>charpter1</h3>
 
 <ul>
@@ -96,7 +96,7 @@
 <li>memory</li>
 </ul>
 </li>
-<li><p>input &ndash;>()&ndash;>output</p></li>
+<li><p>input &ndash;>(control, datapath)&ndash;>output</p></li>
 <li><p>What is ISA?</p>
 
 <ul>
@@ -205,6 +205,17 @@
 </ul>
 </li>
 <li>Clock Cycles = sum(CPI * Instruction Count)</li>
+<li>how to measure performance
+
+<ul>
+<li>use instruction/second
+
+<ul>
+<li>so we can use the format clock rate/CPI</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Performance depends on
 
 <ul>
@@ -3275,7 +3286,7 @@
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#117;&#115;&#x65;&#114;&#x6e;&#x61;&#x6d;&#x65;&#64;&#x6d;&#x61;&#x73;&#111;&#x6e;&#x2e;&#105;&#x6e;&#100;&#105;&#97;&#110;&#97;&#46;&#x65;&#x64;&#x75;">&#117;&#x73;&#x65;&#114;&#x6e;&#97;&#109;&#101;&#64;&#x6d;&#x61;&#x73;&#111;&#x6e;&#46;&#105;&#110;&#100;&#x69;&#97;&#110;&#97;&#46;&#101;&#x64;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#x75;&#115;&#101;&#x72;&#x6e;&#x61;&#109;&#101;&#x40;&#109;&#97;&#115;&#111;&#x6e;&#46;&#x69;&#110;&#x64;&#105;&#97;&#x6e;&#x61;&#46;&#101;&#x64;&#117;">&#117;&#x73;&#x65;&#114;&#x6e;&#97;&#109;&#x65;&#x40;&#109;&#97;&#115;&#111;&#x6e;&#46;&#105;&#x6e;&#100;&#x69;&#x61;&#x6e;&#97;&#46;&#101;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server

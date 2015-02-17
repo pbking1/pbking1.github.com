@@ -4,7 +4,7 @@
   <title><![CDATA[Category: computer_architecture | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/computer-architecture/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-16T01:09:38-05:00</updated>
+  <updated>2015-02-17T11:30:22-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[computer architecture chapter 1]]></title>
-    <link href="http://pbking1.github.com/blog/2015/02/13/computer-architecture-chapter-1/"/>
+    <title type="html"><![CDATA[computer architecture 1]]></title>
+    <link href="http://pbking1.github.com/blog/2015/02/13/computer-architecture-1/"/>
     <updated>2015-02-13T14:28:43-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/02/13/computer-architecture-chapter-1</id>
+    <id>http://pbking1.github.com/blog/2015/02/13/computer-architecture-1</id>
     <content type="html"><![CDATA[<h3>charpter1</h3>
 
 <ul>
@@ -96,7 +96,7 @@
 <li>memory</li>
 </ul>
 </li>
-<li><p>input &ndash;>()&ndash;>output</p></li>
+<li><p>input &ndash;>(control, datapath)&ndash;>output</p></li>
 <li><p>What is ISA?</p>
 
 <ul>
@@ -205,6 +205,17 @@
 </ul>
 </li>
 <li>Clock Cycles = sum(CPI * Instruction Count)</li>
+<li>how to measure performance
+
+<ul>
+<li>use instruction/second
+
+<ul>
+<li>so we can use the format clock rate/CPI</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Performance depends on
 
 <ul>
