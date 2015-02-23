@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-22T19:01:51-05:00</updated>
+  <updated>2015-02-22T19:10:29-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -1212,10 +1212,10 @@ int main(){
 </li>
 </ul>
 </li>
-<li><p>2.Perfect competition完全竞争</p></li>
-<li>特点：有许多买者与卖者，每个企业都无法影响市场价格是price-taker，因此企业需求曲线是水平的完全弹性的，市场需求曲线向右下方倾斜；进入退出无壁垒，企业在长期无经济利润，因为有利润或损失的话就会有进入或退出直到把利润清零。
+<li><p>2.Perfect competition完全竞争</p>
 
 <ul>
+<li>特点：有许多买者与卖者，每个企业都无法影响市场价格，是price-taker，因此企业需求曲线是水平的完全弹性的，市场需求曲线向右下方倾斜；进入退出无壁垒，企业在长期无经济利润，因为有利润或损失的话就会有进入或退出直到把利润清零。</li>
 <li>a.Profit maximization
 
 <ul>
@@ -1242,6 +1242,62 @@ int main(){
 </li>
 </ul>
 </li>
+<li><p>3.Monopoly垄断</p>
+
+<ul>
+<li>特点：只有一家企业，因此需求曲线向右下方倾斜；自己定价，是price maker；有壁垒，因此有长期经济利润</li>
+<li>a.Sources of market power
+
+<ul>
+<li>垄断的三种来源：天然拥有某种资源，如南非钻石；政府给予的特权，如专利保护；自然垄断，由规模经济引起的，如供电。</li>
+</ul>
+</li>
+<li>b.Profit maximization利益最大化
+
+<ul>
+<li>先通过MR=MC的条件确定产量Q，再通过需求曲线找到对应的P，这是垄断企业利润最大化的条件。</li>
+</ul>
+</li>
+<li>c.Inefficiency of monopoly 垄断无效率
+
+<ul>
+<li>因为产量少于需求并且收取高于期望的价格，所以垄断是效率低的。too little of the production and charges too high a price</li>
+<li>P=AR>MR</li>
+<li>会画图。知道Revenue maximizing（MR=0的产量），profit maximizing（MR=MC）, efficient maximizing（P=MC）与fair return企业经济利润为0（ATC和D相交）这四种情况下的产量和价格。</li>
+</ul>
+</li>
+<li>d.Price discrimination价格歧视
+
+<ul>
+<li>对每个消费者收取不同的价格，MR曲线与D重合，把所有消费者剩余都剥夺过来变成企业自己的利润。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>4.Oligopoly 寡头</p>
+
+<ul>
+<li>a.Interdependence, collusion and cartels卡特尔、联盟、互赖
+
+<ul>
+<li> 受反托拉斯法的约束，有market power，企业数量很少；合作的话，如同垄断一般获利最大，如果不合作，则利润不高。</li>
+</ul>
+</li>
+<li>b.Game theory and strategic behavior博弈论和占优策略
+
+<ul>
+<li> 会利用支付矩阵分析占优策略。题目中可能一方有占优策略另一方无占优策略，那么没有的那方要先揣测出有占优的那方的意图。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>5.Monopolistic competition</p>
+
+<pre><code>  - a.Product differentiation and role of advertising
+  - b.Profit maximization
+  - c.Short-run and long-run equilibrium
+  - d.Excess capacity and inefficiency
+</code></pre></li>
 </ul>
 
 ]]></content>
@@ -3501,7 +3557,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#117;&#x73;&#101;&#x72;&#x6e;&#x61;&#109;&#x65;&#64;&#109;&#x61;&#x73;&#x6f;&#x6e;&#46;&#x69;&#x6e;&#x64;&#105;&#97;&#110;&#x61;&#46;&#101;&#x64;&#x75;">&#117;&#115;&#101;&#x72;&#110;&#97;&#109;&#101;&#x40;&#x6d;&#97;&#115;&#111;&#110;&#46;&#105;&#x6e;&#x64;&#x69;&#97;&#110;&#97;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#x75;&#x73;&#x65;&#114;&#x6e;&#97;&#x6d;&#x65;&#64;&#x6d;&#x61;&#x73;&#111;&#110;&#x2e;&#105;&#110;&#x64;&#105;&#97;&#110;&#97;&#x2e;&#101;&#100;&#x75;">&#117;&#x73;&#101;&#114;&#x6e;&#x61;&#109;&#101;&#64;&#x6d;&#97;&#x73;&#111;&#110;&#x2e;&#105;&#x6e;&#x64;&#105;&#97;&#x6e;&#x61;&#46;&#x65;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
