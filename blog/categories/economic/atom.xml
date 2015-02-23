@@ -4,7 +4,7 @@
   <title><![CDATA[Category: economic | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/economic/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-22T18:51:08-05:00</updated>
+  <updated>2015-02-22T19:01:51-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -193,13 +193,36 @@
 </li>
 </ul>
 </li>
-<li><p>2=2.Perfect competition</p>
+<li><p>2.Perfect competition完全竞争</p></li>
+<li>特点：有许多买者与卖者，每个企业都无法影响市场价格是price-taker，因此企业需求曲线是水平的完全弹性的，市场需求曲线向右下方倾斜；进入退出无壁垒，企业在长期无经济利润，因为有利润或损失的话就会有进入或退出直到把利润清零。
 
-<pre><code>  - a.Profit maximization
-  - b.Short-run supply and shut-down decision
-  - c.Firm and market behaviors in short-run and long-run equilibria
-  - d.Efficiency and perfect competition
-</code></pre></li>
+<ul>
+<li>a.Profit maximization
+
+<ul>
+<li>P=AR是恒等式，因为P=TR/Q,AR=TR/Q。完全竞争市场很特别，企业获得利润最大化的产量是在P=MC=MR=AR时。</li>
+</ul>
+</li>
+<li>b.Short-run supply and shut-down decision
+
+<ul>
+<li>短期的企业供给曲线是MC曲线在AVC上方的那段；在短期，如果P&lt;AVC，企业选择停业；市场长期供给曲线是水平的。</li>
+</ul>
+</li>
+<li>c.Firm and market behaviors in short-run and long-run equilibria
+
+<ul>
+<li>窍门：单个企业和整个市场的供求成本图相互对应。因为企业是价格接受者，所以企业的价格线应与市场的一致。当市场需求有变化从而影响市场均衡价格，再反映到企业的价格变化，企业就有了短期利润或损失，吸引新企业进入市场或导致旧企业退出，从而反映到市场供给曲线往右或往左移动，进而形成新的市场均衡价格，反复调整后，长期均衡价格会等于minATC，而此时刚好也等于MC。        &ndash; 计算短期profit或loss时，应找准P和ATC，Profit=TR-TC=(P-ATC)*Q</li>
+</ul>
+</li>
+<li>d.Efficiency and perfect competition
+
+<ul>
+<li>因为P=MC，所以完全竞争市场有效率。</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 ]]></content>
