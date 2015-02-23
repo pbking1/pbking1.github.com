@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-22T19:10:29-05:00</updated>
+  <updated>2015-02-22T19:12:59-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -1291,13 +1291,36 @@ int main(){
 </li>
 </ul>
 </li>
-<li><p>5.Monopolistic competition</p>
+<li><p>5.Monopolistic competition垄断竞争</p>
 
-<pre><code>  - a.Product differentiation and role of advertising
-  - b.Profit maximization
-  - c.Short-run and long-run equilibrium
-  - d.Excess capacity and inefficiency
-</code></pre></li>
+<ul>
+<li>a.Product differentiation and role of advertising
+
+<ul>
+<li> 有许多卖者，每个卖者提供略有差别的产品，无壁垒，有决定价格的能力，做广告的必要性</li>
+</ul>
+</li>
+<li>b.Profit maximisation
+
+<ul>
+<li>P=AR>MR</li>
+</ul>
+</li>
+<li>c.Short-run and long-run equilibrium
+
+<ul>
+<li>短期有profit或loss，吸引新企业进入或旧企业退出市场。</li>
+<li>进而达到长期均衡，D与ATC曲线相切，切点刚好是MC=MR投影到D的点，长期利润为0。因为在ATC的下降部分相切，所以有规模经济。</li>
+</ul>
+</li>
+<li>d.Excess capacity and inefficiency
+
+<ul>
+<li>垄断竞争无效率体现在：产能过剩 Excess capacity，价格过高 P>MC</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 ]]></content>
@@ -3557,7 +3580,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#x75;&#x73;&#x65;&#114;&#x6e;&#97;&#x6d;&#x65;&#64;&#x6d;&#x61;&#x73;&#111;&#110;&#x2e;&#105;&#110;&#x64;&#105;&#97;&#110;&#97;&#x2e;&#101;&#100;&#x75;">&#117;&#x73;&#101;&#114;&#x6e;&#x61;&#109;&#101;&#64;&#x6d;&#97;&#x73;&#111;&#110;&#x2e;&#105;&#x6e;&#x64;&#105;&#97;&#x6e;&#x61;&#46;&#x65;&#x64;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x75;&#115;&#101;&#114;&#x6e;&#97;&#x6d;&#101;&#64;&#109;&#x61;&#x73;&#x6f;&#110;&#x2e;&#105;&#x6e;&#x64;&#x69;&#97;&#x6e;&#x61;&#x2e;&#x65;&#100;&#117;">&#x75;&#x73;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#x6d;&#97;&#x73;&#x6f;&#110;&#x2e;&#x69;&#x6e;&#100;&#x69;&#x61;&#110;&#97;&#46;&#101;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
