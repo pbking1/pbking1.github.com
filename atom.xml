@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-22T19:41:19-05:00</updated>
+  <updated>2015-02-22T19:53:03-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -1059,6 +1059,45 @@ int main(){
 
 <!--more-->
 
+
+<ul>
+<li>C.Public policy to promote competition 促进市场竞争的政策
+
+<ul>
+<li>1.Antitrust policy
+
+<ul>
+<li>反托拉斯法能促进竞争，了解就行</li>
+</ul>
+</li>
+<li>2.Regulation 政府对垄断的管制
+
+<ul>
+<li>如果政府给垄断、垄断竞争、完全竞争企业一次性补贴或一次性征税（lump sum subsidy or tax），不会对企业的MC产生影响，因此不会影响利润最大化产量和价格。</li>
+<li>但由于影响了ATC，导致利润或loss有变化。如果征税或补贴是按单位per unit，则会影响MC，继而影响利润最大化产量和价格。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>D.Income distribution 收入分配
+
+<ul>
+<li>1.Equity
+
+<ul>
+<li>收入不平等的来源：歧视，教育程度不同，能力不同，动机不同。</li>
+</ul>
+</li>
+<li>2.Sources of income ineqiality
+
+<ul>
+<li>收入不平等的来源</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -1095,6 +1134,62 @@ int main(){
 
 
 <!--more-->
+
+
+<ul>
+<li>Market Failure and the Role of Government 市场失灵和政府管制
+
+<ul>
+<li>A.Externalities外部性
+
+<ul>
+<li>1.Marginal social benefit and marginal social cost
+
+<ul>
+<li>有外部性的经济活动会产生边际社会收益和边际社会成本</li>
+</ul>
+</li>
+<li>2.Positive Externalities
+
+<ul>
+<li>正外部性：市场生产的数量&lt;社会最优的数量，MSB>MSC</li>
+</ul>
+</li>
+<li>3.Negative externalities
+
+<ul>
+<li>负外部性：市场生产的数量>社会最优的数量，MSB&lt;MSC</li>
+</ul>
+</li>
+<li>4.Remedies
+
+<ul>
+<li>对外部性的补救办法：对有负外部性的物品征税，对有正外部性的物品补贴</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>B.Publicgoods
+
+<ul>
+<li>1.Public versus private goods
+
+<ul>
+<li>私人物品有排他性和竞争性</li>
+<li>公共物品没有排他性没有竞争性s</li>
+</ul>
+</li>
+<li>2.Provision of public goods
+
+<ul>
+<li>公共物品的供给：政府收税，统一提供，如国防。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 ]]></content>
   </entry>
@@ -1148,6 +1243,15 @@ int main(){
 <ul>
 <li>Price的变动，影响MRP，即需求曲线移动</li>
 <li>Technological Change技术变革：技术进步—>MP增加——>MRP增加——>需求增加</li>
+<li>Supply of Other factors如果企业有更多的设备（资本），劳力的MP会提高</li>
+</ul>
+</li>
+<li>B)影响供给
+
+<ul>
+<li>Changes in Tastes 女性从家庭中走出；啃老族增加</li>
+<li>Changes in other opportunities类似产品市场供给的“substitution”，金融行业吸引人，没人做工程师了……</li>
+<li>Immigration 类似产品市场供给的“number of sellers”</li>
 </ul>
 </li>
 </ul>
@@ -3616,7 +3720,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#117;&#x73;&#101;&#x72;&#x6e;&#97;&#109;&#x65;&#x40;&#109;&#x61;&#115;&#111;&#x6e;&#46;&#105;&#110;&#100;&#x69;&#97;&#x6e;&#x61;&#46;&#x65;&#x64;&#x75;">&#x75;&#115;&#x65;&#x72;&#x6e;&#x61;&#109;&#x65;&#x40;&#x6d;&#x61;&#x73;&#x6f;&#110;&#x2e;&#105;&#110;&#100;&#x69;&#x61;&#110;&#x61;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#x3a;&#117;&#x73;&#101;&#x72;&#x6e;&#x61;&#x6d;&#101;&#x40;&#x6d;&#x61;&#x73;&#x6f;&#110;&#46;&#x69;&#x6e;&#x64;&#x69;&#97;&#110;&#x61;&#46;&#x65;&#x64;&#x75;">&#117;&#x73;&#x65;&#114;&#x6e;&#x61;&#109;&#x65;&#x40;&#x6d;&#97;&#115;&#x6f;&#x6e;&#x2e;&#105;&#x6e;&#100;&#x69;&#x61;&#x6e;&#97;&#46;&#101;&#100;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
