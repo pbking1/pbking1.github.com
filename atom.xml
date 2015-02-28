@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-27T17:17:29-05:00</updated>
+  <updated>2015-02-27T21:51:24-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -2204,61 +2204,61 @@ int main(){
 <li>1.Scarcity exists in the short run because:
 
 <ul>
-<li>d</li>
+<li><strong>the world&rsquo;s resources are in finite supply</strong></li>
 </ul>
 </li>
 <li>2.If a nation is currently operating at a point on its production possibilities curve, in order to increase production of one good, the production of other goods must be:
 
 <ul>
-<li>c</li>
+<li><strong>decreased</strong></li>
 </ul>
 </li>
 <li>3.If a nation is currently operating at a point inside its production possibilities curve, it:
 
 <ul>
-<li>b</li>
+<li><strong>has unemployment and/or inefficiently employed resources</strong></li>
 </ul>
 </li>
 <li>4.Production efficiency is achieved:
 
 <ul>
-<li>c</li>
+<li><strong>if resources are reallocated among the production of goods and services and the output of one good can be increased only by reducing the output of other goods.</strong></li>
 </ul>
 </li>
-<li>5.If nation A commits a larger share of its resources to capital and technological improvements than nation B, then over time <strong><strong><strong> will realize </strong></strong></strong> outward shifts in its production possibilities curve.
+<li>5.If nation A commits a larger share of its resources to capital and technological improvements than nation B, then over time <strong><strong><strong> will realise </strong></strong></strong> outward shifts in its production possibilities curve.
 
 <ul>
-<li>d</li>
+<li><strong>nation B/smaller</strong></li>
 </ul>
 </li>
 <li>6.The sacrifice or opportunity cost associated with an individual&rsquo;s consumption of an additional good:
 
 <ul>
-<li>a</li>
+<li><strong>is the reduction in other goods consumed when an individual has no additional income.</strong></li>
 </ul>
 </li>
 <li>7.How is a nation&rsquo;s production possibilities curve affected in the long run by a boom in both new and existing housing sales in the present?
 
 <ul>
-<li></li>
+<li><strong>Increased housing production in the present means fewer other goods and services, including capital, are produced. The rate of economic growth is lower than it would have been otherwise, causing the production possibilities curve to shift outward by a smaller amount.</strong></li>
 </ul>
 </li>
 <li>8.Which of the following statements best explains why a nation&rsquo;s consumption possibilities line lies outside of its production possibilities line?
 
 <ul>
-<li></li>
+<li><strong>If nations specialize in and export goods for which they have a comparative advantage and import goods for which they have a comparative disadvantage, more goods can be obtained through domestic production and trade than from domestic production alone.</strong></li>
 </ul>
 </li>
 <li>9.Which of the following best explains a linear production possibilities curve?
 
 <ul>
-<li>c</li>
+<li><strong>The opportunity cost of producing a given class of goods over a period of time remains constant.</strong></li>
 </ul>
 </li>
 <li>10.Suppose a nation produces two types of goods, capital and food. However, assume that in the capital goods industry firm A produces 2 units of capital per worker per week whereas firm B produces 5 units of capital per worker per week. If resources are fully employed, is this nation on its production possibilities curve?
 
 <ul>
-<li>d</li>
+<li><strong>No, a worker can be reallocated from firm B to firm A for a net gain of 3 units of capital. Thus, the economy must be inside of its production possibilities curve.</strong></li>
 </ul>
 </li>
 </ul>
@@ -3789,7 +3789,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#117;&#x73;&#x65;&#x72;&#x6e;&#97;&#x6d;&#x65;&#64;&#x6d;&#x61;&#x73;&#x6f;&#x6e;&#46;&#105;&#110;&#x64;&#105;&#97;&#x6e;&#97;&#x2e;&#x65;&#x64;&#117;">&#117;&#115;&#x65;&#x72;&#x6e;&#x61;&#109;&#x65;&#x40;&#x6d;&#x61;&#115;&#x6f;&#110;&#x2e;&#105;&#x6e;&#x64;&#x69;&#x61;&#x6e;&#97;&#46;&#101;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#117;&#x73;&#x65;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#109;&#97;&#115;&#111;&#110;&#46;&#x69;&#x6e;&#x64;&#105;&#97;&#x6e;&#x61;&#x2e;&#101;&#x64;&#x75;">&#x75;&#115;&#101;&#x72;&#110;&#97;&#109;&#101;&#64;&#x6d;&#x61;&#x73;&#x6f;&#110;&#x2e;&#x69;&#110;&#100;&#x69;&#x61;&#x6e;&#x61;&#46;&#x65;&#x64;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
