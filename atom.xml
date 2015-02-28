@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-27T22:17:50-05:00</updated>
+  <updated>2015-02-28T00:03:23-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -1801,7 +1801,7 @@ int main(){
 <h4>Determinants of supply and demand</h4>
 
 <ul>
-<li>影响商品供求关系的非价格因素的变动对价格和产量的影响我们称之为供求定理</li>
+<li>影响商品供求关系的<em>非价格因素</em>的变动对价格和产量的影响我们称之为供求定理</li>
 <li><p>Determinants of Demand</p>
 
 <ul>
@@ -1963,6 +1963,7 @@ int main(){
 <li>the difference in the market price of a good and how much an individual or individuals would be willing to pay
 
 <ul>
+<li>消费者剩余=支付意愿–市场价格</li>
 <li>for example
 
 <ul>
@@ -1979,6 +1980,7 @@ int main(){
 <li>for example
 
 <ul>
+<li>生产者剩余=市场价格–生产成本</li>
 <li>the difference between what it costs to produce a good and what price the market provides.</li>
 </ul>
 </li>
@@ -1997,6 +1999,24 @@ int main(){
 <li>无谓损失又为社会净损失，是指由于市场未处于最优运行状态而引起的社会成本, 也就是当偏离竞争均衡时, 所损失的消费者剩余和生产者剩余</li>
 </ul>
 </li>
+</ul>
+
+
+<h4>excercise</h4>
+
+<ul>
+<li><p>1.What is the difference between a &ldquo;change in demand&rdquo; and a change in &ldquo;quantity demanded.&rdquo;</p>
+
+<ul>
+<li><strong>A change in demand需求变动 : to a change in the amount that consumers are willing to buy at every possible price, in term of the demand curve shifts.</strong></li>
+<li><strong>A change in the quantity demanded数量需求变动 occurs when the price of the product changes. In this case, in terms of the demand curve, there is a movement along the demand one.</strong></li>
+</ul>
+</li>
+<li><p>2.What is the difference between a &ldquo;change in supply&rdquo; and a change in &ldquo;quantity supplied.&rdquo;</p></li>
+<li><p>3.What does ceteris paribus mean? How does this relate to supply and demand analysis?</p></li>
+<li>4.Holding demand constant, what is the only thing that can cause a change in quantity demanded? What are the things that cause a change in demand?</li>
+<li>5.How do changes in income affect the demand for a good?</li>
+<li>6.How do substitute and complementary goods affect the demand for a good.?</li>
 </ul>
 
 ]]></content>
@@ -3805,7 +3825,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#117;&#115;&#101;&#x72;&#x6e;&#x61;&#x6d;&#101;&#x40;&#109;&#97;&#115;&#111;&#x6e;&#x2e;&#105;&#110;&#x64;&#x69;&#97;&#x6e;&#97;&#x2e;&#x65;&#x64;&#117;">&#x75;&#115;&#101;&#x72;&#110;&#x61;&#x6d;&#101;&#64;&#109;&#x61;&#115;&#111;&#110;&#46;&#x69;&#110;&#100;&#105;&#x61;&#x6e;&#97;&#46;&#101;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x75;&#x73;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#x6d;&#x61;&#x73;&#x6f;&#110;&#x2e;&#105;&#110;&#100;&#x69;&#97;&#110;&#x61;&#x2e;&#101;&#100;&#x75;">&#x75;&#115;&#x65;&#114;&#x6e;&#x61;&#109;&#101;&#x40;&#109;&#97;&#x73;&#111;&#x6e;&#x2e;&#x69;&#110;&#100;&#x69;&#97;&#110;&#x61;&#46;&#x65;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
