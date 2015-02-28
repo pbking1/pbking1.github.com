@@ -100,6 +100,83 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password/">
+		
+			Solution to Access Denied for User &#8216;Root&#8217;@&#8217;localhost&#8217; (Using password:YES)</a>
+	</h2>
+	<div class="entry-content">
+		<h3>Access denied for user &lsquo;root&rsquo;@&lsquo;localhost&rsquo; (using password:YES)</h3>
+
+<ul>
+<li>in mac
+
+<ul>
+<li>open the my.conf in the directory /usr/local/mysql</li>
+<li>add <code>skip-grant-tables</code></li>
+<li>restart the mysql service
+
+<ul>
+<li><code>sudo /usr/local/mysql/bin/mysqld_safe &amp;</code></li>
+</ul>
+</li>
+<li>then use <code>mysql -uroot -p</code>
+
+<ul>
+<li>you can login without password</li>
+<li>then update the password after <code>use mysql;</code></li>
+<li><code>update user set password=PASSWORD("rootadmin") where user='root';</code></li>
+</ul>
+</li>
+<li>after that
+
+<ul>
+<li>delete the <code>skip-grant-tables</code> add in the my.conf file</li>
+</ul>
+</li>
+<li>restart the mysql service</li>
+<li>then you can use the <code>mysql -u root -q</code> to login with your new password</li>
+</ul>
+</li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-09T11:49:30-04:00" pubdate data-updated="true">Sep 9<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/php/'>php</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password//blog/page/5/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/09/08/php-tutorial-1/">
 		
 			Php Tutorial(1)</a>
@@ -387,56 +464,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/06/25/ios-uilabel-and-uitextfield//blog/page/5/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/24/ios-selector-jump-to-the-other-page/">
-		
-			IOS Selector(jump to the Other Page)</a>
-	</h2>
-	<div class="entry-content">
-		<h3>响应事件或者跳转</h3>
-
-<ul>
-<li>使用每个控件里面的action的selector</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/06/24/ios-selector-jump-to-the-other-page/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-24T23:02:32-04:00" pubdate data-updated="true">Jun 24<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/ios/'>IOS</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/24/ios-selector-jump-to-the-other-page//blog/page/5/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
