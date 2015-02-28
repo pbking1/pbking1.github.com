@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-28T01:24:39-05:00</updated>
+  <updated>2015-02-28T14:34:36-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -1657,6 +1657,30 @@ int main(){
 </li>
 </ul>
 
+
+<h3>exercise</h3>
+
+<ul>
+<li><p>1.Define marginal cost. Why does marginal cost eventually increase as total product increases?</p>
+
+<ul>
+<li><strong>marginal cost is defined as the change in total cost as one more unit of output is produced.</strong></li>
+<li><strong>it eventually declines(衰减) in the short run as a result of decreasing marginal product of labor</strong></li>
+</ul>
+</li>
+<li><p>2.What is the relationship between the long-run average cost curve and the short-run average cost curves? What do economies of scale and diseconomies of scale have on the shape of the long-run average cost curve?</p>
+
+<ul>
+<li><strong>long run average cost is the &ldquo;bottom envelop&rdquo; of the short run average cost curves</strong></li>
+<li><strong>economic of scale is the decreasing sloped part of the curve, constant return to scale is the horizontal portion of the curve, and decreasing return to scale is the upward sloping part of the curve</strong></li>
+</ul>
+</li>
+<li><p>3.What are the two main differences between the short-run and long-run? Why does diminishing marginal product exist in the short-run, but not the long run?</p></li>
+<li><p>4.Why is marginal revenue equal to both average revenue and price in a perfectly competitive setting?</p></li>
+<li><p>5.Why can&rsquo;t a perfectly competitive firm influence industry price?</p></li>
+<li><p>6.How can the shape of a firm&rsquo;s long-run average cost curve determine the optimal size of the firm?</p></li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -1759,6 +1783,40 @@ int main(){
 <li><p><strong>Income effect收入效应</strong> ：物品A的价格下降增加了收入的实际购买力（real income），能购买更多的物品A和B。</p></li>
 <li><p><strong>substitution effect替代效应</strong>：物品A的价格下降使B相对于A的价格上升，能买更少的B和更多的A。</p></li>
 <li><p>窍门：物品A价格下降能购买更多的A（替代效应和收入效应相互加强起到同向作用），但B不确定。</p></li>
+</ul>
+
+
+<h4>exercise</h4>
+
+<ul>
+<li>1.What determines a household’s consumption possibilities?
+
+<ul>
+<li><strong>an individual&rsquo;s consumption possibilities constraint is its budget constraint</strong></li>
+<li><strong>and it is determined by the price of the good and the individual&rsquo;s income</strong></li>
+</ul>
+</li>
+<li>2.How would you answer someone who says that marginal utility theory is useless because utility cannot be observed?
+
+<ul>
+<li><strong>因为人民在潜意识（subconscious）中会做决策</strong></li>
+<li><strong>even though people do not think using the economic terms, they are still making the decision</strong></li>
+</ul>
+</li>
+<li><p>3.What is consumer surplus? How is consumer surplus calculated?</p>
+
+<ul>
+<li><strong>consumer surplus 是你愿意付给这个这个商品的价格和你必须付给这个商品的钱的差值。</strong></li>
+</ul>
+</li>
+<li><p>4.What is a firm and what is the fundamental economic problem that all firms face?</p>
+
+<ul>
+<li><strong>firm：people organise production</strong></li>
+<li><strong>the main problem is how it can allocate its scare resources to maximise its benefit.</strong></li>
+<li><strong>for a non-profit, the goal is often to maximise its output subject to this constraint.</strong></li>
+</ul>
+</li>
 </ul>
 
 ]]></content>
@@ -3879,7 +3937,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#117;&#x73;&#101;&#x72;&#x6e;&#97;&#x6d;&#x65;&#x40;&#x6d;&#x61;&#115;&#x6f;&#110;&#46;&#105;&#110;&#100;&#105;&#x61;&#x6e;&#97;&#46;&#101;&#x64;&#x75;">&#117;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#109;&#97;&#x73;&#x6f;&#x6e;&#46;&#x69;&#x6e;&#x64;&#x69;&#97;&#x6e;&#97;&#46;&#101;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x75;&#115;&#101;&#x72;&#x6e;&#x61;&#x6d;&#101;&#64;&#109;&#97;&#x73;&#111;&#110;&#46;&#105;&#110;&#100;&#x69;&#x61;&#110;&#x61;&#46;&#101;&#100;&#x75;">&#x75;&#115;&#101;&#114;&#x6e;&#x61;&#109;&#x65;&#x40;&#x6d;&#97;&#115;&#111;&#110;&#46;&#105;&#x6e;&#100;&#105;&#x61;&#110;&#97;&#x2e;&#x65;&#x64;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
