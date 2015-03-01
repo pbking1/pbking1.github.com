@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-01T15:22:02-05:00</updated>
+  <updated>2015-03-01T15:35:25-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -203,26 +203,30 @@
 <ul>
 <li><strong>zero</strong></li>
 <li>这种图都是短期的，长期的只有一个u型曲线</li>
-<li>市场价格P1低于平均总成本，所以无利可图，所以不生产</li>
+<li>因为固定成本是已经付出的成本</li>
+<li>市场价格P1低于平均可变成本，说明成本比较高了，所以无利可图，所以不生产</li>
 </ul>
 </li>
 <li><p>15.At price P2, the firm in figure 11.1 would produce:</p>
 
 <ul>
 <li><strong>Q5</strong></li>
-<li></li>
+<li>在Q5这个交点，如果产量低于这个交点，所以成本低于市场价格，所以有利可图</li>
+<li>如果高，则成本高于市场价格，所以无利可图，不生产</li>
 </ul>
 </li>
 <li><p>16.At price P1, the firm in figure 11.1 would:</p>
 
 <ul>
 <li><strong>lose fixed costs.</strong></li>
+<li>因为不生产，所以损失掉了固定成本</li>
 </ul>
 </li>
 <li><p>17.At price P3, the firm in figure 11.1 would:</p>
 
 <ul>
 <li><strong>break down</strong></li>
+<li></li>
 </ul>
 </li>
 <li><p>18.At price P4 in the long run, the industry including the firm in figure 11.1 would:</p>
@@ -4423,7 +4427,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#117;&#x73;&#x65;&#114;&#x6e;&#97;&#109;&#101;&#64;&#109;&#97;&#x73;&#x6f;&#110;&#x2e;&#105;&#110;&#100;&#x69;&#x61;&#110;&#97;&#46;&#x65;&#x64;&#x75;">&#x75;&#x73;&#101;&#114;&#110;&#97;&#109;&#x65;&#64;&#x6d;&#x61;&#115;&#x6f;&#x6e;&#46;&#105;&#x6e;&#100;&#105;&#97;&#110;&#x61;&#46;&#x65;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x75;&#x73;&#101;&#x72;&#x6e;&#x61;&#x6d;&#101;&#x40;&#109;&#97;&#x73;&#111;&#x6e;&#46;&#105;&#x6e;&#100;&#x69;&#x61;&#110;&#x61;&#x2e;&#x65;&#100;&#x75;">&#x75;&#x73;&#101;&#114;&#x6e;&#97;&#109;&#x65;&#x40;&#x6d;&#x61;&#115;&#x6f;&#110;&#46;&#105;&#x6e;&#100;&#x69;&#x61;&#x6e;&#97;&#x2e;&#101;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
