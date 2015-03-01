@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-28T22:15:46-05:00</updated>
+  <updated>2015-02-28T22:31:05-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -55,75 +55,75 @@
 <li><p>5.If 11 workers can produce a total of 54 units of a product and another worker has a marginal product of six, then the average product of 12 workers is:</p>
 
 <ul>
-<li>a</li>
+<li>(54 + 6)/12 = 5</li>
 </ul>
 </li>
 <li><p>6.Economies of scale exist because as a firm increases its size in the long run:</p>
 
 <ul>
-<li>d</li>
+<li> <strong>labor and management can specialize their activities more.</strong>    &ndash;  <strong>as a larger input buyer the firm can purchase inputs at a lower per unit cost.</strong>    &ndash; <strong>the firm can afford more sophisticated technology in production.</strong></li>
 </ul>
 </li>
 <li><p>7.In natural monopolies such as the generation of electricity, long-run average costs continue to decrease as the plant size gets larger, because:</p>
 
 <ul>
-<li>a</li>
+<li><strong>diseconomies of scale are very minor but economies of scale continue.</strong></li>
 </ul>
 </li>
 <li><p>8.In figure 10.2, the difference between average total costs and average variable costs is:</p></li>
 <li><img src="../images/econ/1.png" height="400" width="400" alt="Image of Yaktocat" />
 
 <ul>
-<li>b</li>
+<li><strong>average fixed costs.</strong></li>
 </ul>
 </li>
 <li>9.In figure 10.2, average variable costs approach average total costs as output rises because:
 
 <ul>
-<li>d</li>
+<li><strong>average fixed costs are falling.</strong></li>
 </ul>
 </li>
 <li>10.In figure 10.2, when marginal costs are rising:
 
 <ul>
-<li>a</li>
+<li><strong>marginal product of labor is declining.</strong></li>
 </ul>
 </li>
 <li><p>11.Both individual buyers and sellers in perfect competition:</p>
 
 <ul>
-<li>b</li>
+<li><strong>have to take the market price as a given.</strong></li>
 </ul>
 </li>
 <li><p>12.If a perfectly competitive seller is producing at an output where price is $11 and the marginal cost is $14.54, then to maximise profits the firm should:</p>
 
 <ul>
-<li>c</li>
+<li> <strong>produce a smaller level of output.</strong></li>
 </ul>
 </li>
 <li><p>13.A very large number of small sellers who sell identical products implies:</p>
 
 <ul>
-<li>b</li>
+<li><strong>the inability of one seller to influence price.</strong></li>
 </ul>
 </li>
 <li><p><img src="../images/econ/2.png" height="400" width="400" alt="Image of Yaktocat" /></p></li>
 <li><p>14.At price P1, the firm in figure 11.1 would produce:</p>
 
 <ul>
-<li>a</li>
+<li>zero</li>
 </ul>
 </li>
 <li><p>15.At price P2, the firm in figure 11.1 would produce:</p>
 
 <ul>
-<li>c</li>
+<li>Q5</li>
 </ul>
 </li>
 <li><p>16.At price P1, the firm in figure 11.1 would:</p>
 
 <ul>
-<li>d</li>
+<li>lose fixed costs.</li>
 </ul>
 </li>
 <li><p>17.At price P3, the firm in figure 11.1 would:</p>
@@ -4277,7 +4277,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#x75;&#x73;&#x65;&#x72;&#x6e;&#x61;&#109;&#x65;&#x40;&#x6d;&#x61;&#115;&#111;&#x6e;&#x2e;&#x69;&#110;&#100;&#x69;&#97;&#x6e;&#x61;&#46;&#x65;&#x64;&#117;">&#x75;&#115;&#x65;&#x72;&#110;&#97;&#109;&#x65;&#64;&#x6d;&#x61;&#115;&#111;&#110;&#x2e;&#x69;&#110;&#x64;&#x69;&#x61;&#x6e;&#x61;&#x2e;&#101;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#x75;&#x73;&#x65;&#114;&#x6e;&#x61;&#109;&#101;&#x40;&#x6d;&#97;&#x73;&#111;&#x6e;&#x2e;&#x69;&#110;&#x64;&#x69;&#x61;&#x6e;&#97;&#x2e;&#101;&#x64;&#117;">&#x75;&#x73;&#101;&#x72;&#110;&#x61;&#109;&#101;&#x40;&#x6d;&#x61;&#115;&#111;&#110;&#x2e;&#105;&#x6e;&#x64;&#x69;&#97;&#x6e;&#x61;&#46;&#101;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
