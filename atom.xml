@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-28T22:37:06-05:00</updated>
+  <updated>2015-02-28T22:43:42-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -159,7 +159,7 @@
 <li><p>22.A local electricity-generating company has a monopoly that is protected by a barrier to entry that takes the form of:</p>
 
 <ul>
-<li>economies of scale.</li>
+<li><strong>economies of scale.</strong></li>
 </ul>
 </li>
 <li><p><img src="../images/econ/3.png" height="400" width="400" alt="Image of Yaktocat" /></p></li>
@@ -196,91 +196,92 @@
 <li><p>28.The important economic concept illustrated by increasing opportunity costs is:</p>
 
 <ul>
-<li>c</li>
+<li><strong>the more resources devoted to any activity, the smaller the payoff of devoting more resources to that activity.</strong></li>
 </ul>
 </li>
 <li><p>29.A production possibilities frontier model shows that:</p>
 
 <ul>
-<li>d</li>
+<li><strong>if all resources are fully and efficiently utilized, more output of good X can only be achieved by producing less of another good.</strong></li>
 </ul>
 </li>
 <li><p>30.If George can mow 10 lawns or cultivate 5 gardens a day while Jack can mow 6 lawns or cultivate 4 gardens a day, then:</p>
 
 <ul>
-<li>a</li>
+<li>Jack has a comparative advantage in lawn mowing.</li>
 </ul>
 </li>
 <li><p>31.If last year the Ajax firm sold 250 sofas at $1,000 each and this year Ajax sold 500 sofas at $1,500 each, then</p>
 
 <ul>
-<li>b</li>
+<li>the demand for sofas increased.</li>
 </ul>
 </li>
 <li><p>32.The demand for big screen TVs would fall, if big screen TVs are normal goods and:</p>
 
 <ul>
-<li>b</li>
+<li>buyerʹs of big screen TVs incomes fall because of a recession.</li>
 </ul>
 </li>
 <li><p>33.A change in demand represents a <strong><strong><strong><strong> while a change in quantity demanded is a </strong></strong></strong></strong>.</p>
 
 <ul>
-<li>d</li>
+<li>shift to a new demand curve; movement along one demand curve</li>
 </ul>
 </li>
 <li><p>34.If the demand for a good increases when there is high unemployment, we can conclude that the commodity is:</p>
 
 <ul>
-<li>a</li>
+<li>an inferior下级 good</li>
 </ul>
 </li>
 <li><p>35.An advance in technology increases supply:</p>
 
 <ul>
-<li>b</li>
+<li>because laborʹs or capitalʹs productivity increases and costs of production fall.</li>
 </ul>
 </li>
 <li><p>36.When a strike at a major local employer occurs, the demand for television sets in that local market will:</p>
 
 <ul>
-<li>a</li>
+<li>decreases because buyers incomes have decreased.</li>
 </ul>
 </li>
 <li><p>37.If the current market price for a particular book is $30 a unit and a price ceiling is imposed at $20 per book, then:</p>
 
 <ul>
-<li>d</li>
+<li><strong>there will an increase in the quantity demanded of the book.</strong></li>
+<li><strong>a shortage of the book will develop at the ceiling price.</strong>    &ndash; <strong>a price of $20 per book is the legally allowed maximum price of the book.</strong></li>
 </ul>
 </li>
 <li><p>38.Among the impacts of the minimum wage工资 is that:</p>
 
 <ul>
-<li>d</li>
+<li><strong>higher costs are imposed on employers.</strong>    &ndash; <strong>employers substitute other lower cost inputs in place of higher priced labor.</strong>     &ndash; <strong>higher product prices result because production costs are increased.</strong></li>
 </ul>
 </li>
 <li><p>39.After a city imposes a rent control law:</p>
 
 <ul>
-<li>a</li>
+<li><strong>landlords reduce the quantity of apartments offered for rent.</strong></li>
 </ul>
 </li>
 <li><p>40.Consumers pay 100% of a new sales tax on a good:</p>
 
 <ul>
-<li>c</li>
+<li><strong>when the demand is perfectly inelastic.</strong></li>
 </ul>
 </li>
 <li><p>41.Which of the following statements about elasticity of demand is correct?</p>
 
 <ul>
-<li>b</li>
+<li><strong>Demand is more elastic in a long time period than it is in a short time period.</strong></li>
 </ul>
 </li>
 <li><p>42.Which of the following goods would most likely have the most inelastic demand?</p>
 
 <ul>
-<li>d</li>
+<li><strong>Bread</strong></li>
 </ul>
 </li>
 <li><p>43.If at a price of $100, 10 units were sold while at a price of $125, eight units were sold, the price elasticity of demand value using the midpoint formula is:</p>
@@ -4277,7 +4278,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#117;&#115;&#101;&#x72;&#x6e;&#x61;&#x6d;&#x65;&#64;&#109;&#x61;&#x73;&#111;&#110;&#x2e;&#105;&#110;&#x64;&#x69;&#x61;&#x6e;&#97;&#x2e;&#101;&#x64;&#117;">&#117;&#x73;&#101;&#x72;&#110;&#97;&#x6d;&#101;&#x40;&#109;&#x61;&#115;&#x6f;&#x6e;&#x2e;&#105;&#x6e;&#x64;&#105;&#97;&#110;&#97;&#46;&#x65;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#58;&#117;&#x73;&#x65;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#109;&#97;&#115;&#111;&#110;&#x2e;&#105;&#x6e;&#100;&#x69;&#97;&#x6e;&#x61;&#x2e;&#101;&#x64;&#117;">&#x75;&#115;&#x65;&#114;&#110;&#x61;&#x6d;&#x65;&#64;&#109;&#97;&#x73;&#111;&#x6e;&#46;&#x69;&#x6e;&#100;&#x69;&#97;&#110;&#97;&#46;&#101;&#x64;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
