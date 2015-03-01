@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-01T14:57:28-05:00</updated>
+  <updated>2015-03-01T14:58:29-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -89,9 +89,12 @@
 <li><p>6.Economies of scale exist because as a firm increases its size in the long run长期:</p>
 
 <ul>
-<li>labor and management can specialize their activities more.    &ndash; as a larger input buyer the firm can purchase inputs at a lower per unit cost.    &ndash; the firm can afford more sophisticated technology in production.    &ndash; 规模经济：        &ndash; 短期无法改变固定成本，只有长期才能改变固定成本。            &ndash; 长期的曲线是由很多短期的曲线            &ndash; 随着产量增加，平均总成本下降（这一段就叫规模经济）
+<li>labor and management can specialize their activities more.    &ndash; as a larger input buyer the firm can purchase inputs at a lower per unit cost.    &ndash; the firm can afford more sophisticated technology in production.    &ndash; 规模经济：
 
-<pre><code>  - 平均总成本上升的（这一段叫规模不经济）        - 固定成本：器材（本来就有的）            - 固有资产        - 可变成本：劳动力（可以增加可以减少）            - 会随着产量变动而变动的成本
+<pre><code>  - 短期无法改变固定成本，只有长期才能改变固定成本。        
+  - 长期的曲线是由很多短期的曲线        
+  - 随着产量增加，平均总成本下降（这一段就叫规模经济）
+  - 平均总成本上升的（这一段叫规模不经济）        - 固定成本：器材（本来就有的）            - 固有资产        - 可变成本：劳动力（可以增加可以减少）            - 会随着产量变动而变动的成本
 </code></pre>
 
 <ul>
@@ -4387,7 +4390,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#117;&#115;&#101;&#x72;&#110;&#97;&#109;&#x65;&#64;&#109;&#x61;&#115;&#x6f;&#x6e;&#46;&#x69;&#x6e;&#100;&#x69;&#x61;&#110;&#97;&#x2e;&#x65;&#100;&#x75;">&#x75;&#115;&#x65;&#x72;&#x6e;&#x61;&#x6d;&#101;&#64;&#109;&#97;&#115;&#x6f;&#110;&#x2e;&#105;&#110;&#100;&#105;&#97;&#x6e;&#x61;&#x2e;&#101;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#117;&#x73;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#109;&#97;&#115;&#x6f;&#x6e;&#46;&#105;&#x6e;&#100;&#105;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#x64;&#117;">&#117;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#101;&#64;&#109;&#97;&#x73;&#111;&#110;&#x2e;&#105;&#x6e;&#100;&#x69;&#x61;&#110;&#97;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
