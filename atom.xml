@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-01T15:00:37-05:00</updated>
+  <updated>2015-03-01T15:02:43-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -124,6 +124,12 @@
 
 <ul>
 <li><strong>diseconomies of scale are very minor but economies of scale continue.</strong></li>
+<li>由于规模经济造成的垄断，叫自然垄断
+
+<ul>
+<li>因为企业应为规模经济成本比较低。 所以比其他新来的企业更有竞争力</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>8.In figure 10.2, the difference between average total costs and average variable costs is:</p></li>
@@ -4388,7 +4394,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#117;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#101;&#64;&#x6d;&#97;&#x73;&#111;&#x6e;&#46;&#105;&#110;&#100;&#105;&#97;&#110;&#97;&#x2e;&#101;&#100;&#x75;">&#x75;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#x40;&#x6d;&#97;&#115;&#x6f;&#110;&#x2e;&#x69;&#x6e;&#x64;&#x69;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x75;&#115;&#101;&#114;&#110;&#x61;&#x6d;&#101;&#x40;&#x6d;&#x61;&#115;&#111;&#x6e;&#46;&#105;&#110;&#100;&#105;&#97;&#x6e;&#x61;&#46;&#x65;&#x64;&#x75;">&#117;&#115;&#101;&#x72;&#110;&#x61;&#x6d;&#101;&#64;&#x6d;&#97;&#x73;&#x6f;&#x6e;&#46;&#105;&#110;&#100;&#x69;&#97;&#110;&#97;&#x2e;&#101;&#100;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
