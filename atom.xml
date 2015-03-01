@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-28T22:43:42-05:00</updated>
+  <updated>2015-02-28T22:46:15-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -287,50 +287,50 @@
 <li><p>43.If at a price of $100, 10 units were sold while at a price of $125, eight units were sold, the price elasticity of demand value using the midpoint formula is:</p>
 
 <ul>
-<li>d</li>
+<li><strong>one</strong></li>
 </ul>
 </li>
 <li><p>44.If at a price of $50, 20 units are sold and at a price of $60, 0 units are sold, the price elasticity of demand of the good is:</p>
 
 <ul>
-<li>b</li>
+<li><strong>perfectly elastic.</strong></li>
 </ul>
 </li>
 <li><p>45.When demand is price elastic, a fall in price causes total revenue to rise because:</p>
 
 <ul>
-<li>b</li>
+<li><strong>the increase in quantity sold is large enough to offset the lower price.</strong></li>
 </ul>
 </li>
 <li><p>46.If the cross-price elasticity of demand for goods A and B is a positive value, this means the two goods are:</p>
 
 <ul>
-<li>b</li>
+<li><strong>substitutes</strong></li>
 </ul>
 </li>
 <li><p>47.If you expect the economy is going to boom and average income in the economy will rise in the foreseeable future, the type of firm that would be able to increase its sales if your expectations aremet is:</p>
 
 <ul>
-<li>b</li>
+<li><strong>one that sells a luxury good.</strong></li>
 </ul>
 </li>
 <li><p>48.An external cost is created when you:</p>
 
 <ul>
-<li>c</li>
+<li><strong>litter on the side of the road.</strong></li>
 </ul>
 </li>
 <li><p>49.Because producers do not bear the external cost of pollution:</p>
 
 <ul>
-<li>c</li>
+<li><strong>production is beyond the economically efficient level.</strong></li>
 </ul>
 </li>
 <li><p><img src="../images/econ/4.png" height="400" width="400" alt="Image of Yaktocat" /></p></li>
 <li>50.An efficient way to get the firm in figure 5.1 to produce what society wants is:
 
 <ul>
-<li>a</li>
+<li><strong>a tax to make the firm realize the external costs it imposes on others.</strong></li>
 </ul>
 </li>
 </ul>
@@ -4278,7 +4278,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#58;&#117;&#x73;&#x65;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#109;&#97;&#115;&#111;&#110;&#x2e;&#105;&#x6e;&#100;&#x69;&#97;&#x6e;&#x61;&#x2e;&#101;&#x64;&#117;">&#x75;&#115;&#x65;&#114;&#110;&#x61;&#x6d;&#x65;&#64;&#109;&#97;&#x73;&#111;&#x6e;&#46;&#x69;&#x6e;&#100;&#x69;&#97;&#110;&#97;&#46;&#101;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#117;&#115;&#x65;&#x72;&#110;&#97;&#x6d;&#x65;&#x40;&#109;&#x61;&#x73;&#111;&#x6e;&#x2e;&#105;&#x6e;&#100;&#105;&#x61;&#x6e;&#x61;&#46;&#101;&#100;&#117;">&#117;&#x73;&#101;&#x72;&#x6e;&#97;&#x6d;&#101;&#x40;&#x6d;&#97;&#115;&#111;&#110;&#x2e;&#x69;&#x6e;&#x64;&#105;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
