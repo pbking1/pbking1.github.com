@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-01T16:34:52-05:00</updated>
+  <updated>2015-03-01T16:35:15-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -92,10 +92,9 @@
 <li><strong>labor and management can specialize their activities more.</strong>
 
 <ul>
-<li><strong>as a larger input buyer the firm can purchase inputs at a lower per unit cost.</strong>    &ndash; the firm can afford more sophisticated technology in production.    &ndash; 规模经济：            &ndash; 短期无法改变固定成本，只有长期才能改变固定成本。                  &ndash; 长期的曲线是由很多短期的曲线
+<li><strong>as a larger input buyer the firm can purchase inputs at a lower per unit cost.</strong>    &ndash; the firm can afford more sophisticated technology in production.    &ndash; 规模经济：        &ndash; 短期无法改变固定成本，只有长期才能改变固定成本。            &ndash; 长期的曲线是由很多短期的曲线            &ndash; 随着产量增加，平均总成本下降(这一段就叫规模经济)
 
 <ul>
-<li>随着产量增加，平均总成本下降(这一段就叫规模经济)</li>
 <li>平均总成本上升的(这一段叫规模不经济)        &ndash; 固定成本：器材(本来就有的)            &ndash; 固有资产        &ndash; 可变成本：劳动力（可以增加可以减少）            &ndash; 会随着产量变动而变动的成本</li>
 </ul>
 </li>
@@ -4437,7 +4436,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#117;&#115;&#x65;&#114;&#110;&#x61;&#109;&#x65;&#64;&#x6d;&#x61;&#x73;&#111;&#x6e;&#x2e;&#105;&#110;&#x64;&#105;&#x61;&#x6e;&#x61;&#46;&#x65;&#x64;&#x75;">&#x75;&#115;&#x65;&#x72;&#x6e;&#x61;&#x6d;&#101;&#64;&#109;&#97;&#115;&#x6f;&#110;&#46;&#105;&#x6e;&#100;&#x69;&#97;&#110;&#x61;&#x2e;&#101;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#117;&#115;&#101;&#x72;&#x6e;&#97;&#x6d;&#101;&#64;&#x6d;&#x61;&#x73;&#x6f;&#x6e;&#x2e;&#x69;&#x6e;&#x64;&#105;&#x61;&#x6e;&#x61;&#x2e;&#101;&#100;&#117;">&#117;&#x73;&#x65;&#x72;&#x6e;&#x61;&#x6d;&#x65;&#64;&#x6d;&#97;&#x73;&#x6f;&#110;&#x2e;&#105;&#x6e;&#100;&#x69;&#97;&#x6e;&#97;&#x2e;&#101;&#100;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
