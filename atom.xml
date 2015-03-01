@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-28T22:47:10-05:00</updated>
+  <updated>2015-02-28T22:47:39-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -135,19 +135,19 @@
 <li><p>18.At price P4 in the long run, the industry including the firm in figure 11.1 would:</p>
 
 <ul>
-<li>have entry of new firms.</li>
+<li><strong>have entry of new firms.</strong></li>
 </ul>
 </li>
 <li><p>19.At price P2 in the long run, the industry including the firm in figure 11.1 would:</p>
 
 <ul>
-<li>have exit of some existing firms.</li>
+<li><strong>have exit of some existing firms.</strong></li>
 </ul>
 </li>
 <li><p>20.When a competitive firm finds that the market price is below its minimum average variable cost level, it will sell:</p>
 
 <ul>
-<li>nothing at all, the firm shuts down.</li>
+<li><strong>nothing at all, the firm shuts down.</strong></li>
 </ul>
 </li>
 <li><p>21.If, as the industry expands, a competitive industry can supply larger quantities at the same long-run market price, it is:</p>
@@ -4278,7 +4278,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x75;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#x6d;&#97;&#115;&#x6f;&#x6e;&#x2e;&#105;&#x6e;&#100;&#x69;&#x61;&#110;&#97;&#x2e;&#101;&#x64;&#x75;">&#x75;&#115;&#101;&#x72;&#x6e;&#x61;&#109;&#x65;&#x40;&#x6d;&#x61;&#x73;&#x6f;&#110;&#46;&#x69;&#110;&#x64;&#105;&#x61;&#110;&#x61;&#46;&#x65;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x75;&#x73;&#x65;&#x72;&#110;&#97;&#x6d;&#x65;&#x40;&#x6d;&#x61;&#115;&#111;&#110;&#46;&#x69;&#x6e;&#100;&#x69;&#x61;&#x6e;&#97;&#x2e;&#x65;&#x64;&#117;">&#117;&#x73;&#x65;&#114;&#110;&#x61;&#x6d;&#x65;&#64;&#x6d;&#x61;&#115;&#x6f;&#x6e;&#x2e;&#105;&#x6e;&#x64;&#105;&#x61;&#110;&#x61;&#x2e;&#x65;&#100;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
