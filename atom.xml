@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-28T23:57:32-05:00</updated>
+  <updated>2015-03-01T01:32:59-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -346,13 +346,13 @@
 <li><p>1.Ex-President Carter’s recommendation of registering women for the draft raised an uproar around the country. One opponent of this proposal stated: &ldquo;Women are needed at home to rear the children, let the men fight the wars.&rdquo; This opponent implied that:</p>
 
 <ul>
-<li>b</li>
+<li><strong>the opportunity cost associated with drafting women is higher than the opportunity cost of drafting men.</strong></li>
 </ul>
 </li>
 <li><p>2.Which of the following accurately describes the fundamental problem at the core of all economic analysis? The fundamental problem is:</p>
 
 <ul>
-<li> d</li>
+<li>d</li>
 </ul>
 </li>
 <li><p>3.If an individual’s demand for frozen dinners increases when the price of steak rises, we would infer that:</p>
@@ -370,47 +370,27 @@
 <li><p>6.Suppose a political candidate in the upcoming November elections promises voters more funding for AIDS research and child care, and assures them they will not have to sacrifice any other goods or services to obtain the additional programs.</p>
 
 <ul>
-<li></li>
+<li>a</li>
 </ul>
 </li>
 <li><p>7.This year the demand for new homes increases while at the same time the supply also increases. As a result of these changes in the market for new homes you can conclude that:</p>
 
 <ul>
-<li></li>
+<li>d</li>
 </ul>
 </li>
 <li><p>8.Some time ago the government of China required many highly skilled technicians and scientists to engage in unskilled agricultural labor in order to develop &ldquo;proper social attitudes.&rdquo; This policy caused China to produce</p>
 
 <ul>
-<li></li>
+<li>d</li>
 </ul>
 </li>
 <li><p>9.Recent health studies claim that consuming a glass of wine with afternoon or evening meals significantly reduces the risk of heart disease. If people believe this new information, what is likely to occur to the short-run equilibrium in the wine market?</p>
 
 <ul>
-<li></li>
+<li>b</li>
 </ul>
 </li>
-<li><p>10.Aglets are the plastic tips on shoelaces that make it easier to lace your shoes. The demand for aglets is probably</p>
-
-<ul>
-<li></li>
-</ul>
-</li>
-<li><p>11.If the owner of an ice cream store on Kirkwood Avenue charges $1.20 for an ice cream cone her total revenue is $540 per day. If she lowers the price to $1.00, total revenue falls to $500 per day. The demand for ice cream on Kirkwood Avenue is</p>
-
-<ul>
-<li></li>
-</ul>
-</li>
-<li><p>12.Suppose that Campbell’s, a major food manufacturer in the United States, can produce either canned soup or canned tomato juice. As a result of an increase in the cost of tomatoes, Campbell’s decides to produce more soup and less tomato juice. You correctly explain this by saying</p>
-
-<ul>
-<li></li>
-</ul>
-</li>
-<li><p>14.An advance in technology makes it possible to produce 50 percent more of all goods. With these expanded possibilities, people increase the number of vacations and their consumption of food by 50 percent. As a result of these two changes, the opportunity cost of a unit of food <strong><strong><strong> and the opportunity cost of a vacation </strong></strong></strong>_.</p></li>
-<li><p>15.Joanna and David are farmers who produce beef and corn. In a year, Joanna can produce 10 tons of beef or 60 bushels of corn, while David can produce 10 tons of beef or 50 bushels of corn. To maximize their total output of beef and corn,</p></li>
 </ul>
 
 ]]></content>
@@ -4356,7 +4336,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#117;&#x73;&#101;&#114;&#110;&#x61;&#109;&#x65;&#x40;&#109;&#x61;&#x73;&#111;&#x6e;&#x2e;&#x69;&#110;&#100;&#x69;&#x61;&#x6e;&#x61;&#46;&#x65;&#100;&#117;">&#x75;&#115;&#x65;&#x72;&#110;&#x61;&#109;&#x65;&#64;&#109;&#97;&#115;&#x6f;&#x6e;&#x2e;&#x69;&#110;&#x64;&#105;&#x61;&#110;&#97;&#46;&#x65;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#x75;&#x73;&#101;&#114;&#x6e;&#x61;&#109;&#x65;&#64;&#x6d;&#x61;&#x73;&#x6f;&#x6e;&#x2e;&#x69;&#x6e;&#x64;&#105;&#97;&#110;&#97;&#46;&#x65;&#100;&#117;">&#x75;&#115;&#101;&#x72;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#109;&#97;&#x73;&#x6f;&#110;&#x2e;&#105;&#110;&#100;&#105;&#x61;&#110;&#x61;&#46;&#101;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
