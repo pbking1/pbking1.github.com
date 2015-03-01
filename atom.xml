@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-28T22:46:15-05:00</updated>
+  <updated>2015-02-28T22:47:10-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -55,7 +55,7 @@
 <li><p>5.If 11 workers can produce a total of 54 units of a product and another worker has a marginal product of six, then the average product of 12 workers is:</p>
 
 <ul>
-<li>(54 + 6)/12 = 5</li>
+<li><strong>(54 + 6)/12 = 5</strong></li>
 </ul>
 </li>
 <li><p>6.Economies of scale exist because as a firm increases its size in the long run:</p>
@@ -111,25 +111,25 @@
 <li><p>14.At price P1, the firm in figure 11.1 would produce:</p>
 
 <ul>
-<li>zero</li>
+<li><strong>zero</strong></li>
 </ul>
 </li>
 <li><p>15.At price P2, the firm in figure 11.1 would produce:</p>
 
 <ul>
-<li>Q5</li>
+<li><strong>Q5</strong></li>
 </ul>
 </li>
 <li><p>16.At price P1, the firm in figure 11.1 would:</p>
 
 <ul>
-<li>lose fixed costs.</li>
+<li><strong>lose fixed costs.</strong></li>
 </ul>
 </li>
 <li><p>17.At price P3, the firm in figure 11.1 would:</p>
 
 <ul>
-<li>break down</li>
+<li><strong>break down</strong></li>
 </ul>
 </li>
 <li><p>18.At price P4 in the long run, the industry including the firm in figure 11.1 would:</p>
@@ -4278,7 +4278,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#117;&#115;&#x65;&#x72;&#110;&#97;&#x6d;&#x65;&#x40;&#109;&#x61;&#x73;&#111;&#x6e;&#x2e;&#105;&#x6e;&#100;&#105;&#x61;&#x6e;&#x61;&#46;&#101;&#100;&#117;">&#117;&#x73;&#101;&#x72;&#x6e;&#97;&#x6d;&#101;&#x40;&#x6d;&#97;&#115;&#111;&#110;&#x2e;&#x69;&#x6e;&#x64;&#105;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#x64;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x75;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#x6d;&#97;&#115;&#x6f;&#x6e;&#x2e;&#105;&#x6e;&#100;&#x69;&#x61;&#110;&#97;&#x2e;&#101;&#x64;&#x75;">&#x75;&#115;&#101;&#x72;&#x6e;&#x61;&#109;&#x65;&#x40;&#x6d;&#x61;&#x73;&#x6f;&#110;&#46;&#x69;&#110;&#x64;&#105;&#x61;&#110;&#x61;&#46;&#x65;&#100;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
