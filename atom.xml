@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-02-28T22:34:15-05:00</updated>
+  <updated>2015-02-28T22:37:06-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -172,25 +172,25 @@
 <li><p>24.The profit maximize price for the firm in figure 14.1 is:</p>
 
 <ul>
-<li>c</li>
+<li>P3</li>
 </ul>
 </li>
 <li><p>25.If average total costs are ATC1, the firm in figure 14.1 will:</p>
 
 <ul>
-<li>c</li>
+<li>make a profit</li>
 </ul>
 </li>
 <li><p>26.In figure 14.1, the difference between the monopoly output and the competitive output is:</p>
 
 <ul>
-<li>d</li>
+<li>Q3-Q2</li>
 </ul>
 </li>
 <li><p>27.A profit maximizing monopolistʹs price is:</p>
 
 <ul>
-<li>d</li>
+<li><strong>greater than what the price would be if the mononoplistʹs industry were competitive.</strong></li>
 </ul>
 </li>
 <li><p>28.The important economic concept illustrated by increasing opportunity costs is:</p>
@@ -4277,7 +4277,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#117;&#x73;&#101;&#x72;&#x6e;&#97;&#109;&#101;&#64;&#x6d;&#x61;&#x73;&#111;&#110;&#46;&#105;&#110;&#x64;&#105;&#x61;&#110;&#97;&#x2e;&#101;&#100;&#x75;">&#x75;&#115;&#x65;&#114;&#x6e;&#97;&#x6d;&#x65;&#x40;&#109;&#x61;&#x73;&#111;&#110;&#x2e;&#x69;&#x6e;&#x64;&#105;&#x61;&#x6e;&#97;&#x2e;&#x65;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#117;&#115;&#101;&#x72;&#x6e;&#x61;&#x6d;&#x65;&#64;&#109;&#x61;&#x73;&#111;&#110;&#x2e;&#105;&#110;&#x64;&#x69;&#x61;&#x6e;&#97;&#x2e;&#101;&#x64;&#117;">&#117;&#x73;&#101;&#x72;&#110;&#97;&#x6d;&#101;&#x40;&#109;&#x61;&#115;&#x6f;&#x6e;&#x2e;&#105;&#x6e;&#x64;&#105;&#97;&#110;&#97;&#46;&#x65;&#x64;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
