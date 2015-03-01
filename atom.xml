@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-01T14:29:10-05:00</updated>
+  <updated>2015-03-01T14:55:56-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -86,10 +86,13 @@
 <li><strong>(54 + 6)/12 = 5</strong></li>
 </ul>
 </li>
-<li><p>6.Economies of scale exist because as a firm increases its size in the long run:</p>
+<li><p>6.Economies of scale exist because as a firm increases its size in the long run长期:</p>
 
 <ul>
-<li> <strong>labor and management can specialize their activities more.</strong>    &ndash;  <strong>as a larger input buyer the firm can purchase inputs at a lower per unit cost.</strong>    &ndash; <strong>the firm can afford more sophisticated technology in production.</strong>    &ndash; 规模经济：        &ndash; 固定成本：器材（本来就有的）            &ndash; 固有资产        &ndash; 可变成本：劳动力（可以增加可以减少）            &ndash; 会随着产量变动而变动的成本
+<li><strong>labor and management can specialize their activities more.</strong>    &ndash; <strong>as a larger input buyer the firm can purchase inputs at a lower per unit cost.</strong>    &ndash; <strong>the firm can afford more sophisticated technology in production.</strong>    &ndash; 规模经济：        &ndash; 短期无法改变固定成本，只有长期才能改变固定成本。            &ndash; 长期的曲线是由很多短期的曲线            &ndash; 随着产量增加，平均总成本下降（这一段就叫规模经济）
+
+<pre><code>  - 平均总成本上升的（这一段叫规模不经济）        - 固定成本：器材（本来就有的）            - 固有资产        - 可变成本：劳动力（可以增加可以减少）            - 会随着产量变动而变动的成本
+</code></pre>
 
 <ul>
 <li>平均固定成本：固有资产平均分到课本成本上
@@ -104,12 +107,19 @@
 <li>随着产量的增加，递增的</li>
 </ul>
 </li>
-<li>平均总成本：平均可变成本 + 平均固定成本</li>
+<li>平均总成本：平均可变成本 + 平均固定成本
+
+<ul>
+<li>一开始是平均固定成本起主导作用，所以下降</li>
+<li>然后是平均可变成本起主导作用，所以增加</li>
+<li>斜率就为边际成本</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>7.In natural monopolies such as the generation of electricity, long-run average costs continue to decrease as the plant size gets larger, because:</p>
+</ul>
+</li>
+<li><p>7.In natural monopolies自然垄断 such as the generation of electricity, long-run average costs continue to decrease as the plant size gets larger, because:</p>
 
 <ul>
 <li><strong>diseconomies of scale are very minor but economies of scale continue.</strong></li>
@@ -4377,7 +4387,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x75;&#x73;&#x65;&#114;&#x6e;&#97;&#109;&#101;&#x40;&#x6d;&#x61;&#115;&#x6f;&#x6e;&#46;&#x69;&#x6e;&#100;&#x69;&#x61;&#x6e;&#97;&#46;&#101;&#100;&#x75;">&#x75;&#115;&#x65;&#x72;&#110;&#x61;&#109;&#x65;&#x40;&#109;&#97;&#115;&#111;&#x6e;&#x2e;&#x69;&#110;&#x64;&#105;&#97;&#110;&#x61;&#46;&#x65;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x75;&#x73;&#x65;&#114;&#110;&#x61;&#x6d;&#x65;&#x40;&#109;&#x61;&#x73;&#111;&#110;&#x2e;&#x69;&#x6e;&#100;&#x69;&#97;&#110;&#x61;&#46;&#x65;&#100;&#x75;">&#x75;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#x65;&#64;&#x6d;&#x61;&#x73;&#111;&#110;&#x2e;&#x69;&#110;&#x64;&#105;&#x61;&#x6e;&#x61;&#x2e;&#101;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
