@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-01T16:38:02-05:00</updated>
+  <updated>2015-03-04T01:02:56-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,139 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[compile qtox on OSX]]></title>
+    <link href="http://pbking1.github.com/blog/2015/03/03/compile-qtox-on-osx/"/>
+    <updated>2015-03-03T23:49:35-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/03/03/compile-qtox-on-osx</id>
+    <content type="html"><![CDATA[<h3>Problems when compile qtox on mac</h3>
+
+<ul>
+<li><p>first is the modification of the qtox.pro file
+  &ndash;```
+  CONFIG   += c++11
+  CONFIG += x86_64
+  CONFIG &ndash;= x86</p>
+
+<p>  contains(JENKINS,YES) {
+      INCLUDEPATH += ./libs/include/
+  } else {
+      INCLUDEPATH += libs/include
+      # add head path
+      INCLUDEPATH += /usr/include
+      INCLUDEPATH += /usr/local/include
+      INCLUDEPATH += /opt/local/include
+  }</p>
+
+<p>  macx {
+      BUNDLEID = im.tox.qtox
+      ICON = img/icons/qtox.icns
+      QMAKE_INFO_PLIST = osx/info.plist
+      QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9
+      # add libtoxav
+      LIBS += -L/usr/local/opt/libtoxcore/lib -ltoxav -ltoxcore
+      LIBS += -L/usr/local/opt/libsodium/lib -lsodium
+      LIBS += -L/usr/local/opt/libvpx/lib -lvpx
+      LIBS += -L/usr/local/lib -lopus
+      LIBS += -L/usr/local/lib -lopencv_core -lopencv_highgui
+      #LIBS += -L/opt/local/lib -lopencv_core -lopencv_highgui</p>
+
+<pre><code>  LIBS += -L$$PWD/libs/lib/ -framework OpenAL -mmacosx-version-min=10.9
+  #LIBS += -L$$PWD/libs/lib/ -ltoxcore -ltoxav -ltoxencryptsave -ltoxdns -lsodium -lvpx -lopus -framework OpenAL -lopencv_core -lopencv_highgui -mmacosx-version-min=10.7
+  contains(DEFINES, QTOX_PLATFORM_EXT) { LIBS += -framework IOKit -framework CoreFoundation }
+  contains(DEFINES, QTOX_FILTER_AUDIO) { LIBS += -lfilteraudio }
+</code></pre>
+
+<p>  ```</p></li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li><p>1.-ltoxcore can not found</p>
+
+<ul>
+<li>install the toxcore library
+
+<ul>
+<li>and remember to add the library path</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.can not find -lopus</p>
+
+<ul>
+<li>install the libogg first and then install the opus library</li>
+</ul>
+</li>
+<li><ol>
+<li>“Project ERROR: Could not resolve SDK path for ‘macosx10.8′”.</li>
+<li><code>cd /Users/Mark/Qt/5.3/clang_64/mkspecs/</code>
+
+<ul>
+<li>modify <code>!host_build:QMAKE_MAC_SDK = macosx10.9</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>4.&ldquo;Undefined symbols for architecture x86_64&rdquo;</p>
+
+<ul>
+<li><strong>not solved</strong>
+
+<ul>
+<li>one way on the Internet(did not solve)
+
+<ul>
+<li>change <code>../Qt5.4.0/5.4.0-rc1/clang_64/mkspecs/macx-clang/qmake.conf</code>
+
+<ul>
+<li>from <code>QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.6</code></li>
+<li>into <code>QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9</code>
+
+<ul>
+<li>and remember to clean the project before rebuild</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>5.#include &lt;> and #include “”</p>
+
+<ul>
+<li><h1>include &lt;></h1>
+
+<ul>
+<li>find the header in particular path
+
+<ul>
+<li>/usr/include</li>
+<li>for exmaple: /usr/include/stdio.h</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h1>include &ldquo;&rdquo;</h1>
+
+<ul>
+<li>find the header in absolute path</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[xapian_tutorial_3]]></title>
