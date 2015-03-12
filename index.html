@@ -109,40 +109,36 @@ $(document).ready(
 
 <ul>
 <li>first is the modification of the qtox.pro file
-
-<ul>
-<li><code>
-CONFIG   += c++11
-CONFIG += x86_64
-CONFIG -= x86
-contains(JENKINS,YES) {
-  INCLUDEPATH += ./libs/include/
-} else {
-  INCLUDEPATH += libs/include
-  # add head path
-  INCLUDEPATH += /usr/include
-  INCLUDEPATH += /usr/local/include
-  INCLUDEPATH += /opt/local/include
-}
-macx {
-  BUNDLEID = im.tox.qtox
-  ICON = img/icons/qtox.icns
-  QMAKE_INFO_PLIST = osx/info.plist
-  QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9
-  # add libtoxav
-  LIBS += -L/usr/local/opt/libtoxcore/lib -ltoxav -ltoxcore
-  LIBS += -L/usr/local/opt/libsodium/lib -lsodium
-  LIBS += -L/usr/local/opt/libvpx/lib -lvpx
-  LIBS += -L/usr/local/lib -lopus
-  LIBS += -L/usr/local/lib -lopencv_core -lopencv_highgui
-  #LIBS += -L/opt/local/lib -lopencv_core -lopencv_highgui
-  LIBS += -L$$PWD/libs/lib/ -framework OpenAL -mmacosx-version-min=10.9
-  #LIBS += -L$$PWD/libs/lib/ -ltoxcore -ltoxav -ltoxencryptsave -ltoxdns -lsodium -lvpx -lopus -framework OpenAL -lopencv_core -lopencv_highgui -mmacosx-version-min=10.7
-  contains(DEFINES, QTOX_PLATFORM_EXT) { LIBS += -framework IOKit -framework CoreFoundation }
-  contains(DEFINES, QTOX_FILTER_AUDIO) { LIBS += -lfilteraudio }
-</code></li>
-</ul>
-</li>
+  <code>
+  CONFIG   += c++11
+  CONFIG += x86_64
+  CONFIG -= x86
+  contains(JENKINS,YES) {
+      INCLUDEPATH += ./libs/include/
+  } else {
+      INCLUDEPATH += libs/include
+      # add head path
+      INCLUDEPATH += /usr/include
+      INCLUDEPATH += /usr/local/include
+      INCLUDEPATH += /opt/local/include
+  }
+  macx {
+      BUNDLEID = im.tox.qtox
+      ICON = img/icons/qtox.icns
+      QMAKE_INFO_PLIST = osx/info.plist
+      QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9
+      # add libtoxav
+      LIBS += -L/usr/local/opt/libtoxcore/lib -ltoxav -ltoxcore
+      LIBS += -L/usr/local/opt/libsodium/lib -lsodium
+      LIBS += -L/usr/local/opt/libvpx/lib -lvpx
+      LIBS += -L/usr/local/lib -lopus
+      LIBS += -L/usr/local/lib -lopencv_core -lopencv_highgui
+      #LIBS += -L/opt/local/lib -lopencv_core -lopencv_highgui
+      LIBS += -L$$PWD/libs/lib/ -framework OpenAL -mmacosx-version-min=10.9
+      #LIBS += -L$$PWD/libs/lib/ -ltoxcore -ltoxav -ltoxencryptsave -ltoxdns -lsodium -lvpx -lopus -framework OpenAL -lopencv_core -lopencv_highgui -mmacosx-version-min=10.7
+      contains(DEFINES, QTOX_PLATFORM_EXT) { LIBS += -framework IOKit -framework CoreFoundation }
+      contains(DEFINES, QTOX_FILTER_AUDIO) { LIBS += -lfilteraudio }
+ </code></li>
 </ul>
 
 
