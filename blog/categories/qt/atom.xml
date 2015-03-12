@@ -4,7 +4,7 @@
   <title><![CDATA[Category: qt | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/qt/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-12T13:09:25-04:00</updated>
+  <updated>2015-03-12T13:10:46-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -116,10 +116,10 @@
 </li>
 </ul>
 </li>
-<li><p>5.#include &lt;> and #include \&ldquo;\&rdquo;"</p>
+<li><p>5.&lsquo;#include &lt;>&rsquo; and &lsquo;#include &ldquo;&rdquo;&rsquo;</p>
 
 <ul>
-<li><h1>include &lt;></h1>
+<li>&lsquo;#include &lt;>&rsquo;
 
 <ul>
 <li>find the header in particular path
@@ -131,7 +131,7 @@
 </li>
 </ul>
 </li>
-<li><h1>include \&ldquo;\&rdquo;</h1>
+<li>&lsquo;#include &ldquo;&rdquo;&rsquo;
 
 <ul>
 <li>find the header in absolute path</li>

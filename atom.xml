@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-12T13:09:25-04:00</updated>
+  <updated>2015-03-12T13:10:46-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -116,10 +116,10 @@
 </li>
 </ul>
 </li>
-<li><p>5.#include &lt;> and #include \&ldquo;\&rdquo;&#8221;</p>
+<li><p>5.&lsquo;#include &lt;>&rsquo; and &lsquo;#include &ldquo;&rdquo;&rsquo;</p>
 
 <ul>
-<li><h1>include &lt;></h1>
+<li>&lsquo;#include &lt;>&rsquo;
 
 <ul>
 <li>find the header in particular path
@@ -131,7 +131,7 @@
 </li>
 </ul>
 </li>
-<li><h1>include \&ldquo;\&rdquo;</h1>
+<li>&lsquo;#include &ldquo;&rdquo;&rsquo;
 
 <ul>
 <li>find the header in absolute path</li>
@@ -4593,7 +4593,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#117;&#x73;&#101;&#x72;&#x6e;&#97;&#109;&#101;&#x40;&#x6d;&#97;&#115;&#111;&#110;&#46;&#x69;&#x6e;&#100;&#105;&#97;&#110;&#97;&#46;&#101;&#x64;&#x75;">&#x75;&#x73;&#101;&#x72;&#110;&#97;&#109;&#101;&#x40;&#109;&#97;&#x73;&#111;&#x6e;&#46;&#105;&#110;&#100;&#105;&#97;&#x6e;&#97;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x75;&#x73;&#x65;&#114;&#x6e;&#x61;&#x6d;&#101;&#x40;&#109;&#x61;&#x73;&#x6f;&#x6e;&#46;&#x69;&#110;&#100;&#105;&#x61;&#110;&#97;&#46;&#x65;&#x64;&#x75;">&#117;&#x73;&#101;&#x72;&#110;&#x61;&#109;&#x65;&#64;&#x6d;&#x61;&#x73;&#x6f;&#110;&#46;&#x69;&#x6e;&#x64;&#105;&#x61;&#110;&#97;&#x2e;&#101;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
