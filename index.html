@@ -112,9 +112,8 @@ $(document).ready(
   &ndash;&#8220;`
   CONFIG   += c++11
   CONFIG += x86_64
-  CONFIG &ndash;= x86</p>
-
-<p>  contains(JENKINS,YES) {
+  CONFIG &ndash;= x86
+  contains(JENKINS,YES) {
       INCLUDEPATH += ./libs/include/
   } else {
       INCLUDEPATH += libs/include
@@ -122,9 +121,8 @@ $(document).ready(
       INCLUDEPATH += /usr/include
       INCLUDEPATH += /usr/local/include
       INCLUDEPATH += /opt/local/include
-  }</p>
-
-<p>  macx {
+  }
+  macx {
       BUNDLEID = im.tox.qtox
       ICON = img/icons/qtox.icns
       QMAKE_INFO_PLIST = osx/info.plist

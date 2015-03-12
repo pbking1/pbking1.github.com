@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OSX | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-12T13:07:57-04:00</updated>
+  <updated>2015-03-12T13:08:49-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -25,9 +25,8 @@
   &ndash;```
   CONFIG   += c++11
   CONFIG += x86_64
-  CONFIG &ndash;= x86</p>
-
-<p>  contains(JENKINS,YES) {
+  CONFIG &ndash;= x86
+  contains(JENKINS,YES) {
       INCLUDEPATH += ./libs/include/
   } else {
       INCLUDEPATH += libs/include
@@ -35,9 +34,8 @@
       INCLUDEPATH += /usr/include
       INCLUDEPATH += /usr/local/include
       INCLUDEPATH += /opt/local/include
-  }</p>
-
-<p>  macx {
+  }
+  macx {
       BUNDLEID = im.tox.qtox
       ICON = img/icons/qtox.icns
       QMAKE_INFO_PLIST = osx/info.plist
