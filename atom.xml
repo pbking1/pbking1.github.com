@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-12T13:11:57-04:00</updated>
+  <updated>2015-03-12T13:12:35-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -22,36 +22,40 @@
 
 <ul>
 <li>first is the modification of the qtox.pro file
-  &ndash;<code>
-  CONFIG   += c++11
-  CONFIG += x86_64
-  CONFIG -= x86
-  contains(JENKINS,YES) {
-      INCLUDEPATH += ./libs/include/
-  } else {
-      INCLUDEPATH += libs/include
-      # add head path
-      INCLUDEPATH += /usr/include
-      INCLUDEPATH += /usr/local/include
-      INCLUDEPATH += /opt/local/include
-  }
-  macx {
-      BUNDLEID = im.tox.qtox
-      ICON = img/icons/qtox.icns
-      QMAKE_INFO_PLIST = osx/info.plist
-      QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9
-      # add libtoxav
-      LIBS += -L/usr/local/opt/libtoxcore/lib -ltoxav -ltoxcore
-      LIBS += -L/usr/local/opt/libsodium/lib -lsodium
-      LIBS += -L/usr/local/opt/libvpx/lib -lvpx
-      LIBS += -L/usr/local/lib -lopus
-      LIBS += -L/usr/local/lib -lopencv_core -lopencv_highgui
-      #LIBS += -L/opt/local/lib -lopencv_core -lopencv_highgui
-      LIBS += -L$$PWD/libs/lib/ -framework OpenAL -mmacosx-version-min=10.9
-      #LIBS += -L$$PWD/libs/lib/ -ltoxcore -ltoxav -ltoxencryptsave -ltoxdns -lsodium -lvpx -lopus -framework OpenAL -lopencv_core -lopencv_highgui -mmacosx-version-min=10.7
-      contains(DEFINES, QTOX_PLATFORM_EXT) { LIBS += -framework IOKit -framework CoreFoundation }
-      contains(DEFINES, QTOX_FILTER_AUDIO) { LIBS += -lfilteraudio }
- </code></li>
+
+<ul>
+<li><code>
+CONFIG   += c++11
+CONFIG += x86_64
+CONFIG -= x86
+contains(JENKINS,YES) {
+  INCLUDEPATH += ./libs/include/
+} else {
+  INCLUDEPATH += libs/include
+  # add head path
+  INCLUDEPATH += /usr/include
+  INCLUDEPATH += /usr/local/include
+  INCLUDEPATH += /opt/local/include
+}
+macx {
+  BUNDLEID = im.tox.qtox
+  ICON = img/icons/qtox.icns
+  QMAKE_INFO_PLIST = osx/info.plist
+  QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9
+  # add libtoxav
+  LIBS += -L/usr/local/opt/libtoxcore/lib -ltoxav -ltoxcore
+  LIBS += -L/usr/local/opt/libsodium/lib -lsodium
+  LIBS += -L/usr/local/opt/libvpx/lib -lvpx
+  LIBS += -L/usr/local/lib -lopus
+  LIBS += -L/usr/local/lib -lopencv_core -lopencv_highgui
+  #LIBS += -L/opt/local/lib -lopencv_core -lopencv_highgui
+  LIBS += -L$$PWD/libs/lib/ -framework OpenAL -mmacosx-version-min=10.9
+  #LIBS += -L$$PWD/libs/lib/ -ltoxcore -ltoxav -ltoxencryptsave -ltoxdns -lsodium -lvpx -lopus -framework OpenAL -lopencv_core -lopencv_highgui -mmacosx-version-min=10.7
+  contains(DEFINES, QTOX_PLATFORM_EXT) { LIBS += -framework IOKit -framework CoreFoundation }
+  contains(DEFINES, QTOX_FILTER_AUDIO) { LIBS += -lfilteraudio }
+</code></li>
+</ul>
+</li>
 </ul>
 
 
@@ -4590,7 +4594,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#117;&#x73;&#x65;&#114;&#110;&#97;&#x6d;&#x65;&#x40;&#x6d;&#97;&#x73;&#x6f;&#x6e;&#46;&#105;&#x6e;&#100;&#105;&#x61;&#110;&#97;&#46;&#101;&#100;&#x75;">&#x75;&#115;&#101;&#x72;&#110;&#97;&#x6d;&#x65;&#64;&#x6d;&#x61;&#x73;&#x6f;&#110;&#x2e;&#x69;&#x6e;&#100;&#105;&#x61;&#110;&#x61;&#x2e;&#x65;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#x75;&#115;&#x65;&#114;&#x6e;&#97;&#x6d;&#101;&#64;&#109;&#x61;&#x73;&#111;&#110;&#46;&#x69;&#110;&#100;&#105;&#97;&#110;&#x61;&#x2e;&#101;&#x64;&#x75;">&#117;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#x40;&#109;&#97;&#x73;&#111;&#110;&#x2e;&#x69;&#x6e;&#x64;&#105;&#97;&#110;&#97;&#46;&#x65;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
