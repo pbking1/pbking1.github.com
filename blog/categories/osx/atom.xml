@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OSX | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-12T13:11:17-04:00</updated>
+  <updated>2015-03-12T13:11:57-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -21,11 +21,11 @@
     <content type="html"><![CDATA[<h3>Problems when compile qtox on mac</h3>
 
 <ul>
-<li><p>first is the modification of the qtox.pro file
-  &ndash;```
+<li>first is the modification of the qtox.pro file
+  &ndash;<code>
   CONFIG   += c++11
   CONFIG += x86_64
-  CONFIG &ndash;= x86
+  CONFIG -= x86
   contains(JENKINS,YES) {
       INCLUDEPATH += ./libs/include/
   } else {
@@ -46,15 +46,12 @@
       LIBS += -L/usr/local/opt/libvpx/lib -lvpx
       LIBS += -L/usr/local/lib -lopus
       LIBS += -L/usr/local/lib -lopencv_core -lopencv_highgui
-      #LIBS += -L/opt/local/lib -lopencv_core -lopencv_highgui</p>
-
-<pre><code>  LIBS += -L$$PWD/libs/lib/ -framework OpenAL -mmacosx-version-min=10.9
-  #LIBS += -L$$PWD/libs/lib/ -ltoxcore -ltoxav -ltoxencryptsave -ltoxdns -lsodium -lvpx -lopus -framework OpenAL -lopencv_core -lopencv_highgui -mmacosx-version-min=10.7
-  contains(DEFINES, QTOX_PLATFORM_EXT) { LIBS += -framework IOKit -framework CoreFoundation }
-  contains(DEFINES, QTOX_FILTER_AUDIO) { LIBS += -lfilteraudio }
-</code></pre>
-
-<p>  ```</p></li>
+      #LIBS += -L/opt/local/lib -lopencv_core -lopencv_highgui
+      LIBS += -L$$PWD/libs/lib/ -framework OpenAL -mmacosx-version-min=10.9
+      #LIBS += -L$$PWD/libs/lib/ -ltoxcore -ltoxav -ltoxencryptsave -ltoxdns -lsodium -lvpx -lopus -framework OpenAL -lopencv_core -lopencv_highgui -mmacosx-version-min=10.7
+      contains(DEFINES, QTOX_PLATFORM_EXT) { LIBS += -framework IOKit -framework CoreFoundation }
+      contains(DEFINES, QTOX_FILTER_AUDIO) { LIBS += -lfilteraudio }
+ </code></li>
 </ul>
 
 
