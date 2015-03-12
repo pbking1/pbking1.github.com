@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-04T01:02:56-05:00</updated>
+  <updated>2015-03-12T13:07:57-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -228,6 +228,15 @@ ylabel(&lsquo;number of the people&rsquo;)
 
 <ul>
 <li>use &rsquo;s/\r/\r/'</li>
+</ul>
+
+
+<h3>in vim use \r as &ldquo;enter button&rdquo;</h3>
+
+<h3>sort the file use the sequence of first line</h3>
+
+<ul>
+<li><code>sort -n -k1,1</code> filename</li>
 </ul>
 
 ]]></content>
