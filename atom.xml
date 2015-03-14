@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-12T13:20:09-04:00</updated>
+  <updated>2015-03-14T14:58:34-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -425,32 +425,41 @@
 
 <ul>
 <li><strong>nothing at all, the firm shuts down.</strong></li>
+<li>因为再完全竞争市场下，短期只考虑平均可变成本，当市场价格低于平均可变成本的时候，无利可图，企业关门</li>
 </ul>
 </li>
 <li><p>21.If, as the industry expands, a competitive industry can supply larger quantities at the same long-run market price, it is:</p>
 
 <ul>
 <li><strong>a constant-cost industry.</strong></li>
+<li>在一个完全市场竞争中，由于允许企业自由进出，市场价格不受买者和卖者的影响，他们都是价格接受者，所以企业成本是不会变的</li>
+<li>也就是说企业的供给曲线是一条横线，企业无论供给多少，市场价格都不会变</li>
 </ul>
 </li>
 <li><p>22.A local electricity-generating company has a monopoly that is protected by a barrier to entry that takes the form of:</p>
 
 <ul>
 <li><strong>economies of scale.</strong></li>
+<li>自然垄断是因为规模经济而形成的垄断</li>
+<li>规模经济是指企业产量增大而成本不断降低的阶段，其他企业想要进入，成本比该企业高，竞争力低，最终只有一家企业在做：例如自来水，电力的企业</li>
 </ul>
 </li>
 <li><p><img src="http://pbking1.github.com/images/econ/3.png" alt="Image" /></p></li>
 <li><img src="http://pbking1.github.com/images/econ/"></li>
+<li><strong>这个图是垄断的成本曲线，因为边际收益MR在需求曲线下面（？）</strong></li>
 <li><p>23.To profit maximize the firm in figure 14.1 will produce:</p>
 
 <ul>
 <li><strong>Q2</strong>.</li>
+<li>垄断企业是价格影响者，在一定产量的前提下，增加一单位产品，想要卖出，就要降低价格，增加一个单位产品的销售，增加的利润是低于当时市场价格的，所以边际收益曲线在需求曲线之下。</li>
+<li>垄断要达到最大的利润，必须边际收益等于边际成本，也就是MR=MC（Q2,P1），这个时候增加以单位产品，所得到的利益和成本相同，相互抵消不赚不亏。利用MR=MC，可以确定产量，但相应的价格，应该要在该产量下，投影到需求曲线上，这个需求曲线上的价格才是对应的价格。</li>
 </ul>
 </li>
 <li><p>24.The profit maximize price for the firm in figure 14.1 is:</p>
 
 <ul>
 <li><strong>P3</strong></li>
+<li></li>
 </ul>
 </li>
 <li><p>25.If average total costs are ATC1, the firm in figure 14.1 will:</p>
@@ -4620,7 +4629,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x75;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#x65;&#64;&#109;&#x61;&#x73;&#x6f;&#x6e;&#46;&#x69;&#110;&#100;&#x69;&#x61;&#x6e;&#97;&#x2e;&#101;&#100;&#x75;">&#x75;&#x73;&#101;&#x72;&#x6e;&#x61;&#109;&#x65;&#64;&#109;&#x61;&#x73;&#x6f;&#110;&#x2e;&#105;&#x6e;&#100;&#x69;&#x61;&#110;&#x61;&#46;&#x65;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#117;&#x73;&#x65;&#x72;&#x6e;&#97;&#x6d;&#101;&#64;&#109;&#x61;&#x73;&#111;&#110;&#x2e;&#x69;&#x6e;&#x64;&#x69;&#97;&#110;&#x61;&#46;&#101;&#100;&#x75;">&#117;&#115;&#x65;&#x72;&#110;&#97;&#109;&#101;&#x40;&#109;&#97;&#115;&#111;&#110;&#46;&#x69;&#110;&#100;&#x69;&#x61;&#110;&#97;&#46;&#x65;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
