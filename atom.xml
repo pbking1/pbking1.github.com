@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-14T14:58:34-04:00</updated>
+  <updated>2015-03-15T02:01:01-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -459,43 +459,77 @@
 
 <ul>
 <li><strong>P3</strong></li>
-<li></li>
+<li>(?)对垄断行业（MR再需求曲线下），确定利润最大化对应的产量和价格的步骤
+
+<ul>
+<li>MR=MC(边际收益等于边际成本) &ndash;> 确定产量 &ndash;> 产量投影到需求曲线 &ndash;> 确定价格</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>25.If average total costs are ATC1, the firm in figure 14.1 will:</p>
 
 <ul>
 <li><strong>make a profit</strong></li>
+<li>总成本=平均总成本*产量</li>
+<li>总收益=单价*产量</li>
+<li>把公式在图上表示为矩形面积，比较两个矩形，总收益大于总成本，有利润</li>
 </ul>
 </li>
 <li><p>26.In figure 14.1, the difference between the monopoly output and the competitive output is:</p>
 
 <ul>
 <li><strong>Q3-Q2</strong></li>
+<li>完全竞争市场和垄断市场，最大区别在于一个是价格接受者，一个是价格影响者</li>
+<li>完全竞争市场：价格接受者，其边际收益曲线和市场需求曲线完全重合，利润最大的条件
+
+<ul>
+<li>利润最大化的条件：边际收益=边际成本（MR=MC）也就是市场需求曲线（也就是边际收益曲线）和边际成本曲线相交的点</li>
+</ul>
+</li>
+<li>垄断市场：价格影响者，其边际收益曲线和市场需求曲线不同，比市场需求曲线低。
+
+<ul>
+<li>利润最大化的条件：边际收益=边际成本（MR=MC）也就是边际收益曲线和边际成本曲线的交点。</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>27.A profit maximizing monopolistʹs price is:</p>
 
 <ul>
 <li><strong>greater than what the price would be if the mononoplistʹs industry were competitive.</strong></li>
+<li>(?)垄断市场和完全竞争市场相比，产量少，价格高</li>
 </ul>
 </li>
 <li><p>28.The important economic concept illustrated by increasing opportunity costs is:</p>
 
 <ul>
 <li><strong>the more resources devoted to any activity, the smaller the payoff of devoting more resources to that activity.</strong></li>
+<li>机会成本的根本原因是资源有限</li>
+<li>所以你把资源投入到一个活动中，其他方面的活动能用的资源就变少了，这种损失的所有可能收益称为机会成本</li>
 </ul>
 </li>
 <li><p>29.A production possibilities frontier model shows that:</p>
 
 <ul>
 <li><strong>if all resources are fully and efficiently utilized, more output of good X can only be achieved by producing less of another good.</strong></li>
+<li>生产可能性边界模型，在线上的每一点都表示在充分利用资源的前提下所能生产的两种产品的产量分产品的产量组合。</li>
+<li>可以想象，要增加一种产品的产量，必然要减少另外一种产品的产量，所以其曲线是斜向下的直线或者是斜向下的曲线</li>
 </ul>
 </li>
 <li><p>30.If George can mow 10 lawns or cultivate 5 gardens a day while Jack can mow 6 lawns or cultivate 4 gardens a day, then:</p>
 
 <ul>
 <li><strong>Jack has a comparative advantage in lawn mowing.</strong></li>
+<li>相对优势和绝对优势</li>
+<li>绝对优势：对一个人的两个活动进行效率比较，所以两个人的绝对优势可能是一样的</li>
+<li>相对优势：对两个人的同一个活动进行效率比较，所以两个人的相对优势是不会一样的。
+
+<ul>
+<li>一方在这个方面有比较优势，另一方必然是再另外一个方面有比较优势</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>31.If last year the Ajax firm sold 250 sofas at $1,000 each and this year Ajax sold 500 sofas at $1,500 each, then</p>
@@ -4629,7 +4663,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#117;&#x73;&#x65;&#x72;&#x6e;&#97;&#x6d;&#101;&#64;&#109;&#x61;&#x73;&#111;&#110;&#x2e;&#x69;&#x6e;&#x64;&#x69;&#97;&#110;&#x61;&#46;&#101;&#100;&#x75;">&#117;&#115;&#x65;&#x72;&#110;&#97;&#109;&#101;&#x40;&#109;&#97;&#115;&#111;&#110;&#46;&#x69;&#110;&#100;&#x69;&#x61;&#110;&#97;&#46;&#x65;&#x64;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#x75;&#115;&#x65;&#x72;&#x6e;&#97;&#x6d;&#101;&#64;&#x6d;&#x61;&#115;&#111;&#x6e;&#46;&#x69;&#110;&#100;&#105;&#x61;&#x6e;&#97;&#46;&#101;&#100;&#x75;">&#x75;&#x73;&#101;&#114;&#110;&#x61;&#109;&#x65;&#64;&#109;&#x61;&#x73;&#111;&#x6e;&#x2e;&#x69;&#110;&#x64;&#105;&#97;&#110;&#97;&#46;&#101;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
