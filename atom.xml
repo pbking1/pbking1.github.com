@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-15T23:53:58-04:00</updated>
+  <updated>2015-03-16T00:09:30-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -617,7 +617,7 @@
 
 <ul>
 <li><strong>Demand is more elastic in a long time period than it is in a short time period.</strong></li>
-<li></li>
+<li>（？）需求价格弹性</li>
 </ul>
 </li>
 <li><p>42.Which of the following goods would most likely have the most inelastic demand?</p>
@@ -667,13 +667,14 @@
 
 <ul>
 <li><strong>litter on the side of the road.</strong></li>
-<li></li>
+<li>我们研究的市场只是涉及到买方和卖方的。如果考虑旁观者的利益，则是考虑外部性。比如：企业用煤炭，对整个社会会造成污染，如果考虑这个层面，则这个企业会带来负的外部性。会造成额外的成本。</li>
 </ul>
 </li>
 <li><p>49.Because producers do not bear the external cost of pollution:</p>
 
 <ul>
 <li><strong>production is beyond the economically efficient level.</strong></li>
+<li>由于企业一般不考虑外部性，只考虑自己的利益，而对于整个社会来说，还要考虑到外部性，所以企业的产量都是超过了社会的最佳产量，对社会带来超过社会可忍受成都的负外部性。</li>
 </ul>
 </li>
 <li><p><img src="http://pbking1.github.com/images/econ/4.png" alt="Image of Yaktocat" /></p></li>
@@ -682,6 +683,7 @@
 
 <ul>
 <li><strong>a tax to make the firm realize the external costs it imposes on others.</strong></li>
+<li>为了让企业考虑外部性，一个有效的方法就是对其征税，强制让其承担外部成本</li>
 </ul>
 </li>
 </ul>
@@ -4692,7 +4694,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x75;&#x73;&#101;&#x72;&#x6e;&#97;&#109;&#x65;&#64;&#109;&#x61;&#x73;&#111;&#x6e;&#x2e;&#105;&#x6e;&#100;&#105;&#97;&#110;&#x61;&#46;&#x65;&#100;&#x75;">&#117;&#115;&#101;&#114;&#110;&#x61;&#x6d;&#101;&#64;&#x6d;&#x61;&#115;&#111;&#x6e;&#x2e;&#x69;&#110;&#x64;&#x69;&#x61;&#110;&#97;&#x2e;&#101;&#100;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#117;&#115;&#101;&#114;&#110;&#97;&#x6d;&#x65;&#x40;&#109;&#97;&#x73;&#x6f;&#110;&#x2e;&#105;&#x6e;&#100;&#105;&#x61;&#x6e;&#x61;&#x2e;&#101;&#100;&#x75;">&#x75;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#x40;&#109;&#x61;&#115;&#x6f;&#110;&#46;&#x69;&#110;&#x64;&#105;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#100;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
