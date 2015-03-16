@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-16T00:09:30-04:00</updated>
+  <updated>2015-03-16T00:29:10-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -617,7 +617,13 @@
 
 <ul>
 <li><strong>Demand is more elastic in a long time period than it is in a short time period.</strong></li>
-<li>（？）需求价格弹性</li>
+<li>（？）需求价格弹性（是指绝对值）有以下两个特点：
+
+<ul>
+<li>1.小范围的弹性要大于大范围的弹性，因为小范围的有比较多的替代品，而大范围的比较少得替代品。比如米饭和食物，米饭弹性大，因为消费者可以不买米饭而由米粉，零食代替，当米饭价格高了，可以减少对米饭的购买；而食物，很难找到其替代品，其价格高，也必须买。</li>
+<li>2.长期的弹性要大于短期的弹性，因为长期的比较灵活。比如：汽油。当汽油的价格上升的时候，对于现有车的人来说，即使现在的价格高了也必须买汽油，汽油在短期来看，其需求量变动不大；而对于现在想买车的人来说，其会考虑买比较不耗费汽油的车或者买用电的车，这样一来，汽油长期的需求量将会变动非常大。</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>42.Which of the following goods would most likely have the most inelastic demand?</p>
@@ -631,13 +637,21 @@
 
 <ul>
 <li><strong>one</strong></li>
-<li></li>
+<li>（？）需求价格弹性公式=需求量变动的百分比/价格变动的百分比</li>
+<li>所谓的中点法是指在求百分比的时候用中点
+
+<ul>
+<li>[(8-10)/((8-10)/2)]/[(125-100)/((125+100)/2)]=-1</li>
+<li>需求价格弹性是指绝对值</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>44.If at a price of $50, 20 units are sold and at a price of $60, 0 units are sold, the price elasticity of demand of the good is:</p>
 
 <ul>
 <li><strong>perfectly elastic.</strong></li>
+<li>用中点法求得其需求价格弹性（指绝对值）等于11.0000011， 一般的，需求价格弹性>1，就算富有弹性。</li>
 </ul>
 </li>
 <li><p>45.When demand is price elastic, a fall in price causes total revenue to rise because:</p>
@@ -4694,7 +4708,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#117;&#115;&#101;&#114;&#110;&#97;&#x6d;&#x65;&#x40;&#109;&#97;&#x73;&#x6f;&#110;&#x2e;&#105;&#x6e;&#100;&#105;&#x61;&#x6e;&#x61;&#x2e;&#101;&#100;&#x75;">&#x75;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#x40;&#109;&#x61;&#115;&#x6f;&#110;&#46;&#x69;&#110;&#x64;&#105;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#100;&#117;</a>&rdquo;
+<li>use &ldquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x75;&#115;&#101;&#x72;&#110;&#97;&#109;&#x65;&#64;&#109;&#97;&#115;&#x6f;&#110;&#x2e;&#105;&#x6e;&#x64;&#105;&#97;&#110;&#x61;&#46;&#x65;&#100;&#x75;">&#x75;&#115;&#101;&#x72;&#x6e;&#x61;&#109;&#x65;&#64;&#109;&#97;&#x73;&#x6f;&#110;&#x2e;&#105;&#x6e;&#x64;&#105;&#97;&#x6e;&#x61;&#x2e;&#101;&#100;&#x75;</a>&rdquo;
 
 <ul>
 <li>will result in two server
