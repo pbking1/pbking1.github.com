@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-03-16T02:48:01-04:00</updated>
+  <updated>2015-04-03T03:31:52-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[install tomcat in mac]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/03/install-tomcat-in-mac/"/>
+    <updated>2015-04-03T03:28:36-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/03/install-tomcat-in-mac</id>
+    <content type="html"><![CDATA[<h3>install tomcat in mac</h3>
+
+<ul>
+<li>1.go to <a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a> and download the zip file of tomcat</li>
+<li>2.then unzip the zip file into /Library and rename into &ldquo;Tomcat&rdquo;</li>
+<li>3.then <code>sudo chmod 755 /Library/Tomcat/bin/*.sh</code></li>
+<li>4.if you want to start tomcat
+
+<ul>
+<li><code>sudo sh startup.sh</code></li>
+<li>if want to stop
+
+<ul>
+<li><code>sudo sh /Library/Tomcat/bin/shutdown.sh</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[compile qtox on OSX]]></title>
@@ -4709,7 +4737,7 @@ int main(){
 <h3>when login</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x75;&#x73;&#x65;&#x72;&#x6e;&#97;&#x6d;&#x65;&#x40;&#x6d;&#97;&#115;&#x6f;&#110;&#46;&#105;&#x6e;&#x64;&#105;&#x61;&#x6e;&#97;&#x2e;&#101;&#x64;&#x75;">&#x75;&#115;&#101;&#114;&#x6e;&#97;&#x6d;&#x65;&#x40;&#109;&#x61;&#115;&#x6f;&#110;&#46;&#105;&#x6e;&#x64;&#105;&#x61;&#x6e;&#x61;&#46;&#101;&#x64;&#x75;</a>&rdquo;
+<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x75;&#115;&#101;&#x72;&#x6e;&#x61;&#109;&#x65;&#x40;&#109;&#97;&#x73;&#111;&#110;&#46;&#105;&#110;&#x64;&#105;&#97;&#x6e;&#97;&#46;&#101;&#x64;&#x75;">&#x75;&#x73;&#101;&#114;&#110;&#x61;&#109;&#101;&#64;&#x6d;&#x61;&#115;&#111;&#110;&#x2e;&#105;&#x6e;&#x64;&#x69;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#x64;&#117;</a>&rdquo;
 
 <ul>
 <li>will result in two server
@@ -4794,113 +4822,6 @@ int main(){
 </ul>
 </li>
 <li><code>qdel</code></li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[how to install python package on redhat without root access]]></title>
-    <link href="http://pbking1.github.com/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/"/>
-    <updated>2014-11-01T00:01:13-04:00</updated>
-    <id>http://pbking1.github.com/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access</id>
-    <content type="html"><![CDATA[<h3>dependent of scrapy</h3>
-
-<ul>
-<li>remember that the scrapt need python2.7 to run</li>
-<li>and there will be lots of package need to be installed</li>
-</ul>
-
-
-<h3>What to do when need to install python package on the server without root access</h3>
-
-<ul>
-<li>today I went through a problem that I want to have the python package installed on the high performance server but without the root access</li>
-<li>and what I need to do is to install the python 2.7.3 first and then install all the package that scrapy need and finaly get scrapy run</li>
-</ul>
-
-
-<!--more-->
-
-
-<h3>process I use</h3>
-
-<ul>
-<li>And one most important things you need to care about is that
-
-<ul>
-<li><p>first install python</p>
-
-<ul>
-<li>download the python first and compile the package of it.</li>
-<li>then remember the export the python path to the .bashrc and .bash_profile</li>
-<li>so that when you simply type <code>python</code> it will not use the default setting of the system</li>
-<li>or you can type the absolute path of the python and use the python in the bin directory</li>
-</ul>
-</li>
-<li><p>then install the scrapy from source</p>
-
-<ul>
-<li><p>but when you finish install the scrapy</p>
-
-<ul>
-<li>you will find out that it will tell you that you do not have some package like Twist , zope, interface and lxml, and cssselect</li>
-<li>so what you need to do is to fix all this missing stuff</li>
-<li>so use <code>wget</code> to download the source file of these missing file and install them</li>
-</ul>
-</li>
-<li><p>the will comes the most difficult part</p>
-
-<ul>
-<li>when you try to install the lxml
-
-<ul>
-<li>you will find out that the system do not have the require of the lxml package
-
-<ul>
-<li>the libxml2 and libxslt</li>
-<li>so what you need to do is to download all the file</li>
-<li>and build it from source
-
-<ul>
-<li>and remember to add prefix and correct all the path error</li>
-<li>and it would be a good way to output the error log to a file and analyze them using the <code>&gt;&amp; output file</code></li>
-<li><strong>and do not hesitate to modify the Makefile or setup.py file when neccessary</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>also there are problem when try to install cffi and libffi
-
-<ul>
-<li>when compile the libffi library
-
-<ul>
-<li>remember to include the path of the libffi library when building the cffi
-
-<ul>
-<li>use <code>build_ext -l library_absolute_path -l library2_absolute_path</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>after install the scrapy successfully
-
-<ul>
-<li>use the scrapy executable file in the bin of the scrapy source code</li>
-<li><code>python2.7 ./scrapy crawl linkedin.com</code></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

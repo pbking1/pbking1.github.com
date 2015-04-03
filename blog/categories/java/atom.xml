@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: java | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2015-04-03T03:31:52-04:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[install tomcat in mac]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/03/install-tomcat-in-mac/"/>
+    <updated>2015-04-03T03:28:36-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/03/install-tomcat-in-mac</id>
+    <content type="html"><![CDATA[<h3>install tomcat in mac</h3>
+
+<ul>
+<li>1.go to <a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a> and download the zip file of tomcat</li>
+<li>2.then unzip the zip file into /Library and rename into &ldquo;Tomcat&rdquo;</li>
+<li>3.then <code>sudo chmod 755 /Library/Tomcat/bin/*.sh</code></li>
+<li>4.if you want to start tomcat
+
+<ul>
+<li><code>sudo sh startup.sh</code></li>
+<li>if want to stop
+
+<ul>
+<li><code>sudo sh /Library/Tomcat/bin/shutdown.sh</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
