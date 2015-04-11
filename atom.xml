@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-03T03:31:52-04:00</updated>
+  <updated>2015-04-11T16:32:49-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,206 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[java spring tutorial part1]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/11/java-spring-tutorial-part1/"/>
+    <updated>2015-04-11T15:41:46-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/11/java-spring-tutorial-part1</id>
+    <content type="html"><![CDATA[<h3>maven</h3>
+
+<ul>
+<li>make sure &lsquo;mvn -v&rsquo; return the current version in you computer</li>
+<li>otherwise, install the maven first</li>
+</ul>
+
+
+<h3>Hello world</h3>
+
+<ul>
+<li>project hierarchy
+
+<ul>
+<li>helloworld (folder)
+
+<ul>
+<li>(root directory)</li>
+<li>src
+
+<ul>
+<li>main
+
+<ul>
+<li>java
+
+<ul>
+<li>hello
+
+<ul>
+<li>Greeter.java</li>
+<li>HelloWorld.java</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>target(auto generate after mvn install)
+
+<ul>
+<li>helloworld-0.1.0.jar</li>
+</ul>
+</li>
+<li>pom.xml</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>class</h4>
+
+<ul>
+<li><code>mkdir -p src/main/java/hello</code>
+
+<ul>
+<li>make a directory to put the java class</li>
+</ul>
+</li>
+<li>create two class <code>HelloWorld.java</code> and <code>Greeter.java</code>
+
+<ul>
+<li><p>HelloWorld.java</p>
+
+<ul>
+<li><p>&#8220;`
+  package hello;</p>
+
+<p>  import org.joda.time.LocalTime;</p>
+
+<p>  public class HelloWorld{
+      public static void main(String[] args){
+          LocalTime currentTime = new LocalTime();
+          System.out.println(&ldquo;The currentTime local time is &rdquo; + currentTime);
+          Greeter greeter = new Greeter();
+          System.out.println(greeter.sayHello());
+      }
+  }</p></li>
+</ul>
+
+
+<p>  &#8220;`</p></li>
+<li><p>Greeter.java</p>
+
+<ul>
+<li><p>&#8220;`
+  package hello;</p>
+
+<p>  public class Greeter {
+      public String sayHello() {
+          return &ldquo;Hello world!&rdquo;;
+      }
+  }
+&#8220;`</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>configuration</h4>
+
+<ul>
+<li>pom.xml
+
+<ul>
+<li>put the file in the root of the project</li>
+<li><p>&#8220;`
+  &lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?>
+  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+      <modelVersion>4.0.0</modelVersion>
+      <groupId>org.springframework</groupId>
+      <artifactId>helloworld</artifactId>
+      <packaging>jar</packaging>
+      <version>0.1.0</version></p>
+
+<pre><code>  &lt;!--- 插件 --&gt;
+  &lt;dependencies&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;joda-time&lt;/groupId&gt;
+          &lt;artifactId&gt;joda-time&lt;/artifactId&gt;
+          &lt;version&gt;2.2&lt;/version&gt;
+      &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+
+  &lt;build&gt;
+      &lt;plugins&gt;
+          &lt;plugin&gt;
+              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+              &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+              &lt;version&gt;2.1&lt;/version&gt;
+              &lt;executions&gt;
+                  &lt;execution&gt;
+                      &lt;phase&gt;package&lt;/phase&gt;
+                      &lt;goals&gt;
+                          &lt;goal&gt;shade&lt;/goal&gt;
+                      &lt;/goals&gt;
+                      &lt;configuration&gt;
+                          &lt;transformers&gt;
+                              &lt;transformer
+                                  implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"&gt;
+                                  &lt;mainClass&gt;hello.HelloWorld&lt;/mainClass&gt;
+                              &lt;/transformer&gt;
+                          &lt;/transformers&gt;
+                      &lt;/configuration&gt;
+                  &lt;/execution&gt;
+              &lt;/executions&gt;
+          &lt;/plugin&gt;
+      &lt;/plugins&gt;
+  &lt;/build&gt;
+</code></pre>
+
+<p>  </project>
+&#8220;`</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h4>run the maven project</h4>
+
+<ul>
+<li>compile
+
+<ul>
+<li>mvn compile</li>
+</ul>
+</li>
+<li>install
+
+<ul>
+<li>mvn install</li>
+</ul>
+</li>
+<li>two ways to run
+
+<ul>
+<li>java -jar helloworld-0.1.0.jar</li>
+<li>mvn exec:java -Dexec.mainClass=&ldquo;hello.HelloWorld&rdquo;</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[install tomcat in mac]]></title>
@@ -616,13 +816,20 @@
 
 <ul>
 <li><strong>there will an increase in the quantity demanded of the book.</strong></li>
-<li><strong>a shortage of the book will develop at the ceiling price.</strong>    &ndash; <strong>a price of $20 per book is the legally allowed maximum price of the book.</strong>    &ndash; 价格上限（限定最高价格）对市场价格的影响    &ndash; 当价格上限高于市场稳定价格（当供给和需求相等时的价格），价格上限对市场价格无影响，最终市场价格趋于稳定价格（当供给和需求相等时的价格）    &ndash; 当价格上限低于市场价格，此时，价格较低，对消费者有利，消费者对其需求较大，不利于生产者，生产者对其的供给量将减少。这样一来，市场需求大于供给，形成商品短缺。如果没有价格上限，市场价格将会上升。现在有了价格上限，市场价格只能趋于价格上限。</li>
+<li><strong>a shortage of the book will develop at the ceiling price.</strong></li>
+<li><strong>a price of $20 per book is the legally allowed maximum price of the book.</strong></li>
+<li>价格上限（限定最高价格）对市场价格的影响</li>
+<li>当价格上限高于市场稳定价格（当供给和需求相等时的价格），价格上限对市场价格无影响，最终市场价格趋于稳定价格（当供给和需求相等时的价格）</li>
+<li>当价格上限低于市场价格，此时，价格较低，对消费者有利，消费者对其需求较大，不利于生产者，生产者对其的供给量将减少。这样一来，市场需求大于供给，形成商品短缺。如果没有价格上限，市场价格将会上升。现在有了价格上限，市场价格只能趋于价格上限。</li>
 </ul>
 </li>
 <li><p>38.Among the impacts of the minimum wage工资 is that:</p>
 
 <ul>
-<li><strong>higher costs are imposed on employers.</strong>    &ndash; <strong>employers substitute other lower cost inputs in place of higher priced labor.</strong>     &ndash; <strong>higher product prices result because production costs are increased.</strong>    &ndash; 最低工资的影响：1.企业需要支付的工资增加了，无形中增加了产品的成本（可变成本） 2.产品成本增加，导致其价格上升 3.企业会寻求更低的价格的投入， 比如：买机器，减少工人数量</li>
+<li><strong>higher costs are imposed on employers.</strong></li>
+<li><strong>employers substitute other lower cost inputs in place of higher priced labor.</strong></li>
+<li><strong>higher product prices result because production costs are increased.</strong></li>
+<li>最低工资的影响：1.企业需要支付的工资增加了，无形中增加了产品的成本（可变成本） 2.产品成本增加，导致其价格上升 3.企业会寻求更低的价格的投入， 比如：买机器，减少工人数量</li>
 </ul>
 </li>
 <li><p>39.After a city imposes a rent control law:</p>
@@ -698,7 +905,8 @@
 <li>反映的是两种商品这种关系，如果其中一个是正数，说明一种商品价格升高，另一种商品的需求量增大，这是替代品的特征</li>
 </ul>
 </li>
-<li><p>47.If you expect the economy is going to boom and average income in the economy will rise in the foreseeable future, the type of firm that would be able to increase its sales if your expectations aremet is:</p>
+<li><p>47.If you expect the economy is going to boom and average income in the economy will rise in the foreseeable future, the type of firm that would be able to increase its sales if your expectations are
+met is:</p>
 
 <ul>
 <li><strong>one that sells a luxury good.</strong></li>
@@ -738,25 +946,31 @@
 
 <ul>
 <li><strong>the opportunity cost associated with drafting women is higher than the opportunity cost of drafting men.</strong></li>
-<li></li>
+<li>男人在家带孩子的没有女人带的好。</li>
+<li>所以女人的机会成本比较大。</li>
+<li>所以女人在家带孩子比较好</li>
 </ul>
 </li>
 <li><p>2.Which of the following accurately describes the fundamental problem at the core of all economic analysis? The fundamental problem is:</p>
 
 <ul>
 <li><strong>understanding how scarce resources are allocated among competing uses to best satisfy society’s unlimited wants.</strong></li>
+<li>稀有资源的最佳分配</li>
 </ul>
 </li>
 <li><p>3.If an individual’s demand for frozen dinners increases when the price of steak rises, we would infer that:</p>
 
 <ul>
 <li><strong>steak and frozen dinners are substitutes for this person</strong>.</li>
+<li>排类价格上涨，所以人们对快餐需求增加</li>
+<li>所以快餐为排雷的替代品</li>
 </ul>
 </li>
 <li><p>4.On the New York Stock Exchange, the current price per share for stock of the Boston Celtics, a NBA basketball team, is $8.25. At that price the total quantity of shares demanded is 2,500, while the total quantity supplied for trade is 2,000. It follows that</p>
 
 <ul>
 <li><strong>there is a shortage of shares of the Boston Celtics on the stock exchange.</strong></li>
+<li></li>
 </ul>
 </li>
 <li><p>6.Suppose a political candidate in the upcoming November elections promises voters more funding for AIDS research and child care, and assures them they will not have to sacrifice any other goods or services to obtain the additional programs.</p>
@@ -4700,130 +4914,6 @@ int main(){
 
 <ul>
 <li><code>sort -n -k1,1</code> filename</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iupui mason high performance mass]]></title>
-    <link href="http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass/"/>
-    <updated>2014-11-05T20:55:25-05:00</updated>
-    <id>http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass</id>
-    <content type="html"><![CDATA[<h3>In the iupui mason server</h3>
-
-<ul>
-<li>there are 20 server, each have 10 gigabit ethernet</li>
-<li>4 cpu in each server
-
-<ul>
-<li>8 core processor each cpu</li>
-<li>total 32 core in each server</li>
-</ul>
-</li>
-<li>in the /scratch or /tmp there are total 400 GB disk storage
-
-<ul>
-<li>and the file will be delete after 14 days since they are created</li>
-<li></li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<h3>when login</h3>
-
-<ul>
-<li>use &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x75;&#115;&#101;&#x72;&#x6e;&#x61;&#109;&#x65;&#x40;&#109;&#97;&#x73;&#111;&#110;&#46;&#105;&#110;&#x64;&#105;&#97;&#x6e;&#97;&#46;&#101;&#x64;&#x75;">&#x75;&#x73;&#101;&#114;&#110;&#x61;&#109;&#101;&#64;&#x6d;&#x61;&#115;&#111;&#110;&#x2e;&#105;&#x6e;&#x64;&#x69;&#x61;&#x6e;&#x61;&#x2e;&#x65;&#x64;&#117;</a>&rdquo;
-
-<ul>
-<li>will result in two server
-
-<ul>
-<li>h1.mason.indiana.edu</li>
-<li>h2.mason.indiana.edu</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>cpu/memory limit</h3>
-
-<ul>
-<li>user process on login node are limited to 20 minutes CPU time
-
-<ul>
-<li>if exceeded, will be killed automatically</li>
-</ul>
-</li>
-<li>use TORQUE <code>qsub</code> to submit job that need more than 20 minutes cpu time
-
-<ul>
-<li><p><code>qsub</code></p>
-
-<ul>
-<li><code>qsub -l walltime=10:00:00 job.script</code>
-
-<ul>
-<li>for the system default time is 60 minutes
-
-<ul>
-<li>so use walltime to use more time</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>qsub -l nodes=1:ppn=2 job.script</code>
-
-<ul>
-<li>run the script in a node and using two core processers</li>
-</ul>
-</li>
-<li><code>qsub -l nodes=4:ppn=31,vmem=100gb -l walltime=20:00:00 jobscript.script</code>
-
-<ul>
-<li>if use multi commands, use <code>-l</code> to separate the argument</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>qstat</code></p>
-
-<ul>
-<li><code>qstat -a</code>
-
-<ul>
-<li>display all job</li>
-</ul>
-</li>
-<li><code>qstat -n</code>
-
-<ul>
-<li>list the nodes allocated to a job</li>
-</ul>
-</li>
-<li><code>qstat -r</code>
-
-<ul>
-<li>list the job that are running</li>
-</ul>
-</li>
-<li><code>qstat -u username@host</code>
-
-<ul>
-<li>display the job owned by the username</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>qdel</code></li>
-</ul>
-</li>
 </ul>
 
 ]]></content>

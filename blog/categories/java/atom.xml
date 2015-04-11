@@ -4,7 +4,7 @@
   <title><![CDATA[Category: java | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-03T03:31:52-04:00</updated>
+  <updated>2015-04-11T16:32:49-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,206 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[java spring tutorial part1]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/11/java-spring-tutorial-part1/"/>
+    <updated>2015-04-11T15:41:46-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/11/java-spring-tutorial-part1</id>
+    <content type="html"><![CDATA[<h3>maven</h3>
+
+<ul>
+<li>make sure &lsquo;mvn -v&rsquo; return the current version in you computer</li>
+<li>otherwise, install the maven first</li>
+</ul>
+
+
+<h3>Hello world</h3>
+
+<ul>
+<li>project hierarchy
+
+<ul>
+<li>helloworld (folder)
+
+<ul>
+<li>(root directory)</li>
+<li>src
+
+<ul>
+<li>main
+
+<ul>
+<li>java
+
+<ul>
+<li>hello
+
+<ul>
+<li>Greeter.java</li>
+<li>HelloWorld.java</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>target(auto generate after mvn install)
+
+<ul>
+<li>helloworld-0.1.0.jar</li>
+</ul>
+</li>
+<li>pom.xml</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>class</h4>
+
+<ul>
+<li><code>mkdir -p src/main/java/hello</code>
+
+<ul>
+<li>make a directory to put the java class</li>
+</ul>
+</li>
+<li>create two class <code>HelloWorld.java</code> and <code>Greeter.java</code>
+
+<ul>
+<li><p>HelloWorld.java</p>
+
+<ul>
+<li><p>```
+  package hello;</p>
+
+<p>  import org.joda.time.LocalTime;</p>
+
+<p>  public class HelloWorld{
+      public static void main(String[] args){
+          LocalTime currentTime = new LocalTime();
+          System.out.println(&ldquo;The currentTime local time is &rdquo; + currentTime);
+          Greeter greeter = new Greeter();
+          System.out.println(greeter.sayHello());
+      }
+  }</p></li>
+</ul>
+
+
+<p>  ```</p></li>
+<li><p>Greeter.java</p>
+
+<ul>
+<li><p>```
+  package hello;</p>
+
+<p>  public class Greeter {
+      public String sayHello() {
+          return &ldquo;Hello world!&rdquo;;
+      }
+  }
+```</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>configuration</h4>
+
+<ul>
+<li>pom.xml
+
+<ul>
+<li>put the file in the root of the project</li>
+<li><p>```
+  &lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?>
+  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+      <modelVersion>4.0.0</modelVersion>
+      <groupId>org.springframework</groupId>
+      <artifactId>helloworld</artifactId>
+      <packaging>jar</packaging>
+      <version>0.1.0</version></p>
+
+<pre><code>  &lt;!--- 插件 --&gt;
+  &lt;dependencies&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;joda-time&lt;/groupId&gt;
+          &lt;artifactId&gt;joda-time&lt;/artifactId&gt;
+          &lt;version&gt;2.2&lt;/version&gt;
+      &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+
+  &lt;build&gt;
+      &lt;plugins&gt;
+          &lt;plugin&gt;
+              &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+              &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+              &lt;version&gt;2.1&lt;/version&gt;
+              &lt;executions&gt;
+                  &lt;execution&gt;
+                      &lt;phase&gt;package&lt;/phase&gt;
+                      &lt;goals&gt;
+                          &lt;goal&gt;shade&lt;/goal&gt;
+                      &lt;/goals&gt;
+                      &lt;configuration&gt;
+                          &lt;transformers&gt;
+                              &lt;transformer
+                                  implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"&gt;
+                                  &lt;mainClass&gt;hello.HelloWorld&lt;/mainClass&gt;
+                              &lt;/transformer&gt;
+                          &lt;/transformers&gt;
+                      &lt;/configuration&gt;
+                  &lt;/execution&gt;
+              &lt;/executions&gt;
+          &lt;/plugin&gt;
+      &lt;/plugins&gt;
+  &lt;/build&gt;
+</code></pre>
+
+<p>  </project>
+```</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h4>run the maven project</h4>
+
+<ul>
+<li>compile
+
+<ul>
+<li>mvn compile</li>
+</ul>
+</li>
+<li>install
+
+<ul>
+<li>mvn install</li>
+</ul>
+</li>
+<li>two ways to run
+
+<ul>
+<li>java -jar helloworld-0.1.0.jar</li>
+<li>mvn exec:java -Dexec.mainClass=&ldquo;hello.HelloWorld&rdquo;</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[install tomcat in mac]]></title>
