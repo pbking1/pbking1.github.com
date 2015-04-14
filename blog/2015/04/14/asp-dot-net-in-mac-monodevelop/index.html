@@ -144,14 +144,16 @@ $(document).ready(
 <h3>code for mysql connection</h3>
 
 <ul>
-<li>front end page</li>
-<li>&#8220;`
-&lt;%@ Page Language=&ldquo;C#&rdquo; Inherits=&ldquo;test1.Default&rdquo; %>
-&lt;!DOCTYPE html>
-<html>
-<head runat="server">
-  <title>Default</title>
-  <style>
+<li><p>front end page</p>
+
+<ul>
+<li><code>
+&lt;%@ Page Language="C#" Inherits="test1.Default" %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head runat="server"&gt;
+  &lt;title&gt;Default&lt;/title&gt;
+  &lt;style&gt;
   table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
@@ -159,26 +161,23 @@ $(document).ready(
   th, td {
       padding: 15px;
   }
-  </style>
-</head>
-<body>
-  <form id="form1" runat="server">
-      &lt;asp:button id=&ldquo;clickMeButton&rdquo; runat=&ldquo;server&rdquo; text=&ldquo;Click Me&rdquo; onClick=&ldquo;clickMeButton_Click&rdquo; />
-      &lt;asp:label id=&ldquo;outputlabel&rdquo; runat=&ldquo;server&rdquo; />
-  </form>
-</body>
-</html></li>
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;form id="form1" runat="server"&gt;
+      &lt;asp:button id="clickMeButton" runat="server" text="Click Me" onClick="clickMeButton_Click" /&gt;
+      &lt;asp:label id="outputlabel" runat="server" /&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></li>
 </ul>
-
-
-<p>&#8220;`</p>
-
-<ul>
-<li>backend</li>
-<li>cs file 1
+</li>
+<li><p>backend</p></li>
+<li><p>cs file 1</p>
 
 <ul>
-<li>&#8220;`
+<li><p>&#8220;`
 using System;
 using System.Data;
 using System.Configuration;
@@ -189,76 +188,72 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using MySql.Data.MySqlClient;</li>
-</ul>
+using MySql.Data.MySqlClient;
+namespace test1
+{</p>
 
+<pre><code>public partial class Default : System.Web.UI.Page
+{
 
-<p>  namespace test1
-  {</p>
+    public void clickMeButton_Click (object sender, EventArgs e)
+    {
+        object val = ViewState["ButtonClickCount"];
+        int i = (val == null)? 1 : (int)val + 1;
+        outputlabel.Text = string.Format ("You clicked me {0} {1}", i, i==1?"time":"times");
+        ViewState["ButtonClickCount"] = i;
 
-<pre><code>  public partial class Default : System.Web.UI.Page
-  {
+        string query = "select * from reference limit 10"; 
+        MySqlConnection myConnection = new MySqlConnection("server=localhost;user id=root;password=root;database=reference_db"); 
+        MySqlCommand myCommand=new MySqlCommand(query,myConnection); 
+        myConnection.Open(); 
+        myCommand.ExecuteNonQuery(); 
+        MySqlDataReader myDataReader = myCommand.ExecuteReader(); 
+        string bookres=""; 
+        bookres += "&lt;table style=\"width:100%\"&gt;";
+        while (myDataReader.Read()==true) 
+        { 
+            bookres += "&lt;tr&gt;&lt;td&gt;";
+            bookres+=myDataReader["id"]; 
+            bookres += "&lt;/td&gt;&lt;td&gt;";
+            bookres+=myDataReader["ReferenceType"]; 
+            bookres += "&lt;/td&gt;&lt;td&gt;";
+            bookres+=myDataReader["Record_Number"]; 
+            bookres += "&lt;/td&gt;&lt;/tr&gt;";
+        } 
+        bookres += "&lt;/table&gt;";
+        myDataReader.Close(); 
+        myConnection.Close(); 
+        outputlabel.Text = bookres;
+    }
 
-      public void clickMeButton_Click (object sender, EventArgs e)
-      {
-          object val = ViewState["ButtonClickCount"];
-          int i = (val == null)? 1 : (int)val + 1;
-          outputlabel.Text = string.Format ("You clicked me {0} {1}", i, i==1?"time":"times");
-          ViewState["ButtonClickCount"] = i;
-
-          string query = "select * from reference limit 10"; 
-          MySqlConnection myConnection = new MySqlConnection("server=localhost;user id=root;password=root;database=reference_db"); 
-          MySqlCommand myCommand=new MySqlCommand(query,myConnection); 
-          myConnection.Open(); 
-          myCommand.ExecuteNonQuery(); 
-          MySqlDataReader myDataReader = myCommand.ExecuteReader(); 
-          string bookres=""; 
-          bookres += "&lt;table style=\"width:100%\"&gt;";
-          while (myDataReader.Read()==true) 
-          { 
-              bookres += "&lt;tr&gt;&lt;td&gt;";
-              bookres+=myDataReader["id"]; 
-              bookres += "&lt;/td&gt;&lt;td&gt;";
-              bookres+=myDataReader["ReferenceType"]; 
-              bookres += "&lt;/td&gt;&lt;td&gt;";
-              bookres+=myDataReader["Record_Number"]; 
-              bookres += "&lt;/td&gt;&lt;/tr&gt;";
-          } 
-          bookres += "&lt;/table&gt;";
-          myDataReader.Close(); 
-          myConnection.Close(); 
-          outputlabel.Text = bookres;
-      }
-
-  }
+}
 </code></pre>
 
-<p>  }</p>
-
-<p>  &#8220;`</p></li>
-<li>cs file 2
+<p>}
+&#8220;`</p></li>
+</ul>
+</li>
+<li><p>cs file 2</p>
 
 <ul>
-<li>&#8220;`
+<li><p>&#8220;`
 using System;
 using System.Web;
-using System.Web.UI;</li>
-</ul>
+using System.Web.UI;
+namespace test1
+{</p>
 
-
-<p>  namespace test1
-  {</p>
-
-<pre><code>  public partial class Default
-  {
-      protected System.Web.UI.WebControls.Button button1;
-      protected System.Web.UI.WebControls.Label outputlabel;
-  }
+<pre><code>public partial class Default
+{
+    protected System.Web.UI.WebControls.Button button1;
+    protected System.Web.UI.WebControls.Label outputlabel;
+}
 </code></pre>
 
-<p>  }</p>
-
-<p>  &#8220;`</p></li>
+<p>}
+&#8220;`</p></li>
+</ul>
+</li>
 </ul>
 
 </div>
