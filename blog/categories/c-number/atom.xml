@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c# | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-number/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-14T03:27:53-04:00</updated>
+  <updated>2015-04-14T03:29:45-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -69,36 +69,34 @@
 <li><p>front end page</p>
 
 <ul>
-<li>```
-<pre><code></li>
+<li><code>
+&lt;code&gt;
+&lt;%@ Page Language="C#" Inherits="test1.Default" %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head runat="server"&gt;
+  &lt;title&gt;Default&lt;/title&gt;
+  &lt;style&gt;
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+  }
+  th, td {
+      padding: 15px;
+  }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;form id="form1" runat="server"&gt;
+      &lt;asp:button id="clickMeButton" runat="server" text="Click Me" onClick="clickMeButton_Click" /&gt;
+      &lt;asp:label id="outputlabel" runat="server" /&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;code&gt;
+</code></li>
 </ul>
-
-
-<p>  &lt;%@ Page Language=&ldquo;C#&rdquo; Inherits=&ldquo;test1.Default&rdquo; %>
-  &lt;!DOCTYPE html>
-  <html>
-  <head runat="server">
-      <title>Default</title>
-      <style>
-      table, th, td {
-          border: 1px solid black;
-          border-collapse: collapse;
-      }
-      th, td {
-          padding: 15px;
-      }
-      </style>
-  </head>
-  <body>
-      <form id="form1" runat="server">
-          &lt;asp:button id=&ldquo;clickMeButton&rdquo; runat=&ldquo;server&rdquo; text=&ldquo;Click Me&rdquo; onClick=&ldquo;clickMeButton_Click&rdquo; />
-          &lt;asp:label id=&ldquo;outputlabel&rdquo; runat=&ldquo;server&rdquo; />
-      </form>
-  </body>
-  </html></p>
-
-<p>  </code></pre>
-  ```</p></li>
+</li>
 <li><p>backend</p></li>
 <li><p>cs file 1</p>
 
