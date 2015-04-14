@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-14T13:22:28-04:00</updated>
+  <updated>2015-04-14T13:24:05-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -118,82 +118,137 @@
 
 <ul>
 <li>backend</li>
-<li><p>cs file 1</p>
+<li>cs file 1</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;code&gt;
+</span><span class='line'>using System; 
+</span><span class='line'>using System.Data; 
+</span><span class='line'>using System.Configuration; 
+</span><span class='line'>using System.Collections; 
+</span><span class='line'>using System.Web; 
+</span><span class='line'>using System.Web.Security; 
+</span><span class='line'>using System.Web.UI; 
+</span><span class='line'>using System.Web.UI.WebControls; 
+</span><span class='line'>using System.Web.UI.WebControls.WebParts; 
+</span><span class='line'>using System.Web.UI.HtmlControls; 
+</span><span class='line'>using MySql.Data.MySqlClient; 
+</span><span class='line'>namespace test1
+</span><span class='line'>{
+</span><span class='line'>  public partial class Default : System.Web.UI.Page
+</span><span class='line'>  {
+</span><span class='line'>      public void clickMeButton_Click (object sender, EventArgs e)
+</span><span class='line'>      {
+</span><span class='line'>          object val = ViewState["ButtonClickCount"];
+</span><span class='line'>          int i = (val == null)? 1 : (int)val + 1;
+</span><span class='line'>          outputlabel.Text = string.Format ("You clicked me {0} {1}", i, i==1?"time":"times");
+</span><span class='line'>          ViewState["ButtonClickCount"] = i;
+</span><span class='line'>          string query = "select * from reference limit 10"; 
+</span><span class='line'>          MySqlConnection myConnection = new MySqlConnection("server=localhost;user id=root;password=root;database=reference_db"); 
+</span><span class='line'>          MySqlCommand myCommand=new MySqlCommand(query,myConnection); 
+</span><span class='line'>          myConnection.Open(); 
+</span><span class='line'>          myCommand.ExecuteNonQuery(); 
+</span><span class='line'>          MySqlDataReader myDataReader = myCommand.ExecuteReader(); 
+</span><span class='line'>          string bookres=""; 
+</span><span class='line'>          bookres += "&lt;table style=\"width:100%\"&gt;";
+</span><span class='line'>          while (myDataReader.Read()==true) 
+</span><span class='line'>          { 
+</span><span class='line'>              bookres += "&lt;tr&gt;&lt;td&gt;";
+</span><span class='line'>              bookres+=myDataReader["id"]; 
+</span><span class='line'>              bookres += "&lt;/td&gt;&lt;td&gt;";
+</span><span class='line'>              bookres+=myDataReader["ReferenceType"]; 
+</span><span class='line'>              bookres += "&lt;/td&gt;&lt;td&gt;";
+</span><span class='line'>              bookres+=myDataReader["Record_Number"]; 
+</span><span class='line'>              bookres += "&lt;/td&gt;&lt;/tr&gt;";
+</span><span class='line'>          } 
+</span><span class='line'>          bookres += "&lt;/table&gt;";
+</span><span class='line'>          myDataReader.Close(); 
+</span><span class='line'>          myConnection.Close(); 
+</span><span class='line'>          outputlabel.Text = bookres;
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
 
 <ul>
-<li><code>
-&lt;code&gt;
-using System;
-using System.Data;
-using System.Configuration;
-using System.Collections;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.UI.HtmlControls;
-using MySql.Data.MySqlClient;
-namespace test1
-{
-  public partial class Default : System.Web.UI.Page
-  {
-      public void clickMeButton_Click (object sender, EventArgs e)
-      {
-          object val = ViewState["ButtonClickCount"];
-          int i = (val == null)? 1 : (int)val + 1;
-          outputlabel.Text = string.Format ("You clicked me {0} {1}", i, i==1?"time":"times");
-          ViewState["ButtonClickCount"] = i;
-          string query = "select * from reference limit 10";
-          MySqlConnection myConnection = new MySqlConnection("server=localhost;user id=root;password=root;database=reference_db");
-          MySqlCommand myCommand=new MySqlCommand(query,myConnection);
-          myConnection.Open();
-          myCommand.ExecuteNonQuery();
-          MySqlDataReader myDataReader = myCommand.ExecuteReader();
-          string bookres="";
-          bookres += "&lt;table style=\"width:100%\"&gt;";
-          while (myDataReader.Read()==true)
-          {
-              bookres += "&lt;tr&gt;&lt;td&gt;";
-              bookres+=myDataReader["id"];
-              bookres += "&lt;/td&gt;&lt;td&gt;";
-              bookres+=myDataReader["ReferenceType"];
-              bookres += "&lt;/td&gt;&lt;td&gt;";
-              bookres+=myDataReader["Record_Number"];
-              bookres += "&lt;/td&gt;&lt;/tr&gt;";
-          }
-          bookres += "&lt;/table&gt;";
-          myDataReader.Close();
-          myConnection.Close();
-          outputlabel.Text = bookres;
-      }
-  }
-}
-&lt;/code&gt;
-</code></li>
+<li>cs file 2</li>
 </ul>
-</li>
-<li><p>cs file 2</p>
 
-<ul>
-<li><code>
-&lt;code&gt;
-using System;
-using System.Web;
-using System.Web.UI;
-namespace test1
-{
-  public partial class Default
-  {
-      protected System.Web.UI.WebControls.Button button1;
-      protected System.Web.UI.WebControls.Label outputlabel;
-  }
-}
-&lt;/code&gt;
-</code></li>
-</ul>
-</li>
-</ul>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;code&gt;
+</span><span class='line'>using System;
+</span><span class='line'>using System.Web;
+</span><span class='line'>using System.Web.UI;
+</span><span class='line'>namespace test1
+</span><span class='line'>{
+</span><span class='line'>  public partial class Default
+</span><span class='line'>  {
+</span><span class='line'>      protected System.Web.UI.WebControls.Button button1;
+</span><span class='line'>      protected System.Web.UI.WebControls.Label outputlabel;
+</span><span class='line'>  }
+</span><span class='line'>}
+</span><span class='line'>&lt;/code&gt;</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>
