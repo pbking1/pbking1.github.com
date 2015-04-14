@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-14T03:29:45-04:00</updated>
+  <updated>2015-04-14T03:31:00-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -102,6 +102,7 @@
 
 <ul>
 <li>&#8220;`
+<code>
 using System;
 using System.Data;
 using System.Configuration;
@@ -150,13 +151,13 @@ using MySql.Data.MySqlClient;</li>
               outputlabel.Text = bookres;
           }
       }
-  }</p>
-
-<p>  &#8220;`</p></li>
+  }
+  <code>
+  ```</p></li>
 <li><p>cs file 2</p>
 
 <ul>
-<li>&#8220;`
+<li>```
 using System;
 using System.Web;
 using System.Web.UI;</li>
@@ -172,7 +173,7 @@ using System.Web.UI;</li>
       }
   }</p>
 
-<p>  &#8220;`</p></li>
+<p>  ```</p></li>
 </ul>
 
 ]]></content>
