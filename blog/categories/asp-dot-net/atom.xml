@@ -4,7 +4,7 @@
   <title><![CDATA[Category: asp.net | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/asp-dot-net/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-14T03:23:45-04:00</updated>
+  <updated>2015-04-14T03:24:58-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -96,8 +96,8 @@
 </ul>
 </li>
 <li><p>backend</p></li>
-<li><p>cs file 1
-  <code>
+<li>cs file 1</li>
+<li><p><code>
   using System;
   using System.Data;
   using System.Configuration;
