@@ -4,7 +4,7 @@
   <title><![CDATA[Category: asp.net | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/asp-dot-net/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-14T13:21:03-04:00</updated>
+  <updated>2015-04-14T13:22:28-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -66,36 +66,40 @@
 <h3>code for mysql connection</h3>
 
 <ul>
-<li><p>front end page</p>
+<li>front end page</li>
+</ul>
 
-<ul>
-<li><code>
-&lt;%@ Page Language="C#" Inherits="test1.Default" %&gt;
+
+<p>```</p>
+
+<pre><code>&lt;%@ Page Language="C#" Inherits="test1.Default" %&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head runat="server"&gt;
-  &lt;title&gt;Default&lt;/title&gt;
-  &lt;style&gt;
-  table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-  }
-  th, td {
-      padding: 15px;
-  }
-  &lt;/style&gt;
+    &lt;title&gt;Default&lt;/title&gt;
+    &lt;style&gt;
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 15px;
+    }
+    &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;form id="form1" runat="server"&gt;
-      &lt;asp:button id="clickMeButton" runat="server" text="Click Me" onClick="clickMeButton_Click" /&gt;
-      &lt;asp:label id="outputlabel" runat="server" /&gt;
-  &lt;/form&gt;
+    &lt;form id="form1" runat="server"&gt;
+        &lt;asp:button id="clickMeButton" runat="server" text="Click Me" onClick="clickMeButton_Click" /&gt;
+        &lt;asp:label id="outputlabel" runat="server" /&gt;
+    &lt;/form&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></li>
-</ul>
-</li>
-<li><p>backend</p></li>
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>backend</li>
 <li><p>cs file 1</p>
 
 <ul>

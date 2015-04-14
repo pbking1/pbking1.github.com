@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-14T13:21:03-04:00</updated>
+  <updated>2015-04-14T13:22:28-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -66,36 +66,58 @@
 <h3>code for mysql connection</h3>
 
 <ul>
-<li><p>front end page</p>
+<li>front end page</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;%@ Page Language="C#" Inherits="test1.Default" %&gt;
+</span><span class='line'>&lt;!DOCTYPE html&gt;
+</span><span class='line'>&lt;html&gt;
+</span><span class='line'>&lt;head runat="server"&gt;
+</span><span class='line'>  &lt;title&gt;Default&lt;/title&gt;
+</span><span class='line'>  &lt;style&gt;
+</span><span class='line'>  table, th, td {
+</span><span class='line'>      border: 1px solid black;
+</span><span class='line'>      border-collapse: collapse;
+</span><span class='line'>  }
+</span><span class='line'>  th, td {
+</span><span class='line'>      padding: 15px;
+</span><span class='line'>  }
+</span><span class='line'>  &lt;/style&gt;
+</span><span class='line'>&lt;/head&gt;
+</span><span class='line'>&lt;body&gt;
+</span><span class='line'>  &lt;form id="form1" runat="server"&gt;
+</span><span class='line'>      &lt;asp:button id="clickMeButton" runat="server" text="Click Me" onClick="clickMeButton_Click" /&gt;
+</span><span class='line'>      &lt;asp:label id="outputlabel" runat="server" /&gt;
+</span><span class='line'>  &lt;/form&gt;
+</span><span class='line'>&lt;/body&gt;
+</span><span class='line'>&lt;/html&gt;</span></code></pre></td></tr></table></div></figure>
+
 
 <ul>
-<li><code>
-&lt;%@ Page Language="C#" Inherits="test1.Default" %&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head runat="server"&gt;
-  &lt;title&gt;Default&lt;/title&gt;
-  &lt;style&gt;
-  table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-  }
-  th, td {
-      padding: 15px;
-  }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;form id="form1" runat="server"&gt;
-      &lt;asp:button id="clickMeButton" runat="server" text="Click Me" onClick="clickMeButton_Click" /&gt;
-      &lt;asp:label id="outputlabel" runat="server" /&gt;
-  &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></li>
-</ul>
-</li>
-<li><p>backend</p></li>
+<li>backend</li>
 <li><p>cs file 1</p>
 
 <ul>
