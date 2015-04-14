@@ -4,7 +4,7 @@
   <title><![CDATA[Category: asp.net | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/asp-dot-net/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-14T03:31:00-04:00</updated>
+  <updated>2015-04-14T03:32:07-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -93,7 +93,7 @@
   &lt;/form&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-&lt;code&gt;
+&lt;/code&gt;
 </code></li>
 </ul>
 </li>
@@ -101,8 +101,8 @@
 <li><p>cs file 1</p>
 
 <ul>
-<li>```
-<code>
+<li><code>
+&lt;code&gt;
 using System;
 using System.Data;
 using System.Configuration;
@@ -113,47 +113,46 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using MySql.Data.MySqlClient;</li>
-</ul>
-
-
-<p>  namespace test1
+using MySql.Data.MySqlClient;
+namespace test1
+{
+  public partial class Default : System.Web.UI.Page
   {
-      public partial class Default : System.Web.UI.Page
+      public void clickMeButton_Click (object sender, EventArgs e)
       {
-          public void clickMeButton_Click (object sender, EventArgs e)
+          object val = ViewState["ButtonClickCount"];
+          int i = (val == null)? 1 : (int)val + 1;
+          outputlabel.Text = string.Format ("You clicked me {0} {1}", i, i==1?"time":"times");
+          ViewState["ButtonClickCount"] = i;
+          string query = "select * from reference limit 10";
+          MySqlConnection myConnection = new MySqlConnection("server=localhost;user id=root;password=root;database=reference_db");
+          MySqlCommand myCommand=new MySqlCommand(query,myConnection);
+          myConnection.Open();
+          myCommand.ExecuteNonQuery();
+          MySqlDataReader myDataReader = myCommand.ExecuteReader();
+          string bookres="";
+          bookres += "&lt;table style=\"width:100%\"&gt;";
+          while (myDataReader.Read()==true)
           {
-              object val = ViewState[&ldquo;ButtonClickCount&rdquo;];
-              int i = (val == null)? 1 : (int)val + 1;
-              outputlabel.Text = string.Format (&ldquo;You clicked me {0} {1}&rdquo;, i, i==1?&ldquo;time&rdquo;:&ldquo;times&rdquo;);
-              ViewState[&ldquo;ButtonClickCount&rdquo;] = i;
-              string query = &ldquo;select * from reference limit 10&rdquo;;
-              MySqlConnection myConnection = new MySqlConnection(&ldquo;server=localhost;user id=root;password=root;database=reference_db&rdquo;);
-              MySqlCommand myCommand=new MySqlCommand(query,myConnection);
-              myConnection.Open();
-              myCommand.ExecuteNonQuery();
-              MySqlDataReader myDataReader = myCommand.ExecuteReader();
-              string bookres=&ldquo;&rdquo;;
-              bookres += &ldquo;<table style=\"width:100%\">&rdquo;;
-              while (myDataReader.Read()==true)
-              {
-                  bookres += &ldquo;<tr><td>&rdquo;;
-                  bookres+=myDataReader[&ldquo;id&rdquo;];
-                  bookres += &ldquo;</td><td>&rdquo;;
-                  bookres+=myDataReader[&ldquo;ReferenceType&rdquo;];
-                  bookres += &ldquo;</td><td>&rdquo;;
-                  bookres+=myDataReader[&ldquo;Record_Number&rdquo;];
-                  bookres += &ldquo;</td></tr>&rdquo;;
-              }
-              bookres += &ldquo;</table>&rdquo;;
-              myDataReader.Close();
-              myConnection.Close();
-              outputlabel.Text = bookres;
+              bookres += "&lt;tr&gt;&lt;td&gt;";
+              bookres+=myDataReader["id"];
+              bookres += "&lt;/td&gt;&lt;td&gt;";
+              bookres+=myDataReader["ReferenceType"];
+              bookres += "&lt;/td&gt;&lt;td&gt;";
+              bookres+=myDataReader["Record_Number"];
+              bookres += "&lt;/td&gt;&lt;/tr&gt;";
           }
+          bookres += "&lt;/table&gt;";
+          myDataReader.Close();
+          myConnection.Close();
+          outputlabel.Text = bookres;
       }
   }
-  <code>
-  ```</p></li>
+}
+&lt;/code&gt;
+</code></li>
+</ul>
+</li>
 <li><p>cs file 2</p>
 
 <ul>

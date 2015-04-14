@@ -171,7 +171,7 @@ $(document).ready(
   &lt;/form&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-&lt;code&gt;
+&lt;/code&gt;
 </code></li>
 </ul>
 </li>
@@ -179,8 +179,8 @@ $(document).ready(
 <li><p>cs file 1</p>
 
 <ul>
-<li>&#8220;`
-<code>
+<li><code>
+&lt;code&gt;
 using System;
 using System.Data;
 using System.Configuration;
@@ -191,51 +191,50 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using MySql.Data.MySqlClient;</li>
-</ul>
-
-
-<p>  namespace test1
+using MySql.Data.MySqlClient;
+namespace test1
+{
+  public partial class Default : System.Web.UI.Page
   {
-      public partial class Default : System.Web.UI.Page
+      public void clickMeButton_Click (object sender, EventArgs e)
       {
-          public void clickMeButton_Click (object sender, EventArgs e)
+          object val = ViewState["ButtonClickCount"];
+          int i = (val == null)? 1 : (int)val + 1;
+          outputlabel.Text = string.Format ("You clicked me {0} {1}", i, i==1?"time":"times");
+          ViewState["ButtonClickCount"] = i;
+          string query = "select * from reference limit 10";
+          MySqlConnection myConnection = new MySqlConnection("server=localhost;user id=root;password=root;database=reference_db");
+          MySqlCommand myCommand=new MySqlCommand(query,myConnection);
+          myConnection.Open();
+          myCommand.ExecuteNonQuery();
+          MySqlDataReader myDataReader = myCommand.ExecuteReader();
+          string bookres="";
+          bookres += "&lt;table style=\"width:100%\"&gt;";
+          while (myDataReader.Read()==true)
           {
-              object val = ViewState[&ldquo;ButtonClickCount&rdquo;];
-              int i = (val == null)? 1 : (int)val + 1;
-              outputlabel.Text = string.Format (&ldquo;You clicked me {0} {1}&rdquo;, i, i==1?&ldquo;time&rdquo;:&ldquo;times&rdquo;);
-              ViewState[&ldquo;ButtonClickCount&rdquo;] = i;
-              string query = &ldquo;select * from reference limit 10&rdquo;;
-              MySqlConnection myConnection = new MySqlConnection(&ldquo;server=localhost;user id=root;password=root;database=reference_db&rdquo;);
-              MySqlCommand myCommand=new MySqlCommand(query,myConnection);
-              myConnection.Open();
-              myCommand.ExecuteNonQuery();
-              MySqlDataReader myDataReader = myCommand.ExecuteReader();
-              string bookres=&ldquo;&rdquo;;
-              bookres += &ldquo;<table style=\"width:100%\">&rdquo;;
-              while (myDataReader.Read()==true)
-              {
-                  bookres += &ldquo;<tr><td>&rdquo;;
-                  bookres+=myDataReader[&ldquo;id&rdquo;];
-                  bookres += &ldquo;</td><td>&rdquo;;
-                  bookres+=myDataReader[&ldquo;ReferenceType&rdquo;];
-                  bookres += &ldquo;</td><td>&rdquo;;
-                  bookres+=myDataReader[&ldquo;Record_Number&rdquo;];
-                  bookres += &ldquo;</td></tr>&rdquo;;
-              }
-              bookres += &ldquo;</table>&rdquo;;
-              myDataReader.Close();
-              myConnection.Close();
-              outputlabel.Text = bookres;
+              bookres += "&lt;tr&gt;&lt;td&gt;";
+              bookres+=myDataReader["id"];
+              bookres += "&lt;/td&gt;&lt;td&gt;";
+              bookres+=myDataReader["ReferenceType"];
+              bookres += "&lt;/td&gt;&lt;td&gt;";
+              bookres+=myDataReader["Record_Number"];
+              bookres += "&lt;/td&gt;&lt;/tr&gt;";
           }
+          bookres += "&lt;/table&gt;";
+          myDataReader.Close();
+          myConnection.Close();
+          outputlabel.Text = bookres;
       }
   }
-  <code>
-  ```</p></li>
+}
+&lt;/code&gt;
+</code></li>
+</ul>
+</li>
 <li><p>cs file 2</p>
 
 <ul>
-<li>```
+<li>&#8220;`
 using System;
 using System.Web;
 using System.Web.UI;</li>
@@ -251,7 +250,7 @@ using System.Web.UI;</li>
       }
   }</p>
 
-<p>  ```</p></li>
+<p>  &#8220;`</p></li>
 </ul>
 
 </div>
