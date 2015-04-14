@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-13T16:06:36-04:00</updated>
+  <updated>2015-04-14T03:14:59-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,179 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ASP.net in mac MonoDevelop]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/14/asp-dot-net-in-mac-monodevelop/"/>
+    <updated>2015-04-14T03:01:35-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/14/asp-dot-net-in-mac-monodevelop</id>
+    <content type="html"><![CDATA[<h3>install asp.net environment in mac</h3>
+
+<ul>
+<li>we can use MonoDevelop IDE in mac to develop c# or VB program
+
+<ul>
+<li>also asp.net too</li>
+</ul>
+</li>
+<li>download url: <a href="http://www.monodevelop.com/download/">http://www.monodevelop.com/download/</a>
+
+<ul>
+<li>download the Xamarin studio as development IDE</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>after install the environment</h3>
+
+<ul>
+<li>start a solution as ASP.NET project in C#</li>
+<li>it will generate a project with some default page
+
+<ul>
+<li>The Default.aspx can be act as a html page</li>
+<li>and Default.aspx.cs can act be a controller in c#</li>
+<li>and Default.aspx.designer.cs can act be a model in MVC</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>connect to mysql</h3>
+
+<ul>
+<li>remember to add System.Data in the Reference</li>
+<li>add a MyDql.Data in Packages</li>
+<li>add a <code>using MySql.Data.MySqlClient;</code> in the cs code</li>
+</ul>
+
+
+<h3>code for mysql connection</h3>
+
+<ul>
+<li>front end page</li>
+<li>&#8220;`
+&lt;%@ Page Language=&ldquo;C#&rdquo; Inherits=&ldquo;test1.Default&rdquo; %>
+&lt;!DOCTYPE html>
+<html>
+<head runat="server">
+  <title>Default</title>
+  <style>
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+  }
+  th, td {
+      padding: 15px;
+  }
+  </style>
+</head>
+<body>
+  <form id="form1" runat="server">
+      &lt;asp:button id=&ldquo;clickMeButton&rdquo; runat=&ldquo;server&rdquo; text=&ldquo;Click Me&rdquo; onClick=&ldquo;clickMeButton_Click&rdquo; />
+      &lt;asp:label id=&ldquo;outputlabel&rdquo; runat=&ldquo;server&rdquo; />
+  </form>
+</body>
+</html></li>
+</ul>
+
+
+<p>&#8220;`</p>
+
+<ul>
+<li>backend</li>
+<li>cs file 1
+
+<ul>
+<li>&#8220;`
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using MySql.Data.MySqlClient;</li>
+</ul>
+
+
+<p>  namespace test1
+  {</p>
+
+<pre><code>  public partial class Default : System.Web.UI.Page
+  {
+
+      public void clickMeButton_Click (object sender, EventArgs e)
+      {
+          object val = ViewState["ButtonClickCount"];
+          int i = (val == null)? 1 : (int)val + 1;
+          outputlabel.Text = string.Format ("You clicked me {0} {1}", i, i==1?"time":"times");
+          ViewState["ButtonClickCount"] = i;
+
+          string query = "select * from reference limit 10"; 
+          MySqlConnection myConnection = new MySqlConnection("server=localhost;user id=root;password=root;database=reference_db"); 
+          MySqlCommand myCommand=new MySqlCommand(query,myConnection); 
+          myConnection.Open(); 
+          myCommand.ExecuteNonQuery(); 
+          MySqlDataReader myDataReader = myCommand.ExecuteReader(); 
+          string bookres=""; 
+          bookres += "&lt;table style=\"width:100%\"&gt;";
+          while (myDataReader.Read()==true) 
+          { 
+              bookres += "&lt;tr&gt;&lt;td&gt;";
+              bookres+=myDataReader["id"]; 
+              bookres += "&lt;/td&gt;&lt;td&gt;";
+              bookres+=myDataReader["ReferenceType"]; 
+              bookres += "&lt;/td&gt;&lt;td&gt;";
+              bookres+=myDataReader["Record_Number"]; 
+              bookres += "&lt;/td&gt;&lt;/tr&gt;";
+          } 
+          bookres += "&lt;/table&gt;";
+          myDataReader.Close(); 
+          myConnection.Close(); 
+          outputlabel.Text = bookres;
+      }
+
+  }
+</code></pre>
+
+<p>  }</p>
+
+<p>  &#8220;`</p></li>
+<li>cs file 2
+
+<ul>
+<li>&#8220;`
+using System;
+using System.Web;
+using System.Web.UI;</li>
+</ul>
+
+
+<p>  namespace test1
+  {</p>
+
+<pre><code>  public partial class Default
+  {
+      protected System.Web.UI.WebControls.Button button1;
+      protected System.Web.UI.WebControls.Label outputlabel;
+  }
+</code></pre>
+
+<p>  }</p>
+
+<p>  &#8220;`</p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[java spring tutorial part1]]></title>
@@ -4645,275 +4818,6 @@ int main(){
 </li>
 </ul>
 </li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[vi regular expression and data processing(1)]]></title>
-    <link href="http://pbking1.github.com/blog/2014/11/21/vi-regular-expression-1/"/>
-    <updated>2014-11-21T15:07:04-05:00</updated>
-    <id>http://pbking1.github.com/blog/2014/11/21/vi-regular-expression-1</id>
-    <content type="html"><![CDATA[<h3>data processing is very important before data mining</h3>
-
-<ul>
-<li>like if you are going to do some data mining in the linkedin public profile</li>
-<li>1.find out the number of the people that have
-
-<pre><code> - education
- - experience
- - skills
- - have all
-</code></pre></li>
-<li>2.find out all the skills and list the number of user who own them in a diagram</li>
-<li>3.find out all the company number</li>
-<li>4.find out all the people that is in US</li>
-<li>5.find out all the education level of all people
-
-<pre><code> - like undergraduate, graduate, phd
-</code></pre></li>
-<li>6.find out all the experience about job numbers
-
-<pre><code> - like 1 job, 2 jobs, 3 jobs
-</code></pre></li>
-</ul>
-
-
-<!--more-->
-
-
-<h3>regular expression in VIM</h3>
-
-<ul>
-<li>delete the line that match the particular format
-
-<ul>
-<li>like match all the lines in a document that match &lsquo;name: current&rsquo;
-
-<ul>
-<li>:%s/^name:\tcurrent.*$//g</li>
-<li>:%s/skill_num:0\n//g</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>count the number</h3>
-
-<ul>
-<li><p>the number of the education, the number of the experience and the number of the skill</p>
-
-<ul>
-<li>like
-
-<ul>
-<li>grep &lsquo;skill_num&rsquo; *.txt > ./checklist/skill_num.txt
-
-<ul>
-<li>:%s/output[1-9][0-9]*.txt:skill_num://
-
-<ul>
-<li>delete the tag</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>grep &lsquo;experience_num&rsquo; *.txt > checklist/exp_num.txt
-
-<ul>
-<li>:%s/output[1-9][0-9]*.txt:experience_number://
-
-<ul>
-<li>delete the tag</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>grep &lsquo;education_nun&rsquo; *.txt > ./checklist/edu_num.txt
-
-<ul>
-<li>:%s/output[1-9][0-9]*.txt:education_nun://
-
-<ul>
-<li>delete the tag before the number</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>use the number of the education, experience and skills to plot the tendency</p></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>clear all;
-</span><span class='line'>clc;
-</span><span class='line'>edu = csvread('edu.csv');
-</span><span class='line'>exp = csvread('exp.csv');
-</span><span class='line'>skill = csvread('skill.csv');
-</span><span class='line'>
-</span><span class='line'>figure
-</span><span class='line'>
-</span><span class='line'>%education number
-</span><span class='line'>edu_res = zeros(size(edu));
-</span><span class='line'>edu = sort(edu);
-</span><span class='line'>for i=1:size(edu)-1
-</span><span class='line'>   if edu(i) == edu(i + 1)
-</span><span class='line'>       edu_res(edu(i)) = edu_res(edu(i)) + 1;
-</span><span class='line'>   elseif edu(i) ~= edu(i + 1)
-</span><span class='line'>       edu_res(edu(i+1)) = edu_res(edu(i+1)) + 1;
-</span><span class='line'>   end
-</span><span class='line'>end
-</span><span class='line'>
-</span><span class='line'>subplot(3,1,1); %add plot into one image
-</span><span class='line'>plot(edu_res(1:15, :));
-</span><span class='line'>title('education line plot')
-</span><span class='line'>xlabel('index of education number')
-</span><span class='line'>ylabel('number of the people')
-</span><span class='line'>
-</span><span class='line'>%experience number
-</span><span class='line'>exp_res = zeros(size(exp));
-</span><span class='line'>exp = sort(exp);
-</span><span class='line'>for i=1:size(exp)-1
-</span><span class='line'>   if exp(i) == exp(i + 1)
-</span><span class='line'>       exp_res(exp(i)) = exp_res(exp(i)) + 1;
-</span><span class='line'>   elseif exp(i) ~= exp(i + 1)
-</span><span class='line'>       exp_res(exp(i+1)) = exp_res(exp(i+1)) + 1;
-</span><span class='line'>   end
-</span><span class='line'>end
-</span><span class='line'>
-</span><span class='line'>subplot(3,1,2); %add plot into one image
-</span><span class='line'>plot(exp_res(1:43, :));
-</span><span class='line'>title('experience line plot')
-</span><span class='line'>xlabel('index of experience number')
-</span><span class='line'>ylabel('number of the people')
-</span><span class='line'>
-</span><span class='line'>%skill number
-</span><span class='line'>skill_res = zeros(size(skill));
-</span><span class='line'>skill = sort(skill);
-</span><span class='line'>for i=1:size(skill)-1
-</span><span class='line'>   if skill(i) == skill(i + 1)
-</span><span class='line'>       skill_res(skill(i)) = skill_res(skill(i)) + 1;
-</span><span class='line'>   elseif skill(i) ~= skill(i + 1)
-</span><span class='line'>       skill_res(skill(i+1)) = skill_res(skill(i+1)) + 1;
-</span><span class='line'>   end
-</span><span class='line'>end
-</span><span class='line'>
-</span><span class='line'>subplot(3,1,3); %add plot into one image
-</span><span class='line'>plot(skill_res(1:50, :));
-</span><span class='line'>title('skill line plot')
-</span><span class='line'>xlabel('index of skill number')
-</span><span class='line'>ylabel('number of the people')</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>diff the file</h3>
-
-<ul>
-<li>diff whole_file subfile | grep &ldquo;&lt; &rdquo; | sed &rsquo;s/&lt; //g&#8217;
-
-<ul>
-<li>using this command can get all the content in the subfile out of the wholefile</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>if you want to separate one very long string</h3>
-
-<ul>
-<li>use &ldquo;\r&rdquo; to replace &ldquo;,&rdquo; not &ldquo;\n&rdquo; in vim</li>
-<li>or use
-
-<ul>
-<li><code>tr ", " "\n"</code></li>
-</ul>
-</li>
-</ul>
-
-
-<h3>erase the empty line</h3>
-
-<ul>
-<li><code>sed 's/^*$//g' file</code></li>
-</ul>
-
-
-<h3>replace the ^M into \n</h3>
-
-<ul>
-<li>use &rsquo;s/\r/\r/&#8217;</li>
-</ul>
-
-
-<h3>in vim use \r as &ldquo;enter button&rdquo;</h3>
-
-<h3>sort the file use the sequence of first line</h3>
-
-<ul>
-<li><code>sort -n -k1,1</code> filename</li>
 </ul>
 
 ]]></content>

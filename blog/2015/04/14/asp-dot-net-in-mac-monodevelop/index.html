@@ -5,7 +5,7 @@
 	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
 	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>iupui mason high performance mass  | KING</title>
+	<title>ASP.net in mac MonoDevelop  | KING</title>
 
 <meta name="author" content="pb"> 
 
@@ -95,23 +95,20 @@ $(document).ready(
 </header>
 
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Iupui Mason High Performance Mass</h2>
-	<div class="entry-content"><h3>In the iupui mason server</h3>
+	<h2 class="title">ASP.net in Mac MonoDevelop</h2>
+	<div class="entry-content"><h3>install asp.net environment in mac</h3>
 
 <ul>
-<li>there are 20 server, each have 10 gigabit ethernet</li>
-<li>4 cpu in each server
+<li>we can use MonoDevelop IDE in mac to develop c# or VB program
 
 <ul>
-<li>8 core processor each cpu</li>
-<li>total 32 core in each server</li>
+<li>also asp.net too</li>
 </ul>
 </li>
-<li>in the /scratch or /tmp there are total 400 GB disk storage
+<li>download url: <a href="http://www.monodevelop.com/download/">http://www.monodevelop.com/download/</a>
 
 <ul>
-<li>and the file will be delete after 14 days since they are created</li>
-<li></li>
+<li>download the Xamarin studio as development IDE</li>
 </ul>
 </li>
 </ul>
@@ -120,96 +117,148 @@ $(document).ready(
 <!--more-->
 
 
-<h3>when login</h3>
+<h3>after install the environment</h3>
 
 <ul>
-<li>use &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#117;&#x73;&#101;&#114;&#x6e;&#x61;&#109;&#x65;&#64;&#x6d;&#x61;&#x73;&#111;&#x6e;&#46;&#105;&#x6e;&#100;&#x69;&#97;&#110;&#x61;&#46;&#101;&#100;&#x75;">&#x75;&#115;&#101;&#x72;&#x6e;&#97;&#109;&#101;&#64;&#109;&#x61;&#x73;&#x6f;&#x6e;&#46;&#105;&#110;&#100;&#x69;&#97;&#110;&#97;&#x2e;&#x65;&#100;&#x75;</a>&rdquo;
+<li>start a solution as ASP.NET project in C#</li>
+<li>it will generate a project with some default page
 
 <ul>
-<li>will result in two server
-
-<ul>
-<li>h1.mason.indiana.edu</li>
-<li>h2.mason.indiana.edu</li>
+<li>The Default.aspx can be act as a html page</li>
+<li>and Default.aspx.cs can act be a controller in c#</li>
+<li>and Default.aspx.designer.cs can act be a model in MVC</li>
 </ul>
 </li>
 </ul>
-</li>
+
+
+<h3>connect to mysql</h3>
+
+<ul>
+<li>remember to add System.Data in the Reference</li>
+<li>add a MyDql.Data in Packages</li>
+<li>add a <code>using MySql.Data.MySqlClient;</code> in the cs code</li>
 </ul>
 
 
-<h3>cpu/memory limit</h3>
+<h3>code for mysql connection</h3>
 
 <ul>
-<li>user process on login node are limited to 20 minutes CPU time
-
-<ul>
-<li>if exceeded, will be killed automatically</li>
+<li>front end page</li>
+<li>&#8220;`
+&lt;%@ Page Language=&ldquo;C#&rdquo; Inherits=&ldquo;test1.Default&rdquo; %>
+&lt;!DOCTYPE html>
+<html>
+<head runat="server">
+  <title>Default</title>
+  <style>
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+  }
+  th, td {
+      padding: 15px;
+  }
+  </style>
+</head>
+<body>
+  <form id="form1" runat="server">
+      &lt;asp:button id=&ldquo;clickMeButton&rdquo; runat=&ldquo;server&rdquo; text=&ldquo;Click Me&rdquo; onClick=&ldquo;clickMeButton_Click&rdquo; />
+      &lt;asp:label id=&ldquo;outputlabel&rdquo; runat=&ldquo;server&rdquo; />
+  </form>
+</body>
+</html></li>
 </ul>
-</li>
-<li>use TORQUE <code>qsub</code> to submit job that need more than 20 minutes cpu time
+
+
+<p>&#8220;`</p>
 
 <ul>
-<li><p><code>qsub</code></p>
+<li>backend</li>
+<li>cs file 1
 
 <ul>
-<li><code>qsub -l walltime=10:00:00 job.script</code>
+<li>&#8220;`
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using MySql.Data.MySqlClient;</li>
+</ul>
+
+
+<p>  namespace test1
+  {</p>
+
+<pre><code>  public partial class Default : System.Web.UI.Page
+  {
+
+      public void clickMeButton_Click (object sender, EventArgs e)
+      {
+          object val = ViewState["ButtonClickCount"];
+          int i = (val == null)? 1 : (int)val + 1;
+          outputlabel.Text = string.Format ("You clicked me {0} {1}", i, i==1?"time":"times");
+          ViewState["ButtonClickCount"] = i;
+
+          string query = "select * from reference limit 10"; 
+          MySqlConnection myConnection = new MySqlConnection("server=localhost;user id=root;password=root;database=reference_db"); 
+          MySqlCommand myCommand=new MySqlCommand(query,myConnection); 
+          myConnection.Open(); 
+          myCommand.ExecuteNonQuery(); 
+          MySqlDataReader myDataReader = myCommand.ExecuteReader(); 
+          string bookres=""; 
+          bookres += "&lt;table style=\"width:100%\"&gt;";
+          while (myDataReader.Read()==true) 
+          { 
+              bookres += "&lt;tr&gt;&lt;td&gt;";
+              bookres+=myDataReader["id"]; 
+              bookres += "&lt;/td&gt;&lt;td&gt;";
+              bookres+=myDataReader["ReferenceType"]; 
+              bookres += "&lt;/td&gt;&lt;td&gt;";
+              bookres+=myDataReader["Record_Number"]; 
+              bookres += "&lt;/td&gt;&lt;/tr&gt;";
+          } 
+          bookres += "&lt;/table&gt;";
+          myDataReader.Close(); 
+          myConnection.Close(); 
+          outputlabel.Text = bookres;
+      }
+
+  }
+</code></pre>
+
+<p>  }</p>
+
+<p>  &#8220;`</p></li>
+<li>cs file 2
 
 <ul>
-<li>for the system default time is 60 minutes
+<li>&#8220;`
+using System;
+using System.Web;
+using System.Web.UI;</li>
+</ul>
 
-<ul>
-<li>so use walltime to use more time</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>qsub -l nodes=1:ppn=2 job.script</code>
 
-<ul>
-<li>run the script in a node and using two core processers</li>
-</ul>
-</li>
-<li><code>qsub -l nodes=4:ppn=31,vmem=100gb -l walltime=20:00:00 jobscript.script</code>
+<p>  namespace test1
+  {</p>
 
-<ul>
-<li>if use multi commands, use <code>-l</code> to separate the argument</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>qstat</code></p>
+<pre><code>  public partial class Default
+  {
+      protected System.Web.UI.WebControls.Button button1;
+      protected System.Web.UI.WebControls.Label outputlabel;
+  }
+</code></pre>
 
-<ul>
-<li><code>qstat -a</code>
+<p>  }</p>
 
-<ul>
-<li>display all job</li>
-</ul>
-</li>
-<li><code>qstat -n</code>
-
-<ul>
-<li>list the nodes allocated to a job</li>
-</ul>
-</li>
-<li><code>qstat -r</code>
-
-<ul>
-<li>list the job that are running</li>
-</ul>
-</li>
-<li><code>qstat -u username@host</code>
-
-<ul>
-<li>display the job owned by the username</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>qdel</code></li>
-</ul>
-</li>
+<p>  &#8220;`</p></li>
 </ul>
 
 </div>
@@ -228,18 +277,18 @@ $(document).ready(
   
 
 
-<time datetime="2014-11-05T20:55:25-05:00" pubdate data-updated="true">Nov 5<span>th</span>, 2014</time></div>
+<time datetime="2015-04-14T03:01:35-04:00" pubdate data-updated="true">Apr 14<span>th</span>, 2015</time></div>
 	
 
 <div class="tags">
 
-	<a class='category' href='/blog/categories/high-performance/'>high_performance</a>, <a class='category' href='/blog/categories/other/'>other</a>
+	<a class='category' href='/blog/categories/asp-dot-net/'>asp.net</a>, <a class='category' href='/blog/categories/c-number/'>c#</a>
 
 </div>
 
 
 	
-		<span class="comments"><a href="/blog/2014/11/05/iupui-mason-high-performance-mass/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2015/04/14/asp-dot-net-in-mac-monodevelop/#disqus_thread">Comments</a></span>
 	
 </div></article>
 
@@ -282,8 +331,8 @@ Powered by Octopress.
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2015/04/14/asp-dot-net-in-mac-monodevelop/';
+        var disqus_url = 'http://pbking1.github.com/blog/2015/04/14/asp-dot-net-in-mac-monodevelop/';
         var disqus_script = 'embed.js';
       
     (function () {

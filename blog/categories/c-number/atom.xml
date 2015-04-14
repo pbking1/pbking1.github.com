@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: c# | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/c-number/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2015-04-14T03:14:59-04:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ASP.net in mac MonoDevelop]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/14/asp-dot-net-in-mac-monodevelop/"/>
+    <updated>2015-04-14T03:01:35-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/14/asp-dot-net-in-mac-monodevelop</id>
+    <content type="html"><![CDATA[<h3>install asp.net environment in mac</h3>
+
+<ul>
+<li>we can use MonoDevelop IDE in mac to develop c# or VB program
+
+<ul>
+<li>also asp.net too</li>
+</ul>
+</li>
+<li>download url: <a href="http://www.monodevelop.com/download/">http://www.monodevelop.com/download/</a>
+
+<ul>
+<li>download the Xamarin studio as development IDE</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>after install the environment</h3>
+
+<ul>
+<li>start a solution as ASP.NET project in C#</li>
+<li>it will generate a project with some default page
+
+<ul>
+<li>The Default.aspx can be act as a html page</li>
+<li>and Default.aspx.cs can act be a controller in c#</li>
+<li>and Default.aspx.designer.cs can act be a model in MVC</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>connect to mysql</h3>
+
+<ul>
+<li>remember to add System.Data in the Reference</li>
+<li>add a MyDql.Data in Packages</li>
+<li>add a <code>using MySql.Data.MySqlClient;</code> in the cs code</li>
+</ul>
+
+
+<h3>code for mysql connection</h3>
+
+<ul>
+<li>front end page</li>
+<li>```
+&lt;%@ Page Language=&ldquo;C#&rdquo; Inherits=&ldquo;test1.Default&rdquo; %>
+&lt;!DOCTYPE html>
+<html>
+<head runat="server">
+  <title>Default</title>
+  <style>
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+  }
+  th, td {
+      padding: 15px;
+  }
+  </style>
+</head>
+<body>
+  <form id="form1" runat="server">
+      &lt;asp:button id=&ldquo;clickMeButton&rdquo; runat=&ldquo;server&rdquo; text=&ldquo;Click Me&rdquo; onClick=&ldquo;clickMeButton_Click&rdquo; />
+      &lt;asp:label id=&ldquo;outputlabel&rdquo; runat=&ldquo;server&rdquo; />
+  </form>
+</body>
+</html></li>
+</ul>
+
+
+<p>```</p>
+
+<ul>
+<li>backend</li>
+<li>cs file 1
+
+<ul>
+<li>```
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using MySql.Data.MySqlClient;</li>
+</ul>
+
+
+<p>  namespace test1
+  {</p>
+
+<pre><code>  public partial class Default : System.Web.UI.Page
+  {
+
+      public void clickMeButton_Click (object sender, EventArgs e)
+      {
+          object val = ViewState["ButtonClickCount"];
+          int i = (val == null)? 1 : (int)val + 1;
+          outputlabel.Text = string.Format ("You clicked me {0} {1}", i, i==1?"time":"times");
+          ViewState["ButtonClickCount"] = i;
+
+          string query = "select * from reference limit 10"; 
+          MySqlConnection myConnection = new MySqlConnection("server=localhost;user id=root;password=root;database=reference_db"); 
+          MySqlCommand myCommand=new MySqlCommand(query,myConnection); 
+          myConnection.Open(); 
+          myCommand.ExecuteNonQuery(); 
+          MySqlDataReader myDataReader = myCommand.ExecuteReader(); 
+          string bookres=""; 
+          bookres += "&lt;table style=\"width:100%\"&gt;";
+          while (myDataReader.Read()==true) 
+          { 
+              bookres += "&lt;tr&gt;&lt;td&gt;";
+              bookres+=myDataReader["id"]; 
+              bookres += "&lt;/td&gt;&lt;td&gt;";
+              bookres+=myDataReader["ReferenceType"]; 
+              bookres += "&lt;/td&gt;&lt;td&gt;";
+              bookres+=myDataReader["Record_Number"]; 
+              bookres += "&lt;/td&gt;&lt;/tr&gt;";
+          } 
+          bookres += "&lt;/table&gt;";
+          myDataReader.Close(); 
+          myConnection.Close(); 
+          outputlabel.Text = bookres;
+      }
+
+  }
+</code></pre>
+
+<p>  }</p>
+
+<p>  ```</p></li>
+<li>cs file 2
+
+<ul>
+<li>```
+using System;
+using System.Web;
+using System.Web.UI;</li>
+</ul>
+
+
+<p>  namespace test1
+  {</p>
+
+<pre><code>  public partial class Default
+  {
+      protected System.Web.UI.WebControls.Button button1;
+      protected System.Web.UI.WebControls.Label outputlabel;
+  }
+</code></pre>
+
+<p>  }</p>
+
+<p>  ```</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
