@@ -5,7 +5,7 @@
 	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
 	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>iupui mason high performance mass  | KING</title>
+	<title>virtual machine windows VS2010 UNC path not support  | KING</title>
 
 <meta name="author" content="pb"> 
 
@@ -95,119 +95,31 @@ $(document).ready(
 </header>
 
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Iupui Mason High Performance Mass</h2>
-	<div class="entry-content"><h3>In the iupui mason server</h3>
+	<h2 class="title">Virtual Machine Windows VS2010 UNC Path Not Support</h2>
+	<div class="entry-content"><h3>解决UNC路径不受支持</h3>
+
+<pre><code>在虚拟机的VS2010中编译出错
+</code></pre>
 
 <ul>
-<li>there are 20 server, each have 10 gigabit ethernet</li>
-<li>4 cpu in each server
+<li>错误提示：用作为当前目录的以上路径启动了 CMD.EXE。 UNC 路径不受支持。默认值设为 Windows 目录。系统找不到指定的文件。执行 c:\windows\system32\cmd.exe 时出错.</li>
+<li>解决方法:
 
 <ul>
-<li>8 core processor each cpu</li>
-<li>total 32 core in each server</li>
+<li>在注册表中,添加一个值即可.路径如下:
+
+<ul>
+<li>HKEY_CURRENT_USER\Software\Microsoft\Command Processor</li>
+<li>添加值 DisableUNCCheck，类型为 REG_DWORD 并将该值设置为1 （十六进制）。</li>
 </ul>
 </li>
-<li>in the /scratch or /tmp there are total 400 GB disk storage
+<li>或者，打开cmd.exe
 
 <ul>
-<li>and the file will be delete after 14 days since they are created</li>
-<li></li>
+<li>把下面这行代码复制进去，按回车</li>
+<li>reg add  &ldquo;HKEY_CURRENT_USER\Software\Microsoft\Command Processor&rdquo; /v DisableUNCCheck /t REG_DWORD /d 1 /f</li>
 </ul>
 </li>
-</ul>
-
-
-<!--more-->
-
-
-<h3>when login</h3>
-
-<ul>
-<li>use &ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#117;&#115;&#x65;&#114;&#110;&#x61;&#x6d;&#101;&#x40;&#109;&#97;&#115;&#x6f;&#110;&#46;&#105;&#x6e;&#100;&#105;&#x61;&#110;&#x61;&#x2e;&#x65;&#100;&#117;">&#117;&#x73;&#x65;&#114;&#110;&#x61;&#109;&#x65;&#64;&#109;&#97;&#x73;&#111;&#x6e;&#x2e;&#105;&#110;&#100;&#105;&#97;&#x6e;&#x61;&#46;&#x65;&#100;&#117;</a>&rdquo;
-
-<ul>
-<li>will result in two server
-
-<ul>
-<li>h1.mason.indiana.edu</li>
-<li>h2.mason.indiana.edu</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>cpu/memory limit</h3>
-
-<ul>
-<li>user process on login node are limited to 20 minutes CPU time
-
-<ul>
-<li>if exceeded, will be killed automatically</li>
-</ul>
-</li>
-<li>use TORQUE <code>qsub</code> to submit job that need more than 20 minutes cpu time
-
-<ul>
-<li><p><code>qsub</code></p>
-
-<ul>
-<li><code>qsub -l walltime=10:00:00 job.script</code>
-
-<ul>
-<li>for the system default time is 60 minutes
-
-<ul>
-<li>so use walltime to use more time</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>qsub -l nodes=1:ppn=2 job.script</code>
-
-<ul>
-<li>run the script in a node and using two core processers</li>
-</ul>
-</li>
-<li><code>qsub -l nodes=4:ppn=31,vmem=100gb -l walltime=20:00:00 jobscript.script</code>
-
-<ul>
-<li>if use multi commands, use <code>-l</code> to separate the argument</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>qstat</code></p>
-
-<ul>
-<li><code>qstat -a</code>
-
-<ul>
-<li>display all job</li>
-</ul>
-</li>
-<li><code>qstat -n</code>
-
-<ul>
-<li>list the nodes allocated to a job</li>
-</ul>
-</li>
-<li><code>qstat -r</code>
-
-<ul>
-<li>list the job that are running</li>
-</ul>
-</li>
-<li><code>qstat -u username@host</code>
-
-<ul>
-<li>display the job owned by the username</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>qdel</code></li>
 </ul>
 </li>
 </ul>
@@ -228,18 +140,18 @@ $(document).ready(
   
 
 
-<time datetime="2014-11-05T20:55:25-05:00" pubdate data-updated="true">Nov 5<span>th</span>, 2014</time></div>
+<time datetime="2015-04-14T21:17:08-04:00" pubdate data-updated="true">Apr 14<span>th</span>, 2015</time></div>
 	
 
 <div class="tags">
 
-	<a class='category' href='/blog/categories/high-performance/'>high_performance</a>, <a class='category' href='/blog/categories/other/'>other</a>
+	<a class='category' href='/blog/categories/vs/'>vs</a>, <a class='category' href='/blog/categories/windows/'>windows</a>
 
 </div>
 
 
 	
-		<span class="comments"><a href="/blog/2014/11/05/iupui-mason-high-performance-mass/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support/#disqus_thread">Comments</a></span>
 	
 </div></article>
 
@@ -282,8 +194,8 @@ Powered by Octopress.
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass/';
-        var disqus_url = 'http://pbking1.github.com/blog/2014/11/05/iupui-mason-high-performance-mass/';
+        var disqus_identifier = 'http://pbking1.github.com/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support/';
+        var disqus_url = 'http://pbking1.github.com/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support/';
         var disqus_script = 'embed.js';
       
     (function () {

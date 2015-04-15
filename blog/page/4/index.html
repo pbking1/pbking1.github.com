@@ -100,6 +100,83 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2015/02/05/xapian-tutorial-2/">
+		
+			Xapian_tutorial_2</a>
+	</h2>
+	<div class="entry-content">
+		<h3>The expand of synonym(同义词)</h3>
+
+<ul>
+<li>such as ‘I love you‘ and &lsquo;ILU&rsquo;</li>
+<li>process to do this
+
+<ul>
+<li>Write the synonym into database
+
+<ul>
+<li>use <code>WriteDatabase::add_synonym(term,synonym)</code></li>
+<li>but we can only do &lsquo;I love you&rsquo; &ndash;> &lsquo;ILU&rsquo;
+
+<ul>
+<li>if we want to reverse it, we need to add the reverse version</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>use the synonym when query</h3>
+
+<ul>
+<li>use <code>QueryParser::set_database()</code> to set db</li>
+<li>when using the <code>QueryParser::set_database()</code>, the second parameter use <code>FLAG_SYNONYM</code> or <code>FLAG_AUTO_SYNONYMS</code></li>
+<li><code>FLAG_SYNONYM</code> is the ~WORD format in the query sentence. expend the synonym of the word automatically</li>
+<li><code>FLAG_AUTO_SYNONYMS</code> is expend all the phrase, do not need to write ~</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2015/02/05/xapian-tutorial-2/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-05T19:54:20-05:00" pubdate data-updated="true">Feb 5<span>th</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/c-plus-plus/'>c++</a>, <a class='category' href='/blog/categories/search-engine/'>search_engine</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/02/05/xapian-tutorial-2//blog/page/4/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2015/02/05/xapian-tutorial-1/">
 		
 			Xapian_tutorial_1</a>
@@ -407,57 +484,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access//blog/page/4/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/10/30/2014-indianapolis-redefined-hackathron/">
-		
-			2014_indianapolis_redefined_hackathron</a>
-	</h2>
-	<div class="entry-content">
-		<h3>The hackathron take 24 hours to write an app that can be used for attracting people to indianapolis</h3>
-
-<ul>
-<li>and I first design a python version of app</li>
-<li>then I use bootstrap theme to develop a mobile compatible web app with php link to the mysql database.</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/10/30/2014-indianapolis-redefined-hackathron/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-30T21:25:44-04:00" pubdate data-updated="true">Oct 30<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/hackathron/'>hackathron</a>, <a class='category' href='/blog/categories/html/'>html</a>, <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/python/'>python</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/10/30/2014-indianapolis-redefined-hackathron//blog/page/4/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

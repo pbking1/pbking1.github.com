@@ -100,6 +100,77 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support/">
+		
+			Virtual Machine Windows VS2010 UNC Path Not Support</a>
+	</h2>
+	<div class="entry-content">
+		<h3>解决UNC路径不受支持</h3>
+
+<pre><code>在虚拟机的VS2010中编译出错
+</code></pre>
+
+<ul>
+<li>错误提示：用作为当前目录的以上路径启动了 CMD.EXE。 UNC 路径不受支持。默认值设为 Windows 目录。系统找不到指定的文件。执行 c:\windows\system32\cmd.exe 时出错.</li>
+<li>解决方法:
+
+<ul>
+<li>在注册表中,添加一个值即可.路径如下:
+
+<ul>
+<li>HKEY_CURRENT_USER\Software\Microsoft\Command Processor</li>
+<li>添加值 DisableUNCCheck，类型为 REG_DWORD 并将该值设置为1 （十六进制）。</li>
+</ul>
+</li>
+<li>或者，打开cmd.exe
+
+<ul>
+<li>把下面这行代码复制进去，按回车</li>
+<li>reg add  &ldquo;HKEY_CURRENT_USER\Software\Microsoft\Command Processor&rdquo; /v DisableUNCCheck /t REG_DWORD /d 1 /f</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-14T21:17:08-04:00" pubdate data-updated="true">Apr 14<span>th</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/vs/'>vs</a>, <a class='category' href='/blog/categories/windows/'>windows</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2015/04/14/asp-dot-net-in-mac-monodevelop/">
 		
 			ASP.net in Mac MonoDevelop</a>
@@ -485,62 +556,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2015/02/28/clep-microeconomic-practise-exam//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2015/02/13/computer-architecture-1/">
-		
-			Computer Architecture 1</a>
-	</h2>
-	<div class="entry-content">
-		<h3>charpter1</h3>
-
-<ul>
-<li><p>What is computer architecture</p>
-
-<ul>
-<li>4 classes of computers
-
-<ul>
-<li>personal computer</li>
-<li>server computer</li>
-<li>embedded computer</li>
-<li>supercomputer
-
-		
-		<a href="/blog/2015/02/13/computer-architecture-1/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-02-13T14:28:43-05:00" pubdate data-updated="true">Feb 13<span>th</span>, 2015</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/computer-architecture/'>computer_architecture</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2015/02/13/computer-architecture-1//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
