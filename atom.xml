@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-14T21:19:24-04:00</updated>
+  <updated>2015-04-15T22:36:24-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[xapian omindex build index and search]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/15/xapian-omindex-build-index-and-search/"/>
+    <updated>2015-04-15T22:28:58-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/15/xapian-omindex-build-index-and-search</id>
+    <content type="html"><![CDATA[<h3>omega is a component that can be used with xapian</h3>
+
+<ul>
+<li>we can use omega to build index</li>
+</ul>
+
+
+<h4>build index</h4>
+
+<ul>
+<li><code>omindex --db index --url / ./index_file/</code>
+
+<ul>
+<li>&mdash;db 后面跟的是索引数据库的名字</li>
+<li>&mdash;url 后面跟的是 / 然后再加上要建索引的数据的文件夹（含有那些要建索引的文件）</li>
+</ul>
+</li>
+<li>运行之后，就会生成index文件夹，这个文件夹里面就是建好的索引</li>
+</ul>
+
+
+<h4>query</h4>
+
+<ul>
+<li>quest &mdash;db=index &ldquo;asd&rdquo;
+
+<ul>
+<li>&mdash;db 后面跟的是索引数据库</li>
+<li>然后再加上要查询的关键字</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[virtual machine windows VS2010 UNC path not support]]></title>
@@ -4364,413 +4405,6 @@ int main(){
 </span><span class='line'>}
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[xapian_tutorial_1]]></title>
-    <link href="http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-1/"/>
-    <updated>2015-02-05T16:40:48-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-1</id>
-    <content type="html"><![CDATA[<ul>
-<li>note:some of the content and code are refer from <a href="http://www.coder4.com/archives/2218">http://www.coder4.com/archives/2218</a></li>
-</ul>
-
-
-<h3>basic index build and search</h3>
-
-<ul>
-<li>first of all, xapian is an open source c++ search engine.</li>
-<li>also note that xapian is called &ldquo;Zap-in&rdquo;</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>basic data structure</h4>
-
-<ul>
-<li>used for search
-
-<ul>
-<li><code>Xapian::Database</code>
-
-<ul>
-<li>used to read index</li>
-</ul>
-</li>
-<li><code>Xapian::Enquire</code>
-
-<ul>
-<li>use with Database</li>
-<li>use to search</li>
-</ul>
-</li>
-<li><code>Xapian::QueryParser</code>
-
-<ul>
-<li>query sentence parser</li>
-</ul>
-</li>
-<li><code>Xapian::Query</code>
-
-<ul>
-<li>query</li>
-</ul>
-</li>
-<li><code>Xapian::MSet</code>
-
-<ul>
-<li>the result set returned by searching</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>used for build index
-
-<ul>
-<li><code>Xapian::WritableDatabase</code>
-
-<ul>
-<li>use for built index</li>
-</ul>
-</li>
-<li><code>Xapian::TermGenerator</code>
-
-<ul>
-<li>use for cut sentence, build index.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>for both
-
-<ul>
-<li><code>Xapian::Document</code>
-
-<ul>
-<li>abstract of document</li>
-</ul>
-</li>
-<li> <code>Xapian::SimpleStopper</code>
-
-<ul>
-<li> the word used for ending</li>
-</ul>
-</li>
-<li> <code>Xapian::Error</code>
-
-<ul>
-<li> exception</li>
-<li> use get_description() to get detailed info.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>how to build index</h4>
-
-<ul>
-<li>open a <code>Xapian::WritableDatabase</code></li>
-<li>Then prepare for the document
-
-<ul>
-<li>use <code>set_data(string)</code> to set data(only one)</li>
-<li>use <code>add_value(slot, string)</code> to set field(can have more), slot can not be -1</li>
-<li>these two method is only used for storage
-
-<ul>
-<li>not used for parse or index</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>build index field
-
-<ul>
-<li>use <code>Document.add_term(word, pos)</code></li>
-<li>use <code>Xapian::TermGenerator</code> and <code>.set_document(doc)</code>
-
-<ul>
-<li>then pass the string using delimiter space into index_text</li>
-<li>then the doc will have the index field of this document</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>after building the document, import into database</li>
-<li>use DB.commit()</li>
-</ul>
-
-
-<h4>how to query</h4>
-
-<ul>
-<li>open <code>Xapian::Database</code>, the path is the same as WriteableDatabase</li>
-<li>use DB to construct <code>Xapian::Enquire</code></li>
-<li>use <code>Xapian::QueryParser</code> to parse the string and generate <code>Xapian::Query</code></li>
-<li>use <code>enquire.set_query()</code> to query</li>
-<li>get the result set by using <code>enquire.get_mset(start, len)</code>.</li>
-<li>use <code>Xapian::MsetIterator</code> to traverse the MSet.
-
-<ul>
-<li>use <code>get_rank()</code> to get the rank</li>
-<li>use <code>get_document</code> to get the document</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>query grammer</h4>
-
-<ul>
-<li><code>Term | Term | Term</code></li>
-<li><code>Term -&gt; Term ~ Term</code>
-
-<ul>
-<li><code>~</code> is used for similar word</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>About field</h4>
-
-<ul>
-<li>When building index
-
-<ul>
-<li>use <code>Xapian::TermGenerator</code> for example
-
-<ul>
-<li>we need to set the <code>TermGenerator.set_database(db)</code></li>
-<li>when building the index field
-
-<ul>
-<li><code>index_text(text, wdf_inc=1, prefix)</code>
-
-<ul>
-<li>The second and third parameter are default</li>
-<li>The second is TF increase</li>
-<li>The third is prefix</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>When query
-
-<ul>
-<li>add mapping using <code>Xapian::QueryParser</code></li>
-<li><code>.add_prefix("title", "T")</code></li>
-<li>Then the <code>qp.parse_query</code> can have field when query the string</li>
-<li>for example
-
-<ul>
-<li>&lsquo;title:news AND content:basketball&rsquo;</li>
-<li>and now there are two field</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>sample code</h4>
-
-<ul>
-<li>create_index.cpp</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>     #include&lt;xapian.h&gt;
-</span><span class='line'>  #include&lt;iostream&gt;
-</span><span class='line'>  #include&lt;string&gt;
-</span><span class='line'>  using namespace std;
-</span><span class='line'>
-</span><span class='line'>  #define CONTENT "70:69， This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。"
-</span><span class='line'>
-</span><span class='line'>  #define TITLE "This is a news"
-</span><span class='line'>
-</span><span class='line'>  #define INDEX_PATH "./index_data"
-</span><span class='line'>
-</span><span class='line'>  #define F_DOCID 1
-</span><span class='line'>
-</span><span class='line'>  int main(int argc, char *argv[]){
-</span><span class='line'>      try{
-</span><span class='line'>          //The text to be indexed
-</span><span class='line'>          string content(CONTENT);
-</span><span class='line'>          string title(TITLE);
-</span><span class='line'>
-</span><span class='line'>          //open a database and write
-</span><span class='line'>          Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
-</span><span class='line'>          
-</span><span class='line'>          //term generator
-</span><span class='line'>          Xapian::TermGenerator indexer;
-</span><span class='line'>
-</span><span class='line'>          //Make document
-</span><span class='line'>          Xapian::Document doc;
-</span><span class='line'>          doc.add_value(F_DOCID, string("1104"));
-</span><span class='line'>          doc.set_data(content);
-</span><span class='line'>          indexer.set_document(doc);
-</span><span class='line'>          indexer.index_text(title, 1, "T");
-</span><span class='line'>          indexer.index_text(content, 1, "C");
-</span><span class='line'>
-</span><span class='line'>          //add document to db
-</span><span class='line'>          db.add_document(doc);
-</span><span class='line'>
-</span><span class='line'>          //flush to disk
-</span><span class='line'>          db.commit();
-</span><span class='line'>
-</span><span class='line'>      }catch(const Xapian::Error &e){
-</span><span class='line'>          cout&lt;&lt;e.get_description()&lt;&lt;endl;
-</span><span class='line'>      }
-</span><span class='line'>      return 0;
-</span><span class='line'>  }
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>search.cpp</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#include&lt;xapian.h&gt;
-</span><span class='line'>#include&lt;iostream&gt;
-</span><span class='line'>#include&lt;string&gt;
-</span><span class='line'>using namespace std;
-</span><span class='line'>#define QUERY "title:news AND content:70"
-</span><span class='line'>#define INDEX_PATH "./index_data"
-</span><span class='line'>#define F_DOCID 1
-</span><span class='line'>int main(){
-</span><span class='line'>  try{
-</span><span class='line'>      //The string for query
-</span><span class='line'>      string query_str(QUERY);
-</span><span class='line'>
-</span><span class='line'>      //open the database
-</span><span class='line'>      Xapian::Database db(string(INDEX_PATH));
-</span><span class='line'>
-</span><span class='line'>      //open search handle
-</span><span class='line'>      Xapian::Enquire enquire(db);
-</span><span class='line'>
-</span><span class='line'>      //Parser Query
-</span><span class='line'>      Xapian::QueryParser qp;
-</span><span class='line'>      qp.add_prefix("title", "T");
-</span><span class='line'>      qp.add_prefix("content", "C");
-</span><span class='line'>      Xapian::Query query = qp.parse_query(query_str);
-</span><span class='line'>      cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
-</span><span class='line'>
-</span><span class='line'>      //find the top 10 result
-</span><span class='line'>      enquire.set_query(query);
-</span><span class='line'>      Xapian::MSet result = enquire.get_mset(0,10);
-</span><span class='line'>      cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
-</span><span class='line'>
-</span><span class='line'>      //print the result
-</span><span class='line'>      for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
-</span><span class='line'>          Xapian::Document doc = iter.get_document();
-</span><span class='line'>          cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
-</span><span class='line'>      }
-</span><span class='line'>
-</span><span class='line'>  }catch(const Xapian::Error e){
-</span><span class='line'>      cout&lt;&lt;e.get_description()&lt;&lt;endl;
-</span><span class='line'>  }
-</span><span class='line'>  return 0;
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
 ]]></content>
   </entry>
   

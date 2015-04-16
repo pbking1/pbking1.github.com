@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-14T21:19:24-04:00</updated>
+  <updated>2015-04-15T22:36:24-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[xapian omindex build index and search]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/15/xapian-omindex-build-index-and-search/"/>
+    <updated>2015-04-15T22:28:58-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/15/xapian-omindex-build-index-and-search</id>
+    <content type="html"><![CDATA[<h3>omega is a component that can be used with xapian</h3>
+
+<ul>
+<li>we can use omega to build index</li>
+</ul>
+
+
+<h4>build index</h4>
+
+<ul>
+<li><code>omindex --db index --url / ./index_file/</code>
+
+<ul>
+<li>&mdash;db 后面跟的是索引数据库的名字</li>
+<li>&mdash;url 后面跟的是 / 然后再加上要建索引的数据的文件夹（含有那些要建索引的文件）</li>
+</ul>
+</li>
+<li>运行之后，就会生成index文件夹，这个文件夹里面就是建好的索引</li>
+</ul>
+
+
+<h4>query</h4>
+
+<ul>
+<li>quest &mdash;db=index &ldquo;asd&rdquo;
+
+<ul>
+<li>&mdash;db 后面跟的是索引数据库</li>
+<li>然后再加上要查询的关键字</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[compile qtox on OSX]]></title>
