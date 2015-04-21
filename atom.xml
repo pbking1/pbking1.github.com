@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-15T22:36:24-04:00</updated>
+  <updated>2015-04-21T00:18:39-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,300 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[c++ basic data structure]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/20/c-plus-plus-basic-data-structure/"/>
+    <updated>2015-04-20T22:04:11-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/20/c-plus-plus-basic-data-structure</id>
+    <content type="html"><![CDATA[<h3>basic data structure and algorithm</h3>
+
+<ul>
+<li></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[c++ program run time]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/20/c-plus-plus-program-run-time/"/>
+    <updated>2015-04-20T20:52:22-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/20/c-plus-plus-program-run-time</id>
+    <content type="html"><![CDATA[<h4>时间复杂度</h4>
+
+<ul>
+<li>costs for growth rate representative of most computer algorithm
+
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>n</th>
+<th>loglogn</th>
+<th>logn</th>
+<th>n</th>
+<th>nlogn</th>
+<th>n<sup>2</sup></th>
+<th>n<sup>3</sup></th>
+<th>2<sup>n</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td>2</td>
+<td>4</td>
+<td>2<sup>4</sup></td>
+<td>2*2<sup>4</sup>=2<sup>5</sup></td>
+<td>2<sup>8</sup></td>
+<td>2<sup>12</sup></td>
+<td>2<sup>16</sup></td>
+</tr>
+<tr>
+<td>256</td>
+<td>3</td>
+<td>8</td>
+<td>2<sup>8</sup></td>
+<td>8*2<sup>8</sup>=2<sup>11</sup></td>
+<td>2<sup>16</sup></td>
+<td>2<sup>24</sup></td>
+<td>2<sup>256</sup></td>
+</tr>
+<tr>
+<td>1024</td>
+<td>3.3</td>
+<td>10</td>
+<td>2<sup>10</sup></td>
+<td>10*2<sup>10</sup>=2<sup>13</sup></td>
+<td>2<sup>20</sup></td>
+<td>2<sup>30</sup></td>
+<td>2<sup>1024</sup></td>
+</tr>
+<tr>
+<td>64K</td>
+<td>4</td>
+<td>16</td>
+<td>2<sup>16</sup></td>
+<td>16*2<sup>16</sup>=2<sup>20</sup></td>
+<td>2<sup>32</sup></td>
+<td>2<sup>48</sup></td>
+<td>2<sup>64K</sup></td>
+</tr>
+<tr>
+<td>1M</td>
+<td>4.3</td>
+<td>20</td>
+<td>2<sup>20</sup></td>
+<td>20*2<sup>20</sup>=2<sup>24</sup></td>
+<td>2<sup>40</sup></td>
+<td>2<sup>60</sup></td>
+<td>2<sup>1M</sup></td>
+</tr>
+<tr>
+<td>1G</td>
+<td>4.9</td>
+<td>30</td>
+<td>2<sup>30</sup></td>
+<td>30*2<sup>30</sup>=2<sup>35</sup></td>
+<td>2<sup>60</sup></td>
+<td>2<sup>90</sup></td>
+<td>2<sup>1G</sup></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>最差，最好，平均
+
+<ul>
+<li>例如顺序搜索
+
+<ul>
+<li>如果在第一个就搜到，那么就是最佳的case</li>
+<li>如果搜到最后一个才搜到，那就是最差的case</li>
+<li>（最佳+最差）/2为平均</li>
+</ul>
+</li>
+<li>一般都是用平均的</li>
+</ul>
+</li>
+<li>上界
+
+<ul>
+<li>大O表示
+
+<ul>
+<li>对一个非负的函数T(n)，T(n)是O(f(n))的当且仅当存在两个非负的c和k，使得T(n)&lt;=cf(n) 对所有n > k;
+
+<ul>
+<li>其中k为n的最小值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>大omega
+
+<ul>
+<li>对一个非负的函数T(n)，T(n)是omega(g(n))当且存在两个非负的c和k，使得T(n)>=cg(n) 对所有n > k;</li>
+</ul>
+</li>
+<li>大theta
+
+<ul>
+<li>当上界和下界被同一个常数影响。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>例子</li>
+<li><code>
+sum1 = 0;
+for(k=1;k&lt;=n;k*=2)
+  for(j=1;j&lt;=n;j++)
+      sum1++;
+sum2 = 0;
+for(k=1;k&lt;=n;k*=2)
+  for(j=1;j&lt;=k;j++)
+      sum2++;
+</code>
+
+<ul>
+<li>第一个循环
+
+<ul>
+<li>第一个for执行了logn + 1次</li>
+<li>第二个for执行了n次
+
+<ul>
+<li>那么复杂度为nlogn</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>第二个循环
+
+<ul>
+<li>第一个for执行了logn + 1次</li>
+<li>第二个for执行了执行了k次，k=2<sup>i</sup>
+
+<ul>
+<li>那么复杂度为n</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>常用算法的时间复杂度</li>
+<li><p><strong>搜索</strong></p>
+
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>算法</th>
+<th>数据结构</th>
+<th>平均时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>二分搜索</td>
+<td>数组查n个元素</td>
+<td>logn|</td>
+</tr>
+<tr>
+<td>顺序查找</td>
+<td>数组查n个元素</td>
+<td>n|</td>
+</tr>
+<tr>
+<td>最短路（乱序数组）</td>
+<td>V个点和E条边</td>
+<td>V<sup>2</sup></td>
+</tr>
+<tr>
+<td>最短路（bellman-ford）</td>
+<td> V个点和E条边</td>
+<td>V*E       </td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li><p><strong>排序</strong></p>
+
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>算法</th>
+<th>数据结构</th>
+<th>平均时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>快速排序</td>
+<td>数组</td>
+<td>nlogn</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>数组</td>
+<td>nlogn</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>数组</td>
+<td>nlogn</td>
+</tr>
+<tr>
+<td>冒泡排序</td>
+<td>数组</td>
+<td>n<sup>2</sup></td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>数组</td>
+<td>n<sup>2</sup></td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>数组</td>
+<td>n<sup>2</sup></td>
+</tr>
+<tr>
+<td>桶排序</td>
+<td>数组</td>
+<td>n+k</td>
+</tr>
+<tr>
+<td>计数排序</td>
+<td>数组</td>
+<td>n*k </td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>空间复杂度</h4>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[xapian omindex build index and search]]></title>
@@ -3824,586 +4118,6 @@ int main(){
 </ul>
 </li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[public speech note]]></title>
-    <link href="http://pbking1.github.com/blog/2015/02/05/public-speech-note/"/>
-    <updated>2015-02-05T22:50:10-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/02/05/public-speech-note</id>
-    <content type="html"><![CDATA[<h3>public speech technic note</h3>
-
-<h4>audience</h4>
-
-<ul>
-<li>focus on a single person
-
-<ul>
-<li>reduce pressure</li>
-</ul>
-</li>
-<li>audience is very important</li>
-<li>help emotionally connect to audience</li>
-<li>help you visualise one single person to talk to</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>venue(speech place)</h4>
-
-<ul>
-<li>room dynamic
-
-<ul>
-<li>size and shape</li>
-<li>how many seats</li>
-<li>raised stage</li>
-<li>floor plan</li>
-<li>anything unusual</li>
-</ul>
-</li>
-<li>audience dynamic
-
-<ul>
-<li>broad room style</li>
-<li>line style</li>
-<li>meeting style</li>
-</ul>
-</li>
-<li>speaker equipment
-
-<ul>
-<li>ask for any equipment I may need</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>develop personal credibility</h4>
-
-<ul>
-<li>make people believe you speak</li>
-<li>introduction is very important</li>
-<li>use confidence and competence to build credibility
-
-<ul>
-<li>confidence
-
-<ul>
-<li>dress appropriately
-
-<ul>
-<li>find an insider to tell you</li>
-</ul>
-</li>
-<li>use non-verbal skills
-
-<ul>
-<li>make eye contact</li>
-<li>let the audience to look at your body</li>
-</ul>
-</li>
-<li>sound confidence
-
-<ul>
-<li>first sound must be clear</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>demonstrate(prove) competence
-
-<ul>
-<li>speak the topic you familiar about</li>
-<li>share your experience
-
-<ul>
-<li>just a brief detail</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>generate idea for the speech</h4>
-
-<ul>
-<li>collect ideas
-
-<ul>
-<li>use note</li>
-<li>use card</li>
-</ul>
-</li>
-<li>open your mind</li>
-<li>note the idea
-
-<ul>
-<li>fact and information</li>
-<li>stories</li>
-<li>things that inspires you</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>find the story</h4>
-
-<ul>
-<li>story trigger
-
-<ul>
-<li><strong>something happens to someone</strong>
-
-<ul>
-<li>why happen</li>
-</ul>
-</li>
-<li>what is the story behind the number</li>
-<li>what did she do differentlyy</li>
-</ul>
-</li>
-<li>who, what, where, when</li>
-<li>overcome obstacles</li>
-<li>using creativity</li>
-<li>tell the story according to the fact</li>
-</ul>
-
-
-<h4>building story broad</h4>
-
-<ul>
-<li>recall key details</li>
-<li>draw the step</li>
-</ul>
-
-
-<h4>rehearsing(排练)</h4>
-
-<ul>
-<li>rehearse the position(sitting or standing)</li>
-<li>rehearse the actual clothes</li>
-<li>use a real audience</li>
-<li>record and watch yourself</li>
-<li>listen to yourself</li>
-<li>rehearse the real hours</li>
-</ul>
-
-
-<h4>warming up</h4>
-
-<ul>
-<li>in the morning
-
-<ul>
-<li>do not clearing your throat</li>
-<li>get up early</li>
-<li>avoid cold drinks</li>
-<li>sing, talk or hum(use your voice before speech)</li>
-</ul>
-</li>
-<li>in the afternoon or night
-
-<ul>
-<li>save your voice</li>
-<li>avoid caffeine</li>
-<li>avoid CO2 drink</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>saying yes to the microphone</h4>
-
-<ul>
-<li>test before start</li>
-<li>may sound loud to you but not to the audience</li>
-</ul>
-
-
-<h4>nervous</h4>
-
-<ul>
-<li>keep hand behind your back and look up</li>
-</ul>
-
-
-<h4>strong opening</h4>
-
-<ul>
-<li>cold open
-
-<ul>
-<li>ask an open-ended question
-
-<ul>
-<li>do not ask yes-no question</li>
-</ul>
-</li>
-<li>open with a story
-
-<ul>
-<li>have mystery</li>
-</ul>
-</li>
-<li>tell them to image something
-
-<ul>
-<li>make your audience part of your presentation</li>
-</ul>
-</li>
-<li>a quote or a fact
-
-<ul>
-<li>risk approach</li>
-<li>use surprising fact</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>common mistake
-
-<ul>
-<li>un-original phrases</li>
-<li>clearing your throat</li>
-<li>technical issue</li>
-<li>telling a joke</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>introducing your agenda</h4>
-
-<ul>
-<li>the agenda
-
-<ul>
-<li>purpose</li>
-<li>topic</li>
-<li>participant</li>
-<li>length</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>use more vocal variety</h4>
-
-<ul>
-<li>声音起伏</li>
-<li>volume
-
-<ul>
-<li>break a pattern</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>eliminating crutch</h4>
-
-<ul>
-<li>when feel under pressure
-
-<ul>
-<li>try to relax</li>
-</ul>
-</li>
-<li>reduce or avoid stress</li>
-</ul>
-
-
-<h4>how to use props(道具) and visual aids</h4>
-
-<ul>
-<li>demonstration
-
-<ul>
-<li>showing is far more effective than talking</li>
-</ul>
-</li>
-<li>provide a graphic or chart</li>
-<li>for dramatic fact</li>
-<li>practise the props
-
-<ul>
-<li>if thing go wrong
-
-<ul>
-<li>how to recover</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>presentation is important</li>
-</ul>
-
-
-<h4>strong close</h4>
-
-<ul>
-<li>make the end word very clear</li>
-<li>short summary</li>
-<li>re-state title</li>
-<li>call to action</li>
-<li>a personal tagline</li>
-<li>a quote</li>
-<li>a final story
-
-<ul>
-<li>emotionally powerful</li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[xapian_tutorial_2]]></title>
-    <link href="http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-2/"/>
-    <updated>2015-02-05T19:54:20-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-2</id>
-    <content type="html"><![CDATA[<h3>The expand of synonym(同义词)</h3>
-
-<ul>
-<li>such as ‘I love you‘ and &lsquo;ILU&rsquo;</li>
-<li>process to do this
-
-<ul>
-<li>Write the synonym into database
-
-<ul>
-<li>use <code>WriteDatabase::add_synonym(term,synonym)</code></li>
-<li>but we can only do &lsquo;I love you&rsquo; &ndash;> &lsquo;ILU&rsquo;
-
-<ul>
-<li>if we want to reverse it, we need to add the reverse version</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>use the synonym when query</h3>
-
-<ul>
-<li>use <code>QueryParser::set_database()</code> to set db</li>
-<li>when using the <code>QueryParser::set_database()</code>, the second parameter use <code>FLAG_SYNONYM</code> or <code>FLAG_AUTO_SYNONYMS</code></li>
-<li><code>FLAG_SYNONYM</code> is the ~WORD format in the query sentence. expend the synonym of the word automatically</li>
-<li><code>FLAG_AUTO_SYNONYMS</code> is expend all the phrase, do not need to write ~</li>
-</ul>
-
-
-<!--more-->
-
-
-<h3>sample</h3>
-
-<ul>
-<li>makefile
-
-<ul>
-<li></li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>    all:
-</span><span class='line'>      g++ -o index -I/usr/local/include -l xapian index.cpp
-</span><span class='line'>      g++ -o query -I/usr/local/include -l xapian query.cpp
-</span><span class='line'>    clean:
-</span><span class='line'>      rm -rf index index_data/ query</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>index.cpp</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> #include&lt;xapian.h&gt;
-</span><span class='line'> #include&lt;iostream&gt;
-</span><span class='line'> #include&lt;string&gt;
-</span><span class='line'> using namespace std;
-</span><span class='line'> #define CONTENT "70:69， I love you This is man basketball race history the smallest point difference race ， smile to last is east man Chinese 。 Which can be said ， This time is the most famous victory and can be said this is the most lucky resuly 。After the end of the game, the coach of the Chinese aa and The boss bb hang togetherm and the two guy are so happy that the chinese win。"
-</span><span class='line'> #define INDEX_PATH "./index_data"
-</span><span class='line'> #define WORD1 "I love you"
-</span><span class='line'> #define WORD2 "ILU"
-</span><span class='line'>int main(int argc, char *argv[]){
-</span><span class='line'>try{
-</span><span class='line'>  //The text to be indexed
-</span><span class='line'>  string content(CONTENT);
-</span><span class='line'>
-</span><span class='line'>  //open a database and write
-</span><span class='line'>  Xapian::WritableDatabase db(string(INDEX_PATH), Xapian::DB_CREATE_OR_OPEN);
-</span><span class='line'>  
-</span><span class='line'>  //term generator
-</span><span class='line'>  Xapian::TermGenerator indexer;
-</span><span class='line'>
-</span><span class='line'>  //add synonym
-</span><span class='line'>  db.add_synonym(string(WORD1), string(WORD2));
-</span><span class='line'>
-</span><span class='line'>  //Make document
-</span><span class='line'>  Xapian::Document doc;
-</span><span class='line'>  doc.set_data(content);
-</span><span class='line'>  indexer.set_document(doc);
-</span><span class='line'>  indexer.index_text(content);
-</span><span class='line'>
-</span><span class='line'>  //add document to db
-</span><span class='line'>  db.add_document(doc);
-</span><span class='line'>
-</span><span class='line'>  //flush to disk
-</span><span class='line'>  db.commit();
-</span><span class='line'>
-</span><span class='line'>}catch(const Xapian::Error &e){
-</span><span class='line'>  cout&lt;&lt;e.get_description()&lt;&lt;endl;
-</span><span class='line'>}
-</span><span class='line'>return 0;}</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>query.cpp</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> #include&lt;xapian.h&gt;
-</span><span class='line'> #include&lt;iostream&gt;
-</span><span class='line'> #include&lt;string&gt;
-</span><span class='line'>using namespace std;
-</span><span class='line'> #define QUERY "~ILU AND Chinese"
-</span><span class='line'> #define INDEX_PATH "./index_data"
-</span><span class='line'> #define F_DOCID 1
-</span><span class='line'>int main(){
-</span><span class='line'>  
-</span><span class='line'>try{
-</span><span class='line'>  //The string for query
-</span><span class='line'>  string query_str(QUERY);
-</span><span class='line'>  //open the database
-</span><span class='line'>  Xapian::Database db(string(INDEX_PATH));
-</span><span class='line'>  
-</span><span class='line'>  //open search handle
-</span><span class='line'>  Xapian::Enquire enquire(db);
-</span><span class='line'>
-</span><span class='line'>  //Parser Query
-</span><span class='line'>  Xapian::QueryParser qp;
-</span><span class='line'>  qp.set_database(db);
-</span><span class='line'>  Xapian::Query query = qp.parse_query(query_str, Xapian::QueryParser::FLAG_SYNONYM);
-</span><span class='line'>  cout&lt;&lt;"Query is "&lt;&lt;query.get_description()&lt;&lt;endl;
-</span><span class='line'>
-</span><span class='line'>  //find the top 10 result
-</span><span class='line'>  enquire.set_query(query);
-</span><span class='line'>  Xapian::MSet result = enquire.get_mset(0,10);
-</span><span class='line'>  cout&lt;&lt;result.get_matches_estimated()&lt;&lt;" result found"&lt;&lt;endl;
-</span><span class='line'>
-</span><span class='line'>  //print the result
-</span><span class='line'>  for(Xapian::MSetIterator iter = result.begin(); iter != result.end(); iter++){
-</span><span class='line'>      Xapian::Document doc = iter.get_document();
-</span><span class='line'>      cout&lt;&lt;iter.get_rank()&lt;&lt;": docid "&lt;&lt;doc.get_value(F_DOCID)&lt;&lt;", data"&lt;&lt;doc.get_data()&lt;&lt;endl;
-</span><span class='line'>  }
-</span><span class='line'>
-</span><span class='line'>}catch(const Xapian::Error e){
-</span><span class='line'>  cout&lt;&lt;e.get_description()&lt;&lt;endl;
-</span><span class='line'>}
-</span><span class='line'>return 0;
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>
