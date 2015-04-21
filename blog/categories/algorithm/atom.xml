@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-21T00:18:39-04:00</updated>
+  <updated>2015-04-21T02:22:00-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -20,10 +20,101 @@
     <id>http://pbking1.github.com/blog/2015/04/20/c-plus-plus-basic-data-structure</id>
     <content type="html"><![CDATA[<h3>basic data structure and algorithm</h3>
 
+<h4>little review about c++ pop</h4>
+
 <ul>
-<li></li>
+<li>虚函数
+
+<ul>
+<li>核心理念就是基类访问派生类定义的函数</li>
+<li>动态联编</li>
+<li>一个函数的调用不是在编译的时候确定的，而是在运行的时候确定的，并且因为写代码的时候不能确定被调用的函数是基类的函数还是派生类的函数，所以这个函数又叫做“虚函数“</li>
+<li><code>
+class A{
+  public:
+      virtual void test(){
+          cout&lt;&lt;"A:test() is called";
+      }        
+};
+class B: public A{
+  public:
+      virtual void test(){
+          cout&lt;&lt;"B:test() is called";
+      }
+};
+int main(){
+  A *a = new B();
+  a -&gt; test();
+}
+</code></li>
+</ul>
+</li>
 </ul>
 
+
+<!--more-->
+
+
+<ul>
+<li><p>虚函数表</p>
+
+<ul>
+<li>实现多态的主要功能</li>
+<li>编译器会为每一个有虚函数的类的实例创建一个虚函数表</li>
+<li>用来存虚函数的table
+
+<ul>
+<li>table的每个slot（槽）里面存放虚函数的地址</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>纯虚函数</p>
+
+<ul>
+<li><code>virtual void test() = 0</code></li>
+<li>意思是抽象类，也可以说是接口，用来规范派生类的行为
+
+<ul>
+<li>告诉使用者我的派生类都会有这个函数</li>
+</ul>
+</li>
+<li>虚构析函数
+
+<ul>
+<li>当一个类要被其他的类当基类使用的时候，必须是纯虚的</li>
+<li>如果有两个class A和B
+
+<ul>
+<li>B继承A，但是A的构析函数没有设置成虚函数</li>
+<li>那么在delete B的实例的时候，只有A的实例被delete， B的不会被delete。。。那这不是坑爹吗。。。。</li>
+<li>但是再A的构析函数前面加上virtual，这样就能保证在delete B的实例的时候，两个类的构析函数都会被调用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>但是构造函数不能使虚函数</p></li>
+</ul>
+
+
+<h4>链表</h4>
+
+<ul>
+<li></li>
+<li>数组实现链表ADT</li>
+<li>```</li>
+</ul>
+
+
+<p>```</p>
+
+<h4>栈</h4>
+
+<h4>队列</h4>
+
+<h4>字典</h4>
 ]]></content>
   </entry>
   
