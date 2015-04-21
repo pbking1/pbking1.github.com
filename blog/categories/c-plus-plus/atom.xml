@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-21T02:33:37-04:00</updated>
+  <updated>2015-04-21T15:50:18-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -225,13 +225,112 @@ int main(){
 <h4>链表</h4>
 
 <ul>
-<li></li>
-<li>数组实现链表ADT</li>
-<li>```</li>
+<li>链表ADT
+
+<ul>
+<li><code>
+template &lt;typename E&gt; class List{
+private:
+  void operator = (const List &amp;){}
+  List(const List&amp;){}
+public:
+  List(){}
+  virtual ~List(){}
+  virtual void clear() = 0;
+  virtual void insert(const E&amp; item) = 0;
+  virtual void append(const E&amp; item) = 0;
+  virtual E remove() = 0;
+  //move the pointer to start
+  virtual void moveToStart() = 0;
+  //move the pointer to end
+  virtual void moveToEnd() = 0;
+  virtual void prev() = 0;
+  virtual void next() = 0;
+  virtual int length() const = 0;
+  virtual int currPos() const = 0;
+  virtual void moveToPos(int pos) = 0;
+  virtual const E&amp; getValue() const = 0;
+};
+</code></li>
+</ul>
+</li>
+<li>数组实现
+
+<ul>
+<li><code>
+template &lt;typename E&gt; class AList: public List&lt;E&gt;{
+private:
+  int maxSize;
+  int listSize;
+  int curr;
+  E* listArray;   
+public:
+  AList(int size = 100){
+      maxSize = size;
+      listSize = 0;
+      curr = 0;
+      listArray = new E[maxSize];
+  }
+  ~AList(){
+      delete []listArray;
+  }
+  void clear(){
+      delete []listArray;
+      listSize = 0;
+      curr = 0;
+      listArray = new E[maxSize];
+  }
+  void insert(const E&amp; it){
+      for(int i = listSize; i &gt; curr; i--)
+          listArray[i] = listArray[i-1];
+      //move back the array from the current position
+      listArray[curr] = it;
+      listSize++;
+  }
+  void append(const E&amp; it){
+      listArray[listSize++] = it;
+  }
+  E remove(){
+      E it = listArray[curr];
+      for(int i = curr; i &lt; listSize - 1; i++){
+          listArray[i] = listArray[i + 1];
+      }
+      listSize--;
+      return it;
+  }
+  void moveToStart(){
+      curr = 0;
+  }
+  void moveToEnd(){
+      curr = listSize;
+  }
+  void prev(){
+      if(curr &gt; 0)
+          curr--;
+  }
+  void next(){
+      if(curr &lt; listSize)
+          curr++;
+  }
+  int length(){
+      return listSize;
+  }
+  int currPos() const{
+      return curr;
+  }
+  void moveToPos(int pos){
+      pos = curr;
+  }
+  const E&amp; getValue() const{
+      return listArray[curr];
+  }
+};
+</code></li>
+</ul>
+</li>
+<li>链式实现</li>
 </ul>
 
-
-<p>```</p>
 
 <h4>栈</h4>
 
