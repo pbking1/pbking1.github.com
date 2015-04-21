@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-21T02:23:36-04:00</updated>
+  <updated>2015-04-21T02:25:04-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -41,6 +41,8 @@ int main(){
 </ul>
 
 
+<hr />
+
 <h4>strlen</h4>
 
 <ul>
@@ -62,6 +64,8 @@ int main(){
 </code></li>
 </ul>
 
+
+<hr />
 
 <h4>strcat</h4>
 
@@ -88,6 +92,8 @@ int main(){
 ```</p></li>
 </ul>
 
+
+<hr />
 
 <h4>strcmp</h4>
 
