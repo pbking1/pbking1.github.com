@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-21T02:22:00-04:00</updated>
+  <updated>2015-04-21T02:23:03-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -57,7 +57,9 @@ int main(){
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!--more--&gt;
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>&lt;!--more--&gt;
 </span><span class='line'>####strlen
 </span><span class='line'>- 一直累加直到判断是否遇到'\0'来结束计数
 </span><span class='line'>- ```
