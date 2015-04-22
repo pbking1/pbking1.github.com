@@ -169,32 +169,81 @@ $(document).ready(
 
 <h4>指针控制循环</h4>
 
-<ul>
-<li>&#8220;`
-void part2(){
-  //用指针来控制循环条件
-  //针对数组
-  int array[20];
-  int <em>p = array;
-  int i;
-  for(int j = 0; j &lt; 20; j++)
-      array[j] = j;
-  cout&lt;&lt;endl;
-  for(i = 0; i &lt; 20; i++){
-      cout&lt;&lt;p&lt;&lt;&ldquo; &rdquo;&lt;&lt;(</em>p)&lt;&lt;&ldquo; &rdquo;;
-      p++; //指针加一
-      (<em>p)++; //指针指向内容加一
-  }
-  cout&lt;&lt;endl;
-  //针对字符串
-  char </em>str = &ldquo;abc&rdquo;;
-  while(<em>p){
-      cout&lt;&lt;</em>p&lt;&lt;&ldquo; &rdquo;;
-      p++;
-  }
-}</li>
-</ul>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>void part2(){
+</span><span class='line'>  //用指针来控制循环条件
+</span><span class='line'>  //针对数组
+</span><span class='line'>  int array[20];
+</span><span class='line'>  int *p = array;
+</span><span class='line'>  int i;
+</span><span class='line'>  for(int j = 0; j &lt; 20; j++)
+</span><span class='line'>      array[j] = j;
+</span><span class='line'>  cout&lt;&lt;endl;
+</span><span class='line'>  for(i = 0; i &lt; 20; i++){
+</span><span class='line'>      cout&lt;&lt;p&lt;&lt;" "&lt;&lt;(*p)&lt;&lt;" ";
+</span><span class='line'>      p++; //指针加一
+</span><span class='line'>      (*p)++; //指针指向内容加一
+</span><span class='line'>  }
+</span><span class='line'>  cout&lt;&lt;endl;
+</span><span class='line'>  //针对字符串
+</span><span class='line'>  char *str = "abc";
+</span><span class='line'>  while(*p){
+</span><span class='line'>      cout&lt;&lt;*p&lt;&lt;" ";
+</span><span class='line'>      p++;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
+
+<h4>引用</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>void part3(){
+</span><span class='line'>  //引用
+</span><span class='line'>  int a = 20;
+</span><span class='line'>  int b = 10;
+</span><span class='line'>  int &p = a;
+</span><span class='line'>  //p引用a,所以p是a的另外一个名字
+</span><span class='line'>  cout&lt;&lt;p&lt;&lt;endl;
+</span><span class='line'>  //p的值改变了
+</span><span class='line'>  p = b;
+</span><span class='line'>  //a的值也会改变
+</span><span class='line'>  cout&lt;&lt;a&lt;&lt;endl;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>传参</h4>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -211,62 +260,39 @@ void part2(){
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>####引用
-</span><span class='line'>- ```
-</span><span class='line'>void part3(){
-</span><span class='line'>  //引用
-</span><span class='line'>  int a = 20;
-</span><span class='line'>  int b = 10;
-</span><span class='line'>  int &p = a;
-</span><span class='line'>  //p引用a,所以p是a的另外一个名字
-</span><span class='line'>  cout&lt;&lt;p&lt;&lt;endl;
-</span><span class='line'>  //p的值改变了
-</span><span class='line'>  p = b;
-</span><span class='line'>  //a的值也会改变
-</span><span class='line'>  cout&lt;&lt;a&lt;&lt;endl;
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>void swap1(int x, int y){
+</span><span class='line'>  cout&lt;&lt;"in function before swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+</span><span class='line'>  int temp = x;
+</span><span class='line'>  x = y;
+</span><span class='line'>  y = temp;
+</span><span class='line'>  cout&lt;&lt;"in fuction after swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+</span><span class='line'>}
+</span><span class='line'>void swap2(int *a, int *b){
+</span><span class='line'>  //temp用来存a得值
+</span><span class='line'>  //所以其实这里是在交换值
+</span><span class='line'>  int temp = *a;
+</span><span class='line'>  *a = *b;
+</span><span class='line'>  *b = temp;
+</span><span class='line'>}
+</span><span class='line'>void swap3(int &a, int &b){
+</span><span class='line'>  //因为这里是传引用，所以任何的改变都会改变
+</span><span class='line'>  int temp = a;
+</span><span class='line'>  a = b;
+</span><span class='line'>  b = temp;
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>传参</h4>
-
-<ul>
-<li><code>
-void swap1(int x, int y){
-  cout&lt;&lt;"in function before swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
-  int temp = x;
-  x = y;
-  y = temp;
-  cout&lt;&lt;"in fuction after swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
-}
-void swap2(int *a, int *b){
-  //temp用来存a得值
-  //所以其实这里是在交换值
-  int temp = *a;
-  *a = *b;
-  *b = temp;
-}
-void swap3(int &amp;a, int &amp;b){
-  //因为这里是传引用，所以任何的改变都会改变
-  int temp = a;
-  a = b;
-  b = temp;
-}
-</code></li>
-</ul>
 
 
 <h4>注意事项</h4>
 
 <ul>
 <li>在可以使用引用的情况下，不要用指针</li>
-<li>引用不能为空，当对象为NULL时，必须使用指针
-
-<ul>
+<li>引用不能为空，当对象为NULL时，必须使用指针</li>
 <li>引用不允许重新赋值，当使用一个变量指向不同的对象的时候，必须使用指针</li>
-</ul>
-</li>
-<li></li>
 </ul>
 
 </div>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T17:24:24-04:00</updated>
+  <updated>2015-04-22T17:25:50-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -79,93 +79,94 @@ cout&lt;&lt;&amp;ptmp;
 
 <h4>指针控制循环</h4>
 
-<ul>
-<li><code>
-void part2(){
-  //用指针来控制循环条件
-  //针对数组
-  int array[20];
-  int *p = array;
-  int i;
-  for(int j = 0; j &lt; 20; j++)
-      array[j] = j;
-  cout&lt;&lt;endl;
-  for(i = 0; i &lt; 20; i++){
-      cout&lt;&lt;p&lt;&lt;" "&lt;&lt;(*p)&lt;&lt;" ";
-      p++; //指针加一
-      (*p)++; //指针指向内容加一
-  }
-  cout&lt;&lt;endl;
-  //针对字符串
-  char *str = "abc";
-  while(*p){
-      cout&lt;&lt;*p&lt;&lt;" ";
-      p++;
-  }
-}
-</code></li>
-</ul>
+<p>```
+void part2(){</p>
 
+<pre><code>//用指针来控制循环条件
+//针对数组
+int array[20];
+int *p = array;
+int i;
+for(int j = 0; j &lt; 20; j++)
+    array[j] = j;
+cout&lt;&lt;endl;
+for(i = 0; i &lt; 20; i++){
+    cout&lt;&lt;p&lt;&lt;" "&lt;&lt;(*p)&lt;&lt;" ";
+    p++; //指针加一
+    (*p)++; //指针指向内容加一
+}
+cout&lt;&lt;endl;
+//针对字符串
+char *str = "abc";
+while(*p){
+    cout&lt;&lt;*p&lt;&lt;" ";
+    p++;
+}
+</code></pre>
+
+<p>}
+```</p>
 
 <h4>引用</h4>
 
-<ul>
-<li><code>
-void part3(){
-  //引用
-  int a = 20;
-  int b = 10;
-  int &amp;p = a;
-  //p引用a,所以p是a的另外一个名字
-  cout&lt;&lt;p&lt;&lt;endl;
-  //p的值改变了
-  p = b;
-  //a的值也会改变
-  cout&lt;&lt;a&lt;&lt;endl;
-}
-</code></li>
-</ul>
+<p>```
+void part3(){</p>
 
+<pre><code>//引用
+int a = 20;
+int b = 10;
+int &amp;p = a;
+//p引用a,所以p是a的另外一个名字
+cout&lt;&lt;p&lt;&lt;endl;
+//p的值改变了
+p = b;
+//a的值也会改变
+cout&lt;&lt;a&lt;&lt;endl;
+</code></pre>
+
+<p>}
+```</p>
 
 <h4>传参</h4>
 
-<ul>
-<li><code>
-void swap1(int x, int y){
-  cout&lt;&lt;"in function before swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
-  int temp = x;
-  x = y;
-  y = temp;
-  cout&lt;&lt;"in fuction after swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
-}
-void swap2(int *a, int *b){
-  //temp用来存a得值
-  //所以其实这里是在交换值
-  int temp = *a;
-  *a = *b;
-  *b = temp;
-}
-void swap3(int &amp;a, int &amp;b){
-  //因为这里是传引用，所以任何的改变都会改变
-  int temp = a;
-  a = b;
-  b = temp;
-}
-</code></li>
-</ul>
+<p>```
+void swap1(int x, int y){</p>
 
+<pre><code>cout&lt;&lt;"in function before swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+int temp = x;
+x = y;
+y = temp;
+cout&lt;&lt;"in fuction after swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+</code></pre>
+
+<p>}
+void swap2(int <em>a, int </em>b){</p>
+
+<pre><code>//temp用来存a得值
+//所以其实这里是在交换值
+int temp = *a;
+*a = *b;
+*b = temp;
+</code></pre>
+
+<p>}
+void swap3(int &amp;a, int &amp;b){</p>
+
+<pre><code>//因为这里是传引用，所以任何的改变都会改变
+int temp = a;
+a = b;
+b = temp;
+</code></pre>
+
+<p>}
+```</p>
 
 <h4>注意事项</h4>
 
 <ul>
 <li>在可以使用引用的情况下，不要用指针</li>
-<li>引用不能为空，当对象为NULL时，必须使用指针
-
-<ul>
+<li>引用不能为空，当对象为NULL时，必须使用指针</li>
 <li>引用不允许重新赋值，当使用一个变量指向不同的对象的时候，必须使用指针</li>
-</ul>
-</li>
-<li></li>
 </ul>
 
 ]]></content>
@@ -789,7 +790,7 @@ int main(){
 <li>遍历
 
 <ul>
-<li>前序遍历
+<li><p>前序遍历
 <code>
   void preorder(Node *root){
       if(root == NULL){
@@ -799,8 +800,8 @@ int main(){
       preorder(root -&gt; left);
       preorder(root -&gt; right);
   }
-</code></li>
-<li>中序遍历
+</code></p></li>
+<li><p>中序遍历
 <code>
   void inorder(Node *root){
       if(root == NULL){
@@ -810,8 +811,8 @@ int main(){
       cout&lt;&lt;root -&gt; value;
       inorder(root -&gt; right);
   }
-</code></li>
-<li>后序遍历
+</code></p></li>
+<li><p>后序遍历
 <code>
   void postorder(Node *root){
       if(root == NULL){
@@ -821,7 +822,7 @@ int main(){
       postorder)root -&gt; right);
       cout&lt;&lt;root -&gt; value;
   }
-</code></li>
+</code></p></li>
 </ul>
 </li>
 </ul>

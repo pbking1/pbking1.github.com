@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T17:24:24-04:00</updated>
+  <updated>2015-04-22T17:25:50-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -508,7 +508,7 @@ int main(){
 <li>遍历
 
 <ul>
-<li>前序遍历
+<li><p>前序遍历
 <code>
   void preorder(Node *root){
       if(root == NULL){
@@ -518,8 +518,8 @@ int main(){
       preorder(root -&gt; left);
       preorder(root -&gt; right);
   }
-</code></li>
-<li>中序遍历
+</code></p></li>
+<li><p>中序遍历
 <code>
   void inorder(Node *root){
       if(root == NULL){
@@ -529,8 +529,8 @@ int main(){
       cout&lt;&lt;root -&gt; value;
       inorder(root -&gt; right);
   }
-</code></li>
-<li>后序遍历
+</code></p></li>
+<li><p>后序遍历
 <code>
   void postorder(Node *root){
       if(root == NULL){
@@ -540,7 +540,7 @@ int main(){
       postorder)root -&gt; right);
       cout&lt;&lt;root -&gt; value;
   }
-</code></li>
+</code></p></li>
 </ul>
 </li>
 </ul>
