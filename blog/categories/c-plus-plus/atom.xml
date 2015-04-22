@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T01:05:40-04:00</updated>
+  <updated>2015-04-22T01:07:44-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -222,10 +222,12 @@ int main(){
 </ul>
 
 
+<hr />
+
 <h4>链表</h4>
 
 <ul>
-<li><p>链表ADT
+<li>链表ADT
 <code>
 template &lt;typename E&gt; class List{
   private:
@@ -249,8 +251,14 @@ template &lt;typename E&gt; class List{
       virtual void moveToPos(int pos) = 0;
       virtual const E&amp; getValue() const = 0;
 };
-</code></p></li>
-<li><p>数组实现
+</code></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>数组实现
 <code>
   template &lt;typename E&gt; class AList: public List&lt;E&gt;{
   private:
@@ -324,8 +332,14 @@ template &lt;typename E&gt; class List{
           return listArray[curr];
       }
   };
- </code></p></li>
-<li><p>链式实现
+</code></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>链式实现
 <code>
   template &lt;typename E&gt; class Link{
   public:
@@ -441,9 +455,11 @@ template &lt;typename E&gt; class LList: public List&lt;E&gt;{
           return curr -&gt; next -&gt; element;
       }
   };
-</code></p></li>
+</code></li>
 </ul>
 
+
+<hr />
 
 <h4>栈</h4>
 
@@ -489,6 +505,8 @@ int main(){
 </code></li>
 </ul>
 
+
+<hr />
 
 <h4>队列</h4>
 
