@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T17:25:50-04:00</updated>
+  <updated>2015-04-22T17:27:12-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -325,6 +325,9 @@
 </span><span class='line'>  cout&lt;&lt;result;
 </span><span class='line'>  return 0;
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<!--more-->
 
 
 <hr />
