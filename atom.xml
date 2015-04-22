@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T01:02:51-04:00</updated>
+  <updated>2015-04-22T01:03:33-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -206,7 +206,7 @@
     <id>http://pbking1.github.com/blog/2015/04/20/c-plus-plus-basic-data-structure</id>
     <content type="html"><![CDATA[<h3>basic data structure and algorithm</h3>
 
-<h4>little review about c++ pop</h4>
+<h4>little review about c++ object oriented</h4>
 
 <ul>
 <li>虚函数
