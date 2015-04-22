@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T17:23:11-04:00</updated>
+  <updated>2015-04-22T17:24:24-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -50,29 +50,32 @@
 </ul>
 
 
+<!--more-->
+
+
 <h4>指针</h4>
 
-<ul>
-<li><code>
-void part1(){
-  //basic
-  //p指向变量，对p的重新复制就会改变p所指向的变量的值。
-  //同样对p指向的变量重新复制也会改变*p的值
-  int ptmp = 50;
-  int *p;
-  p = &amp;ptmp;
-  cout&lt;&lt;p&lt;&lt;endl;
-  //p存放的是ptmp变量所在的地址值
-  cout&lt;&lt;*p&lt;&lt;endl;
-  //50，是指储存在指针的内存地址中的值，也就是ptmp的值
-  cout&lt;&lt;&amp;p&lt;&lt;endl;
-  //p指针本身的地址值
-  cout&lt;&lt;&amp;ptmp;
-  //ptmp变量所在的地址值
-}
-</code></li>
-</ul>
+<p>```
+void part1(){</p>
 
+<pre><code>//basic
+//p指向变量，对p的重新复制就会改变p所指向的变量的值。
+//同样对p指向的变量重新复制也会改变*p的值
+int ptmp = 50;
+int *p;
+p = &amp;ptmp;
+cout&lt;&lt;p&lt;&lt;endl;
+//p存放的是ptmp变量所在的地址值 
+cout&lt;&lt;*p&lt;&lt;endl;
+//50，是指储存在指针的内存地址中的值，也就是ptmp的值
+cout&lt;&lt;&amp;p&lt;&lt;endl; 
+//p指针本身的地址值
+cout&lt;&lt;&amp;ptmp; 
+//ptmp变量所在的地址值
+</code></pre>
+
+<p>}
+```</p>
 
 <h4>指针控制循环</h4>
 
