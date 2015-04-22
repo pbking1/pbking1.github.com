@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T01:04:34-04:00</updated>
+  <updated>2015-04-22T01:05:40-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -102,8 +102,8 @@ int main(){
 <h4>链表</h4>
 
 <ul>
-<li>链表ADT</li>
-<li><p><code>
+<li><p>链表ADT
+<code>
 template &lt;typename E&gt; class List{
   private:
       void operator = (const List &amp;){}
@@ -127,8 +127,8 @@ template &lt;typename E&gt; class List{
       virtual const E&amp; getValue() const = 0;
 };
 </code></p></li>
-<li><p>数组实现</p></li>
-<li><p><code>
+<li><p>数组实现
+<code>
   template &lt;typename E&gt; class AList: public List&lt;E&gt;{
   private:
       int maxSize;
@@ -202,8 +202,8 @@ template &lt;typename E&gt; class List{
       }
   };
  </code></p></li>
-<li><p>链式实现</p></li>
-<li><code>
+<li><p>链式实现
+<code>
   template &lt;typename E&gt; class Link{
   public:
       E element;
@@ -318,15 +318,15 @@ template &lt;typename E&gt; class LList: public List&lt;E&gt;{
           return curr -&gt; next -&gt; element;
       }
   };
-</code></li>
+</code></p></li>
 </ul>
 
 
 <h4>栈</h4>
 
 <ul>
-<li>数组实现</li>
-<li><code>
+<li>数组实现
+<code>
 class Astack{
   private:
       int maxSize;
@@ -370,8 +370,8 @@ int main(){
 <h4>队列</h4>
 
 <ul>
-<li>数组实现</li>
-<li><code>
+<li>数组实现
+<code>
 class Aqueue{
   private:
       int front;
@@ -420,50 +420,38 @@ int main(){
 
 <ul>
 <li>前序遍历
-
-<ul>
-<li><code>
-void preorder(Node *root){
-  if(root == NULL){
-      return ;
+  <code>
+  void preorder(Node *root){
+      if(root == NULL){
+          return ;
+      }
+      cout&lt;&lt;root-&gt;value;
+      preorder(root -&gt; left);
+      preorder(root -&gt; right);
   }
-  cout&lt;&lt;root-&gt;value;
-  preorder(root -&gt; left);
-  preorder(root -&gt; right);
-}
-</code></li>
-</ul>
-</li>
+ </code></li>
 <li>中序遍历
-
-<ul>
-<li><code>
-void inorder(Node *root){
-  if(root == NULL){
-      return ;
+  <code>
+  void inorder(Node *root){
+      if(root == NULL){
+          return ;
+      }
+      inorder(root -&gt; left);
+      cout&lt;&lt;root -&gt; value;
+      inorder(root -&gt; right);
   }
-  inorder(root -&gt; left);
-  cout&lt;&lt;root -&gt; value;
-  inorder(root -&gt; right);
-}
-</code></li>
-</ul>
-</li>
+ </code></li>
 <li>后序遍历
-
-<ul>
-<li><code>
-void postorder(Node *root){
-  if(root == NULL){
-      return ;
+  <code>
+  void postorder(Node *root){
+      if(root == NULL){
+          return ;
+      }
+      postorder(root -&gt; left);
+      postorder)root -&gt; right);
+      cout&lt;&lt;root -&gt; value;
   }
-  postorder(root -&gt; left);
-  postorder)root -&gt; right);
-  cout&lt;&lt;root -&gt; value;
-}
-</code></li>
-</ul>
-</li>
+ </code></li>
 </ul>
 </li>
 </ul>
