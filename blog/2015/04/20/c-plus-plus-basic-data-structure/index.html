@@ -109,6 +109,23 @@ $(document).ready(
 <li>一个函数的调用不是在编译的时候确定的，而是在运行的时候确定的，并且因为写代码的时候不能确定被调用的函数是基类的函数还是派生类的函数，所以这个函数又叫做“虚函数“</li>
 </ul>
 </li>
+<li>&#8220;`
+  class A{
+      public:
+          virtual void test(){
+              cout&lt;&lt;&ldquo;A:test() is called&rdquo;;
+          }      <br/>
+  };
+  class B: public A{
+      public:
+          virtual void test(){
+              cout&lt;&lt;&ldquo;B:test() is called&rdquo;;
+          }
+  };
+  int main(){
+      A *a = new B();
+      a &ndash;> test();
+  }</li>
 </ul>
 
 
@@ -158,41 +175,7 @@ $(document).ready(
 <span class='line-number'>44</span>
 <span class='line-number'>45</span>
 <span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>class A{
-</span><span class='line'>    public:
-</span><span class='line'>        virtual void test(){
-</span><span class='line'>            cout&lt;&lt;"A:test() is called";
-</span><span class='line'>        }        
-</span><span class='line'>};
-</span><span class='line'>class B: public A{
-</span><span class='line'>    public:
-</span><span class='line'>        virtual void test(){
-</span><span class='line'>            cout&lt;&lt;"B:test() is called";
-</span><span class='line'>        }
-</span><span class='line'>};
-</span><span class='line'>int main(){
-</span><span class='line'>    A *a = new B();
-</span><span class='line'>    a -&gt; test();
-</span><span class='line'>}
-</span><span class='line'>```
-</span><span class='line'>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
 </span><span class='line'>&lt;!--more--&gt;
 </span><span class='line'>- 虚函数表
 </span><span class='line'>- 实现多态的主要功能
