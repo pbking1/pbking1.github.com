@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T01:08:50-04:00</updated>
+  <updated>2015-04-22T17:22:11-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,225 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[c++ reference and pointer]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-reference-and-pointer/"/>
+    <updated>2015-04-22T12:15:07-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-reference-and-pointer</id>
+    <content type="html"><![CDATA[<h3>what is pointer</h3>
+
+<ul>
+<li>形参
+
+<ul>
+<li>formal parameter</li>
+<li>定义时函数里面的变量
+
+<ul>
+<li>e.g int swao(int a, int b)</li>
+<li>a和b就是形参</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实参
+
+<ul>
+<li>actual parameter</li>
+<li>在主函数里面引用的
+
+<ul>
+<li>e.g swap(x,y)</li>
+<li>x和y就是实参，实际的值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>指针</h4>
+
+<ul>
+<li><code>
+void part1(){
+  //basic
+  //p指向变量，对p的重新复制就会改变p所指向的变量的值。
+  //同样对p指向的变量重新复制也会改变*p的值
+  int ptmp = 50;
+  int *p;
+  p = &amp;ptmp;
+  cout&lt;&lt;p&lt;&lt;endl;
+  //p存放的是ptmp变量所在的地址值
+  cout&lt;&lt;*p&lt;&lt;endl;
+  //50，是指储存在指针的内存地址中的值，也就是ptmp的值
+  cout&lt;&lt;&amp;p&lt;&lt;endl;
+  //p指针本身的地址值
+  cout&lt;&lt;&amp;ptmp;
+  //ptmp变量所在的地址值
+}
+</code></li>
+</ul>
+
+
+<h4>指针控制循环</h4>
+
+<ul>
+<li><code>
+void part2(){
+  //用指针来控制循环条件
+  //针对数组
+  int array[20];
+  int *p = array;
+  int i;
+  for(int j = 0; j &lt; 20; j++)
+      array[j] = j;
+  cout&lt;&lt;endl;
+  for(i = 0; i &lt; 20; i++){
+      cout&lt;&lt;p&lt;&lt;" "&lt;&lt;(*p)&lt;&lt;" ";
+      p++; //指针加一
+      (*p)++; //指针指向内容加一
+  }
+  cout&lt;&lt;endl;
+  //针对字符串
+  char *str = "abc";
+  while(*p){
+      cout&lt;&lt;*p&lt;&lt;" ";
+      p++;
+  }
+}
+</code></li>
+</ul>
+
+
+<h4>引用</h4>
+
+<ul>
+<li><code>
+void part3(){
+  //引用
+  int a = 20;
+  int b = 10;
+  int &amp;p = a;
+  //p引用a,所以p是a的另外一个名字
+  cout&lt;&lt;p&lt;&lt;endl;
+  //p的值改变了
+  p = b;
+  //a的值也会改变
+  cout&lt;&lt;a&lt;&lt;endl;
+}
+</code></li>
+</ul>
+
+
+<h4>传参</h4>
+
+<ul>
+<li><code>
+void swap1(int x, int y){
+  cout&lt;&lt;"in function before swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+  int temp = x;
+  x = y;
+  y = temp;
+  cout&lt;&lt;"in fuction after swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+}
+void swap2(int *a, int *b){
+  //temp用来存a得值
+  //所以其实这里是在交换值
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+}
+void swap3(int &amp;a, int &amp;b){
+  //因为这里是传引用，所以任何的改变都会改变
+  int temp = a;
+  a = b;
+  b = temp;
+}
+</code></li>
+</ul>
+
+
+<h4>注意事项</h4>
+
+<ul>
+<li>在可以使用引用的情况下，不要用指针</li>
+<li>引用不能为空，当对象为NULL时，必须使用指针
+
+<ul>
+<li>引用不允许重新赋值，当使用一个变量指向不同的对象的时候，必须使用指针</li>
+</ul>
+</li>
+<li></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[c++ basic data structure part3]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part3/"/>
+    <updated>2015-04-22T01:27:20-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part3</id>
+    <content type="html"><![CDATA[<h3>basic data structure and algorithm part2</h3>
+
+<h3>图论</h3>
+
+<h4>图的实现</h4>
+
+<h4>图搜索</h4>
+
+<h5>广度优先搜索</h5>
+
+<h5>宽度优先搜索</h5>
+
+<h5>拓扑排序和搜索</h5>
+
+<h4>最短路径</h4>
+
+<ul>
+<li>单源最短路</li>
+</ul>
+
+
+<h4>最小生成树</h4>
+
+<ul>
+<li>Prim</li>
+<li>Kruskal</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[c++ basic data structure part2]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part2/"/>
+    <updated>2015-04-22T01:22:30-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part2</id>
+    <content type="html"><![CDATA[<h3>basic data structure and algorithm part2</h3>
+
+<h4>树</h4>
+
+<h4>内排序</h4>
+
+<ul>
+<li><p>冒泡排序</p></li>
+<li><p>插入排序</p></li>
+<li><p>选择排序</p></li>
+<li><p>快速排序</p></li>
+<li><p>归并排序</p></li>
+</ul>
+
+
+<h3>外排序</h3>
+
+<h4>哈希表</h4>
+
+<h4>索引</h4>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[string processing function implementation]]></title>
@@ -183,11 +402,18 @@ int main(){
 
 <ul>
 <li>实现多态的主要功能</li>
-<li>编译器会为每一个有虚函数的类的实例创建一个虚函数表</li>
+<li><strong>编译器</strong>会为每一个有虚函数的类的实例创建一个虚函数表</li>
 <li>用来存虚函数的table
 
 <ul>
 <li>table的每个slot（槽）里面存放虚函数的地址</li>
+</ul>
+</li>
+<li>但是我们可以用函数指针来看虚函数表的地址
+
+<ul>
+<li>并且虚函数表在继承中，如果派生类没有重写基类的某个函数，他就会在基类中查那个函数，然后引用的时候就会引用基类的</li>
+<li>并且如果子类如果增加了函数，就会在基类的虚函数表中增加</li>
 </ul>
 </li>
 </ul>
@@ -593,461 +819,6 @@ int main(){
       cout&lt;&lt;root -&gt; value;
   }
 </code></li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[c++ program run time]]></title>
-    <link href="http://pbking1.github.com/blog/2015/04/20/c-plus-plus-program-run-time/"/>
-    <updated>2015-04-20T20:52:22-04:00</updated>
-    <id>http://pbking1.github.com/blog/2015/04/20/c-plus-plus-program-run-time</id>
-    <content type="html"><![CDATA[<h4>时间复杂度</h4>
-
-<ul>
-<li>costs for growth rate representative of most computer algorithm
-
-<ul>
-<li><table>
-<thead>
-<tr>
-<th>n</th>
-<th>loglogn</th>
-<th>logn</th>
-<th>n</th>
-<th>nlogn</th>
-<th>n<sup>2</sup></th>
-<th>n<sup>3</sup></th>
-<th>2<sup>n</sup></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>16</td>
-<td>2</td>
-<td>4</td>
-<td>2<sup>4</sup></td>
-<td>2*2<sup>4</sup>=2<sup>5</sup></td>
-<td>2<sup>8</sup></td>
-<td>2<sup>12</sup></td>
-<td>2<sup>16</sup></td>
-</tr>
-<tr>
-<td>256</td>
-<td>3</td>
-<td>8</td>
-<td>2<sup>8</sup></td>
-<td>8*2<sup>8</sup>=2<sup>11</sup></td>
-<td>2<sup>16</sup></td>
-<td>2<sup>24</sup></td>
-<td>2<sup>256</sup></td>
-</tr>
-<tr>
-<td>1024</td>
-<td>3.3</td>
-<td>10</td>
-<td>2<sup>10</sup></td>
-<td>10*2<sup>10</sup>=2<sup>13</sup></td>
-<td>2<sup>20</sup></td>
-<td>2<sup>30</sup></td>
-<td>2<sup>1024</sup></td>
-</tr>
-<tr>
-<td>64K</td>
-<td>4</td>
-<td>16</td>
-<td>2<sup>16</sup></td>
-<td>16*2<sup>16</sup>=2<sup>20</sup></td>
-<td>2<sup>32</sup></td>
-<td>2<sup>48</sup></td>
-<td>2<sup>64K</sup></td>
-</tr>
-<tr>
-<td>1M</td>
-<td>4.3</td>
-<td>20</td>
-<td>2<sup>20</sup></td>
-<td>20*2<sup>20</sup>=2<sup>24</sup></td>
-<td>2<sup>40</sup></td>
-<td>2<sup>60</sup></td>
-<td>2<sup>1M</sup></td>
-</tr>
-<tr>
-<td>1G</td>
-<td>4.9</td>
-<td>30</td>
-<td>2<sup>30</sup></td>
-<td>30*2<sup>30</sup>=2<sup>35</sup></td>
-<td>2<sup>60</sup></td>
-<td>2<sup>90</sup></td>
-<td>2<sup>1G</sup></td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li>最差，最好，平均
-
-<ul>
-<li>例如顺序搜索
-
-<ul>
-<li>如果在第一个就搜到，那么就是最佳的case</li>
-<li>如果搜到最后一个才搜到，那就是最差的case</li>
-<li>（最佳+最差）/2为平均</li>
-</ul>
-</li>
-<li>一般都是用平均的</li>
-</ul>
-</li>
-<li>上界
-
-<ul>
-<li>大O表示
-
-<ul>
-<li>对一个非负的函数T(n)，T(n)是O(f(n))的当且仅当存在两个非负的c和k，使得T(n)&lt;=cf(n) 对所有n > k;
-
-<ul>
-<li>其中k为n的最小值</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>大omega
-
-<ul>
-<li>对一个非负的函数T(n)，T(n)是omega(g(n))当且存在两个非负的c和k，使得T(n)>=cg(n) 对所有n > k;</li>
-</ul>
-</li>
-<li>大theta
-
-<ul>
-<li>当上界和下界被同一个常数影响。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>例子</li>
-<li><code>
-sum1 = 0;
-for(k=1;k&lt;=n;k*=2)
-  for(j=1;j&lt;=n;j++)
-      sum1++;
-sum2 = 0;
-for(k=1;k&lt;=n;k*=2)
-  for(j=1;j&lt;=k;j++)
-      sum2++;
-</code>
-
-<ul>
-<li>第一个循环
-
-<ul>
-<li>第一个for执行了logn + 1次</li>
-<li>第二个for执行了n次
-
-<ul>
-<li>那么复杂度为nlogn</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>第二个循环
-
-<ul>
-<li>第一个for执行了logn + 1次</li>
-<li>第二个for执行了执行了k次，k=2<sup>i</sup>
-
-<ul>
-<li>那么复杂度为n</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>常用算法的时间复杂度</li>
-<li><p><strong>搜索</strong></p>
-
-<ul>
-<li><table>
-<thead>
-<tr>
-<th>算法</th>
-<th>数据结构</th>
-<th>平均时间复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>二分搜索</td>
-<td>数组查n个元素</td>
-<td>logn|</td>
-</tr>
-<tr>
-<td>顺序查找</td>
-<td>数组查n个元素</td>
-<td>n|</td>
-</tr>
-<tr>
-<td>最短路（乱序数组）</td>
-<td>V个点和E条边</td>
-<td>V<sup>2</sup></td>
-</tr>
-<tr>
-<td>最短路（bellman-ford）</td>
-<td> V个点和E条边</td>
-<td>V*E       </td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li><p><strong>排序</strong></p>
-
-<ul>
-<li><table>
-<thead>
-<tr>
-<th>算法</th>
-<th>数据结构</th>
-<th>平均时间复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>快速排序</td>
-<td>数组</td>
-<td>nlogn</td>
-</tr>
-<tr>
-<td>归并排序</td>
-<td>数组</td>
-<td>nlogn</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>数组</td>
-<td>nlogn</td>
-</tr>
-<tr>
-<td>冒泡排序</td>
-<td>数组</td>
-<td>n<sup>2</sup></td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>数组</td>
-<td>n<sup>2</sup></td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>数组</td>
-<td>n<sup>2</sup></td>
-</tr>
-<tr>
-<td>桶排序</td>
-<td>数组</td>
-<td>n+k</td>
-</tr>
-<tr>
-<td>计数排序</td>
-<td>数组</td>
-<td>n*k </td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>算法加速</h4>
-
-<ul>
-<li>focus on算法主要消耗时间的部分</li>
-<li>先优化算法，再优化代码</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[xapian omindex build index and search]]></title>
-    <link href="http://pbking1.github.com/blog/2015/04/15/xapian-omindex-build-index-and-search/"/>
-    <updated>2015-04-15T22:28:58-04:00</updated>
-    <id>http://pbking1.github.com/blog/2015/04/15/xapian-omindex-build-index-and-search</id>
-    <content type="html"><![CDATA[<h3>omega is a component that can be used with xapian</h3>
-
-<ul>
-<li>we can use omega to build index</li>
-</ul>
-
-
-<h4>build index</h4>
-
-<ul>
-<li><code>omindex --db index --url / ./index_file/</code>
-
-<ul>
-<li>&mdash;db 后面跟的是索引数据库的名字</li>
-<li>&mdash;url 后面跟的是 / 然后再加上要建索引的数据的文件夹（含有那些要建索引的文件）</li>
-</ul>
-</li>
-<li>运行之后，就会生成index文件夹，这个文件夹里面就是建好的索引</li>
-</ul>
-
-
-<h4>query</h4>
-
-<ul>
-<li>quest &mdash;db=index &ldquo;asd&rdquo;
-
-<ul>
-<li>&mdash;db 后面跟的是索引数据库</li>
-<li>然后再加上要查询的关键字</li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[compile qtox on OSX]]></title>
-    <link href="http://pbking1.github.com/blog/2015/03/03/compile-qtox-on-osx/"/>
-    <updated>2015-03-03T23:49:35-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/03/03/compile-qtox-on-osx</id>
-    <content type="html"><![CDATA[<h3>Problems when compile qtox on mac</h3>
-
-<ul>
-<li>first is the modification of the qtox.pro file
-<code>
-  CONFIG += c++11
-  CONFIG += x86_64
-  CONFIG -= x86
-  contains(JENKINS,YES) {
-      INCLUDEPATH += ./libs/include/
-  } else {
-      INCLUDEPATH += libs/include
-      # add head path
-      INCLUDEPATH += /usr/include
-      INCLUDEPATH += /usr/local/include
-      INCLUDEPATH += /opt/local/include
-  }
-  macx {
-      BUNDLEID = im.tox.qtox
-      ICON = img/icons/qtox.icns
-      QMAKE_INFO_PLIST = osx/info.plist
-      QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9
-      # add libtoxav
-      LIBS += -L/usr/local/opt/libtoxcore/lib -ltoxav -ltoxcore
-      LIBS += -L/usr/local/opt/libsodium/lib -lsodium
-      LIBS += -L/usr/local/opt/libvpx/lib -lvpx
-      LIBS += -L/usr/local/lib -lopus
-      LIBS += -L/usr/local/lib -lopencv_core -lopencv_highgui
-      #LIBS += -L/opt/local/lib -lopencv_core -lopencv_highgui
-      LIBS += -L$$PWD/libs/lib/ -framework OpenAL -mmacosx-version-min=10.9
-      #LIBS += -L$$PWD/libs/lib/ -ltoxcore -ltoxav -ltoxencryptsave -ltoxdns -lsodium -lvpx -lopus -framework OpenAL -lopencv_core -lopencv_highgui -mmacosx-version-min=10.7
-      contains(DEFINES, QTOX_PLATFORM_EXT) { LIBS += -framework IOKit -framework CoreFoundation }
-      contains(DEFINES, QTOX_FILTER_AUDIO) { LIBS += -lfilteraudio }
-</code></li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li><p>1.-ltoxcore can not found</p>
-
-<ul>
-<li>install the toxcore library
-
-<ul>
-<li>and remember to add the library path</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>2.can not find -lopus</p>
-
-<ul>
-<li>install the libogg first and then install the opus library</li>
-</ul>
-</li>
-<li><ol>
-<li>“Project ERROR: Could not resolve SDK path for ‘macosx10.8′”.</li>
-<li><code>cd /Users/Mark/Qt/5.3/clang_64/mkspecs/</code>
-
-<ul>
-<li>modify <code>!host_build:QMAKE_MAC_SDK = macosx10.9</code></li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>4.&ldquo;Undefined symbols for architecture x86_64&rdquo;</p>
-
-<ul>
-<li><strong>not solved</strong>
-
-<ul>
-<li>one way on the Internet(did not solve)
-
-<ul>
-<li>change <code>../Qt5.4.0/5.4.0-rc1/clang_64/mkspecs/macx-clang/qmake.conf</code>
-
-<ul>
-<li>from <code>QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.6</code></li>
-<li>into <code>QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9</code>
-
-<ul>
-<li>and remember to clean the project before rebuild</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>5.&lsquo;#include &lt;>&rsquo; and &lsquo;#include &ldquo;&rdquo;&rsquo;</p>
-
-<ul>
-<li>&lsquo;#include &lt;>&rsquo;
-
-<ul>
-<li>find the header in particular path
-
-<ul>
-<li>/usr/include</li>
-<li>for exmaple: /usr/include/stdio.h</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>&lsquo;#include &ldquo;&rdquo;&rsquo;
-
-<ul>
-<li>find the header in absolute path</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

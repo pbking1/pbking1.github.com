@@ -100,6 +100,211 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password/">
+		
+			Solution to Access Denied for User &#8216;Root&#8217;@&#8217;localhost&#8217; (Using password:YES)</a>
+	</h2>
+	<div class="entry-content">
+		<h3>Access denied for user &lsquo;root&rsquo;@&lsquo;localhost&rsquo; (using password:YES)</h3>
+
+<ul>
+<li>in mac
+
+<ul>
+<li>open the my.conf in the directory /usr/local/mysql</li>
+<li>add <code>skip-grant-tables</code></li>
+<li>restart the mysql service
+
+<ul>
+<li><code>sudo /usr/local/mysql/bin/mysqld_safe &amp;</code></li>
+</ul>
+</li>
+<li>then use <code>mysql -uroot -p</code>
+
+<ul>
+<li>you can login without password</li>
+<li>then update the password after <code>use mysql;</code></li>
+<li><code>update user set password=PASSWORD("rootadmin") where user='root';</code></li>
+</ul>
+</li>
+<li>after that
+
+<ul>
+<li>delete the <code>skip-grant-tables</code> add in the my.conf file</li>
+</ul>
+</li>
+<li>restart the mysql service</li>
+<li>then you can use the <code>mysql -u root -q</code> to login with your new password</li>
+</ul>
+</li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-09T11:49:30-04:00" pubdate data-updated="true">Sep 9<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/php/'>php</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password//blog/page/7/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/09/08/php-tutorial-1/">
+		
+			Php Tutorial(1)</a>
+	</h2>
+	<div class="entry-content">
+		<h3>class 1</h3>
+
+<ul>
+<li>how the web site work when you request for the page
+
+<ul>
+<li>when you log into the internet, you request for the web server for a file that is the page.</li>
+<li>if the web server is request for a html file, the server just give it back</li>
+<li>else if it is the php file, the server send the php file to the php interpreter and process the php
+
+<ul>
+<li>and after the process, the interpreter give it back</li>
+<li>(for php is an interpret kind of language and it do not need to be compile)</li>
+<li>and then the server send the php file back to the web browser</li>
+</ul>
+</li>
+<li>if the php is interacting with the database, then the code of the php will have sql query with the database.
+
+<ul>
+<li>after the query, send back to the php interpreter and then send back to the server and then send back to the web browser</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/09/08/php-tutorial-1/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-08T15:46:01-04:00" pubdate data-updated="true">Sep 8<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/php/'>php</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/09/08/php-tutorial-1//blog/page/7/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/07/08/fmdb-and-tableview-in-ios/">
+		
+			FMDB and Tableview in IOS</a>
+	</h2>
+	<div class="entry-content">
+		<h3>What is FMDB?</h3>
+
+<ul>
+<li>FMDB is a framework that used to simplified the sqlite3 operation</li>
+<li>and we can use this framework to operate the sqlite easily</li>
+<li>and we need to download the fmdb package in github
+
+<ul>
+<li>then copy the fmdb folder to our project</li>
+<li>include the sqlite3 framework in your project</li>
+</ul>
+</li>
+<li>then you only need to write <code>import"FMDB.h"</code>
+
+<ul>
+<li>you will be able to use the api of fmdb</li>
+</ul>
+</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/07/08/fmdb-and-tableview-in-ios/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-08T04:01:33-04:00" pubdate data-updated="true">Jul 8<span>th</span>, 2014</time></div>
+	
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/08/fmdb-and-tableview-in-ios//blog/page/7/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/07/08/use-opendns-to-cross-the-great-firewall-in-china/">
 		
 			Use Opendns to Cross the Great Firewall in China</a>
@@ -259,168 +464,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/06/25/ios-uilabel-and-uitextfield//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/24/ios-selector-jump-to-the-other-page/">
-		
-			IOS Selector(jump to the Other Page)</a>
-	</h2>
-	<div class="entry-content">
-		<h3>响应事件或者跳转</h3>
-
-<ul>
-<li>使用每个控件里面的action的selector</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/06/24/ios-selector-jump-to-the-other-page/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-24T23:02:32-04:00" pubdate data-updated="true">Jun 24<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/ios/'>IOS</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/24/ios-selector-jump-to-the-other-page//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/24/ios-uibutton/">
-		
-			IOS UIButton</a>
-	</h2>
-	<div class="entry-content">
-		<h3>IOS的button其实和其他的控件使用方法差不多</h3>
-
-<ul>
-<li>首先初始化button，用CGRectMake把控件画在view上</li>
-<li>使用setTitle设置button的文字</li>
-<li>使用layer来设置边界</li>
-<li>用action里面设置selector来跳转或者响应事件</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/06/24/ios-uibutton/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-24T23:01:58-04:00" pubdate data-updated="true">Jun 24<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/ios/'>IOS</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/24/ios-uibutton//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/24/ios-segment-control/">
-		
-			IOS Segment Control</a>
-	</h2>
-	<div class="entry-content">
-		<h3>segment control</h3>
-
-<ul>
-<li>这一段是使用CGrectmake在view上直接按照坐标大小画segment control</li>
-<li>因为tabbar只能按照默认的放在底部</li>
-<li>因此要使用放在顶部的类似tabbar的效果有两种方式
-
-<ul>
-<li>一种就是segment control，每点击一个item就跳转到那个item对应的view那里</li>
-<li>还有一种是使用button来仿造tabbar</li>
-<li>不过总体来说还是button效果好一点</li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/06/24/ios-segment-control/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-24T23:01:49-04:00" pubdate data-updated="true">Jun 24<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/ios/'>IOS</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/24/ios-segment-control//blog/page/7/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

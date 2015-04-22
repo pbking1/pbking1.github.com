@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T01:08:50-04:00</updated>
+  <updated>2015-04-22T17:22:11-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,70 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[c++ basic data structure part3]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part3/"/>
+    <updated>2015-04-22T01:27:20-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part3</id>
+    <content type="html"><![CDATA[<h3>basic data structure and algorithm part2</h3>
+
+<h3>图论</h3>
+
+<h4>图的实现</h4>
+
+<h4>图搜索</h4>
+
+<h5>广度优先搜索</h5>
+
+<h5>宽度优先搜索</h5>
+
+<h5>拓扑排序和搜索</h5>
+
+<h4>最短路径</h4>
+
+<ul>
+<li>单源最短路</li>
+</ul>
+
+
+<h4>最小生成树</h4>
+
+<ul>
+<li>Prim</li>
+<li>Kruskal</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[c++ basic data structure part2]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part2/"/>
+    <updated>2015-04-22T01:22:30-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part2</id>
+    <content type="html"><![CDATA[<h3>basic data structure and algorithm part2</h3>
+
+<h4>树</h4>
+
+<h4>内排序</h4>
+
+<ul>
+<li><p>冒泡排序</p></li>
+<li><p>插入排序</p></li>
+<li><p>选择排序</p></li>
+<li><p>快速排序</p></li>
+<li><p>归并排序</p></li>
+</ul>
+
+
+<h3>外排序</h3>
+
+<h4>哈希表</h4>
+
+<h4>索引</h4>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[c++ basic data structure]]></title>
@@ -60,11 +124,18 @@ int main(){
 
 <ul>
 <li>实现多态的主要功能</li>
-<li>编译器会为每一个有虚函数的类的实例创建一个虚函数表</li>
+<li><strong>编译器</strong>会为每一个有虚函数的类的实例创建一个虚函数表</li>
 <li>用来存虚函数的table
 
 <ul>
 <li>table的每个slot（槽）里面存放虚函数的地址</li>
+</ul>
+</li>
+<li>但是我们可以用函数指针来看虚函数表的地址
+
+<ul>
+<li>并且虚函数表在继承中，如果派生类没有重写基类的某个函数，他就会在基类中查那个函数，然后引用的时候就会引用基类的</li>
+<li>并且如果子类如果增加了函数，就会在基类的虚函数表中增加</li>
 </ul>
 </li>
 </ul>

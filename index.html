@@ -100,6 +100,370 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2015/04/22/c-plus-plus-reference-and-pointer/">
+		
+			C++ Reference and Pointer</a>
+	</h2>
+	<div class="entry-content">
+		<h3>what is pointer</h3>
+
+<ul>
+<li>形参
+
+<ul>
+<li>formal parameter</li>
+<li>定义时函数里面的变量
+
+<ul>
+<li>e.g int swao(int a, int b)</li>
+<li>a和b就是形参</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实参
+
+<ul>
+<li>actual parameter</li>
+<li>在主函数里面引用的
+
+<ul>
+<li>e.g swap(x,y)</li>
+<li>x和y就是实参，实际的值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>指针</h4>
+
+<ul>
+<li>&#8220;`
+void part1(){
+  //basic
+  //p指向变量，对p的重新复制就会改变p所指向的变量的值。
+  //同样对p指向的变量重新复制也会改变<em>p的值
+  int ptmp = 50;
+  int </em>p;
+  p = &ptmp;
+  cout&lt;&lt;p&lt;&lt;endl;
+  //p存放的是ptmp变量所在的地址值
+  cout&lt;&lt;*p&lt;&lt;endl;
+  //50，是指储存在指针的内存地址中的值，也就是ptmp的值
+  cout&lt;&lt;&amp;p&lt;&lt;endl;
+  //p指针本身的地址值
+  cout&lt;&lt;&ptmp;
+  //ptmp变量所在的地址值
+}</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>####指针控制循环
+</span><span class='line'>- ```
+</span><span class='line'>void part2(){
+</span><span class='line'>  //用指针来控制循环条件
+</span><span class='line'>  //针对数组
+</span><span class='line'>  int array[20];
+</span><span class='line'>  int *p = array;
+</span><span class='line'>  int i;
+</span><span class='line'>  for(int j = 0; j &lt; 20; j++)
+</span><span class='line'>      array[j] = j;
+</span><span class='line'>  cout&lt;&lt;endl;
+</span><span class='line'>  for(i = 0; i &lt; 20; i++){
+</span><span class='line'>      cout&lt;&lt;p&lt;&lt;" "&lt;&lt;(*p)&lt;&lt;" ";
+</span><span class='line'>      p++; //指针加一
+</span><span class='line'>      (*p)++; //指针指向内容加一
+</span><span class='line'>  }
+</span><span class='line'>  cout&lt;&lt;endl;
+</span><span class='line'>  //针对字符串
+</span><span class='line'>  char *str = "abc";
+</span><span class='line'>  while(*p){
+</span><span class='line'>      cout&lt;&lt;*p&lt;&lt;" ";
+</span><span class='line'>      p++;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>引用</h4>
+
+<ul>
+<li>&#8220;`
+void part3(){
+  //引用
+  int a = 20;
+  int b = 10;
+  int &amp;p = a;
+  //p引用a,所以p是a的另外一个名字
+  cout&lt;&lt;p&lt;&lt;endl;
+  //p的值改变了
+  p = b;
+  //a的值也会改变
+  cout&lt;&lt;a&lt;&lt;endl;
+}</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>####传参
+</span><span class='line'>- ```
+</span><span class='line'>void swap1(int x, int y){
+</span><span class='line'>  cout&lt;&lt;"in function before swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+</span><span class='line'>  int temp = x;
+</span><span class='line'>  x = y;
+</span><span class='line'>  y = temp;
+</span><span class='line'>  cout&lt;&lt;"in fuction after swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+</span><span class='line'>}
+</span><span class='line'>void swap2(int *a, int *b){
+</span><span class='line'>  //temp用来存a得值
+</span><span class='line'>  //所以其实这里是在交换值
+</span><span class='line'>  int temp = *a;
+</span><span class='line'>  *a = *b;
+</span><span class='line'>  *b = temp;
+</span><span class='line'>}
+</span><span class='line'>void swap3(int &a, int &b){
+</span><span class='line'>  //因为这里是传引用，所以任何的改变都会改变
+</span><span class='line'>  int temp = a;
+</span><span class='line'>  a = b;
+</span><span class='line'>  b = temp;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>注意事项</h4>
+
+<ul>
+<li>在可以使用引用的情况下，不要用指针</li>
+<li>引用不能为空，当对象为NULL时，必须使用指针
+
+<ul>
+<li>引用不允许重新赋值，当使用一个变量指向不同的对象的时候，必须使用指针</li>
+</ul>
+</li>
+<li></li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-22T12:15:07-04:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/c-plus-plus/'>c++</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/04/22/c-plus-plus-reference-and-pointer//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2015/04/22/c-plus-plus-basic-data-structure-part3/">
+		
+			C++ Basic Data Structure Part3</a>
+	</h2>
+	<div class="entry-content">
+		<h3>basic data structure and algorithm part2</h3>
+
+<h3>图论</h3>
+
+<h4>图的实现</h4>
+
+<h4>图搜索</h4>
+
+<h5>广度优先搜索</h5>
+
+<h5>宽度优先搜索</h5>
+
+<h5>拓扑排序和搜索</h5>
+
+<h4>最短路径</h4>
+
+<ul>
+<li>单源最短路</li>
+</ul>
+
+
+<h4>最小生成树</h4>
+
+<ul>
+<li>Prim</li>
+<li>Kruskal</li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-22T01:27:20-04:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/c-plus-plus/'>c++</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/04/22/c-plus-plus-basic-data-structure-part3//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2015/04/22/c-plus-plus-basic-data-structure-part2/">
+		
+			C++ Basic Data Structure Part2</a>
+	</h2>
+	<div class="entry-content">
+		<h3>basic data structure and algorithm part2</h3>
+
+<h4>树</h4>
+
+<h4>内排序</h4>
+
+<ul>
+<li><p>冒泡排序</p></li>
+<li><p>插入排序</p></li>
+<li><p>选择排序</p></li>
+<li><p>快速排序</p></li>
+<li><p>归并排序</p></li>
+</ul>
+
+
+<h3>外排序</h3>
+
+<h4>哈希表</h4>
+
+<h4>索引</h4>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-22T01:22:30-04:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/c-plus-plus/'>c++</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/04/22/c-plus-plus-basic-data-structure-part2//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2015/04/21/string-processing-function-implementation/">
 		
 			String Processing Function Implementation</a>
@@ -540,214 +904,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2015/04/20/c-plus-plus-program-run-time//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2015/04/15/xapian-omindex-build-index-and-search/">
-		
-			Xapian Omindex Build Index and Search</a>
-	</h2>
-	<div class="entry-content">
-		<h3>omega is a component that can be used with xapian</h3>
-
-<ul>
-<li>we can use omega to build index</li>
-</ul>
-
-
-<h4>build index</h4>
-
-<ul>
-<li><code>omindex --db index --url / ./index_file/</code>
-
-<ul>
-<li>&mdash;db 后面跟的是索引数据库的名字</li>
-<li>&mdash;url 后面跟的是 / 然后再加上要建索引的数据的文件夹（含有那些要建索引的文件）</li>
-</ul>
-</li>
-<li>运行之后，就会生成index文件夹，这个文件夹里面就是建好的索引</li>
-</ul>
-
-
-<h4>query</h4>
-
-<ul>
-<li>quest &mdash;db=index &ldquo;asd&rdquo;
-
-<ul>
-<li>&mdash;db 后面跟的是索引数据库</li>
-<li>然后再加上要查询的关键字</li>
-</ul>
-</li>
-</ul>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-04-15T22:28:58-04:00" pubdate data-updated="true">Apr 15<span>th</span>, 2015</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/c-plus-plus/'>c++</a>, <a class='category' href='/blog/categories/search-engine/'>search_engine</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2015/04/15/xapian-omindex-build-index-and-search//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support/">
-		
-			Virtual Machine Windows VS2010 UNC Path Not Support</a>
-	</h2>
-	<div class="entry-content">
-		<h3>解决UNC路径不受支持</h3>
-
-<pre><code>在虚拟机的VS2010中编译出错
-</code></pre>
-
-<ul>
-<li>错误提示：用作为当前目录的以上路径启动了 CMD.EXE。 UNC 路径不受支持。默认值设为 Windows 目录。系统找不到指定的文件。执行 c:\windows\system32\cmd.exe 时出错.</li>
-<li>解决方法:
-
-<ul>
-<li>在注册表中,添加一个值即可.路径如下:
-
-<ul>
-<li>HKEY_CURRENT_USER\Software\Microsoft\Command Processor</li>
-<li>添加值 DisableUNCCheck，类型为 REG_DWORD 并将该值设置为1 （十六进制）。</li>
-</ul>
-</li>
-<li>或者，打开cmd.exe
-
-<ul>
-<li>把下面这行代码复制进去，按回车</li>
-<li>reg add  &ldquo;HKEY_CURRENT_USER\Software\Microsoft\Command Processor&rdquo; /v DisableUNCCheck /t REG_DWORD /d 1 /f</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-04-14T21:17:08-04:00" pubdate data-updated="true">Apr 14<span>th</span>, 2015</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/vs/'>vs</a>, <a class='category' href='/blog/categories/windows/'>windows</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2015/04/14/asp-dot-net-in-mac-monodevelop/">
-		
-			ASP.net in Mac MonoDevelop</a>
-	</h2>
-	<div class="entry-content">
-		<h3>install asp.net environment in mac</h3>
-
-<ul>
-<li>we can use MonoDevelop IDE in mac to develop c# or VB program
-
-<ul>
-<li>also asp.net too</li>
-</ul>
-</li>
-<li>download url: <a href="http://www.monodevelop.com/download/">http://www.monodevelop.com/download/</a>
-
-<ul>
-<li>download the Xamarin studio as development IDE</li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2015/04/14/asp-dot-net-in-mac-monodevelop/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-04-14T03:01:35-04:00" pubdate data-updated="true">Apr 14<span>th</span>, 2015</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/asp-dot-net/'>asp.net</a>, <a class='category' href='/blog/categories/c-number/'>c#</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2015/04/14/asp-dot-net-in-mac-monodevelop//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

@@ -1,0 +1,372 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>c++ reference and pointer  | KING</title>
+
+<meta name="author" content="pb"> 
+
+<meta name="description" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip"> <meta name="keywords" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">KING</a></h1>
+<h4>Do more, say less</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://www.google.com.hk/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:pbking1.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">C++ Reference and Pointer</h2>
+	<div class="entry-content"><h3>what is pointer</h3>
+
+<ul>
+<li>形参
+
+<ul>
+<li>formal parameter</li>
+<li>定义时函数里面的变量
+
+<ul>
+<li>e.g int swao(int a, int b)</li>
+<li>a和b就是形参</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实参
+
+<ul>
+<li>actual parameter</li>
+<li>在主函数里面引用的
+
+<ul>
+<li>e.g swap(x,y)</li>
+<li>x和y就是实参，实际的值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>指针</h4>
+
+<ul>
+<li>&#8220;`
+void part1(){
+  //basic
+  //p指向变量，对p的重新复制就会改变p所指向的变量的值。
+  //同样对p指向的变量重新复制也会改变<em>p的值
+  int ptmp = 50;
+  int </em>p;
+  p = &ptmp;
+  cout&lt;&lt;p&lt;&lt;endl;
+  //p存放的是ptmp变量所在的地址值
+  cout&lt;&lt;*p&lt;&lt;endl;
+  //50，是指储存在指针的内存地址中的值，也就是ptmp的值
+  cout&lt;&lt;&amp;p&lt;&lt;endl;
+  //p指针本身的地址值
+  cout&lt;&lt;&ptmp;
+  //ptmp变量所在的地址值
+}</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>####指针控制循环
+</span><span class='line'>- ```
+</span><span class='line'>void part2(){
+</span><span class='line'>  //用指针来控制循环条件
+</span><span class='line'>  //针对数组
+</span><span class='line'>  int array[20];
+</span><span class='line'>  int *p = array;
+</span><span class='line'>  int i;
+</span><span class='line'>  for(int j = 0; j &lt; 20; j++)
+</span><span class='line'>      array[j] = j;
+</span><span class='line'>  cout&lt;&lt;endl;
+</span><span class='line'>  for(i = 0; i &lt; 20; i++){
+</span><span class='line'>      cout&lt;&lt;p&lt;&lt;" "&lt;&lt;(*p)&lt;&lt;" ";
+</span><span class='line'>      p++; //指针加一
+</span><span class='line'>      (*p)++; //指针指向内容加一
+</span><span class='line'>  }
+</span><span class='line'>  cout&lt;&lt;endl;
+</span><span class='line'>  //针对字符串
+</span><span class='line'>  char *str = "abc";
+</span><span class='line'>  while(*p){
+</span><span class='line'>      cout&lt;&lt;*p&lt;&lt;" ";
+</span><span class='line'>      p++;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>引用</h4>
+
+<ul>
+<li>&#8220;`
+void part3(){
+  //引用
+  int a = 20;
+  int b = 10;
+  int &amp;p = a;
+  //p引用a,所以p是a的另外一个名字
+  cout&lt;&lt;p&lt;&lt;endl;
+  //p的值改变了
+  p = b;
+  //a的值也会改变
+  cout&lt;&lt;a&lt;&lt;endl;
+}</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>####传参
+</span><span class='line'>- ```
+</span><span class='line'>void swap1(int x, int y){
+</span><span class='line'>  cout&lt;&lt;"in function before swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+</span><span class='line'>  int temp = x;
+</span><span class='line'>  x = y;
+</span><span class='line'>  y = temp;
+</span><span class='line'>  cout&lt;&lt;"in fuction after swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+</span><span class='line'>}
+</span><span class='line'>void swap2(int *a, int *b){
+</span><span class='line'>  //temp用来存a得值
+</span><span class='line'>  //所以其实这里是在交换值
+</span><span class='line'>  int temp = *a;
+</span><span class='line'>  *a = *b;
+</span><span class='line'>  *b = temp;
+</span><span class='line'>}
+</span><span class='line'>void swap3(int &a, int &b){
+</span><span class='line'>  //因为这里是传引用，所以任何的改变都会改变
+</span><span class='line'>  int temp = a;
+</span><span class='line'>  a = b;
+</span><span class='line'>  b = temp;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>注意事项</h4>
+
+<ul>
+<li>在可以使用引用的情况下，不要用指针</li>
+<li>引用不能为空，当对象为NULL时，必须使用指针
+
+<ul>
+<li>引用不允许重新赋值，当使用一个变量指向不同的对象的时候，必须使用指针</li>
+</ul>
+</li>
+<li></li>
+</ul>
+
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-22T12:15:07-04:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/c-plus-plus/'>c++</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/04/22/c-plus-plus-reference-and-pointer/#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2015
+
+    pb
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'pbking1';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pbking1.github.com/blog/2015/04/22/c-plus-plus-reference-and-pointer/';
+        var disqus_url = 'http://pbking1.github.com/blog/2015/04/22/c-plus-plus-reference-and-pointer/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>

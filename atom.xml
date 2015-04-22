@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T01:08:50-04:00</updated>
+  <updated>2015-04-22T17:22:11-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,265 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[c++ reference and pointer]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-reference-and-pointer/"/>
+    <updated>2015-04-22T12:15:07-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-reference-and-pointer</id>
+    <content type="html"><![CDATA[<h3>what is pointer</h3>
+
+<ul>
+<li>形参
+
+<ul>
+<li>formal parameter</li>
+<li>定义时函数里面的变量
+
+<ul>
+<li>e.g int swao(int a, int b)</li>
+<li>a和b就是形参</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实参
+
+<ul>
+<li>actual parameter</li>
+<li>在主函数里面引用的
+
+<ul>
+<li>e.g swap(x,y)</li>
+<li>x和y就是实参，实际的值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h4>指针</h4>
+
+<ul>
+<li>&#8220;`
+void part1(){
+  //basic
+  //p指向变量，对p的重新复制就会改变p所指向的变量的值。
+  //同样对p指向的变量重新复制也会改变<em>p的值
+  int ptmp = 50;
+  int </em>p;
+  p = &ptmp;
+  cout&lt;&lt;p&lt;&lt;endl;
+  //p存放的是ptmp变量所在的地址值
+  cout&lt;&lt;*p&lt;&lt;endl;
+  //50，是指储存在指针的内存地址中的值，也就是ptmp的值
+  cout&lt;&lt;&amp;p&lt;&lt;endl;
+  //p指针本身的地址值
+  cout&lt;&lt;&ptmp;
+  //ptmp变量所在的地址值
+}</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>####指针控制循环
+</span><span class='line'>- ```
+</span><span class='line'>void part2(){
+</span><span class='line'>  //用指针来控制循环条件
+</span><span class='line'>  //针对数组
+</span><span class='line'>  int array[20];
+</span><span class='line'>  int *p = array;
+</span><span class='line'>  int i;
+</span><span class='line'>  for(int j = 0; j &lt; 20; j++)
+</span><span class='line'>      array[j] = j;
+</span><span class='line'>  cout&lt;&lt;endl;
+</span><span class='line'>  for(i = 0; i &lt; 20; i++){
+</span><span class='line'>      cout&lt;&lt;p&lt;&lt;" "&lt;&lt;(*p)&lt;&lt;" ";
+</span><span class='line'>      p++; //指针加一
+</span><span class='line'>      (*p)++; //指针指向内容加一
+</span><span class='line'>  }
+</span><span class='line'>  cout&lt;&lt;endl;
+</span><span class='line'>  //针对字符串
+</span><span class='line'>  char *str = "abc";
+</span><span class='line'>  while(*p){
+</span><span class='line'>      cout&lt;&lt;*p&lt;&lt;" ";
+</span><span class='line'>      p++;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>引用</h4>
+
+<ul>
+<li>&#8220;`
+void part3(){
+  //引用
+  int a = 20;
+  int b = 10;
+  int &amp;p = a;
+  //p引用a,所以p是a的另外一个名字
+  cout&lt;&lt;p&lt;&lt;endl;
+  //p的值改变了
+  p = b;
+  //a的值也会改变
+  cout&lt;&lt;a&lt;&lt;endl;
+}</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>####传参
+</span><span class='line'>- ```
+</span><span class='line'>void swap1(int x, int y){
+</span><span class='line'>  cout&lt;&lt;"in function before swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+</span><span class='line'>  int temp = x;
+</span><span class='line'>  x = y;
+</span><span class='line'>  y = temp;
+</span><span class='line'>  cout&lt;&lt;"in fuction after swap"&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;
+</span><span class='line'>}
+</span><span class='line'>void swap2(int *a, int *b){
+</span><span class='line'>  //temp用来存a得值
+</span><span class='line'>  //所以其实这里是在交换值
+</span><span class='line'>  int temp = *a;
+</span><span class='line'>  *a = *b;
+</span><span class='line'>  *b = temp;
+</span><span class='line'>}
+</span><span class='line'>void swap3(int &a, int &b){
+</span><span class='line'>  //因为这里是传引用，所以任何的改变都会改变
+</span><span class='line'>  int temp = a;
+</span><span class='line'>  a = b;
+</span><span class='line'>  b = temp;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>注意事项</h4>
+
+<ul>
+<li>在可以使用引用的情况下，不要用指针</li>
+<li>引用不能为空，当对象为NULL时，必须使用指针
+
+<ul>
+<li>引用不允许重新赋值，当使用一个变量指向不同的对象的时候，必须使用指针</li>
+</ul>
+</li>
+<li></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[c++ basic data structure part3]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part3/"/>
+    <updated>2015-04-22T01:27:20-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part3</id>
+    <content type="html"><![CDATA[<h3>basic data structure and algorithm part2</h3>
+
+<h3>图论</h3>
+
+<h4>图的实现</h4>
+
+<h4>图搜索</h4>
+
+<h5>广度优先搜索</h5>
+
+<h5>宽度优先搜索</h5>
+
+<h5>拓扑排序和搜索</h5>
+
+<h4>最短路径</h4>
+
+<ul>
+<li>单源最短路</li>
+</ul>
+
+
+<h4>最小生成树</h4>
+
+<ul>
+<li>Prim</li>
+<li>Kruskal</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[c++ basic data structure part2]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part2/"/>
+    <updated>2015-04-22T01:22:30-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part2</id>
+    <content type="html"><![CDATA[<h3>basic data structure and algorithm part2</h3>
+
+<h4>树</h4>
+
+<h4>内排序</h4>
+
+<ul>
+<li><p>冒泡排序</p></li>
+<li><p>插入排序</p></li>
+<li><p>选择排序</p></li>
+<li><p>快速排序</p></li>
+<li><p>归并排序</p></li>
+</ul>
+
+
+<h3>外排序</h3>
+
+<h4>哈希表</h4>
+
+<h4>索引</h4>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[string processing function implementation]]></title>
@@ -264,11 +523,18 @@
 
 <ul>
 <li>实现多态的主要功能</li>
-<li>编译器会为每一个有虚函数的类的实例创建一个虚函数表</li>
+<li><strong>编译器</strong>会为每一个有虚函数的类的实例创建一个虚函数表</li>
 <li>用来存虚函数的table
 
 <ul>
 <li>table的每个slot（槽）里面存放虚函数的地址</li>
+</ul>
+</li>
+<li>但是我们可以用函数指针来看虚函数表的地址
+
+<ul>
+<li>并且虚函数表在继承中，如果派生类没有重写基类的某个函数，他就会在基类中查那个函数，然后引用的时候就会引用基类的</li>
+<li>并且如果子类如果增加了函数，就会在基类的虚函数表中增加</li>
 </ul>
 </li>
 </ul>
@@ -4262,736 +4528,6 @@ int main(){
 
 <ul>
 <li><strong>too many small firm with little market share selling homogeneous goods</strong></li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Intro_to_microeconomic_3]]></title>
-    <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-3/"/>
-    <updated>2015-02-08T21:56:14-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-3</id>
-    <content type="html"><![CDATA[<h3>goal part3</h3>
-
-<ul>
-<li>Theory of consumer choice消费者选择理论(5%–10%)
-
-<ul>
-<li>1.Total utility and marginal utility</li>
-<li>2.Utility maximization: equalizing marginal utility per dollar</li>
-<li>3.Individual and market demand curves</li>
-<li>4.Income and substitution effects</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>Total utility and marginal utility总效用和边际效用</h4>
-
-<ul>
-<li>边际效用是多做一单位事情，效用的增加量。记住law of decreasing marginal utility 边际效用递减规律。
-
-<ul>
-<li><strong>边际效用递减规律</strong>：
-
-<ul>
-<li>在一定时间内，随着消费某种商品数量的不断增加，消费者从中得到的总效用是在增加的，但是以递减的速度增加的，即边际效用是递减的；
-
-<ul>
-<li>当商品消费量达到一定程度后，总效用达到最大值，边际效用为零，如果继续增加消费，总效用不但不会增加，反而会逐渐减少，此时边际效用变为负数。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>需求定理</strong>
-
-<ul>
-<li>需求量和价格成反方向变化。因为消费者购买商品是为了取得效用，对边际效用大的商品，消费者就愿意支付较高价格，即消费者购买商品支付价格以边际效用为标准。
-
-<ul>
-<li>按边际效用递减规律：购买商品越多，边际效用越小，商品价格越低；反之，购买商品越少，边际效用越大，商品价格越高。因此，<em>商品需求量与价格成反方向变化</em></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>边际的含义是额外增量</li>
-<li>在边际效用中，自变量是某物品的消费量，而因变量则是满足程度或效用。
-
-<ul>
-<li>消费量额外变动所引起的效用的变动即为边际效用。</li>
-</ul>
-</li>
-<li>消费者消费某种商品<strong>满足程度</strong>的高低主要是通过总效用与边际效用两个指标进行衡量</li>
-</ul>
-
-
-<h4>Utility maximization: equalizing marginal utility per dollar</h4>
-
-<ul>
-<li>效用最大化条件：边际效用之比等于价格之比 MU1/MU2 =P1/P2，在预算允许的条件下。
-
-<ul>
-<li><strong>效用最大化</strong>，即在個人可支配資源的約束條件下，使個人需要和願望得到最大限度的滿足</li>
-</ul>
-</li>
-<li><strong>利潤的最大化</strong>。這裡不對“利潤”做純經濟學的分析，而僅指把利潤定義為企業生產經營的總收入減去總費用的差額部分</li>
-</ul>
-
-
-<h4>Individual and market demand curves</h4>
-
-<ul>
-<li>市场需求曲线是很多个人需求曲线的加和。
-
-<ul>
-<li>顯示價格與需求量關係的曲線，是指其他條件相同時，在每一價格水平上買主願意購買的商品量的表或曲線</li>
-<li>可以符合需求定理的需求曲線只可以是<strong>向右下傾斜</strong>的</li>
-</ul>
-</li>
-<li><p>需求曲線的斜率是指價格和需求量的實際變化量之比。通過某一點的需求曲線越平坦，需求價格彈性就越大．通過某一點的需求曲線越陡峭，需求價格彈性就越小。</p></li>
-<li><p><strong>個人需求曲線</strong>(Individual Demand Curve)：單個消費者願意購買某種產品的數量與其價格之間的關係；</p></li>
-<li><strong>市場需求曲線</strong>(Market Demand Curve)：市場上全體消費者願意購買某種產品的數量與其價格之間的關係。市場需求曲線可由行業內各個消費者的個人需求曲線橫向相加求得；</li>
-</ul>
-
-
-<h4>Income and substitution effects</h4>
-
-<ul>
-<li><p><strong>Income effect收入效应</strong> ：物品A的价格下降增加了收入的实际购买力（real income），能购买更多的物品A和B。</p></li>
-<li><p><strong>substitution effect替代效应</strong>：物品A的价格下降使B相对于A的价格上升，能买更少的B和更多的A。</p></li>
-<li><p>窍门：物品A价格下降能购买更多的A（替代效应和收入效应相互加强起到同向作用），但B不确定。</p></li>
-</ul>
-
-
-<h4>exercise</h4>
-
-<ul>
-<li>1.What determines a household’s consumption possibilities?
-
-<ul>
-<li><strong>an individual&rsquo;s consumption possibilities constraint is its budget constraint</strong></li>
-<li><strong>and it is determined by the price of the good and the individual&rsquo;s income</strong></li>
-</ul>
-</li>
-<li>2.How would you answer someone who says that marginal utility theory is useless because utility cannot be observed?
-
-<ul>
-<li><strong>因为人民在潜意识（subconscious）中会做决策</strong></li>
-<li><strong>even though people do not think using the economic terms, they are still making the decision</strong></li>
-</ul>
-</li>
-<li><p>3.What is consumer surplus? How is consumer surplus calculated?</p>
-
-<ul>
-<li><strong>consumer surplus 是你愿意付给这个这个商品的价格和你必须付给这个商品的钱的差值。</strong></li>
-</ul>
-</li>
-<li><p>4.What is a firm and what is the fundamental economic problem that all firms face?</p>
-
-<ul>
-<li><strong>firm：people organise production</strong></li>
-<li><strong>the main problem is how it can allocate its scare resources to maximise its benefit.</strong></li>
-<li><strong>for a non-profit, the goal is often to maximise its output subject to this constraint.</strong></li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Intro_to_microeconomic_2]]></title>
-    <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-2/"/>
-    <updated>2015-02-08T21:55:55-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-2</id>
-    <content type="html"><![CDATA[<h3>goal part2</h3>
-
-<ul>
-<li>Supply and demand(15%–20%)
-
-<ul>
-<li>1.Market equilibrium</li>
-<li>2.Determinants of supply and demand</li>
-<li>3.Price and quantity controls</li>
-<li>4.Elasticity
-
-<ul>
-<li>a.Price, income and cross-price elasticities of demand</li>
-<li>b.Price elasticity of supply</li>
-</ul>
-</li>
-<li>5.Consumer surplus, producer surplus and market efficiency</li>
-<li>6.Tax incidence and deadweight loss</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>Market equilibrium市场均衡</h4>
-
-<ul>
-<li>equilibrium
-
-<ul>
-<li><strong>在市场上，市场供求达到平衡时的状态</strong>
-
-<ul>
-<li>​A state of balance between the opposing forces of shortages and surpluses盈餘</li>
-</ul>
-</li>
-<li>equally divide the property to all the society member</li>
-</ul>
-</li>
-<li>efficiency
-
-<ul>
-<li>the maximum property that the society can get from limited resources</li>
-</ul>
-</li>
-<li>sometimes we need to balance the income of the rich and poor
-
-<ul>
-<li>but this will reduce the stimulation of produce and work
-
-<ul>
-<li>and make the limited resource fewer</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>消费者和生产者根据市场价格决定愿意并且能够购买或者能够提供的商品数量，带着各自的盘算，消费者与生产者一起进入市场，最终决定市场的均衡。</li>
-<li>市场均衡图由横纵两条坐标轴和供求两条曲线构成。横坐标代表数量quantity，纵坐标代表价格price。需求曲线是向右下方倾斜的一条直线，反映需求量quantity demanded和价格之间的关系；供给曲线是向右上方倾斜的一条直线，反映供给量quantity supplied和价格之间的关系。曲线相交点代表市场均衡点，即在这个价格下，生产的产品刚好被买走。</li>
-</ul>
-
-
-<h4>Determinants of supply and demand</h4>
-
-<ul>
-<li>影响商品供求关系的<em>非价格因素</em>的变动对价格和产量的影响我们称之为供求定理</li>
-<li><p>Determinants of Demand</p>
-
-<ul>
-<li>​Price of the product
-
-<ul>
-<li>primary determinant</li>
-<li>doesn’t cause the demand curve to shift, but a change in the quantity demanded</li>
-<li>all other determinants can cause the demand curve to shift,  a “decrease/increase in demand”</li>
-</ul>
-</li>
-<li>Income</li>
-<li>Consumer tastes</li>
-<li>Prices of substitute products</li>
-<li>Prices of complementary products</li>
-<li>Expected future price of the product</li>
-</ul>
-</li>
-<li><p>Determinants of Supply</p>
-
-<ul>
-<li>Price of the product
-
-<ul>
-<li>a change in price is a ‘change in the quantity supplied’</li>
-<li>a change in anything else, ‘change in supply,’ shifts the      supply curve</li>
-</ul>
-</li>
-<li>Prices of inputs required to make the product</li>
-<li>Technology and productivity</li>
-<li>Expected future price of the product</li>
-</ul>
-</li>
-<li><p>需求变动对市场均衡的影响</p>
-
-<ul>
-<li>需求增加引起均衡价格上升，需求减少引起均衡价格下降。</li>
-<li>需求增加引起均衡产量增加，需求减产引起均衡产量减少。</li>
-<li>需求的变动引起均衡价格与均衡产量同方向变动。</li>
-</ul>
-</li>
-<li>供给变动对市场均衡的影响
-
-<ul>
-<li>供给增加引起均衡价格下降，供给减少引起均衡价格上升。</li>
-<li>供给增加引起均衡产量的增加，供给减少引起均衡产量的减少。</li>
-<li>供给的变动引起均衡价格反方向变动，供给的变动引起均衡产量同方向变动。</li>
-</ul>
-</li>
-<li>Supply and demand affect each other indirectly, not directly</li>
-<li>正常物品的需求和收入成正比
-
-<ul>
-<li>收入增加会增加每种价格水平下的需求量，并且使得需求曲线向右移动</li>
-<li>低档物品的需求和收入成反比，收入增加会使低档物品的需求曲线向左移动</li>
-</ul>
-</li>
-<li>替代品：一种物品价格的上升引起另外一种物品需求量增减的两种物品</li>
-<li>互补品：一种物品价格上升引起梁歪一种物品需求量减少的两种物品</li>
-<li>嗜好：对一种物品的嗜好的增加会使那种物品的需求增加，并且使得他的需求曲线向右移动</li>
-</ul>
-
-
-<h4>Price and quantity controls</h4>
-
-<ul>
-<li>政府价格和市场调控</li>
-<li><strong>price control are legal restriction on how high or how low a market price may go</strong>
-
-<ul>
-<li>price ceilings价格天花板
-
-<ul>
-<li>设定在市场均衡价格之下，导致供不应求</li>
-<li>a maximum price sellers are allowed to charge for a good or service</li>
-<li>decreases supply</li>
-<li>established under the equilibrium price</li>
-</ul>
-</li>
-<li>price floors价格地板
-
-<ul>
-<li>设定在市场均衡价格之上，导致供过于求。</li>
-<li>a minimum price buyers are required to pay for a good or service</li>
-<li>established above the equilibrium or market price</li>
-<li>causes a surplus to develop</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>Elasticity彈性</h3>
-
-<h4>Price, income and cross-price elasticities of demand</h4>
-
-<ul>
-<li>需求的价格弹性:<strong>用来衡量需求的数量随商品的价格的变动而变动的情况</strong>
-
-<ul>
-<li>通常来说，因为商品价格的下跌会导致需求数量的增加，所以一般情况下需求的价格弹性系数为负数。</li>
-<li>注意以絕對值比較彈性強弱
-
-<ul>
-<li>Ed 的數值是負數，因為價格與需求量是反向關係 (negative relationship)。在比較 elasticity 的強弱時，是不理會數值前的「負號」的，即是只看 Ed 的絕對值 (absolute value) ，絕對值愈大，所代表的彈性愈大。</li>
-</ul>
-</li>
-<li>彈性是以價格和需求量的改變率計算的
-
-<ul>
-<li>例如 Good A 和 Good B 的價格同時上升 $5，而需求量同時下降 8，但由於改變率不同，得出的彈性也就不同。</li>
-</ul>
-</li>
-<li>影响因素
-
-<ul>
-<li>替代品的多寡</li>
-<li>该物消费支出占总所得的比例</li>
-<li>物品耐用性</li>
-<li>必需品或奢侈品</li>
-<li>商品的定义范围</li>
-<li>时间的长短</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>Price elasticity of supply</h4>
-
-<ul>
-<li>供給的價格彈性(供給彈性):<strong>表示價格變動1%引起供給量變動的程度</strong></li>
-<li>根據經濟學中的供給定理，供給量與價格是同方向變動的，即該商品的價格變動的越大，企業的生產就會隨之變化。</li>
-<li>供給的價格彈性可以根據es值的大小分為五種類型。es>1表示供給富於彈性；es＜1表示供給缺乏彈性；es=1表示供給單一彈性或單位彈性；es=∞表示供給完全彈性；es=0表示供給完全無彈性。</li>
-<li>影响因素
-
-<ul>
-<li>增加產量所需追加生產要素費用的大小。一般地說，若增加產量的投資費用較小，則供給彈性大；反之供給彈性小。</li>
-<li>時間的長短
-
-<ul>
-<li> 一般在短時期內，廠商只能在固定的廠房設備下增加產量，因而供給量的變動有限，這時供給彈性就小。在長期內，廠商能夠通過調整規模來擴大產量，這時供給彈性將大於同種商品在短期內的供給彈性。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>Consumer surplus, producer surplus and market efficiency</h4>
-
-<ul>
-<li><strong>A market is efficient when it provides the most consumer surplus and the most producer surplus possible.  An inefficient market creates what economists call a deadweight loss.</strong></li>
-<li><strong>Consumer surplus</strong>
-
-<ul>
-<li>the difference in the market price of a good and how much an individual or individuals would be willing to pay
-
-<ul>
-<li>消费者剩余=支付意愿–市场价格</li>
-<li>for example
-
-<ul>
-<li>a person who is willing to spend $4 on a milk shake but the price is only $3 yielding a surplus of $1.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>producer surplus</strong>
-
-<ul>
-<li>for example
-
-<ul>
-<li>生产者剩余=市场价格–生产成本</li>
-<li>the difference between what it costs to produce a good and what price the market provides.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>消费者剩余=支付意愿–市场价格；生产者剩余=市场价格–生产成本</li>
-</ul>
-
-
-<h4>Tax incidence and deadweight loss税收负担和无谓损失</h4>
-
-<ul>
-<li>无谓损失是市场扭曲引起的总剩余减少；弹性越大，税收的无谓损失越大。
-
-<ul>
-<li>无谓损失又为社会净损失，是指由于市场未处于最优运行状态而引起的社会成本, 也就是当偏离竞争均衡时, 所损失的消费者剩余和生产者剩余</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>excercise</h4>
-
-<ul>
-<li><p>1.What is the difference between a &ldquo;change in demand&rdquo; and a change in &ldquo;quantity demanded.&rdquo;</p>
-
-<ul>
-<li><strong>A change in demand需求变动 : to a change in the amount that consumers are willing to buy at every possible price, in term of the demand curve shifts.</strong></li>
-<li><strong>A change in the quantity demanded数量需求变动 occurs when the price of the product changes. In this case, in terms of the demand curve, there is a movement along the demand one.</strong></li>
-</ul>
-</li>
-<li><p>2.What is the difference between a &ldquo;change in supply&rdquo; and a change in &ldquo;quantity supplied.&rdquo;</p>
-
-<ul>
-<li><strong>A change in supply供求变动 refers to a change in the amount that producers are willing to sell at every possible price, in terms of the supply curve, the supply curve shifts</strong></li>
-<li><strong>A change in the quantity supplied供给数量 occurs when the price of the product changes. In this case, in terms of the supply curve, there is a movement along the supply curve.</strong></li>
-</ul>
-</li>
-<li><p>3.What does ceteris paribus mean? How does this relate to supply and demand analysis?</p>
-
-<ul>
-<li><strong>Ceteris paribus means &ldquo;with other things the same&rdquo;</strong></li>
-<li><strong>By holding all other things constant, and allowing only one of these influences to change, we are able to determine its effect on supply or demand.</strong></li>
-</ul>
-</li>
-<li><p>4.<em>Holding demand constant</em>, what is the only thing that can cause a change in quantity demanded? What are the things that cause a change in demand?</p>
-
-<ul>
-<li><strong>the change in quantity demanded go up when the price of the good change</strong></li>
-<li><strong>all the influence that cause a shift in the curve, may cause a change in demand</strong>&ndash; 5.How do changes in income affect the demand for a good?</li>
-<li><strong>Income changes cause the demand for a good to increase or decrease.</strong></li>
-<li><strong>if the good in question is normal, an income increase(decrease) will cause the demand 次品&#8221;, an income increase will lower(increase) the demand for good.</strong>&ndash; 6.How do substitute and complementary goods affect the demand for a good.?</li>
-<li><strong>if the price of a 替代品 上升(下降), then the demand for the good in question will 上升(下降).</strong></li>
-<li><strong>on the other hand, 如果补给品的价格上升(下降)，the demand for the good in question will下降(上升).</strong></li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Intro_to_microeconomic_1]]></title>
-    <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-1/"/>
-    <updated>2015-02-08T21:53:03-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-1</id>
-    <content type="html"><![CDATA[<h3>useful resource</h3>
-
-<ul>
-<li><a href="http://www.apstudynotes.org/microeconomics/outlines/chapter-3-economic-systems/">http://www.apstudynotes.org/microeconomics/outlines/chapter-3-economic-systems/</a></li>
-<li><a href="http://wenku.baidu.com/view/beadef03de80d4d8d15a4ffb.html">http://wenku.baidu.com/view/beadef03de80d4d8d15a4ffb.html</a></li>
-</ul>
-
-
-<h3>goal part1</h3>
-
-<ul>
-<li>Basic Economic Concepts (8%–14%)
-
-<ul>
-<li>A.Scarcity,choice and opportunity costs</li>
-<li>B.Production possibilities curve</li>
-<li>C.Comparative advantage, specialisation and trade</li>
-<li>D.Economic systems</li>
-<li>E.Property rights and the role of incentives</li>
-<li>F.Marginal analysis</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<h4>what is economics</h4>
-
-<ul>
-<li>a social science that study how resources are used and is often concerned with how resources can be used to their fullest potential</li>
-<li>And microeconomic is concerned with the economic problem faced by individual units within the overall economy.</li>
-</ul>
-
-
-<h4>Scarcity稀缺性,choice and opportunity costs机会成本</h4>
-
-<ul>
-<li><strong>Scarcity means the society have limited resource</strong>
-
-<ul>
-<li>稀缺性指资源是有限的，相对的说，人类的欲望是无限的，所以经济学正是研究资源应该如何有效efficiently配置的学科。</li>
-<li>and economic is to study how to manage your own scarify resource</li>
-</ul>
-</li>
-<li>choice and opportunity costs
-
-<ul>
-<li>The opportunity cost of a thing is the cost you need to pay to get it.
-
-<ul>
-<li>can also be implement as <strong>the next best alternative given up to acquire something</strong></li>
-<li>因为精力有限，人类总是面临选择，为了得到某种东西或做某件事所放弃的另一最优选择叫机会成本。比如我花50块钱去看话剧，成本好像只有50元，但从机会成本的角度考虑，我选择了看话剧，放弃了用这50块钱和时间去做另一件能给我带来很高价值的事情，如金融投资能赚到200元，200元就是机会成本</li>
-<li>速记公式：Opportunity Cost of doing A=loss in B/gain in A</li>
-</ul>
-</li>
-<li>when people decide to do something, they need to compare the plan they have.</li>
-</ul>
-</li>
-<li><strong>Opportunity Cost of doing A=loss in B/gain in A</strong></li>
-</ul>
-
-
-<h4>Production possibilities curve生產可能性曲線</h4>
-
-<ul>
-<li>is used for resource scarcity and choice measure.
-
-<ul>
-<li>and used for measure a country how to allocate the limited resources.</li>
-</ul>
-</li>
-<li>Shows the combinations of two goods that can be produced if the economy uses all of its resources fully and efficiently</li>
-<li>important infomation
-
-<ul>
-<li>the point on the production possibilities curve
-
-<ul>
-<li>can be reached</li>
-<li>is efficiency</li>
-</ul>
-</li>
-<li>the point inside the production possibilities curve
-
-<ul>
-<li>can be reached</li>
-<li>is not enough efficiency</li>
-</ul>
-</li>
-<li>the point outside the production possibilities curve
-
-<ul>
-<li>can not be reached</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>横纵坐标轴分别是两种产品的产量；曲线边界上的点是有效的efficient、边界内的点可以实现但效率低attainable but inefficient、边界外的点代表用现有资源无法生产unattainable（但经济扩张以后可以实现）；</li>
-<li>依据一般情况画出的曲线应该是弯的，因为存在着机会成本递增规律law of increasing opportunity cost（生产鞋和电脑的资源不可相互替代），特殊情况下是直的，那就是当生产两种物品的资源可替代substitutable的时候（如冰柜和冰箱），机会成本是恒定的。</li>
-<li>生产可能性曲线的斜率越小机会成本越小</li>
-<li>经济增长使生产可能性边界向外移动</li>
-</ul>
-
-
-<h4>Comparative advantage, specialisation专业化 and trade</h4>
-
-<ul>
-<li>难点是绝对优势和比较优势的区别：
-
-<ul>
-<li>前者指用比另一个生产者更少的成本生产某种物品的能力</li>
-<li>后者指用比另一个生产者更少的机会成本生产某种物品的能力。</li>
-</ul>
-</li>
-<li>people need to compare before making decision</li>
-<li>trade
-
-<ul>
-<li><strong>trade create value</strong></li>
-<li>trade benefit everyone</li>
-<li>people can complete a particular task and use to exchange with the others for something else</li>
-</ul>
-</li>
-<li>And market is a good way organise economic activity
-
-<ul>
-<li>use &ldquo;invisible hand&rdquo;
-
-<ul>
-<li>the buyer and seller decide the market price together</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>specialisation专业化指生产方各自专注于生产有比较优势的产品，可以提高产量，进而各方进行贸易，对双方都有好处，即使某一方在所有产品上都有绝对优势。</li>
-</ul>
-
-
-<h4>Economic systems</h4>
-
-<ul>
-<li>fundamental question.
-
-<ul>
-<li>​What is the best way to use the resources at disposal?</li>
-<li>What should be produced given our resources?</li>
-<li>Once it is decided to produce a certain set of goods and services, how much of each item should be produced?</li>
-<li>Who will get how much of each good and service?</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>Property rights财产权 and the role of incentives激励</h4>
-
-<ul>
-<li>计划经济和市场经济
-
-<ul>
-<li>前者的特点是公平equitable，政府管制，中央决定生产多少谁生产谁消费；</li>
-<li>后者的特点是自由交易，供给和需求决定价格，市场决定生产多少消费多少，产权是私有的。</li>
-<li>人类都会对激励做出反应，所谓上有政策下有对策啦：）</li>
-</ul>
-</li>
-<li><strong>The government can protect property right</strong></li>
-<li>when the property of the people is not safe, people will not want to work or produce good.</li>
-<li>The miss leading of the market市场失灵
-
-<ul>
-<li>the situation that the market can not adjust the resource
-
-<ul>
-<li>outside外部性: produce or consume a stuff will affect the outsider&rsquo;s benefit.</li>
-<li>market force垄断: single buyer or seller have the ability to affect the market</li>
-</ul>
-</li>
-<li>so in some condition, public policy can improve efficiency.</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>Marginal analysis 边际分析</h4>
-
-<ul>
-<li>marginal action
-
-<ul>
-<li><strong>when you come up with a decision, you need to consider the next decision first</strong>
-
-<ul>
-<li>I think actually it is the prediction</li>
-<li>for example
-
-<ul>
-<li>if you want to hire a new worker, you will consider the additional cost that hiring the worker might cost. And the value that the worker might bring you.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h4>excercise</h4>
-
-<ul>
-<li>1.Scarcity exists in the short run because:
-
-<ul>
-<li><strong>the world&rsquo;s resources are in finite supply</strong></li>
-</ul>
-</li>
-<li>2.If a nation is currently operating at a point on its production possibilities curve, in order to increase production of one good, the production of other goods must be:
-
-<ul>
-<li><strong>decreased</strong></li>
-</ul>
-</li>
-<li>3.If a nation is currently operating at a point inside its production possibilities curve, it:
-
-<ul>
-<li><strong>has unemployment and/or inefficiently employed resources</strong></li>
-</ul>
-</li>
-<li>4.Production efficiency is achieved:
-
-<ul>
-<li><strong>if resources are reallocated among the production of goods and services and the output of one good can be increased only by reducing the output of other goods.</strong></li>
-</ul>
-</li>
-<li>5.If nation A commits a larger share of its resources to capital and technological improvements than nation B, then over time <strong><strong><strong> will realise </strong></strong></strong> outward shifts in its production possibilities curve.
-
-<ul>
-<li><strong>nation B/smaller</strong></li>
-</ul>
-</li>
-<li>6.The sacrifice or opportunity cost associated with an individual&rsquo;s consumption of an additional good:
-
-<ul>
-<li><strong>is the reduction in other goods consumed when an individual has no additional income.</strong></li>
-</ul>
-</li>
-<li>7.How is a nation&rsquo;s production possibilities curve affected in the long run by a boom in both new and existing housing sales in the present?
-
-<ul>
-<li><strong>Increased housing production in the present means fewer other goods and services, including capital, are produced. The rate of economic growth is lower than it would have been otherwise, causing the production possibilities curve to shift outward by a smaller amount.</strong></li>
-</ul>
-</li>
-<li>8.Which of the following statements best explains why a nation&rsquo;s consumption possibilities line lies outside of its production possibilities line?
-
-<ul>
-<li><strong>If nations specialize in and export goods for which they have a comparative advantage and import goods for which they have a comparative disadvantage, more goods can be obtained through domestic production and trade than from domestic production alone.</strong></li>
-</ul>
-</li>
-<li>9.Which of the following best explains a linear production possibilities curve?
-
-<ul>
-<li><strong>The opportunity cost of producing a given class of goods over a period of time remains constant.</strong></li>
-</ul>
-</li>
-<li>10.Suppose a nation produces two types of goods, capital and food. However, assume that in the capital goods industry firm A produces 2 units of capital per worker per week whereas firm B produces 5 units of capital per worker per week. If resources are fully employed, is this nation on its production possibilities curve?
-
-<ul>
-<li><strong>No, a worker can be reallocated from firm B to firm A for a net gain of 3 units of capital. Thus, the economy must be inside of its production possibilities curve.</strong></li>
 </ul>
 </li>
 </ul>

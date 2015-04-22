@@ -100,6 +100,178 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/05/14/ios-tutorial-2/">
+		
+			IOS Tutorial 2</a>
+	</h2>
+	<div class="entry-content">
+		<ul>
+<li>键盘收起以及弹出对话框</li>
+<li>在<code>ViewController.h</code>里面加入<code>-(IBAction)View_TouchDown:(id)sender</code>;</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/05/14/ios-tutorial-2/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T04:34:49-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/ios/'>IOS</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/05/14/ios-tutorial-2//blog/page/12/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/05/14/ios-tutorial-1/">
+		
+			IOS Tutorial 1</a>
+	</h2>
+	<div class="entry-content">
+		<ul>
+<li>1.一点基本语法</li>
+<li>用NSLog打印，代替printf（也是可以用的）</li>
+<li>用NSDate来获取时间</li>
+<li>用NSData来把数据char*转成string存起来</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/05/14/ios-tutorial-1/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T01:11:01-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/ios/'>IOS</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/05/14/ios-tutorial-1//blog/page/12/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/05/13/2014-sysu-database-project-step1/">
+		
+			2014 Sysu Database Project Step1</a>
+	</h2>
+	<div class="entry-content">
+		<h3>问题描述</h3>
+
+<ul>
+<li><strong>任务 1: 不带压缩地导入数据</strong>
+
+<ul>
+<li>这个任务要求你实现分页存储机制。
+
+<ul>
+<li>此处仅考虑定长的数据类型。对于每一列,需要将所含的定长数据如同数组 一样存储在磁盘上的页中 (更多解释见下文)。每一页的大小是固定的,可以是 4K,8K 或 16K。</li>
+</ul>
+</li>
+<li>在这个任务中,你需要存储 ORDERS 表中的
+
+<ul>
+<li>1.O_ORDERKEY</li>
+<li>2.O_CUSTKEY</li>
+<li>3.O_TOTALPRICE</li>
+<li>4.O_SHIPPRIORITY</li>
+</ul>
+</li>
+<li>不同列的数据类型不一样,具体请参考 TPC-H 的文档。存储之后,你需要 提供接口,以便于查询记录。查询时,要求实现给定一条记录的 ORDERKEY, 返回这条记录的 CUSTKEY,TOTALPRICE 和 SHIPPRIORITY。</li>
+<li>查询接口的具体要求,请参考提交一节。</li>
+<li>这个存储系统必须有能力处理 1G 以上的数据。允许存入内存里的页的数量 为 128。在实现这个限制之外,可以尝试其他限制并做对比。你可能需要学习 LRU 等换页机制来加速数据导入。</li>
+</ul>
+</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/05/13/2014-sysu-database-project-step1/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-13T03:20:32-04:00" pubdate data-updated="true">May 13<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/database/'>database</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/05/13/2014-sysu-database-project-step1//blog/page/12/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/05/12/linear-regression-tutorial/">
 		
 			Linear_regression_tutorial</a>
@@ -284,213 +456,6 @@ Application
 
 	
 		<span class="comments"><a href="/blog/2014/05/08/the-note-of-erp-class//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/05/08/tree-based-ensemble-method-introduction/">
-		
-			Tree Based Ensemble Method Introduction</a>
-	</h2>
-	<div class="entry-content">
-		<h3>Tree-based ensemble methods</h3>
-
-<pre><code>random forest
-gradient boosted decision trees
-</code></pre>
-
-<ul>
-<li>main idea is greedy algorithm
-
-<ul>
-<li>通过构造一棵决策树分类器</li>
-</ul>
-</li>
-<li>随机森林是通过构造10000课树</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/05/08/tree-based-ensemble-method-introduction/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-08T06:30:07-04:00" pubdate data-updated="true">May 8<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/algorithm/'>Algorithm</a>, <a class='category' href='/blog/categories/machine-learning/'>machine_learning</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/05/08/tree-based-ensemble-method-introduction//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/05/03/basic-idea-of-mvc/">
-		
-			Basic Idea of MVC</a>
-	</h2>
-	<div class="entry-content">
-		<h3>What is MVC?</h3>
-
-<ul>
-<li>MVC模式（Model-View-Controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</li>
-<li>MVC在这几年应该被非常多的人所熟悉了，因为相当多的web框架采用的是这套架构，此外，早在MFC横行的年代，MFC所采用的document/view架构也是MVC架构的变种。包括QT，它的model/view亦是如此。只不过它们都将MVC中的view和controller的功能整合到了一起。</li>
-<li>MVC的全称是model-view-controller architecture，最早被用在了smalltalk语言中。MVC最适合用在交互式的应用程序中。</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/05/03/basic-idea-of-mvc/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-03T09:21:20-04:00" pubdate data-updated="true">May 3<span>rd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/system-analyze-and-design/'>System_analyze_and_design</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/05/03/basic-idea-of-mvc//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/04/25/c-pointer-tutorial-1/">
-		
-			C Pointer Tutorial (1)</a>
-	</h2>
-	<div class="entry-content">
-		<h3>First is the basic</h3>
-
-<ul>
-<li>About <code>#</code>
-
-<ul>
-<li>these code are processed by the preprocessor</li>
-<li>After the preprocessor read the code, the preprocessor directives will deal with it</li>
-<li>then give the main code that are dealed with by the preprocessor directives to the complier</li>
-<li>like <code>#include &lt;stdio.h&gt;</code>
-
-<ul>
-<li>It means that use the content in the stdio.h to replace the <code>#</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>About <code>const</code>
-
-<ul>
-<li>the value that is named const can not be modified</li>
-<li>and it would be better to use <code>const</code> than <code>define</code> to define some const value.</li>
-</ul>
-</li>
-<li><p>About passing the value</p>
-
-<ul>
-<li>in C programming language
-
-<ul>
-<li>all the array is passed using <strong>reference</strong>(if the value change in the function, it will change.)</li>
-<li>and all the value and const value are passed using <strong>value</strong>(if the value change in the function, it will <strong>not</strong> change.)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>About string I/O</p>
-
-<ul>
-<li><code>gets</code>
-
-<ul>
-<li>it is used to read a line in the content and store it as a parameter to pass to the array</li>
-<li>the input line contains: a string and a newline</li>
-</ul>
-</li>
-<li><code>puts</code></li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/04/25/c-pointer-tutorial-1/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-25T01:41:01-04:00" pubdate data-updated="true">Apr 25<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/c/'>c</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/04/25/c-pointer-tutorial-1//blog/page/12/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

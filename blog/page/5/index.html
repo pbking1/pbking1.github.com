@@ -100,6 +100,199 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2015/02/05/public-speech-note/">
+		
+			Public Speech Note</a>
+	</h2>
+	<div class="entry-content">
+		<h3>public speech technic note</h3>
+
+<h4>audience</h4>
+
+<ul>
+<li>focus on a single person
+
+<ul>
+<li>reduce pressure</li>
+</ul>
+</li>
+<li>audience is very important</li>
+<li>help emotionally connect to audience</li>
+<li>help you visualise one single person to talk to</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2015/02/05/public-speech-note/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-05T22:50:10-05:00" pubdate data-updated="true">Feb 5<span>th</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/other/'>other</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/02/05/public-speech-note//blog/page/5/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2015/02/05/xapian-tutorial-2/">
+		
+			Xapian_tutorial_2</a>
+	</h2>
+	<div class="entry-content">
+		<h3>The expand of synonym(同义词)</h3>
+
+<ul>
+<li>such as ‘I love you‘ and &lsquo;ILU&rsquo;</li>
+<li>process to do this
+
+<ul>
+<li>Write the synonym into database
+
+<ul>
+<li>use <code>WriteDatabase::add_synonym(term,synonym)</code></li>
+<li>but we can only do &lsquo;I love you&rsquo; &ndash;> &lsquo;ILU&rsquo;
+
+<ul>
+<li>if we want to reverse it, we need to add the reverse version</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>use the synonym when query</h3>
+
+<ul>
+<li>use <code>QueryParser::set_database()</code> to set db</li>
+<li>when using the <code>QueryParser::set_database()</code>, the second parameter use <code>FLAG_SYNONYM</code> or <code>FLAG_AUTO_SYNONYMS</code></li>
+<li><code>FLAG_SYNONYM</code> is the ~WORD format in the query sentence. expend the synonym of the word automatically</li>
+<li><code>FLAG_AUTO_SYNONYMS</code> is expend all the phrase, do not need to write ~</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2015/02/05/xapian-tutorial-2/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-05T19:54:20-05:00" pubdate data-updated="true">Feb 5<span>th</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/c-plus-plus/'>c++</a>, <a class='category' href='/blog/categories/search-engine/'>search_engine</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/02/05/xapian-tutorial-2//blog/page/5/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2015/02/05/xapian-tutorial-1/">
+		
+			Xapian_tutorial_1</a>
+	</h2>
+	<div class="entry-content">
+		<ul>
+<li>note:some of the content and code are refer from <a href="http://www.coder4.com/archives/2218">http://www.coder4.com/archives/2218</a></li>
+</ul>
+
+
+<h3>basic index build and search</h3>
+
+<ul>
+<li>first of all, xapian is an open source c++ search engine.</li>
+<li>also note that xapian is called &ldquo;Zap-in&rdquo;</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2015/02/05/xapian-tutorial-1/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-05T16:40:48-05:00" pubdate data-updated="true">Feb 5<span>th</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/c-plus-plus/'>c++</a>, <a class='category' href='/blog/categories/search-engine/'>search_engine</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/02/05/xapian-tutorial-1//blog/page/5/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/">
 		
 			Difference Between Malloc and New in C++</a>
@@ -292,183 +485,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/11/05/iupui-mason-high-performance-mass//blog/page/5/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/">
-		
-			How to Install Python Package on Redhat Without Root Access</a>
-	</h2>
-	<div class="entry-content">
-		<h3>dependent of scrapy</h3>
-
-<ul>
-<li>remember that the scrapt need python2.7 to run</li>
-<li>and there will be lots of package need to be installed</li>
-</ul>
-
-
-<h3>What to do when need to install python package on the server without root access</h3>
-
-<ul>
-<li>today I went through a problem that I want to have the python package installed on the high performance server but without the root access</li>
-<li>and what I need to do is to install the python 2.7.3 first and then install all the package that scrapy need and finaly get scrapy run</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-11-01T00:01:13-04:00" pubdate data-updated="true">Nov 1<span>st</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/python/'>python</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/11/01/how-to-install-python-package-on-redhat-without-root-access//blog/page/5/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/10/30/2014-indianapolis-redefined-hackathron/">
-		
-			2014_indianapolis_redefined_hackathron</a>
-	</h2>
-	<div class="entry-content">
-		<h3>The hackathron take 24 hours to write an app that can be used for attracting people to indianapolis</h3>
-
-<ul>
-<li>and I first design a python version of app</li>
-<li>then I use bootstrap theme to develop a mobile compatible web app with php link to the mysql database.</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/10/30/2014-indianapolis-redefined-hackathron/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-30T21:25:44-04:00" pubdate data-updated="true">Oct 30<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/hackathron/'>hackathron</a>, <a class='category' href='/blog/categories/html/'>html</a>, <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/python/'>python</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/10/30/2014-indianapolis-redefined-hackathron//blog/page/5/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/10/23/database-and-backend-injection/">
-		
-			Database_and_backend_injection</a>
-	</h2>
-	<div class="entry-content">
-		<h3>database ER diagram</h3>
-
-<ul>
-<li><img src="/images/php_project/lab4_db.jpg"></li>
-<li>some change in the database <strong>relationship</strong></li>
-<li><img src="/images/php_project/database_lingma_structure.png" style="height: 300px; width: 300px"></li>
-<li>we have
-
-<ul>
-<li>T_ADMIN</li>
-<li>T_USER</li>
-<li>T_USER_CLASS</li>
-<li>T_PROJECT</li>
-<li>T_PRO_LEVEL</li>
-<li>T_PROJECT_STATISTICS</li>
-<li>T_TASK</li>
-<li>T_SUBTASK</li>
-<li>T_MATERIAL</li>
-<li>T_CUSTOMER</li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/10/23/database-and-backend-injection/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-23T09:13:16-04:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/database/'>database</a>, <a class='category' href='/blog/categories/php/'>php</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/10/23/database-and-backend-injection//blog/page/5/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
