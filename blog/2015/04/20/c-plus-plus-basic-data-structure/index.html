@@ -183,8 +183,8 @@ int main(){
 <li>链表ADT
 
 <ul>
-<li><code>
-template &lt;typename E&gt; class List{
+<li>&#8220;`
+template <typename E> class List{
 private:
   void operator = (const List &amp;){}
   List(const List&amp;){}
@@ -205,220 +205,525 @@ public:
   virtual int currPos() const = 0;
   virtual void moveToPos(int pos) = 0;
   virtual const E&amp; getValue() const = 0;
-};
-</code></li>
-</ul>
-</li>
-<li>数组实现
-
-<ul>
-<li><code>
-template &lt;typename E&gt; class AList: public List&lt;E&gt;{
-private:
-  int maxSize;
-  int listSize;
-  int curr;
-  E* listArray;   
-public:
-  //初始化列表
-  AList(int size = 100){
-      maxSize = size;
-      listSize = 0;
-      curr = 0;
-      listArray = new E[maxSize];
-  }
-  //构析函数，删掉数组，释放空间
-  ~AList(){
-      delete []listArray;
-  }
-  void clear(){
-      delete []listArray;
-      listSize = 0;
-      curr = 0;
-      listArray = new E[maxSize];
-  }
-  //把当前位置之后的数组向后移动一位，再插入
-  void insert(const E&amp; it){
-      for(int i = listSize; i &gt; curr; i--)
-          listArray[i] = listArray[i-1];
-      //move back the array from the current position
-      listArray[curr] = it;
-      listSize++;
-  }
-  //直接在最后增加item
-  void append(const E&amp; it){
-      listArray[listSize++] = it;
-  }
-  //记录当前的数组索引的指向的数据，把数组向前移动一位
-  E remove(){
-      E it = listArray[curr];
-      for(int i = curr; i &lt; listSize - 1; i++){
-          listArray[i] = listArray[i + 1];
-      }
-      listSize--;
-      return it;
-  }
-  void moveToStart(){
-      curr = 0;
-  }
-  void moveToEnd(){
-      curr = listSize;
-  }
-  void prev(){
-      if(curr &gt; 0)
-          curr--;
-  }
-  void next(){
-      if(curr &lt; listSize)
-          curr++;
-  }
-  int length(){
-      return listSize;
-  }
-  int currPos() const{
-      return curr;
-  }
-  void moveToPos(int pos){
-      pos = curr;
-  }
-  const E&amp; getValue() const{
-      return listArray[curr];
-  }
-};
-</code></li>
-</ul>
-</li>
-<li>链式实现
-
-<ul>
-<li>&#8220;`
-template <typename E> class Link{
-public:
-  E element;
-  Link <em>next;
-  Link(const E&amp; elemval, Link </em>nextval = NULL){
-      element = elemval;
-      next = nextval;
-  }
-  Link(Link *nextval = NULL){
-      next = nextval;
-  }
 };</li>
 </ul>
 </li>
 </ul>
 
 
-<p>template <typename E> class LList: public List<E>{</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+<span class='line-number'>176</span>
+<span class='line-number'>177</span>
+<span class='line-number'>178</span>
+<span class='line-number'>179</span>
+<span class='line-number'>180</span>
+<span class='line-number'>181</span>
+<span class='line-number'>182</span>
+<span class='line-number'>183</span>
+<span class='line-number'>184</span>
+<span class='line-number'>185</span>
+<span class='line-number'>186</span>
+<span class='line-number'>187</span>
+<span class='line-number'>188</span>
+<span class='line-number'>189</span>
+<span class='line-number'>190</span>
+<span class='line-number'>191</span>
+<span class='line-number'>192</span>
+<span class='line-number'>193</span>
+<span class='line-number'>194</span>
+<span class='line-number'>195</span>
+<span class='line-number'>196</span>
+<span class='line-number'>197</span>
+<span class='line-number'>198</span>
+<span class='line-number'>199</span>
+<span class='line-number'>200</span>
+<span class='line-number'>201</span>
+<span class='line-number'>202</span>
+<span class='line-number'>203</span>
+<span class='line-number'>204</span>
+<span class='line-number'>205</span>
+<span class='line-number'>206</span>
+<span class='line-number'>207</span>
+<span class='line-number'>208</span>
+<span class='line-number'>209</span>
+<span class='line-number'>210</span>
+<span class='line-number'>211</span>
+<span class='line-number'>212</span>
+<span class='line-number'>213</span>
+<span class='line-number'>214</span>
+<span class='line-number'>215</span>
+<span class='line-number'>216</span>
+<span class='line-number'>217</span>
+<span class='line-number'>218</span>
+<span class='line-number'>219</span>
+<span class='line-number'>220</span>
+<span class='line-number'>221</span>
+<span class='line-number'>222</span>
+<span class='line-number'>223</span>
+<span class='line-number'>224</span>
+<span class='line-number'>225</span>
+<span class='line-number'>226</span>
+<span class='line-number'>227</span>
+<span class='line-number'>228</span>
+<span class='line-number'>229</span>
+<span class='line-number'>230</span>
+<span class='line-number'>231</span>
+<span class='line-number'>232</span>
+<span class='line-number'>233</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- 数组实现
+</span><span class='line'>    - ```
+</span><span class='line'>    template &lt;typename E&gt; class AList: public List&lt;E&gt;{
+</span><span class='line'>  private:
+</span><span class='line'>      int maxSize;
+</span><span class='line'>      int listSize;
+</span><span class='line'>      int curr;
+</span><span class='line'>      E* listArray;   
+</span><span class='line'>  public:
+</span><span class='line'>      //初始化列表
+</span><span class='line'>      AList(int size = 100){
+</span><span class='line'>          maxSize = size;
+</span><span class='line'>          listSize = 0;
+</span><span class='line'>          curr = 0;
+</span><span class='line'>          listArray = new E[maxSize];
+</span><span class='line'>      }
+</span><span class='line'>      //构析函数，删掉数组，释放空间
+</span><span class='line'>      ~AList(){
+</span><span class='line'>          delete []listArray;
+</span><span class='line'>      }
+</span><span class='line'>      void clear(){
+</span><span class='line'>          delete []listArray;
+</span><span class='line'>          listSize = 0;
+</span><span class='line'>          curr = 0;
+</span><span class='line'>          listArray = new E[maxSize];
+</span><span class='line'>      }
+</span><span class='line'>      //把当前位置之后的数组向后移动一位，再插入
+</span><span class='line'>      void insert(const E& it){
+</span><span class='line'>          for(int i = listSize; i &gt; curr; i--)
+</span><span class='line'>              listArray[i] = listArray[i-1];
+</span><span class='line'>          //move back the array from the current position
+</span><span class='line'>          listArray[curr] = it;
+</span><span class='line'>          listSize++;
+</span><span class='line'>      }
+</span><span class='line'>      //直接在最后增加item
+</span><span class='line'>      void append(const E& it){
+</span><span class='line'>          listArray[listSize++] = it;
+</span><span class='line'>      }
+</span><span class='line'>      //记录当前的数组索引的指向的数据，把数组向前移动一位
+</span><span class='line'>      E remove(){
+</span><span class='line'>          E it = listArray[curr];
+</span><span class='line'>          for(int i = curr; i &lt; listSize - 1; i++){
+</span><span class='line'>              listArray[i] = listArray[i + 1];
+</span><span class='line'>          }
+</span><span class='line'>          listSize--;
+</span><span class='line'>          return it;
+</span><span class='line'>      }
+</span><span class='line'>      void moveToStart(){
+</span><span class='line'>          curr = 0;
+</span><span class='line'>      }
+</span><span class='line'>      void moveToEnd(){
+</span><span class='line'>          curr = listSize;
+</span><span class='line'>      }
+</span><span class='line'>      void prev(){
+</span><span class='line'>          if(curr &gt; 0)
+</span><span class='line'>              curr--;
+</span><span class='line'>      }
+</span><span class='line'>      void next(){
+</span><span class='line'>          if(curr &lt; listSize)
+</span><span class='line'>              curr++;
+</span><span class='line'>      }
+</span><span class='line'>      int length(){
+</span><span class='line'>          return listSize;
+</span><span class='line'>      }
+</span><span class='line'>      int currPos() const{
+</span><span class='line'>          return curr;
+</span><span class='line'>      }
+</span><span class='line'>      void moveToPos(int pos){
+</span><span class='line'>          pos = curr;
+</span><span class='line'>      }
+</span><span class='line'>      const E& getValue() const{
+</span><span class='line'>          return listArray[curr];
+</span><span class='line'>      }
+</span><span class='line'>    };
+</span><span class='line'>    ```
+</span><span class='line'>- 链式实现
+</span><span class='line'>    - ```
+</span><span class='line'>    template &lt;typename E&gt; class Link{
+</span><span class='line'>  public:
+</span><span class='line'>      E element;
+</span><span class='line'>      Link *next;
+</span><span class='line'>      Link(const E& elemval, Link *nextval = NULL){
+</span><span class='line'>          element = elemval;
+</span><span class='line'>          next = nextval;
+</span><span class='line'>      }
+</span><span class='line'>      Link(Link *nextval = NULL){
+</span><span class='line'>          next = nextval;
+</span><span class='line'>      }
+</span><span class='line'>};
+</span><span class='line'>
+</span><span class='line'>template &lt;typename E&gt; class LList: public List&lt;E&gt;{
+</span><span class='line'>  private:
+</span><span class='line'>      Link&lt;E&gt; *head;
+</span><span class='line'>      Link&lt;E&gt; *tail;
+</span><span class='line'>      Link&lt;E&gt; *curr;
+</span><span class='line'>      int count;
+</span><span class='line'>      void init(){
+</span><span class='line'>          curr = tail = head = new Link&lt;E&gt;;
+</span><span class='line'>          count = 0;
+</span><span class='line'>      }
+</span><span class='line'>      void removeall(){
+</span><span class='line'>          while(head != NULL){
+</span><span class='line'>              curr = head;
+</span><span class='line'>              head = head -&gt; next;
+</span><span class='line'>              delete curr;
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>
+</span><span class='line'>  public:
+</span><span class='line'>      LList(int size=100){
+</span><span class='line'>          init();
+</span><span class='line'>      }
+</span><span class='line'>      ~LList(){
+</span><span class='line'>          removeall();
+</span><span class='line'>      }
+</span><span class='line'>      void clear(){
+</span><span class='line'>          removeall();
+</span><span class='line'>          init();
+</span><span class='line'>      }
+</span><span class='line'>      void insert(const E& it){
+</span><span class='line'>          //给要增加的节点初始化
+</span><span class='line'>          curr -&gt; next = new Link&lt;E&gt;(it, curr -&gt; next);
+</span><span class='line'>          //如果要curr指针就是再末尾
+</span><span class='line'>          //那么把curr的下一个赋给tail
+</span><span class='line'>          if(tail == curr)
+</span><span class='line'>              tail = curr -&gt; next;
+</span><span class='line'>          count++;
+</span><span class='line'>      }
+</span><span class='line'>      void append(const E& it){
+</span><span class='line'>          //直接把末尾指针的next指向新建的link
+</span><span class='line'>          tail = tail -&gt; next = new Link&lt;E&gt;(it, NULL);
+</span><span class='line'>          count++;
+</span><span class='line'>      }
+</span><span class='line'>      //注意，这里要删除的节点叫做curr-&gt;next
+</span><span class='line'>      E remove(){
+</span><span class='line'>          //先把要删除的node的值存起来
+</span><span class='line'>          E it = curr -&gt; next -&gt; element;
+</span><span class='line'>          //用temp存一下要删除的节点
+</span><span class='line'>          Link&lt;E&gt; *temp = curr -&gt; next;
+</span><span class='line'>          //如果这个要删除的点是末尾，那么把末尾前一个节点赋给tail
+</span><span class='line'>          if(tail == curr -&gt; next)
+</span><span class='line'>              tail = curr;
+</span><span class='line'>          //否则，把要删除的节点的前一个节点的next指向要删除节点的下一个
+</span><span class='line'>          curr -&gt; next = curr -&gt; next -&gt; next;
+</span><span class='line'>          delete temp;
+</span><span class='line'>          count--;
+</span><span class='line'>          return it;
+</span><span class='line'>      }
+</span><span class='line'>      void moveToStart(){
+</span><span class='line'>          curr = head;
+</span><span class='line'>      }
+</span><span class='line'>      void moveToEnd(){
+</span><span class='line'>          curr = tail;
+</span><span class='line'>      }
+</span><span class='line'>      void prev(){
+</span><span class='line'>          if(curr == head)
+</span><span class='line'>              return ;
+</span><span class='line'>          Link&lt;E&gt; *temp = head;
+</span><span class='line'>          //向左移动一个单位
+</span><span class='line'>          //做法是先用temp存一个head，然后向右找，直到找到curr的前一个，然后把curr的前一个赋给curr
+</span><span class='line'>          while(temp -&gt; next != curr)
+</span><span class='line'>              temp = temp -&gt; next;
+</span><span class='line'>          curr = temp;
+</span><span class='line'>      }
+</span><span class='line'>      void next(){
+</span><span class='line'>          //只要curr指针不是tail，那么就向后移动
+</span><span class='line'>          if(curr != tail)
+</span><span class='line'>              curr = curr -&gt; next;
+</span><span class='line'>      }
+</span><span class='line'>      int length(){
+</span><span class='line'>          return count;
+</span><span class='line'>      }
+</span><span class='line'>      int currPos() const{
+</span><span class='line'>          Link&lt;E&gt; *temp = head;
+</span><span class='line'>          //用temp指针存head，然后依次向后遍历，并且每次后移count+1
+</span><span class='line'>          int i;
+</span><span class='line'>          for(i = 0; i &lt; count; i++){
+</span><span class='line'>              temp = temp -&gt; next;
+</span><span class='line'>          }
+</span><span class='line'>          return i;
+</span><span class='line'>      }
+</span><span class='line'>      void moveToPos(int pos){
+</span><span class='line'>          curr = head;
+</span><span class='line'>          //先把current的指针指向head
+</span><span class='line'>          //然后一直向后移动，直到pos次
+</span><span class='line'>          for(int i = 0; i &lt; pos; i++){
+</span><span class='line'>              curr = curr -&gt; next;
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>      const E& getValue() const{
+</span><span class='line'>          return curr -&gt; next -&gt; element;
+</span><span class='line'>      }
+</span><span class='line'>    };
+</span><span class='line'>    ```
+</span><span class='line'>####栈
+</span><span class='line'>- 数组实现
+</span><span class='line'>- ```
+</span><span class='line'>class Astack{
+</span><span class='line'>  private:
+</span><span class='line'>      int maxSize;
+</span><span class='line'>      int top;
+</span><span class='line'>      int *array;
+</span><span class='line'>  public:
+</span><span class='line'>      Astack(int size = 100){
+</span><span class='line'>          maxSize = size;
+</span><span class='line'>          top = 0;
+</span><span class='line'>          array = new int[size];
+</span><span class='line'>      }
+</span><span class='line'>      ~Astack(){
+</span><span class='line'>          delete []array;
+</span><span class='line'>      }
+</span><span class='line'>      void clear(){
+</span><span class='line'>          top = 0;
+</span><span class='line'>      }
+</span><span class='line'>      void push(int item){
+</span><span class='line'>          array[top++] = item;
+</span><span class='line'>      }
+</span><span class='line'>      int pop(){
+</span><span class='line'>          int temp = array[top];
+</span><span class='line'>          return array[--top];
+</span><span class='line'>      }
+</span><span class='line'>      int getTop(){
+</span><span class='line'>          return array[top - 1];
+</span><span class='line'>      }   
+</span><span class='line'>};
+</span><span class='line'>int main(){
+</span><span class='line'>  Astack a;
+</span><span class='line'>  a.push(1);
+</span><span class='line'>  cout&lt;&lt;a.getTop();
+</span><span class='line'>  a.pop();
+</span><span class='line'>  cout&lt;&lt;a.getTop();
+</span><span class='line'>  return 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>private:
-    Link&lt;E&gt; *head;
-    Link&lt;E&gt; *tail;
-    Link&lt;E&gt; *curr;
-    int count;
-    void init(){
-        curr = tail = head = new Link&lt;E&gt;;
-        count = 0;
-    }
-    void removeall(){
-        while(head != NULL){
-            curr = head;
-            head = head -&gt; next;
-            delete curr;
-        }
-    }
-
-public:
-    LList(int size=100){
-        init();
-    }
-    ~LList(){
-        removeall();
-    }
-    void clear(){
-        removeall();
-        init();
-    }
-    void insert(const E&amp; it){
-        //给要增加的节点初始化
-        curr -&gt; next = new Link&lt;E&gt;(it, curr -&gt; next);
-        //如果要curr指针就是再末尾
-        //那么把curr的下一个赋给tail
-        if(tail == curr)
-            tail = curr -&gt; next;
-        count++;
-    }
-    void append(const E&amp; it){
-        //直接把末尾指针的next指向新建的link
-        tail = tail -&gt; next = new Link&lt;E&gt;(it, NULL);
-        count++;
-    }
-    //注意，这里要删除的节点叫做curr-&gt;next
-    E remove(){
-        //先把要删除的node的值存起来
-        E it = curr -&gt; next -&gt; element;
-        //用temp存一下要删除的节点
-        Link&lt;E&gt; *temp = curr -&gt; next;
-        //如果这个要删除的点是末尾，那么把末尾前一个节点赋给tail
-        if(tail == curr -&gt; next)
-            tail = curr;
-        //否则，把要删除的节点的前一个节点的next指向要删除节点的下一个
-        curr -&gt; next = curr -&gt; next -&gt; next;
-        delete temp;
-        count--;
-        return it;
-    }
-    void moveToStart(){
-        curr = head;
-    }
-    void moveToEnd(){
-        curr = tail;
-    }
-    void prev(){
-        if(curr == head)
-            return ;
-        Link&lt;E&gt; *temp = head;
-        //向左移动一个单位
-        //做法是先用temp存一个head，然后向右找，直到找到curr的前一个，然后把curr的前一个赋给curr
-        while(temp -&gt; next != curr)
-            temp = temp -&gt; next;
-        curr = temp;
-    }
-    void next(){
-        //只要curr指针不是tail，那么就向后移动
-        if(curr != tail)
-            curr = curr -&gt; next;
-    }
-    int length(){
-        return count;
-    }
-    int currPos() const{
-        Link&lt;E&gt; *temp = head;
-        //用temp指针存head，然后依次向后遍历，并且每次后移count+1
-        int i;
-        for(i = 0; i &lt; count; i++){
-            temp = temp -&gt; next;
-        }
-        return i;
-    }
-    void moveToPos(int pos){
-        curr = head;
-        //先把current的指针指向head
-        //然后一直向后移动，直到pos次
-        for(int i = 0; i &lt; pos; i++){
-            curr = curr -&gt; next;
-        }
-    }
-    const E&amp; getValue() const{
-        return curr -&gt; next -&gt; element;
-    }
-};
-```
-</code></pre>
-
-<h4>栈</h4>
 
 <h4>队列</h4>
+
+<ul>
+<li>数组实现</li>
+<li><code>
+class Aqueue{
+  private:
+      int front;
+      int rear;
+      int maxSize;
+      int *array;
+  public:
+      Aqueue(int size = 100){
+          maxSize = size;
+          front = rear = 0;
+          array = new int[size];
+      }
+      ~Aqueue(){
+          delete [] array;
+      }
+      void enqueue(int item){
+          array[rear] = item;
+          rear = (rear + 1)%maxSize;
+      }
+      int dequeue(){
+          int temp = array[front];
+          front = (front + 1)%maxSize;
+          array[front] = 0;
+          return temp;
+      }
+      const int getFrontValue(){
+          return array[front];
+      }
+};
+int main(){
+  Aqueue q;
+  q.enqueue(1);
+  cout&lt;&lt;q.getFrontValue()&lt;&lt;endl;
+  q.dequeue();
+  cout&lt;&lt;q.getFrontValue();
+  return 0;
+}
+</code></li>
+</ul>
+
 
 <h4>字典</h4>
 </div>

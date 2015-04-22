@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-21T23:56:18-04:00</updated>
+  <updated>2015-04-22T00:45:13-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -340,7 +340,94 @@ public:
 
 <h4>栈</h4>
 
+<ul>
+<li>数组实现</li>
+<li><code>
+class Astack{
+  private:
+      int maxSize;
+      int top;
+      int *array;
+  public:
+      Astack(int size = 100){
+          maxSize = size;
+          top = 0;
+          array = new int[size];
+      }
+      ~Astack(){
+          delete []array;
+      }
+      void clear(){
+          top = 0;
+      }
+      void push(int item){
+          array[top++] = item;
+      }
+      int pop(){
+          int temp = array[top];
+          return array[--top];
+      }
+      int getTop(){
+          return array[top - 1];
+      }   
+};
+int main(){
+  Astack a;
+  a.push(1);
+  cout&lt;&lt;a.getTop();
+  a.pop();
+  cout&lt;&lt;a.getTop();
+  return 0;
+}
+</code></li>
+</ul>
+
+
 <h4>队列</h4>
+
+<ul>
+<li>数组实现</li>
+<li><code>
+class Aqueue{
+  private:
+      int front;
+      int rear;
+      int maxSize;
+      int *array;
+  public:
+      Aqueue(int size = 100){
+          maxSize = size;
+          front = rear = 0;
+          array = new int[size];
+      }
+      ~Aqueue(){
+          delete [] array;
+      }
+      void enqueue(int item){
+          array[rear] = item;
+          rear = (rear + 1)%maxSize;
+      }
+      int dequeue(){
+          int temp = array[front];
+          front = (front + 1)%maxSize;
+          array[front] = 0;
+          return temp;
+      }
+      const int getFrontValue(){
+          return array[front];
+      }
+};
+int main(){
+  Aqueue q;
+  q.enqueue(1);
+  cout&lt;&lt;q.getFrontValue()&lt;&lt;endl;
+  q.dequeue();
+  cout&lt;&lt;q.getFrontValue();
+  return 0;
+}
+</code></li>
+</ul>
+
 
 <h4>字典</h4>
 ]]></content>
