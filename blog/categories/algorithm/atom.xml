@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T00:45:13-04:00</updated>
+  <updated>2015-04-22T00:59:14-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -429,7 +429,61 @@ int main(){
 </ul>
 
 
-<h4>字典</h4>
+<h4>二叉树</h4>
+
+<ul>
+<li>遍历
+
+<ul>
+<li>前序遍历
+
+<ul>
+<li><code>
+void preorder(Node *root){
+  if(root == NULL){
+      return ;
+  }
+  cout&lt;&lt;root-&gt;value;
+  preorder(root -&gt; left);
+  preorder(root -&gt; right);
+}
+</code></li>
+</ul>
+</li>
+<li>中序遍历
+
+<ul>
+<li><code>
+void inorder(Node *root){
+  if(root == NULL){
+      return ;
+  }
+  inorder(root -&gt; left);
+  cout&lt;&lt;root -&gt; value;
+  inorder(root -&gt; right);
+}
+</code></li>
+</ul>
+</li>
+<li>后序遍历
+
+<ul>
+<li><code>
+void postorder(Node *root){
+  if(root == NULL){
+      return ;
+  }
+  postorder(root -&gt; left);
+  postorder)root -&gt; right);
+  cout&lt;&lt;root -&gt; value;
+}
+</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 ]]></content>
   </entry>
   
