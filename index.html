@@ -337,32 +337,525 @@ $(document).ready(
 <li>核心理念就是基类访问派生类定义的函数</li>
 <li>动态联编</li>
 <li>一个函数的调用不是在编译的时候确定的，而是在运行的时候确定的，并且因为写代码的时候不能确定被调用的函数是基类的函数还是派生类的函数，所以这个函数又叫做“虚函数“</li>
-<li><code>
-class A{
-  public:
-      virtual void test(){
-          cout&lt;&lt;"A:test() is called";
-      }        
-};
-class B: public A{
-  public:
-      virtual void test(){
-          cout&lt;&lt;"B:test() is called";
-      }
-};
-int main(){
-  A *a = new B();
-  a -&gt; test();
-}
-</code></li>
 </ul>
 </li>
 </ul>
 
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>class A{
+</span><span class='line'>    public:
+</span><span class='line'>        virtual void test(){
+</span><span class='line'>            cout&lt;&lt;"A:test() is called";
+</span><span class='line'>        }        
+</span><span class='line'>};
+</span><span class='line'>class B: public A{
+</span><span class='line'>    public:
+</span><span class='line'>        virtual void test(){
+</span><span class='line'>            cout&lt;&lt;"B:test() is called";
+</span><span class='line'>        }
+</span><span class='line'>};
+</span><span class='line'>int main(){
+</span><span class='line'>    A *a = new B();
+</span><span class='line'>    a -&gt; test();
+</span><span class='line'>}
+</span><span class='line'>```
+</span><span class='line'>
+</span><span class='line'>&lt;!--more--&gt;
+</span><span class='line'>- 虚函数表
+</span><span class='line'>- 实现多态的主要功能
+</span><span class='line'>- 编译器会为每一个有虚函数的类的实例创建一个虚函数表 
+</span><span class='line'>- 用来存虚函数的table
+</span><span class='line'>    - table的每个slot（槽）里面存放虚函数的地址
+</span><span class='line'>
+</span><span class='line'>- 纯虚函数
+</span><span class='line'>- `virtual void test() = 0`
+</span><span class='line'>- 意思是抽象类，也可以说是接口，用来规范派生类的行为
+</span><span class='line'>    - 告诉使用者我的派生类都会有这个函数
+</span><span class='line'>- 虚构析函数
+</span><span class='line'>    - 当一个类要被其他的类当基类使用的时候，必须是纯虚的
+</span><span class='line'>    - 如果有两个class A和B
+</span><span class='line'>        - B继承A，但是A的构析函数没有设置成虚函数
+</span><span class='line'>        - 那么在delete B的实例的时候，只有A的实例被delete， B的不会被delete。。。那这不是坑爹吗。。。。
+</span><span class='line'>        - 但是再A的构析函数前面加上virtual，这样就能保证在delete B的实例的时候，两个类的构析函数都会被调用
+</span><span class='line'>        
+</span><span class='line'>- 但是构造函数不能使虚函数
+</span><span class='line'>
+</span><span class='line'>####链表
+</span><span class='line'>- 链表ADT
+</span><span class='line'>- ```
+</span><span class='line'>template &lt;typename E&gt; class List{
+</span><span class='line'>private:
+</span><span class='line'>  void operator = (const List &){}
+</span><span class='line'>  List(const List&){}
+</span><span class='line'>public:
+</span><span class='line'>  List(){}
+</span><span class='line'>  virtual ~List(){}
+</span><span class='line'>  virtual void clear() = 0;
+</span><span class='line'>  virtual void insert(const E& item) = 0;
+</span><span class='line'>  virtual void append(const E& item) = 0;
+</span><span class='line'>  virtual E remove() = 0;
+</span><span class='line'>  //move the pointer to start
+</span><span class='line'>  virtual void moveToStart() = 0;
+</span><span class='line'>  //move the pointer to end
+</span><span class='line'>  virtual void moveToEnd() = 0;
+</span><span class='line'>  virtual void prev() = 0;
+</span><span class='line'>  virtual void next() = 0;
+</span><span class='line'>  virtual int length() const = 0;
+</span><span class='line'>  virtual int currPos() const = 0;
+</span><span class='line'>  virtual void moveToPos(int pos) = 0;
+</span><span class='line'>  virtual const E& getValue() const = 0;
+</span><span class='line'>};</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>数组实现
+
+<ul>
+<li><code>
+template &lt;typename E&gt; class AList: public List&lt;E&gt;{
+private:
+  int maxSize;
+  int listSize;
+  int curr;
+  E* listArray;   
+public:
+  //初始化列表
+  AList(int size = 100){
+      maxSize = size;
+      listSize = 0;
+      curr = 0;
+      listArray = new E[maxSize];
+  }
+  //构析函数，删掉数组，释放空间
+  ~AList(){
+      delete []listArray;
+  }
+  void clear(){
+      delete []listArray;
+      listSize = 0;
+      curr = 0;
+      listArray = new E[maxSize];
+  }
+  //把当前位置之后的数组向后移动一位，再插入
+  void insert(const E&amp; it){
+      for(int i = listSize; i &gt; curr; i--)
+          listArray[i] = listArray[i-1];
+      //move back the array from the current position
+      listArray[curr] = it;
+      listSize++;
+  }
+  //直接在最后增加item
+  void append(const E&amp; it){
+      listArray[listSize++] = it;
+  }
+  //记录当前的数组索引的指向的数据，把数组向前移动一位
+  E remove(){
+      E it = listArray[curr];
+      for(int i = curr; i &lt; listSize - 1; i++){
+          listArray[i] = listArray[i + 1];
+      }
+      listSize--;
+      return it;
+  }
+  void moveToStart(){
+      curr = 0;
+  }
+  void moveToEnd(){
+      curr = listSize;
+  }
+  void prev(){
+      if(curr &gt; 0)
+          curr--;
+  }
+  void next(){
+      if(curr &lt; listSize)
+          curr++;
+  }
+  int length(){
+      return listSize;
+  }
+  int currPos() const{
+      return curr;
+  }
+  void moveToPos(int pos){
+      pos = curr;
+  }
+  const E&amp; getValue() const{
+      return listArray[curr];
+  }
+};
+</code></li>
+</ul>
+</li>
+<li>链式实现
+
+<ul>
+<li><code>
+template &lt;typename E&gt; class Link{
+public:
+  E element;
+  Link *next;
+  Link(const E&amp; elemval, Link *nextval = NULL){
+      element = elemval;
+      next = nextval;
+  }
+  Link(Link *nextval = NULL){
+      next = nextval;
+  }
+};
+template &lt;typename E&gt; class LList: public List&lt;E&gt;{
+private:
+  Link&lt;E&gt; *head;
+  Link&lt;E&gt; *tail;
+  Link&lt;E&gt; *curr;
+  int count;
+  void init(){
+      curr = tail = head = new Link&lt;E&gt;;
+      count = 0;
+  }
+  void removeall(){
+      while(head != NULL){
+          curr = head;
+          head = head -&gt; next;
+          delete curr;
+      }
+  }
+public:
+  LList(int size=100){
+      init();
+  }
+  ~LList(){
+      removeall();
+  }
+  void clear(){
+      removeall();
+      init();
+  }
+  void insert(const E&amp; it){
+      //给要增加的节点初始化
+      curr -&gt; next = new Link&lt;E&gt;(it, curr -&gt; next);
+      //如果要curr指针就是再末尾
+      //那么把curr的下一个赋给tail
+      if(tail == curr)
+          tail = curr -&gt; next;
+      count++;
+  }
+  void append(const E&amp; it){
+      //直接把末尾指针的next指向新建的link
+      tail = tail -&gt; next = new Link&lt;E&gt;(it, NULL);
+      count++;
+  }
+  //注意，这里要删除的节点叫做curr-&gt;next
+  E remove(){
+      //先把要删除的node的值存起来
+      E it = curr -&gt; next -&gt; element;
+      //用temp存一下要删除的节点
+      Link&lt;E&gt; *temp = curr -&gt; next;
+      //如果这个要删除的点是末尾，那么把末尾前一个节点赋给tail
+      if(tail == curr -&gt; next)
+          tail = curr;
+      //否则，把要删除的节点的前一个节点的next指向要删除节点的下一个
+      curr -&gt; next = curr -&gt; next -&gt; next;
+      delete temp;
+      count--;
+      return it;
+  }
+  void moveToStart(){
+      curr = head;
+  }
+  void moveToEnd(){
+      curr = tail;
+  }
+  void prev(){
+      if(curr == head)
+          return ;
+      Link&lt;E&gt; *temp = head;
+      //向左移动一个单位
+      //做法是先用temp存一个head，然后向右找，直到找到curr的前一个，然后把curr的前一个赋给curr
+      while(temp -&gt; next != curr)
+          temp = temp -&gt; next;
+      curr = temp;
+  }
+  void next(){
+      //只要curr指针不是tail，那么就向后移动
+      if(curr != tail)
+          curr = curr -&gt; next;
+  }
+  int length(){
+      return count;
+  }
+  int currPos() const{
+      Link&lt;E&gt; *temp = head;
+      //用temp指针存head，然后依次向后遍历，并且每次后移count+1
+      int i;
+      for(i = 0; i &lt; count; i++){
+          temp = temp -&gt; next;
+      }
+      return i;
+  }
+  void moveToPos(int pos){
+      curr = head;
+      //先把current的指针指向head
+      //然后一直向后移动，直到pos次
+      for(int i = 0; i &lt; pos; i++){
+          curr = curr -&gt; next;
+      }
+  }
+  const E&amp; getValue() const{
+      return curr -&gt; next -&gt; element;
+  }
+};
+</code>
+
+<h4>栈</h4></li>
+</ul>
+</li>
+<li>数组实现</li>
+<li>&#8220;`
+class Astack{
+  private:
+      int maxSize;
+      int top;
+      int *array;
+  public:
+      Astack(int size = 100){
+          maxSize = size;
+          top = 0;
+          array = new int[size];
+      }
+      ~Astack(){
+          delete []array;
+      }
+      void clear(){
+          top = 0;
+      }
+      void push(int item){
+          array[top++] = item;
+      }
+      int pop(){
+          int temp = array[top];
+          return array[&mdash;top];
+      }
+      int getTop(){
+          return array[top &ndash; 1];
+      } <br/>
+};
+int main(){
+  Astack a;
+  a.push(1);
+  cout&lt;&lt;a.getTop();
+  a.pop();
+  cout&lt;&lt;a.getTop();
+  return 0;
+}</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>####队列
+</span><span class='line'>- 数组实现
+</span><span class='line'>- ```
+</span><span class='line'>class Aqueue{
+</span><span class='line'>  private:
+</span><span class='line'>      int front;
+</span><span class='line'>      int rear;
+</span><span class='line'>      int maxSize;
+</span><span class='line'>      int *array;
+</span><span class='line'>  public:
+</span><span class='line'>      Aqueue(int size = 100){
+</span><span class='line'>          maxSize = size;
+</span><span class='line'>          front = rear = 0;
+</span><span class='line'>          array = new int[size];
+</span><span class='line'>      }
+</span><span class='line'>      ~Aqueue(){
+</span><span class='line'>          delete [] array;
+</span><span class='line'>      }
+</span><span class='line'>      void enqueue(int item){
+</span><span class='line'>          array[rear] = item;
+</span><span class='line'>          rear = (rear + 1)%maxSize;
+</span><span class='line'>      }
+</span><span class='line'>      int dequeue(){
+</span><span class='line'>          int temp = array[front];
+</span><span class='line'>          front = (front + 1)%maxSize;
+</span><span class='line'>          array[front] = 0;
+</span><span class='line'>          return temp;
+</span><span class='line'>      }
+</span><span class='line'>      const int getFrontValue(){
+</span><span class='line'>          return array[front];
+</span><span class='line'>      }
+</span><span class='line'>};
+</span><span class='line'>int main(){
+</span><span class='line'>  Aqueue q;
+</span><span class='line'>  q.enqueue(1);
+</span><span class='line'>  cout&lt;&lt;q.getFrontValue()&lt;&lt;endl;
+</span><span class='line'>  q.dequeue();
+</span><span class='line'>  cout&lt;&lt;q.getFrontValue();
+</span><span class='line'>  return 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>二叉树</h4>
+
+<ul>
+<li>遍历
+
+<ul>
+<li>前序遍历
+
+<ul>
+<li><code>
+void preorder(Node *root){
+  if(root == NULL){
+      return ;
+  }
+  cout&lt;&lt;root-&gt;value;
+  preorder(root -&gt; left);
+  preorder(root -&gt; right);
+}
+</code></li>
+</ul>
+</li>
+<li>中序遍历
+
+<ul>
+<li><code>
+void inorder(Node *root){
+  if(root == NULL){
+      return ;
+  }
+  inorder(root -&gt; left);
+  cout&lt;&lt;root -&gt; value;
+  inorder(root -&gt; right);
+}
+</code></li>
+</ul>
+</li>
+<li>后序遍历
+
+<ul>
+<li><code>
+void postorder(Node *root){
+  if(root == NULL){
+      return ;
+  }
+  postorder(root -&gt; left);
+  postorder)root -&gt; right);
+  cout&lt;&lt;root -&gt; value;
+}
+</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 
 		
-		<a href="/blog/2015/04/20/c-plus-plus-basic-data-structure/" class="more-link">Read more</a>
+		
 	</div>
 
 
