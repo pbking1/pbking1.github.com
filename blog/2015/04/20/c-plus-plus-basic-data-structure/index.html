@@ -220,12 +220,14 @@ private:
   int curr;
   E* listArray;   
 public:
+  //初始化列表
   AList(int size = 100){
       maxSize = size;
       listSize = 0;
       curr = 0;
       listArray = new E[maxSize];
   }
+  //构析函数，删掉数组，释放空间
   ~AList(){
       delete []listArray;
   }
@@ -235,6 +237,7 @@ public:
       curr = 0;
       listArray = new E[maxSize];
   }
+  //把当前位置之后的数组向后移动一位，再插入
   void insert(const E&amp; it){
       for(int i = listSize; i &gt; curr; i--)
           listArray[i] = listArray[i-1];
@@ -242,9 +245,11 @@ public:
       listArray[curr] = it;
       listSize++;
   }
+  //直接在最后增加item
   void append(const E&amp; it){
       listArray[listSize++] = it;
   }
+  //记录当前的数组索引的指向的数据，把数组向前移动一位
   E remove(){
       E it = listArray[curr];
       for(int i = curr; i &lt; listSize - 1; i++){
@@ -283,9 +288,133 @@ public:
 </code></li>
 </ul>
 </li>
-<li>链式实现</li>
+<li>链式实现
+
+<ul>
+<li>&#8220;`
+template <typename E> class Link{
+public:
+  E element;
+  Link <em>next;
+  Link(const E&amp; elemval, Link </em>nextval = NULL){
+      element = elemval;
+      next = nextval;
+  }
+  Link(Link *nextval = NULL){
+      next = nextval;
+  }
+};</li>
+</ul>
+</li>
 </ul>
 
+
+<p>template <typename E> class LList: public List<E>{</p>
+
+<pre><code>private:
+    Link&lt;E&gt; *head;
+    Link&lt;E&gt; *tail;
+    Link&lt;E&gt; *curr;
+    int count;
+    void init(){
+        curr = tail = head = new Link&lt;E&gt;;
+        count = 0;
+    }
+    void removeall(){
+        while(head != NULL){
+            curr = head;
+            head = head -&gt; next;
+            delete curr;
+        }
+    }
+
+public:
+    LList(int size=100){
+        init();
+    }
+    ~LList(){
+        removeall();
+    }
+    void clear(){
+        removeall();
+        init();
+    }
+    void insert(const E&amp; it){
+        //给要增加的节点初始化
+        curr -&gt; next = new Link&lt;E&gt;(it, curr -&gt; next);
+        //如果要curr指针就是再末尾
+        //那么把curr的下一个赋给tail
+        if(tail == curr)
+            tail = curr -&gt; next;
+        count++;
+    }
+    void append(const E&amp; it){
+        //直接把末尾指针的next指向新建的link
+        tail = tail -&gt; next = new Link&lt;E&gt;(it, NULL);
+        count++;
+    }
+    //注意，这里要删除的节点叫做curr-&gt;next
+    E remove(){
+        //先把要删除的node的值存起来
+        E it = curr -&gt; next -&gt; element;
+        //用temp存一下要删除的节点
+        Link&lt;E&gt; *temp = curr -&gt; next;
+        //如果这个要删除的点是末尾，那么把末尾前一个节点赋给tail
+        if(tail == curr -&gt; next)
+            tail = curr;
+        //否则，把要删除的节点的前一个节点的next指向要删除节点的下一个
+        curr -&gt; next = curr -&gt; next -&gt; next;
+        delete temp;
+        count--;
+        return it;
+    }
+    void moveToStart(){
+        curr = head;
+    }
+    void moveToEnd(){
+        curr = tail;
+    }
+    void prev(){
+        if(curr == head)
+            return ;
+        Link&lt;E&gt; *temp = head;
+        //向左移动一个单位
+        //做法是先用temp存一个head，然后向右找，直到找到curr的前一个，然后把curr的前一个赋给curr
+        while(temp -&gt; next != curr)
+            temp = temp -&gt; next;
+        curr = temp;
+    }
+    void next(){
+        //只要curr指针不是tail，那么就向后移动
+        if(curr != tail)
+            curr = curr -&gt; next;
+    }
+    int length(){
+        return count;
+    }
+    int currPos() const{
+        Link&lt;E&gt; *temp = head;
+        //用temp指针存head，然后依次向后遍历，并且每次后移count+1
+        int i;
+        for(i = 0; i &lt; count; i++){
+            temp = temp -&gt; next;
+        }
+        return i;
+    }
+    void moveToPos(int pos){
+        curr = head;
+        //先把current的指针指向head
+        //然后一直向后移动，直到pos次
+        for(int i = 0; i &lt; pos; i++){
+            curr = curr -&gt; next;
+        }
+    }
+    const E&amp; getValue() const{
+        return curr -&gt; next -&gt; element;
+    }
+};
+```
+</code></pre>
 
 <h4>栈</h4>
 
