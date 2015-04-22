@@ -814,42 +814,70 @@ $(document).ready(
 <li>遍历
 
 <ul>
-<li>前序遍历
-  <code>
-  void preorder(Node *root){
-      if(root == NULL){
-          return ;
-      }
-      cout&lt;&lt;root-&gt;value;
-      preorder(root -&gt; left);
-      preorder(root -&gt; right);
-  }
- </code></li>
-<li>中序遍历
-  <code>
-  void inorder(Node *root){
-      if(root == NULL){
-          return ;
-      }
-      inorder(root -&gt; left);
-      cout&lt;&lt;root -&gt; value;
-      inorder(root -&gt; right);
-  }
- </code></li>
-<li>后序遍历
-  <code>
-  void postorder(Node *root){
-      if(root == NULL){
-          return ;
-      }
-      postorder(root -&gt; left);
-      postorder)root -&gt; right);
-      cout&lt;&lt;root -&gt; value;
-  }
- </code></li>
+<li>前序遍历</li>
 </ul>
 </li>
 </ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>    void preorder(Node *root){
+</span><span class='line'>        if(root == NULL){
+</span><span class='line'>            return ;
+</span><span class='line'>        }
+</span><span class='line'>        cout&lt;&lt;root-&gt;value;
+</span><span class='line'>        preorder(root -&gt; left);
+</span><span class='line'>        preorder(root -&gt; right);
+</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>- 中序遍历
+</code></pre>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>    void inorder(Node *root){
+</span><span class='line'>        if(root == NULL){
+</span><span class='line'>            return ;
+</span><span class='line'>        }
+</span><span class='line'>        inorder(root -&gt; left);
+</span><span class='line'>        cout&lt;&lt;root -&gt; value;
+</span><span class='line'>        inorder(root -&gt; right);
+</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>- 后序遍历
+</code></pre>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>    void postorder(Node *root){
+</span><span class='line'>        if(root == NULL){
+</span><span class='line'>            return ;
+</span><span class='line'>        }
+</span><span class='line'>        postorder(root -&gt; left);
+</span><span class='line'>        postorder)root -&gt; right);
+</span><span class='line'>        cout&lt;&lt;root -&gt; value;
+</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
