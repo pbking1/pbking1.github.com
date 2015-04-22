@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T01:03:33-04:00</updated>
+  <updated>2015-04-22T01:04:34-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -151,27 +151,27 @@ return 0;
 <ul>
 <li>核心理念就是基类访问派生类定义的函数</li>
 <li>动态联编</li>
-<li>一个函数的调用不是在编译的时候确定的，而是在运行的时候确定的，并且因为写代码的时候不能确定被调用的函数是基类的函数还是派生类的函数，所以这个函数又叫做“虚函数“</li>
+<li>一个函数的调用不是在编译的时候确定的，而是在运行的时候确定的，并且因为写代码的时候不能确定被调用的函数是基类的函数还是派生类的函数，所以这个函数又叫做“虚函数“
+<code>
+class A{
+  public:
+      virtual void test(){
+          cout&lt;&lt;"A:test() is called";
+      }        
+};
+class B: public A{
+  public:
+      virtual void test(){
+          cout&lt;&lt;"B:test() is called";
+      }
+};
+int main(){
+  A *a = new B();
+  a -&gt; test();
+}
+</code></li>
 </ul>
 </li>
-<li><code>
-  class A{
-      public:
-          virtual void test(){
-              cout&lt;&lt;"A:test() is called";
-          }        
-  };
-  class B: public A{
-      public:
-          virtual void test(){
-              cout&lt;&lt;"B:test() is called";
-          }
-  };
-  int main(){
-      A *a = new B();
-      a -&gt; test();
-  }
-</code></li>
 </ul>
 
 
