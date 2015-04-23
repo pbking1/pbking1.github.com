@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T15:36:53-04:00</updated>
+  <updated>2015-04-23T15:59:00-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -457,12 +457,34 @@ return 0;
 </li>
 </ul>
 </li>
-<li><p>归并排序
-```</p></li>
+<li><p>归并排序</p></li>
+<li>基本思想：
+
+<ul>
+<li>分而治之</li>
+<li>先通过递归分解数组，然后再合并数组完成归并排序</li>
+</ul>
+</li>
+<li>如何合并两个有序数组
+
+<ul>
+<li>比较两个数列的第一个数，把小的那个加入到结果数组中，然后从原来的数组删掉</li>
+<li>然后一直循环比较到全部数据都取出来为止
+```</li>
+</ul>
+</li>
 </ul>
 
 
 <p>```</p>
+
+<h4>归并和快排的区别</h4>
+
+<ul>
+<li>快排分解之后不需要合并就能得到最终答案</li>
+<li>归并分解之后还要对比两个子数组然后合并的到答案</li>
+</ul>
+
 
 <h3>外排序</h3>
 
