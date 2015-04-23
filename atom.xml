@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T11:35:56-04:00</updated>
+  <updated>2015-04-23T11:39:12-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -592,6 +592,9 @@
 </ul>
 
 
+<!--more-->
+
+
 <h4>内排序</h4>
 
 <ul>
@@ -604,8 +607,12 @@
 <li>选择排序</li>
 </ul>
 </li>
-<li><p>快速排序</p></li>
+<li><p>快速排序</p>
+
+<ul>
 <li>耗时nlogn</li>
+</ul>
+</li>
 </ul>
 
 
