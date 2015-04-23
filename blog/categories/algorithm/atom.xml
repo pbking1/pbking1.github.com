@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-22T17:27:12-04:00</updated>
+  <updated>2015-04-23T10:51:41-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -24,11 +24,138 @@
 
 <h4>图的实现</h4>
 
+<ul>
+<li>V为点的个数 E边的个数</li>
+<li>邻接矩阵
+
+<ul>
+<li>用一个n*n的矩阵
+
+<ul>
+<li>第一列第二个为1的意思是
+
+<ul>
+<li>第一个点和第二个点相连</li>
+<li>1为权值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>O(V<sup>2</sup>)</li>
+<li>用一个二维数组实现</li>
+</ul>
+</li>
+<li>邻接表
+
+<ul>
+<li>用一个n长度的数组
+
+<ul>
+<li>然后每一个数组后面接的链表里面存着
+
+<ul>
+<li>这个数组index对应的点和哪些点相连
+
+<ul>
+<li>这些点存在链表里面</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>O(V+E)</li>
+<li>stl实现</li>
+<li>用vector<Node> list
+
+<ul>
+<li>然后Node就是每个点
+
+<ul>
+<li>如果有别的点和这个Node相连，就list.push_back(别的点)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
 <h4>图搜索</h4>
 
 <h5>广度优先搜索</h5>
 
+<ul>
+<li>相当于先把第一层的所有点入队
+
+<ul>
+<li>然后把每个点的相邻的节点入队
+
+<ul>
+<li>e.g
+
+<ul>
+<li>假设第一层的节点为A, 第二层为B，第三层为C
+
+<ul>
+<li>那么队列中的情况就是
+
+<ul>
+<li>A,B,C,A1,A2,A3,B1,C2</li>
+<li>这样访问下来，就相当于一层一层的遍历了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>伪代码
+<code>
+function dfs(vertex v){
+  create a queue Q
+  enqueue v into Q
+  mark v as visited
+  while Q is not empty{
+      use temp to store Q.top
+      dequeue the top vertex from Q
+      for each adjacent w in temp{
+          mark w as visited
+          enqueue w into Q
+      }
+  }
+}
+</code></li>
+</ul>
+
+
 <h5>宽度优先搜索</h5>
+
+<ul>
+<li>伪代码
+<code>
+function dfs(vertex v){
+  mark v as visited //把点标记为已经访问过了
+  for each node adjacent to v //对这个点的所有邻接点进行搜索
+      if node is unvisited  //如果从左到右，找到这个点没有被访问过
+          dfs(node) //递归调用
+      //如果这个点访问过了
+          //那么向右移，继续搜索
+}
+</code></li>
+</ul>
+
+
+<h5>二叉树的BFS和DFS</h5>
+
+<ul>
+<li></li>
+</ul>
+
 
 <h5>拓扑排序和搜索</h5>
 
@@ -58,22 +185,245 @@
 
 <h4>树</h4>
 
+<ul>
+<li>trie树
+
+<ul>
+<li>特点
+
+<ul>
+<li>根节点没有字符，除此之外，所有节点都只有一个字符</li>
+<li>从根节点到任意叶子节点，都是一个独立的单词</li>
+<li>每个节点的子节点包含的后续字符串都是不一样的</li>
+</ul>
+</li>
+<li>但是hash表不能一边建立索引一边查数据
+
+<ul>
+<li>trie树可以
+
+<ul>
+<li>因为只要之前建立过的，再次出现的时候，就不会再增加</li>
+</ul>
+</li>
+<li>而hash表建立的时候，不知道之前这个单词出现过，所以还是要建完表
+
+<ul>
+<li>再搜索</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
 <h4>内排序</h4>
 
 <ul>
-<li><p>冒泡排序</p></li>
-<li><p>插入排序</p></li>
-<li><p>选择排序</p></li>
+<li><p>O(n<sup>2</sup>)</p>
+
+<ul>
+<li>主要是交换那个动作耗时</li>
+<li>冒泡排序</li>
+<li>插入排序</li>
+<li>选择排序</li>
+</ul>
+</li>
 <li><p>快速排序</p></li>
-<li><p>归并排序</p></li>
+<li>耗时nlogn
+```</li>
 </ul>
 
+
+<p>```</p>
+
+<ul>
+<li>归并排序
+```</li>
+</ul>
+
+
+<p>```</p>
 
 <h3>外排序</h3>
 
 <h4>哈希表</h4>
 
+<ul>
+<li>建立hash表
+
+<ul>
+<li>用hash函数把key转换成一个整型数字，这个整型数字对数组长度求模之后就是数组的下标
+
+<ul>
+<li>那么value就存在这个下表的数组空间里面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>查询hash表</p>
+
+<ul>
+<li>把要查询的key用hash函数转换成数组下标，再去数组里面提取</li>
+<li>O(N)非常快</li>
+</ul>
+</li>
+<li><p>假设有1000万个记录，有重复，去除重复之后大约300万</p>
+
+<ul>
+<li>求top 10出现率的记录</li>
+<li>解答：
+
+<ul>
+<li>用hash表
+
+<ul>
+<li>维护一个&lt;记录，出现次数>的hash表
+
+<ul>
+<li>这样就有一个300万条左右记录的hash表</li>
+<li>再找前十就行了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>找前10可以用部分排序
+
+<ul>
+<li>也就是用一个10个大小的数组
+
+<ul>
+<li>然后搜hash表，每次都和数组最后的那个比
+
+<ul>
+<li>如果比他大，就交换</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>把key变成下表的方法</p>
+
+<ul>
+<li>1.对key求模
+
+<ul>
+<li>index = value % 16</li>
+</ul>
+</li>
+<li>2.平方散列
+
+<ul>
+<li>index = (value * value) >> 28
+
+<ul>
+<li>右移28bit是指除以2<sup>28</sup></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果两个value在hash表中对应同一个index怎么办？
+
+<ul>
+<li>可以用链表解决
+
+<ul>
+<li>这样就不会有冲突产生</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
 <h4>索引</h4>
+
+<ul>
+<li><p>线性索引</p>
+
+<ul>
+<li>索引文件是一个线性的列表</li>
+<li>并且列表中的每个元素都对应者数据库中的一个元素
+
+<ul>
+<li>或者数据库的某个位置</li>
+</ul>
+</li>
+<li>但是有时候索引文件太大，装不进内存
+
+<ul>
+<li>那么解决方案就是用二级索引
+
+<ul>
+<li>这个二级索引是索引文件的索引</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>但是每个数据库更新的时候
+
+<ul>
+<li>所有的索引文件都要更新，但是线性索引的代价很大</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ISAM</p></li>
+<li>树状索引
+
+<ul>
+<li>B树
+
+<ul>
+<li>balance tree</li>
+<li>b树的搜索
+
+<ul>
+<li>对根节点进行二分查找</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>B+树
+
+<ul>
+<li>B树的变种</li>
+<li>叶子节点存数据</li>
+<li>非叶子节点存索引</li>
+<li>好处
+
+<ul>
+<li>因为B+树内部只是存索引，不像B树是存数据的
+
+<ul>
+<li>因此B+树I/O读写次数降低了</li>
+</ul>
+</li>
+<li>查找效率稳定
+
+<ul>
+<li>因为所有非叶子节点都是索引</li>
+<li>因此数据都在叶子节点上，因此关键字查询的路径相同</li>
+<li>因此每一个数据的查找效率相当</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -505,44 +855,40 @@ int main(){
 <h4>二叉树</h4>
 
 <ul>
-<li>遍历
-
-<ul>
+<li>遍历</li>
 <li><p>前序遍历
 <code>
-  void preorder(Node *root){
-      if(root == NULL){
-          return ;
+      void preorder(Node *root){
+          if(root == NULL){
+              return ;
+          }
+          cout&lt;&lt;root-&gt;value;
+          preorder(root -&gt; left);
+          preorder(root -&gt; right);
       }
-      cout&lt;&lt;root-&gt;value;
-      preorder(root -&gt; left);
-      preorder(root -&gt; right);
-  }
 </code></p></li>
 <li><p>中序遍历
 <code>
-  void inorder(Node *root){
-      if(root == NULL){
-          return ;
+      void inorder(Node *root){
+          if(root == NULL){
+              return ;
+          }
+          inorder(root -&gt; left);
+          cout&lt;&lt;root -&gt; value;
+          inorder(root -&gt; right);
       }
-      inorder(root -&gt; left);
-      cout&lt;&lt;root -&gt; value;
-      inorder(root -&gt; right);
-  }
 </code></p></li>
 <li><p>后序遍历
 <code>
-  void postorder(Node *root){
-      if(root == NULL){
-          return ;
+      void postorder(Node *root){
+          if(root == NULL){
+              return ;
+          }
+          postorder(root -&gt; left);
+          postorder)root -&gt; right);
+          cout&lt;&lt;root -&gt; value;
       }
-      postorder(root -&gt; left);
-      postorder)root -&gt; right);
-      cout&lt;&lt;root -&gt; value;
-  }
 </code></p></li>
-</ul>
-</li>
 </ul>
 
 ]]></content>
