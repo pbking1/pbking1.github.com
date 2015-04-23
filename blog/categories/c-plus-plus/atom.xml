@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T11:39:12-04:00</updated>
+  <updated>2015-04-23T14:51:40-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -389,24 +389,78 @@ cout&lt;&lt;&ldquo;result of dfs: &rdquo;;
 dfs(tree);
 cout&lt;&lt;endl;
 return 0;
-}</p></li>
+}
+```</p></li>
 </ul>
 </li>
 </ul>
 
 
-<p>```</p>
+<h5>拓扑排序</h5>
 
-<h5>拓扑排序和搜索</h5>
+<ul>
+<li>方法
+
+<ul>
+<li>用在有向图里面</li>
+<li>选择一个入度为0的点，输出
+
+<ul>
+<li>然后删除这个点和所有和他相连的出去的边</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 
 <h4>最短路径</h4>
 
 <ul>
 <li>单源最短路</li>
+<li>Dijkstra算法
+
+<ul>
+<li>首先把起点加入集合</li>
+<li>每次查询的时候
+
+<ul>
+<li>把和这个集合最近的那个点加入集合</li>
+<li>然后递归</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>floyd算法
+
+<ul>
+<li>原理是动态规划</li>
+<li>首先得出图的邻接矩阵
+
+<ul>
+<li>然后如果i==j那么为0，因为自己到自己的距离为0</li>
+<li>如果两个点不邻接，那么为INF(很大的数字)</li>
+</ul>
+</li>
+<li>其次，如果有N个点，那么就要对矩阵进行n次更新
+
+<ul>
+<li>依次把距离当前集合距离最小的点加入集合</li>
+<li>并且更新矩阵数据</li>
+<li>如果a[i][j] > a[i][k] + a[k][j]
+
+<ul>
+<li>则a[i][j] = a[i][k] + a[k][j]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
-<h4>最小生成树</h4>
+<h4>最小生成树(todo)</h4>
 
 <ul>
 <li>Prim</li>
