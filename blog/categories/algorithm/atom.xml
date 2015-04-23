@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T14:51:40-04:00</updated>
+  <updated>2015-04-23T15:36:53-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -296,6 +296,7 @@ return 0;
 </li>
 </ul>
 </li>
+<li>最后得出的矩阵就是包含所有点到所有点的最短距离</li>
 </ul>
 </li>
 </ul>
@@ -372,18 +373,92 @@ return 0;
 <li><p>快速排序</p>
 
 <ul>
-<li>耗时nlogn
-```</li>
+<li>时间复杂度：nlogn</li>
+<li>最坏：n<sup>2</sup>
+
+<ul>
+<li>把区域划分成n-1和1</li>
+</ul>
+</li>
+<li>空间复杂度：nlogn</li>
+<li>所以其实要解释快排是什么
+
+<ul>
+<li>就是选一个中间值
+
+<ul>
+<li>把比这个中间值小的放到左边</li>
+<li>把比这个中间值大的放到右边</li>
+<li>然后分别对这两个子数组递归调用快速排序</li>
+<li>最后的出来的就是排序好的</li>
 </ul>
 </li>
 </ul>
-
-
-<p>```</p>
+</li>
+<li>思想：
 
 <ul>
-<li>归并排序
-```</li>
+<li>对于A[p&hellip;.r]</li>
+<li>基于分而治之</li>
+<li>首先
+
+<ul>
+<li>A[p&hellip;.r]被分解成两个子数组
+
+<ul>
+<li>一个是A[p&hellip;.q-1]，一个是A[q+1&hellip;..r]</li>
+<li>然后递归调用对A[p&hellip;q-1]和A[q+1&hellip;..r]排序</li>
+</ul>
+</li>
+<li>最后合并子数组
+<code>
+void quicksort(int *a, int low, int upp){
+//low和upp为数组的上界和下界
+int i = low;
+int j = upp;
+int mid = (low + upp)/2;
+//设置pivot用作对比
+int pivot = a[mid];
+int temp;
+//partition
+do{
+while(a[i] &lt; pivot)
+i++;
+while(a[j] &gt; pivot)
+j--;
+if(i &lt;= j){
+swap(a[i], a[j]);
+i++;
+j--;
+}
+}while(i &lt; j);
+//递归调用解决子问题
+if(low &lt; j)
+quicksort(a, low, j);
+if(i &lt; upp)
+quicksort(a, i, upp);
+}
+int main(){
+int a[10] = {1,5,4,3,6,5,3,4,5,3};
+for(int i = 0; i &lt; 10; i++){
+cout&lt;&lt;a[i]&lt;&lt;" ";
+}
+cout&lt;&lt;endl;
+quicksort(a, 0, 9);
+for(int i = 0; i &lt; 10; i++){
+cout&lt;&lt;a[i]&lt;&lt;" ";
+}
+return 0;
+}
+</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>归并排序
+```</p></li>
 </ul>
 
 

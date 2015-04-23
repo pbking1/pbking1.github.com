@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T14:51:40-04:00</updated>
+  <updated>2015-04-23T15:36:53-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -588,6 +588,7 @@
 </li>
 </ul>
 </li>
+<li>最后得出的矩阵就是包含所有点到所有点的最短距离</li>
 </ul>
 </li>
 </ul>
@@ -664,7 +665,48 @@
 <li><p>快速排序</p>
 
 <ul>
-<li>耗时nlogn</li>
+<li>时间复杂度：nlogn</li>
+<li>最坏：n<sup>2</sup>
+
+<ul>
+<li>把区域划分成n-1和1</li>
+</ul>
+</li>
+<li>空间复杂度：nlogn</li>
+<li>所以其实要解释快排是什么
+
+<ul>
+<li>就是选一个中间值
+
+<ul>
+<li>把比这个中间值小的放到左边</li>
+<li>把比这个中间值大的放到右边</li>
+<li>然后分别对这两个子数组递归调用快速排序</li>
+<li>最后的出来的就是排序好的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>思想：
+
+<ul>
+<li>对于A[p&hellip;.r]</li>
+<li>基于分而治之</li>
+<li>首先
+
+<ul>
+<li>A[p&hellip;.r]被分解成两个子数组
+
+<ul>
+<li>一个是A[p&hellip;.q-1]，一个是A[q+1&hellip;..r]</li>
+<li>然后递归调用对A[p&hellip;q-1]和A[q+1&hellip;..r]排序</li>
+</ul>
+</li>
+<li>最后合并子数组</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -674,10 +716,84 @@
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>```
-</span><span class='line'>
-</span><span class='line'>- 归并排序</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>void quicksort(int *a, int low, int upp){
+</span><span class='line'>  //low和upp为数组的上界和下界
+</span><span class='line'>  int i = low;
+</span><span class='line'>  int j = upp;
+</span><span class='line'>  int mid = (low + upp)/2;
+</span><span class='line'>  //设置pivot用作对比
+</span><span class='line'>  int pivot = a[mid];
+</span><span class='line'>  int temp;
+</span><span class='line'>  //partition
+</span><span class='line'>  do{
+</span><span class='line'>      while(a[i] &lt; pivot)
+</span><span class='line'>          i++;
+</span><span class='line'>      while(a[j] &gt; pivot)
+</span><span class='line'>          j--;
+</span><span class='line'>      if(i &lt;= j){
+</span><span class='line'>          swap(a[i], a[j]);
+</span><span class='line'>          i++;
+</span><span class='line'>          j--;
+</span><span class='line'>      }
+</span><span class='line'>  }while(i &lt; j);
+</span><span class='line'>  //递归调用解决子问题
+</span><span class='line'>  if(low &lt; j)
+</span><span class='line'>      quicksort(a, low, j);
+</span><span class='line'>  if(i &lt; upp)
+</span><span class='line'>      quicksort(a, i, upp);
+</span><span class='line'>}
+</span><span class='line'>int main(){
+</span><span class='line'>  int a[10] = {1,5,4,3,6,5,3,4,5,3};
+</span><span class='line'>  for(int i = 0; i &lt; 10; i++){
+</span><span class='line'>      cout&lt;&lt;a[i]&lt;&lt;" ";
+</span><span class='line'>  }
+</span><span class='line'>  cout&lt;&lt;endl;
+</span><span class='line'>  quicksort(a, 0, 9);
+</span><span class='line'>  for(int i = 0; i &lt; 10; i++){
+</span><span class='line'>      cout&lt;&lt;a[i]&lt;&lt;" ";
+</span><span class='line'>  }
+</span><span class='line'>  return 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>归并排序
+&#8220;`</li>
+</ul>
 
 
 <p>&#8220;`</p>
