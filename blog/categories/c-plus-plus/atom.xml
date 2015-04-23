@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T11:22:05-04:00</updated>
+  <updated>2015-04-23T11:35:56-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -241,6 +241,9 @@ b = temp;
 </ul>
 
 
+<!--more-->
+
+
 <h4>图搜索</h4>
 
 <h5>广度优先搜索</h5>
@@ -313,89 +316,84 @@ function dfs(vertex v){
 
 <h5>二叉树的BFS和DFS</h5>
 
-<p>```</p>
+<ul>
+<li>首先递归建树
+
+<ul>
+<li>再用bfs和dfs
+```
 
 <h1>define Element char</h1>
 
-<p>typedef struct Node{</p>
-
-<pre><code>Element data;
-struct Node *left;
-struct Node *right;
-</code></pre>
-
-<p>}*Tree;
+<p>typedef struct Node{
+Element data;
+struct Node <em>left;
+struct Node </em>right;
+}<em>Tree;
 int i = 0;
-void construct_tree(Tree &amp;root, Element data[]){</p>
-
-<pre><code>Element e = data[i++];
-if(e == '#')
-    root = NULL;
+//按照先序遍历建树
+void construct_tree(Tree &amp;root, Element data[]){
+Element e = data[i++];
+if(e == &lsquo;#&rsquo;)
+  root = NULL;
 else{
-    root = new Node();
-    root -&gt; data = e;
-    construct_tree(root -&gt; left, data);
-    construct_tree(root -&gt; right, data);
-}   
-</code></pre>
-
-<p>}
-void bfs(Tree root){</p>
-
-<pre><code>queue&lt;Node *&gt; q;
+  root = new Node();
+  root &ndash;> data = e;
+  construct_tree(root &ndash;> left, data); //递归建立左子树
+  construct_tree(root &ndash;> right, data); //递归建立右子树
+} <br/>
+}
+void bfs(Tree root){  <br/>
+queue<Node *> q;
 q.push(root);
 while(!q.empty()){
-    Node *temp = q.front();
-    q.pop();
-    cout&lt;&lt;temp -&gt; data;
-    if(temp -&gt; left)
-        q.push(temp -&gt; left);
-    if(temp -&gt; right)
-        q.push(temp -&gt; right);
+  Node </em>temp = q.front();
+  q.pop();
+  cout&lt;<temp -> data;
+  if(temp &ndash;> left)
+      q.push(temp &ndash;> left);
+  if(temp &ndash;> right)
+      q.push(temp &ndash;> right);
 }
-</code></pre>
-
-<p>}
-void dfs(Tree root){</p>
-
-<pre><code>stack&lt;Node *&gt; s;
+}
+void dfs(Tree root){
+stack<Node *> s;
 s.push(root);
 while(!s.empty()){
-    Node *temp = s.top();
-    s.pop();
-    cout&lt;&lt;temp -&gt; data;
-    //因为stack是先进后出，所以先把right压进去
-    if(temp -&gt; right)
-        s.push(temp -&gt; right);
-    if(temp -&gt; left)
-        s.push(temp -&gt; left);
+  Node *temp = s.top();
+  s.pop();
+  cout&lt;<temp -> data;
+  //因为stack是先进后出，所以先把right压进去
+  if(temp &ndash;> right)
+      s.push(temp &ndash;> right);
+  if(temp &ndash;> left)
+      s.push(temp &ndash;> left);
 }
-</code></pre>
-
-<p>}
-int main(){</p>
-
-<pre><code>//#表示没有左子树或者右子树
+}
+int main(){
+//#表示没有左子树或者右子树
 //             A
 //           /   \
 //          B     C
 //        /  \   /  \
 //      D    E   F   G
-Element data[15] = {'A','B','D','#','#','E','#','#','C','F','#','#','G','#','#'};
+Element data[15] = {&lsquo;A&rsquo;,&lsquo;B&rsquo;,&rsquo;D',&lsquo;#&rsquo;,&lsquo;#&rsquo;,&lsquo;E&rsquo;,&lsquo;#&rsquo;,&lsquo;#&rsquo;,&lsquo;C&rsquo;,&lsquo;F&rsquo;,&lsquo;#&rsquo;,&lsquo;#&rsquo;,&lsquo;G&rsquo;,&lsquo;#&rsquo;,&lsquo;#&rsquo;};
 Tree tree;
 construct_tree(tree, data);
 //bfs
-cout&lt;&lt;"result of bfs: ";
+cout&lt;&lt;&ldquo;result of bfs: &rdquo;;
 bfs(tree);
 cout&lt;&lt;endl;
 //dfs
-cout&lt;&lt;"result of dfs: ";
+cout&lt;&lt;&ldquo;result of dfs: &rdquo;;
 dfs(tree);
 cout&lt;&lt;endl;
 return 0;
-</code></pre>
+}</p></li>
+</ul>
+</li>
+</ul>
 
-<p>}</p>
 
 <p>```</p>
 

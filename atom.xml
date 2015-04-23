@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T11:22:05-04:00</updated>
+  <updated>2015-04-23T11:35:56-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -289,6 +289,9 @@
 </ul>
 
 
+<!--more-->
+
+
 <h4>图搜索</h4>
 
 <h5>广度优先搜索</h5>
@@ -382,6 +385,16 @@
 
 <h5>二叉树的BFS和DFS</h5>
 
+<ul>
+<li>首先递归建树
+
+<ul>
+<li>再用bfs和dfs</li>
+</ul>
+</li>
+</ul>
+
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -447,6 +460,7 @@
 <span class='line-number'>63</span>
 <span class='line-number'>64</span>
 <span class='line-number'>65</span>
+<span class='line-number'>66</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>#define Element char
 </span><span class='line'>typedef struct Node{
 </span><span class='line'>  Element data;
@@ -454,6 +468,7 @@
 </span><span class='line'>  struct Node *right;
 </span><span class='line'>}*Tree;
 </span><span class='line'>int i = 0;
+</span><span class='line'>//按照先序遍历建树
 </span><span class='line'>void construct_tree(Tree &root, Element data[]){
 </span><span class='line'>  Element e = data[i++];
 </span><span class='line'>  if(e == '#')
@@ -461,8 +476,8 @@
 </span><span class='line'>  else{
 </span><span class='line'>      root = new Node();
 </span><span class='line'>      root -&gt; data = e;
-</span><span class='line'>      construct_tree(root -&gt; left, data);
-</span><span class='line'>      construct_tree(root -&gt; right, data);
+</span><span class='line'>      construct_tree(root -&gt; left, data); //递归建立左子树
+</span><span class='line'>      construct_tree(root -&gt; right, data); //递归建立右子树
 </span><span class='line'>  }   
 </span><span class='line'>}
 </span><span class='line'>void bfs(Tree root){  
