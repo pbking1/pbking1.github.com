@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T10:51:41-04:00</updated>
+  <updated>2015-04-23T11:22:05-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -87,6 +87,7 @@
 <h5>广度优先搜索</h5>
 
 <ul>
+<li>使用的数据结构是queue</li>
 <li>相当于先把第一层的所有点入队
 
 <ul>
@@ -136,6 +137,7 @@ function dfs(vertex v){
 <h5>宽度优先搜索</h5>
 
 <ul>
+<li>使用的数据结构是stack</li>
 <li>伪代码
 <code>
 function dfs(vertex v){
@@ -152,10 +154,91 @@ function dfs(vertex v){
 
 <h5>二叉树的BFS和DFS</h5>
 
-<ul>
-<li></li>
-</ul>
+<p>```</p>
 
+<h1>define Element char</h1>
+
+<p>typedef struct Node{</p>
+
+<pre><code>Element data;
+struct Node *left;
+struct Node *right;
+</code></pre>
+
+<p>}*Tree;
+int i = 0;
+void construct_tree(Tree &amp;root, Element data[]){</p>
+
+<pre><code>Element e = data[i++];
+if(e == '#')
+    root = NULL;
+else{
+    root = new Node();
+    root -&gt; data = e;
+    construct_tree(root -&gt; left, data);
+    construct_tree(root -&gt; right, data);
+}   
+</code></pre>
+
+<p>}
+void bfs(Tree root){</p>
+
+<pre><code>queue&lt;Node *&gt; q;
+q.push(root);
+while(!q.empty()){
+    Node *temp = q.front();
+    q.pop();
+    cout&lt;&lt;temp -&gt; data;
+    if(temp -&gt; left)
+        q.push(temp -&gt; left);
+    if(temp -&gt; right)
+        q.push(temp -&gt; right);
+}
+</code></pre>
+
+<p>}
+void dfs(Tree root){</p>
+
+<pre><code>stack&lt;Node *&gt; s;
+s.push(root);
+while(!s.empty()){
+    Node *temp = s.top();
+    s.pop();
+    cout&lt;&lt;temp -&gt; data;
+    //因为stack是先进后出，所以先把right压进去
+    if(temp -&gt; right)
+        s.push(temp -&gt; right);
+    if(temp -&gt; left)
+        s.push(temp -&gt; left);
+}
+</code></pre>
+
+<p>}
+int main(){</p>
+
+<pre><code>//#表示没有左子树或者右子树
+//             A
+//           /   \
+//          B     C
+//        /  \   /  \
+//      D    E   F   G
+Element data[15] = {'A','B','D','#','#','E','#','#','C','F','#','#','G','#','#'};
+Tree tree;
+construct_tree(tree, data);
+//bfs
+cout&lt;&lt;"result of bfs: ";
+bfs(tree);
+cout&lt;&lt;endl;
+//dfs
+cout&lt;&lt;"result of dfs: ";
+dfs(tree);
+cout&lt;&lt;endl;
+return 0;
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
 
 <h5>拓扑排序和搜索</h5>
 
