@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T22:04:28-04:00</updated>
+  <updated>2015-04-23T22:38:29-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -342,7 +342,7 @@
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>function dfs(vertex v){
+</pre></td><td class='code'><pre><code class=''><span class='line'>function bfs(vertex v){
 </span><span class='line'>  create a queue Q
 </span><span class='line'>  enqueue v into Q
 </span><span class='line'>  mark v as visited
@@ -357,7 +357,7 @@
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<h5>宽度优先搜索</h5>
+<h5>深度优先搜索</h5>
 
 <ul>
 <li>使用的数据结构是stack</li>

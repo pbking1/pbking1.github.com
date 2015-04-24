@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T22:04:28-04:00</updated>
+  <updated>2015-04-23T22:38:29-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -279,7 +279,7 @@ b = temp;
 </li>
 <li>伪代码
 <code>
-function dfs(vertex v){
+function bfs(vertex v){
   create a queue Q
   enqueue v into Q
   mark v as visited
@@ -296,7 +296,7 @@ function dfs(vertex v){
 </ul>
 
 
-<h5>宽度优先搜索</h5>
+<h5>深度优先搜索</h5>
 
 <ul>
 <li>使用的数据结构是stack</li>
