@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T22:38:29-04:00</updated>
+  <updated>2015-04-23T22:47:24-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -94,6 +94,10 @@ for(i = 0; i &lt; 20; i++){
     cout&lt;&lt;p&lt;&lt;" "&lt;&lt;(*p)&lt;&lt;" ";
     p++; //指针加一
     (*p)++; //指针指向内容加一
+    //如果要用指针遍历数组
+    //用*(p+i)
+    //应为int 的p++ = p + 2
+    //int 占2byte
 }
 cout&lt;&lt;endl;
 //针对字符串
@@ -101,6 +105,7 @@ char *str = "abc";
 while(*p){
     cout&lt;&lt;*p&lt;&lt;" ";
     p++;
+    //可以这么做的原因是char占 1 byte
 }
 </code></pre>
 

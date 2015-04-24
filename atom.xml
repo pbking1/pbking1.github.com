@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T22:38:29-04:00</updated>
+  <updated>2015-04-23T22:47:24-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -113,6 +113,11 @@
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>void part2(){
 </span><span class='line'>  //用指针来控制循环条件
 </span><span class='line'>  //针对数组
@@ -126,6 +131,10 @@
 </span><span class='line'>      cout&lt;&lt;p&lt;&lt;" "&lt;&lt;(*p)&lt;&lt;" ";
 </span><span class='line'>      p++; //指针加一
 </span><span class='line'>      (*p)++; //指针指向内容加一
+</span><span class='line'>      //如果要用指针遍历数组
+</span><span class='line'>      //用*(p+i)
+</span><span class='line'>      //应为int 的p++ = p + 2
+</span><span class='line'>      //int 占2byte
 </span><span class='line'>  }
 </span><span class='line'>  cout&lt;&lt;endl;
 </span><span class='line'>  //针对字符串
@@ -133,6 +142,7 @@
 </span><span class='line'>  while(*p){
 </span><span class='line'>      cout&lt;&lt;*p&lt;&lt;" ";
 </span><span class='line'>      p++;
+</span><span class='line'>      //可以这么做的原因是char占 1 byte
 </span><span class='line'>  }
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
