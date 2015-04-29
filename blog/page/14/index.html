@@ -100,6 +100,98 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/04/17/how-to-install-ubuntu-on-macbook-air-dual/">
+		
+			How to Install Ubuntu on Macbook Air Dual</a>
+	</h2>
+	<div class="entry-content">
+		<h4>1.For there are too many software that can be used in ubuntu not in OSX so I decided to install ubuntu on my macbook air</h4>
+
+<ul>
+<li>I have try the mac version ubuntu and <em>it do not work</em></li>
+<li>and the origin version for windows is work on mac</li>
+</ul>
+
+
+<h4>2.First use <code>Unetbootin</code> to create a usb bootable ubnutu on mac</h4>
+
+<ul>
+<li>There are two ways to finish this</li>
+<li>The first is(I do not succeed in this)
+
+<ul>
+<li><code>diskutil list</code>
+
+<ul>
+<li>show the disk that is mounted on your mac</li>
+</ul>
+</li>
+<li>then insert the usb</li>
+<li>run <code>diskutil list again</code>
+
+<ul>
+<li>and determine the device node assigned to the usb like <code>disks1s2</code></li>
+</ul>
+</li>
+<li>then <code>diskutil unmountDisk /disks1s2</code></li>
+<li>after that <code>sudo dd if=/path/to/ubuntu.img.dmg of=/dev/disks1s2 bs=2m</code>
+
+<ul>
+<li>to create the bootable usb ubuntu</li>
+<li>and the bs is the I/O speed and the max is 2m</li>
+</ul>
+</li>
+<li>It may cost some time to complete</li>
+<li>finally run <code>eject /dev/disks1s2</code></li>
+</ul>
+</li>
+<li>The second is
+
+<ul>
+<li>use the <code>Unetbootin</code> to create the bootable usb directly</li>
+</ul>
+</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/04/17/how-to-install-ubuntu-on-macbook-air-dual/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-17T23:07:34-04:00" pubdate data-updated="true">Apr 17<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/04/17/how-to-install-ubuntu-on-macbook-air-dual//blog/page/14/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/04/15/linux-server-tutorial/">
 		
 			Linux Server Tutorial</a>
@@ -573,65 +665,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/04/09/congiure-the-octopress-blog//blog/page/14/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/">
-		
-			2013 IEEE International Conference on Robotics and Biomimetics</a>
-	</h2>
-	<div class="entry-content">
-		<pre><code>Dec 12-14 2013 shenzhen, China
-</code></pre>
-
-<h4>Team members</h4>
-
-<pre><code>pengbin
-qiudicong
-zhudingqiao
-</code></pre>
-
-<h4>here are the picture</h4>
-
-<p><img src="/images/ieee1.jpg">
-<img src="/images/ieee2.jpg">
-<img src="/images/ieee3.jpg"></p>
-
-
-		
-		<a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-09T01:08:03-04:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/robot/'>Robot</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/04/09/2013-ieee-international-conference-on-robotics-and-biomimetics//blog/page/14/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

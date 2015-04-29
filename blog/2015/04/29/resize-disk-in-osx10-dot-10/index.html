@@ -5,11 +5,11 @@
 	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
 	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>Category: OSX  | KING</title>
+	<title>resize disk in OSX10.10  | KING</title>
 
 <meta name="author" content="pb"> 
 
-<meta name="description" content="Category: OSX"> <meta name="keywords" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip">
+<meta name="description" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip"> <meta name="keywords" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -94,19 +94,67 @@ $(document).ready(
 
 </header>
 
-	<div id="content" class="inner">
-	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Resize Disk in OSX10.10</h2>
+	<div class="entry-content"><h3>Resize disk in OS X 10.10 Yosemite</h3>
+
+<ul>
+<li>due to the update of OSX, we can not resize the disk after we split the disk in the first time.</li>
+<li>so we need to use some other command</li>
+</ul>
 
 
-	
-	
-	<section class="archives"><h1 class="year">2015</h1>
+<!--more-->
 
-<article>
-	<h2 class="title"><a href="/blog/2015/04/29/resize-disk-in-osx10-dot-10/">resize disk in OSX10.10</a></h2>
-	<div class="meta">
-		<div class="date">Apr 29</div>
-		
+
+<h4>diskutil</h4>
+
+<ul>
+<li>first we can use <code>diskutil corestorage</code> to see what option we have</li>
+<li>then we will choose <code>diskutil corestorage resizeDisk</code> or something else to resize the disk</li>
+<li>some option that is not shown in the menu</li>
+<li>Physical Volume (Disk) Commands
+
+<ul>
+<li>resizeDisk (undocumented) – Resize a physical volume</li>
+<li>removeDisk (undocumented) – Remove a physical volume from a logical volume group</li>
+<li>addDisk (undocumented) &ndash; Add a new physical volume to a logical volume group</li>
+</ul>
+</li>
+<li><p>Logical Volume Commands</p>
+
+<ul>
+<li>deleteVolume (undocumented) – Delete a logical volume and all of its contents</li>
+<li>resizeVolume (undocumented) – Grow or shrink a logical volume</li>
+<li>resizeStack (undocumented) – Grow or shrink a logical volume as well as the volume group and physical volume.</li>
+</ul>
+</li>
+<li><p>for example</p>
+
+<ul>
+<li>Example: diskutil coreStorage resizeVolume 11111111-2222-3333-4444-555555555555 10g</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-29T12:31:35-04:00" pubdate data-updated="true">Apr 29<span>th</span>, 2015</time></div>
+	
 
 <div class="tags">
 
@@ -115,62 +163,28 @@ $(document).ready(
 </div>
 
 
-	    
-	    <span class="comments"><a href="/blog/2015/04/29/resize-disk-in-osx10-dot-10/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
 	
+		<span class="comments"><a href="/blog/2015/04/29/resize-disk-in-osx10-dot-10/#disqus_thread">Comments</a></span>
+	
+</div></article>
 
-
-<article>
-	<h2 class="title"><a href="/blog/2015/03/03/compile-qtox-on-osx/">compile qtox on OSX</a></h2>
-	<div class="meta">
-		<div class="date">Mar  3</div>
-		
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/osx/'>OSX</a>, <a class='category' href='/blog/categories/c-plus-plus/'>c++</a>, <a class='category' href='/blog/categories/qt/'>qt</a>
-
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
 
 
-	    
-	    <span class="comments"><a href="/blog/2015/03/03/compile-qtox-on-osx/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
 
-	
-
-
-	
-	
-		</section>
-	
-	<section class="archives"><h1 class="year">2014</h1>
-
-<article>
-	<h2 class="title"><a href="/blog/2014/04/12/my-bash-profile-configuration/">my bash profile configuration</a></h2>
-	<div class="meta">
-		<div class="date">Apr 12</div>
-		
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/osx/'>OSX</a>
-
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-
-
-	    
-	    <span class="comments"><a href="/blog/2014/04/12/my-bash-profile-configuration/#disqus_thread">Comments</a></span>
-	    
-	</div>
-</article>
-
+</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2015
 
@@ -192,7 +206,10 @@ Powered by Octopress.
       var disqus_shortname = 'pbking1';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pbking1.github.com/blog/2015/04/29/resize-disk-in-osx10-dot-10/';
+        var disqus_url = 'http://pbking1.github.com/blog/2015/04/29/resize-disk-in-osx10-dot-10/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

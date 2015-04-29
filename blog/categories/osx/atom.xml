@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OSX | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-23T22:47:24-04:00</updated>
+  <updated>2015-04-29T12:37:24-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,55 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[resize disk in OSX10.10]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/29/resize-disk-in-osx10-dot-10/"/>
+    <updated>2015-04-29T12:31:35-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/29/resize-disk-in-osx10-dot-10</id>
+    <content type="html"><![CDATA[<h3>Resize disk in OS X 10.10 Yosemite</h3>
+
+<ul>
+<li>due to the update of OSX, we can not resize the disk after we split the disk in the first time.</li>
+<li>so we need to use some other command</li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>diskutil</h4>
+
+<ul>
+<li>first we can use <code>diskutil corestorage</code> to see what option we have</li>
+<li>then we will choose <code>diskutil corestorage resizeDisk</code> or something else to resize the disk</li>
+<li>some option that is not shown in the menu</li>
+<li>Physical Volume (Disk) Commands
+
+<ul>
+<li>resizeDisk (undocumented) – Resize a physical volume</li>
+<li>removeDisk (undocumented) – Remove a physical volume from a logical volume group</li>
+<li>addDisk (undocumented) &ndash; Add a new physical volume to a logical volume group</li>
+</ul>
+</li>
+<li><p>Logical Volume Commands</p>
+
+<ul>
+<li>deleteVolume (undocumented) – Delete a logical volume and all of its contents</li>
+<li>resizeVolume (undocumented) – Grow or shrink a logical volume</li>
+<li>resizeStack (undocumented) – Grow or shrink a logical volume as well as the volume group and physical volume.</li>
+</ul>
+</li>
+<li><p>for example</p>
+
+<ul>
+<li>Example: diskutil coreStorage resizeVolume 11111111-2222-3333-4444-555555555555 10g</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[compile qtox on OSX]]></title>
