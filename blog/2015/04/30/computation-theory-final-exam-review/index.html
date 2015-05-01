@@ -1,0 +1,451 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>computation theory final exam review  | KING</title>
+
+<meta name="author" content="pb"> 
+
+<meta name="description" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip"> <meta name="keywords" content="king, KING, King, c/c++, robot, android, octopress, java, python, ruby, web, sae, cloud, ios, http, tcp, ip">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="KING" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">KING</a></h1>
+<h4>Do more, say less</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://www.google.com.hk/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:pbking1.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Computation Theory Final Exam Review</h2>
+	<div class="entry-content"><h3>Chapter 12:</h3>
+
+<ul>
+<li>undecidable decision problem不可解问题
+
+<ul>
+<li>不是所有问题都能找到多项式级的算法</li>
+<li>有些问题甚至没有正确的算法</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<p></p>
+
+<ul>
+<li>Understand what it means for a problem to be decidable (or not)</li>
+<li>Be able to state the Halting Problem and discuss its implications.
+
+<ul>
+<li>halting problem 停机问题
+
+<ul>
+<li>因为不存在一个算法，是的我们无法写出一个程序来判断一个随机程序P能够对所有的输入停机</li>
+<li>这个问题是无解的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Be able to outline概述 a proof of the Halting Problem.</li>
+<li>Be able to carry out a reducibility（归约） argument辩论.
+
+<ul>
+<li>一个问题A能够归约化为问题B的含义是，可以用问题B的解法解决A</li>
+<li>e.g
+
+<ul>
+<li>我们要求接一个一元一次方程和一个一元二次方程，那么我们可以说前者可以约化成后者</li>
+<li>也可以说求解一元二次方程的时间复杂度要高于求解一元一次方程
+
+<ul>
+<li>因为如果求解一元二次方程的时间复杂度比求解一元一次方程的时间复杂度还低，那么就可以把算法优化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>约化的过程只有在用多项式的时间完成才有意义</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Chapter 14:</h3>
+
+<ul>
+<li>Be able to give an informal definition for the sets P, NP, and NP-complete.
+
+<ul>
+<li>set P
+
+<ul>
+<li>问题能够再多项式（polynomial）时间内解决</li>
+</ul>
+</li>
+<li><p>set NP</p>
+
+<ul>
+<li>在多项式时间内验证一个解的问题，也就是在多项式时间内猜出一个解的问题</li>
+</ul>
+</li>
+<li><p>set NP-complete</p>
+
+<ul>
+<li>通俗的讲就是一个时间复杂度最高，并且能够“通吃“所有NP问题的NP问题
+
+<ul>
+<li>也就是解决了这个问题，所有的NP问题就解决了</li>
+</ul>
+</li>
+<li>有以下两个条件
+
+<ul>
+<li>1.是一个NP问题</li>
+<li>2.所有NP问题都能约化成它</li>
+</ul>
+</li>
+<li>证明NP-complete问题
+
+<ul>
+<li>首先证明他是一个NP问题</li>
+<li>然后证明其中一个NP-complete问题能够约化成它。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>关系</strong>
+
+<ul>
+<li><strong>NP和NP-hard的交集是NP-complete</strong></li>
+<li><strong>P在NP内</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Be able to give an informal definition for the set NP hard and its relationship to the classes P,    NP, and NP-complete.
+
+<ul>
+<li>NP-hard问题
+
+<ul>
+<li>满足NP-complete问题的第二个条件，但是不满足第一个条件</li>
+<li>也就是所有NP问题都能约化成它，但是它不是一个NP问题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Be able to name some NP-complete problems.
+
+<ul>
+<li>traveling salesman problem旅行者问题
+
+<ul>
+<li>这个问题是NP-complete问题，并且这个也是NP-hard问题</li>
+<li>是一个多局部最优的最优化问题</li>
+<li>问题描述：
+
+<ul>
+<li>有n个城市，一个推销员要从其中一个城市出发，走遍所有城市（每个城市只能走一遍），再回到原点，求<strong>是否存在</strong>最短路</li>
+<li>如果暴力枚举，只能O(n!)</li>
+<li>动态规划可以加快到O((n<sup>2</sup>) * (2<sup>n</sup>))</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Compiler theory:</h3>
+
+<ul>
+<li>There will be a question or two based on the compiler theory session (slides are online).
+
+<ul>
+<li>编译过程：
+
+<ul>
+<li>首先是lexical analyzer词法分析</li>
+<li>其次是syntax analyzer语法分析器
+
+<ul>
+<li>至上而下分析</li>
+<li>至下而上分析</li>
+<li>用于解析字串，并且看看是否满足语法
+
+<ul>
+<li>语法：
+
+<ul>
+<li>上下文无关文法
+
+<ul>
+<li>pda能够识别任何上下文无关文法生成的语法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>其次是semantic analyzer语义分析</li>
+<li>其次是intermediate code generator中间代码生成</li>
+<li>其次是code optimizer代码优化</li>
+<li>最后是code generator代码生成</li>
+</ul>
+</li>
+<li>lexical analyzer</li>
+<li>FSA:finite state machine</li>
+<li>LL 的意思是scan left to right, substitute leftmost</li>
+<li>LR 的意思是scan left to right, substitute rightmost</li>
+<li>LL(k) 向前看前k个symbol，看是否能够决定每一句语法</li>
+<li>二义性：能够构造两颗语法树</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Divide and Conquer:</h3>
+
+<ul>
+<li>Be able to describe the divide-and-conquer design technique and give at least one example of an algorithm that uses this technique.
+
+<ul>
+<li>分而治之思想
+
+<ul>
+<li>把一个大问题分成几个小问题</li>
+<li>分别解决这些小问题</li>
+<li>把小问题的解答组合起来，得到原来问题的答案</li>
+</ul>
+</li>
+<li>例子；
+
+<ul>
+<li>归并排序
+
+<ul>
+<li>sort数组
+
+<ul>
+<li>如果子集为1，那么算法终止</li>
+<li>否则，把集合分割成两个子集，对每个子集排序
+
+<ul>
+<li>然后把排序好的子集归并为一个集合</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>并行算法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Dynamic Programming:</h3>
+
+<ul>
+<li>Be able to describe the characteristics of problems suitable for this design approach and give at least one example of an algorithm that uses this technique.</li>
+<li>Be able to solve a problem using dynamic programming given some hints.</li>
+</ul>
+
+
+<h3>Greedy Algorithms:</h3>
+
+<ul>
+<li>Be able to describe the greedy algorithm design technique and give at least one example of an algorithm that uses this technique.</li>
+<li>Be able to trace Dijkstra&rsquo;s shortest path problem on a given graph.</li>
+<li>Be able to generate Huffman codes for a given frequency analysis</li>
+</ul>
+
+
+<h3>Amortized Analysis:</h3>
+
+<ul>
+<li>Be able to describe the goal of an amortized analysis for a given algorithm.</li>
+<li>Be able to carry out an amortized analysis (using the aggregate method, the accounting method, or the potential method, as specified) for a given algorithm given some hints.</li>
+</ul>
+
+
+<h3>Approximation Algorithms:</h3>
+
+<ul>
+<li>Be able to give the characteristics of a good approximation algorithm</li>
+<li>Be able to define what it means for an approximation algorithm to give an answer &ldquo;close&rdquo; to the optimum result.</li>
+</ul>
+
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-30T23:45:08-04:00" pubdate data-updated="true">Apr 30<span>th</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/compiler/'>compiler</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/04/30/computation-theory-final-exam-review/#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2015
+
+    pb
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'pbking1';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pbking1.github.com/blog/2015/04/30/computation-theory-final-exam-review/';
+        var disqus_url = 'http://pbking1.github.com/blog/2015/04/30/computation-theory-final-exam-review/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>

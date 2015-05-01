@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-29T23:58:09-04:00</updated>
+  <updated>2015-04-30T23:45:55-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,280 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[computation theory final exam review]]></title>
+    <link href="http://pbking1.github.com/blog/2015/04/30/computation-theory-final-exam-review/"/>
+    <updated>2015-04-30T23:45:08-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/04/30/computation-theory-final-exam-review</id>
+    <content type="html"><![CDATA[<h3>Chapter 12:</h3>
+
+<ul>
+<li>undecidable decision problem不可解问题
+
+<ul>
+<li>不是所有问题都能找到多项式级的算法</li>
+<li>有些问题甚至没有正确的算法</li>
+</ul>
+</li>
+</ul>
+
+
+<!--more-->
+
+
+<p></p>
+
+<ul>
+<li>Understand what it means for a problem to be decidable (or not)</li>
+<li>Be able to state the Halting Problem and discuss its implications.
+
+<ul>
+<li>halting problem 停机问题
+
+<ul>
+<li>因为不存在一个算法，是的我们无法写出一个程序来判断一个随机程序P能够对所有的输入停机</li>
+<li>这个问题是无解的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Be able to outline概述 a proof of the Halting Problem.</li>
+<li>Be able to carry out a reducibility（归约） argument辩论.
+
+<ul>
+<li>一个问题A能够归约化为问题B的含义是，可以用问题B的解法解决A</li>
+<li>e.g
+
+<ul>
+<li>我们要求接一个一元一次方程和一个一元二次方程，那么我们可以说前者可以约化成后者</li>
+<li>也可以说求解一元二次方程的时间复杂度要高于求解一元一次方程
+
+<ul>
+<li>因为如果求解一元二次方程的时间复杂度比求解一元一次方程的时间复杂度还低，那么就可以把算法优化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>约化的过程只有在用多项式的时间完成才有意义</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Chapter 14:</h3>
+
+<ul>
+<li>Be able to give an informal definition for the sets P, NP, and NP-complete.
+
+<ul>
+<li>set P
+
+<ul>
+<li>问题能够再多项式（polynomial）时间内解决</li>
+</ul>
+</li>
+<li><p>set NP</p>
+
+<ul>
+<li>在多项式时间内验证一个解的问题，也就是在多项式时间内猜出一个解的问题</li>
+</ul>
+</li>
+<li><p>set NP-complete</p>
+
+<ul>
+<li>通俗的讲就是一个时间复杂度最高，并且能够“通吃“所有NP问题的NP问题
+
+<ul>
+<li>也就是解决了这个问题，所有的NP问题就解决了</li>
+</ul>
+</li>
+<li>有以下两个条件
+
+<ul>
+<li>1.是一个NP问题</li>
+<li>2.所有NP问题都能约化成它</li>
+</ul>
+</li>
+<li>证明NP-complete问题
+
+<ul>
+<li>首先证明他是一个NP问题</li>
+<li>然后证明其中一个NP-complete问题能够约化成它。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>关系</strong>
+
+<ul>
+<li><strong>NP和NP-hard的交集是NP-complete</strong></li>
+<li><strong>P在NP内</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Be able to give an informal definition for the set NP hard and its relationship to the classes P,    NP, and NP-complete.
+
+<ul>
+<li>NP-hard问题
+
+<ul>
+<li>满足NP-complete问题的第二个条件，但是不满足第一个条件</li>
+<li>也就是所有NP问题都能约化成它，但是它不是一个NP问题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Be able to name some NP-complete problems.
+
+<ul>
+<li>traveling salesman problem旅行者问题
+
+<ul>
+<li>这个问题是NP-complete问题，并且这个也是NP-hard问题</li>
+<li>是一个多局部最优的最优化问题</li>
+<li>问题描述：
+
+<ul>
+<li>有n个城市，一个推销员要从其中一个城市出发，走遍所有城市（每个城市只能走一遍），再回到原点，求<strong>是否存在</strong>最短路</li>
+<li>如果暴力枚举，只能O(n!)</li>
+<li>动态规划可以加快到O((n<sup>2</sup>) * (2<sup>n</sup>))</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Compiler theory:</h3>
+
+<ul>
+<li>There will be a question or two based on the compiler theory session (slides are online).
+
+<ul>
+<li>编译过程：
+
+<ul>
+<li>首先是lexical analyzer词法分析</li>
+<li>其次是syntax analyzer语法分析器
+
+<ul>
+<li>至上而下分析</li>
+<li>至下而上分析</li>
+<li>用于解析字串，并且看看是否满足语法
+
+<ul>
+<li>语法：
+
+<ul>
+<li>上下文无关文法
+
+<ul>
+<li>pda能够识别任何上下文无关文法生成的语法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>其次是semantic analyzer语义分析</li>
+<li>其次是intermediate code generator中间代码生成</li>
+<li>其次是code optimizer代码优化</li>
+<li>最后是code generator代码生成</li>
+</ul>
+</li>
+<li>lexical analyzer</li>
+<li>FSA:finite state machine</li>
+<li>LL 的意思是scan left to right, substitute leftmost</li>
+<li>LR 的意思是scan left to right, substitute rightmost</li>
+<li>LL(k) 向前看前k个symbol，看是否能够决定每一句语法</li>
+<li>二义性：能够构造两颗语法树</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Divide and Conquer:</h3>
+
+<ul>
+<li>Be able to describe the divide-and-conquer design technique and give at least one example of an algorithm that uses this technique.
+
+<ul>
+<li>分而治之思想
+
+<ul>
+<li>把一个大问题分成几个小问题</li>
+<li>分别解决这些小问题</li>
+<li>把小问题的解答组合起来，得到原来问题的答案</li>
+</ul>
+</li>
+<li>例子；
+
+<ul>
+<li>归并排序
+
+<ul>
+<li>sort数组
+
+<ul>
+<li>如果子集为1，那么算法终止</li>
+<li>否则，把集合分割成两个子集，对每个子集排序
+
+<ul>
+<li>然后把排序好的子集归并为一个集合</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>并行算法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Dynamic Programming:</h3>
+
+<ul>
+<li>Be able to describe the characteristics of problems suitable for this design approach and give at least one example of an algorithm that uses this technique.</li>
+<li>Be able to solve a problem using dynamic programming given some hints.</li>
+</ul>
+
+
+<h3>Greedy Algorithms:</h3>
+
+<ul>
+<li>Be able to describe the greedy algorithm design technique and give at least one example of an algorithm that uses this technique.</li>
+<li>Be able to trace Dijkstra&rsquo;s shortest path problem on a given graph.</li>
+<li>Be able to generate Huffman codes for a given frequency analysis</li>
+</ul>
+
+
+<h3>Amortized Analysis:</h3>
+
+<ul>
+<li>Be able to describe the goal of an amortized analysis for a given algorithm.</li>
+<li>Be able to carry out an amortized analysis (using the aggregate method, the accounting method, or the potential method, as specified) for a given algorithm given some hints.</li>
+</ul>
+
+
+<h3>Approximation Algorithms:</h3>
+
+<ul>
+<li>Be able to give the characteristics of a good approximation algorithm</li>
+<li>Be able to define what it means for an approximation algorithm to give an answer &ldquo;close&rdquo; to the optimum result.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2015_citadel_onsite_interview]]></title>
@@ -4914,76 +5188,6 @@ int main(){
 </li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Intro_to_microeconomic_6]]></title>
-    <link href="http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-6/"/>
-    <updated>2015-02-08T22:02:06-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/02/08/intro-to-microeconomic-6</id>
-    <content type="html"><![CDATA[<h3>goal part6</h3>
-
-<ul>
-<li>Factor Markets (10%–18%)
-
-<ul>
-<li>A.Derived factor demand</li>
-<li>B.Marginal revenue product</li>
-<li>C.Labor market and firms’ hiring of labor</li>
-<li>D.Market distribution of income</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li>Factor Markets  要素市场
-
-<ul>
-<li>学习时可以类比产品市场的供求均衡</li>
-<li>A.Derived factor demand
-
-<ul>
-<li>派生需求，概念而已</li>
-</ul>
-</li>
-<li>B.Marginal revenue product
-
-<ul>
-<li>边际产量值：增加一单位劳力所引起的产值的变化 MRP=P*MP</li>
-</ul>
-</li>
-<li>C.Labor market and firms’ hiring of labor
-
-<ul>
-<li>劳动需求曲线=MRP曲线，MRP=P<em>MPL，利润最大化雇用人数：w=MRP=P</em>MP</li>
-<li>A)影响需求
-
-<ul>
-<li>Price的变动，影响MRP，即需求曲线移动</li>
-<li>Technological Change技术变革：技术进步—>MP增加——>MRP增加——>需求增加</li>
-<li>Supply of Other factors如果企业有更多的设备（资本），劳力的MP会提高</li>
-</ul>
-</li>
-<li>B)影响供给
-
-<ul>
-<li>Changes in Tastes 女性从家庭中走出；啃老族增加</li>
-<li>Changes in other opportunities类似产品市场供给的“substitution”，金融行业吸引人，没人做工程师了……</li>
-<li>Immigration 类似产品市场供给的“number of sellers”</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>D.Market distribution of income</li>
 </ul>
 </li>
 </ul>
