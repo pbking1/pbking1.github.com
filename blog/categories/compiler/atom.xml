@@ -4,7 +4,7 @@
   <title><![CDATA[Category: compiler | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/compiler/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-01T03:24:26-04:00</updated>
+  <updated>2015-05-01T03:25:12-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -388,11 +388,15 @@
   G(4) (5)   (7)   (6)
        / \    | \     |\
      A(2)B(3) E(3)C(4)F(3)D(3)
-</code>
-
-<h3>Amortized Analysis:</h3></li>
+</code></li>
 </ul>
 </li>
+</ul>
+
+
+<h3>Amortized Analysis:</h3>
+
+<ul>
 <li>Be able to describe the goal of an amortized analysis for a given algorithm.
 
 <ul>
