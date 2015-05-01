@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-01T03:23:19-04:00</updated>
+  <updated>2015-05-01T03:24:01-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -21,14 +21,23 @@
     <content type="html"><![CDATA[<h3>Chapter 12:</h3>
 
 <ul>
-<li><p>undecidable decision problem不可解问题</p>
+<li>undecidable decision problem不可解问题
 
 <ul>
 <li>不是所有问题都能找到多项式级的算法</li>
 <li>有些问题甚至没有正确的算法</li>
 </ul>
 </li>
-<li><p>Understand what it means for a problem to be decidable (or not)</p>
+</ul>
+
+
+<!--mroe-->
+
+
+<p></p>
+
+<ul>
+<li>Understand what it means for a problem to be decidable (or not)
 
 <ul>
 <li>A decision problem is any arbitrary yes-or-no question on an infinite set of input.</li>
