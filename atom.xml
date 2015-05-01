@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-04-30T23:45:55-04:00</updated>
+  <updated>2015-05-01T03:23:19-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -21,36 +21,65 @@
     <content type="html"><![CDATA[<h3>Chapter 12:</h3>
 
 <ul>
-<li>undecidable decision problem不可解问题
+<li><p>undecidable decision problem不可解问题</p>
 
 <ul>
 <li>不是所有问题都能找到多项式级的算法</li>
 <li>有些问题甚至没有正确的算法</li>
 </ul>
 </li>
-</ul>
-
-
-<!--more-->
-
-
-<p></p>
+<li><p>Understand what it means for a problem to be decidable (or not)</p>
 
 <ul>
-<li>Understand what it means for a problem to be decidable (or not)</li>
-<li>Be able to state the Halting Problem and discuss its implications.
+<li>A decision problem is any arbitrary yes-or-no question on an infinite set of input.</li>
+<li>也就是任意的输入都能产生一个yes或者no的结果</li>
+</ul>
+</li>
+<li>Be able to state the Halting Problem and discuss its implications含义.
 
 <ul>
 <li>halting problem 停机问题
 
 <ul>
 <li>因为不存在一个算法，是的我们无法写出一个程序来判断一个随机程序P能够对所有的输入停机</li>
-<li>这个问题是无解的</li>
+<li>判断任意一个程序是否会在有限的时间之内结束执行的问题。该问题等价于
+
+<ul>
+<li>给定一个程序P和输入w，程序P再输入w下能够最终停止</li>
+</ul>
+</li>
+<li>停机问题是无解的</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Be able to outline概述 a proof of the Halting Problem.</li>
+<li>Be able to outline概述 a proof of the Halting Problem.
+
+<ul>
+<li>证明
+
+<ul>
+<li>用反证
+
+<ul>
+<li>假设停机问题有解
+
+<ul>
+<li>那么就存在过程H(P,I)可以判断程序P再输入I的情况下是否可停机的问题
+
+<ul>
+<li>如果P在输入的时候可以停机，那么H输出停机</li>
+<li>如果不能停机美酒输出无限循环（无限循环）那么其实也是停机，所以矛盾</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Be able to carry out a reducibility（归约） argument辩论.
 
 <ul>
@@ -85,13 +114,14 @@
 <li>问题能够再多项式（polynomial）时间内解决</li>
 </ul>
 </li>
-<li><p>set NP</p>
+<li>set NP
 
 <ul>
 <li>在多项式时间内验证一个解的问题，也就是在多项式时间内猜出一个解的问题</li>
+<li>也就是你求出了一个问题的解，我要验证你的解是否正确，我用了多项式时间，至于你求解这个问题是否用多项式时间不关我事，可能这个问题有多项式的算法，可能没有。</li>
 </ul>
 </li>
-<li><p>set NP-complete</p>
+<li>set NP-complete
 
 <ul>
 <li>通俗的讲就是一个时间复杂度最高，并且能够“通吃“所有NP问题的NP问题
@@ -255,7 +285,13 @@
 <h3>Dynamic Programming:</h3>
 
 <ul>
-<li>Be able to describe the characteristics of problems suitable for this design approach and give at least one example of an algorithm that uses this technique.</li>
+<li>Be able to describe the characteristics of problems suitable for this design approach and give at least one example of an algorithm that uses this technique.
+
+<ul>
+<li>动态规划是子问题最优化问题</li>
+<li>例子有最长公共子串，最长公共子序列，背包，TSP</li>
+</ul>
+</li>
 <li>Be able to solve a problem using dynamic programming given some hints.</li>
 </ul>
 
@@ -263,16 +299,148 @@
 <h3>Greedy Algorithms:</h3>
 
 <ul>
-<li>Be able to describe the greedy algorithm design technique and give at least one example of an algorithm that uses this technique.</li>
-<li>Be able to trace Dijkstra&rsquo;s shortest path problem on a given graph.</li>
-<li>Be able to generate Huffman codes for a given frequency analysis</li>
-</ul>
-
-
-<h3>Amortized Analysis:</h3>
+<li>Be able to describe the greedy algorithm design technique and give at least one example of an algorithm that uses this technique.
 
 <ul>
-<li>Be able to describe the goal of an amortized analysis for a given algorithm.</li>
+<li>最优子结构问题</li>
+<li>每次都找最优解</li>
+</ul>
+</li>
+<li>Be able to trace Dijkstra&rsquo;s shortest path problem on a given graph.
+
+<ul>
+<li> 每次把离集合最近的点加入集合，然后递归到到达终点</li>
+</ul>
+</li>
+<li>Be able to generate Huffman codes for a given frequency analysis
+
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>解法是首先排序
+
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>F</th>
+<th>D</th>
+<th>E</th>
+<th>C</th>
+<th>G</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>然后递归的对数组中最小的两个元素进行合并</li>
+<li><code>
+       （22）
+       /    \
+    （9）     (13)
+    /  \      /   \
+  G(4) (5)   (7)   (6)
+       / \    | \     |\
+     A(2)B(3) E(3)C(4)F(3)D(3)
+</code>
+
+<h3>Amortized Analysis:</h3></li>
+</ul>
+</li>
+<li>Be able to describe the goal of an amortized analysis for a given algorithm.
+
+<ul>
+<li>平摊分析
+
+<ul>
+<li>执行一系列数据结构所需要的时间是通过执行的所有操作求平均得到的。</li>
+<li>平摊分析可以用来证明在一系列操作中，通过对所有操作求平均之后，即使对其中单一的操作具有较大的代价，平均代价还是很小的</li>
+</ul>
+</li>
+<li>aggregate method
+
+<ul>
+<li>证明对所有的n，由n各操作所构成的序列的总时间再最坏情况下T(n)</li>
+<li>所有操作都是同样的cost</li>
+</ul>
+</li>
+<li>accounting method
+
+<ul>
+<li>对不同的操作赋予不同的cost，某些操作的费用比他们的实际代价或多或少</li>
+<li>平摊代价：一个操作的收费数量
+
+<ul>
+<li>如果一个操作的平摊代价超过他的实际代价的时候，差值就是credit
+
+<ul>
+<li>这个credit用来补偿那些平摊代价地域实际代价的操作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>总的平摊代价是总的实际代价的上界</li>
+</ul>
+</li>
+<li>potential method
+
+<ul>
+<li>平摊代价=实际代价+势能</li>
+<li>平摊代价依赖于势函数，不同的势函数会产生不同的平摊代价，但是都是实际代价的上限</li>
+<li>e.g
+
+<ul>
+<li>动态表
+
+<ul>
+<li>当向满的表插入一个元素，把表扩大一倍</li>
+<li>当删除意向引起表不足1/4满时，把表缩小为原来的一半</li>
+</ul>
+</li>
+<li>由平摊分析可知两项操作的平摊代价都是O(1)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Be able to carry out an amortized analysis (using the aggregate method, the accounting method, or the potential method, as specified) for a given algorithm given some hints.</li>
 </ul>
 
