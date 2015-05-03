@@ -4,7 +4,7 @@
   <title><![CDATA[Category: compiler | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/compiler/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-01T03:26:04-04:00</updated>
+  <updated>2015-05-03T01:28:44-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -31,10 +31,8 @@
 </ul>
 
 
-<!--more-->
+<!--mroe-->
 
-
-<p></p>
 
 <ul>
 <li>Understand what it means for a problem to be decidable (or not)
@@ -78,7 +76,7 @@
 
 <ul>
 <li>如果P在输入的时候可以停机，那么H输出停机</li>
-<li>如果不能停机美酒输出无限循环（无限循环）那么其实也是停机，所以矛盾</li>
+<li>如果不能停机，就输出无限循环（无限循环那么其实也是停机），所以矛盾</li>
 </ul>
 </li>
 </ul>
@@ -96,7 +94,7 @@
 <li>e.g
 
 <ul>
-<li>我们要求接一个一元一次方程和一个一元二次方程，那么我们可以说前者可以约化成后者</li>
+<li>我们要求解一个一元一次方程和一个一元二次方程，那么我们可以说前者可以约化成后者</li>
 <li>也可以说求解一元二次方程的时间复杂度要高于求解一元一次方程
 
 <ul>
@@ -120,19 +118,45 @@
 <li>set P
 
 <ul>
-<li>问题能够再多项式（polynomial）时间内解决</li>
+<li>问题能够再多项式（polynomial）时间内<strong>解决</strong></li>
+<li>也就是可以一步步很有效率的解决的问题</li>
+<li>或者说，可以用deterministic sequential machine在多项式时间内解决的decision problem</li>
 </ul>
 </li>
 <li>set NP
 
 <ul>
 <li>在多项式时间内验证一个解的问题，也就是在多项式时间内猜出一个解的问题</li>
-<li>也就是你求出了一个问题的解，我要验证你的解是否正确，我用了多项式时间，至于你求解这个问题是否用多项式时间不关我事，可能这个问题有多项式的算法，可能没有。</li>
+<li>也就是你求出了一个问题的解，我要<strong>验证</strong>你的解是否正确，我用了多项式时间，至于你求解这个问题是否用多项式时间不关我事，可能这个问题有多项式的算法，可能没有。</li>
+<li>或者说，可以用non deterministic sequential machine在多项式时间内解决的decision problem。
+
+<ul>
+<li>这类问题只要给个解答，可以很快验证这个解答是否正确</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>set NP-complete
 
 <ul>
+<li>最麻烦的NP问题，基本不可能有P的解法
+
+<ul>
+<li>例子：
+
+<ul>
+<li>我们要在一堆整数内找出和为零的那些组合
+
+<ul>
+<li>我们可以很容易验证一个组合的和是否为零，因此是NP问题</li>
+<li>但是要我们去找，是没有P的解法的</li>
+<li>所以这个是一个NP-complete问题</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>通俗的讲就是一个时间复杂度最高，并且能够“通吃“所有NP问题的NP问题
 
 <ul>
@@ -298,7 +322,28 @@
 
 <ul>
 <li>动态规划是子问题最优化问题</li>
-<li>例子有最长公共子串，最长公共子序列，背包，TSP</li>
+<li>例子有最长公共子串，最长公共子序列，背包，TSP
+
+<ul>
+<li>最长公共子串
+
+<ul>
+<li>假设两个字符串s和t，s[i]和t[j]表示第i个和第j个字符</li>
+<li>L[i][j]表示以s[i]和t[j]结尾的相同子串的最长长度
+
+<ul>
+<li>那么L[i][j]和L[i+1][j+1]的关系是
+
+<ul>
+<li>L[i+1][j+1] = s[i]==t[j]?L[i][j]+1:0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Be able to solve a problem using dynamic programming given some hints.</li>
@@ -379,7 +424,7 @@
 </li>
 </ul>
 </li>
-<li>然后递归的对数组中最小的两个元素进行合并
+<li>然后递归的对数组中<strong>最小的两个元素</strong>进行合并
 <code>
        （22）
        /    \
@@ -461,7 +506,27 @@
 <h3>Approximation Algorithms:</h3>
 
 <ul>
-<li>Be able to give the characteristics of a good approximation algorithm</li>
+<li>近似算法的结果不一定是最优的（不是说结果不准确）</li>
+<li>对于一些已经被证明是NP-complete问题的优化问题，无法在多项式时间内得到最优解</li>
+<li>Be able to give the characteristics of a good approximation algorithm
+
+<ul>
+<li>假设最优值为K，求解一个问题的近似算法求得的近似最优解相应的目标函数值为C
+
+<ul>
+<li>所以近似性能比x={K/C,C/K}</li>
+<li>假设通常情况下，性能比x是问题输入规模n的一个函数P(n)，也就是x&lt;=P(n)</li>
+<li>相对误差定义为s=abs((K-C) / K)
+
+<ul>
+<li>如果对问题有输入规模n，有一函数V(n)>=s,那么V(n)为该近似算法的相对误差界。</li>
+</ul>
+</li>
+<li>那么有P(n)-1>=V(n)</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Be able to define what it means for an approximation algorithm to give an answer &ldquo;close&rdquo; to the optimum result.</li>
 </ul>
 
