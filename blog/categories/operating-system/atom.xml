@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: operating_system | KING]]></title>
+  <link href="http://pbking1.github.com/blog/categories/operating-system/atom.xml" rel="self"/>
+  <link href="http://pbking1.github.com/"/>
+  <updated>2015-05-04T01:19:39-04:00</updated>
+  <id>http://pbking1.github.com/</id>
+  <author>
+    <name><![CDATA[pb]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[operating system final exam review]]></title>
+    <link href="http://pbking1.github.com/blog/2015/05/04/operating-system-final-exam-review/"/>
+    <updated>2015-05-04T01:16:19-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/05/04/operating-system-final-exam-review</id>
+    <content type="html"><![CDATA[<!--more-->
+
+
+<h3>charpter 8 Main Memory</h3>
+
+<ul>
+<li>background
+
+<ul>
+<li><p>address binding内存绑定</p>
+
+<ul>
+<li>在三个时间发生
+
+<ul>
+<li>编译时间
+
+<ul>
+<li>如果内存地址确定，那么就生成<strong>absolute</strong>的代码：如果内存的起始地址改变了，代码就要重新编译</li>
+</ul>
+</li>
+<li>载入时间
+
+<ul>
+<li>如果内存地址再编译时间不是确定的，就要生成<strong>relocatable</strong>(可重定位)的代码</li>
+</ul>
+</li>
+<li>执行时间
+
+<ul>
+<li>如果进程能够重一个内存段移动到另外一个内存段，那么就把绑定地址延迟到run time。需要硬件支持</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>logical and physical address space逻辑地址和物理地址</p>
+
+<ul>
+<li>logical address
+
+<ul>
+<li>CPU生成的地址，也就是虚拟地址</li>
+</ul>
+</li>
+<li>physical address
+
+<ul>
+<li>内存单元看见的地址</li>
+<li>加载到寄存器中的地址</li>
+</ul>
+</li>
+<li>不同
+
+<ul>
+<li>在编译时间和载入时间logical地址和physical地址一样</li>
+<li>在执行时间的时候不一样</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Memory management Unit(MMU)
+
+<ul>
+<li>用于映射虚拟地址到物理地址</li>
+<li>因为真实的程序用的都是逻辑地址</li>
+</ul>
+</li>
+<li>dynamic linking动态链接
+
+<ul>
+<li>和动态加载的不同在于
+
+<ul>
+<li>不是把加载延迟到运行时，而是将连接延迟到运行时</li>
+</ul>
+</li>
+<li>常用于系统库</li>
+</ul>
+</li>
+<li>dynamic loading动态加载
+
+<ul>
+<li>一个子程序只有在调用时才被加载，所有子程序都以可重定位的形式保存在磁盘上。</li>
+<li>优点：
+
+<ul>
+<li>不用的子程序不会被装入内存</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>swapping交换空间
+
+<ul>
+<li>内存需要在内存中来执行</li>
+<li>但是进程可以暂时从内存中交换出来到备份储存上，在执行的时候再调回内存</li>
+<li>交换时间的主要消耗是在传输时间</li>
+</ul>
+</li>
+<li>contiguous memory allocation连续内存分配
+
+<ul>
+<li>动态内存分配
+
+<ul>
+<li>首次适应</li>
+<li>最佳适应</li>
+<li>最差适应</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>segmentation分段
+
+<ul>
+<li>a segment is a logical unit
+
+<ul>
+<li>比如
+
+<ul>
+<li>main program</li>
+<li>procedure</li>
+<li>function</li>
+<li>method</li>
+<li>object</li>
+<li>common lock</li>
+<li>stack</li>
+<li>array</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>外部碎片
+
+<ul>
+<li>放不进内存的块</li>
+<li>因为内存被用完了，剩下的空间大小不足
+
+<ul>
+<li>因此本来要放进去的块，放不进去了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内部碎片
+
+<ul>
+<li>内存空间剩下的那些一点点的空间，放不下其他的块</li>
+<li>这些小小的空间就是内部碎片</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>paging分页
+
+<ul>
+<li>进程的块也叫页</li>
+<li><p>把页平均分成一定数量的页</p>
+
+<ul>
+<li>这样分配空间的时候可以更充分地利用空间</li>
+<li>并且不会有外部碎片，只会有内部碎片</li>
+</ul>
+</li>
+<li><p>page table</p>
+
+<ul>
+<li>use to translate logical to physical address</li>
+<li>address is devided into
+
+<ul>
+<li>page number
+
+<ul>
+<li></li>
+</ul>
+</li>
+<li>page offset</li>
+</ul>
+</li>
+<li>implementaion
+
+<ul>
+<li>PTBR 页表基寄存器
+
+<ul>
+<li>point to page to table</li>
+</ul>
+</li>
+<li>PRLR 页长寄存器
+
+<ul>
+<li>indicate size of the page table</li>
+</ul>
+</li>
+<li>TLB 翻译后备缓冲器
+
+<ul>
+<li>又叫关联内存</li>
+<li>special fast-lookup cache</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>effective memory-access time 有效内存访问时间
+
+<ul>
+<li>EAT = 内存映射反应时间<em>命中率 + （1-命中率）</em>（内存映射反应时间+额外时间）</li>
+</ul>
+</li>
+<li>valid-invalid bit
+
+<ul>
+<li>用于保护</li>
+<li>valid的意思是要找的页在进程的逻辑地址空间里面</li>
+<li>invalid的意思是是不在</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>charpter 9 virtual memory</h3>
+
+<ul>
+<li>background
+
+<ul>
+<li>因为程序执行的时候只需要一部分程序在内存里面</li>
+<li>把user的逻辑内存从物理内存里面分离出来</li>
+<li>进程中所有寄存器访问的地址都是逻辑地址，这些逻辑地址在运行的时候被转换成物理地址</li>
+<li>效果
+
+<ul>
+<li>主存中保留多个进程</li>
+<li>进程可以比主存的全部空间还大</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>demand paging</p>
+
+<ul>
+<li>lazy swapper
+
+<ul>
+<li>只有在需要的时候才把页调进主存
+
+<ul>
+<li>可以造成更少的I/O</li>
+<li>更少的内存使用</li>
+<li>更快的速度</li>
+<li>更多的用户</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果页已经在内存里面了，那么这个页就是valid
+
+<ul>
+<li>否则就是invalid(造成page fault，因为是对无效地址的访问)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>page replacement</p>
+
+<ul>
+<li>FIFO
+
+<ul>
+<li>每次换第一个</li>
+</ul>
+</li>
+<li>opt
+
+<ul>
+<li>淘汰离现在最长时间后再访问的页</li>
+</ul>
+</li>
+<li>LRU
+
+<ul>
+<li>把离现在最远没有调用的换掉</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>allocation of frame
+
+<ul>
+<li>equal allocation
+
+<ul>
+<li>在n个进程之间分配m个frame
+
+<ul>
+<li>那么就是平均每个进程一个平均值m/n</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>proportional allocation
+
+<ul>
+<li>gloabl replacement</li>
+<li>local replacement</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>thrashing
+
+<ul>
+<li>频繁的把页调出去又调进来，导致严重的性能问题</li>
+<li><p>working-set model</p></li>
+<li><p>page fault frequency</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>charpter 10 Mass-storage structure</h3>
+
+<ul>
+<li>disk structure</li>
+<li>disk attachment</li>
+<li>disk scheduling</li>
+<li>disk management</li>
+<li>swap-space management</li>
+<li>RAID structure</li>
+</ul>
+
+
+<h3>charpter 11 file system interface</h3>
+
+<ul>
+<li><p>file concept</p>
+
+<ul>
+<li><p>file attribute</p>
+
+<ul>
+<li>name</li>
+<li>id</li>
+<li>type</li>
+<li>date</li>
+<li>size</li>
+<li>protection</li>
+</ul>
+</li>
+<li><p>file operation</p>
+
+<ul>
+<li>read</li>
+<li>write</li>
+<li>execute</li>
+<li>delete</li>
+<li>create</li>
+<li>seek</li>
+<li>open</li>
+<li>close</li>
+</ul>
+</li>
+<li>file type
+
+<ul>
+<li>data
+
+<ul>
+<li>numeric</li>
+<li>charactor</li>
+<li>binary</li>
+</ul>
+</li>
+<li>program</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>access method</p>
+
+<ul>
+<li>sequential access顺序访问
+
+<ul>
+<li>一个记录接着一个记录的访问</li>
+<li>常用于文件读写</li>
+</ul>
+</li>
+<li>direct access直接访问
+
+<ul>
+<li>文件由固定长度的逻辑记录组成，允许任何程序按照任意顺序进行快速读和写</li>
+<li>基于文件的磁盘模式</li>
+<li>常用语数据库</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>directory and disk structure
+
+<ul>
+<li>single level directory
+
+<ul>
+<li>相当于单层map
+
+<ul>
+<li>&lt;command,file></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>two level directory
+
+<ul>
+<li>每个用户都有自己的文件目录</li>
+<li>相当于双层map
+
+<ul>
+<li>第一层变成&lt;user,command></li>
+<li>第二层变成&lt;command,file></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>tree structure directory
+
+<ul>
+<li>general graph directory
+
+<ul>
+<li>其实和双层很像，前两层一样
+
+<ul>
+<li>第三层开始多了很多别的命令的map</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>file system mounting
+
+<ul>
+<li>mount point
+
+<ul>
+<li>文件系统使用之前必须要mount</li>
+<li>也就是说目录结构要建立在多个分区上就必须安装这些分区来使其可用</li>
+<li>mount point 通常是空目录
+
+<ul>
+<li>用于安装文件系统</li>
+<li>e.g unix常常安装在/home
+
+<ul>
+<li>这样访问这个文件系统的目录结构的时候
+
+<ul>
+<li>只要加上这个/home前缀就可以了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>charpter 12 file system implementation</h3>
+
+<ul>
+<li>file system structure
+
+<ul>
+<li>文件结构
+
+<ul>
+<li>逻辑存储单元</li>
+<li>相关信息的收集</li>
+</ul>
+</li>
+<li>文件系统依赖磁盘</li>
+<li>磁盘提供random access和inplace write</li>
+<li>file control block
+
+<ul>
+<li>记录文件信息</li>
+</ul>
+</li>
+<li>device driver</li>
+<li>layer file system
+
+<ul>
+<li>应用程序->逻辑文件系统->文件组织模块->基本文件系统->I/O控制->设备</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>file system implementation
+
+<ul>
+<li>使用多个磁盘和内存结构
+
+<ul>
+<li>boot control block
+
+<ul>
+<li>包括系统冲该分区引导操作系统所需要的信息</li>
+</ul>
+</li>
+<li>partition control block
+
+<ul>
+<li>包括分区的详细信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>VFS
+
+<ul>
+<li>虚拟文件系统允许使用同样的系统调用API来使用不同类型的文件系统</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>directory implementation
+  -使用线性表和hash表来指向数据块</li>
+<li><p>allocation method</p>
+
+<ul>
+<li>disk block给文件的分配方法</li>
+<li>连续分配
+
+<ul>
+<li>continguous allocation</li>
+<li>每个文件使用一个集合的连续块</li>
+</ul>
+</li>
+<li>链式分配
+
+<ul>
+<li>每个文件都有一个链表的block</li>
+</ul>
+</li>
+<li>index分配
+
+<ul>
+<li>每个文件都有他自己的index block</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>free space management</p>
+
+<ul>
+<li>文件系统使用free space list 来跟踪可以使用的block</li>
+<li>bit vector</li>
+<li>bit map</li>
+<li>Grouping</li>
+<li>counting</li>
+</ul>
+</li>
+<li><p>efficiency and performance</p>
+
+<ul>
+<li>效率
+
+<ul>
+<li>取决于所使用的磁盘分配和目录管理算法</li>
+<li>首先是只要是磁盘就会有一定的空间用来存索引节点
+
+<ul>
+<li>因为索引会加快查询</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>性能
+
+<ul>
+<li>增加复杂的index</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>recovery</p>
+
+<ul>
+<li>consistency checking
+
+<ul>
+<li>compare data in directory structure with data block on disk and try to fix inconsistencies</li>
+<li>慢而且容易失败</li>
+</ul>
+</li>
+<li>用系统程序备份数据</li>
+<li>用备份恢复系统程序</li>
+</ul>
+</li>
+<li><p>log structured file system</p>
+
+<ul>
+<li>用来记录每个metadata的更新</li>
+</ul>
+</li>
+<li><p>NFS</p>
+
+<ul>
+<li>一个用来通过网络远程access file的软件系统</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>charpter 13 I/O system</h3>
+
+<ul>
+<li>I/O hardware
+
+<ul>
+<li><p>basic</p>
+
+<ul>
+<li>port端口
+
+<ul>
+<li>设备的连接点</li>
+</ul>
+</li>
+<li>bus总线
+
+<ul>
+<li>直接共享连接</li>
+</ul>
+</li>
+<li>controller控制器
+
+<ul>
+<li>操作port，bus，device的电子元件</li>
+</ul>
+</li>
+<li>I/O指令控制设备</li>
+</ul>
+</li>
+<li><p>SCSI</p>
+
+<ul>
+<li>SCSI总线控制器常常是纤维和计算机相连接的独立线路板或者主机适配器</li>
+</ul>
+</li>
+<li><p>memory mapped I/O</p>
+
+<ul>
+<li>内存映射I/O
+
+<ul>
+<li>设备数据和指令寄存器映射到处理器的地址空间</li>
+<li>例如，PC可以用I/O指令来控制一些设备，并且使用内存映射I/O来控制其他设备</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>I/O port register</p></li>
+<li>polling轮询
+
+<ul>
+<li>主机和控制器之间的交互完成协议需要握手</li>
+<li>过程
+
+<ul>
+<li>首先<strong>忙等待</strong>读取忙bit</li>
+<li>然后如果接到下一个命令，就清除忙bit</li>
+<li>然后通过命令寄存器里面的命令就绪bit来表示其意愿</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>interrupt
+
+<ul>
+<li>设备控制器通过catch中断并且dispatch到中断处理程序</li>
+<li>中断处理程序通过处理设备来清除中断</li>
+<li>终端也可以用与异常处理</li>
+</ul>
+</li>
+<li>DMA
+
+<ul>
+<li>直接内存访问</li>
+<li>direct memory access</li>
+<li>用于避免对大规模数据移动使用I/O</li>
+<li>这样无需cpu的帮助也可以把地址放到总线然后开始传输</li>
+</ul>
+</li>
+<li>Kernal I/O subsystem
+
+<ul>
+<li>I/O scheduing
+
+<ul>
+<li>有一些I/O请求通过设备队列来排序</li>
+<li>有一些操作系统使用公平式的</li>
+<li>有一席实现服务质量</li>
+</ul>
+</li>
+<li>buffering
+
+<ul>
+<li>在设备之间传输数据的时候把数据存在内存里面</li>
+<li>为了解决以下两种情况
+
+<ul>
+<li>设备速度不一样</li>
+<li>设备传输大小不一样</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>安全</h3>
+
+<ul>
+<li><p>goal of protection</p>
+
+<ul>
+<li>确保每个对象的访问都是正确的，没有越权访问</li>
+</ul>
+</li>
+<li><p>principal of protection</p>
+
+<ul>
+<li>最低优先级准则
+
+<ul>
+<li>给程序分配他所需要的最低优先级</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>domain of protection</p>
+
+<ul>
+<li><p>domain:set of access right</p>
+
+<ul>
+<li>等于user id</li>
+<li>在文件系统之间交换</li>
+</ul>
+</li>
+<li><p>domain：可以含有user, process, procedure</p></li>
+<li>access-right: &lt;object-name, right-set></li>
+</ul>
+</li>
+<li><p>accesss matrix</p>
+
+<ul>
+<li>行：domain</li>
+<li>列：object</li>
+<li>Access(i,j)：在domain(i)中的process能够对object(j)使用的operation set</li>
+</ul>
+</li>
+<li>implementation of the access matrix
+
+<ul>
+<li>用(sparse)稀疏矩阵实现</li>
+<li>option1
+
+<ul>
+<li>global table
+
+<ul>
+<li>三元式&lt;domain, object, right-set></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>option2
+
+<ul>
+<li>access list
+
+<ul>
+<li>每一列是一个object</li>
+<li>然后每个object含有一个list&lt;domain, right-set></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>access control
+
+<ul>
+<li>使用access matrix 来控制用户的访问权限</li>
+<li>要对process设置privilage</li>
+<li>capacity list</li>
+<li>access list</li>
+</ul>
+</li>
+<li>security problem
+
+<ul>
+<li>资源和访问是否在所有情况下使用正确</li>
+<li>man in the middle attack
+
+<ul>
+<li>接入sender和receiver的信息传输
+
+<ul>
+<li>更改传输的信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>four level of security problem
+
+<ul>
+<li>physical</li>
+<li>operating system</li>
+<li>human</li>
+<li>network</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>program threat
+
+<ul>
+<li><p>trojan horse</p>
+
+<ul>
+<li>木马</li>
+<li>一个误用自身环境的代码段</li>
+</ul>
+</li>
+<li><p>trap door</p>
+
+<ul>
+<li>后门</li>
+<li>在程序中留一个只有他自己可以使用的漏洞</li>
+</ul>
+</li>
+<li>logic bomb
+
+<ul>
+<li>在某种特殊情况下才会激发的安全隐患</li>
+</ul>
+</li>
+<li>virus
+
+<ul>
+<li>在正常软件中嵌入的代码段</li>
+<li>用来感染别的电脑</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>system an network threat
+
+<ul>
+<li>worm
+
+<ul>
+<li>通过繁殖机制破坏系统性能的进程
+
+<ul>
+<li>大量繁殖导致操作系统耗尽资源</li>
+<li>然后瘫痪系统</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>morris internet worm
+
+<ul>
+<li>一个字符串查询finger，超出分配给输入的缓冲，并且覆写栈</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>crytography as a security tool
+
+<ul>
+<li>RSA工作方式
+
+<ul>
+<li>加密用公钥</li>
+<li>解密用私钥</li>
+</ul>
+</li>
+<li>同步加密</li>
+<li>异步加密</li>
+</ul>
+</li>
+<li>user authentication
+
+<ul>
+<li>密码</li>
+<li>biometric</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
