@@ -4,7 +4,7 @@
   <title><![CDATA[Category: operating_system | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/operating-system/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-04T01:19:39-04:00</updated>
+  <updated>2015-05-04T22:45:20-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -121,7 +121,7 @@
 <li>交换时间的主要消耗是在传输时间</li>
 </ul>
 </li>
-<li>contiguous memory allocation连续内存分配
+<li>contiguous memory allocation连续内存分配<em>必考</em>
 
 <ul>
 <li>动态内存分配
@@ -351,12 +351,210 @@
 <h3>charpter 10 Mass-storage structure</h3>
 
 <ul>
-<li>disk structure</li>
-<li>disk attachment</li>
-<li>disk scheduling</li>
-<li>disk management</li>
-<li>swap-space management</li>
-<li>RAID structure</li>
+<li>disk structure
+
+<ul>
+<li>logical block
+
+<ul>
+<li>disk drive被addressed做一位数组的逻辑块
+
+<ul>
+<li>这些块是传输的最小单元</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CLV</li>
+<li>CAV</li>
+</ul>
+</li>
+<li>disk attachment
+
+<ul>
+<li>host attached storage accessed through I/O ports talking to I/O busses</li>
+</ul>
+</li>
+<li>disk scheduling
+
+<ul>
+<li>access latency
+
+<ul>
+<li>= Average access time = average seek time + average latency</li>
+</ul>
+</li>
+<li>seek time
+
+<ul>
+<li>寻道时间</li>
+<li>约等于seek distance</li>
+</ul>
+</li>
+<li>rotational latency</li>
+<li>bandwidth
+
+<ul>
+<li>byte 传输的总数</li>
+</ul>
+</li>
+<li>algorithm
+
+<ul>
+<li>比如有queue:98，183，37，122，14，124，65，67
+  -start from 53</li>
+<li>FCFS
+
+<ul>
+<li>从头加到尾</li>
+<li>所以执行队列
+
+<ul>
+<li>53，98，183，37，122，14，124，65，67</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SSTF
+
+<ul>
+<li>最常用</li>
+<li>把绝对值离起点最近点依次加入</li>
+<li>所以执行队列
+
+<ul>
+<li>首先排序
+
+<ul>
+<li>14，37，65，67，98，122，124，183</li>
+</ul>
+</li>
+<li>然后找离起点绝对值最小的
+
+<ul>
+<li>53，65，67，37，14，98，122，124，183</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SCAN
+
+<ul>
+<li>先把数组排序</li>
+<li>然后从左扫到右，然后再从右扫到左</li>
+<li>所以执行队列
+
+<ul>
+<li>首先排序
+
+<ul>
+<li>14，37，65，67，98，122，124，183</li>
+</ul>
+</li>
+<li>53，37，14，0，65，67，98，122，124，183，255</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>C-SCAN
+
+<ul>
+<li>先把数组排序</li>
+<li>然后从左扫到右，然后再从头扫到尾</li>
+<li>所以执行队列
+
+<ul>
+<li>首先排序
+
+<ul>
+<li>14，37，65，67，98，122，124，183</li>
+</ul>
+</li>
+<li>53，65，67，98，122，124，183，255，0，14，37</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>LOOK</p>
+
+<ul>
+<li>先把数组排序</li>
+<li>然后从左边0扫到右，然后再从右255扫到左</li>
+</ul>
+</li>
+<li><p>C-LOOK</p>
+
+<ul>
+<li>先把数组排序</li>
+<li>然后从左0扫到右，然后再从头扫到尾</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>disk management
+
+<ul>
+<li>low level formatting
+
+<ul>
+<li>physical formatting</li>
+<li>divide a disk into sectors that the disk controller can read and write</li>
+<li>把disk分成几个sector</li>
+</ul>
+</li>
+<li>bootstrap被存储在ROM里面</li>
+</ul>
+</li>
+<li><p>swap-space management</p>
+
+<ul>
+<li>虚拟内存使用磁盘空间来作为内存的extension</li>
+<li>因为虚拟内存的使用是
+
+<ul>
+<li>程序只有一部分在内存里面，其他的部分都放在磁盘上</li>
+<li>只有在需要使用其他部分的时候才会把哪些部分放进内存</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>RAID structure</p>
+
+<ul>
+<li><p>redundant array of inexpensive disks</p></li>
+<li><p>reliability</p>
+
+<ul>
+<li>通过redundancy是的多个disk drives提供可靠性</li>
+</ul>
+</li>
+<li><p>MTTF</p>
+
+<ul>
+<li>mean time to failure</li>
+</ul>
+</li>
+<li><p>MTTR</p>
+
+<ul>
+<li>mean time to repair</li>
+<li>exposure time when another failure could cause data loss</li>
+</ul>
+</li>
+<li>data striping
+
+<ul>
+<li>把一组disk用作一个存储单元</li>
+</ul>
+</li>
+<li>bit-level</li>
+<li>block-level</li>
+</ul>
+</li>
 </ul>
 
 
