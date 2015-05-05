@@ -4,7 +4,7 @@
   <title><![CDATA[Category: operating_system | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/operating-system/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-04T22:45:20-04:00</updated>
+  <updated>2015-05-04T22:57:30-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -477,18 +477,25 @@
 </li>
 </ul>
 </li>
-<li><p>LOOK</p>
+<li>LOOK
 
 <ul>
 <li>先把数组排序</li>
-<li>然后从左边0扫到右，然后再从右255扫到左</li>
+<li>然后从左扫到右，然后再从右扫到左</li>
+<li>执行队列不含有0和255
+
+<ul>
+<li>53，37，14，65，67，98，122，124，183</li>
 </ul>
 </li>
-<li><p>C-LOOK</p>
+</ul>
+</li>
+<li>C-LOOK
 
 <ul>
 <li>先把数组排序</li>
-<li>然后从左0扫到右，然后再从头扫到尾</li>
+<li>然后从左扫到右，然后再从头扫到尾</li>
+<li>53，65，67，98，122，124，183，14，37</li>
 </ul>
 </li>
 </ul>
