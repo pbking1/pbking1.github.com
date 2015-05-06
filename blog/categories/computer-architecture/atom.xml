@@ -4,7 +4,7 @@
   <title><![CDATA[Category: computer_architecture | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/computer-architecture/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-04T22:57:30-04:00</updated>
+  <updated>2015-05-06T11:03:00-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,476 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[computer architecture final exam review]]></title>
+    <link href="http://pbking1.github.com/blog/2015/05/04/computer-architecture-final-exam-review/"/>
+    <updated>2015-05-04T23:07:15-04:00</updated>
+    <id>http://pbking1.github.com/blog/2015/05/04/computer-architecture-final-exam-review</id>
+    <content type="html"><![CDATA[<!--more-->
+
+
+<h3>memory</h3>
+
+<ul>
+<li><p>Memory Hierarchy</p>
+
+<ul>
+<li>Understand what is memory wall? Why it is a bottleneck?瓶颈
+
+<ul>
+<li>内存壁垒：处理器和内存的悬殊持续增长</li>
+<li>瓶颈：好的内存架构设计对系统的性能有越来越高的重要性</li>
+</ul>
+</li>
+<li>Illusion provided from a memory hierarchy
+
+<ul>
+<li>传统的内存层级
+
+<ul>
+<li>通过使用局部性的优势
+
+<ul>
+<li>能够尽可能的利用磁盘上能够使用的内存</li>
+<li>速度也会很快</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Principle of locality (two types of locality)
+
+<ul>
+<li>定义:程序每次会使用一小部分的地址空间
+
+<ul>
+<li>temporal locality
+
+<ul>
+<li>曾经使用过的程序，再次被使用的可能会很大</li>
+<li>比如循环中的指令和数据</li>
+</ul>
+</li>
+<li>spatial locality
+
+<ul>
+<li>在执行过的程序附近的程序被使用的可能性很大</li>
+<li>例如顺序执行中的数组</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DDR RAM? Relationship between memory clock rate and memory bandwidth
+
+<ul>
+<li>mobile system require 2X bandwidth every 2 years</li>
+</ul>
+</li>
+<li><p>DDR DRAM 叫double data rate DRAM</p>
+
+<ul>
+<li>transfer data on rising and falling clock edges</li>
+<li>E.g., 800MHz DDR &ndash;> BW?</li>
+</ul>
+</li>
+<li><p>Know how to calculate Average Disk Read Time</p>
+
+<ul>
+<li>average disk read time = seek time + rotation latency + transfer time + controller delay</li>
+<li>rpm = revolution per minutes</li>
+<li>e.g
+
+<ul>
+<li>512B sector, 15000rpm, 4ms average seek time, 100MB/s transfer rate, 0.2ms controller overhead, idle disk</li>
+<li> time = 4ms seek time +
+
+<ul>
+<li>(&frac12;)/(15000/60) = 2ms rotationl latency</li>
+<li>512/100MB/s = 5.12 s = 0.00512ms transfer time</li>
+<li>0.2ms controller delay</li>
+<li>= 6.2 ms</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Difference between three types of caches:</p>
+
+<ul>
+<li><p><strong>Direct-mapped cache</strong></p>
+
+<ul>
+<li>根据索引表映射哪个cache块用来存数据</li>
+<li>一个block只能有一个选择存哪里</li>
+<li>内存块的那一个位置分配给cache的某个位置，由后三位决定（假设有8个块（2<sup>3</sup>=8））
+
+<ul>
+<li>001：00001，01001，10001，11001</li>
+</ul>
+</li>
+<li>用valid bit来判断cache的数据<strong>是否存在</strong>内存那个位置</li>
+<li>tag用来判断cache的数据在内存哪个位置</li>
+<li><strong>重点</strong>
+
+<ul>
+<li>index不存在cache里面，就像数组不会存索引</li>
+<li>假设有一个word：22
+
+<ul>
+<li>首先转成二进制10110</li>
+<li>然后后三位位index</li>
+<li>前两位为tag</li>
+<li>然后把数据存入对应位置</li>
+<li>因为没存进来的时候，对应位置没有数据，所以为miss（第一次访问那个内存地址），存入之后，才会变成hit</li>
+<li>然后数据valid bit变成Y</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>n-way Set-associative cache</p>
+
+<ul>
+<li>每个set都有n个成员</li>
+<li>用块的号数来决定哪个set</li>
+<li>在给定的set中搜索全部成员（因为set里面的成员少，所以搜索起来快）
+
+<ul>
+<li>那么就只要比较n次，更加省时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Fully associative cache
+
+<ul>
+<li>cache可以映射到内存中任何一个位置</li>
+<li>所有成员都要搜索一次</li>
+<li>耗费时间长，每个成员都要对比, 每个block的tag都要对比</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For each of the above cache type
+
+<ul>
+<li><p>How to calculate a block(or set) index give an address?</p>
+
+<ul>
+<li>miss: load 的数据不再memory里面
+
+<ul>
+<li>every miss always load the 64 byte</li>
+</ul>
+</li>
+<li>如何选block size
+
+<ul>
+<li>用两种方式
+
+<ul>
+<li>early restart
+
+<ul>
+<li>CPU在等第一个byte，但是64byte还没load进去</li>
+<li>或者可以先读第一个byte， 不用等他读完</li>
+</ul>
+</li>
+<li>critical word first</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>How to subdivide an address given a cache design, or vice versa?</p></li>
+</ul>
+</li>
+<li>Write back vs write through（write hit）
+
+<ul>
+<li>write through
+
+<ul>
+<li>如果write hit， 则更新缓存里面的block和memory里面的block</li>
+<li>这样缓存和内存里面的数据就同步了</li>
+<li>但是会使得数据的写更长时间
+
+<ul>
+<li>解决方案：使用write buffer
+
+<ul>
+<li>把要写入内存的数据hold waiting</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>write back</p>
+
+<ul>
+<li>当你更新数据的时候，只改cache里面的数据</li>
+<li>速度快</li>
+</ul>
+</li>
+<li><p>两者使用的差别</p>
+
+<ul>
+<li>如果写的频率高的时候，write back快</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Write allocate vs no write allocate (on write miss)
+
+<ul>
+<li>allocate
+
+<ul>
+<li>fetch the block</li>
+</ul>
+</li>
+<li>no allocate
+
+<ul>
+<li>do not fetch the block</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>condition</p>
+
+<ul>
+<li>if read hit: cpu continue</li>
+<li>if write hit: write through or write back</li>
+<li>if read miss: store pipeline, read data to pipeline and continue</li>
+<li>if write miss: write through (allocate or no allocate)</li>
+</ul>
+</li>
+<li><p>Know how to calculate AMAT, actual CPI</p>
+
+<ul>
+<li>AMAT: average memory access time
+
+<ul>
+<li>hit time + miss rate * miss penalty</li>
+</ul>
+</li>
+<li>actual CPI : cpu time divide into 2 parts
+
+<ul>
+<li>cpu execution clock cycles</li>
+<li>memory stall clock cycles
+
+<ul>
+<li>(instruction / program)* <strong>(misses/introduction)</strong> * miss penalty</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>E.g. on a machine with one or two level caches</li>
+<li>3 formulas (two from lectures, one from the HW 6 solution)</li>
+</ul>
+</li>
+<li><p>Know what is LRU(least recent use) replacement policy</p></li>
+<li>Virtual memory
+
+<ul>
+<li>What is page table</li>
+<li>Address subdivision</li>
+<li><p>How to translate a virtual address to a physical address</p></li>
+<li><p>Purpose of MMU</p></li>
+<li>What is page fault</li>
+<li>How a page fault handler works?</li>
+</ul>
+</li>
+<li>Know what is TLB
+
+<ul>
+<li>Understand the interaction between TLB and caches</li>
+</ul>
+</li>
+<li>Know the sources of cache misses (3 Cs model) <strong>必考</strong>
+
+<ul>
+<li>三种类型的miss
+
+<ul>
+<li>compulsory miss
+
+<ul>
+<li>第一次访问会导致这种miss</li>
+<li>因为第一次访问的时候数据不会在内存里面</li>
+<li>解决方案
+
+<ul>
+<li>假设一个block只能存一个byte，然后我们要load 128 byte的数据
+
+<ul>
+<li>那么我们就要load 128次</li>
+<li>但是如果把block增大成128 byte，那么我们只要存一次</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>capacity miss
+
+<ul>
+<li>理论上存在，实际的机器是不存在的</li>
+<li>只有full associate cache</li>
+<li>空间不足</li>
+<li>解决方案
+
+<ul>
+<li>增大cache size</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>conflict miss
+
+<ul>
+<li>假设有两个entry，但是有100个要进去
+
+<ul>
+<li>这个时候就会发生这种miss</li>
+</ul>
+</li>
+<li>也就是资源竞争</li>
+<li>解决方案
+
+<ul>
+<li>增加关联性</li>
+</ul>
+</li>
+<li>不存在与full associate cache</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>What about the fourth C?</li>
+<li>Why each type of miss occurs?</li>
+</ul>
+</li>
+<li>Software optimisation techniques: AVX, Loop Unrolling, Blocking?</li>
+<li>A few fallacies and pitfalls</li>
+</ul>
+
+
+<h3>parallel processor</h3>
+
+<ul>
+<li>Amdahl&rsquo;s law
+
+<ul>
+<li>知道公式以及知道如何计算</li>
+<li>公式
+
+<ul>
+<li>speedup = 1/[(1-F)+F/P]</li>
+<li>F为并行化的百分比</li>
+<li>P为处理器数量</li>
+<li>e.g
+
+<ul>
+<li>我们有100个处理器，想要90倍的speedup</li>
+<li>1/[(1-F) + F/100] = 90
+
+<ul>
+<li>F = 89*100/(99*90) = 99.9%</li>
+<li>所以非并行的部分必须要&lt;=0.1%</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>strong scaling(缩放) and weak scaling
+
+<ul>
+<li>scaling
+
+<ul>
+<li>e.g1 10*10 matrix
+
+<ul>
+<li>从10个处理器加速到100个处理器，speedup是多少
+
+<ul>
+<li>首先在单个处理器：time=(10+100)*Tadd=110*Tadd</li>
+<li>10个处理器
+
+<ul>
+<li>time=10*Tadd + (10*10)/10*Tadd = 20*Tadd</li>
+<li>speedup = 110/20=5.5</li>
+</ul>
+</li>
+<li>100个处理器
+
+<ul>
+<li>time=10*Tadd + (10*10)/100*Tadd = 11*Tadd</li>
+<li>speedup = 110/11 = 10</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>e.g2
+
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>strong scaling
+
+<ul>
+<li>数据规模确定</li>
+</ul>
+</li>
+<li>weak scaling
+
+<ul>
+<li>数据规模和处理器的数量有关</li>
+<li>例如
+
+<ul>
+<li>我们有10个处理器，那么数组的规模就是10*10</li>
+<li>如果有100个处理器，那么数组的规模就是100*100</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>good understanding of hardware threading
+
+<ul>
+<li>增加单个核的资源利用率</li>
+<li>在thread里面，dependency handled by scheduling and register renaming</li>
+<li>不同的thread里面的指令在函数单元available 的时候执行</li>
+<li>每个cycle都没有thread switching</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[computer architecture 1]]></title>

@@ -100,6 +100,92 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/">
+		
+			Phonegap 框架原理</a>
+	</h2>
+	<div class="entry-content">
+		<h4>phonegap 实现原理</h4>
+
+<ul>
+<li><code>关键</code>
+
+<ul>
+<li>1.用webview在本地来渲染解析html
+
+<ul>
+<li><strong>因此实际上他就是一个内嵌的浏览器</strong>
+
+<ul>
+<li>类似于一个WebView，但是phonegap对webview做了些改造</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.基于plugin模式来封装调用原生API
+
+<ul>
+<li>以原生app的方式来运行</li>
+<li>用js调用原生的功能</li>
+</ul>
+</li>
+<li>3.在框架首次启动的时候加载CallbackServer线程，并且监听前端XHR请求和链表中有无数据
+
+<ul>
+<li>当XHR请求来了而链表为空，则线程等待10秒
+
+<ul>
+<li>如果这个时间内有数据来，那么就唤醒线程把数据传到前端</li>
+</ul>
+</li>
+<li>如果10s后没有数据，则传空数据回前端</li>
+<li><code>基于服务器推技术</code></li>
+</ul>
+</li>
+<li>4.同步请求和异步请求有关键的区别</li>
+</ul>
+</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-06T05:03:43-04:00" pubdate data-updated="true">Jun 6<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/system-analyze-and-design/'>System_analyze_and_design</a>, <a class='category' href='/blog/categories/html/'>html</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/06/06/phonegap-kuang-jia-yuan-li//blog/page/10/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/06/02/matlab-classification-method/">
 		
 			Matlab Classification Method</a>
@@ -411,59 +497,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/05/26/knn-in-matlab-knnclassify//blog/page/10/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/05/26/quick-black-box-testing-on-app/">
-		
-			Quick Black Box Testing on App</a>
-	</h2>
-	<div class="entry-content">
-		<h3>some quick black box testing tools</h3>
-
-<ul>
-<li>calabash</li>
-<li>appium</li>
-<li>appgrader</li>
-<li>monkey(adb 自带)</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2014/05/26/quick-black-box-testing-on-app/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-26T02:39:28-04:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/software-testing/'>software_testing</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/05/26/quick-black-box-testing-on-app//blog/page/10/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

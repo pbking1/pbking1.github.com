@@ -100,6 +100,113 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2015/04/22/c-plus-plus-basic-data-structure-part3/">
+		
+			C++ Basic Data Structure Part3</a>
+	</h2>
+	<div class="entry-content">
+		<h3>basic data structure and algorithm part2</h3>
+
+<h3>图论</h3>
+
+<h4>图的实现</h4>
+
+<ul>
+<li>V为点的个数 E边的个数</li>
+<li>邻接矩阵
+
+<ul>
+<li>用一个n*n的矩阵
+
+<ul>
+<li>第一列第二个为1的意思是
+
+<ul>
+<li>第一个点和第二个点相连</li>
+<li>1为权值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>O(V<sup>2</sup>)</li>
+<li>用一个二维数组实现</li>
+</ul>
+</li>
+<li>邻接表
+
+<ul>
+<li>用一个n长度的数组
+
+<ul>
+<li>然后每一个数组后面接的链表里面存着
+
+<ul>
+<li>这个数组index对应的点和哪些点相连
+
+<ul>
+<li>这些点存在链表里面</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>O(V+E)</li>
+<li>stl实现</li>
+<li>用vector<Node> list
+
+<ul>
+<li>然后Node就是每个点
+
+<ul>
+<li>如果有别的点和这个Node相连，就list.push_back(别的点)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+		
+		<a href="/blog/2015/04/22/c-plus-plus-basic-data-structure-part3/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-22T01:27:20-04:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/c-plus-plus/'>c++</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/04/22/c-plus-plus-basic-data-structure-part3//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2015/04/22/c-plus-plus-basic-data-structure-part2/">
 		
 			C++ Basic Data Structure Part2</a>
@@ -557,77 +664,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2015/04/15/xapian-omindex-build-index-and-search//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support/">
-		
-			Virtual Machine Windows VS2010 UNC Path Not Support</a>
-	</h2>
-	<div class="entry-content">
-		<h3>解决UNC路径不受支持</h3>
-
-<pre><code>在虚拟机的VS2010中编译出错
-</code></pre>
-
-<ul>
-<li>错误提示：用作为当前目录的以上路径启动了 CMD.EXE。 UNC 路径不受支持。默认值设为 Windows 目录。系统找不到指定的文件。执行 c:\windows\system32\cmd.exe 时出错.</li>
-<li>解决方法:
-
-<ul>
-<li>在注册表中,添加一个值即可.路径如下:
-
-<ul>
-<li>HKEY_CURRENT_USER\Software\Microsoft\Command Processor</li>
-<li>添加值 DisableUNCCheck，类型为 REG_DWORD 并将该值设置为1 （十六进制）。</li>
-</ul>
-</li>
-<li>或者，打开cmd.exe
-
-<ul>
-<li>把下面这行代码复制进去，按回车</li>
-<li>reg add  &ldquo;HKEY_CURRENT_USER\Software\Microsoft\Command Processor&rdquo; /v DisableUNCCheck /t REG_DWORD /d 1 /f</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-04-14T21:17:08-04:00" pubdate data-updated="true">Apr 14<span>th</span>, 2015</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/vs/'>vs</a>, <a class='category' href='/blog/categories/windows/'>windows</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
