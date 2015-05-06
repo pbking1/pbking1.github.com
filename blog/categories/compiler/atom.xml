@@ -4,7 +4,7 @@
   <title><![CDATA[Category: compiler | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/compiler/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-06T11:03:00-04:00</updated>
+  <updated>2015-05-06T11:21:12-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -363,7 +363,34 @@
 <li>Be able to trace Dijkstra&rsquo;s shortest path problem on a given graph.
 
 <ul>
-<li> 每次把离集合最近的点加入集合，然后递归到到达终点</li>
+<li> 首先从空的集合开始，选择离集合最近的点，把那个点加入集合</li>
+<li> 然后再更新列表中离这个集合相邻的点的距离
+
+<ul>
+<li>然后以这个新的点开始，找他的邻居
+
+<ul>
+<li>然后对比到这个邻居的最短的路
+
+<ul>
+<li>在原有的最短路上加上这个新的点的距离
+
+<ul>
+<li>如果比前一步加上另外一条路径的距离还长，就更新最短路
+
+<ul>
+<li>否则就把当前的这个值更新</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>循环直到到达终点</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Be able to generate Huffman codes for a given frequency analysis
