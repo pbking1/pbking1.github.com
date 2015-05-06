@@ -4,7 +4,7 @@
   <title><![CDATA[Category: compiler | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/compiler/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-06T11:21:12-04:00</updated>
+  <updated>2015-05-06T15:17:25-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -184,6 +184,23 @@
 <ul>
 <li><strong>NP和NP-hard的交集是NP-complete</strong></li>
 <li><strong>P在NP内</strong></li>
+<li>所有NP问题都可以设计出一个多项式的算法，转换成另外一个NP问题
+
+<ul>
+<li>也就是所有的NP问题都可以用多项式时间的算法来彼此转换</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>NP=P？
+
+<ul>
+<li>也就是NP是否能够用P的时间解决？
+
+<ul>
+<li>如果可一个话，NP问题就会都变成P问题</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -196,6 +213,8 @@
 <ul>
 <li>满足NP-complete问题的第二个条件，但是不满足第一个条件</li>
 <li>也就是所有NP问题都能约化成它，但是它不是一个NP问题</li>
+<li>定义：一个问题被称为P-hard问题，当且仅当一个NP-complete问题可以在多项式时间内归约到这个问题</li>
+<li>也就是NP-hard问题比NP-complete问题还难</li>
 </ul>
 </li>
 </ul>
