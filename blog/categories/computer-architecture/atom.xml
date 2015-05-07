@@ -4,7 +4,7 @@
   <title><![CDATA[Category: computer_architecture | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/computer-architecture/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-07T01:50:30-04:00</updated>
+  <updated>2015-05-07T02:46:58-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -158,6 +158,26 @@
 <li>那么就只要比较n次，更加省时间</li>
 </ul>
 </li>
+<li>假设一个cache有2<sup>s</sup>个sets， 并且每个block有2<sup>n</sup>个bytes。
+
+<ul>
+<li>那么block offset为n</li>
+<li>index为s</li>
+<li>假设address长度为m
+
+<ul>
+<li>则tag长度为m-s-n</li>
+</ul>
+</li>
+<li>计算set index
+
+<ul>
+<li>block address = memory address / 2<sup>n</sup></li>
+<li>set index = block address % 2<sup>s</sup></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Fully associative cache
@@ -302,6 +322,12 @@
 <li>Virtual memory
 
 <ul>
+<li>1K = 2<sup>10</sup>
+
+<ul>
+<li>1K * 1K = 1M</li>
+</ul>
+</li>
 <li>What is page table</li>
 <li>Address subdivision</li>
 <li><p>How to translate a virtual address to a physical address</p></li>
@@ -314,6 +340,7 @@
 
 <ul>
 <li>Understand the interaction between TLB and caches</li>
+<li>TLB cache is a page table entries</li>
 </ul>
 </li>
 <li>Know the sources of cache misses (3 Cs model) <strong>必考</strong>
