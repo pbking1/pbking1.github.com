@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-07T02:46:58-04:00</updated>
+  <updated>2015-05-07T13:19:04-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -302,7 +302,7 @@
 </li>
 </ul>
 </li>
-<li>actual CPI : cpu time divide into 2 parts
+<li><p>actual CPI : cpu time divide into 2 parts</p>
 
 <ul>
 <li>cpu execution clock cycles</li>
@@ -312,9 +312,52 @@
 <li>(instruction / program)* <strong>(misses/introduction)</strong> * miss penalty</li>
 </ul>
 </li>
+<li>miss penalty = main memory access time / clock cycle</li>
+<li>Effective CPI = bass CPI + L1 Miss rate * L2 Hit Time + L2 global miss rate * L2 Miss time</li>
+<li>AMAT = L1 Hit time + L1 miss rate * L2 Hit time + L2 global miss rate * L2 Miss time</li>
+<li>performance = 慢的/快的</li>
+<li>e.g
+
+<ul>
+<li>CPU base CPI = 1, clock rate = 4GHz</li>
+<li>Miss rate / instruction = 2%</li>
+<li>Main memory access time = 100ms
+
+<ul>
+<li>then if there is only primary memory
+
+<ul>
+<li>Miss penalty = 100ns / clock cycle</li>
+<li>clock cycle = 1/clock rate = 0.25
+
+<ul>
+<li>Miss penalty = 400 cycle</li>
 </ul>
 </li>
-<li>E.g. on a machine with one or two level caches</li>
+<li>Effective CPI = 1 + 2% * 400 = 9 cycle</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>then suppose we add L-2 cache
+
+<ul>
+<li>L2 cache access time = 5ns</li>
+<li>L2 global miss rate = 0.5%
+
+<ul>
+<li>L2 Hit time = 5ns / clock cycle = 5ns / 0.25 = 20 cycles</li>
+<li>L2 Miss time = 400 cycles</li>
+<li>Effective CPI = 1 + 2% * 20 + 0.5% * 400 = 3.4 cycle</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>E.g. on a machine with one or two level caches</p></li>
 <li>3 formulas (two from lectures, one from the HW 6 solution)</li>
 </ul>
 </li>
@@ -328,18 +371,103 @@
 <li>1K * 1K = 1M</li>
 </ul>
 </li>
-<li>What is page table</li>
+<li>What is page table
+
+<ul>
+<li>用来在物理内存里面找一个页的</li>
+<li>PTE:page table entries
+
+<ul>
+<li>indexed by virtual page</li>
+</ul>
+</li>
+<li>如果page不在内存里面
+
+<ul>
+<li>PTE存物理page的数字</li>
+</ul>
+</li>
+<li>如果page在内存里面
+
+<ul>
+<li>PTE refer to一个磁盘的位置</li>
+</ul>
+</li>
+<li>dirty bit set to 1 当一个page被改动过</li>
+</ul>
+</li>
 <li>Address subdivision</li>
-<li><p>How to translate a virtual address to a physical address</p></li>
-<li><p>Purpose of MMU</p></li>
-<li>What is page fault</li>
-<li>How a page fault handler works?</li>
+<li>How to translate a virtual address to a physical address
+
+<ul>
+<li>CPU and OS translate virtual address to physical address</li>
+<li>The CPU sends virtual address to MMU</li>
+<li>The MMU send physical address to the memory</li>
+</ul>
+</li>
+<li>Purpose of MMU
+
+<ul>
+<li>转换虚拟地址和物理地址</li>
+</ul>
+</li>
+<li>What is page fault
+
+<ul>
+<li>其实相当于cache miss</li>
+<li>当你有一个page fault，这个page就要被fetch from磁盘到内存</li>
+<li>如何减少page fault？
+
+<ul>
+<li>全关联placement</li>
+<li>小页面替换算法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>How a page fault handler works?
+
+<ul>
+<li>use faulting virtual address to find PTE</li>
+<li>locate page on disk</li>
+<li>choose page to replace
+
+<ul>
+<li>if dirty, write the page to disk first</li>
+</ul>
+</li>
+<li>read page into memory and update page table</li>
+<li>make process runnable again
+
+<ul>
+<li>restart from faulting instruction</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Know what is TLB
 
 <ul>
-<li>Understand the interaction between TLB and caches</li>
+<li>Translate look-aside Buffer
+
+<ul>
+<li>TLB的miss由硬件或者软件控制</li>
+<li>a spacial cache of page table entries within CPU</li>
+</ul>
+</li>
+<li>Understand the interaction between TLB and caches
+
+<ul>
+<li>cache rage use physical address
+
+<ul>
+<li>need to translate before cache</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>TLB cache is a page table entries</li>
 </ul>
 </li>
@@ -407,8 +535,19 @@
 <li>Why each type of miss occurs?</li>
 </ul>
 </li>
-<li>Software optimisation techniques: AVX, Loop Unrolling, Blocking?</li>
-<li>A few fallacies and pitfalls</li>
+<li><p>Software optimisation techniques: AVX, Loop Unrolling, Blocking?</p>
+
+<ul>
+<li>blocking
+
+<ul>
+<li>maximise accesses to data before it is replaced</li>
+<li>应该就是访问数据之前，先把空间申请了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>A few fallacies and pitfalls</p></li>
 </ul>
 
 
