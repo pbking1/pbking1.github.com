@@ -604,13 +604,12 @@ $(document).ready(
 <li>增加关联性</li>
 </ul>
 </li>
-<li>不存在与full associate cache</li>
+<li>不存在于full associate cache</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>What about the fourth C?</li>
-<li>Why each type of miss occurs?</li>
 </ul>
 </li>
 <li><p>Software optimisation techniques: AVX, Loop Unrolling, Blocking?</p>
@@ -625,7 +624,34 @@ $(document).ready(
 </li>
 </ul>
 </li>
-<li><p>A few fallacies and pitfalls</p></li>
+<li><p>A few fallacies and pitfalls</p>
+
+<ul>
+<li><p>1.在多核CPU里里面，并且有shared的L2和L3cache</p>
+
+<ul>
+<li>如果关联性不够core多的话，会导致 conflict miss
+
+<ul>
+<li>e.g
+
+<ul>
+<li>如果有一个8核CPU，那么至少需要一个8-way的set 关联cache</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.用AMAT来评估一个out-of-order processor的性能</p>
+
+<ul>
+<li>忽略effect of non-blocking accesses(continuing execution on misses)</li>
+<li>instead, evaluate performance by simulation</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
@@ -662,7 +688,7 @@ $(document).ready(
 <li>strong scaling(缩放) and weak scaling
 
 <ul>
-<li>scaling
+<li><p>scaling</p>
 
 <ul>
 <li>e.g1 10*10 matrix
@@ -690,15 +716,9 @@ $(document).ready(
 </li>
 </ul>
 </li>
-<li>e.g2
-
-<ul>
-<li></li>
 </ul>
 </li>
-</ul>
-</li>
-<li>strong scaling
+<li><p>strong scaling</p>
 
 <ul>
 <li>数据规模确定</li>
