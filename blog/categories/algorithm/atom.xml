@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-05-07T14:28:18-04:00</updated>
+  <updated>2015-07-15T18:30:06-04:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -487,6 +487,26 @@ return 0;
 
 
 <h3>外排序</h3>
+
+<ul>
+<li>适合在内存不够的时候用</li>
+<li>把一个大文件分割成很多小文件
+
+<ul>
+<li>然后依次把每个小文件放入内存排序</li>
+<li>排序完之后，再存入文件中</li>
+<li>最后就会得到很多排好序的小文件</li>
+</ul>
+</li>
+<li>然后用多路归并，对比每个文件的第一个，把最小的放到一个结果文件中
+
+<ul>
+<li>然后把这个元素在原本的文件中删掉</li>
+</ul>
+</li>
+<li>得到的结果文件就是结果</li>
+</ul>
+
 
 <h4>哈希表</h4>
 
