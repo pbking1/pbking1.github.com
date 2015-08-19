@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -14,9 +14,50 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Tech Interview Prepare resource]]></title>
+    <link href="http://pbking1.github.com/blog/2015/08/19/tech-interview-prepare-resource/"/>
+    <updated>2015-08-19T14:21:39-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/08/19/tech-interview-prepare-resource</id>
+    <content type="html"><![CDATA[<h3>Review project</h3>
+
+<ul>
+<li>familiar with the project and algorithm you used to do</li>
+<li>review the algorithm and how you optimise it</li>
+<li>review the syntax of the programming language you used</li>
+<li>review the framework of the project you use</li>
+</ul>
+
+
+<h3>Review resource</h3>
+
+<ul>
+<li><p>data structure(very important)</p>
+
+<ul>
+<li><a href="http://www.geeksforgeeks.org/data-structures/">http://www.geeksforgeeks.org/data-structures/</a></li>
+</ul>
+</li>
+<li><p>leetcode</p>
+
+<ul>
+<li>understand the question and implement at least 3 times before interview in big company</li>
+</ul>
+</li>
+<li><p>careercup</p>
+
+<ul>
+<li>a lot of company interview question</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[computer architecture final exam review]]></title>
     <link href="http://pbking1.github.com/blog/2015/05/04/computer-architecture-final-exam-review/"/>
-    <updated>2015-05-04T23:07:15-04:00</updated>
+    <updated>2015-05-04T22:07:15-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/05/04/computer-architecture-final-exam-review</id>
     <content type="html"><![CDATA[<!--more-->
 
@@ -714,7 +755,7 @@
   <entry>
     <title type="html"><![CDATA[operating system final exam review]]></title>
     <link href="http://pbking1.github.com/blog/2015/05/04/operating-system-final-exam-review/"/>
-    <updated>2015-05-04T01:16:19-04:00</updated>
+    <updated>2015-05-04T00:16:19-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/05/04/operating-system-final-exam-review</id>
     <content type="html"><![CDATA[<!--more-->
 
@@ -1854,7 +1895,7 @@
   <entry>
     <title type="html"><![CDATA[computation theory final exam review]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/30/computation-theory-final-exam-review/"/>
-    <updated>2015-04-30T23:45:08-04:00</updated>
+    <updated>2015-04-30T22:45:08-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/30/computation-theory-final-exam-review</id>
     <content type="html"><![CDATA[<h3>Chapter 12:</h3>
 
@@ -2427,7 +2468,7 @@
   <entry>
     <title type="html"><![CDATA[2015_citadel_onsite_interview]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/29/2015-citadel-onsite-interview/"/>
-    <updated>2015-04-29T23:55:50-04:00</updated>
+    <updated>2015-04-29T22:55:50-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/29/2015-citadel-onsite-interview</id>
     <content type="html"><![CDATA[<h3>citadel onsite面试</h3>
 
@@ -2529,7 +2570,7 @@
   <entry>
     <title type="html"><![CDATA[resize disk in OSX10.10]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/29/resize-disk-in-osx10-dot-10/"/>
-    <updated>2015-04-29T12:31:35-04:00</updated>
+    <updated>2015-04-29T11:31:35-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/29/resize-disk-in-osx10-dot-10</id>
     <content type="html"><![CDATA[<h3>Resize disk in OS X 10.10 Yosemite</h3>
 
@@ -2578,7 +2619,7 @@
   <entry>
     <title type="html"><![CDATA[c++ reference and pointer]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-reference-and-pointer/"/>
-    <updated>2015-04-22T12:15:07-04:00</updated>
+    <updated>2015-04-22T11:15:07-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-reference-and-pointer</id>
     <content type="html"><![CDATA[<h3>what is pointer</h3>
 
@@ -2795,7 +2836,7 @@
   <entry>
     <title type="html"><![CDATA[c++ basic data structure part3]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part3/"/>
-    <updated>2015-04-22T01:27:20-04:00</updated>
+    <updated>2015-04-22T00:27:20-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part3</id>
     <content type="html"><![CDATA[<h3>basic data structure and algorithm part2</h3>
 
@@ -3179,7 +3220,7 @@
   <entry>
     <title type="html"><![CDATA[c++ basic data structure part2]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part2/"/>
-    <updated>2015-04-22T01:22:30-04:00</updated>
+    <updated>2015-04-22T00:22:30-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part2</id>
     <content type="html"><![CDATA[<h3>basic data structure and algorithm part2</h3>
 
@@ -3595,7 +3636,7 @@
   <entry>
     <title type="html"><![CDATA[string processing function implementation]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/21/string-processing-function-implementation/"/>
-    <updated>2015-04-21T01:56:01-04:00</updated>
+    <updated>2015-04-21T00:56:01-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/21/string-processing-function-implementation</id>
     <content type="html"><![CDATA[<h3>string function in c</h3>
 
@@ -3784,7 +3825,7 @@
   <entry>
     <title type="html"><![CDATA[c++ basic data structure]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/20/c-plus-plus-basic-data-structure/"/>
-    <updated>2015-04-20T22:04:11-04:00</updated>
+    <updated>2015-04-20T21:04:11-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/20/c-plus-plus-basic-data-structure</id>
     <content type="html"><![CDATA[<h3>basic data structure and algorithm</h3>
 
@@ -4582,7 +4623,7 @@
   <entry>
     <title type="html"><![CDATA[c++ program run time]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/20/c-plus-plus-program-run-time/"/>
-    <updated>2015-04-20T20:52:22-04:00</updated>
+    <updated>2015-04-20T19:52:22-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/20/c-plus-plus-program-run-time</id>
     <content type="html"><![CDATA[<h4>时间复杂度</h4>
 
@@ -4868,7 +4909,7 @@ for(k=1;k&lt;=n;k*=2)
   <entry>
     <title type="html"><![CDATA[xapian omindex build index and search]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/15/xapian-omindex-build-index-and-search/"/>
-    <updated>2015-04-15T22:28:58-04:00</updated>
+    <updated>2015-04-15T21:28:58-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/15/xapian-omindex-build-index-and-search</id>
     <content type="html"><![CDATA[<h3>omega is a component that can be used with xapian</h3>
 
@@ -4909,7 +4950,7 @@ for(k=1;k&lt;=n;k*=2)
   <entry>
     <title type="html"><![CDATA[virtual machine windows VS2010 UNC path not support]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support/"/>
-    <updated>2015-04-14T21:17:08-04:00</updated>
+    <updated>2015-04-14T20:17:08-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support</id>
     <content type="html"><![CDATA[<h3>解决UNC路径不受支持</h3>
 
@@ -4945,7 +4986,7 @@ for(k=1;k&lt;=n;k*=2)
   <entry>
     <title type="html"><![CDATA[ASP.net in mac MonoDevelop]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/14/asp-dot-net-in-mac-monodevelop/"/>
-    <updated>2015-04-14T03:01:35-04:00</updated>
+    <updated>2015-04-14T02:01:35-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/14/asp-dot-net-in-mac-monodevelop</id>
     <content type="html"><![CDATA[<h3>install asp.net environment in mac</h3>
 
@@ -5185,7 +5226,7 @@ for(k=1;k&lt;=n;k*=2)
   <entry>
     <title type="html"><![CDATA[java spring tutorial part1]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/11/java-spring-tutorial-part1/"/>
-    <updated>2015-04-11T15:41:46-04:00</updated>
+    <updated>2015-04-11T14:41:46-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/11/java-spring-tutorial-part1</id>
     <content type="html"><![CDATA[<h3>maven</h3>
 
@@ -5385,7 +5426,7 @@ for(k=1;k&lt;=n;k*=2)
   <entry>
     <title type="html"><![CDATA[install tomcat in mac]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/03/install-tomcat-in-mac/"/>
-    <updated>2015-04-03T03:28:36-04:00</updated>
+    <updated>2015-04-03T02:28:36-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/03/install-tomcat-in-mac</id>
     <content type="html"><![CDATA[<h3>install tomcat in mac</h3>
 
@@ -5413,7 +5454,7 @@ for(k=1;k&lt;=n;k*=2)
   <entry>
     <title type="html"><![CDATA[compile qtox on OSX]]></title>
     <link href="http://pbking1.github.com/blog/2015/03/03/compile-qtox-on-osx/"/>
-    <updated>2015-03-03T23:49:35-05:00</updated>
+    <updated>2015-03-03T22:49:35-06:00</updated>
     <id>http://pbking1.github.com/blog/2015/03/03/compile-qtox-on-osx</id>
     <content type="html"><![CDATA[<h3>Problems when compile qtox on mac</h3>
 
@@ -5571,7 +5612,7 @@ for(k=1;k&lt;=n;k*=2)
   <entry>
     <title type="html"><![CDATA[CLEP microeconomic practise exam]]></title>
     <link href="http://pbking1.github.com/blog/2015/02/28/clep-microeconomic-practise-exam/"/>
-    <updated>2015-02-28T15:03:29-05:00</updated>
+    <updated>2015-02-28T14:03:29-06:00</updated>
     <id>http://pbking1.github.com/blog/2015/02/28/clep-microeconomic-practise-exam</id>
     <content type="html"><![CDATA[<h3>exam 1</h3>
 
@@ -6174,7 +6215,7 @@ met is:</p>
   <entry>
     <title type="html"><![CDATA[computer architecture 1]]></title>
     <link href="http://pbking1.github.com/blog/2015/02/13/computer-architecture-1/"/>
-    <updated>2015-02-13T14:28:43-05:00</updated>
+    <updated>2015-02-13T13:28:43-06:00</updated>
     <id>http://pbking1.github.com/blog/2015/02/13/computer-architecture-1</id>
     <content type="html"><![CDATA[<h3>charpter1</h3>
 
@@ -7051,141 +7092,6 @@ int main(){
 </ul>
 </li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[linkedin_api_example]]></title>
-    <link href="http://pbking1.github.com/blog/2015/02/12/linkedin-api-example/"/>
-    <updated>2015-02-12T14:51:14-05:00</updated>
-    <id>http://pbking1.github.com/blog/2015/02/12/linkedin-api-example</id>
-    <content type="html"><![CDATA[<ul>
-<li>we can use the RESTFUL api to get some information in linkedin
-
-<ul>
-<li><a href="https://apigee.com/console/linkedin">https://apigee.com/console/linkedin</a>
-
-<ul>
-<li>this is a online simluator to perform RESTFUL api of linkedin</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<!--more-->
-
-
-<ul>
-<li>and the sample code below is using the linkedin package from thrid party
-
-<ul>
-<li>you can download the package using the following link
-
-<ul>
-<li><a href="https://pypi.python.org/pypi/python-linkedin/4.0">https://pypi.python.org/pypi/python-linkedin/4.0</a></li>
-<li><a href="https://github.com/ozgur/python-linkedin">https://github.com/ozgur/python-linkedin</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>code
-
-<ul>
-<li>the following code can produce some result
-
-<ul>
-<li>but I have some problem in using the search api
-
-<ul>
-<li>application.search_profile(selectors=[{&lsquo;people&rsquo;: [&lsquo;first-name&rsquo;, &lsquo;last-name&rsquo;]}], params={&lsquo;keywords&rsquo;: &lsquo;apple microsoft&rsquo;})</li>
-</ul>
-</li>
-<li>Search URL is &lsquo;<a href="https://api.linkedin.com/v1/people-search:">https://api.linkedin.com/v1/people-search:</a>(people:(first-name,last-name))?keywords=apple%20microsoft&rsquo;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#! /usr/bin/env python
-</span><span class='line'># -*- coding: utf-8 -*-
-</span><span class='line'>
-</span><span class='line'>CONSUMER_KEY = 'xxxxxxx'     # This is api_key
-</span><span class='line'>CONSUMER_SECRET = 'xxxxxxx'   # This is secret_key
-</span><span class='line'>
-</span><span class='line'>USER_TOKEN = 'xxxxxxx'   # This is oauth_token
-</span><span class='line'>USER_SECRET = 'xxxxxxx'   # This is oauth_secret
-</span><span class='line'>RETURN_URL = 'http://localhost:8000'
-</span><span class='line'>
-</span><span class='line'>from linkedin import linkedin
-</span><span class='line'>from oauthlib import *
-</span><span class='line'>from urllib2 import *
-</span><span class='line'>import urllib2
-</span><span class='line'>from json import dumps, loads
-</span><span class='line'># Define CONSUMER_KEY, CONSUMER_SECRET,  
-</span><span class='line'># USER_TOKEN, and USER_SECRET from the credentials 
-</span><span class='line'># provided in your LinkedIn application
-</span><span class='line'>
-</span><span class='line'># Instantiate the developer authentication class
-</span><span class='line'>authentication = linkedin.LinkedInDeveloperAuthentication(CONSUMER_KEY, CONSUMER_SECRET, 
-</span><span class='line'>                                                      USER_TOKEN, USER_SECRET, 
-</span><span class='line'>                                                      RETURN_URL, linkedin.PERMISSIONS.enums.values())
-</span><span class='line'>
-</span><span class='line'># Pass it in to the app...
-</span><span class='line'>application = linkedin.LinkedInApplication(authentication)
-</span><span class='line'>
-</span><span class='line'>print application.get_profile()
-</span><span class='line'>
-</span><span class='line'>print application.get_profile(selectors=['id', 'first-name', 'last-name', 'location', 'distance', 'num-connections', 'skills', 'educations'])
-</span><span class='line'>
-</span><span class='line'>print application.search_company(selectors=[{'companies': ['name', 'universal-name', 'website-url']}], params={'keywords': 'apple microsoft'})
-</span><span class='line'># Search URL is https://api.linkedin.com/v1/company-search:(companies:(name,universal-name,webs
-</span><span class='line'>
-</span><span class='line'>print application.get_memberships(params={'count': 20})
-</span><span class='line'>
-</span><span class='line'>print application.get_companies(company_ids=[1035], universal_names=['apple'], selectors=['name'], params={'is-company-admin': 'true'})
-</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[2014_indianapolis_redefined_hackathron]]></title>
     <link href="http://pbking1.github.com/blog/2014/10/30/2014-indianapolis-redefined-hackathron/"/>
-    <updated>2014-10-30T21:25:44-04:00</updated>
+    <updated>2014-10-30T20:25:44-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/10/30/2014-indianapolis-redefined-hackathron</id>
     <content type="html"><![CDATA[<h3>The hackathron take 24 hours to write an app that can be used for attracting people to indianapolis</h3>
 
@@ -51,7 +51,7 @@
   <entry>
     <title type="html"><![CDATA[database_and_backend_injection]]></title>
     <link href="http://pbking1.github.com/blog/2014/10/23/database-and-backend-injection/"/>
-    <updated>2014-10-23T09:13:16-04:00</updated>
+    <updated>2014-10-23T08:13:16-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/10/23/database-and-backend-injection</id>
     <content type="html"><![CDATA[<h3>database ER diagram</h3>
 
@@ -112,7 +112,7 @@ mysql_query($sql, $conn);
   <entry>
     <title type="html"><![CDATA[solution to Access denied for user 'root'@'localhost' (using password:YES) ]]></title>
     <link href="http://pbking1.github.com/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password/"/>
-    <updated>2014-09-09T11:49:30-04:00</updated>
+    <updated>2014-09-09T10:49:30-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/09/09/solution-to-access-denied-for-user-root-at-localhost-using-password</id>
     <content type="html"><![CDATA[<h3>Access denied for user &lsquo;root&rsquo;@&lsquo;localhost&rsquo; (using password:YES)</h3>
 
@@ -154,7 +154,7 @@ mysql_query($sql, $conn);
   <entry>
     <title type="html"><![CDATA[php tutorial(1)]]></title>
     <link href="http://pbking1.github.com/blog/2014/09/08/php-tutorial-1/"/>
-    <updated>2014-09-08T15:46:01-04:00</updated>
+    <updated>2014-09-08T14:46:01-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/09/08/php-tutorial-1</id>
     <content type="html"><![CDATA[<h3>class 1</h3>
 

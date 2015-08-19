@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vs | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/vs/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[virtual machine windows VS2010 UNC path not support]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support/"/>
-    <updated>2015-04-14T21:17:08-04:00</updated>
+    <updated>2015-04-14T20:17:08-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/14/virtual-machine-windows-vs2010-unc-path-not-support</id>
     <content type="html"><![CDATA[<h3>解决UNC路径不受支持</h3>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: search_engine | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/search-engine/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[xapian omindex build index and search]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/15/xapian-omindex-build-index-and-search/"/>
-    <updated>2015-04-15T22:28:58-04:00</updated>
+    <updated>2015-04-15T21:28:58-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/15/xapian-omindex-build-index-and-search</id>
     <content type="html"><![CDATA[<h3>omega is a component that can be used with xapian</h3>
 
@@ -57,7 +57,7 @@
   <entry>
     <title type="html"><![CDATA[xapian_tutorial_3]]></title>
     <link href="http://pbking1.github.com/blog/2015/02/06/xapian-tutorial-3/"/>
-    <updated>2015-02-06T02:50:50-05:00</updated>
+    <updated>2015-02-06T01:50:50-06:00</updated>
     <id>http://pbking1.github.com/blog/2015/02/06/xapian-tutorial-3</id>
     <content type="html"><![CDATA[<h4>filter</h4>
 
@@ -149,7 +149,7 @@
   <entry>
     <title type="html"><![CDATA[xapian_tutorial_2]]></title>
     <link href="http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-2/"/>
-    <updated>2015-02-05T19:54:20-05:00</updated>
+    <updated>2015-02-05T18:54:20-06:00</updated>
     <id>http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-2</id>
     <content type="html"><![CDATA[<h3>The expand of synonym(同义词)</h3>
 
@@ -309,7 +309,7 @@ return 0;
   <entry>
     <title type="html"><![CDATA[xapian_tutorial_1]]></title>
     <link href="http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-1/"/>
-    <updated>2015-02-05T16:40:48-05:00</updated>
+    <updated>2015-02-05T15:40:48-06:00</updated>
     <id>http://pbking1.github.com/blog/2015/02/05/xapian-tutorial-1</id>
     <content type="html"><![CDATA[<ul>
 <li>note:some of the content and code are refer from <a href="http://www.coder4.com/archives/2218">http://www.coder4.com/archives/2218</a></li>

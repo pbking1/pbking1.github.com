@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Interview | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/interview/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -14,9 +14,50 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Tech Interview Prepare resource]]></title>
+    <link href="http://pbking1.github.com/blog/2015/08/19/tech-interview-prepare-resource/"/>
+    <updated>2015-08-19T14:21:39-05:00</updated>
+    <id>http://pbking1.github.com/blog/2015/08/19/tech-interview-prepare-resource</id>
+    <content type="html"><![CDATA[<h3>Review project</h3>
+
+<ul>
+<li>familiar with the project and algorithm you used to do</li>
+<li>review the algorithm and how you optimise it</li>
+<li>review the syntax of the programming language you used</li>
+<li>review the framework of the project you use</li>
+</ul>
+
+
+<h3>Review resource</h3>
+
+<ul>
+<li><p>data structure(very important)</p>
+
+<ul>
+<li><a href="http://www.geeksforgeeks.org/data-structures/">http://www.geeksforgeeks.org/data-structures/</a></li>
+</ul>
+</li>
+<li><p>leetcode</p>
+
+<ul>
+<li>understand the question and implement at least 3 times before interview in big company</li>
+</ul>
+</li>
+<li><p>careercup</p>
+
+<ul>
+<li>a lot of company interview question</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[2015_citadel_onsite_interview]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/29/2015-citadel-onsite-interview/"/>
-    <updated>2015-04-29T23:55:50-04:00</updated>
+    <updated>2015-04-29T22:55:50-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/29/2015-citadel-onsite-interview</id>
     <content type="html"><![CDATA[<h3>citadel onsite面试</h3>
 
@@ -118,7 +159,7 @@
   <entry>
     <title type="html"><![CDATA[zst internship IOS code step1]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/22/zst-internship-ios-code-step1/"/>
-    <updated>2014-05-22T23:47:46-04:00</updated>
+    <updated>2014-05-22T22:47:46-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/22/zst-internship-ios-code-step1</id>
     <content type="html"><![CDATA[<h3>In order to understand better about the code of the project in zst ios project, first list the folder</h3>
 
@@ -328,7 +369,7 @@
   <entry>
     <title type="html"><![CDATA[2014 UC interview coding]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/14/2014-uc-interview-coding/"/>
-    <updated>2014-05-14T11:30:19-04:00</updated>
+    <updated>2014-05-14T10:30:19-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/14/2014-uc-interview-coding</id>
     <content type="html"><![CDATA[<ul>
 <li>有两套题，c++和java，我选了c++</li>

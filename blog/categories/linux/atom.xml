@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[vi regular expression and data processing(1)]]></title>
     <link href="http://pbking1.github.com/blog/2014/11/21/vi-regular-expression-1/"/>
-    <updated>2014-11-21T15:07:04-05:00</updated>
+    <updated>2014-11-21T14:07:04-06:00</updated>
     <id>http://pbking1.github.com/blog/2014/11/21/vi-regular-expression-1</id>
     <content type="html"><![CDATA[<h3>data processing is very important before data mining</h3>
 
@@ -245,7 +245,7 @@ ylabel(&lsquo;number of the people&rsquo;)
   <entry>
     <title type="html"><![CDATA[How to install ubuntu on macbook air dual]]></title>
     <link href="http://pbking1.github.com/blog/2014/04/17/how-to-install-ubuntu-on-macbook-air-dual/"/>
-    <updated>2014-04-17T23:07:34-04:00</updated>
+    <updated>2014-04-17T22:07:34-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/04/17/how-to-install-ubuntu-on-macbook-air-dual</id>
     <content type="html"><![CDATA[<h4>1.For there are too many software that can be used in ubuntu not in OSX so I decided to install ubuntu on my macbook air</h4>
 
@@ -405,7 +405,7 @@ ylabel(&lsquo;number of the people&rsquo;)
   <entry>
     <title type="html"><![CDATA[Linux server tutorial]]></title>
     <link href="http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial/"/>
-    <updated>2014-04-15T02:47:08-04:00</updated>
+    <updated>2014-04-15T01:47:08-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/04/15/linux-server-tutorial</id>
     <content type="html"><![CDATA[<h3>1.GNU plan</h3>
 
@@ -1101,7 +1101,7 @@ apt-config : use the read the apt coniguration info
   <entry>
     <title type="html"><![CDATA[My Vim Configuration]]></title>
     <link href="http://pbking1.github.com/blog/2014/04/09/my-vim-configuration/"/>
-    <updated>2014-04-09T06:35:16-04:00</updated>
+    <updated>2014-04-09T05:35:16-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/04/09/my-vim-configuration</id>
     <content type="html"><![CDATA[<ul>
 <li>This is the vim configuration of my mac.</li>

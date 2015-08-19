@@ -4,7 +4,7 @@
   <title><![CDATA[Category: database | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/database/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[database_and_backend_injection]]></title>
     <link href="http://pbking1.github.com/blog/2014/10/23/database-and-backend-injection/"/>
-    <updated>2014-10-23T09:13:16-04:00</updated>
+    <updated>2014-10-23T08:13:16-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/10/23/database-and-backend-injection</id>
     <content type="html"><![CDATA[<h3>database ER diagram</h3>
 
@@ -77,7 +77,7 @@ mysql_query($sql, $conn);
   <entry>
     <title type="html"><![CDATA[2014 sysu database project step1]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/13/2014-sysu-database-project-step1/"/>
-    <updated>2014-05-13T03:20:32-04:00</updated>
+    <updated>2014-05-13T02:20:32-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/13/2014-sysu-database-project-step1</id>
     <content type="html"><![CDATA[<h3>问题描述</h3>
 

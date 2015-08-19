@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[difference between malloc and new in C++]]></title>
     <link href="http://pbking1.github.com/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/"/>
-    <updated>2015-01-27T15:30:52-05:00</updated>
+    <updated>2015-01-27T14:30:52-06:00</updated>
     <id>http://pbking1.github.com/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus</id>
     <content type="html"><![CDATA[<h3>new and delete</h3>
 
@@ -168,7 +168,7 @@
   <entry>
     <title type="html"><![CDATA[linear_regression_tutorial]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial/"/>
-    <updated>2014-05-12T03:23:20-04:00</updated>
+    <updated>2014-05-12T02:23:20-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/12/linear-regression-tutorial</id>
     <content type="html"><![CDATA[<h3>First something about training the data</h3>
 
@@ -527,7 +527,7 @@ theta = pinv(x' * x + w * eye(size(x, 2))) * x' * y;
   <entry>
     <title type="html"><![CDATA[C pointer tutorial (1)]]></title>
     <link href="http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1/"/>
-    <updated>2014-04-25T01:41:01-04:00</updated>
+    <updated>2014-04-25T00:41:01-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/04/25/c-pointer-tutorial-1</id>
     <content type="html"><![CDATA[<h3>First is the basic</h3>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[use sqlite in html5]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/08/use-sqlite-in-html5/"/>
-    <updated>2014-06-08T22:50:05-04:00</updated>
+    <updated>2014-06-08T21:50:05-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/08/use-sqlite-in-html5</id>
     <content type="html"><![CDATA[<ul>
 <li>There are three ways to store data using html5
@@ -110,7 +110,7 @@
   <entry>
     <title type="html"><![CDATA[phonegap 框架原理]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/06/phonegap-kuang-jia-yuan-li/"/>
-    <updated>2014-06-06T05:03:43-04:00</updated>
+    <updated>2014-06-06T04:03:43-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/06/phonegap-kuang-jia-yuan-li</id>
     <content type="html"><![CDATA[<h4>phonegap 实现原理</h4>
 
@@ -265,7 +265,7 @@
   <entry>
     <title type="html"><![CDATA[HTML5和移动平台的原生应用对比]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi/"/>
-    <updated>2014-05-27T01:17:39-04:00</updated>
+    <updated>2014-05-27T00:17:39-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/27/html5he-yi-dong-ping-tai-de-yuan-sheng-ying-yong-dui-bi</id>
     <content type="html"><![CDATA[<h3>问题所在</h3>
 
@@ -442,7 +442,7 @@
   <entry>
     <title type="html"><![CDATA[quick black box testing on app]]></title>
     <link href="http://pbking1.github.com/blog/2014/05/26/quick-black-box-testing-on-app/"/>
-    <updated>2014-05-26T02:39:28-04:00</updated>
+    <updated>2014-05-26T01:39:28-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/05/26/quick-black-box-testing-on-app</id>
     <content type="html"><![CDATA[<h3>some quick black box testing tools</h3>
 
@@ -535,9 +535,9 @@
   
   <entry>
     <title type="html"><![CDATA[Final Exam Of The Sysu SE Android Class]]></title>
-    <link href="http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class/"/>
-    <updated>2014-04-09T00:52:03-04:00</updated>
-    <id>http://pbking1.github.com/blog/2014/04/09/final-exam-of-the-android-class</id>
+    <link href="http://pbking1.github.com/blog/2014/04/08/final-exam-of-the-android-class/"/>
+    <updated>2014-04-08T23:52:03-05:00</updated>
+    <id>http://pbking1.github.com/blog/2014/04/08/final-exam-of-the-android-class</id>
     <content type="html"><![CDATA[<h4>在Android平台上实现一个本地应用——大学城特惠网</h4>
 
 <h5>Some key codes</h5>

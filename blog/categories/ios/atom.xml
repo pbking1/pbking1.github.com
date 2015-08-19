@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IOS | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[IOS 报表类库（trial 30days）]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/25/ios-bao-biao-lei-ku-%28trial-30days%29/"/>
-    <updated>2014-06-25T04:25:40-04:00</updated>
+    <updated>2014-06-25T03:25:40-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/25/ios-bao-biao-lei-ku-(trial-30days)</id>
     <content type="html"><![CDATA[<h3>一个非常容易使用的报表类库</h3>
 
@@ -164,7 +164,7 @@
   <entry>
     <title type="html"><![CDATA[IOS UILabel and UITextfield]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/25/ios-uilabel-and-uitextfield/"/>
-    <updated>2014-06-25T03:00:33-04:00</updated>
+    <updated>2014-06-25T02:00:33-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/25/ios-uilabel-and-uitextfield</id>
     <content type="html"><![CDATA[<h3>label</h3>
 
@@ -214,7 +214,7 @@ self.text1.layer.cornerRadius = 10;
   <entry>
     <title type="html"><![CDATA[IOS selector(jump to the other page)]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/24/ios-selector-jump-to-the-other-page/"/>
-    <updated>2014-06-24T23:02:32-04:00</updated>
+    <updated>2014-06-24T22:02:32-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/24/ios-selector-jump-to-the-other-page</id>
     <content type="html"><![CDATA[<h3>响应事件或者跳转</h3>
 
@@ -258,7 +258,7 @@ UIBarButtonItem *leftbutton = [[UIBarButtonItem alloc] initWithTitle:@"cancel" s
   <entry>
     <title type="html"><![CDATA[IOS UIButton]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/24/ios-uibutton/"/>
-    <updated>2014-06-24T23:01:58-04:00</updated>
+    <updated>2014-06-24T22:01:58-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/24/ios-uibutton</id>
     <content type="html"><![CDATA[<h3>IOS的button其实和其他的控件使用方法差不多</h3>
 
@@ -302,7 +302,7 @@ UIBarButtonItem *leftbutton = [[UIBarButtonItem alloc] initWithTitle:@"cancel" s
   <entry>
     <title type="html"><![CDATA[IOS segment control]]></title>
     <link href="http://pbking1.github.com/blog/2014/06/24/ios-segment-control/"/>
-    <updated>2014-06-24T23:01:49-04:00</updated>
+    <updated>2014-06-24T22:01:49-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/06/24/ios-segment-control</id>
     <content type="html"><![CDATA[<h3>segment control</h3>
 

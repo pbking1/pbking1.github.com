@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cplusplus | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/cplusplus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[difference between malloc and new in C++]]></title>
     <link href="http://pbking1.github.com/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus/"/>
-    <updated>2015-01-27T15:30:52-05:00</updated>
+    <updated>2015-01-27T14:30:52-06:00</updated>
     <id>http://pbking1.github.com/blog/2015/01/27/difference-between-malloc-and-new-in-c-plus-plus</id>
     <content type="html"><![CDATA[<h3>new and delete</h3>
 
@@ -168,7 +168,7 @@
   <entry>
     <title type="html"><![CDATA[mpi_parallel_programming_2]]></title>
     <link href="http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-2/"/>
-    <updated>2014-09-15T15:28:34-04:00</updated>
+    <updated>2014-09-15T14:28:34-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-2</id>
     <content type="html"><![CDATA[<h3>data type</h3>
 
@@ -316,7 +316,7 @@
   <entry>
     <title type="html"><![CDATA[mpi_parallel_programming_1]]></title>
     <link href="http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-1/"/>
-    <updated>2014-09-15T14:19:13-04:00</updated>
+    <updated>2014-09-15T13:19:13-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/09/15/mpi-parallel-programming-1</id>
     <content type="html"><![CDATA[<h3>difference between SIMD and MIMD</h3>
 

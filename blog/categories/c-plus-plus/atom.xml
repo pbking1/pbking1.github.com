@@ -4,7 +4,7 @@
   <title><![CDATA[Category: c++ | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[c++ reference and pointer]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-reference-and-pointer/"/>
-    <updated>2015-04-22T12:15:07-04:00</updated>
+    <updated>2015-04-22T11:15:07-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-reference-and-pointer</id>
     <content type="html"><![CDATA[<h3>what is pointer</h3>
 
@@ -180,7 +180,7 @@ b = temp;
   <entry>
     <title type="html"><![CDATA[c++ basic data structure part3]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part3/"/>
-    <updated>2015-04-22T01:27:20-04:00</updated>
+    <updated>2015-04-22T00:27:20-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part3</id>
     <content type="html"><![CDATA[<h3>basic data structure and algorithm part2</h3>
 
@@ -479,7 +479,7 @@ return 0;
   <entry>
     <title type="html"><![CDATA[c++ basic data structure part2]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part2/"/>
-    <updated>2015-04-22T01:22:30-04:00</updated>
+    <updated>2015-04-22T00:22:30-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/22/c-plus-plus-basic-data-structure-part2</id>
     <content type="html"><![CDATA[<h3>basic data structure and algorithm part2</h3>
 
@@ -853,7 +853,7 @@ return 0;
   <entry>
     <title type="html"><![CDATA[string processing function implementation]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/21/string-processing-function-implementation/"/>
-    <updated>2015-04-21T01:56:01-04:00</updated>
+    <updated>2015-04-21T00:56:01-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/21/string-processing-function-implementation</id>
     <content type="html"><![CDATA[<h3>string function in c</h3>
 
@@ -979,7 +979,7 @@ return 0;
   <entry>
     <title type="html"><![CDATA[c++ basic data structure]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/20/c-plus-plus-basic-data-structure/"/>
-    <updated>2015-04-20T22:04:11-04:00</updated>
+    <updated>2015-04-20T21:04:11-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/20/c-plus-plus-basic-data-structure</id>
     <content type="html"><![CDATA[<h3>basic data structure and algorithm</h3>
 

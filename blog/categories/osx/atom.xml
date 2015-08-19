@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OSX | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[resize disk in OSX10.10]]></title>
     <link href="http://pbking1.github.com/blog/2015/04/29/resize-disk-in-osx10-dot-10/"/>
-    <updated>2015-04-29T12:31:35-04:00</updated>
+    <updated>2015-04-29T11:31:35-05:00</updated>
     <id>http://pbking1.github.com/blog/2015/04/29/resize-disk-in-osx10-dot-10</id>
     <content type="html"><![CDATA[<h3>Resize disk in OS X 10.10 Yosemite</h3>
 
@@ -65,7 +65,7 @@
   <entry>
     <title type="html"><![CDATA[compile qtox on OSX]]></title>
     <link href="http://pbking1.github.com/blog/2015/03/03/compile-qtox-on-osx/"/>
-    <updated>2015-03-03T23:49:35-05:00</updated>
+    <updated>2015-03-03T22:49:35-06:00</updated>
     <id>http://pbking1.github.com/blog/2015/03/03/compile-qtox-on-osx</id>
     <content type="html"><![CDATA[<h3>Problems when compile qtox on mac</h3>
 
@@ -193,7 +193,7 @@
   <entry>
     <title type="html"><![CDATA[my bash profile configuration]]></title>
     <link href="http://pbking1.github.com/blog/2014/04/12/my-bash-profile-configuration/"/>
-    <updated>2014-04-12T22:14:26-04:00</updated>
+    <updated>2014-04-12T21:14:26-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/04/12/my-bash-profile-configuration</id>
     <content type="html"><![CDATA[<p>```</p>
 

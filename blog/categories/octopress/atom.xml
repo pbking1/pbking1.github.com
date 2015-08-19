@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-07-24T21:02:06-04:00</updated>
+  <updated>2015-08-19T14:28:07-05:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Blog on github page]]></title>
     <link href="http://pbking1.github.com/blog/2014/04/20/blog-on-github-page/"/>
-    <updated>2014-04-20T01:32:38-04:00</updated>
+    <updated>2014-04-20T00:32:38-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/04/20/blog-on-github-page</id>
     <content type="html"><![CDATA[<h3>什么是github？</h3>
 
@@ -93,7 +93,7 @@ git push origin gh-pages
   <entry>
     <title type="html"><![CDATA[Congiure My octopress blog]]></title>
     <link href="http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog/"/>
-    <updated>2014-04-09T05:03:02-04:00</updated>
+    <updated>2014-04-09T04:03:02-05:00</updated>
     <id>http://pbking1.github.com/blog/2014/04/09/congiure-the-octopress-blog</id>
     <content type="html"><![CDATA[<h3>1.In the _config.yml file</h3>
 
