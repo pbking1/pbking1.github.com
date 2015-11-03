@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2015-11-02T21:44:44-06:00</updated>
+  <updated>2015-11-03T01:09:35-06:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -18,7 +18,52 @@
     <link href="http://pbking1.github.com/blog/2015/11/02/basic-investment-knowledge/"/>
     <updated>2015-11-02T21:35:12-06:00</updated>
     <id>http://pbking1.github.com/blog/2015/11/02/basic-investment-knowledge</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<h3>Stock</h3>
+
+<ul>
+<li>A type of sevurity that signifies ownership in a corporation. and represent a claim on part of the corporation&rsquo;s assest and the earning</li>
+</ul>
+
+
+<h3>preferred stock</h3>
+
+<ul>
+<li>generally do not have voting right. but has higher claim on asset and earning than the common shares.</li>
+</ul>
+
+
+<h3>common stock</h3>
+
+<ul>
+<li>entitle the owner to vote at the shareholder&rsquo;s meeting and to receive dividends.</li>
+</ul>
+
+
+<h3>future</h3>
+
+<h3>option on stock</h3>
+
+<h3>ASK</h3>
+
+<h3>BID</h3>
+
+<h3>BOOK</h3>
+
+<ul>
+<li>A record of all the position that a trader is holding.</li>
+<li>This record shows the total amount of the long and short position that the trader hasd undertake</li>
+</ul>
+
+
+<h3>Exchange</h3>
+
+<h3>Dark Pool</h3>
+
+<h3>Colocation</h3>
+
+<h3>SIP (consolidated feed)</h3>
+
+<h3>direct exchange feed</h3>
 ]]></content>
   </entry>
   
