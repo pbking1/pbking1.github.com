@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2016-02-12T12:50:03-06:00</updated>
+  <updated>2016-02-12T12:55:05-06:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[2016_hackathron_and_travel]]></title>
-    <link href="http://pbking1.github.com/blog/2016/02/12/2016-hackathron-and-travel/"/>
+    <link href="http://pbking1.github.com/blog/2016/02/12/hackFSU-2016-hackathron-and-miami-travel/"/>
     <updated>2016-02-12T12:49:00-06:00</updated>
-    <id>http://pbking1.github.com/blog/2016/02/12/2016-hackathron-and-travel</id>
+    <id>http://pbking1.github.com/blog/2016/02/12/hackFSU-2016-hackathron-and-miami-travel</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
