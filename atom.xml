@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2016-02-12T13:31:02-06:00</updated>
+  <updated>2016-02-12T13:32:40-06:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -88,8 +88,14 @@
 <h3>about the project</h3>
 
 <ul>
-<li>The project code link is :</li>
-<li>The project video link is :</li>
+<li>We create a product that would bridge the sustainability information gap between shoppers and companies.
+
+<ul>
+<li>The website gives shoppers the knowledge they need in order to make sustainable fashion choices.</li>
+</ul>
+</li>
+<li>The project code link is : <a href="https://github.com/pbking1/fashion_hackathron_project">https://github.com/pbking1/fashion_hackathron_project</a></li>
+<li>The project video link is : <a href="https://www.youtube.com/watch?v=F1uz8_mpKC4">https://www.youtube.com/watch?v=F1uz8_mpKC4</a></li>
 </ul>
 
 
