@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2016-02-12T13:26:31-06:00</updated>
+  <updated>2016-02-12T13:29:13-06:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -70,12 +70,14 @@
 
 <ul>
 <li><img src="http://pbking1.github.com/images/2016_1-29--1-31-hackFashion_ohio/2.jpg"></li>
+<li><img src="http://pbking1.github.com/images/2016_1-29--1-31-hackFashion_ohio/2.jpg" alt="Drawing" style="width: 200px;"/></li>
 </ul>
 </li>
 <li>two 3D printer
 
 <ul>
 <li><img src="http://pbking1.github.com/images/2016_1-29--1-31-hackFashion_ohio/4.jpg"></li>
+<li><img src="http://pbking1.github.com/images/2016_1-29--1-31-hackFashion_ohio/4.jpg" alt="Drawing" style="width: 200px;height: 200px"/></li>
 <li><img src="http://pbking1.github.com/images/2016_1-29--1-31-hackFashion_ohio/5.jpg"></li>
 <li><img src="http://pbking1.github.com/images/2016_1-29--1-31-hackFashion_ohio/6.jpg"></li>
 </ul>
