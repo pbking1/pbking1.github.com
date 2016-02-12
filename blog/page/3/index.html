@@ -100,6 +100,101 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2015/04/20/c-plus-plus-basic-data-structure/">
+		
+			C++ Basic Data Structure</a>
+	</h2>
+	<div class="entry-content">
+		<h3>basic data structure and algorithm</h3>
+
+<h4>little review about c++ object oriented</h4>
+
+<ul>
+<li>虚函数
+
+<ul>
+<li>核心理念就是基类访问派生类定义的函数</li>
+<li>动态联编</li>
+<li>一个函数的调用不是在编译的时候确定的，而是在运行的时候确定的，并且因为写代码的时候不能确定被调用的函数是基类的函数还是派生类的函数，所以这个函数又叫做“虚函数“</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>class A{
+</span><span class='line'>    public:
+</span><span class='line'>        virtual void test(){
+</span><span class='line'>            cout&lt;&lt;"A:test() is called";
+</span><span class='line'>        }        
+</span><span class='line'>};
+</span><span class='line'>class B: public A{
+</span><span class='line'>    public:
+</span><span class='line'>        virtual void test(){
+</span><span class='line'>            cout&lt;&lt;"B:test() is called";
+</span><span class='line'>        }
+</span><span class='line'>};
+</span><span class='line'>int main(){
+</span><span class='line'>    A *a = new B();
+</span><span class='line'>    a -&gt; test();
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+		
+		<a href="/blog/2015/04/20/c-plus-plus-basic-data-structure/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-20T21:04:11-05:00" pubdate data-updated="true">Apr 20<span>th</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/c-plus-plus/'>c++</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/04/20/c-plus-plus-basic-data-structure//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2015/04/20/c-plus-plus-program-run-time/">
 		
 			C++ Program Run Time</a>
@@ -529,69 +624,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2015/04/11/java-spring-tutorial-part1//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2015/04/03/install-tomcat-in-mac/">
-		
-			Install Tomcat in Mac</a>
-	</h2>
-	<div class="entry-content">
-		<h3>install tomcat in mac</h3>
-
-<ul>
-<li>1.go to <a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a> and download the zip file of tomcat</li>
-<li>2.then unzip the zip file into /Library and rename into &ldquo;Tomcat&rdquo;</li>
-<li>3.then <code>sudo chmod 755 /Library/Tomcat/bin/*.sh</code></li>
-<li>4.if you want to start tomcat
-
-<ul>
-<li><code>sudo sh startup.sh</code></li>
-<li>if want to stop
-
-<ul>
-<li><code>sudo sh /Library/Tomcat/bin/shutdown.sh</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-04-03T02:28:36-05:00" pubdate data-updated="true">Apr 3<span>rd</span>, 2015</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/java/'>java</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2015/04/03/install-tomcat-in-mac//blog/page/3/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
