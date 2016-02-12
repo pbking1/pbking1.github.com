@@ -4,7 +4,7 @@
   <title><![CDATA[KING]]></title>
   <link href="http://pbking1.github.com/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2016-02-12T13:22:32-06:00</updated>
+  <updated>2016-02-12T13:24:46-06:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -20,17 +20,23 @@
     <id>http://pbking1.github.com/blog/2016/02/12/2016-ohio-fashion-hackathron</id>
     <content type="html"><![CDATA[<h3>The first hackathron of the year</h3>
 
-<ul>
-<li>This hackathron is held in kent state university ohio</li>
-</ul>
-
-
 <!--more-->
 
 
-<pre><code>- And the following is the schedule of it.
-    - &lt;img src="http://pbking1.github.com/images/2016_1-29--1-31-hackFashion_ohio/1.jpg"&gt;
-</code></pre>
+<ul>
+<li>This hackathron is held in kent state university ohio
+
+<ul>
+<li>And the following is the schedule of it.
+
+<ul>
+<li><img src="http://pbking1.github.com/images/2016_1-29--1-31-hackFashion_ohio/1.jpg"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
 
 <h4>After arrive at kent state university</h4>
 
@@ -63,7 +69,7 @@
 <li>body scanner
 
 <ul>
-<li><img src="http://pbking1.github.com/images/2016_1-29--1-31-hackFashion_ohio/2.JPG"></li>
+<li><img src="http://pbking1.github.com/images/2016_1-29--1-31-hackFashion_ohio/2.jpg"></li>
 </ul>
 </li>
 <li>two 3D printer
