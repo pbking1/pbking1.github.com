@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hackathron | KING]]></title>
   <link href="http://pbking1.github.com/blog/categories/hackathron/atom.xml" rel="self"/>
   <link href="http://pbking1.github.com/"/>
-  <updated>2016-02-12T15:27:45-06:00</updated>
+  <updated>2016-02-15T19:08:00-06:00</updated>
   <id>http://pbking1.github.com/</id>
   <author>
     <name><![CDATA[pb]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hackathron_clothes_collection_and_some_other_pictures]]></title>
+    <link href="http://pbking1.github.com/blog/2016/02/15/hackathron-clothes-collection-and-some-other-pictures/"/>
+    <updated>2016-02-15T19:02:10-06:00</updated>
+    <id>http://pbking1.github.com/blog/2016/02/15/hackathron-clothes-collection-and-some-other-pictures</id>
+    <content type="html"><![CDATA[<h3>Post usage</h3>
+
+<ul>
+<li>The post is used for storing the clothes and other picture from hackathron</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>Tools for resize the picture</h3>
+
+<ul>
+<li><a href="http://www124.lunapic.com/editor/">http://www124.lunapic.com/editor/</a></li>
+</ul>
+
+
+<h3>gallery</h3>
+
+<ul>
+<li>1.Indy redefine hackathron</li>
+<li><p>location: Indianapolis, IN</p>
+
+<ul>
+<li><img src="/images/hackathron_clothes/indy.jpeg"></li>
+</ul>
+</li>
+<li><p>2.Fashion hackathron</p></li>
+<li>location: Kent, OH
+
+<ul>
+<li><img src="/images/hackathron_clothes/1.jpeg"></li>
+<li><img src="/images/hackathron_clothes/2.jpeg"></li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2016_florida_hackFSU_hackathron_and_travel]]></title>

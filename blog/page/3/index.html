@@ -100,6 +100,87 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2015/04/21/string-processing-function-implementation/">
+		
+			String Processing Function Implementation</a>
+	</h2>
+	<div class="entry-content">
+		<h3>string function in c</h3>
+
+<h4>strcpy</h4>
+
+<ul>
+<li>使用一个临时变量保存串的首地址，然后最后返回这个地址</li>
+<li>然后在最后判断是否遇到&#8217;\0&#8217;来结束复制</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>char *strcpy1(char *des, const char*src){
+</span><span class='line'>  char *address = des;
+</span><span class='line'>  while((*des++ = *src++) != '\0');
+</span><span class='line'>  return address;
+</span><span class='line'>}
+</span><span class='line'>int main(){
+</span><span class='line'>  char *des;
+</span><span class='line'>  char *src = "aaa";
+</span><span class='line'>  char *result;
+</span><span class='line'>  result = strcpy1(des, src);
+</span><span class='line'>  cout&lt;&lt;result;
+</span><span class='line'>  return 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+
+		
+		<a href="/blog/2015/04/21/string-processing-function-implementation/" class="more-link">Read more</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-21T00:56:01-05:00" pubdate data-updated="true">Apr 21<span>st</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/c-plus-plus/'>c++</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/04/21/string-processing-function-implementation//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2015/04/20/c-plus-plus-basic-data-structure/">
 		
 			C++ Basic Data Structure</a>
@@ -527,103 +608,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2015/04/14/asp-dot-net-in-mac-monodevelop//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2015/04/11/java-spring-tutorial-part1/">
-		
-			Java Spring Tutorial Part1</a>
-	</h2>
-	<div class="entry-content">
-		<h3>maven</h3>
-
-<ul>
-<li>make sure &lsquo;mvn -v&rsquo; return the current version in you computer</li>
-<li>otherwise, install the maven first</li>
-</ul>
-
-
-<h3>Hello world</h3>
-
-<ul>
-<li>project hierarchy
-
-<ul>
-<li>helloworld (folder)
-
-<ul>
-<li>(root directory)</li>
-<li>src
-
-<ul>
-<li>main
-
-<ul>
-<li>java
-
-<ul>
-<li>hello
-
-<ul>
-<li>Greeter.java</li>
-<li>HelloWorld.java</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>target(auto generate after mvn install)
-
-<ul>
-<li>helloworld-0.1.0.jar</li>
-</ul>
-</li>
-<li>pom.xml</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-
-		
-		<a href="/blog/2015/04/11/java-spring-tutorial-part1/" class="more-link">Read more</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-04-11T14:41:46-05:00" pubdate data-updated="true">Apr 11<span>th</span>, 2015</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/system-analyze-and-design/'>System_analyze_and_design</a>, <a class='category' href='/blog/categories/java/'>java</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2015/04/11/java-spring-tutorial-part1//blog/page/3/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
